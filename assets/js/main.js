@@ -7,7 +7,7 @@
 
     var $window = $(window),
         $body = $('body'),
-        $foxappMenu = $('.foxapp-header'),
+        $horizonMenu = $('.horizon-header'),
         $countUp = $('.fact-box h5'),
         $otherFeaturesSlider = $('.other-features-slider'),
         $screenshotsSlider = $('.screenshots-slider'),
@@ -64,9 +64,9 @@
         $window.scroll(function () {
             var currentLink = $(this);
             if ($(currentLink).scrollTop() > 500) {
-                $foxappMenu.addClass("sticky");
+                $horizonMenu.addClass("sticky");
             } else {
-                $foxappMenu.removeClass("sticky");
+                $horizonMenu.removeClass("sticky");
             }
         });
         /*END MENU JS*/

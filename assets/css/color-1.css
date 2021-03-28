@@ -38,9 +38,9 @@ aside.sidebar .tags ul li a,
 .preloader,
 .btn-theme.btn-colord:before,
 .background-withcolor,
-.foxapp-header.sticky,
-.foxapp-header .dropdown-menu .dropdown-item:hover,
-.foxapp-header .dropdown-menu .dropdown-item.active,
+.horizon-header.sticky,
+.horizon-header .dropdown-menu .dropdown-item:hover,
+.horizon-header .dropdown-menu .dropdown-item.active,
 .box,
 .clients-testimonial .testimonial-slider .item .client-testimonial,
 .clients-testimonial .testimonial-slider .slick-dots li.slick-active button,
@@ -55,7 +55,7 @@ aside.sidebar .gray-panel h3:after {
 }
 
 @media (max-width: 992px) {
-    .foxapp-header {
+    .horizon-header {
         background: #241F1F;
     }
 }

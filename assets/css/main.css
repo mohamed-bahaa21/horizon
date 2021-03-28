@@ -313,9 +313,17 @@ footer .subscribe .subscribe-form-2 .form-group {
     03. START HEADER STYLE
 ------------------------------*/
 
-.foxapp-header {
+.navbar-brand{
+    width: 20vw;
+  }
+  
+  .container {
+      padding: 0;
+  }
+  
+  .horizon-header {
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 999;
@@ -325,56 +333,57 @@ footer .subscribe .subscribe-form-2 .form-group {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
-
-.foxapp-header.sticky {
+  }
+  
+  .horizon-header.sticky {
     position: fixed;
     top: 0;
     left: 0;
     box-shadow: 0px 13px 35px -12px rgba(0, 0, 0, 0.15);
     animation: menu_sticky 0.7s ease-in-out;
-}
-
-@keyframes menu_sticky {
+  }
+  
+  @keyframes menu_sticky {
     0% {
-        margin-top: -120px;
-        opacity: 0;
+      margin-top: -120px;
+      opacity: 0;
     }
-
+  
     50% {
-        margin-top: -64px;
-        opacity: 0;
+      margin-top: -64px;
+      opacity: 0;
     }
-
+  
     100% {
-        margin-top: 0;
-        opacity: 1;
+      margin-top: 0;
+      opacity: 1;
     }
-}
-
-.foxapp-header .navbar {
+  }
+  
+  .horizon-header .navbar {
+    margin: 0;
     padding: 0;
-}
-
-.foxapp-header .navbar-light .navbar-toggler {
+  }
+  
+  .horizon-header .navbar-light .navbar-toggler {
     border-color: #fff;
     outline: none;
-}
-
-.foxapp-header .navbar-light .navbar-toggler-icon {
+  }
+  
+  .horizon-header .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='' stroke-miterlimit='0' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.foxapp-header .navbar .navbar-nav .nav-item>.nav-link {
+  }
+  
+  .horizon-header .navbar .navbar-nav .nav-item > .nav-link {
     color: #fff;
     /* margin: 20px 10px; */
     font-weight: 400;
     position: relative;
-    padding: 20px;
-}
-
-.foxapp-header .navbar .navbar-nav .nav-item>.nav-link:before {
-    content: '';
+    padding: 1rem;
+  }
+  
+  .horizon-header .navbar .navbar-nav .nav-item > .nav-link:before {
+    content: "";
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -382,20 +391,20 @@ footer .subscribe .subscribe-form-2 .form-group {
     height: 3px;
     background-color: #fff;
     transform: translateX(-50%);
-    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -o-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.foxapp-header .navbar .navbar-nav .nav-item>.nav-link:hover:before {
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .horizon-header .navbar .navbar-nav .nav-item > .nav-link:hover:before {
     width: 100%;
-}
-
-.foxapp-header .navbar .navbar-nav .nav-item>.nav-link.active:before {
+  }
+  
+  .horizon-header .navbar .navbar-nav .nav-item > .nav-link.active:before {
     width: 100%;
-}
-
-.foxapp-header .dropdown-menu {
+  }
+  
+  .horizon-header .dropdown-menu {
     padding: 0;
     margin: 0;
     border-radius: 0;
@@ -405,70 +414,70 @@ footer .subscribe .subscribe-form-2 .form-group {
     display: block;
     opacity: 0;
     visibility: hidden;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .04);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.04);
     height: 0;
     transition: all ease 0.1s;
-}
-
-@keyframes hide_dropdown_menu {
+  }
+  
+  @keyframes hide_dropdown_menu {
     0% {
-        transform: translateY(0);
-        opacity: 1;
+      transform: translateY(0);
+      opacity: 1;
     }
-
+  
     100% {
-        transform: translateY(15px);
-        opacity: 0;
+      transform: translateY(15px);
+      opacity: 0;
     }
-}
-
-.foxapp-header .dropdown-menu.show {
+  }
+  
+  .horizon-header .dropdown-menu.show {
     animation: show_dropdown_menu 0.2s ease-in-out forwards;
     visibility: visible;
     height: auto;
-}
-
-@keyframes show_dropdown_menu {
+  }
+  
+  @keyframes show_dropdown_menu {
     0% {
-        transform: translateY(15px);
-        opacity: 0;
+      transform: translateY(15px);
+      opacity: 0;
     }
-
+  
     100% {
-        transform: translateY(0);
-        opacity: 1;
+      transform: translateY(0);
+      opacity: 1;
     }
-}
-
-.foxapp-header .dropdown-menu .dropdown-item {
-    padding: .75rem 1.5rem;
-}
-
-.foxapp-header .dropdown-menu .dropdown-item:hover {
+  }
+  
+  .horizon-header .dropdown-menu .dropdown-item {
+    /* padding: 0.75rem 1.5rem; */
+  }
+  
+  .horizon-header .dropdown-menu .dropdown-item:hover {
     color: #fff;
-}
-
-@media (max-width: 992px) {
-    .foxapp-header {
-        padding: 1em;
+  }
+  
+  @media (max-width: 992px) {
+    .horizon-header {
+      /* padding: 1em; */
     }
-
-    .foxapp-header .dropdown-menu {
-        display: none;
+  
+    .horizon-header .dropdown-menu {
+      display: none;
     }
-
-    .foxapp-header .dropdown-menu.show {
-        display: block;
+  
+    .horizon-header .dropdown-menu.show {
+      display: block;
     }
-
-    .foxapp-header .navbar .navbar-nav .nav-item>.nav-link {
-        padding: 10px;
+  
+    .horizon-header .navbar .navbar-nav .nav-item > .nav-link {
+      padding: 10px;
     }
-
-    .foxapp-header .dropdown-menu .dropdown-item {
-        padding: 10px;
+  
+    .horizon-header .dropdown-menu .dropdown-item {
+      padding: 10px;
     }
-}
+  }
 
 /*------------------------------
     03. End HEADER STYLE
