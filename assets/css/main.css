@@ -311,11 +311,11 @@ footer .subscribe .subscribe-form-2 .form-group {
 ------------------------------*/
 
 .navbar-brand {
-  width: 20vw;
+  width: 15vw;
 }
 
 .nav-link {
-    font-size: 0.7rem !important;
+    font-size: 0.85rem !important;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -375,7 +375,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .horizon-header .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='' stroke-miterlimit='0' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("../imgs/horizon/logoIcon.png");
 }
 
 .horizon-header .navbar .navbar-nav .nav-item > .nav-link {
@@ -632,7 +632,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   margin-bottom: 20px;
 }
 
-.why-us .why-us-icon .lnr {
+.why-us .why-us-icon img{
   font-size: 35px;
 }
 
