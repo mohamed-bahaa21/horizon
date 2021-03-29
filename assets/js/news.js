@@ -1,5 +1,5 @@
 // this script for the v2.0 of the news section theme
-var swiper = new Swiper(".blog-slider", {
+var swiper = new Swiper(".news-slider", {
   spaceBetween: 30,
   effect: "fade",
   loop: true,
@@ -8,7 +8,7 @@ var swiper = new Swiper(".blog-slider", {
   },
   // autoHeight: true,
   pagination: {
-    el: ".blog-slider__pagination",
+    el: ".news-slider__pagination",
     clickable: true,
   },
 });

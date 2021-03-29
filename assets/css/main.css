@@ -1,13 +1,3 @@
-/*
-    - Template Name: Fox
-    - Template URI: 
-    - Author: Mohamed Kamel
-    - Author URI: https://www.facebook.com/M.Kamel090
-    - Description: Fox This is html5 template for App Landing Page
-    - Version: 1.0
-    - Tags: HTML, Mobile App, Template, Landing Page , Responsive, Bootstrap 4 
-*/
-
 /* ----------------------------------------------------
     CSS INDEX        
 
@@ -43,6 +33,10 @@
 ------------------------------*/
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext");
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -315,10 +309,10 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .nav-link {
-    font-size: 0.85rem !important;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
+  font-size: 0.85rem !important;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -632,7 +626,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   margin-bottom: 20px;
 }
 
-.why-us .why-us-icon img{
+.why-us .why-us-icon img {
   font-size: 35px;
 }
 
