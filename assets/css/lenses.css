@@ -17,7 +17,7 @@
   transition: background 1s ease;
   pointer-events: none;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 100%;
 }
 
 .stack:hover:before,

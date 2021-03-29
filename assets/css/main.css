@@ -178,9 +178,9 @@ a,
 .our-team .team-slider .person ul li a,
 .our-team .team-slider .slick-dots li,
 .our-team .team-slider .slick-dots li button,
-.faq .accordion .card .card-header h5 .btn,
-.faq .accordion .card .card-header h5 .btn:before,
-.faq .accordion .card .card-header h5 .btn:after,
+.faq .accordion .faq-card .faq-card-header h5 .btn,
+.faq .accordion .faq-card .faq-card-header h5 .btn:before,
+.faq .accordion .faq-card .faq-card-header h5 .btn:after,
 .recent-news .recent-news-slider .slick-dots li,
 .recent-news .recent-news-slider .slick-dots li button,
 .download-app a,
@@ -1172,23 +1172,23 @@ footer .subscribe .subscribe-form-2 .form-group {
     15. START FAQ SECTION
 ------------------------------*/
 
-.faq .accordion .card {
+.faq .accordion .faq-faq-card {
   margin-bottom: 1em;
   border-radius: 28px !important;
   overflow: hidden;
   background: #fff;
 }
 
-.faq .accordion .card,
-.faq .accordion .card .card-header {
+.faq .accordion .faq-card,
+.faq .accordion .faq-card .faq-card-header {
   border: none;
 }
 
-.faq .accordion .card .card-header {
+.faq .accordion .faq-card .faq-card-header {
   padding: 0;
 }
 
-.faq .accordion .card .card-header h5 .btn {
+.faq .accordion .faq-card .faq-card-header h5 .btn {
   display: block;
   width: 100%;
   text-align: left;
@@ -1201,8 +1201,8 @@ footer .subscribe .subscribe-form-2 .form-group {
   position: relative;
 }
 
-.faq .accordion .card .card-header h5 .btn:before,
-.faq .accordion .card .card-header h5 .btn:after {
+.faq .accordion .faq-card .faq-card-header h5 .btn:before,
+.faq .accordion .faq-card .faq-card-header h5 .btn:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1210,29 +1210,29 @@ footer .subscribe .subscribe-form-2 .form-group {
   background: #ccc;
 }
 
-.faq .accordion .card .card-header h5 .btn:before {
+.faq .accordion .faq-card .faq-card-header h5 .btn:before {
   width: 2px;
   height: 12px;
   right: 30px;
 }
 
-.faq .accordion .card .card-header h5 .btn:after {
+.faq .accordion .faq-card .faq-card-header h5 .btn:after {
   width: 12px;
   height: 2px;
   right: 25px;
 }
 
-.faq .accordion .card .card-header h5 .btn.collapsed:before,
-.faq .accordion .card .card-header h5 .btn.collapsed:after {
+.faq .accordion .faq-card .faq-card-header h5 .btn.collapsed:before,
+.faq .accordion .faq-card .faq-card-header h5 .btn.collapsed:after {
   background: #fff;
   transform: translateY(-50%) rotate(0deg);
 }
 
-.faq .accordion .card .card-header h5 .btn.collapsed {
+.faq .accordion .faq-card .faq-card-header h5 .btn.collapsed {
   color: #fff;
 }
 
-.faq .accordion .card .card-body {
+.faq .accordion .faq-card .faq-card-body {
   padding: 30px;
   font-size: 16px;
   font-weight: 400;

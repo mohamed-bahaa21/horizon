@@ -13,7 +13,7 @@
 }
 
 #single-vision {
-  height: 100vh;
+  height: auto;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
   color: #08090a;
@@ -26,10 +26,9 @@
   background-size: cover;
   background-position: top center;
   background-blend-mode: overlay;
-  padding: 0 80px;
 }
 @media (max-width: 980px) {
-  body {
+  #single-vision {
     padding: 0;
   }
 }
@@ -39,7 +38,7 @@
   border-radius: 6px;
   overflow-x: auto;
   overflow-y: hidden;
-  max-height: 960px;
+  max-height: 90vh;
   height: 90vh;
   width: 100%;
   display: flex;
