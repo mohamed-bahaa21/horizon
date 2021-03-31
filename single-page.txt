@@ -1,0 +1,4 @@
+- news page
+- product page
+- free form page
+- technical page
