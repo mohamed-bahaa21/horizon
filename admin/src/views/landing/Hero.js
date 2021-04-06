@@ -1,12 +1,10 @@
 import React from 'react'
 import {
-  CBreadcrumb,
-  CBreadcrumbItem,
-  CBreadcrumbRouter,
-  CCard,
-  CCardBody,
-  CCardHeader,
-  CLink,
+  CLabel,
+  CForm,
+  CInput,
+  CFormText,
+  CFormGroup,
   CCol,
   CRow
 } from '@coreui/react'
@@ -17,46 +15,18 @@ const Hero = () => {
   return (
     <CRow>
       <CCol xs="12">
-        <CCard>
-          <CCardHeader>
-            Bootstrap Breadcrumb
-            <DocsLink name="CBreadcrumb"/>
-          </CCardHeader>
-          <CCardBody>
-            <h6>CBreadcrumbRouter wrapper component</h6>
-            <CBreadcrumbRouter routes={routes}/>
-            <h6>Manual</h6>
-            <CBreadcrumb>
-              <CBreadcrumbItem>
-                <CLink>Home</CLink>
-              </CBreadcrumbItem>
-              <CBreadcrumbItem active>Library</CBreadcrumbItem>
-            </CBreadcrumb>
-            <CBreadcrumb>
-              <CBreadcrumbItem>
-                <CLink>Home</CLink>
-              </CBreadcrumbItem>
-              <CBreadcrumbItem>
-                <CLink>Library</CLink>
-              </CBreadcrumbItem>
-              <CBreadcrumbItem active>Data</CBreadcrumbItem>
-            </CBreadcrumb>
-            <CBreadcrumb>
-              <CBreadcrumbItem>
-                <CLink>Home</CLink>
-              </CBreadcrumbItem>
-              <CBreadcrumbItem>
-                <CLink>Library</CLink>
-              </CBreadcrumbItem>
-              <CBreadcrumbItem>
-                <CLink>Data</CLink>
-              </CBreadcrumbItem>
-              <CBreadcrumbItem active>
-                <span>Bootstrap</span>
-              </CBreadcrumbItem>
-            </CBreadcrumb>
-          </CCardBody>
-        </CCard>
+        <CForm action="landing/hero" method="post">
+          <CFormGroup>
+            <CLabel htmlFor="hero-parag-1">hero-parag-1</CLabel>
+            <CInput
+              type="text"
+              id="hero-parag-1"
+              name="hero-parag-1"
+              placeholder="hero-parag-1"
+            />
+            <CFormText className="help-block">Please enter hero-parag-1</CFormText>
+          </CFormGroup>
+        </CForm>
       </CCol>
     </CRow>
   )
