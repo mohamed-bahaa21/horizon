@@ -38,24 +38,36 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 
-const Hero = React.lazy(() => import('./views/landing/hero'));
-const News = React.lazy(() => import('./views/landing/news'));
-const About = React.lazy(() => import('./views/landing/about'));
-const SingleLens = React.lazy(() => import('./views/landing/single_vision_lenses'));
-const LensInfo = React.lazy(() => import('./views/landing/lens_info'));
-const BifocalLens = React.lazy(() => import('./views/landing/bifocal_lens'));
-const Video = React.lazy(() => import('./views/landing/video'));
-const Logos = React.lazy(() => import('./views/landing/logos'));
-const Designs = React.lazy(() => import('./views/landing/designs'));
-const Feedbacks = React.lazy(() => import('./views/landing/feedbacks'));
-const ProductionInfo = React.lazy(() => import('./views/landing/production_info'));
-const TechnicalInfo = React.lazy(() => import('./views/landing/technical_info'));
-const Download = React.lazy(() => import('./views/landing/download'));
-const Contact = React.lazy(() => import('./views/landing/contact'));
+const Hero = React.lazy(() => import('./views/landing/Hero'));
+// const News = React.lazy(() => import('./views/landing/news'));
+// const About = React.lazy(() => import('./views/landing/about'));
+// const SingleLens = React.lazy(() => import('./views/landing/single_vision_lenses'));
+// const LensInfo = React.lazy(() => import('./views/landing/lens_info'));
+// const BifocalLens = React.lazy(() => import('./views/landing/bifocal_lens'));
+// const Video = React.lazy(() => import('./views/landing/video'));
+// const Logos = React.lazy(() => import('./views/landing/logos'));
+// const Designs = React.lazy(() => import('./views/landing/designs'));
+// const Feedbacks = React.lazy(() => import('./views/landing/feedbacks'));
+// const ProductionInfo = React.lazy(() => import('./views/landing/production_info'));
+// const TechnicalInfo = React.lazy(() => import('./views/landing/technical_info'));
+// const Download = React.lazy(() => import('./views/landing/download'));
+// const Contact = React.lazy(() => import('./views/landing/contact'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/landing/hero', name: 'Hero', component: Hero },
+
+
+
+
+
+
+
+
+
+
+
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
