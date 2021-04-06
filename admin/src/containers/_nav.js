@@ -15,7 +15,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Hero',
-    to: '/theme/colors',
+    to: '/landing/hero',
     icon: 'cil-drop',
   },
   {
@@ -25,7 +25,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Latest News',
-    to: '/theme/typography',
+    to: '/landing/news',
     icon: 'cil-pencil',
   },
   {
@@ -35,7 +35,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'About Us',
-    to: '/hero/about',
+    to: '/landing/about',
     icon: 'cil-pencil',
   },
   {
@@ -45,7 +45,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Single Vision Lenses',
-    to: '/theme/typography',
+    to: '/landing/single_vision_lenses',
     icon: 'cil-pencil',
   },
   {
@@ -55,7 +55,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Lens Info',
-    to: '/theme/typography',
+    to: '/landing/lens_info',
     icon: 'cil-pencil',
   },
   {
@@ -65,7 +65,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Bifocal Lenses',
-    to: '/theme/typography',
+    to: '/landing/bifocal_lens',
     icon: 'cil-pencil',
   },
   {
@@ -75,7 +75,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Watch Video',
-    to: '/theme/typography',
+    to: '/landing/video',
     icon: 'cil-pencil',
   },
   {
@@ -85,7 +85,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Logos',
-    to: '/theme/typography',
+    to: '/landing/logos',
     icon: 'cil-pencil',
   },
   {
@@ -95,7 +95,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Design Screenshots',
-    to: '/theme/typography',
+    to: '/landing/designs',
     icon: 'cil-pencil',
   },
   {
@@ -105,7 +105,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Client Feedbacks',
-    to: '/theme/typography',
+    to: '/landing/feedbacks',
     icon: 'cil-pencil',
   },
   {
@@ -115,7 +115,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Production Info',
-    to: '/theme/typography',
+    to: '/landing/production_info',
     icon: 'cil-pencil',
   },
   {
@@ -125,7 +125,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Technical Info',
-    to: '/theme/typography',
+    to: '/landing/technical_info',
     icon: 'cil-pencil',
   },
   {
@@ -135,7 +135,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Download App',
-    to: '/theme/typography',
+    to: '/landing/download',
     icon: 'cil-pencil',
   },
   {
@@ -145,7 +145,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Contact Us',
-    to: '/theme/typography',
+    to: '/landing/contact',
     icon: 'cil-pencil',
   },
   {
@@ -155,7 +155,7 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Map',
-    to: '/theme/typography',
+    to: '/landing/typography',
     icon: 'cil-pencil',
   },
   {
