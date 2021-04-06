@@ -1,7 +1,7 @@
 {
-  "name": "express-graphql-basic-server",
+  "name": "horizon-server",
   "version": "1.0.0",
-  "description": "this is test for graphql",
+  "description": "Horizon server: express, mongodb, graphql",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -17,7 +17,7 @@
     "express",
     "mysql"
   ],
-  "author": "Tariqul Islam",
+  "author": "Ayk",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tariqulislam/express-graphql-basic-server/issues"
