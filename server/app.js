@@ -10,7 +10,36 @@ const MongoDBStore = require('connect-mongodb-session')(session)
 const csrf = require('csurf')
 const flash = require('connect-flash')
 
-const horizonRoute = require('./routes/horizon')
+const {
+    graphqlHTTP
+} = require('express-graphql')
+const {
+    buildSchema
+} = require('graphql')
+const schema = require('./schema/schema')
+
+const db = {
+    name: "MOMO",
+    parag: "hello world"
+}
+const aschema = buildSchema(`
+    type Query {
+        horizon: Horizon!
+    }
+    type Horizon {
+        id: ID!
+        name: String!
+    }
+`)
+
+const rootValue = {
+    horizon: () => db
+}
+
+const horizonRoute = require('./routes/horizon');
+const {
+    Horizon
+} = require('./models/horizon');
 
 const app = express()
 
@@ -20,13 +49,13 @@ const store = new MongoDBStore({
     uri: MONGODB_URI,
     collection: 'sessions'
 });
-const csrfProtection = csrf();
+// const csrfProtection = csrf();
 // set ejs to be template view engine  
 app.set('view engine', 'ejs')
 app.use(
-    bodyParser.urlencoded({
-        extended: false
-    }),
+    // bodyParser.urlencoded({
+    //     extended: false
+    // }),
     express.static(path.join(__dirname, 'public')),
     // setting session
     session({
@@ -36,13 +65,14 @@ app.use(
         store: store
     }),
     // using csrf protection
-    csrfProtection,
+    // csrfProtection,
     flash(),
-    (req, res, next) => {
-        res.locals.isLoggedIn = req.session.isLoggedIn;
-        res.locals.csrfToken = req.csrfToken();
-        next();
-    }
+    // (req, res, next) => {
+    //     res.locals.isLoggedIn = req.session.isLoggedIn;
+    //     res.locals.csrfToken = req.csrfToken();
+    //     next();
+    // },
+    
 )
 // routes
 app.use('/', horizonRoute)

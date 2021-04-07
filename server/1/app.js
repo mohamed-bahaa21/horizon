@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8000
 app.use(cors())
 
 mongoose.connect(
-    'mongodb+srv://mohammad123:mohammad123@blogdb.fslqm.mongodb.net/bookShelf?retryWrites=true&w=majority',
+    'mongodb+srv://mohammad123:mohammad123@blogdb.fslqm.mongodb.net/horizon?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
 )
 mongoose.connection.once('open', () => {
