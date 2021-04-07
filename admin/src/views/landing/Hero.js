@@ -8,6 +8,8 @@ import {
   CCol,
   CRow
 } from '@coreui/react'
+import axios from 'axios';
+
 import { DocsLink } from 'src/reusable'
 import routes from '../../routes'
 
@@ -19,15 +21,23 @@ import { LOAD_HORIZON } from "../../queries/queries";
 
 
 
-function Hero() {
-  const { error, loading, data } = useQuery(LOAD_HORIZON);
-  const [horizon, setHorizon] = useState([]);
-  useEffect(() => {
-    if (data) {
-      setHorizon(data.getHorizon);
+class Hero extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: "..."
     }
-  }, [data]);
+  }
 
+  componentDidMount() {
+    axios.get('http://localhost:5000/api/getLandingData')
+      .then(response => {
+        this.setState({ name: response.data.name })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   // displayparag = () => {
   //   var { hero } = this.props.data
@@ -40,32 +50,31 @@ function Hero() {
   //   }
   // }
 
-  return (
-    <CRow>
-      <CCol xs="12">
-        <CForm action="landing/hero" method="post">
-          <CFormGroup>
-            <CLabel htmlFor="hero-parag-1">hero-parag-1</CLabel>
-            <CInput
-              type="text"
-              id="hero-parag-1"
-              name="hero-parag-1"
-              placeholder="hero-parag-1"
-            />
-            <CFormText className="help-block">Please enter hero-parag-1</CFormText>
-          </CFormGroup>
-        </CForm>
-        <h1>
-          {/* {this.displayarag()} */}
+  render() {
+    return (
+      <CRow>
+        <CCol xs="12">
+          <CForm action="landing/hero" method="post">
+            <CFormGroup>
+              <CLabel htmlFor="hero-parag-1">hero-parag-1</CLabel>
+              <CInput
+                type="text"
+                id="hero-parag-1"
+                name="hero-parag-1"
+                placeholder="hero-parag-1"
+              />
+              <CFormText className="help-block">Please enter hero-parag-1</CFormText>
+            </CFormGroup>
+          </CForm>
           {
-            horizon
+            this.state.name
           }
-        </h1>
-        {/* <BookList /> */}
-      </CCol>
-    </CRow>
-  )
+          {/* {this.displayarag()} */}
+          {/* <BookList /> */}
+        </CCol>
+      </CRow>
+    )
+  }
 }
-
 
 export default Hero

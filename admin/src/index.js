@@ -50,11 +50,9 @@ const client = new ApolloClient({
 React.icons = icons
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
   <Provider store={store}>
     <App/>
-  </Provider>
-  </ApolloProvider>,
+  </Provider>,
   document.getElementById('root')
 );
 
