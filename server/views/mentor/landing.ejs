@@ -1,0 +1,308 @@
+<%- include('./includes/head.ejs') %>
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <div class="blue-back" id="section-1">
+        <div class="main">
+
+            <% for (i = 1; i <= 100; i++) { %>
+            <div class="circle-container">
+                <div class="circle"></div>
+            </div>
+            <% } %>
+
+            <div class="navbar">
+                <div class="logo" style="padding-top:1%"><b>Storce</b></div>
+
+                <!-- <div class="menu" id="navbarM">
+                    <ul>
+                        <li><a href="https://thestorce.blogspot.com" target="_blank">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div> -->
+            </div>
+
+            <div id="contact-us-modal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+
+                    <p>Once you've filled in the form we'll email you when we Launch,<br> You can also email us on
+                        <span style="color: #6C62FF;">Storcego@outlook.com</span> for more info!</p>
+                    <span id="close-modal" class="close">close</span>
+                </div>
+
+            </div>
+
+            <div class="row" style="padding: 3rem 3rem;">
+                <div class="main-content col-lg-6">
+                    <div class="text">
+                        <div style="margin-bottom: 15px;">
+                            <%- include('./includes/messages.ejs') %>
+                        </div>
+                        <h2 style="color: #fff; margin: 0 auto;">
+                            Share your knowledge with <br> Passionate
+                            learners <br> in your free time.
+                        </h2>
+                        <br><br>
+                        <p style="opacity: 1; color: white;">
+                            Your skills and expertise are valuable to self-learners around the world.<br> Storce is
+                            where you can help students
+                            get a foothold in the field.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-content col-lg-4 text-center">
+                    <div style="padding: 2rem;">
+                        <h5>Start Creating Your Space</h5>
+                        <div class="form-container">
+                            <form action="/mentor/signup" method="post" style="color: #6C62FF;">
+
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                                <input type="name" class="form-control shadow" name="name" placeholder="Full Name">
+                                <input type="email" class="form-control shadow" name="email"
+                                    placeholder="Email Address">
+                                <input type="phone" class="form-control shadow" name="phone" placeholder="Phone Number">
+                                <select name="category" class="form-control shadow" id="inputGroupSelect01"
+                                    aria-placeholder="Pick Your Category">
+                                    <option selected>Choose Your Category</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Social Media Marketing">Social Media Marketing</option>
+                                    <option value="SEO">SEO</option>
+                                    <option value="Copy Writing">Copy Writing</option>
+                                    <option value="Advertising">Advertising</option>
+                                    <option value="Marketing Strategy">Marketing Strategy</option>
+                                    <option value="Product Marketing">Product Marketing</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Web Design">Web Design</option>
+                                    <option value="UI/UX">UI/UX</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Other">Other...</option>
+                                </select>
+                                <br>
+                                <input type="submit" value="Sign up" class="btn shadow"
+                                    style="padding: 0.5rem 1rem; font-size: 1rem; background-color: rgb(131, 131, 131);">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    </div>
+
+    <!-- section 1 : Who qualifies? -->
+    <section id="section-2" style="color: #555">
+        <div class="container text-center">
+            <div class="text-center" style="padding: 0 0 1rem 0">
+                <h3>Who qualifies?</h3>
+                <br>
+                <h6>We often hear people say that they aren't qualified to give other
+                    people feedback on their work.<br> But we believe that's incorrect.
+                </h6>
+                <br>
+                <h6>
+                    Here's what you need...
+                    <br>
+                </h6>
+            </div>
+
+            <div class="steps-container">
+                <div class="card col-md-4 row shadow" id="step-1">
+                    <br>
+                    <h6>Previous Experience</h6>
+                    <p style="padding: 1rem;">
+                        You do not need to be an expert from an F500 company to be able to help people still starting
+                        out in your field.
+                        <br><br>
+                        If you have the valuable experience that many beginners can benefit from, share it with people
+                        who need it.
+                    </p>
+                </div>
+                <div class="card col-md-4 row shadow" id="step-1">
+                    <br>
+                    <h6>Some time</h6>
+                    <p style="padding: 1rem;">
+                        There aren't any required hours, it depends on how much time you want to
+                        invest.
+                        <br><br><br>
+                        The more you are there for your students,<br>
+                        the more they'll love being part of your Space!
+                    </p>
+                </div>
+                <div class="card col-md-4 row shadow" id="step-1" style=>
+                    <br>
+                    <h6>Openness</h6>
+                    <p style="padding: 1rem;">
+                        We believe that self-learners should have more accessibility to jobs, regardless of where they
+                        learned or where they're from.
+                        <br><br>
+                        Help make the internet a place that is non-discriminatory and filled with opportunity
+                        for everyone.
+
+                    </p>
+                </div>
+            </div>
+    </section>
+
+    <!-- section 1 : how does it work -->
+    <section id="section-2" style="background-color: #F6F8F8; color: #555">
+        <div class="container text-center">
+            <div class="text-center" style="padding: 0 0 1rem 0">
+                <h3>Here's how it works</h3>
+            </div>
+            <div class="steps-container">
+                <div class="card col-md-4 row" id="step-1">
+                    <br>
+                    <div class="" style="font-size: 2.5rem; padding: 2%;">
+                        <img class="img-fluid" src="/mentor/imgs/M1.svg" alt="">
+                    </div>
+                    <br>
+                    <br>
+                    <h6>Create Your Space<br>
+                        and get Verified
+                    </h6>
+                    <br>
+                </div>
+
+                <div class="card col-md-4 row" id="step-1">
+                    <br>
+                    <div class="" style="font-size: 2.5rem;">
+                        <img class="img-fluid" src="/mentor/imgs/M2.svg" alt="">
+                    </div>
+                    <br>
+                    <h6>Post projects for your <br> subscribers to work on</h6>
+                    <br>
+                </div>
+
+                <div class="card col-md-4 row" id="step-1">
+                    <br>
+                    <div class="" style="font-size: 2.5rem; margin-bottom: 4%;">
+                        <img class="img-fluid" src="/mentor/imgs/M3.svg" alt="">
+                    </div>
+                    <br>
+
+                    <h6>Share your feedback on their <br> projects to help them improve</h6>
+                    <br>
+                </div>
+            </div>
+
+            <div style="padding: 3rem 0;">
+                <h5>When your subscribers are ready for work. We find <br>them job offers. You make money. </h5>
+                <br>
+                <a class="btn btn-secondary shadow text-center"
+                    style="padding: 0.35rem 1.5rem; font-size: 1rem; font-weight: 500;" href="#section-1">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section 2 : our field experts have worked with the best -->
+    <section id="brands-section" style="background-color: #fff; color: #555">
+        <div class="container text-center">
+            <div class="text-center" style="margin: 2rem">
+                <h5>Self-learners struggle to practice what they learn. <br>
+                    That's why you're their best guide.
+                </h5>
+            </div>
+
+            <br><br>
+
+            <div class="brands-card">
+                <div class="brands-card-txt">
+                    <h5>Hands-On is Right On!</h5>
+                    <p>You can post projects for your subscribers to work on, in teams. <br>
+                        Help your subscribers improve their skills by <br>
+                        sharing your feedback on their work.
+                    </p>
+                </div>
+                <div class="brands-card-img">
+                    <img class="img-fluid" src="/mentor/imgs/M4.svg" alt="">
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <div class="brands-card">
+                <div class="brands-card-img">
+                    <img class="img-fluid" src="/mentor/imgs/M5.svg" alt="">
+                </div>
+                <div class="brands-card-txt">
+                    <h5>Capture the Value You Create</h5>
+                    <p>After your subscribers have strong work portfolios in your Space, <br>
+                        we share their profiles with interested employers. When they get job offers, <br>
+                        you get paid.
+                    </p>
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <div class="brands-card">
+                <div class="brands-card-txt">
+                    <h5>Get helping hands and Expand</h5>
+                    <p>If you have too many students to handle on
+                        your own,<br> you can invite sub-mentors to help you manage your <br>Space
+                        and accommodate more subscribers.
+
+                    </p>
+
+                </div>
+                <div class="brands-card-img">
+                    <img class="img-fluid" src="/mentor/imgs/M6.svg" alt="">
+                </div>
+            </div>
+
+
+            <br>
+
+        </div>
+    </section>
+
+    <section style="background-color: rgba(97, 88, 229, 1); color: white;">
+        <div style="padding: 3rem 0;" class="text-center">
+            Make the internet a better place to learn, for everyone.
+            We are here for you every step of the way.
+            <br>
+            <a class="btn btn-secondary shadow text-center"
+                style="padding: 0.35rem 1.5rem; font-size: 1rem; font-weight: 500; background-color:rgb(131, 131, 131)"
+                href="#section-1" href="#section-1" onclick=openModal()>
+                Need anything? Contact us
+            </a>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer>
+        <div class="container text-center">
+            <div class="footer-link" style="visibility: hidden;">
+                <!-- <a href="#">About</a>
+                <a href="#">Contact us</a> -->
+                <a href="#">Cookie</a>
+                <!-- <a href="#">Notification</a> -->
+            </div>
+
+            <hr>
+            <span class="text-center">2019 &copy; Storce All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <%- include('./includes/scripts.ejs') %>
+
+</body>
+
+</html>

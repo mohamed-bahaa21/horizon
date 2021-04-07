@@ -1,28 +1,40 @@
 {
-  "name": "book-shelf",
+  "name": "3-startups",
   "version": "1.0.0",
-  "description": "book-shelf server-side",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mohamed-Elzohary/book-shelf.git"
-  },
-  "author": "Mohamed Elzohary",
+  "keywords": [
+    "the-storce",
+    "storce",
+    "trainee",
+    "mentor",
+    "e-learning",
+    "hiring",
+    "freelancing",
+    "projects",
+    "experience"
+  ],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mohamed-Elzohary/book-shelf/issues"
-  },
-  "homepage": "https://github.com/Mohamed-Elzohary/book-shelf#readme",
   "dependencies": {
-    "cors": "^2.8.5",
+    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.2.0",
+    "csurf": "^1.10.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "express-graphql": "^0.11.0",
-    "graphql": "^15.3.0",
-    "lodash": "^4.17.20",
-    "mongoose": "^5.10.9"
+    "express-session": "^1.16.2",
+    "express-validator": "^6.2.0",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }

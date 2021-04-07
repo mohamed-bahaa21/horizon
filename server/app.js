@@ -1,26 +1,63 @@
+require('dotenv').config()
+const path = require('path')
+global.__basename = __dirname;
+
 const express = require('express')
-const { graphqlHTTP } = require('express-graphql')
-const schema = require('./schema/schema')
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const cors = require('cors')
+const session = require('express-session')
+const MongoDBStore = require('connect-mongodb-session')(session)
+const csrf = require('csurf')
+const flash = require('connect-flash')
+
+const horizonRoute = require('./routes/horizon')
 
 const app = express()
-const PORT = process.env.PORT || 8000
 
-// allow cross-origin requests
-app.use(cors())
-
-mongoose.connect(
-    'mongodb+srv://mohammad123:mohammad123@blogdb.fslqm.mongodb.net/bookShelf?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useUnifiedTopology: true },
+const MONGODB_URI = process.env.MONGODB_URI;
+// connect session w/ mongodb
+const store = new MongoDBStore({
+    uri: MONGODB_URI,
+    collection: 'sessions'
+});
+const csrfProtection = csrf();
+// set ejs to be template view engine  
+app.set('view engine', 'ejs')
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    }),
+    express.static(path.join(__dirname, 'public')),
+    // setting session
+    session({
+        secret: '123456',
+        resave: false,
+        saveUninitialized: false,
+        store: store
+    }),
+    // using csrf protection
+    csrfProtection,
+    flash(),
+    (req, res, next) => {
+        res.locals.isLoggedIn = req.session.isLoggedIn;
+        res.locals.csrfToken = req.csrfToken();
+        next();
+    }
 )
-mongoose.connection.once('open', () => {
-    console.log('MongoDB Connected');
-})
+// routes
+app.use('/', horizonRoute)
 
-app.use('/___graphql', graphqlHTTP({
-    schema,
-    graphiql: true
-}))
-
-app.listen(PORT, () => console.log(`Server: ${PORT}`))
+// connect database & server
+let PORT = process.env.PORT || 5000;
+mongoose
+    .connect(MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(result => {
+        app.listen(PORT);
+        console.log(`MongoDB & Server is listening: ${PORT}`);
+    })
+    .catch(err => {
+        console.log(err);
+    });
