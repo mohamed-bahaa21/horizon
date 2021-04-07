@@ -23,6 +23,8 @@ const getBadge = status => {
   }
 }
 
+console.log((usersData.length/5).toFixed(0));
+
 const Users = () => {
   const history = useHistory()
   const queryPage = useLocation().search.match(/page=([0-9]+)/, '')
@@ -72,7 +74,7 @@ const Users = () => {
           <CPagination
             activePage={page}
             onActivePageChange={pageChange}
-            pages={5}
+            pages={(usersData.length/5).toFixed(0)}
             doubleArrows={false} 
             align="center"
           />
