@@ -1,35 +1,28 @@
 {
-  "name": "horizon-server",
+  "name": "book-shelf",
   "version": "1.0.0",
-  "description": "Horizon server: express, mongodb, graphql",
-  "main": "index.js",
+  "description": "book-shelf server-side",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tariqulislam/express-graphql-basic-server.git"
+    "url": "git+https://github.com/Mohamed-Elzohary/book-shelf.git"
   },
-  "keywords": [
-    "graphql",
-    "express-graphql",
-    "express",
-    "mysql"
-  ],
-  "author": "Ayk",
-  "license": "MIT",
+  "author": "Mohamed Elzohary",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tariqulislam/express-graphql-basic-server/issues"
+    "url": "https://github.com/Mohamed-Elzohary/book-shelf/issues"
   },
-  "homepage": "https://github.com/tariqulislam/express-graphql-basic-server#readme",
+  "homepage": "https://github.com/Mohamed-Elzohary/book-shelf#readme",
   "dependencies": {
-    "dotenv": "^6.0.0",
-    "express": "^4.16.3",
-    "express-graphql": "^0.6.12",
-    "graphql": "^0.13.2",
-    "lodash": "^4.17.10",
-    "mongoose": "^5.2.4",
-    "nodemon": "^1.18.3"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.9"
   }
 }

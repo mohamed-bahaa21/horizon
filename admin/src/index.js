@@ -12,12 +12,21 @@ import { icons } from './assets/icons'
 import { Provider } from 'react-redux'
 import store from './store'
 
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+// apollo client setup
+const client = new ApolloClient({
+  uri: "http://localhost:8000/___graphql"
+})
+
 React.icons = icons
 
 ReactDOM.render(
+  <ApolloProvider client={client}>
   <Provider store={store}>
     <App/>
-  </Provider>,
+  </Provider>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
