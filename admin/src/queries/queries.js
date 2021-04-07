@@ -1,25 +1,34 @@
 import { gql } from "apollo-boost";
 
-const getHeroQuery = gql`
+const getBooksQuery = gql`
     {
-        hero {
-            parag
+        books {
+            name
             id
         }
     }
 `
-const addHeroMutation = gql`
-    mutation($parag:String!){
-        addHero(parag: $parag){
-            parag
+const getAuthorsQuery = gql`
+    {
+        authors {
+            name
             id
         }
     }
 `
 
-const getPostQuery = gql`
+const addBookMutation = gql`
+    mutation($name:String!, $genre:String!, $authorId:ID!){
+        addBook(name: $name, genre: $genre, authorId: $authorId){
+            name
+            id
+        }
+    }
+`
+
+const getBookQuery = gql`
     query($id: ID){
-        post(id: $id){
+        book(id: $id){
             id
             name
             genre
@@ -27,7 +36,7 @@ const getPostQuery = gql`
                 id
                 name
                 age
-                posts {
+                books {
                     name
                     id
                 }
@@ -36,4 +45,4 @@ const getPostQuery = gql`
     }
 `
 
-export { getHeroQuery, addHeroMutation, getPostQuery }
+export { getBooksQuery, getAuthorsQuery, addBookMutation, getBookQuery }

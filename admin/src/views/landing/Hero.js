@@ -1,4 +1,4 @@
-import {React, Component} from 'react'
+import React, { Component } from 'react'
 import {
   CLabel,
   CForm,
@@ -12,27 +12,25 @@ import { DocsLink } from 'src/reusable'
 import routes from '../../routes'
 
 import { graphql } from "react-apollo";
-import { getHeroQuery } from "../../queries/queries";
-
-
+import BookList from "./BookList/BookList";
 
 class Hero extends Component {
   constructor(props) {
     super(props)
-}
-
-  displayparag = () => {
-    var data = this.props.data
-    if (data.loading) {
-        return (<div>Loading parag...</div>)
-    } else {
-      return (
-        console.log(data)
-      )
-    }
   }
 
-  render(){
+  // displayparag = () => {
+  //   var { hero } = this.props.data
+  //   if (data.loading) {
+  //     return (<div>Loading parag...</div>)
+  //   } else {
+  //     return (
+  //       console.log(hero.parag)
+  //     )
+  //   }
+  // }
+
+  render() {
     return (
       <CRow>
         <CCol xs="12">
@@ -48,11 +46,14 @@ class Hero extends Component {
               <CFormText className="help-block">Please enter hero-parag-1</CFormText>
             </CFormGroup>
           </CForm>
-          {this.displayparag()}
+          <h1>
+            {/* {this.displayarag()} */}
+          </h1>
+          <BookList />
         </CCol>
       </CRow>
     )
   }
 }
 
-export default graphql(getHeroQuery)(Hero)
+export default Hero
