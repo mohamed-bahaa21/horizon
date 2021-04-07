@@ -13,6 +13,11 @@ exports.getLanding = (req, res, next) => {
         })
     })
 }
+exports.getLandingData = (req, res, next) => {
+    Horizon.find().then(result => {
+        res.json(result[0])
+    })
+}
 
 // const nodemailer = require('nodemailer')
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
