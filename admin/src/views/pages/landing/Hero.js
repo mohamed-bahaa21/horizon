@@ -32,7 +32,7 @@ class Hero extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/api/getLandingData')
+    axios.get('https://horizon-server.herokuapp.com/api/getLandingData')
       .then(response => {
         this.setState({ 
           name: response.data.name,
@@ -58,10 +58,10 @@ class Hero extends Component {
     }
     console.log(horizon);
 
-    axios.post('http://localhost:5000/api/postHeroData', horizon)
+    axios.post('https://horizon-server.herokuapp.com/api/postHeroData', horizon)
       .then(res => console.log(res));
 
-    window.location = 'http://localhost:3000/#/landing/hero/';
+    window.location = 'https://horizon-admin.herokuapp.com/#/landing/hero/';
   }
 
 
