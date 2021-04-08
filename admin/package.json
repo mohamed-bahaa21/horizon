@@ -1,13 +1,12 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "horizon-admin-portal",
   "version": "3.2.0",
-  "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
+  "description": "Horizon Admin Portal",
   "author": {
-    "name": "CoreUI",
-    "url": "https://coreui.io",
-    "github": "https://github.com/coreui",
-    "twitter": "https://twitter.com/core_ui"
+    "name": "Ayk",
+    "url": "https://ayk-mall.com"
   },
+  "proxy": "http://localhost:5000",
   "contributors": [
     {
       "name": "CoreUI Team",
@@ -15,7 +14,7 @@
     }
   ],
   "homepage": ".",
-  "copyright": "Copyright 2017-2020 creativeLabs Łukasz Holeczek",
+  "copyright": "",
   "license": "MIT",
   "private": true,
   "repository": {

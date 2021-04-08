@@ -1,10 +1,7 @@
 const Horizon = require('../models/horizon')
 
-
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-
-
 
 exports.getLanding = (req, res, next) => {
     Horizon.find().then(result => {
@@ -17,6 +14,18 @@ exports.getLandingData = (req, res, next) => {
     Horizon.find().then(result => {
         res.json(result[0])
     })
+}
+exports.postHeroData = (req, res, next) => {
+    Horizon.findById("606e885364bde142a8203505")
+    .then(horizon => {
+        console.log(req.body);
+      horizon.name = req.body.name;
+
+      horizon.save()
+        .then(() => res.json('horizon updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 }
 
 // const nodemailer = require('nodemailer')

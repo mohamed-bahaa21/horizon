@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const horizonSchema = new Schema({
-    "heroparag1": {
+    "hero_parag_1": {
         type: String,
         required: true
     },

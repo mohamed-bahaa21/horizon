@@ -8,7 +8,17 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const MongoDBStore = require('connect-mongodb-session')(session)
 const csrf = require('csurf')
+const cors = require('cors')
 const flash = require('connect-flash')
+
+const app = express()
+
+const MONGODB_URI = process.env.MONGODB_URI;
+// connect session w/ mongodb
+const store = new MongoDBStore({
+    uri: MONGODB_URI,
+    collection: 'sessions'
+});
 
 const {
     graphqlHTTP
@@ -36,31 +46,23 @@ const rootValue = {
     horizon: () => db
 }
 
-const horizonRoute = require('./routes/horizon');
-const {
-    Horizon
-} = require('./models/horizon');
-
-const app = express()
-
-const MONGODB_URI = process.env.MONGODB_URI;
-// connect session w/ mongodb
-const store = new MongoDBStore({
-    uri: MONGODB_URI,
-    collection: 'sessions'
-});
-// const csrfProtection = csrf();
+const csrfProtection = csrf();
 // set ejs to be template view engine  
 app.set('view engine', 'ejs')
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+// app.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
 app.use(
-    // bodyParser.urlencoded({
-    //     extended: false
-    // }),
+    // Parsers for POST data
+    express.json({
+        limit: '20mb'
+    }),
+    express.urlencoded({
+        extended: false,
+        limit: '20mb'
+    }),
     express.static(path.join(__dirname, 'public')),
     // setting session
     session({
@@ -71,15 +73,21 @@ app.use(
     }),
     // using csrf protection
     // csrfProtection,
-    flash(),
     // (req, res, next) => {
-    //     res.locals.isLoggedIn = req.session.isLoggedIn;
+    // //     res.locals.isLoggedIn = req.session.isLoggedIn;
     //     res.locals.csrfToken = req.csrfToken();
     //     next();
     // },
+    cors(),
+    flash(),
 
 )
 // routes
+const horizonRoute = require('./routes/horizon');
+const {
+    Horizon
+} = require('./models/horizon');
+
 app.use('/', horizonRoute)
 
 // connect database & server
