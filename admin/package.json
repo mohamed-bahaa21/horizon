@@ -6,7 +6,7 @@
     "name": "Ayk",
     "url": "https://ayk-mall.com"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://horizon-server.herokuapp.com/",
   "homepage": ".",
   "copyright": "",
   "license": "MIT",

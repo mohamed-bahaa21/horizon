@@ -1,13 +1,13 @@
 // import { gql } from "apollo-boost";
-import { gql } from "@apollo/client";
+// import { gql } from "@apollo/client";
 
-export const LOAD_HORIZON = gql`
-  query {
-    horizon {
-        parag
-    }
-  }
-`;
+// export const LOAD_HORIZON = gql`
+//   query {
+//     horizon {
+//         parag
+//     }
+//   }
+// `;
 
 // const getBooksQuery = gql`
 //     {

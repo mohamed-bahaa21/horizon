@@ -13,8 +13,8 @@ import axios from 'axios';
 // import { graphql } from "react-apollo";
 // import BookList from "./BookList/BookList";
 
-import { useQuery, gql } from "@apollo/client";
-import { LOAD_HORIZON } from "../../../queries/queries";
+// import { useQuery, gql } from "@apollo/client";
+// import { LOAD_HORIZON } from "../../../queries/queries";
 
 
 
