@@ -1,5 +1,4 @@
-import DocsLink from './DocsLink'
+import {} from ''
 
 export {
-  DocsLink
 }

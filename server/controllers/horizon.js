@@ -1,5 +1,9 @@
 const Horizon = require('../models/horizon')
 
+// const SENDGRID_API = process.env.SENDGRID_API
+// const sgMail = require('@sendgrid/mail')
+// sgMail.setApiKey(SENDGRID_API)
+
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
@@ -35,8 +39,8 @@ exports.postHeroData = (req, res, next) => {
 //     port: 587,
 //     secure: false, // true for 465, false for other ports
 //     auth: {
-//         user: 'storcego@outlook.com',
-//         pass: 'Storceteamgo123'
+//         user: 'horizon@outlook.com',
+//         pass: 'horizon123'
 //     }
 // });
 
@@ -58,11 +62,31 @@ exports.postHeroData = (req, res, next) => {
 // setup e-mail data, even with unicode symbols
 // function setupMail(mail){
 //     var mailOptions = {
-//         from: '"Storce" <storcego@outlook.com>', // sender address (who sends)
+//         from: '"Horiozon" <horizon@outlook.com>', // sender address (who sends)
 //         to: mail, // list of receivers (who receives)
 //         subject: 'Hello ', // Subject line
 //         text: 'Hello world ', // plaintext body
 //         html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
 //     };
 //     return mailOptions;
+// }
+
+// if (result) {
+//     const sendEmail = await sgMail.send({
+//         to: email,
+//         from: 'Horizon@outlook.com',
+//         subject: "You've signed up to Horizon, we are so excited to have you on board!",
+//         html: `
+//             <h3 style="text-align: left">
+//             Hey <b>${name}</b>!
+//             <br>
+//             You've successfully signed up <br>
+//             </h3>
+//             `
+//     });
+
+//     if (sendEmail) {
+//         const result = await req.flash('success', 'You Joined the Waitlist Successfully.')
+//     }
+//     return res.redirect('/')
 // }

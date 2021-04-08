@@ -10,14 +10,11 @@ import {
 } from '@coreui/react'
 import axios from 'axios';
 
-import { DocsLink } from 'src/reusable'
-import routes from '../../routes'
-
-import { graphql } from "react-apollo";
+// import { graphql } from "react-apollo";
 // import BookList from "./BookList/BookList";
 
 import { useQuery, gql } from "@apollo/client";
-import { LOAD_HORIZON } from "../../queries/queries";
+import { LOAD_HORIZON } from "../../../queries/queries";
 
 
 

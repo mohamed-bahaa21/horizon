@@ -20,35 +20,29 @@ const store = new MongoDBStore({
     collection: 'sessions'
 });
 
-const {
-    graphqlHTTP
-} = require('express-graphql')
-const {
-    buildSchema
-} = require('graphql')
-const schema = require('./schema/schema')
+// const {
+//     graphqlHTTP
+// } = require('express-graphql')
+// const {
+//     buildSchema
+// } = require('graphql')
+// const schema = require('./schema/schema')
+// const aschema = buildSchema(`
+//     type Query {
+//         horizon: Horizon!
+//     }
+//     type Horizon {
+//         id: ID!
+//         name: String!
+//     }
+// `)
+// const rootValue = {
+//     horizon: () => db
+// }
 
-const db = {
-    name: "MOMO",
-    parag: "hello world"
-}
-const aschema = buildSchema(`
-    type Query {
-        horizon: Horizon!
-    }
-    type Horizon {
-        id: ID!
-        name: String!
-    }
-`)
-
-const rootValue = {
-    horizon: () => db
-}
-
-const csrfProtection = csrf();
 // set ejs to be template view engine  
 app.set('view engine', 'ejs')
+const csrfProtection = csrf();
 // app.use(function (req, res, next) {
 //     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
 //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
