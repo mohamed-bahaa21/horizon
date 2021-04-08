@@ -1,35 +1,44 @@
 {
-  "name": "horizon-server",
+  "name": "3-startups",
   "version": "1.0.0",
-  "description": "Horizon server: express, mongodb, graphql",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tariqulislam/express-graphql-basic-server.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [
-    "graphql",
-    "express-graphql",
-    "express",
-    "mysql"
+    "the-storce",
+    "storce",
+    "trainee",
+    "mentor",
+    "e-learning",
+    "hiring",
+    "freelancing",
+    "projects",
+    "experience"
   ],
-  "author": "Ayk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tariqulislam/express-graphql-basic-server/issues"
-  },
-  "homepage": "https://github.com/tariqulislam/express-graphql-basic-server#readme",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^6.0.0",
-    "express": "^4.16.3",
-    "express-graphql": "^0.6.12",
-    "graphql": "^0.13.2",
-    "lodash": "^4.17.10",
-    "mongoose": "^5.2.4",
-    "nodemon": "^1.18.3"
+    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.2.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.10.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.2.0",
+    "graphql": "^15.5.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
   }
 }

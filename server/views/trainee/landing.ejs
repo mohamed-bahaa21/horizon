@@ -1,0 +1,236 @@
+<%- include('./includes/head.ejs') %>
+
+</head>
+
+<body>
+
+
+    <!-- navigation bar -->
+    <div class="blue-back">
+        <div class="main">
+
+            <% for (i = 1; i <= 100; i++) { %>
+            <div class="circle-container">
+                <div class="circle"></div>
+            </div>
+            <% } %>
+
+            <div class="navbar">
+                <div class="logo"><b>Storce</b></div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="https://thestorce.blogspot.com" target="_blank">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Help</a></li>
+
+                        <span>&nbsp;&nbsp;</span>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content col-md-12 text-center">
+                <div class="text">
+                    <h1 style="color: #fff; margin: 0 auto;">
+                        Learn, get trained by experts, & <br>
+                        become the best at what you
+                    </h1>
+                    <p id="heart">❤️</p>
+
+                    <p style="opacity: 1; color: white;">
+                        <b>Storce</b> is the only learning platform that connects you to <br>
+                        world-class mentors who help you implement your learning on <br>
+                        real-world projects
+                    </p>
+                    <p
+                        style="color: #fff; background-color: #3F94F8; display: inline-block; padding: 7px 10px; border-radius: 7px;">
+                        <b>Storce helps you learn through doing.</b>
+                    </p>
+                </div>
+                <!-- <div class="banner">
+
+            </div> -->
+            </div>
+
+            <div class="form-container" style="padding: 0 0 2rem 0;">
+                <form action="/trainee-waitlist" method="post">
+
+                    <div class="text-center">
+                        <input id="emailbar" type="email" class="shadow-lg" name="email" placeholder="Enter Your Email">
+                        <input id="earlyacc" type="button" class="input shadow" value="Get Early Access"
+                            onclick="window.location.href='#get-early-access'" />
+                        <!-- <a class="input" type="button" id="open-modal" href="#get-early-access">Get Early
+                        Access</button> -->
+                    </div>
+
+                    <%- include('./includes/early-modal.ejs') %>
+
+                </form>
+                <div style="margin-top: 15px;">
+                    <%- include('./includes/messages.ejs') %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- section 1 : how does it work -->
+    <section id="section-2" style="background-color: #F6F8F8; color: #555">
+        <div class="container text-center">
+            <div class="text-center" style="margin: 1rem 0 3rem 0">
+                <h1>Storce helps you 👇</h1>
+            </div>
+            <div class="steps-container">
+                <div class="card col-md-4 row" id="step-1">
+
+                    <div class="card-img shadow" style="font-size: 2.5rem;">
+                        <span>👨‍🏫</span>
+                    </div>
+
+                    <h3>Learn From Experts</h3>
+
+                    <div class="card-text">
+                        <h6>in Your Field Of interest</h6>
+                    </div>
+                    <br>
+
+                    <button class="expand" type="button" data-toggle="collapse" data-target="#collapse1"
+                        aria-expanded="false" aria-controls="collapse1" onclick=arrowShift(this)>Learn
+                        more!<br>˅</button>
+
+                    <div class="collapse" id="collapse1">
+                        <p style="text-align: left;">Join a Storce TrainingSpace: <br>
+                            ✅ Go through the video <span class="blue-text">course</span> <br>
+                            ✅ Practice on <span class="blue-text">Practical</span> case studies <br>
+                            ✅ Ask your <span class="blue-text">Mentor</span> anything!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card col-md-4 row" id="step-2">
+                    <div class="card-img shadow" style="font-size: 2.5rem;">
+                        <span>🛠️</span>
+                    </div>
+                    <h3>Level-Up</h3>
+                    <div class="card-text">
+                        <h6>and Work on Real World <br>
+                            Projects</h6>
+
+                    </div>
+                    <button class="expand" type="button" data-toggle="collapse" data-target="#collapse2"
+                        aria-expanded="false" aria-controls="collapse2" onclick=arrowShift(this)>Learn
+                        more!<br>˅<br></button>
+
+                    <div class="collapse" id="collapse2">
+                        <p>
+                            Work with a team of other engaged trainees on <span class="blue-text">Hands-on
+                                Projects</span>, all Online.
+                            Work with a team of other engaged trainees on <span class="blue-text"><b>Hands-on
+                                    Projects</b></span>, All Online.
+                            <br><br>
+                            Get feedback on your work from your mentor and Strengthen your Weaknesses!
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="card col-md-4 row" id="step-3">
+                    <div class="card-img shadow" style="font-size: 2.5rem;">
+                        <span>🌟</span>
+                    </div>
+                    <h3>Show</h3>
+                    <div class="card-text">
+                        <h6>Your Future Employers<br>
+                            What they want to See</h6>
+                    </div>
+
+                    <button class="expand" type="button" data-toggle="collapse" data-target="#collapse3"
+                        aria-expanded="false" aria-controls="collapse3" onclick=arrowShift(this)>Learn
+                        more!<br>˅</button>
+
+                    <div class="collapse" id="collapse3">
+                        <p>After Finishing Your Training Space Experience; You'll be Ready for the <span
+                                class="gold-text">Real-world</span> market.
+                            <br><br>
+                            Share your Storce <span class="gold-text">Work Profile</span>.
+                            Show employers your Skills in Action and Land that Job!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- section 2 : our field experts have worked with the best -->
+    <section id="brands-section" style="background-color: #3F94F8; color: white !important;">
+        <div class="container text-center">
+            <div class="text-center" style="margin: 2rem">
+                <h2><span>Storce</span> mentors have worked with the best</h2>
+            </div>
+
+            <div class="brands-container shadow-lg" style="border-radius: 25px; background-color: #a4c9f4;">
+
+                <img src="https://www.unionaire.com/themes/unionaire/images/logoNEW.png" alt="unionaire">
+                <img src="https://dneegypt.nyc3.digitaloceanspaces.com/2018/09/4-2-Fawry.png" alt="fawry">
+                <img src="https://pluspng.com/img-png/logo-ibm-png-ibm-logo-png-4464.png" alt="ibm">
+                <img src="https://www.eichholtz.com/pub/static/version1571053457/frontend/Eichholtz/default/en_US/images/logo.svg"
+                    alt="eichholtz">
+                <img src="https://www.teqneia.com/sfiles/images/electrostar.png" alt="electrostar">
+
+            </div>
+
+            <div class="text-center" style="margin: 2rem">
+                <h3>Now, they will pass their knowledge and expertise on to you</h3>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary text-center" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 0.25rem 1.5rem">
+                    Share with a Friend <br>
+                </button>
+                <span style="font-size: 12px; align-content:left;">in 2 clicks</span>
+                <!-- AddToAny BEGIN -->
+                <div class="dropdown-menu a2a_kit a2a_kit_size_32 a2a_default_style"
+                    data-a2a-url="https://www.thestorce.com" data-a2a-title="The Storce"
+                    aria-labelledby="dropdownMenuButton">
+                    <!-- <a class="a2a_dd dropdown-item" href="https://www.addtoany.com/share"></a> -->
+                    <a class="a2a_button_facebook dropdown-item ">One click left!</a>
+                    <a class="a2a_button_twitter dropdown-item ">One click left!</a>
+                    <a class="a2a_button_whatsapp dropdown-item ">One click left!</a>
+                    <a class="a2a_button_telegram dropdown-item">One click left!</a>
+                    <a class="a2a_button_email dropdown-item ">One click left!</a>
+                    <!-- <a class="a2a_button_google_gmail dropdown-item ">One click left!</a>
+                        <a class="a2a_button_outlook_com dropdown-items">One click left!</a> -->
+                </div>
+                <!-- AddToAny END -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="footer-logo">
+                <img src="/trainee/imgs/Footer/Facebook logo.svg" alt="">
+                <img src="/trainee/imgs/Footer/Twitter.svg" alt="">
+                <img src="/trainee/imgs/Footer/Linkdin.svg" alt="">
+                <img src="/trainee/imgs/Footer/Youtube.svg" alt="">
+            </div>
+            <div class="footer-link">
+                <a href="#">About</a>
+                <a href="#">Contact us</a>
+                <a href="#">Cookie</a>
+                <a href="#">Notification</a>
+            </div>
+
+            <hr>
+            <span>2019 &copy; Storce All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <%- include('./includes/scripts.ejs') %>
+
+</body>
+
+</html>

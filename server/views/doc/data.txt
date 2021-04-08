@@ -1,0 +1,31 @@
+- section-1:
+header-title (string)
+info (string)
+
+-section-2:
+add news post:
+    date (date)
+    title (txt)
+    info (txt)
+    bg (img)
+
+- products list:
+
+- product details:
+
+- about us:
+
+- watch video
+
+- design screenshots
+
+- client feedbacks
+
+- production info
+
+- contact us list
+
+- map
+
+- footer
+
