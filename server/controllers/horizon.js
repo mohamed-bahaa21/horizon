@@ -20,16 +20,30 @@ exports.getLandingData = (req, res, next) => {
     })
 }
 exports.postHeroData = (req, res, next) => {
-    Horizon.findById("606e885364bde142a8203505")
-    .then(horizon => {
-        console.log(req.body);
-      horizon.name = req.body.name;
+    const {
+        name,
+        hero_parag_1,
+        hero_header_1,
+        hero_parag_2,
+        hero_link_1_name,
+        hero_link_1_href
+    } = req.body
 
-      horizon.save()
-        .then(() => res.json('horizon updated!'))
+    Horizon.findById("606f5689ff5464449437a646")
+        .then(horizon => {
+            console.log(req.body);
+            horizon.name = name;
+            horizon.hero_parag_1 = hero_parag_1;
+            horizon.hero_header_1 = hero_header_1;
+            horizon.hero_parag_2 = hero_parag_2;
+            horizon.hero_link_1_name = hero_link_1_name;
+            horizon.hero_link_1_href = hero_link_1_href;
+
+            horizon.save()
+                .then(() => res.json('horizon updated!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
         .catch(err => res.status(400).json('Error: ' + err));
-    })
-    .catch(err => res.status(400).json('Error: ' + err));
 }
 
 // const nodemailer = require('nodemailer')

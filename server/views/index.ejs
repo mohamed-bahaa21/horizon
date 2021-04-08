@@ -154,14 +154,14 @@
               <h1>
                 <%= horizon.name %>
               </h1>
-              <p id="hero-parag-1" class="mb-0">With us you will</p>
-              <h2 id="hero-header-1">SEE</h2>
+              <p id="hero-parag-1" class="mb-0"><%= horizon.hero_parag_1 %></p>
+              <h2 id="hero-header-1"><%= horizon.hero_header_1 %></h2>
               <p id="hero-parag-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officia mollitia exercitationem ad soluta minima sit asperiores dolorem? Atque voluptas saepe magni odit sit ipsum!
+                <%= horizon.hero_parag_2 %>
               </p>
               <!-- call to action btn -->
-              <a id="hero-link-1" href="#" class="btn btn-primary btn-white shadow btn-theme"
-                ><span><b>Read More</b></span></a
+              <a id="hero-link-1" href="<%= horizon.hero_link_1_href %>" class="btn btn-primary btn-white shadow btn-theme"
+                ><span><b><%= horizon.hero_link_1_name %></b></span></a
               >
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
