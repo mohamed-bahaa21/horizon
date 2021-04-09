@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { Component, useEffect, useState } from "react";
 import {
   CLabel,
   CForm,
@@ -8,22 +8,21 @@ import {
   CFormGroup,
   CButton,
   CCol,
-  CRow
-} from '@coreui/react'
-import axios from 'axios';
+  CRow,
+} from "@coreui/react";
+import axios from "axios";
 
-// import { graphql } from "react-apollo";
-
-// import { useQuery, gql } from "@apollo/client";
-// import { LOAD_HORIZON } from "../../../queries/queries";
 var SERVER_URI = "http://localhost:5000"
+var ADMIN_URI = "http://localhost:3000"
 
 if (process.env.NODE_ENV === 'development') {
   SERVER_URI = "http://localhost:5000"
+  ADMIN_URI = "http://localhost:3000"
 }
 
 if (process.env.NODE_ENV === 'production') {
   SERVER_URI = "https://horizon-server.herokuapp.com"
+  ADMIN_URI = "https://horizon-admin.herokuapp.com"
 }
 
 class Hero extends Component {
@@ -31,111 +30,133 @@ class Hero extends Component {
     super(props);
 
     this.state = {
-      name: '...',
-      hero_parag_1: '...',
-      hero_header_1: '...',
-      hero_parag_2: '...',
-      hero_link_1_name: '...',
-      hero_link_1_href: '...',
-    }
+      name: "...",
+      prog_card_1_img: "...",
+      prog_card_1_link: "...",
+      prog_card_1_type: "...",
+      prog_card_1_header: "...",
+      prog_card_2_img: "...",
+      prog_card_2_link: "...",
+      prog_card_2_type: "...",
+      prog_card_2_header: "...",
+      prog_card_3_img: "...",
+      prog_card_3_link: "...",
+      prog_card_3_type: "...",
+      prog_card_3_header: "...",
+      prog_card_4_img: "...",
+      prog_card_4_link: "...",
+      prog_card_4_type: "...",
+      prog_card_4_header: "..."
+    };
 
-    this.onChangeName = this.onChangeName.bind(this);
-    this.onChange_hero_parag_1 = this.onChange_hero_parag_1.bind(this);
-    this.onChange_hero_header_1 = this.onChange_hero_header_1.bind(this);
-    this.onChange_hero_parag_2 = this.onChange_hero_parag_2.bind(this);
-    this.onChange_hero_link_1_name = this.onChange_hero_link_1_name.bind(this);
-    this.onChange_hero_link_1_href = this.onChange_hero_link_1_href.bind(this);
+    this.onChange_prog_card_1_img = this.onChange_prog_card_1_img.bind(this);
+    this.onChange_prog_card_1_link = this.onChange_prog_card_1_link.bind(this);
+    this.onChange_prog_card_1_type = this.onChange_prog_card_1_type.bind(this);
+    this.onChange_prog_card_1_header = this.onChange_prog_card_1_header.bind(
+      this
+    );
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   componentDidMount() {
-    axios.get(`${SERVER_URI}/api/getLandingData`)
-      .then(response => {
+    axios
+      .get(`${SERVER_URI}/api/getProgData`)
+      .then((response) => {
         console.log(response.data);
         const {
           name,
-          hero_parag_1,
-          hero_header_1,
-          hero_parag_2,
-          hero_link_1_name,
-          hero_link_1_href
-        } = response.data
+          prog_card_1_img,
+          prog_card_1_link,
+          prog_card_1_type,
+          prog_card_1_header,
+          prog_card_2_img,
+          prog_card_2_link,
+          prog_card_2_type,
+          prog_card_2_header,
+          prog_card_3_img,
+          prog_card_3_link,
+          prog_card_3_type,
+          prog_card_3_header,
+          prog_card_4_img,
+          prog_card_4_link,
+          prog_card_4_type,
+          prog_card_4_header
+        } = response.data;
         this.setState({
           name: name,
-          hero_parag_1: hero_parag_1,
-          hero_header_1: hero_header_1,
-          hero_parag_2: hero_parag_2,
-          hero_link_1_name: hero_link_1_name,
-          hero_link_1_href: hero_link_1_href
-        })
+          prog_card_1_img: prog_card_1_img,
+          prog_card_1_link: prog_card_1_link,
+          prog_card_1_type: prog_card_1_type,
+          prog_card_1_header: prog_card_1_header,
+          prog_card_2_img: prog_card_2_img,
+          prog_card_2_link: prog_card_2_link,
+          prog_card_2_type: prog_card_2_type,
+          prog_card_2_header: prog_card_2_header,
+          prog_card_3_img: prog_card_3_img,
+          prog_card_3_link: prog_card_3_link,
+          prog_card_3_type: prog_card_3_type,
+          prog_card_3_header: prog_card_3_header,
+          prog_card_4_img: prog_card_4_img,
+          prog_card_4_link: prog_card_4_link,
+          prog_card_4_type: prog_card_4_type,
+          prog_card_4_header: prog_card_4_header
+        });
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
-  onChangeName(e) {
+  onChange_prog_card_1_img(e) {
     this.setState({
-      name: e.target.value
-    })
+      prog_card_1_img: e.target.value,
+    });
   }
-
-  onChange_hero_parag_1(e) {
+  onChange_prog_card_1_link(e) {
     this.setState({
-      hero_parag_1: e.target.value
-    })
+      prog_card_1_link: e.target.value,
+    });
   }
-  onChange_hero_header_1(e) {
+  onChange_prog_card_1_type(e) {
     this.setState({
-      hero_header_1: e.target.value
-    })
+      prog_card_1_type: e.target.value,
+    });
   }
-  onChange_hero_parag_2(e) {
+  onChange_prog_card_1_header(e) {
     this.setState({
-      hero_parag_2: e.target.value
-    })
-  }
-  onChange_hero_link_1_name(e) {
-    this.setState({
-      hero_link_1_name: e.target.value
-    })
-  }
-  onChange_hero_link_1_href(e) {
-    this.setState({
-      hero_link_1_href: e.target.value
-    })
+      prog_card_1_header: e.target.value,
+    });
   }
 
   onSubmit(e) {
     e.preventDefault();
-    const hero_section = {
+    const prog_section = {
       name: this.state.name,
-      hero_parag_1: this.state.hero_parag_1,
-      hero_header_1: this.state.hero_header_1,
-      hero_parag_2: this.state.hero_parag_2,
-      hero_link_1_name: this.state.hero_link_1_name,
-      hero_link_1_href: this.state.hero_link_1_href
-    }
-    console.log(hero_section);
+      prog_card_1_img: this.state.prog_card_1_img,
+      prog_card_1_link: this.state.prog_card_1_link,
+      prog_card_1_type: this.state.prog_card_1_type,
+      prog_card_1_header: this.state.prog_card_1_header,
+      prog_card_2_img: this.state.prog_card_2_img,
+      prog_card_2_link: this.state.prog_card_2_link,
+      prog_card_2_type: this.state.prog_card_2_type,
+      prog_card_2_header: this.state.prog_card_2_header,
+      prog_card_3_img: this.state.prog_card_3_img,
+      prog_card_3_link: this.state.prog_card_3_link,
+      prog_card_3_type: this.state.prog_card_3_type,
+      prog_card_3_header: this.state.prog_card_3_header,
+      prog_card_4_img: this.state.prog_card_4_img,
+      prog_card_4_link: this.state.prog_card_4_link,
+      prog_card_4_type: this.state.prog_card_4_type,
+      prog_card_4_header: this.state.prog_card_4_header
+    };
+    console.log(prog_section);
 
-    axios.post(`${SERVER_URI}/api/postHeroData`, hero_section)
-      .then(res => console.log(res));
+    axios
+      .post(`${SERVER_URI}/api/postProgData`, prog_section)
+      .then((res) => console.log(res));
 
-    window.location = `${SERVER_URI}/#/landing/hero/`;
+    window.location = `${ADMIN_URI}/#/landing/hero/`;
   }
-
-
-  // displayparag = () => {
-  //   var { hero } = this.props.data
-  //   if (data.loading) {
-  //     return (<div>Loading parag...</div>)
-  //   } else {
-  //     return (
-  //       console.log(hero.parag)
-  //     )
-  //   }
-  // }
 
   render() {
     return (
@@ -145,85 +166,47 @@ class Hero extends Component {
             <CFormGroup>
               {/* #1 name */}
               <h6>{this.state.name}</h6>
-              <CLabel htmlFor="name">name</CLabel>
               <CInput
                 type="text"
-                id="name"
-                name="name"
-                placeholder="name"
-                value={this.state.name}
-                onChange={this.onChangeName}
+                id="prog_card_1_img"
+                name="prog_card_1_img"
+                placeholder="prog_card_1_img"
+                value={this.state.prog_card_1_img}
+                onChange={this.onChange_prog_card_1_img}
               />
-              <CFormText className="help-block">Please enter name</CFormText>
-            </CFormGroup>
-
-            <CFormGroup>
-              {/* #2 */}
-              <CLabel htmlFor="hero_parag_1">hero_parag_1</CLabel>
+              <br />
               <CInput
                 type="text"
-                id="hero_parag_1"
-                name="hero_parag_1"
-                placeholder="hero_parag_1"
-                value={this.state.hero_parag_1}
-                onChange={this.onChange_hero_parag_1}
+                id="prog_card_1_link"
+                name="prog_card_1_link"
+                placeholder="prog_card_1_link"
+                value={this.state.prog_card_1_link}
+                onChange={this.onChange_prog_card_1_link}
               />
-            </CFormGroup>
-
-            <CFormGroup>
-              {/* #3 */}
-              <CLabel htmlFor="hero_header_1">hero_header_1</CLabel>
+              <br />
               <CInput
                 type="text"
-                id="hero_header_1"
-                name="hero_header_1"
-                placeholder="hero_header_1"
-                value={this.state.hero_header_1}
-                onChange={this.onChange_hero_header_1}
+                id="prog_card_1_type"
+                name="prog_card_1_type"
+                placeholder="prog_card_1_type"
+                value={this.state.prog_card_1_type}
+                onChange={this.onChange_prog_card_1_type}
               />
-            </CFormGroup>
-
-            <CFormGroup>
-              {/* #4 */}
-              <CLabel htmlFor="hero_parag_2">hero_parag_2</CLabel>
-              <CTextarea
+              <br />
+              <CInput
                 type="text"
-                id="hero_parag_2"
-                name="hero_parag_2"
-                placeholder="hero_parag_2"
-                value={this.state.hero_parag_2}
-                onChange={this.onChange_hero_parag_2}
+                id="prog_card_1_header"
+                name="prog_card_1_header"
+                placeholder="prog_card_1_header"
+                value={this.state.prog_card_1_header}
+                onChange={this.onChange_prog_card_1_header}
               />
             </CFormGroup>
 
-            <CFormGroup>
-              {/* #5 */}
-              <CLabel htmlFor="hero_link_1_name">hero_link_1_name</CLabel>
-              <CInput
-                type="text"
-                id="hero_link_1_name"
-                name="hero_link_1_name"
-                placeholder="hero_link_1_name"
-                value={this.state.hero_link_1_name}
-                onChange={this.onChange_hero_link_1_name}
-              />
-            </CFormGroup>
+            <hr />
+            <br />
 
             <CFormGroup>
-              {/* #6 */}
-              <CLabel htmlFor="hero_link_1_href">hero_link_1_href</CLabel>
-              <CInput
-                type="text"
-                id="hero_link_1_href"
-                name="hero_link_1_href"
-                placeholder="hero_link_1_href"
-                value={this.state.hero_link_1_href}
-                onChange={this.onChange_hero_link_1_href}
-              />
-            </CFormGroup>
-            
-            <CFormGroup>
-              {/* #6 */}
               <CInput
                 type="submit"
                 id="submit"
@@ -234,11 +217,10 @@ class Hero extends Component {
               />
             </CFormGroup>
           </CForm>
-          {/* {this.displayarag()} */}
         </CCol>
       </CRow>
-    )
+    );
   }
 }
 
-export default Hero
+export default Hero;

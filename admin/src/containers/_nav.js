@@ -20,7 +20,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-0'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -30,7 +30,17 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-3'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Progressive Designs',
+    to: '/landing/progDesigns',
+    icon: 'cil-pencil',
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -40,7 +50,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -50,7 +60,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -60,7 +70,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -70,7 +80,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-3'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -80,7 +90,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -90,7 +100,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -100,7 +110,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -110,7 +120,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -120,7 +130,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -130,7 +140,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -140,7 +150,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -150,7 +160,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -160,7 +170,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -170,7 +180,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavTitle',
@@ -178,7 +188,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -188,7 +198,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
@@ -213,7 +223,7 @@ const _nav =  [
   
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-2'
+    className: 'm-1'
   }
 ]
 

@@ -1,4 +1,4 @@
-const Horizon = require('../models/horizon')
+const Horizon = require("../models/horizon");
 
 // const SENDGRID_API = process.env.SENDGRID_API
 // const sgMail = require('@sendgrid/mail')
@@ -8,43 +8,79 @@ const Horizon = require('../models/horizon')
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 exports.getLanding = (req, res, next) => {
-    Horizon.find().then(result => {
-        res.render('index', {
-            horizon: result[0]
-        })
-    })
-}
+  Horizon.find().then((result) => {
+    // console.log(result);
+    res.render("index", {
+      horizon: result[0],
+      prog: result[1],
+    });
+  });
+};
 exports.getLandingData = (req, res, next) => {
-    Horizon.find().then(result => {
-        res.json(result[0])
-    })
-}
+  var origin = req.originalUrl;
+
+  Horizon.find().then((result) => {
+    res.json(result);
+  });
+};
 exports.postHeroData = (req, res, next) => {
-    const {
-        name,
-        hero_parag_1,
-        hero_header_1,
-        hero_parag_2,
-        hero_link_1_name,
-        hero_link_1_href
-    } = req.body
+  const {
+    name,
+    hero_parag_1,
+    hero_header_1,
+    hero_parag_2,
+    hero_link_1_name,
+    hero_link_1_href,
+  } = req.body;
 
-    Horizon.findById("606f5689ff5464449437a646")
-        .then(horizon => {
-            console.log(req.body);
-            horizon.name = name;
-            horizon.hero_parag_1 = hero_parag_1;
-            horizon.hero_header_1 = hero_header_1;
-            horizon.hero_parag_2 = hero_parag_2;
-            horizon.hero_link_1_name = hero_link_1_name;
-            horizon.hero_link_1_href = hero_link_1_href;
+  Horizon.findById("606f5689ff5464449437a646")
+    .then((horizon) => {
+      console.log(req.body);
+      horizon.name = name;
+      horizon.hero_parag_1 = hero_parag_1;
+      horizon.hero_header_1 = hero_header_1;
+      horizon.hero_parag_2 = hero_parag_2;
+      horizon.hero_link_1_name = hero_link_1_name;
+      horizon.hero_link_1_href = hero_link_1_href;
 
-            horizon.save()
-                .then(() => res.json('horizon updated!'))
-                .catch(err => res.status(400).json('Error: ' + err));
-        })
-        .catch(err => res.status(400).json('Error: ' + err));
-}
+      horizon
+        .save()
+        .then(() => res.json("horizon updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+exports.getProgData = (req, res, next) => {
+  Horizon.findById("606ff91fef83672e10f01feb").then((result) => {
+    res.json(result);
+  });
+};
+exports.postProgData = (req, res, next) => {
+  const {
+    name,
+    prog_card_1_img,
+    prog_card_1_link,
+    prog_card_1_type,
+    prog_card_1_header,
+  } = req.body;
+
+  Horizon.findById("606f5689ff5464449437a646")
+    .then((horizon) => {
+      console.log(req.body);
+      horizon.name = name;
+      horizon.prog_card_1_img = prog_card_1_img;
+      horizon.prog_card_1_link = prog_card_1_link;
+      horizon.prog_card_1_type = prog_card_1_type;
+      horizon.prog_card_1_header = prog_card_1_header;
+
+      horizon
+        .save()
+        .then(() => res.json("horizon updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
 
 // const nodemailer = require('nodemailer')
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -71,7 +107,6 @@ exports.postHeroData = (req, res, next) => {
 
 // Create the transporter with the required configuration for Outlook
 // change the user and pass !
-
 
 // setup e-mail data, even with unicode symbols
 // function setupMail(mail){

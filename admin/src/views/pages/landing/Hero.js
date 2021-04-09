@@ -13,9 +13,9 @@ import {
 import axios from 'axios';
 
 // import { graphql } from "react-apollo";
-
 // import { useQuery, gql } from "@apollo/client";
 // import { LOAD_HORIZON } from "../../../queries/queries";
+
 var SERVER_URI = "http://localhost:5000"
 var ADMIN_URI = "http://localhost:3000"
 
@@ -148,7 +148,7 @@ class Hero extends Component {
             <CFormGroup>
               {/* #1 name */}
               <h6>{this.state.name}</h6>
-              <CLabel htmlFor="name">name</CLabel>
+              {/* <CLabel htmlFor="name">name</CLabel> */}
               <CInput
                 type="text"
                 id="name"
@@ -162,7 +162,7 @@ class Hero extends Component {
 
             <CFormGroup>
               {/* #2 */}
-              <CLabel htmlFor="hero_parag_1">hero_parag_1</CLabel>
+              {/* <CLabel htmlFor="hero_parag_1">hero_parag_1</CLabel> */}
               <CInput
                 type="text"
                 id="hero_parag_1"
@@ -175,7 +175,7 @@ class Hero extends Component {
 
             <CFormGroup>
               {/* #3 */}
-              <CLabel htmlFor="hero_header_1">hero_header_1</CLabel>
+              {/* <CLabel htmlFor="hero_header_1">hero_header_1</CLabel> */}
               <CInput
                 type="text"
                 id="hero_header_1"
@@ -188,7 +188,7 @@ class Hero extends Component {
 
             <CFormGroup>
               {/* #4 */}
-              <CLabel htmlFor="hero_parag_2">hero_parag_2</CLabel>
+              {/* <CLabel htmlFor="hero_parag_2">hero_parag_2</CLabel> */}
               <CTextarea
                 type="text"
                 id="hero_parag_2"
@@ -201,7 +201,7 @@ class Hero extends Component {
 
             <CFormGroup>
               {/* #5 */}
-              <CLabel htmlFor="hero_link_1_name">hero_link_1_name</CLabel>
+              {/* <CLabel htmlFor="hero_link_1_name">hero_link_1_name</CLabel> */}
               <CInput
                 type="text"
                 id="hero_link_1_name"
@@ -214,7 +214,7 @@ class Hero extends Component {
 
             <CFormGroup>
               {/* #6 */}
-              <CLabel htmlFor="hero_link_1_href">hero_link_1_href</CLabel>
+              {/* <CLabel htmlFor="hero_link_1_href">hero_link_1_href</CLabel> */}
               <CInput
                 type="text"
                 id="hero_link_1_href"
@@ -224,7 +224,10 @@ class Hero extends Component {
                 onChange={this.onChange_hero_link_1_href}
               />
             </CFormGroup>
-            
+
+            <hr/>
+            <br/>
+
             <CFormGroup>
               {/* #6 */}
               <CInput
