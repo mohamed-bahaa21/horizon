@@ -3,6 +3,7 @@ import {
   CLabel,
   CForm,
   CInput,
+  CInputFile,
   CTextarea,
   CFormText,
   CFormGroup,
@@ -12,17 +13,17 @@ import {
 } from "@coreui/react";
 import axios from "axios";
 
-var SERVER_URI = "http://localhost:5000"
-var ADMIN_URI = "http://localhost:3000"
+var SERVER_URI = "http://localhost:5000";
+var ADMIN_URI = "http://localhost:3000";
 
-if (process.env.NODE_ENV === 'development') {
-  SERVER_URI = "http://localhost:5000"
-  ADMIN_URI = "http://localhost:3000"
+if (process.env.NODE_ENV === "development") {
+  SERVER_URI = "http://localhost:5000";
+  ADMIN_URI = "http://localhost:3000";
 }
 
-if (process.env.NODE_ENV === 'production') {
-  SERVER_URI = "https://horizon-server.herokuapp.com"
-  ADMIN_URI = "https://horizon-admin.herokuapp.com"
+if (process.env.NODE_ENV === "production") {
+  SERVER_URI = "https://horizon-server.herokuapp.com";
+  ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
 class Hero extends Component {
@@ -46,7 +47,7 @@ class Hero extends Component {
       prog_card_4_img: "...",
       prog_card_4_link: "...",
       prog_card_4_type: "...",
-      prog_card_4_header: "..."
+      prog_card_4_header: "...",
     };
 
     this.onChange_prog_card_1_img = this.onChange_prog_card_1_img.bind(this);
@@ -80,7 +81,7 @@ class Hero extends Component {
           prog_card_4_img,
           prog_card_4_link,
           prog_card_4_type,
-          prog_card_4_header
+          prog_card_4_header,
         } = response.data;
         this.setState({
           name: name,
@@ -99,7 +100,7 @@ class Hero extends Component {
           prog_card_4_img: prog_card_4_img,
           prog_card_4_link: prog_card_4_link,
           prog_card_4_type: prog_card_4_type,
-          prog_card_4_header: prog_card_4_header
+          prog_card_4_header: prog_card_4_header,
         });
       })
       .catch((error) => {
@@ -147,7 +148,7 @@ class Hero extends Component {
       prog_card_4_img: this.state.prog_card_4_img,
       prog_card_4_link: this.state.prog_card_4_link,
       prog_card_4_type: this.state.prog_card_4_type,
-      prog_card_4_header: this.state.prog_card_4_header
+      prog_card_4_header: this.state.prog_card_4_header,
     };
     console.log(prog_section);
 
@@ -155,7 +156,17 @@ class Hero extends Component {
       .post(`${SERVER_URI}/api/postProgData`, prog_section)
       .then((res) => console.log(res));
 
-    window.location = `${ADMIN_URI}/#/landing/hero/`;
+    window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
+  }
+
+  onSubmitImgFile(e) {
+    e.preventDefault();
+
+    axios
+      .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
+      .then((res) => console.log(res));
+
+    window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
   }
 
   render() {
@@ -216,6 +227,20 @@ class Hero extends Component {
                 value="SUBMIT"
               />
             </CFormGroup>
+          </CForm>
+        </CCol>
+
+        <CCol>
+          <CForm onSubmit={this.onSubmitImgFile}>
+            <CInputFile name="prog_card_1_imgfile" />
+            <CInput
+                type="submit"
+                id="submit"
+                name="submit"
+                placeholder="submit"
+                className="bg-primary text-white bold"
+                value="SUBMIT"
+              />
           </CForm>
         </CCol>
       </CRow>
