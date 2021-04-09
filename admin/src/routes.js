@@ -8,6 +8,7 @@ const User = React.lazy(() => import('./views/users/User'));
 
 const Hero = React.lazy(() => import('./views/pages/landing/Hero'));
 // const News = React.lazy(() => import('./views/landing/news'));
+const ProgDesigns = React.lazy(() => import('./views/pages/landing/ProgDesigns'));
 // const About = React.lazy(() => import('./views/landing/about'));
 // const SingleLens = React.lazy(() => import('./views/landing/single_vision_lenses'));
 // const LensInfo = React.lazy(() => import('./views/landing/lens_info'));
@@ -25,6 +26,7 @@ const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/landing/hero', name: 'Hero', component: Hero },
+  { path: '/landing/progDesigns', name: 'Progressive Designs', component: ProgDesigns },
   
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
