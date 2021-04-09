@@ -17,13 +17,16 @@ import axios from 'axios';
 // import { useQuery, gql } from "@apollo/client";
 // import { LOAD_HORIZON } from "../../../queries/queries";
 var SERVER_URI = "http://localhost:5000"
+var ADMIN_URI = "http://localhost:3000"
 
 if (process.env.NODE_ENV === 'development') {
   SERVER_URI = "http://localhost:5000"
+  ADMIN_URI = "http://localhost:3000"
 }
 
 if (process.env.NODE_ENV === 'production') {
   SERVER_URI = "https://horizon-server.herokuapp.com"
+  ADMIN_URI = "https://horizon-admin.herokuapp.com"
 }
 
 class Hero extends Component {
@@ -122,7 +125,7 @@ class Hero extends Component {
     axios.post(`${SERVER_URI}/api/postHeroData`, hero_section)
       .then(res => console.log(res));
 
-    window.location = `${SERVER_URI}/#/landing/hero/`;
+    window.location = `${ADMIN_URI}/#/landing/hero/`;
   }
 
 
