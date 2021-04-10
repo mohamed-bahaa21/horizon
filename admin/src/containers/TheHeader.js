@@ -18,7 +18,7 @@ import {
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 
-import Preview from "../preview/Preview";
+import Preview from "../views/Preview/Preview";
 import './preview-modal.css'
 
 // routes config

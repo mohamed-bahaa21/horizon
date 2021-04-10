@@ -55,7 +55,7 @@ class Hero extends Component {
   componentDidMount() {
     axios.get(`${SERVER_URI}/api/getLandingData`)
       .then(response => {
-        console.log(response.data);
+        console.log(response.data[0]);
         const {
           name,
           hero_parag_1,
@@ -63,7 +63,7 @@ class Hero extends Component {
           hero_parag_2,
           hero_link_1_name,
           hero_link_1_href
-        } = response.data
+        } = response.data[0]
         this.setState({
           name: name,
           hero_parag_1: hero_parag_1,

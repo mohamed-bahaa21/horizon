@@ -1,4 +1,5 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
+
 import {
   CLabel,
   CForm,
@@ -11,6 +12,8 @@ import {
   CCol,
   CRow,
 } from "@coreui/react";
+import UploadImg from "../../UploadImg/UploadImg";
+
 import axios from "axios";
 
 var SERVER_URI = "http://localhost:5000";
@@ -26,11 +29,20 @@ if (process.env.NODE_ENV === "production") {
   ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
-class Hero extends Component {
+// for functional component
+
+// const [image, setImage] = useState(null);
+// const [url, setUrl] = useState("");
+// const [progress, setProgress] = useState(0);
+
+class ProgDesigns extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      image: "...",
+      url: "...",
+      progress: "...",
       name: "...",
       prog_card_1_img: "...",
       prog_card_1_link: "...",
@@ -56,8 +68,10 @@ class Hero extends Component {
     this.onChange_prog_card_1_header = this.onChange_prog_card_1_header.bind(
       this
     );
+
     this.onSubmit = this.onSubmit.bind(this);
   }
+
 
   componentDidMount() {
     axios
@@ -159,15 +173,16 @@ class Hero extends Component {
     window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
   }
 
-  onSubmitImgFile(e) {
-    e.preventDefault();
+  // Using imgbb for image hosting 
+  // onSubmitImgFile(e) {
+  //   e.preventDefault();
 
-    axios
-      .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
-      .then((res) => console.log(res));
+  //   axios
+  //     .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
+  //     .then((res) => console.log(res));
 
-    window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
-  }
+  //   window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
+  // }
 
   render() {
     return (
@@ -230,22 +245,24 @@ class Hero extends Component {
           </CForm>
         </CCol>
 
-        <CCol>
+        <UploadImg />
+
+        {/* <CCol>
           <CForm onSubmit={this.onSubmitImgFile}>
             <CInputFile name="prog_card_1_imgfile" />
             <CInput
-                type="submit"
-                id="submit"
-                name="submit"
-                placeholder="submit"
-                className="bg-primary text-white bold"
-                value="SUBMIT"
-              />
+              type="submit"
+              id="submit"
+              name="submit"
+              placeholder="submit"
+              className="bg-primary text-white bold"
+              value="SUBMIT"
+            />
           </CForm>
-        </CCol>
+        </CCol> */}
       </CRow>
     );
   }
 }
 
-export default Hero;
+export default ProgDesigns;
