@@ -77,7 +77,7 @@ class ProgDesigns extends Component {
     axios
       .get(`${SERVER_URI}/api/getProgData`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         const {
           name,
           prog_card_1_img,
