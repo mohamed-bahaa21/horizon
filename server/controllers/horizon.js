@@ -13,9 +13,11 @@ exports.getLanding = (req, res, next) => {
     res.render("index", {
       horizon: result[0],
       prog: result[1],
+      blog1: result[2]
     });
   });
 };
+
 exports.getLandingData = (req, res, next) => {
   var origin = req.originalUrl;
 
@@ -23,6 +25,7 @@ exports.getLandingData = (req, res, next) => {
     res.json(result);
   });
 };
+
 exports.postHeroData = (req, res, next) => {
   const {
     name,
@@ -56,6 +59,7 @@ exports.getProgData = (req, res, next) => {
     res.json(result);
   });
 };
+
 exports.postProgData = (req, res, next) => {
   const {
     name,

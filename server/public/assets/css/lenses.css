@@ -319,3 +319,9 @@ p:first-of-type {
     display: none;
   }
 }
+
+@media (max-width: 750px) {
+  .stack {
+    display: none;
+  }
+}

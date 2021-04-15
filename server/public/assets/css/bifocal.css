@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif !important;
 }
 #bifocal .credit {
   position: absolute;

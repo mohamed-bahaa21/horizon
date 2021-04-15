@@ -131,6 +131,13 @@
   font-weight: 500;
   flex-shrink: 0;
 }
+.cover h2 {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  line-height: 3rem;
+  border-radius: 25px;
+}
 @media (max-width: 768px) {
   .cover {
     width: 300px;

@@ -1,3 +1,6 @@
+Blog Data:
+    - date, title, summary
+
 3rd Party Features:
     SEO: prerender, ogp
     MailChimp: API
@@ -24,8 +27,8 @@ footer:
 header:
     font-weight: lighter than 400
     animation in safari
-    remove latest news
-    Prgressive instead (our progressive designs)
+    - remove latest news
+    - Prgressive instead (our progressive designs)
     header items opens to inside pages
     nav header will not redirect to page sections
     header dropdown rounded border (low)
@@ -42,3 +45,30 @@ progressive designs:
 
 technical info:
     control display image
+
+-----------------------------------------------------------------------------------
+V1.0 Requirements:
+    - Update User UI
+        - NAV (Products, Free Form, Technical info, About, Contact)
+        - sections
+            - Hero
+            - latest news
+                - inside page
+            - Products
+                - inside page
+            - Free Form technology
+                - inside page
+            - Watch Video
+            - Logos
+            - Design Samples
+            - Lens info -> Design Specs 
+            - Clients FeedBack
+            - Production info
+            - Technical info
+                - inside page
+            - Contact us
+            - Map
+        - Footer
+    - Connect User w/ DB
+    - Update Admin UI
+    - Connect Admin w/ DB
