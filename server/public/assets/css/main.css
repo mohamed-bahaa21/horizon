@@ -1529,7 +1529,7 @@ footer .subscribe .subscribe-form .form-group .form-control:focus {
 
 footer .footer-widgets .widget {
   color: #fff;
-  margin-bottom: 1em;
+  margin: 4rem 0 0 0;
 }
 
 footer .footer-widgets .widget img {
