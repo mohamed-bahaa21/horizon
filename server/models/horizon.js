@@ -5,7 +5,7 @@ const horizonSchema = new Schema({
     // Section 1/13
     "name": {
         type: String,
-        required: true
+        required: false
     },
     "hero_header_1": {
         type: String,

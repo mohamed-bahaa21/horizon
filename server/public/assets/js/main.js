@@ -70,7 +70,7 @@
             }
         });
         /*END MENU JS*/
-        
+
         /*START OTHER FEATURES SLIDER JS*/
         if ($otherFeaturesSlider.length > 0) {
             $otherFeaturesSlider.slick({
@@ -82,8 +82,7 @@
                 arrows: false,
                 responsive: [{
                         breakpoint: 1200,
-                        settings: {
-                        }
+                        settings: {}
                     },
                     {
                         breakpoint: 769,
@@ -108,8 +107,7 @@
                 arrows: false,
                 responsive: [{
                         breakpoint: 1200,
-                        settings: {
-                        }
+                        settings: {}
                     },
                     {
                         breakpoint: 769,
@@ -134,8 +132,7 @@
                 arrows: false,
                 responsive: [{
                         breakpoint: 1200,
-                        settings: {
-                        }
+                        settings: {}
                     },
                     {
                         breakpoint: 769,
@@ -166,8 +163,7 @@
                 arrows: false,
                 responsive: [{
                         breakpoint: 1200,
-                        settings: {
-                        }
+                        settings: {}
                     },
                     {
                         breakpoint: 769,
@@ -191,8 +187,7 @@
                 arrows: true,
                 responsive: [{
                         breakpoint: 1200,
-                        settings: {
-                        }
+                        settings: {}
                     },
                     {
                         breakpoint: 769,
@@ -216,8 +211,7 @@
                 arrows: false,
                 responsive: [{
                         breakpoint: 1200,
-                        settings: {
-                        }
+                        settings: {}
                     },
                     {
                         breakpoint: 769,
@@ -234,3 +228,12 @@
     });
 
 }(jQuery));
+
+// 
+
+$('li#contact-route').click(function () {
+    positionabout = $('#contact').offset().top - $('.horizon-header').height()*2;
+    $("html, body").animate({
+        scrollTop: positionabout
+    }, '500', 'swing');
+})

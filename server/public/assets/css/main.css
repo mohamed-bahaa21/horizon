@@ -46,20 +46,30 @@ body {
 }
 
 p {
-  font-weight: 400;
+  font-weight: 500 !important; 
+  color: #241F1F !important;
   line-height: 30px;
 }
 
 .section-header {
-  font-weight: 500;
-  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .dark {
-  color: #d39529;
+  color: #241F1F !important;
+}
+.med-dark {
+  color: #d39529 !important
 }
 .light {
-  color: #FFD952;  
+  color: #F7EBD0 !important;  
+}
+.med-light {
+  color: #FFD952 !important;
+}
+
+.white {
+  color: white !important;
 }
 
 .lnr {
@@ -1212,7 +1222,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   position: absolute;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
-  background: #ccc;
+  background: #241F1F;
 }
 
 .faq .accordion .faq-card .faq-card-header h5 .btn:before {
@@ -1229,12 +1239,13 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .faq .accordion .faq-card .faq-card-header h5 .btn.collapsed:before,
 .faq .accordion .faq-card .faq-card-header h5 .btn.collapsed:after {
-  background: #fff;
+  background: #241F1F;
   transform: translateY(-50%) rotate(0deg);
 }
 
 .faq .accordion .faq-card .faq-card-header h5 .btn.collapsed {
-  color: #fff;
+  color: #241F1F;
+  margin-bottom: 1rem;
 }
 
 .faq .accordion .faq-card .faq-card-body {
@@ -1443,7 +1454,6 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .git-in-touch .contact-info .info-box {
-  padding: 1em 2em;
 }
 
 .git-in-touch .contact-info .info-box span {

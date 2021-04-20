@@ -1,0 +1,82 @@
+Blog Data:
+    - date, title, summary
+
+3rd Party Features:
+    SEO: prerender, ogp
+    MailChimp: API
+
+Landing Sections:
+    1 nav
+    1 hero section
+    1 news section
+    2 lens info sections
+    2 designs sections
+    1 footer section
+
+all:
+    content font weight 300
+    subtitles 400
+    buttons animation (safari ios), (read-more, subscribe, contact)
+    section headers smaller text size
+    nav when scroll to footer
+    more radius to img containers border
+    to control sections seubheader display
+    two colors for sections header  (for white & dark BG)
+    newslater list & csv file
+    mailchimp API integration
+
+footer:
+    delete technical-info, news
+    delete technology from (free form)
+    remain contact, about
+    positions issue
+    powererd by ayk instead of (terms of use, policy)
+
+header:
+    font-weight: lighter than 400
+    animation in safari
+    - remove latest news
+    - Prgressive instead (our progressive designs)
+    header items opens to inside pages
+    nav header will not redirect to page sections
+    header dropdown rounded border (low)
+
+hero
+    option from admin: to change between (upload img OR design)
+    first text to control color
+
+latest news:
+    blog card img effect lower
+
+progressive designs:
+    subheder smaller 
+
+technical info:
+    control display image
+
+-----------------------------------------------------------------------------------
+V1.0 Requirements:
+    - Update User UI
+        - NAV (Products, Free Form, Technical info, About, Contact)
+        - sections
+            - Hero
+            - latest news
+                - inside page
+            - Products
+                - inside page
+            - Free Form technology
+                - inside page
+            - Watch Video
+            - Logos
+            - Design Samples
+            - Lens info -> Design Specs 
+            - Clients FeedBack
+            - Production info
+            - Technical info
+                - inside page
+            - Contact us
+            - Map
+        - Footer
+    - Connect User w/ DB
+    - Update Admin UI
+    - Connect Admin w/ DB

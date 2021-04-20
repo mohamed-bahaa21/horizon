@@ -1,4 +1,5 @@
 const Horizon = require("../models/horizon");
+const Blog = require("../models/Blog");
 
 // const SENDGRID_API = process.env.SENDGRID_API
 // const sgMail = require('@sendgrid/mail')
@@ -9,11 +10,16 @@ const Horizon = require("../models/horizon");
 
 exports.getLanding = (req, res, next) => {
   Horizon.find().then((result) => {
-    // console.log(result);
-    res.render("index", {
-      horizon: result[0],
-      prog: result[1],
-      blog1: result[2]
+    Blog.find().limit(3).then(blogs => {
+      // console.log(blogs;      
+      // console.log(result);
+      res.render("index", {
+        horizon: result[0],
+        prog: result[1],
+        blog1: blogs[0],
+        blog2: blogs[1],
+        blog3: blogs[2],
+      })
     });
   });
 };

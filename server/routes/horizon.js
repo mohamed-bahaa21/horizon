@@ -13,3 +13,13 @@ route.get('/api/getProgData', horizonController.getProgData)
 route.post('/api/postProgData', horizonController.postProgData)
 
 module.exports = route
+
+
+// /products/zeiss
+// /products/ltl
+// /products/divel
+// /products/roger-bacon
+
+// /free-form/progressive
+// /free-form/single-vision
+// /free-form/bifocal

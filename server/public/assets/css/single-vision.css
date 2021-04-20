@@ -198,6 +198,22 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.5rem;
+  box-shadow: 0 10px 25px -5px var(--main-color);
+  border-radius: 5px;
+  font-weight: 500;
+}
+.product__detail:hover {
+  margin-top: auto;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: white;
+  color: var(--main-color);
+  padding: 0.5rem;
+  box-shadow: 0 -5px 25px -5px var(--main-color);
 }
 .product__detail-img {
   display: none;

@@ -32,6 +32,12 @@
     <!-- linearicons CSS -->
     <link rel="stylesheet" href="assets/css/linearicons.css" />
 
+    <!-- OWL -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
     <!-- Our Min CSS -->
     <link href="assets/css/main.css" rel="stylesheet" />
     <link href="assets/css/lenses.css" rel="stylesheet" />
@@ -40,6 +46,9 @@
     <link href="assets/css/blur_cards.css" rel="stylesheet" />
     <link href="assets/css/single-vision.css" rel="stylesheet" />
     <link href="assets/css/bifocal.css" rel="stylesheet" />
+    <link href="assets/css/testimonials.css" rel="stylesheet" />
+    <link type="text/css" href="assets/css/contactUtil.css" rel="stylesheet">
+    <link type="text/css" href="assets/css/contact.css" rel="stylesheet">
 
     <!-- Horizon Themes * We can add another colors from color-1 to color-20 -->
     <link href="assets/css/color-1.css" rel="stylesheet" />
@@ -83,10 +92,10 @@
                                 Products
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item anchor" href="#">ZEISS</a>
-                                <a class="dropdown-item anchor" href="#">LTL</a>
-                                <a class="dropdown-item anchor" href="#">Divel</a>
-                                <a class="dropdown-item anchor" href="#">Roger Bacon</a>
+                                <a class="dropdown-item anchor" href="/products/zeiss">ZEISS</a>
+                                <a class="dropdown-item anchor" href="/products/ltl">LTL</a>
+                                <a class="dropdown-item anchor" href="/products/divel">Divel</a>
+                                <a class="dropdown-item anchor" href="/products/roger-bacon">Roger Bacon</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -95,19 +104,19 @@
                                 Free Form Technology
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item anchor" href="#">Progressive</a>
-                                <a class="dropdown-item anchor" href="#">Single Vision</a>
-                                <a class="dropdown-item anchor" href="#">Bifocal</a>
+                                <a class="dropdown-item anchor" href="/free-form/progressive">Progressive</a>
+                                <a class="dropdown-item anchor" href="/free-form/single-vision">Single Vision</a>
+                                <a class="dropdown-item anchor" href="/free-form/bifocal">Bifocal</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link anchor" href="#">Technical Information</a>
+                            <a class="nav-link anchor" href="#technical">Technical Information</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link anchor" href="#">About Us</a>
+                            <a class="nav-link anchor" href="/about-us">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link anchor" href="#">Contact Us</a>
+                            <a id="contact-route" class="nav-link anchor" href="#contact">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -123,9 +132,9 @@
                 <div class="row align-items-center">
                     <div class="col-md-6" data-aos="fade-right">
                         <h1><%= horizon.name %></h1>
-                        <p id="hero-parag-1" class="mb-0"><%= horizon.hero_parag_1 %></p>
+                        <p id="hero-parag-1" class="white mb-0"><%= horizon.hero_parag_1 %></p>
                         <h2 id="hero-header-1"><%= horizon.hero_header_1 %></h2>
-                        <p id="hero-parag-2"><%= horizon.hero_parag_2 %></p>
+                        <p id="hero-parag-2" class="white"><%= horizon.hero_parag_2 %></p>
                         <!-- call to action btn -->
                         <a id="hero-link-1" href="<%= horizon.hero_link_1_href %>"
                             class="btn btn-primary btn-white shadow btn-theme"><span><b><%= horizon.hero_link_1_name %></b></span></a>
@@ -134,22 +143,20 @@
                         <!-- <img src="assets/img/mobile-1.png" class="img-fluid d-block mx-auto" alt=""> -->
                         <div class="stack">
                             <div class="content card">
-                                <p>
+                                <p class="white">
                                     <b>
-                                        <span id="desktop-prompt">Hover</span>
-                                        <span id="mobile-prompt">Tap</span>
+                                        <span id="desktop-prompt" class="white">Hover</span>
+                                        <span id="mobile-prompt" class="white">Tap</span>
                                         To See
                                     </b>
                                 </p>
-                                <p style="
-                      font-size: 2rem;
-                      font-weight: bold;
-                      line-height: 3rem;
+                                <p class="white" style="
+                      font-size: 1rem;
+                      font-weight: 600;
+                      line-height: 1.5rem;
                     ">
-                                    Single <br />
-                                    Vision <br />
-                                    Lens <br />
-                                    Layers
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique atque
+                                    vero accusamus, dolorem quae voluptates laudantium magnam quod.
                                 </p>
                             </div>
                             <div class="padding card"></div>
@@ -169,9 +176,15 @@
         <div class="container">
             <div class="row">
                 <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                    <h2 class="section-header dark">
-                        <span>Latest News</span>
+                    <h2 class="section-header med-dark">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Latest News</span>
                     </h2>
+                    <div class="space-25"></div>
+                    <p>
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -181,62 +194,1105 @@
                             <div class="news-slider__wrp swiper-wrapper">
                                 <div class="news-slider__item swiper-slide">
                                     <div class="news-slider__img">
-                                        <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg"
-                                            alt="" />
+                                        <img src="<%= blog1.bg %>" alt="" />
                                     </div>
                                     <div class="news-slider__content">
-                                        <span class="news-slider__code">01 January 2025</span>
-                                        <div class="news-slider__title">Lorem Ipsum Dolor</div>
+                                        <span class="news-slider__code"><%= blog1.date %></span>
+                                        <div class="news-slider__title"><%= blog1.title %></div>
                                         <div class="news-slider__text">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                                            elit. Recusandae voluptate repellendus magni illo ea
-                                            animi?
+                                            <%= blog1.summary %>
                                         </div>
-                                        <a href="#" class="news-slider__button">READ MORE</a>
-                                    </div>
-                                </div>
-                                <div class="news-slider__item swiper-slide">
-                                    <div class="news-slider__img">
-                                        <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/jason-leung-798979-unsplash.jpg"
-                                            alt="" />
-                                    </div>
-                                    <div class="news-slider__content">
-                                        <span class="news-slider__code">01 January 2025</span>
-                                        <div class="news-slider__title">Lorem Ipsum Dolor2</div>
-                                        <div class="news-slider__text">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                                            elit. Recusandae voluptate repellendus magni illo ea
-                                            animi?
-                                        </div>
-                                        <a href="#" class="news-slider__button">READ MORE</a>
+                                        <a href="<%= blog1.id %>" class="news-slider__button">READ MORE</a>
                                     </div>
                                 </div>
 
                                 <div class="news-slider__item swiper-slide">
                                     <div class="news-slider__img">
-                                        <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759871/alessandro-capuzzi-799180-unsplash.jpg"
-                                            alt="" />
+                                        <img src="<%= blog2.bg %>" alt="" />
                                     </div>
                                     <div class="news-slider__content">
-                                        <span class="news-slider__code">01 January 2025</span>
-                                        <div class="news-slider__title">Lorem Ipsum Dolor</div>
+                                        <span class="news-slider__code"><%= blog2.date %></span>
+                                        <div class="news-slider__title"><%= blog2.title %></div>
                                         <div class="news-slider__text">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                                            elit. Recusandae voluptate repellendus magni illo ea
-                                            animi?
+                                            <%= blog2.summary %>
                                         </div>
-                                        <a href="#" class="news-slider__button">READ MORE</a>
+                                        <a href="<%= blog2.id %>" class="news-slider__button">READ MORE</a>
+                                    </div>
+                                </div>
+
+                                <div class="news-slider__item swiper-slide">
+                                    <div class="news-slider__img">
+                                        <img src="<%= blog3.bg %>" alt="" />
+                                    </div>
+                                    <div class="news-slider__content">
+                                        <span class="news-slider__code"><%= blog3.date %></span>
+                                        <div class="news-slider__title"><%= blog3.title %></div>
+                                        <div class="news-slider__text">
+                                            <%= blog3.summary %>
+                                        </div>
+                                        <a href="<%= blog3.id %>" class="news-slider__button">READ MORE</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="news-slider__pagination"></div>
+                            <a class="" style="float: right; margin: -1rem; background-color: white;" href="#">View all
+                                >></a>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Recent News  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- lenses Lenses Designs 1/3 -->
+    <section id="" class="hero-section padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header med-light">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Lenses Designs
+                            1/3</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="white">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <section id="" class="" style="margin: 2rem 0">
+                        <div class="blur-card-grid">
+                            <a class="blur-card" href="<%= prog.prog_card_1_link %>">
+                                <div class="blur-card__background" style="
+                      background-image: url(<%=prog.prog_card_1_img%>);
+                    "></div>
+                                <div class="blur-card__content">
+                                    <p class="blur-card__category white">
+                                        <%= prog.prog_card_1_type %>
+                                    </p>
+                                    <h3 class="blur-card__heading">
+                                        <%= prog.prog_card_1_header %>
+                                    </h3>
+                                </div>
+                            </a>
+
+                            <a class="blur-card" href="<%= prog.prog_card_2_link %>">
+                                <div class="blur-card__background" style="
+                      background-image: url(<%=prog.prog_card_2_img%>);
+                    "></div>
+                                <div class="blur-card__content">
+                                    <p class="blur-card__category white">
+                                        <%= prog.prog_card_2_type %>
+                                    </p>
+                                    <h3 class="blur-card__heading">
+                                        <%= prog.prog_card_2_header %>
+                                    </h3>
+                                </div>
+                            </a>
+
+                            <a class="blur-card" href="<%= prog.prog_card_3_link %>">
+                                <div class="blur-card__background" style="
+                      background-image: url(<%=prog.prog_card_3_img%>);
+                    "></div>
+                                <div class="blur-card__content">
+                                    <p class="blur-card__category white">
+                                        <%= prog.prog_card_3_type %>
+                                    </p>
+                                    <h3 class="blur-card__heading">
+                                        <%= prog.prog_card_3_header %>
+                                    </h3>
+                                </div>
+                            </a>
+                            <a class="blur-card" href="<%= prog.prog_card_4_link %>">
+                                <div class="blur-card__background" style="
+                      background-image: url(<%=prog.prog_card_4_img%>);
+                    "></div>
+                                <div class="blur-card__content">
+                                    <p class="blur-card__category white">
+                                        <%= prog.prog_card_4_type %>
+                                    </p>
+                                    <h3 class="blur-card__heading">
+                                        <%= prog.prog_card_4_header %>
+                                    </h3>
+                                </div>
+                            </a>
                         </div>
                     </section>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Recent News  -->
+    <!-- End lenses Designs 1/3 -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start Lens Info (1/2) -->
+    <section id="about" class="why-us padding-100 background-fullwidth background-fixed"
+        style="background-image: url()">
+        <div class="container" style="background-color: white; border-radius: 24px">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center" data-aos="fade-right">
+                    <img src="assets/imgs/glasses/glass1.png" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-6" data-aos="fade-zoom-in" data-aos-delay="200">
+                    <h2 style="text-align: center; margin: 0 0 2rem 0;"><span
+                            style="color: #d39529; border-bottom: 3px solid; padding: 0.5rem;">Lens Info 1/2</span></h2>
+                    <p>
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem
+                    </p>
+                    <div class="space-50">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="why-us-icon">
+                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                <p>
+                                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor coli incidit labore lorem
+                                </p>
+                            </div>
+                            <div class="space-25"></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="600">
+                            <div class="why-us-icon">
+                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                <p>
+                                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor coli incidit labore lorem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-25"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="why-us-icon">
+                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                <p>
+                                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor coli incidit labore lorem
+                                </p>
+                            </div>
+                            <div class="space-25"></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="1000">
+                            <div class="why-us-icon">
+                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                <p>
+                                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor coli incidit labore lorem
+                                </p>
+                            </div>
+                            <div class="space-25"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Lens Info (1/2) -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start lenses Designs 2/3 -->
+    <section id="single-vision" class="hero-section">
+        <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+            <h2 class="section-header dark">
+                <span style="border-bottom: 3px solid; padding: 0.5rem;">Lenses Designs 2/3</span>
+            </h2>
+            <div class="space-25"></div>
+            <p class="dark">
+                Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                amet.
+            </p>
+            <div class="space-25"></div>
+        </div>
+        <div class="single-vision_container">
+            <div class="single-vision_nav">
+                <div class="single-vision_logo">
+                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                </div>
+                <div class="nav__text">
+                    H <br />
+                    O <br />
+                    R <br />
+                    I <br />
+                    Z <br />
+                    O <br />
+                    N
+                </div>
+                <div class="nav__cart">
+                    <span>3</span>
+                </div>
+            </div>
+            <!-- <div class="cover">
+                <h2>Single Vision<br />Lenses</h2>
+            </div> -->
+            <div class="product" data-index="0">
+                <div class="product__close">Close</div>
+                <div class="product__new">NEW</div>
+                <div class="product__detail">VIEW DETAILS</div>
+                <img class="product__img" src="assets/imgs/glasses/glass1.png" />
+                <div class="product__brand">Single Vision</div>
+                <div class="product__title">We don't recommend it for anyone</div>
+                <!-- <div class="product__price">$13,200</div> -->
+                <div class="product__buttons" style="--delay: 0.2s">
+                    <div class="product__options">
+                        <button class="product__option">SML</button>
+                        <button class="product__option product__option--active">
+                            MED
+                        </button>
+                        <button class="product__option">LRG</button>
+                        <button class="product__option">XLG</button>
+                    </div>
+                    <!-- <button class="product__option product__add">ADD TO CART</button> -->
+                </div>
+                <div class="product__subtitle">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
+                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
+                    officiis quae.
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
+                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
+                    officiis quae.
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.4s">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
+                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
+                    repellendus ab vitae mollitia distinctio quod molestias quis,
+                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
+                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
+                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
+                    eos laudantium deleniti architecto ducimus quia?
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.5s">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
+                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
+                    repellendus ab vitae mollitia distinctio quod molestias quis,
+                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
+                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
+                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
+                    eos laudantium deleniti architecto ducimus quia?
+                </div>
+                <img class="product__detail-img" src="assets/imgs/glasses/glass2.png" />
+                <div class="product__table">
+                    <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">BORDER</div>
+                        <div class="product__table-cell">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
+                            optio a illo, earum, iste doloribus, quo id itaque veniam
+                            sapiente unde officia impedit maxime facere.
+                        </div>
+                    </div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">COLOR</div>
+                        <div class="product__table-cell">Lorem ipsum dolor</div>
+                    </div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">INFO</div>
+                        <div class="product__table-cell">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
+                            optio a illo, earum, iste doloribus.
+                        </div>
+                    </div>
+                    <div class="product__option">ALL SPECIFICATIONS</div>
+                </div>
+                <!-- <div class="product__grid">
+                    <img src="assets/imgs/glasses/glass1.png" /><img src="assets/imgs/glasses/glass2.png" /><img
+                        src="assets/imgs/glasses/glass3.png" /><img src="assets/imgs/glasses/glass4.png" /><img
+                        src="assets/imgs/glasses/glass1.png" />
+                </div> -->
+            </div>
+
+            <div class="product" data-index="1">
+                <div class="product__close">Close</div>
+                <div class="product__new">NEW</div>
+                <div class="product__detail">VIEW DETAILS</div>
+                <img class="product__img" src="assets/imgs/glasses/glass1.png" />
+                <div class="product__brand">Single Vision</div>
+                <div class="product__title">We don't recommend it for anyone</div>
+                <!-- <div class="product__price">$13,200</div> -->
+                <div class="product__buttons" style="--delay: 0.2s">
+                    <div class="product__options">
+                        <button class="product__option">SML</button>
+                        <button class="product__option product__option--active">
+                            MED
+                        </button>
+                        <button class="product__option">LRG</button>
+                        <button class="product__option">XLG</button>
+                    </div>
+                    <!-- <button class="product__option product__add">ADD TO CART</button> -->
+                </div>
+                <div class="product__subtitle">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
+                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
+                    officiis quae.
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
+                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
+                    officiis quae.
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.4s">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
+                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
+                    repellendus ab vitae mollitia distinctio quod molestias quis,
+                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
+                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
+                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
+                    eos laudantium deleniti architecto ducimus quia?
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.5s">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
+                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
+                    repellendus ab vitae mollitia distinctio quod molestias quis,
+                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
+                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
+                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
+                    eos laudantium deleniti architecto ducimus quia?
+                </div>
+                <img class="product__detail-img" src="assets/imgs/glasses/glass2.png" />
+                <div class="product__table">
+                    <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">BORDER</div>
+                        <div class="product__table-cell">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
+                            optio a illo, earum, iste doloribus, quo id itaque veniam
+                            sapiente unde officia impedit maxime facere.
+                        </div>
+                    </div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">COLOR</div>
+                        <div class="product__table-cell">Lorem ipsum dolor</div>
+                    </div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">INFO</div>
+                        <div class="product__table-cell">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
+                            optio a illo, earum, iste doloribus.
+                        </div>
+                    </div>
+                    <div class="product__option">ALL SPECIFICATIONS</div>
+                </div>
+                <!-- <div class="product__grid">
+                    <img src="assets/imgs/glasses/glass1.png" /><img src="assets/imgs/glasses/glass2.png" /><img
+                        src="assets/imgs/glasses/glass3.png" /><img src="assets/imgs/glasses/glass4.png" /><img
+                        src="assets/imgs/glasses/glass1.png" />
+                </div> -->
+            </div>
+
+            <div class="product" data-index="2">
+                <div class="product__close">Close</div>
+                <div class="product__new">NEW</div>
+                <div class="product__detail">VIEW DETAILS</div>
+                <img class="product__img" src="assets/imgs/glasses/glass1.png" />
+                <div class="product__brand">Single Vision</div>
+                <div class="product__title">We don't recommend it for anyone</div>
+                <!-- <div class="product__price">$13,200</div> -->
+                <div class="product__buttons" style="--delay: 0.2s">
+                    <div class="product__options">
+                        <button class="product__option">SML</button>
+                        <button class="product__option product__option--active">
+                            MED
+                        </button>
+                        <button class="product__option">LRG</button>
+                        <button class="product__option">XLG</button>
+                    </div>
+                    <!-- <button class="product__option product__add">ADD TO CART</button> -->
+                </div>
+                <div class="product__subtitle">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
+                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
+                    officiis quae.
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
+                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
+                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
+                    officiis quae.
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.4s">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
+                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
+                    repellendus ab vitae mollitia distinctio quod molestias quis,
+                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
+                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
+                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
+                    eos laudantium deleniti architecto ducimus quia?
+                </div>
+                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.5s">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
+                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
+                    repellendus ab vitae mollitia distinctio quod molestias quis,
+                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
+                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
+                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
+                    eos laudantium deleniti architecto ducimus quia?
+                </div>
+                <img class="product__detail-img" src="assets/imgs/glasses/glass2.png" />
+                <div class="product__table">
+                    <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">BORDER</div>
+                        <div class="product__table-cell">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
+                            optio a illo, earum, iste doloribus, quo id itaque veniam
+                            sapiente unde officia impedit maxime facere.
+                        </div>
+                    </div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">COLOR</div>
+                        <div class="product__table-cell">Lorem ipsum dolor</div>
+                    </div>
+                    <div class="product__table-row">
+                        <div class="product__table-cell">INFO</div>
+                        <div class="product__table-cell">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
+                            optio a illo, earum, iste doloribus.
+                        </div>
+                    </div>
+                    <div class="product__option">ALL SPECIFICATIONS</div>
+                </div>
+                <!-- <div class="product__grid">
+                    <img src="assets/imgs/glasses/glass1.png" /><img src="assets/imgs/glasses/glass2.png" /><img
+                        src="assets/imgs/glasses/glass3.png" /><img src="assets/imgs/glasses/glass4.png" /><img
+                        src="assets/imgs/glasses/glass1.png" />
+                </div> -->
+            </div>
+
+
+            <div class="product__overlay"></div>
+        </div>
+    </section>
+    <!-- End lenses Designs 2/3 -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start Lens Info 2/2 -->
+    <section id="main_features" class="main-features padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header med-dark">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Lens Info 2/2</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p>
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-25"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-3 text-lg-right left-side">
+                    <div class="one-feature one" data-aos="fade-right" data-aos-delay="1000">
+                        <h5>Lorem ipsum</h5>
+                        <span class="lnr lnr-rocket"></span>
+                        <p>Our system is a comprehensive system of applied creativity.</p>
+                    </div>
+                    <div class="one-feature" data-aos="fade-right" data-aos-delay="1400">
+                        <h5>Lorem ipsum</h5>
+                        <span class="lnr lnr-cog"></span>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
+                            tempora.
+                        </p>
+                    </div>
+                    <div class="one-feature" data-aos="fade-right" data-aos-delay="1800">
+                        <h5>Lorem ipsum</h5>
+                        <span class="lnr lnr-cloud"></span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
+                            tempora.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="features-circle">
+                        <div class="circle-svg" data-aos="zoom-in" data-aos-delay="400">
+                            <svg version="1.1" id="features_circle" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="543px"
+                                height="542.953px" viewBox="0 0 543 542.953" enable-background="new 0 0 543 542.953"
+                                xml:space="preserve">
+                                <g>
+                                    <circle fill="none" stroke="#" stroke-width="3" stroke-miterlimit="10"
+                                        stroke-dasharray="11.9474,11.9474" cx="271.5" cy="271.516" r="270" />
+                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360"
+                                        dur="50s" repeatCount="indefinite"></animateTransform>
+                                </g>
+                            </svg>
+                        </div>
+                        <img data-aos="fade-up" data-aos-delay="200" src="assets/imgs/glasses/glass3.png"
+                            class="img-fluid" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-3 right-side">
+                    <div class="one-feature" data-aos="fade-left" data-aos-delay="1000">
+                        <h5>Lorem ipsum</h5>
+                        <span class="lnr lnr-construction"></span>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
+                            tempora.
+                        </p>
+                    </div>
+                    <div class="one-feature" data-aos="fade-left" data-aos-delay="1400">
+                        <h5>Lorem ipsum</h5>
+                        <span class="lnr lnr-gift"></span>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
+                            tempora.
+                        </p>
+                    </div>
+                    <div class="one-feature" data-aos="fade-left" data-aos-delay="1800">
+                        <h5>Lorem ipsum</h5>
+                        <span class="lnr lnr-database"></span>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
+                            tempora.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Lens Info 2/2 -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start lenses Designs 3/3 -->
+    <section id="" class="hero-section padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header med-light">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Lens Designs 3/3</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="white">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-25"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <section id="bifocal" class="">
+                        <div class="options">
+                            <div class="option active" style="
+                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
+                  ">
+                                <div class="shadow"></div>
+                                <div class="label">
+                                    <div class="icon">
+                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="main">Lens Title</div>
+                                        <div class="sub">Lens Subtitle</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" style="
+                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
+                  ">
+                                <div class="shadow"></div>
+                                <div class="label">
+                                    <div class="icon">
+                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="main">Lens Title</div>
+                                        <div class="sub">Lens Subtitle</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" style="
+                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
+                  ">
+                                <div class="shadow"></div>
+                                <div class="label">
+                                    <div class="icon">
+                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="main">Lens Title</div>
+                                        <div class="sub">Lens Subtitle</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" style="
+                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
+                  ">
+                                <div class="shadow"></div>
+                                <div class="label">
+                                    <div class="icon">
+                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="main">Lens Title</div>
+                                        <div class="sub">Lens Subtitle</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option" style="
+                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
+                  ">
+                                <div class="shadow"></div>
+                                <div class="label">
+                                    <div class="icon">
+                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="main">Lens Title</div>
+                                        <div class="sub">Lens Subtitle</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End lenses Designs 3/3  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start Watch Video -->
+    <section id="watch_video" class="watch-video padding-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header med-dark">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Watch Video</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-50"></div>
+                </div>
+                <div class="col-md-6 offset-md-3" data-aos="fade-up">
+                    <div class="video" style="
+                background-image: url('https://via.placeholder.com/699x351');
+              ">
+                        <img src="assets/img/mobile-4-4.png" class="img-fluid d-block mx-auto" alt="" />
+                        <a href="http://www.youtube.com/watch?v=XSGBVzeBUbk" data-lity></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Watch Video  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start Logos -->
+    <section id="logos" class="logos background-withcolor">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="logos-slider">
+                        <div class="item">
+                            <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Logos -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start Screenshots -->
+    <section id="screenshots" class="hero-section background-withcolor" style="color: white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Screenshots</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="light">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-50"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="screenshots-slider" data-aos="fade-up">
+                        <div class="item">
+                            <img src="assets/imgs/glasses/glass1.png" class="img-fluid d-block mx-auto" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/glasses/glass2.png" class="img-fluid d-block mx-auto" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/glasses/glass4.png" class="img-fluid d-block mx-auto" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/glasses/glass3.png" class="img-fluid d-block mx-auto" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="assets/imgs/glasses/glass4.png" class="img-fluid d-block mx-auto" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Screenshots -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start Fun Facts -->
+    <section id="facts" class="fun-facts padding-100 background-withcolor" style="color: white">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Production Info</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="light">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-50"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
+                        <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
+                        <h5>1</h5>
+                        <h6>Bifocal</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="800">
+                        <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
+                        <h5>3000</h5>
+                        <h6>Single Vision</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="1200">
+                        <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
+                        <h5>763</h5>
+                        <h6>Other Lens</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="1600">
+                        <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
+                        <h5>360</h5>
+                        <h6>Other Lens</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Fun Facts  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start FAQ -->
+    <section id="technical" class="faq padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header med-dark">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Technical Info</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-50"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <!--align-items-center-->
+                <div class="col-md-8 col-12" data-aos="fade-right">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="faq-card shadow">
+                            <div class="faq-card-header" id="heading_1">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+                                        What Is Horizon
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapse_1" class="collapse show" aria-labelledby="heading_1"
+                                data-parent="#faqAccordion">
+                                <div class="faq-card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Harum tenetur dicta commodi, totam atque fugit ut magnam
+                                    laboriosam dignissimos dolorum minus quia sed distinctio in
+                                    mollitia laborum sint delectus accusamus!
+                                    <br />
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Harum tenetur dicta commodi, totam atque fugit ut magnam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-card shadow">
+                            <div class="faq-card-header" id="heading_2">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">
+                                        What Is Horizon
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse_2" class="collapse" aria-labelledby="heading_2"
+                                data-parent="#faqAccordion">
+                                <div class="faq-card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Harum tenetur dicta commodi, totam atque fugit ut magnam
+                                    laboriosam dignissimos dolorum minus quia sed distinctio in
+                                    mollitia laborum sint delectus accusamus!
+                                    <br />
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Harum tenetur dicta commodi, totam atque fugit ut magnam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-card shadow">
+                            <div class="faq-card-header" id="heading_3">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse_3" aria-expanded="false" aria-controls="collapse_3">
+                                        What Is Horizon
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse_3" class="collapse" aria-labelledby="heading_3"
+                                data-parent="#faqAccordion">
+                                <div class="faq-card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Harum tenetur dicta commodi, totam atque fugit ut magnam
+                                    laboriosam dignissimos dolorum minus quia sed distinctio in
+                                    mollitia laborum sint delectus accusamus!
+                                    <br />
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Harum tenetur dicta commodi, totam atque fugit ut magnam.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="400">
+                    <img src="assets/img/mobile-1.png" class="img-fluid b-block mx-auto" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End FAQ  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start  Get in touch -->
+    <section id="contact" class="git-in-touch padding-100 background-withcolor">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                    <h2 class="section-header">
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Contact Us</span>
+                    </h2>
+                    <div class="space-25"></div>
+                    <p class="light">
+                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                        amet.
+                    </p>
+                    <div class="space-50"></div>
+                </div>
+            </div>
+            <div class="container-contact100">
+                <div class="wrap-contact100">
+                    <form class="contact100-form validate-form">
+                        <!-- <span class="contact100-form-title">
+                            Send Us A Message
+                        </span> -->
+
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+                            <input class="input100" type="text" name="name" placeholder="Full Name">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your email: e@a.x">
+                            <input class="input100" type="text" name="email" placeholder="E-mail">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your phone">
+                            <input class="input100" type="text" name="phone" placeholder="Phone">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Please enter your message">
+                            <textarea class="input100" name="message" placeholder="Your Message"></textarea>
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="container-contact100-form-btn">
+                            <button class="btn btn-primary btn-white shadow btn-theme">
+                                <span>
+                                    Send
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="space-50"></div>
+        </div>
+    </section>
+    <!-- End  Git in touch  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start  Map -->
+    <section class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37709962986!2d31.22344494535329!3d30.059483810352845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1540147674461"
+            style="border: 0" allowfullscreen></iframe>
+    </section>
+    <!-- End  Map  -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- Start  Footer -->
+    <footer class="padding-100 pb-0">
+        <div class="subscribe">
+            <div class="container">
+                <form class="subscribe-form row m-0 align-items-center">
+                    <div class="col-lg-9 col-md-8">
+                        <div class="form-group mb-0">
+                            <input type="text" class="form-control" placeholder="Enter Your Email" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <a href="#"
+                            class="btn btn-primary shadow d-block btn-colord btn-theme"><span>subscribe</span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="space-50"></div>
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="widget">
+                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid" alt="" />
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+                                nostrum odit facilis delectus quia rerum?Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Aspernatur eius,
+                                consectetur cupiditate doloribus deleniti veniam!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="widget">
+                            <h6>Quick Links</h6>
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Latest News</a>
+                                </li>
+                                <li>
+                                    <a href="#">Products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="widget">
+                            <h6>Social Media</h6>
+                            <ul>
+                                <li>
+                                    <a href="#">Facbook</a>
+                                </li>
+                                <li>
+                                    <a href="#">Instagram</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="widget">
+                            <h6>Quick Contact</h6>
+                            <ul>
+                                <li><span>Phone : </span>911</li>
+                                <li>
+                                    <span>Email : </span>
+                                    <a href="mailto:info@yourcompany.com"></a>info@yourcompany.com
+                                </li>
+                                <li><span>Address : </span>White House</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-50"></div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <p>All rights reserved © <a href="#">HORIZON</a>, 2021</p>
+                    </div>
+                    <div class="offset-md-4 col-md-4">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Terms and Conditions</a>
+                            </li>
+                            <span style="color: white">|||</span>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer  -->
+
 
 
     <!-- ------------------------------------------------------------- -->
@@ -269,12 +1325,18 @@
     <!-- swiper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 
+    <!-- OWL -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js">
+    </script>
+
     <!-- Our Main JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/news.js"></script>
     <script src="assets/js/timeline.js"></script>
     <script src="assets/js/single-vision.js"></script>
     <script src="assets/js/bifocal.js"></script>
+    <script src="assets/js/testimonials.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>

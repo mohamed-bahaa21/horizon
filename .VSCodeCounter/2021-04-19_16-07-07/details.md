@@ -1,0 +1,136 @@
+# Details
+
+Date : 2021-04-19 16:07:07
+
+Directory d:\horizon\server
+
+Total : 121 files,  27416 codes, 1803 comments, 1961 blanks, all 31180 lines
+
+[summary](results.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [server/app.js](/server/app.js) | JavaScript | 55 | 37 | 10 | 102 |
+| [server/controllers/horizon.js](/server/controllers/horizon.js) | JavaScript | 74 | 58 | 19 | 151 |
+| [server/data.js](/server/data.js) | JavaScript | 24 | 0 | 4 | 28 |
+| [server/firebase/firebase.conf.js](/server/firebase/firebase.conf.js) | JavaScript | 0 | 0 | 1 | 1 |
+| [server/models/Blog.js](/server/models/Blog.js) | JavaScript | 29 | 1 | 2 | 32 |
+| [server/models/demo.js](/server/models/demo.js) | JavaScript | 20 | 0 | 0 | 20 |
+| [server/models/horizon.js](/server/models/horizon.js) | JavaScript | 93 | 2 | 6 | 101 |
+| [server/package-lock.json](/server/package-lock.json) | JSON | 4,338 | 0 | 1 | 4,339 |
+| [server/package.json](/server/package.json) | JSON | 45 | 0 | 1 | 46 |
+| [server/public/assets/css/aos.css](/server/public/assets/css/aos.css) | CSS | 1 | 1 | 0 | 2 |
+| [server/public/assets/css/bifocal.css](/server/public/assets/css/bifocal.css) | CSS | 169 | 3 | 1 | 173 |
+| [server/public/assets/css/blur_cards.css](/server/public/assets/css/blur_cards.css) | CSS | 93 | 0 | 13 | 106 |
+| [server/public/assets/css/bootstrap.min.css](/server/public/assets/css/bootstrap.min.css) | CSS | 1 | 6 | 0 | 7 |
+| [server/public/assets/css/color-1.css](/server/public/assets/css/color-1.css) | CSS | 100 | 18 | 14 | 132 |
+| [server/public/assets/css/colors/color-10.css](/server/public/assets/css/colors/color-10.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-11.css](/server/public/assets/css/colors/color-11.css) | CSS | 124 | 18 | 19 | 161 |
+| [server/public/assets/css/colors/color-12.css](/server/public/assets/css/colors/color-12.css) | CSS | 124 | 18 | 19 | 161 |
+| [server/public/assets/css/colors/color-13.css](/server/public/assets/css/colors/color-13.css) | CSS | 124 | 18 | 23 | 165 |
+| [server/public/assets/css/colors/color-14.css](/server/public/assets/css/colors/color-14.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/public/assets/css/colors/color-15.css](/server/public/assets/css/colors/color-15.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/public/assets/css/colors/color-16.css](/server/public/assets/css/colors/color-16.css) | CSS | 124 | 18 | 20 | 162 |
+| [server/public/assets/css/colors/color-17.css](/server/public/assets/css/colors/color-17.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/public/assets/css/colors/color-18.css](/server/public/assets/css/colors/color-18.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/public/assets/css/colors/color-19.css](/server/public/assets/css/colors/color-19.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/public/assets/css/colors/color-2.css](/server/public/assets/css/colors/color-2.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-20.css](/server/public/assets/css/colors/color-20.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/public/assets/css/colors/color-3.css](/server/public/assets/css/colors/color-3.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-4.css](/server/public/assets/css/colors/color-4.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-5.css](/server/public/assets/css/colors/color-5.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-6.css](/server/public/assets/css/colors/color-6.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-7.css](/server/public/assets/css/colors/color-7.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-8.css](/server/public/assets/css/colors/color-8.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/colors/color-9.css](/server/public/assets/css/colors/color-9.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/public/assets/css/fontawesome-all.min.css](/server/public/assets/css/fontawesome-all.min.css) | CSS | 1 | 4 | 0 | 5 |
+| [server/public/assets/css/lenses.css](/server/public/assets/css/lenses.css) | CSS | 279 | 0 | 48 | 327 |
+| [server/public/assets/css/linearicons.css](/server/public/assets/css/linearicons.css) | CSS | 526 | 1 | 4 | 531 |
+| [server/public/assets/css/lity.min.css](/server/public/assets/css/lity.min.css) | CSS | 1 | 2 | 0 | 3 |
+| [server/public/assets/css/main.css](/server/public/assets/css/main.css) | CSS | 1,495 | 176 | 339 | 2,010 |
+| [server/public/assets/css/news.css](/server/public/assets/css/news.css) | CSS | 258 | 1 | 2 | 261 |
+| [server/public/assets/css/single-vision.css](/server/public/assets/css/single-vision.css) | CSS | 489 | 0 | 17 | 506 |
+| [server/public/assets/css/slick-theme.css](/server/public/assets/css/slick-theme.css) | CSS | 170 | 4 | 31 | 205 |
+| [server/public/assets/css/slick.css](/server/public/assets/css/slick.css) | CSS | 104 | 1 | 15 | 120 |
+| [server/public/assets/css/timeline.css](/server/public/assets/css/timeline.css) | CSS | 235 | 0 | 37 | 272 |
+| [server/public/assets/fonts/Linearicons-Free.svg](/server/public/assets/fonts/Linearicons-Free.svg) | XML | 199 | 0 | 0 | 199 |
+| [server/public/assets/fonts/fa-brands-400.svg](/server/public/assets/fonts/fa-brands-400.svg) | XML | 1,013 | 4 | 1 | 1,018 |
+| [server/public/assets/fonts/fa-regular-400.svg](/server/public/assets/fonts/fa-regular-400.svg) | XML | 362 | 4 | 1 | 367 |
+| [server/public/assets/fonts/fa-solid-900.svg](/server/public/assets/fonts/fa-solid-900.svg) | XML | 1,640 | 4 | 1 | 1,645 |
+| [server/public/assets/fonts/slick.svg](/server/public/assets/fonts/slick.svg) | XML | 13 | 0 | 2 | 15 |
+| [server/public/assets/img/circle.svg](/server/public/assets/img/circle.svg) | XML | 8 | 1 | 2 | 11 |
+| [server/public/assets/js/aos.js](/server/public/assets/js/aos.js) | JavaScript | 1 | 1 | 0 | 2 |
+| [server/public/assets/js/bifocal.js](/server/public/assets/js/bifocal.js) | JavaScript | 4 | 0 | 2 | 6 |
+| [server/public/assets/js/bootstrap.min.js](/server/public/assets/js/bootstrap.min.js) | JavaScript | 1 | 6 | 0 | 7 |
+| [server/public/assets/js/jquery-3.3.1.min.js](/server/public/assets/js/jquery-3.3.1.min.js) | JavaScript | 1 | 1 | 1 | 3 |
+| [server/public/assets/js/jquery.counterup.js](/server/public/assets/js/jquery.counterup.js) | JavaScript | 1 | 0 | 0 | 1 |
+| [server/public/assets/js/lity.min.js](/server/public/assets/js/lity.min.js) | JavaScript | 1 | 3 | 0 | 4 |
+| [server/public/assets/js/main.js](/server/public/assets/js/main.js) | JavaScript | 191 | 24 | 21 | 236 |
+| [server/public/assets/js/news.js](/server/public/assets/js/news.js) | JavaScript | 12 | 2 | 1 | 15 |
+| [server/public/assets/js/popper.min.js](/server/public/assets/js/popper.min.js) | JavaScript | 1 | 4 | 1 | 6 |
+| [server/public/assets/js/single-vision.js](/server/public/assets/js/single-vision.js) | JavaScript | 47 | 0 | 6 | 53 |
+| [server/public/assets/js/slick.min.js](/server/public/assets/js/slick.min.js) | JavaScript | 1 | 0 | 1 | 2 |
+| [server/public/assets/js/timeline.js](/server/public/assets/js/timeline.js) | JavaScript | 18 | 0 | 0 | 18 |
+| [server/public/assets/js/waypoints.min.js](/server/public/assets/js/waypoints.min.js) | JavaScript | 1 | 6 | 0 | 7 |
+| [server/routes/horizon.js](/server/routes/horizon.js) | JavaScript | 10 | 0 | 5 | 15 |
+| [server/schema/schema.js](/server/schema/schema.js) | JavaScript | 38 | 2 | 7 | 47 |
+| [server/views/assets/css/aos.css](/server/views/assets/css/aos.css) | CSS | 1 | 1 | 0 | 2 |
+| [server/views/assets/css/bifocal.css](/server/views/assets/css/bifocal.css) | CSS | 169 | 3 | 1 | 173 |
+| [server/views/assets/css/blur_cards.css](/server/views/assets/css/blur_cards.css) | CSS | 87 | 0 | 13 | 100 |
+| [server/views/assets/css/bootstrap.min.css](/server/views/assets/css/bootstrap.min.css) | CSS | 1 | 6 | 0 | 7 |
+| [server/views/assets/css/color-1.css](/server/views/assets/css/color-1.css) | CSS | 100 | 18 | 14 | 132 |
+| [server/views/assets/css/colors/color-10.css](/server/views/assets/css/colors/color-10.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-11.css](/server/views/assets/css/colors/color-11.css) | CSS | 124 | 18 | 19 | 161 |
+| [server/views/assets/css/colors/color-12.css](/server/views/assets/css/colors/color-12.css) | CSS | 124 | 18 | 19 | 161 |
+| [server/views/assets/css/colors/color-13.css](/server/views/assets/css/colors/color-13.css) | CSS | 124 | 18 | 23 | 165 |
+| [server/views/assets/css/colors/color-14.css](/server/views/assets/css/colors/color-14.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/views/assets/css/colors/color-15.css](/server/views/assets/css/colors/color-15.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/views/assets/css/colors/color-16.css](/server/views/assets/css/colors/color-16.css) | CSS | 124 | 18 | 20 | 162 |
+| [server/views/assets/css/colors/color-17.css](/server/views/assets/css/colors/color-17.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/views/assets/css/colors/color-18.css](/server/views/assets/css/colors/color-18.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/views/assets/css/colors/color-19.css](/server/views/assets/css/colors/color-19.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/views/assets/css/colors/color-2.css](/server/views/assets/css/colors/color-2.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-20.css](/server/views/assets/css/colors/color-20.css) | CSS | 124 | 18 | 18 | 160 |
+| [server/views/assets/css/colors/color-3.css](/server/views/assets/css/colors/color-3.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-4.css](/server/views/assets/css/colors/color-4.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-5.css](/server/views/assets/css/colors/color-5.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-6.css](/server/views/assets/css/colors/color-6.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-7.css](/server/views/assets/css/colors/color-7.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-8.css](/server/views/assets/css/colors/color-8.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/colors/color-9.css](/server/views/assets/css/colors/color-9.css) | CSS | 98 | 18 | 15 | 131 |
+| [server/views/assets/css/fontawesome-all.min.css](/server/views/assets/css/fontawesome-all.min.css) | CSS | 1 | 4 | 0 | 5 |
+| [server/views/assets/css/lenses.css](/server/views/assets/css/lenses.css) | CSS | 274 | 0 | 48 | 322 |
+| [server/views/assets/css/linearicons.css](/server/views/assets/css/linearicons.css) | CSS | 532 | 1 | 4 | 537 |
+| [server/views/assets/css/lity.min.css](/server/views/assets/css/lity.min.css) | CSS | 1 | 2 | 0 | 3 |
+| [server/views/assets/css/main.css](/server/views/assets/css/main.css) | CSS | 1,479 | 176 | 334 | 1,989 |
+| [server/views/assets/css/news.css](/server/views/assets/css/news.css) | CSS | 258 | 1 | 2 | 261 |
+| [server/views/assets/css/single-vision.css](/server/views/assets/css/single-vision.css) | CSS | 466 | 0 | 17 | 483 |
+| [server/views/assets/css/slick-theme.css](/server/views/assets/css/slick-theme.css) | CSS | 170 | 4 | 31 | 205 |
+| [server/views/assets/css/slick.css](/server/views/assets/css/slick.css) | CSS | 104 | 1 | 15 | 120 |
+| [server/views/assets/fonts/Linearicons-Free.svg](/server/views/assets/fonts/Linearicons-Free.svg) | XML | 199 | 0 | 0 | 199 |
+| [server/views/assets/fonts/fa-brands-400.svg](/server/views/assets/fonts/fa-brands-400.svg) | XML | 1,013 | 4 | 1 | 1,018 |
+| [server/views/assets/fonts/fa-regular-400.svg](/server/views/assets/fonts/fa-regular-400.svg) | XML | 362 | 4 | 1 | 367 |
+| [server/views/assets/fonts/fa-solid-900.svg](/server/views/assets/fonts/fa-solid-900.svg) | XML | 1,640 | 4 | 1 | 1,645 |
+| [server/views/assets/fonts/slick.svg](/server/views/assets/fonts/slick.svg) | XML | 13 | 0 | 2 | 15 |
+| [server/views/assets/img/circle.svg](/server/views/assets/img/circle.svg) | XML | 8 | 1 | 2 | 11 |
+| [server/views/assets/js/aos.js](/server/views/assets/js/aos.js) | JavaScript | 1 | 1 | 0 | 2 |
+| [server/views/assets/js/bifocal.js](/server/views/assets/js/bifocal.js) | JavaScript | 4 | 0 | 2 | 6 |
+| [server/views/assets/js/bootstrap.min.js](/server/views/assets/js/bootstrap.min.js) | JavaScript | 1 | 6 | 0 | 7 |
+| [server/views/assets/js/jquery-3.3.1.min.js](/server/views/assets/js/jquery-3.3.1.min.js) | JavaScript | 1 | 1 | 1 | 3 |
+| [server/views/assets/js/jquery.counterup.js](/server/views/assets/js/jquery.counterup.js) | JavaScript | 1 | 0 | 0 | 1 |
+| [server/views/assets/js/lity.min.js](/server/views/assets/js/lity.min.js) | JavaScript | 1 | 3 | 0 | 4 |
+| [server/views/assets/js/main.js](/server/views/assets/js/main.js) | JavaScript | 191 | 24 | 21 | 236 |
+| [server/views/assets/js/news.js](/server/views/assets/js/news.js) | JavaScript | 12 | 2 | 1 | 15 |
+| [server/views/assets/js/popper.min.js](/server/views/assets/js/popper.min.js) | JavaScript | 1 | 4 | 1 | 6 |
+| [server/views/assets/js/single-vision.js](/server/views/assets/js/single-vision.js) | JavaScript | 47 | 0 | 6 | 53 |
+| [server/views/assets/js/slick.min.js](/server/views/assets/js/slick.min.js) | JavaScript | 1 | 0 | 1 | 2 |
+| [server/views/assets/js/waypoints.min.js](/server/views/assets/js/waypoints.min.js) | JavaScript | 1 | 6 | 0 | 7 |
+| [server/views/demo.ejs](/server/views/demo.ejs) | HTML | 1,334 | 142 | 25 | 1,501 |
+| [server/views/index.ejs](/server/views/index.ejs) | HTML | 807 | 87 | 31 | 925 |
+| [server/views/news-single.html](/server/views/news-single.html) | HTML | 455 | 59 | 30 | 544 |
+| [server/views/news-with-sidebar-one-col.html](/server/views/news-with-sidebar-one-col.html) | HTML | 454 | 59 | 31 | 544 |
+| [server/views/news-with-sidebar.html](/server/views/news-with-sidebar.html) | HTML | 454 | 60 | 32 | 546 |
+| [server/views/news-without-sidebar.html](/server/views/news-without-sidebar.html) | HTML | 365 | 58 | 28 | 451 |
+
+[summary](results.md)
