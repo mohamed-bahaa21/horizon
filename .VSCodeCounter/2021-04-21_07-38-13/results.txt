@@ -1,0 +1,109 @@
+Date : 2021-04-21 07:38:13
+Directory : d:\horizon\admin
+Total : 58 files,  24886 codes, 226 comments, 372 blanks, all 25484 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          4 |     21,044 |         10 |          2 |     21,056 |
+| JavaScript |         46 |      3,792 |        185 |        353 |      4,330 |
+| HTML       |          1 |         20 |         23 |          1 |         44 |
+| SCSS       |          4 |         17 |          8 |          7 |         32 |
+| Markdown   |          1 |         13 |          0 |          7 |         20 |
+| CSS        |          2 |          0 |          0 |          2 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                          |         58 |     24,886 |        226 |        372 |     25,484 |
+| public                                                     |          2 |         35 |         23 |          2 |         60 |
+| src                                                        |         52 |      3,809 |        193 |        362 |      4,364 |
+| src\assets                                                 |          4 |        274 |          0 |          6 |        280 |
+| src\assets\icons                                           |          4 |        274 |          0 |          6 |        280 |
+| src\containers                                             |         12 |        811 |          3 |         50 |        864 |
+| src\firebase                                               |          1 |         14 |          1 |          4 |         19 |
+| src\queries                                                |          1 |          0 |         17 |          6 |         23 |
+| src\reusable                                               |          1 |          3 |          0 |          1 |          4 |
+| src\scss                                                   |          4 |         17 |          8 |          7 |         32 |
+| src\views                                                  |         21 |      2,472 |         53 |        225 |      2,750 |
+| src\views\Preview                                          |          2 |         25 |          1 |          9 |         35 |
+| src\views\UploadImg                                        |          1 |         94 |          0 |         19 |        113 |
+| src\views\charts                                           |          4 |        499 |          5 |         41 |        545 |
+| src\views\dashboard                                        |          1 |        313 |          0 |         19 |        332 |
+| src\views\pages                                            |          7 |        718 |         45 |         79 |        842 |
+| src\views\pages\landing                                    |          3 |        480 |         45 |         67 |        592 |
+| src\views\pages\login                                      |          1 |         76 |          0 |          3 |         79 |
+| src\views\pages\page404                                    |          1 |         42 |          0 |          3 |         45 |
+| src\views\pages\page500                                    |          1 |         42 |          0 |          3 |         45 |
+| src\views\pages\register                                   |          1 |         78 |          0 |          3 |         81 |
+| src\views\users                                            |          3 |        157 |          0 |         30 |        187 |
+| src\views\widgets                                          |          3 |        666 |          2 |         28 |        696 |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                   | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\horizon\admin\REACT.md                                  | Markdown   |         13 |          0 |          7 |         20 |
+| d:\horizon\admin\jsconfig.json                             | JSON       |          6 |          0 |          0 |          6 |
+| d:\horizon\admin\package-lock.json                         | JSON       |     20,955 |          0 |          1 |     20,956 |
+| d:\horizon\admin\package.json                              | JSON       |         68 |         10 |          0 |         78 |
+| d:\horizon\admin\public\index.html                         | HTML       |         20 |         23 |          1 |         44 |
+| d:\horizon\admin\public\manifest.json                      | JSON       |         15 |          0 |          1 |         16 |
+| d:\horizon\admin\src\App.js                                | JavaScript |         25 |          8 |          7 |         40 |
+| d:\horizon\admin\src\App.test.js                           | JavaScript |         17 |          0 |          5 |         22 |
+| d:\horizon\admin\src\assets\icons\index.js                 | JavaScript |        259 |          0 |          3 |        262 |
+| d:\horizon\admin\src\assets\icons\logo-negative.js         | JavaScript |          3 |          0 |          1 |          4 |
+| d:\horizon\admin\src\assets\icons\logo.js                  | JavaScript |          3 |          0 |          1 |          4 |
+| d:\horizon\admin\src\assets\icons\sygnet.js                | JavaScript |          9 |          0 |          1 |         10 |
+| d:\horizon\admin\src\containers\TheContent.js              | JavaScript |         41 |          1 |          5 |         47 |
+| d:\horizon\admin\src\containers\TheFooter.js               | JavaScript |         17 |          0 |          3 |         20 |
+| d:\horizon\admin\src\containers\TheHeader.js               | JavaScript |         96 |          1 |         12 |        109 |
+| d:\horizon\admin\src\containers\TheHeaderDropdown.js       | JavaScript |         90 |          0 |          3 |         93 |
+| d:\horizon\admin\src\containers\TheHeaderDropdownMssg.js   | JavaScript |        122 |          0 |          5 |        127 |
+| d:\horizon\admin\src\containers\TheHeaderDropdownNotif.js  | JavaScript |         68 |          0 |          2 |         70 |
+| d:\horizon\admin\src\containers\TheHeaderDropdownTasks.js  | JavaScript |         57 |          0 |          2 |         59 |
+| d:\horizon\admin\src\containers\TheLayout.js               | JavaScript |         22 |          0 |          4 |         26 |
+| d:\horizon\admin\src\containers\TheSidebar.js              | JavaScript |         51 |          1 |          7 |         59 |
+| d:\horizon\admin\src\containers\_nav.js                    | JavaScript |        227 |          0 |          4 |        231 |
+| d:\horizon\admin\src\containers\index.js                   | JavaScript |         20 |          0 |          2 |         22 |
+| d:\horizon\admin\src\containers\preview-modal.css          | CSS        |          0 |          0 |          1 |          1 |
+| d:\horizon\admin\src\firebase\firebase.js                  | JavaScript |         14 |          1 |          4 |         19 |
+| d:\horizon\admin\src\index.js                              | JavaScript |         19 |         34 |         14 |         67 |
+| d:\horizon\admin\src\polyfill.js                           | JavaScript |         26 |         26 |         12 |         64 |
+| d:\horizon\admin\src\queries\queries.js                    | JavaScript |          0 |         17 |          6 |         23 |
+| d:\horizon\admin\src\reusable\index.js                     | JavaScript |          3 |          0 |          1 |          4 |
+| d:\horizon\admin\src\routes.js                             | JavaScript |         19 |         13 |          6 |         38 |
+| d:\horizon\admin\src\scss\_custom.scss                     | SCSS       |          0 |          1 |          0 |          1 |
+| d:\horizon\admin\src\scss\_fixes.scss                      | SCSS       |         13 |          2 |          2 |         17 |
+| d:\horizon\admin\src\scss\_variables.scss                  | SCSS       |          0 |          1 |          1 |          2 |
+| d:\horizon\admin\src\scss\style.scss                       | SCSS       |          4 |          4 |          4 |         12 |
+| d:\horizon\admin\src\serviceWorker.js                      | JavaScript |         85 |         30 |         13 |        128 |
+| d:\horizon\admin\src\setupTests.js                         | JavaScript |         13 |          0 |          3 |         16 |
+| d:\horizon\admin\src\store.js                              | JavaScript |         14 |          0 |          3 |         17 |
+| d:\horizon\admin\src\views\Preview\Preview.js              | JavaScript |         25 |          1 |          8 |         34 |
+| d:\horizon\admin\src\views\Preview\preview.css             | CSS        |          0 |          0 |          1 |          1 |
+| d:\horizon\admin\src\views\UploadImg\UploadImg.js          | JavaScript |         94 |          0 |         19 |        113 |
+| d:\horizon\admin\src\views\charts\ChartBarSimple.js        | JavaScript |         65 |          2 |          9 |         76 |
+| d:\horizon\admin\src\views\charts\ChartLineSimple.js       | JavaScript |        136 |          2 |         15 |        153 |
+| d:\horizon\admin\src\views\charts\Charts.js                | JavaScript |        205 |          0 |          9 |        214 |
+| d:\horizon\admin\src\views\charts\MainChartExample.js      | JavaScript |         93 |          1 |          8 |        102 |
+| d:\horizon\admin\src\views\dashboard\Dashboard.js          | JavaScript |        313 |          0 |         19 |        332 |
+| d:\horizon\admin\src\views\pages\landing\Hero.js           | JavaScript |        212 |         13 |         26 |        251 |
+| d:\horizon\admin\src\views\pages\landing\ProgDesignCard.js | JavaScript |         99 |          8 |         13 |        120 |
+| d:\horizon\admin\src\views\pages\landing\ProgDesigns.js    | JavaScript |        169 |         24 |         28 |        221 |
+| d:\horizon\admin\src\views\pages\login\Login.js            | JavaScript |         76 |          0 |          3 |         79 |
+| d:\horizon\admin\src\views\pages\page404\Page404.js        | JavaScript |         42 |          0 |          3 |         45 |
+| d:\horizon\admin\src\views\pages\page500\Page500.js        | JavaScript |         42 |          0 |          3 |         45 |
+| d:\horizon\admin\src\views\pages\register\Register.js      | JavaScript |         78 |          0 |          3 |         81 |
+| d:\horizon\admin\src\views\users\User.js                   | JavaScript |         37 |          0 |          5 |         42 |
+| d:\horizon\admin\src\views\users\Users.js                  | JavaScript |         80 |          0 |          9 |         89 |
+| d:\horizon\admin\src\views\users\UsersData.js              | JavaScript |         40 |          0 |         16 |         56 |
+| d:\horizon\admin\src\views\widgets\Widgets.js              | JavaScript |        362 |          0 |          9 |        371 |
+| d:\horizon\admin\src\views\widgets\WidgetsBrand.js         | JavaScript |        164 |          1 |         13 |        178 |
+| d:\horizon\admin\src\views\widgets\WidgetsDropdown.js      | JavaScript |        140 |          1 |          6 |        147 |
+| Total                                                      |            |     24,886 |        226 |        372 |     25,484 |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
