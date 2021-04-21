@@ -1,5 +1,6 @@
 const Horizon = require("../models/horizon");
 const Blog = require("../models/Blog");
+const Gallery = require("../models/Gallery");
 
 // const SENDGRID_API = process.env.SENDGRID_API
 // const sgMail = require('@sendgrid/mail')
@@ -89,6 +90,22 @@ exports.postProgData = (req, res, next) => {
         .then(() => res.json("horizon updated!"))
         .catch((err) => res.status(400).json("Error: " + err));
     })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+exports.postImgToGallery = (req, res, next) => {
+  // console.log(req.body);
+  
+  const {
+    url
+  } = req.body;
+
+  const image = new Gallery({
+    img_url: url
+  })
+  
+  image.save()
+    .then(() => res.json("Image Added..."))
     .catch((err) => res.status(400).json("Error: " + err));
 };
 

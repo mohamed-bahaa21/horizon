@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
 import { storage } from "../../firebase/firebase";
-import FlashMessage from 'react-flash-message';
+
+import axios from "axios";
+
+var SERVER_URI = "http://localhost:5000";
+var ADMIN_URI = "http://localhost:3000";
+
+if (process.env.NODE_ENV === "development") {
+  SERVER_URI = "http://localhost:5000";
+  ADMIN_URI = "http://localhost:3000";
+}
+
+if (process.env.NODE_ENV === "production") {
+  SERVER_URI = "https://horizon-server.herokuapp.com";
+  ADMIN_URI = "https://horizon-admin.herokuapp.com";
+}
 
 const UploadImg = () => {
   const [image, setImage] = useState(null);
@@ -38,6 +52,16 @@ const UploadImg = () => {
           .then(url => {
             setUrl(url);
             console.log("image: ", image);
+            console.log("URL: " + url);
+
+            const img_url = {
+              url: url
+            };
+
+            axios.post(`${SERVER_URI}/api/postImgToGallery`, img_url)
+              .then(res => console.log(res));
+
+            window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
           });
       }
     );

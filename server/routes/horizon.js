@@ -12,6 +12,8 @@ route.post('/api/postHeroData', horizonController.postHeroData)
 route.get('/api/getProgData', horizonController.getProgData)
 route.post('/api/postProgData', horizonController.postProgData)
 
+route.post('/api/postImgToGallery', horizonController.postImgToGallery)
+
 module.exports = route
 
 
