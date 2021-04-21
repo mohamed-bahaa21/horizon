@@ -24,13 +24,6 @@ import './preview-modal.css'
 // routes config
 import routes from "../routes";
 
-import {
-  TheHeaderDropdown,
-  TheHeaderDropdownMssg,
-  TheHeaderDropdownNotif,
-  TheHeaderDropdownTasks,
-} from "./index";
-
 const TheHeader = () => {
   const dispatch = useDispatch();
   const sidebarShow = useSelector((state) => state.sidebarShow);
@@ -71,9 +64,15 @@ const TheHeader = () => {
       </CHeaderBrand>
 
       <CHeaderNav className="d-md-down-none mr-auto">
+        {/* Dashboard Page */}
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/dashboard">Dashboard</CHeaderNavLink>
         </CHeaderNavItem>
+        {/* Users Page */}
+        <CHeaderNavItem className="px-3">
+          <CHeaderNavLink to="/users">Users</CHeaderNavLink>
+        </CHeaderNavItem>
+        {/* Download Mail CSV */}
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/users">Users</CHeaderNavLink>
         </CHeaderNavItem>

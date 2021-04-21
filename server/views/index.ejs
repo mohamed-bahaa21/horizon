@@ -264,6 +264,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="row align-items-center">
                 <div class="col-12">
                     <section id="" class="" style="margin: 2rem 0">
@@ -282,43 +283,44 @@
                                 </div>
                             </a>
 
-                            <a class="blur-card" href="<%= prog.prog_card_2_link %>">
+                            <a class="blur-card" href="<%= prog.prog_card_1_link %>">
                                 <div class="blur-card__background" style="
-                      background-image: url(<%=prog.prog_card_2_img%>);
+                      background-image: url(<%=prog.prog_card_1_img%>);
                     "></div>
                                 <div class="blur-card__content">
                                     <p class="blur-card__category white">
-                                        <%= prog.prog_card_2_type %>
+                                        <%= prog.prog_card_1_type %>
                                     </p>
                                     <h3 class="blur-card__heading">
-                                        <%= prog.prog_card_2_header %>
+                                        <%= prog.prog_card_1_header %>
                                     </h3>
                                 </div>
                             </a>
 
-                            <a class="blur-card" href="<%= prog.prog_card_3_link %>">
+                            <a class="blur-card" href="<%= prog.prog_card_1_link %>">
                                 <div class="blur-card__background" style="
-                      background-image: url(<%=prog.prog_card_3_img%>);
+                      background-image: url(<%=prog.prog_card_1_img%>);
                     "></div>
                                 <div class="blur-card__content">
                                     <p class="blur-card__category white">
-                                        <%= prog.prog_card_3_type %>
+                                        <%= prog.prog_card_1_type %>
                                     </p>
                                     <h3 class="blur-card__heading">
-                                        <%= prog.prog_card_3_header %>
+                                        <%= prog.prog_card_1_header %>
                                     </h3>
                                 </div>
                             </a>
-                            <a class="blur-card" href="<%= prog.prog_card_4_link %>">
+
+                            <a class="blur-card" href="<%= prog.prog_card_1_link %>">
                                 <div class="blur-card__background" style="
-                      background-image: url(<%=prog.prog_card_4_img%>);
+                      background-image: url(<%=prog.prog_card_1_img%>);
                     "></div>
                                 <div class="blur-card__content">
                                     <p class="blur-card__category white">
-                                        <%= prog.prog_card_4_type %>
+                                        <%= prog.prog_card_1_type %>
                                     </p>
                                     <h3 class="blur-card__heading">
-                                        <%= prog.prog_card_4_header %>
+                                        <%= prog.prog_card_1_header %>
                                     </h3>
                                 </div>
                             </a>
@@ -1196,12 +1198,12 @@
             <div class="container">
 
                 <% if(msgs[0]) { %>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong><%= msgs[0] %></strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><%= msgs[0] %></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <% } %> %>
 
                 <form class="subscribe-form row m-0 align-items-center" action="/api/subscribe" method="POST">
