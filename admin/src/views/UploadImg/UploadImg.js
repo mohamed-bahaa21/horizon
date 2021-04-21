@@ -3,7 +3,15 @@ import { render } from "react-dom";
 import { storage } from "../../firebase/firebase";
 
 import {
+  CCard,
+  CCardBody,
+  CCardText,
+  CCardTitle,
+  CListGroupItem,
   CButton,
+  CAlert,
+  CProgress,
+  CProgressBar
 } from "@coreui/react";
 
 import FlashMessage from 'react-flash-message'
@@ -28,6 +36,7 @@ const UploadImg = () => {
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [uploaded, setUploaded] = useState('false')
+  const [copied, setCopied] = useState('false')
   const [uploadBtnState, setUploadBtnState] = useState('false');
 
   const handleChange = e => {
@@ -37,8 +46,18 @@ const UploadImg = () => {
   };
 
   const handleUpload = () => {
-    setUploaded('false')
+    let newDate = new Date()
+    let date = newDate.getDate();
+    let month = newDate.getMonth() + 1;
+    let year = newDate.getFullYear();
+    let time = new Date().getTime();
+
+    let timeNow = `${date}${month}${year}T${time}`;
+
+    setUploaded('false');
+
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
+
     uploadTask.on(
       "state_changed",
       snapshot => {
@@ -78,43 +97,68 @@ const UploadImg = () => {
   };
 
   const copyToCLip = () => {
+    setCopied('false')
     navigator.clipboard.writeText(url)
     console.log(url);
+    setCopied('true')
   }
 
   return (
     <div>
-      {
-        (uploaded === 'true') ?
-          <div>
-            <CAlert
-              color="success"
-              dismissible
-              onDismissed={() => {
-                <a href="#">You can see all your uploads here</a>
-              }}
-            >
-              <strong>Uploaded</strong>Successfully...
+      <CCard style={{ width: '50vw' }}>
+        {
+          (uploaded === 'true') ?
+            <div>
+              <CAlert
+                width="1"
+                color="success"
+              >
+                <strong>Uploaded</strong> Successfully...
               </CAlert>
 
-            <FlashMessage duration={3000}>
-              Uploaded Successfully...
+              <FlashMessage duration={3000}>
+                Uploaded Successfully...
             </FlashMessage>
-          </div>
-          :
-          <p>...</p>
-      }
-      <progress value={progress} max="100" />
-      <br />
-      <br />
-      <input type="file" onChange={handleChange} />
-      <CButton color="secondary" onClick={handleUpload}>Upload</CButton>
-      <br /><br />
-      <strong> Image URL: </strong> {url}
-      <br /><br />
-      <CButton color="secondary" onClick={copyToCLip}>Copy Image URL to Clipboard</CButton>
-      <br /><br />
-      <img src={url || "http://via.placeholder.com/300"} alt="firebase-image" />
+            </div>
+            :
+            <p></p>
+        }
+        <CCardBody>
+          <CCardTitle>Upload Image</CCardTitle>
+
+          <CListGroupItem>
+            <CProgress className="mb-3">
+              <CProgressBar value={progress}></CProgressBar>
+            </CProgress>
+            <progress value={progress} max="100" />
+          </CListGroupItem>
+
+
+          <CListGroupItem>
+            <input type="file" onChange={handleChange} />
+            <CButton color="secondary" onClick={handleUpload}>Upload</CButton>
+            <CCardText>
+              <strong> Image URL: </strong>
+              {url}
+            </CCardText>
+          </CListGroupItem>
+
+          <CListGroupItem>
+            {
+              (copied === 'true') ?
+                <div>
+                  <FlashMessage duration={2000}>
+                    Copied To Clipboard...
+            </FlashMessage>
+                </div>
+                :
+                <p></p>
+            }
+            <CButton color="secondary" onClick={copyToCLip}>Copy Image URL to Clipboard</CButton>
+          </CListGroupItem>
+        </CCardBody>
+      </CCard>
+      <img className="uploadedImg" src={url || "http://via.placeholder.com/300"} alt="firebase-image" />
     </div>
   );
 };
