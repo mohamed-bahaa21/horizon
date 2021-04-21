@@ -1191,13 +1191,24 @@
     <!-- End  Map  -->
     <!-- ------------------------------------------------------------- -->
     <!-- Start  Footer -->
-    <footer class="padding-100 pb-0">
+    <footer class="padding-100 pb-0" id="footer">
         <div class="subscribe">
             <div class="container">
-                <form class="subscribe-form row m-0 align-items-center">
+
+                <% if(msgs[0]) { %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong><%= msgs[0] %></strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                <% } %> %>
+
+                <form class="subscribe-form row m-0 align-items-center" action="/api/subscribe" method="POST">
                     <div class="col-lg-9 col-md-8">
                         <div class="form-group mb-0">
-                            <input type="text" class="form-control" placeholder="Enter Your Email" />
+                            <input name="mail_email" id="mail_email" type="email" class="form-control"
+                                placeholder="Enter Your Email" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4">
@@ -1272,7 +1283,8 @@
                                     <span>Address : </span>
                                     <br>
                                     <a class="med-dark"
-                                        href="https://www.google.com/maps/place/The+White+House/@38.898346,-77.037709,15.67z/data=!4m5!3m4!1s0x0:0x715969d86d0b76bf!8m2!3d38.8976763!4d-77.0365298">Google Map Address</a>
+                                        href="https://www.google.com/maps/place/The+White+House/@38.898346,-77.037709,15.67z/data=!4m5!3m4!1s0x0:0x715969d86d0b76bf!8m2!3d38.8976763!4d-77.0365298">Google
+                                        Map Address</a>
                                 </li>
                             </ul>
                         </div>

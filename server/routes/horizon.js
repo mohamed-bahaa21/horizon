@@ -13,6 +13,7 @@ route.get('/api/getProgData', horizonController.getProgData)
 route.post('/api/postProgData', horizonController.postProgData)
 
 route.post('/api/postImgToGallery', horizonController.postImgToGallery)
+route.post('/api/subscribe', horizonController.subscribe)
 
 module.exports = route
 

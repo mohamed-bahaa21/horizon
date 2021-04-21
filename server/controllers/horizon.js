@@ -1,6 +1,7 @@
 const Horizon = require("../models/horizon");
 const Blog = require("../models/Blog");
 const Gallery = require("../models/Gallery");
+const Mail = require("../models/Mail");
 
 // const SENDGRID_API = process.env.SENDGRID_API
 // const sgMail = require('@sendgrid/mail')
@@ -15,6 +16,7 @@ exports.getLanding = (req, res, next) => {
       // console.log(blogs;      
       // console.log(result);
       res.render("index", {
+        msgs: req.flash('success'),
         horizon: result[0],
         prog: result[1],
         blog1: blogs[0],
@@ -96,7 +98,7 @@ exports.postProgData = (req, res, next) => {
 
 exports.postImgToGallery = (req, res, next) => {
   // console.log(req.body);
-    
+
   const {
     url
   } = req.body;
@@ -104,9 +106,28 @@ exports.postImgToGallery = (req, res, next) => {
   const image = new Gallery({
     img_url: url
   })
-  
+
   image.save()
     .then(() => res.json("Image Added..."))
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+exports.subscribe = (req, res, next) => {
+  console.log(req.body);
+
+  const {
+    mail_email
+  } = req.body;
+
+  const email = new Mail({
+    mail_email: mail_email
+  })
+
+  email.save()
+    .then(() => {
+      req.flash('success', 'Subscribed Successfully...')
+      res.redirect('/#footer')
+    })
     .catch((err) => res.status(400).json("Error: " + err));
 };
 

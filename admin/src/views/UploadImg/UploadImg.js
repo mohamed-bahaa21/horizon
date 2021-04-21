@@ -87,8 +87,18 @@ const UploadImg = () => {
       {
         (uploaded === 'true') ?
           <div>
+            <CAlert
+              color="success"
+              dismissible
+              onDismissed={() => {
+                <a href="#">You can see all your uploads here</a>
+              }}
+            >
+              <strong>Uploaded</strong>Successfully...
+              </CAlert>
+
             <FlashMessage duration={3000}>
-              <strong>Uploaded Successfully...</strong>
+              Uploaded Successfully...
             </FlashMessage>
           </div>
           :

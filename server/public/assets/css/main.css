@@ -1506,7 +1506,7 @@ footer .subscribe .subscribe-form {
   padding: 25px;
   position: relative;
   overflow: hidden;
-  border-radius: 80px;
+  border-radius: 10px;
 }
 
 footer .subscribe .subscribe-form .form-group .form-control {
