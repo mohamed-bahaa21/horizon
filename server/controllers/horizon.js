@@ -25,6 +25,7 @@ exports.getLanding = (req, res, next) => {
   });
 };
 
+// Section 1
 exports.getLandingData = (req, res, next) => {
   var origin = req.originalUrl;
 
@@ -61,22 +62,22 @@ exports.postHeroData = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
+// Section 2
 exports.getProgData = (req, res, next) => {
-  Horizon.findById("606f5689ff5464449437a646").then((result) => {
+  Horizon.findById("606ff91fef83672e10f01feb").then((result) => {
     res.json(result);
   });
 };
 
 exports.postProgData = (req, res, next) => {
   const {
-    name,
     prog_card_1_img,
     prog_card_1_link,
     prog_card_1_type,
     prog_card_1_header,
   } = req.body;
 
-  Horizon.findById("606f5689ff5464449437a646")
+  Horizon.findById("606ff91fef83672e10f01feb")
     .then((horizon) => {
       console.log(req.body);
       // horizon.name = name;
@@ -95,7 +96,7 @@ exports.postProgData = (req, res, next) => {
 
 exports.postImgToGallery = (req, res, next) => {
   // console.log(req.body);
-  
+    
   const {
     url
   } = req.body;

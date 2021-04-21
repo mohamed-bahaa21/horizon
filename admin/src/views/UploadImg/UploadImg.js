@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { render } from "react-dom";
 import { storage } from "../../firebase/firebase";
 
+import {
+  CButton,
+} from "@coreui/react";
+
+import FlashMessage from 'react-flash-message'
+
 import axios from "axios";
 
 var SERVER_URI = "http://localhost:5000";
@@ -21,6 +27,7 @@ const UploadImg = () => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
+  const [uploaded, setUploaded] = useState('false')
   const [uploadBtnState, setUploadBtnState] = useState('false');
 
   const handleChange = e => {
@@ -30,6 +37,7 @@ const UploadImg = () => {
   };
 
   const handleUpload = () => {
+    setUploaded('false')
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
@@ -61,22 +69,41 @@ const UploadImg = () => {
             axios.post(`${SERVER_URI}/api/postImgToGallery`, img_url)
               .then(res => console.log(res));
 
+            setUploaded('true')
+
             window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
           });
       }
     );
   };
 
+  const copyToCLip = () => {
+    navigator.clipboard.writeText(url)
+    console.log(url);
+  }
+
   return (
     <div>
+      {
+        (uploaded === 'true') ?
+          <div>
+            <FlashMessage duration={3000}>
+              <strong>Uploaded Successfully...</strong>
+            </FlashMessage>
+          </div>
+          :
+          <p>...</p>
+      }
       <progress value={progress} max="100" />
       <br />
       <br />
       <input type="file" onChange={handleChange} />
-      <button onClick={handleUpload}>Upload</button>
-      <br />
-      {url}
-      <br />
+      <CButton color="secondary" onClick={handleUpload}>Upload</CButton>
+      <br /><br />
+      <strong> Image URL: </strong> {url}
+      <br /><br />
+      <CButton color="secondary" onClick={copyToCLip}>Copy Image URL to Clipboard</CButton>
+      <br /><br />
       <img src={url || "http://via.placeholder.com/300"} alt="firebase-image" />
     </div>
   );
