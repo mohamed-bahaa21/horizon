@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
 import { storage } from "../../firebase/firebase";
+import FlashMessage from 'react-flash-message';
 
 const UploadImg = () => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
+  const [uploadBtnState, setUploadBtnState] = useState('false');
 
   const handleChange = e => {
     if (e.target.files[0]) {
@@ -23,9 +25,11 @@ const UploadImg = () => {
         );
         setProgress(progress);
       },
+
       error => {
         console.log(error);
       },
+
       () => {
         storage
           .ref("images")
@@ -33,12 +37,11 @@ const UploadImg = () => {
           .getDownloadURL()
           .then(url => {
             setUrl(url);
+            console.log("image: ", image);
           });
       }
     );
   };
-
-  console.log("image: ", image);
 
   return (
     <div>

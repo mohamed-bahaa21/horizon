@@ -47,19 +47,7 @@ class ProgDesigns extends Component {
       prog_card_1_img: "...",
       prog_card_1_link: "...",
       prog_card_1_type: "...",
-      prog_card_1_header: "...",
-      prog_card_2_img: "...",
-      prog_card_2_link: "...",
-      prog_card_2_type: "...",
-      prog_card_2_header: "...",
-      prog_card_3_img: "...",
-      prog_card_3_link: "...",
-      prog_card_3_type: "...",
-      prog_card_3_header: "...",
-      prog_card_4_img: "...",
-      prog_card_4_link: "...",
-      prog_card_4_type: "...",
-      prog_card_4_header: "...",
+      prog_card_1_header: "..."
     };
 
     this.onChange_prog_card_1_img = this.onChange_prog_card_1_img.bind(this);
@@ -83,38 +71,14 @@ class ProgDesigns extends Component {
           prog_card_1_img,
           prog_card_1_link,
           prog_card_1_type,
-          prog_card_1_header,
-          prog_card_2_img,
-          prog_card_2_link,
-          prog_card_2_type,
-          prog_card_2_header,
-          prog_card_3_img,
-          prog_card_3_link,
-          prog_card_3_type,
-          prog_card_3_header,
-          prog_card_4_img,
-          prog_card_4_link,
-          prog_card_4_type,
-          prog_card_4_header,
+          prog_card_1_header
         } = response.data;
         this.setState({
           name: name,
           prog_card_1_img: prog_card_1_img,
           prog_card_1_link: prog_card_1_link,
           prog_card_1_type: prog_card_1_type,
-          prog_card_1_header: prog_card_1_header,
-          prog_card_2_img: prog_card_2_img,
-          prog_card_2_link: prog_card_2_link,
-          prog_card_2_type: prog_card_2_type,
-          prog_card_2_header: prog_card_2_header,
-          prog_card_3_img: prog_card_3_img,
-          prog_card_3_link: prog_card_3_link,
-          prog_card_3_type: prog_card_3_type,
-          prog_card_3_header: prog_card_3_header,
-          prog_card_4_img: prog_card_4_img,
-          prog_card_4_link: prog_card_4_link,
-          prog_card_4_type: prog_card_4_type,
-          prog_card_4_header: prog_card_4_header,
+          prog_card_1_header: prog_card_1_header
         });
       })
       .catch((error) => {
@@ -150,25 +114,11 @@ class ProgDesigns extends Component {
       prog_card_1_img: this.state.prog_card_1_img,
       prog_card_1_link: this.state.prog_card_1_link,
       prog_card_1_type: this.state.prog_card_1_type,
-      prog_card_1_header: this.state.prog_card_1_header,
-      prog_card_2_img: this.state.prog_card_2_img,
-      prog_card_2_link: this.state.prog_card_2_link,
-      prog_card_2_type: this.state.prog_card_2_type,
-      prog_card_2_header: this.state.prog_card_2_header,
-      prog_card_3_img: this.state.prog_card_3_img,
-      prog_card_3_link: this.state.prog_card_3_link,
-      prog_card_3_type: this.state.prog_card_3_type,
-      prog_card_3_header: this.state.prog_card_3_header,
-      prog_card_4_img: this.state.prog_card_4_img,
-      prog_card_4_link: this.state.prog_card_4_link,
-      prog_card_4_type: this.state.prog_card_4_type,
-      prog_card_4_header: this.state.prog_card_4_header,
+      prog_card_1_header: this.state.prog_card_1_header
     };
-    console.log(prog_section);
 
-    axios
-      .post(`${SERVER_URI}/api/postProgData`, prog_section)
-      .then((res) => console.log(res));
+    axios.post(`${SERVER_URI}/api/postProgData`, prog_section)
+      .then(res => console.log(res));
 
     window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
   }

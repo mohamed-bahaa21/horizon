@@ -61,7 +61,7 @@ exports.postHeroData = (req, res, next) => {
 };
 
 exports.getProgData = (req, res, next) => {
-  Horizon.findById("606ff91fef83672e10f01feb").then((result) => {
+  Horizon.findById("606f5689ff5464449437a646").then((result) => {
     res.json(result);
   });
 };
@@ -78,7 +78,7 @@ exports.postProgData = (req, res, next) => {
   Horizon.findById("606f5689ff5464449437a646")
     .then((horizon) => {
       console.log(req.body);
-      horizon.name = name;
+      // horizon.name = name;
       horizon.prog_card_1_img = prog_card_1_img;
       horizon.prog_card_1_link = prog_card_1_link;
       horizon.prog_card_1_type = prog_card_1_type;
