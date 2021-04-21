@@ -10,6 +10,7 @@ const Mail = require("../models/Mail");
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
+// Landing Page
 exports.getLanding = (req, res, next) => {
   Horizon.find().then((result) => {
     Blog.find().limit(3).then(blogs => {
@@ -27,7 +28,14 @@ exports.getLanding = (req, res, next) => {
   });
 };
 
-// Section 1
+// About Page
+exports.getAbout = (req, res, next) => {
+  res.render("about", {
+    msgs: req.flash('success'),
+  });
+};
+
+// Landing page data
 exports.getLandingData = (req, res, next) => {
   var origin = req.originalUrl;
 
@@ -36,6 +44,7 @@ exports.getLandingData = (req, res, next) => {
   });
 };
 
+// Admin Edits -> Hero Section Data 
 exports.postHeroData = (req, res, next) => {
   const {
     name,
@@ -64,13 +73,13 @@ exports.postHeroData = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
-// Section 2
+// Admin Gets -> Prog Design Section Data 
 exports.getProgData = (req, res, next) => {
   Horizon.findById("606ff91fef83672e10f01feb").then((result) => {
     res.json(result);
   });
 };
-
+// Admin Edits -> Prog Design Section Data 
 exports.postProgData = (req, res, next) => {
   const {
     prog_card_1_img,
@@ -96,6 +105,7 @@ exports.postProgData = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
+// Admin Uploads Image TO DB
 exports.postImgToGallery = (req, res, next) => {
   // console.log(req.body);
 
@@ -112,6 +122,7 @@ exports.postImgToGallery = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
+// User Subscribes
 exports.subscribe = (req, res, next) => {
   console.log(req.body);
 
