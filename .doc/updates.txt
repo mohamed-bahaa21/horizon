@@ -80,3 +80,33 @@ V1.0 Requirements:
     - Connect User w/ DB
     - Update Admin UI
     - Connect Admin w/ DB
+
+V2.0 Requirements:
+    - notifs for user & admin
+    - mailing list
+    - Upload Imgs
+    - Update Admin:
+        - Hero
+        - Prog Design
+    - Update User:
+        - about page
+        - landing restruct
+    - Update DB:
+        - landing
+        - gallery
+        - blog
+        - mails
+
+V3.0 Requirements:
+    - notifs for user & admin
+    - Update Admin:
+        - CSV download
+        - About
+        - Products inside page
+        - Free form inside page
+        - landing sections:
+            - hero lenses design
+            - blog
+            - technical
+    - Update User
+

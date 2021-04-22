@@ -1,6 +1,6 @@
 {
   "name": "horizon-admin-portal",
-  "version": "3.2.0",
+  "version": "3.0",
   "description": "Horizon Admin Portal",
   "author": {
     "name": "Ayk",
@@ -25,6 +25,7 @@
     "classnames": "^2.2.6",
     "core-js": "^3.8.1",
     "enzyme": "^3.11.0",
+    "express": "^4.17.1",
     "firebase": "^8.3.3",
     "graphql": "^15.5.0",
     "loadash": "^1.0.0",
@@ -37,8 +38,8 @@
     "react-flash-message": "^1.0.5",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
-    "redux": "4.0.5",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "redux": "4.0.5"
   },
   "devDependencies": {
     "auto-changelog": "~2.2.1"
