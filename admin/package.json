@@ -46,6 +46,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
