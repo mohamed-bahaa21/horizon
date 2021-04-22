@@ -46,13 +46,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject",
-    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit"
+    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit",
+    "postinstall-test": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -72,7 +72,7 @@
     ]
   },
   "engines": {
-    "node": "0.12.2",
+    "node": ">=10",
     "npm": ">=6"
   }
 }
