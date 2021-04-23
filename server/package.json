@@ -1,6 +1,6 @@
 {
-  "name": "3-startups",
-  "version": "1.0.0",
+  "name": "horizon-main-server",
+  "version": "3.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -8,17 +8,18 @@
     "start": "nodemon app.js"
   },
   "keywords": [
-    "the-storce",
-    "storce",
-    "trainee",
-    "mentor",
-    "e-learning",
-    "hiring",
-    "freelancing",
-    "projects",
-    "experience"
+    "horizon",
+    "lenses",
+    "vision",
+    "single-vision",
+    "bifocal",
+    "industry",
+    "startups"
   ],
-  "author": "",
+  "author": {
+    "name": "Ayk",
+    "url": "https://ayk-mall.com"
+  },
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",
