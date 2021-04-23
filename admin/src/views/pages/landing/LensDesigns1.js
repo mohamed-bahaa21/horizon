@@ -15,6 +15,8 @@ import {
   CCollapse,
   CCard,
   CCardBody,
+  CInputGroupText,
+  CInputGroup,
 } from "@coreui/react";
 
 import UploadImg from "../../UploadImg/UploadImg";
@@ -184,14 +186,19 @@ class LensDesigns1 extends Component {
             <CFormGroup>
               {/* #1 name */}
               <h6>{this.state.name}</h6>
-              <CInput
-                type="text"
-                id="prog_card_1_img"
-                name="prog_card_1_img"
-                placeholder="prog_card_1_img"
-                value={this.state.prog_card_1_img}
-                onChange={this.onChange_prog_card_1_img}
-              />
+              <CInputGroup className="mb-3">
+                <CInputGroupText id="basic-addon3">
+                  Paste Image URL
+              </CInputGroupText>
+                <CInput
+                  type="text"
+                  id="prog_card_1_img"
+                  name="prog_card_1_img"
+                  placeholder="prog_card_1_img"
+                  value={this.state.prog_card_1_img}
+                  onChange={this.onChange_prog_card_1_img}
+                />
+              </CInputGroup>
               <br />
               <CInput
                 type="text"
@@ -225,7 +232,7 @@ class LensDesigns1 extends Component {
             <br />
 
             <CFormGroup>
-            <CInput
+              <CInput
                 type="submit"
                 id="submit"
                 name="submit"

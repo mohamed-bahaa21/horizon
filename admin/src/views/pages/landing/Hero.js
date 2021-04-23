@@ -11,7 +11,8 @@ import {
   CRow,
   CInputGroup,
   CInputGroupText,
-  CAlert
+  CAlert,
+  CInputCheckbox,
 } from '@coreui/react'
 
 import axios from 'axios';
@@ -176,7 +177,7 @@ class Hero extends Component {
                 <CAlert
                   width="1"
                   color="success"
-                  dismissible={true}
+                  dismissible='true'
                 >
                   <strong>Uploaded</strong> Successfully...
               </CAlert>
@@ -258,9 +259,6 @@ class Hero extends Component {
               <CInputGroup className="mb-3">
                 {/* #6 */}
                 {/* <CLabel htmlFor="hero_link_1_href">hero_link_1_href</CLabel> */}
-                <CInputGroupText id="basic-addon3">
-                  Insert Image URL
-              </CInputGroupText>
                 <CInput
                   type="text"
                   id="hero_link_1_href"
@@ -286,7 +284,7 @@ class Hero extends Component {
                 value="SUBMIT"
                 disabled={this.state.submitDisable}
               />
-              </CFormGroup>
+            </CFormGroup>
           </CForm>
           {/* {this.displayarag()} */}
         </CCol>
