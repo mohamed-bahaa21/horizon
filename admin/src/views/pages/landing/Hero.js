@@ -8,9 +8,14 @@ import {
   CFormGroup,
   CButton,
   CCol,
-  CRow
+  CRow,
+  CInputGroup,
+  CInputGroupText,
+  CAlert
 } from '@coreui/react'
+
 import axios from 'axios';
+import FlashMessage from 'react-flash-message'
 
 // import { graphql } from "react-apollo";
 // import { useQuery, gql } from "@apollo/client";
@@ -34,6 +39,9 @@ class Hero extends Component {
     super(props);
 
     this.state = {
+      edited: false,
+      submitClass: 'disabled',
+      submitDisable: true,
       name: '...',
       hero_parag_1: '...',
       hero_header_1: '...',
@@ -80,33 +88,51 @@ class Hero extends Component {
 
   onChangeName(e) {
     this.setState({
-      name: e.target.value
+      name: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     })
   }
 
   onChange_hero_parag_1(e) {
     this.setState({
-      hero_parag_1: e.target.value
+      hero_parag_1: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     })
   }
   onChange_hero_header_1(e) {
     this.setState({
-      hero_header_1: e.target.value
+      hero_header_1: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     })
   }
   onChange_hero_parag_2(e) {
     this.setState({
-      hero_parag_2: e.target.value
+      hero_parag_2: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     })
   }
   onChange_hero_link_1_name(e) {
     this.setState({
-      hero_link_1_name: e.target.value
+      hero_link_1_name: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     })
   }
   onChange_hero_link_1_href(e) {
     this.setState({
-      hero_link_1_href: e.target.value
+      hero_link_1_href: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     })
   }
 
@@ -120,12 +146,12 @@ class Hero extends Component {
       hero_link_1_name: this.state.hero_link_1_name,
       hero_link_1_href: this.state.hero_link_1_href
     }
-    console.log(hero_section);
 
     axios.post(`${SERVER_URI}/api/postHeroData`, hero_section)
       .then(res => console.log(res));
 
-    window.location = `${ADMIN_URI}/#/landing/hero/`;
+    // window.location = `${ADMIN_URI}/#/landing/hero/`;
+    this.setState({edited: true, submitClass: 'disabled', submitDisable: true, })
   }
 
 
@@ -143,6 +169,22 @@ class Hero extends Component {
   render() {
     return (
       <CRow>
+        {
+          (this.state.edited == true) ?
+            <div>
+              <FlashMessage duration={3000}>
+                <CAlert
+                  width="1"
+                  color="success"
+                  dismissible={true}
+                >
+                  <strong>Uploaded</strong> Successfully...
+              </CAlert>
+              </FlashMessage>
+            </div>
+            :
+            <p></p>
+        }
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>
@@ -213,16 +255,21 @@ class Hero extends Component {
             </CFormGroup>
 
             <CFormGroup>
-              {/* #6 */}
-              {/* <CLabel htmlFor="hero_link_1_href">hero_link_1_href</CLabel> */}
-              <CInput
-                type="text"
-                id="hero_link_1_href"
-                name="hero_link_1_href"
-                placeholder="hero_link_1_href"
-                value={this.state.hero_link_1_href}
-                onChange={this.onChange_hero_link_1_href}
-              />
+              <CInputGroup className="mb-3">
+                {/* #6 */}
+                {/* <CLabel htmlFor="hero_link_1_href">hero_link_1_href</CLabel> */}
+                <CInputGroupText id="basic-addon3">
+                  Insert Image URL
+              </CInputGroupText>
+                <CInput
+                  type="text"
+                  id="hero_link_1_href"
+                  name="hero_link_1_href"
+                  placeholder="hero_link_1_href"
+                  value={this.state.hero_link_1_href}
+                  onChange={this.onChange_hero_link_1_href}
+                />
+              </CInputGroup>
             </CFormGroup>
 
             <hr />
@@ -235,8 +282,9 @@ class Hero extends Component {
                 id="submit"
                 name="submit"
                 placeholder="submit"
-                className="bg-primary text-white bold"
+                className={`bg-${this.state.submitClass} text-white bold`}
                 value="SUBMIT"
+                disabled={this.state.submitDisable}
               />
             </CFormGroup>
           </CForm>

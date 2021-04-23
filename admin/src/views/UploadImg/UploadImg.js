@@ -14,9 +14,8 @@ import {
   CProgressBar
 } from "@coreui/react";
 
-import FlashMessage from 'react-flash-message'
-
 import axios from "axios";
+import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
 var ADMIN_URI = "http://localhost:3000";
