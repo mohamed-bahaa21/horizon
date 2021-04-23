@@ -35,6 +35,7 @@ exports.getAbout = (req, res, next) => {
   });
 };
 
+// User Get Blog By ID route
 exports.getBlog = (req, res, next) => {
   const blogID = req.params.id;
 
@@ -137,6 +138,13 @@ exports.postImgToGallery = (req, res, next) => {
     .then(() => res.json("Image Added..."))
     .catch((err) => res.status(400).json("Error: " + err));
 };
+
+// Admin gets maillist
+exports.mailList = (req, res, next) => {
+  Mail.find({}, {_id: 0, __v:0}).then((result) => {
+    res.json(result);
+  });
+}
 
 // User Subscribes
 exports.subscribe = (req, res, next) => {

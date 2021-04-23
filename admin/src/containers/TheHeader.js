@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   CHeader,
@@ -14,7 +14,6 @@ import {
   CModalHeader,
   CModalBody,
   CModalFooter,
-  CLink,
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 
@@ -29,7 +28,20 @@ const TheHeader = () => {
   const sidebarShow = useSelector((state) => state.sidebarShow);
   const [modal, setModal] = useState(false);
 
-  const toggle = ()=>{
+  var SERVER_URI = "http://localhost:5000"
+  var ADMIN_URI = "http://localhost:3000"
+
+  if (process.env.NODE_ENV === 'development') {
+    SERVER_URI = "http://localhost:5000"
+    ADMIN_URI = "http://localhost:3000"
+  }
+
+  if (process.env.NODE_ENV === 'production') {
+    SERVER_URI = "https://horizon-server.herokuapp.com"
+    ADMIN_URI = "https://horizon-admin.herokuapp.com"
+  }
+
+  const toggle = () => {
     setModal(!modal);
   }
 
@@ -72,9 +84,8 @@ const TheHeader = () => {
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/users">Users</CHeaderNavLink>
         </CHeaderNavItem>
-        {/* Download Mail CSV */}
         <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/users">Users</CHeaderNavLink>
+          <CHeaderNavLink to="/mailing-list">Mailing List</CHeaderNavLink>
         </CHeaderNavItem>
       </CHeaderNav>
 
@@ -90,7 +101,7 @@ const TheHeader = () => {
           <CModal size='xl' show={modal} onClose={toggle}>
             <CModalHeader closeButton>Horizon Preview</CModalHeader>
             <CModalBody>
-            <Preview />              
+              <Preview />
             </CModalBody>
             <CModalFooter>
               <CButton color="secondary" onClick={toggle}>

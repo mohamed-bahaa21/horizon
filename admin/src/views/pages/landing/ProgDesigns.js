@@ -13,7 +13,6 @@ import {
   CRow,
 } from "@coreui/react";
 
-import ProgDesignCard from "./ProgDesignCard";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";

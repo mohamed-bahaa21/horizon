@@ -225,8 +225,8 @@ class Hero extends Component {
               />
             </CFormGroup>
 
-            <hr/>
-            <br/>
+            <hr />
+            <br />
 
             <CFormGroup>
               {/* #6 */}
