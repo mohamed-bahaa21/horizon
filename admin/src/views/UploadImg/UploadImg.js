@@ -89,7 +89,7 @@ const UploadImg = () => {
 
             setUploaded('true')
 
-            window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
+            // window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
           });
       }
     );

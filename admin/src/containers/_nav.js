@@ -14,7 +14,7 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Hero',
+    name: 'Hero Section',
     to: '/landing/hero',
     icon: 'cil-drop',
   },
@@ -30,16 +30,6 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-3'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Progressive Designs',
-    to: '/landing/progDesigns',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
   {
@@ -50,133 +40,21 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Single Vision Lenses',
-    to: '/landing/single_vision_lenses',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Lens Info',
-    to: '/landing/lens_info',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Bifocal Lenses',
-    to: '/landing/bifocal_lens',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
     className: 'm-3'
   },
   {
-    _tag: 'CSidebarNavItem',
-    name: 'Watch Video',
-    to: '/landing/video',
-    icon: 'cil-pencil',
-  },
-  {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Logos',
-    to: '/landing/logos',
+    name: 'Lens Designs 1/3',
+    to: '/landing/lens-designs-1',
     icon: 'cil-pencil',
   },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Design Screenshots',
-    to: '/landing/designs',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Client Feedbacks',
-    to: '/landing/feedbacks',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Production Info',
-    to: '/landing/production_info',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Technical Info',
-    to: '/landing/technical_info',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Download App',
-    to: '/landing/download',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Contact Us',
-    to: '/landing/contact',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Map',
-    to: '/landing/typography',
-    icon: 'cil-pencil',
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Footer',
-    to: '/base/forms',
-    icon: 'cil-pencil',
   },
   {
     _tag: 'CSidebarNavDivider',

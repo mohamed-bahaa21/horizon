@@ -151,7 +151,7 @@ class Hero extends Component {
       .then(res => console.log(res));
 
     // window.location = `${ADMIN_URI}/#/landing/hero/`;
-    this.setState({edited: true, submitClass: 'disabled', submitDisable: true, })
+    this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
   }
 
 
@@ -286,7 +286,7 @@ class Hero extends Component {
                 value="SUBMIT"
                 disabled={this.state.submitDisable}
               />
-            </CFormGroup>
+              </CFormGroup>
           </CForm>
           {/* {this.displayarag()} */}
         </CCol>

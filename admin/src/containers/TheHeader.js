@@ -18,6 +18,7 @@ import {
 import CIcon from "@coreui/icons-react";
 
 import Preview from "../views/Preview/Preview";
+import UploadImg from "../views/UploadImg/UploadImg";
 import './preview-modal.css'
 
 // routes config
@@ -98,6 +99,7 @@ const TheHeader = () => {
           <CButton color='primary' onClick={toggle} className="mr-1">
             Preview
           </CButton>
+
           <CModal size='xl' show={modal} onClose={toggle}>
             <CModalHeader closeButton>Horizon Preview</CModalHeader>
             <CModalBody>

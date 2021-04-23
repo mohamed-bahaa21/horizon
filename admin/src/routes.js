@@ -8,26 +8,14 @@ const User = React.lazy(() => import('./views/users/User'));
 const MailingList = React.lazy(() => import('./views/mailing/MailingList'));
 
 const Hero = React.lazy(() => import('./views/pages/landing/Hero'));
-// const News = React.lazy(() => import('./views/landing/news'));
-const ProgDesigns = React.lazy(() => import('./views/pages/landing/ProgDesigns'));
-// const About = React.lazy(() => import('./views/landing/about'));
-// const SingleLens = React.lazy(() => import('./views/landing/single_vision_lenses'));
-// const LensInfo = React.lazy(() => import('./views/landing/lens_info'));
-// const BifocalLens = React.lazy(() => import('./views/landing/bifocal_lens'));
-// const Video = React.lazy(() => import('./views/landing/video'));
-// const Logos = React.lazy(() => import('./views/landing/logos'));
-// const Designs = React.lazy(() => import('./views/landing/designs'));
-// const Feedbacks = React.lazy(() => import('./views/landing/feedbacks'));
-// const ProductionInfo = React.lazy(() => import('./views/landing/production_info'));
-// const TechnicalInfo = React.lazy(() => import('./views/landing/technical_info'));
-// const Download = React.lazy(() => import('./views/landing/download'));
-// const Contact = React.lazy(() => import('./views/landing/contact'));
+
+const LensDesigns1 = React.lazy(() => import('./views/pages/landing/LensDesigns1'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/landing/hero', name: 'Hero', component: Hero },
-  { path: '/landing/progDesigns', name: 'Progressive Designs', component: ProgDesigns },
+  { path: '/landing/lens-designs-1', name: 'Lens Designs 1', component: LensDesigns1 },
   
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/widgets', name: 'Widgets', component: Widgets },

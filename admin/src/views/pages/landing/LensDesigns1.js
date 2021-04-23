@@ -11,11 +11,16 @@ import {
   CButton,
   CCol,
   CRow,
+  CAlert,
+  CCollapse,
+  CCard,
+  CCardBody,
 } from "@coreui/react";
 
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
+import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
 var ADMIN_URI = "http://localhost:3000";
@@ -36,11 +41,16 @@ if (process.env.NODE_ENV === "production") {
 // const [url, setUrl] = useState("");
 // const [progress, setProgress] = useState(0);
 
-class ProgDesigns extends Component {
+class LensDesigns1 extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      visible: false,
+      activeKey: 0,
+      edited: false,
+      submitClass: 'disabled',
+      submitDisable: true,
       image: "...",
       url: "...",
       progress: "...",
@@ -90,21 +100,35 @@ class ProgDesigns extends Component {
   onChange_prog_card_1_img(e) {
     this.setState({
       prog_card_1_img: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     });
   }
   onChange_prog_card_1_link(e) {
     this.setState({
       prog_card_1_link: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     });
   }
+
   onChange_prog_card_1_type(e) {
     this.setState({
       prog_card_1_type: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     });
   }
+
   onChange_prog_card_1_header(e) {
     this.setState({
       prog_card_1_header: e.target.value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
     });
   }
 
@@ -121,7 +145,8 @@ class ProgDesigns extends Component {
     axios.post(`${SERVER_URI}/api/postProgData`, prog_section)
       .then(res => console.log(res));
 
-    window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
+    // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
+    this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
   }
 
   // Using imgbb for image hosting 
@@ -132,12 +157,28 @@ class ProgDesigns extends Component {
   //     .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
   //     .then((res) => console.log(res));
 
-  //   window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
+  //   window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
   // }
 
   render() {
     return (
       <CRow>
+        {
+          (this.state.edited == true) ?
+            <div>
+              <FlashMessage duration={3000}>
+                <CAlert
+                  width="1"
+                  color="success"
+                  dismissible={true}
+                >
+                  <strong>Uploaded</strong> Successfully...
+              </CAlert>
+              </FlashMessage>
+            </div>
+            :
+            <p></p>
+        }
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>
@@ -184,13 +225,14 @@ class ProgDesigns extends Component {
             <br />
 
             <CFormGroup>
-              <CInput
+            <CInput
                 type="submit"
                 id="submit"
                 name="submit"
                 placeholder="submit"
-                className="bg-primary text-white bold"
+                className={`bg-${this.state.submitClass} text-white bold`}
                 value="SUBMIT"
+                disabled={this.state.submitDisable}
               />
             </CFormGroup>
           </CForm>
@@ -216,4 +258,4 @@ class ProgDesigns extends Component {
   }
 }
 
-export default ProgDesigns;
+export default LensDesigns1;

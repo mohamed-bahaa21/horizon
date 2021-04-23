@@ -5,7 +5,7 @@ import {
     CFormGroup,
 } from "@coreui/react";
 
-class ProgDesignCard extends Component {
+class LensDesigns1Card extends Component {
     constructor(props) {
         super(props);
 
@@ -68,7 +68,7 @@ class ProgDesignCard extends Component {
     //     .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
     //     .then((res) => console.log(res));
 
-    //   window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
+    //   window.location = `${ADMIN_URI}/#/landing/LensDesigns1s/`;
     // }
 
     render() {
@@ -116,4 +116,4 @@ class ProgDesignCard extends Component {
     }
 }
 
-export default ProgDesignCard;
+export default LensDesigns1Card;
