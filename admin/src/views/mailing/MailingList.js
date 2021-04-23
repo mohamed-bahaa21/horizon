@@ -77,7 +77,7 @@ class MailingList extends Component {
 
         return (
             <div>
-                <CSVLink className="btn btn-primary" data={this.state.mailingList} filename='Mailing_List.csv'>
+                <CSVLink className="btn btn-primary" data={this.state.mailingList} filename='Horizon_Mailing_List.csv'>
                     Download Mailing List
                 </CSVLink>
                 <br/>
