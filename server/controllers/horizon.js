@@ -22,7 +22,7 @@ exports.getLanding = (req, res, next) => {
         prog: result[1],
         blog1: blogs[0],
         blog2: blogs[1],
-        blog3: blogs[2],
+        blog3: blogs[2]
       })
     });
   });
@@ -33,6 +33,22 @@ exports.getAbout = (req, res, next) => {
   res.render("about", {
     msgs: req.flash('success'),
   });
+};
+
+exports.getBlog = (req, res, next) => {
+  const blogID = req.params.id;
+
+  Blog.findById(blogID).then(result => {
+    Blog.find().limit(3).then(blogs => {
+      console.log(result);
+
+      res.render('blog', {
+        msgs: req.flash('success'),
+        blog: result,
+        blogs: blogs
+      })
+    });
+  })
 };
 
 // Landing page data

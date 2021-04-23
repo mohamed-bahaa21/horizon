@@ -6,6 +6,7 @@ const horizonController = require(path.resolve(__basename, 'controllers', 'horiz
 
 route.get('/', horizonController.getLanding)
 route.get('/about-us', horizonController.getAbout)
+route.get('/blog/:id', horizonController.getBlog)
 
 route.get('/api/getLandingData', horizonController.getLandingData)
 route.post('/api/postHeroData', horizonController.postHeroData)
