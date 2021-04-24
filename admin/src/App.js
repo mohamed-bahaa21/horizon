@@ -21,7 +21,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
               {/* <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
@@ -31,7 +31,7 @@ class App extends Component {
               <Route path="/" name="Home" render={props => <TheLayout {...props}/>} />
             </Switch>
           </React.Suspense>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

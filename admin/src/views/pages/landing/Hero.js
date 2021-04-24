@@ -17,6 +17,7 @@ import {
 
 import axios from 'axios';
 import FlashMessage from 'react-flash-message'
+import { from } from 'apollo-link';
 
 // import { graphql } from "react-apollo";
 // import { useQuery, gql } from "@apollo/client";
