@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import { storage } from "../../firebase/firebase";
 
 import {
+  CCollapse,
   CCard,
   CCardBody,
   CCardText,
@@ -37,6 +38,7 @@ const UploadImg = () => {
   const [uploaded, setUploaded] = useState('false')
   const [copied, setCopied] = useState('false')
   const [uploadBtnState, setUploadBtnState] = useState('false');
+  const [visible, setVisible] = useState(false)
 
   const handleChange = e => {
     if (e.target.files[0]) {
@@ -102,62 +104,77 @@ const UploadImg = () => {
     setCopied('true')
   }
 
+  const toggleUpload = () => {
+    setVisible(!visible);
+  }
+
   return (
     <div>
-      <CCard style={{ width: '50vw' }}>
-        {
-          (uploaded === 'true') ?
-            <div>
-              <CAlert
-                width="1"
-                color="success"
-              >
-                <strong>Uploaded</strong> Successfully...
+      <CButton className='btn-primary' onClick={toggleUpload}>Upload Image</CButton>
+      <br /><br />
+      <CCollapse show={visible}>
+        <CCard className="mt-3">
+          <CCardBody>
+
+            <CCard style={{ width: '50vw' }}>
+              {
+                (uploaded === 'true') ?
+                  <div>
+                    <CAlert
+                      width="1"
+                      color="success"
+                    >
+                      <strong>Uploaded</strong> Successfully...
               </CAlert>
 
-              <FlashMessage duration={3000}>
-                Uploaded Successfully...
+                    <FlashMessage duration={3000}>
+                      Uploaded Successfully...
             </FlashMessage>
-            </div>
-            :
-            <p></p>
-        }
-        <CCardBody>
-          <CCardTitle>Upload Image</CCardTitle>
+                  </div>
+                  :
+                  <p></p>
+              }
+              <CCardBody>
+                <CCardTitle>Upload Image</CCardTitle>
 
-          <CListGroupItem>
-            <CProgress className="mb-3">
-              <CProgressBar value={progress}></CProgressBar>
-            </CProgress>
-            <progress value={progress} max="100" />
-          </CListGroupItem>
+                <CListGroupItem>
+                  <CProgress className="mb-3">
+                    <CProgressBar value={progress}></CProgressBar>
+                  </CProgress>
+                  <progress value={progress} max="100" />
+                </CListGroupItem>
 
 
-          <CListGroupItem>
-            <input type="file" onChange={handleChange} />
-            <CButton color="secondary" onClick={handleUpload}>Upload</CButton>
-            <CCardText>
-              <strong> Image URL: </strong>
-              {url}
-            </CCardText>
-          </CListGroupItem>
+                <CListGroupItem>
+                  <input type="file" onChange={handleChange} />
+                  <CButton color="secondary" onClick={handleUpload}>Upload</CButton>
+                  <CCardText>
+                    <strong> Image URL: </strong>
+                    {url}
+                  </CCardText>
+                </CListGroupItem>
 
-          <CListGroupItem>
-            {
-              (copied === 'true') ?
-                <div>
-                  <FlashMessage duration={2000}>
-                    Copied To Clipboard...
+                <CListGroupItem>
+                  {
+                    (copied === 'true') ?
+                      <div>
+                        <FlashMessage duration={2000}>
+                          Copied To Clipboard...
             </FlashMessage>
-                </div>
-                :
-                <p></p>
-            }
-            <CButton color="secondary" onClick={copyToCLip}>Copy Image URL to Clipboard</CButton>
-          </CListGroupItem>
-        </CCardBody>
-      </CCard>
-      <img className="uploadedImg" src={url || "http://via.placeholder.com/300"} alt="firebase-image" />
+                      </div>
+                      :
+                      <p></p>
+                  }
+                  <CButton color="secondary" onClick={copyToCLip}>Copy Image URL to Clipboard</CButton>
+                </CListGroupItem>
+              </CCardBody>
+            </CCard>
+
+            <img className="uploadedImg" src={url || "http://via.placeholder.com/300"} alt="firebase-image" />
+
+          </CCardBody>
+        </CCard>
+      </CCollapse>
     </div>
   );
 };

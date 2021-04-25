@@ -12,6 +12,7 @@ const Hero = React.lazy(() => import('./views/pages/landing/Hero'));
 
 const LensDesigns1 = React.lazy(() => import('./views/pages/landing/LensDesigns1'));
 const LensInfo1 = React.lazy(() => import('./views/pages/landing/LensInfo1'));
+const LensDesigns2 = React.lazy(() => import('./views/pages/landing/LensDesigns2'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -19,6 +20,7 @@ const routes = [
   { path: '/landing/hero', name: 'Hero', component: Hero },
   { path: '/landing/lens-designs-1', name: 'Lens Designs 1', component: LensDesigns1 },
   { path: '/landing/lens-info-1', name: 'Lens Info 1', component: LensInfo1 },
+  { path: '/landing/lens-designs-2', name: 'Lens Designs 2', component: LensDesigns2 },
   
   { path: '/gallery', name: 'Gallery', component: Gallery },
   { path: '/charts', name: 'Charts', component: Charts },

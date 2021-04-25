@@ -63,8 +63,14 @@ const _nav =  [
     className: 'm-1'
   },
   {
+    _tag: 'CSidebarNavItem',
+    name: 'Lens Designs 2/3',
+    to: '/landing/lens-designs-2',
+    icon: 'cil-pencil',
+  },
+  {
     _tag: 'CSidebarNavDivider',
-    className: 'm-1'
+    className: 'm-3'
   },
   {
     _tag: 'CSidebarNavTitle',
