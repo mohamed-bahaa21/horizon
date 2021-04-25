@@ -127,6 +127,57 @@ const horizonSchema = new Schema({
         type: String,
         required: false
     },
+    // END SECTION
+    // START LENS DESIGNS 2 4/13
+    "ld2_header": {
+        type: String,
+        required: false
+    },
+    "ld2_desc": {
+        type: String,
+        required: false
+    },
+    "ld2_designs": [{
+        "_id": {
+            type: Schema.ObjectId,
+            required: true
+        },
+        "header": {
+            type: String,
+            required: false
+        },
+        "sub_header": {
+            type: String,
+            required: false
+        },
+        "img": {
+            type: String,
+            required: false
+        },
+        "content_before": {
+            type: String,
+            required: false
+        },
+        "content_after": {
+            type: String,
+            required: false
+        },
+        "specs": [{
+            "_id": {
+                type: Schema.ObjectId,
+                required: true
+            },
+            "title": {
+                type: String,
+                required: false
+            },
+            "desc": {
+                type: String,
+                required: false
+            },
+        }]
+    }]
+    // END SECTION
 
 })
 

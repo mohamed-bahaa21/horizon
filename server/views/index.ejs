@@ -319,7 +319,8 @@
                 </div>
                 <div class="col-md-6" data-aos="fade-zoom-in" data-aos-delay="200">
                     <h2 style="text-align: center; margin: 0 0 2rem 0;"><span
-                            style="color: #d39529; border-bottom: 3px solid; padding: 0.5rem;"><%= li1.li1_header %></span></h2>
+                            style="color: #d39529; border-bottom: 3px solid; padding: 0.5rem;"><%= li1.li1_header %></span>
+                    </h2>
                     <p>
                         <%= li1.li1_desc %>
                     </p>
@@ -375,13 +376,11 @@
     <section id="single-vision" class="hero-section">
         <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
             <h2 class="section-header dark">
-                <span style="border-bottom: 3px solid; padding: 0.5rem;">Lenses Designs 2/3</span>
+                <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= ld2.ld2_header %></span>
             </h2>
             <div class="space-25"></div>
             <p class="dark">
-                Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                amet.
+                <%= ld2.ld2_desc %>
             </p>
             <div class="space-25"></div>
         </div>
@@ -399,253 +398,45 @@
                     O <br />
                     N
                 </div>
-                <div class="nav__cart">
-                    <span>3</span>
+                <div class="nav__cart" style="text-align: center;">
+                    <span> <%= ld2.ld2_designs.length %></span>
+                    <br>
+                    <span> Designs </span>
                 </div>
             </div>
             <!-- <div class="cover">
                 <h2>Single Vision<br />Lenses</h2>
             </div> -->
-            <div class="product" data-index="0">
+            <% ld2.ld2_designs.forEach(function(design, index) { %>
+            <div class="product" data-index="<%= index %>">
                 <div class="product__close">Close</div>
                 <div class="product__new">NEW</div>
                 <div class="product__detail">VIEW DETAILS</div>
-                <img class="product__img" src="assets/imgs/glasses/glass1.png" />
-                <div class="product__brand">Single Vision</div>
-                <div class="product__title">We don't recommend it for anyone</div>
+                <img class="product__img" src="<%= design.img %>" />
+                <div class="product__brand"><%= design.header %></div>
+                <div class="product__title"><%= design.sub_header %></div>
                 <!-- <div class="product__price">$13,200</div> -->
-                <div class="product__buttons" style="--delay: 0.2s">
-                    <div class="product__options">
-                        <button class="product__option">SML</button>
-                        <button class="product__option product__option--active">
-                            MED
-                        </button>
-                        <button class="product__option">LRG</button>
-                        <button class="product__option">XLG</button>
-                    </div>
-                    <!-- <button class="product__option product__add">ADD TO CART</button> -->
-                </div>
                 <div class="product__subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
-                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
-                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
-                    officiis quae.
+                    <%= design.content_before %>
                 </div>
                 <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
-                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
-                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
-                    officiis quae.
+                    <%= design.content_after %>
                 </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.4s">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
-                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
-                    repellendus ab vitae mollitia distinctio quod molestias quis,
-                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
-                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
-                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
-                    eos laudantium deleniti architecto ducimus quia?
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.5s">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
-                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
-                    repellendus ab vitae mollitia distinctio quod molestias quis,
-                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
-                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
-                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
-                    eos laudantium deleniti architecto ducimus quia?
-                </div>
-                <img class="product__detail-img" src="assets/imgs/glasses/glass2.png" />
                 <div class="product__table">
                     <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
+
+                    <% design.specs.forEach(function(spec) { %>
                     <div class="product__table-row">
-                        <div class="product__table-cell">BORDER</div>
+                        <div class="product__table-cell"><%= spec.title %></div>
                         <div class="product__table-cell">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                            optio a illo, earum, iste doloribus, quo id itaque veniam
-                            sapiente unde officia impedit maxime facere.
+                            <%= spec.desc %>
                         </div>
                     </div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">COLOR</div>
-                        <div class="product__table-cell">Lorem ipsum dolor</div>
-                    </div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">INFO</div>
-                        <div class="product__table-cell">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                            optio a illo, earum, iste doloribus.
-                        </div>
-                    </div>
+                    <% }) %>
                     <div class="product__option">ALL SPECIFICATIONS</div>
                 </div>
-                <!-- <div class="product__grid">
-                    <img src="assets/imgs/glasses/glass1.png" /><img src="assets/imgs/glasses/glass2.png" /><img
-                        src="assets/imgs/glasses/glass3.png" /><img src="assets/imgs/glasses/glass4.png" /><img
-                        src="assets/imgs/glasses/glass1.png" />
-                </div> -->
             </div>
-
-            <div class="product" data-index="1">
-                <div class="product__close">Close</div>
-                <div class="product__new">NEW</div>
-                <div class="product__detail">VIEW DETAILS</div>
-                <img class="product__img" src="assets/imgs/glasses/glass1.png" />
-                <div class="product__brand">Single Vision</div>
-                <div class="product__title">We don't recommend it for anyone</div>
-                <!-- <div class="product__price">$13,200</div> -->
-                <div class="product__buttons" style="--delay: 0.2s">
-                    <div class="product__options">
-                        <button class="product__option">SML</button>
-                        <button class="product__option product__option--active">
-                            MED
-                        </button>
-                        <button class="product__option">LRG</button>
-                        <button class="product__option">XLG</button>
-                    </div>
-                    <!-- <button class="product__option product__add">ADD TO CART</button> -->
-                </div>
-                <div class="product__subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
-                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
-                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
-                    officiis quae.
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
-                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
-                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
-                    officiis quae.
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.4s">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
-                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
-                    repellendus ab vitae mollitia distinctio quod molestias quis,
-                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
-                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
-                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
-                    eos laudantium deleniti architecto ducimus quia?
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.5s">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
-                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
-                    repellendus ab vitae mollitia distinctio quod molestias quis,
-                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
-                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
-                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
-                    eos laudantium deleniti architecto ducimus quia?
-                </div>
-                <img class="product__detail-img" src="assets/imgs/glasses/glass2.png" />
-                <div class="product__table">
-                    <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">BORDER</div>
-                        <div class="product__table-cell">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                            optio a illo, earum, iste doloribus, quo id itaque veniam
-                            sapiente unde officia impedit maxime facere.
-                        </div>
-                    </div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">COLOR</div>
-                        <div class="product__table-cell">Lorem ipsum dolor</div>
-                    </div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">INFO</div>
-                        <div class="product__table-cell">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                            optio a illo, earum, iste doloribus.
-                        </div>
-                    </div>
-                    <div class="product__option">ALL SPECIFICATIONS</div>
-                </div>
-                <!-- <div class="product__grid">
-                    <img src="assets/imgs/glasses/glass1.png" /><img src="assets/imgs/glasses/glass2.png" /><img
-                        src="assets/imgs/glasses/glass3.png" /><img src="assets/imgs/glasses/glass4.png" /><img
-                        src="assets/imgs/glasses/glass1.png" />
-                </div> -->
-            </div>
-
-            <div class="product" data-index="2">
-                <div class="product__close">Close</div>
-                <div class="product__new">NEW</div>
-                <div class="product__detail">VIEW DETAILS</div>
-                <img class="product__img" src="assets/imgs/glasses/glass1.png" />
-                <div class="product__brand">Single Vision</div>
-                <div class="product__title">We don't recommend it for anyone</div>
-                <!-- <div class="product__price">$13,200</div> -->
-                <div class="product__buttons" style="--delay: 0.2s">
-                    <div class="product__options">
-                        <button class="product__option">SML</button>
-                        <button class="product__option product__option--active">
-                            MED
-                        </button>
-                        <button class="product__option">LRG</button>
-                        <button class="product__option">XLG</button>
-                    </div>
-                    <!-- <button class="product__option product__add">ADD TO CART</button> -->
-                </div>
-                <div class="product__subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
-                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
-                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
-                    officiis quae.
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id error
-                    mollitia veritatis odio repudiandae. Suscipit dolorum sunt rem
-                    aspernatur saepe sint sequi aut quis. Doloribus neque laborum fugiat
-                    officiis quae.
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.4s">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
-                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
-                    repellendus ab vitae mollitia distinctio quod molestias quis,
-                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
-                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
-                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
-                    eos laudantium deleniti architecto ducimus quia?
-                </div>
-                <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.5s">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod,
-                    quos? Nesciunt quibusdam corporis quo repellendus sequi. Molestiae
-                    repellendus ab vitae mollitia distinctio quod molestias quis,
-                    suscipit magni id ex in?Nostrum quibusdam, sunt deleniti vel
-                    sapiente modi tempore ea omnis non adipisci earum totam illo esse
-                    quo voluptatem dignissimos excepturi saepe! Minima vero consequatur
-                    eos laudantium deleniti architecto ducimus quia?
-                </div>
-                <img class="product__detail-img" src="assets/imgs/glasses/glass2.png" />
-                <div class="product__table">
-                    <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">BORDER</div>
-                        <div class="product__table-cell">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                            optio a illo, earum, iste doloribus, quo id itaque veniam
-                            sapiente unde officia impedit maxime facere.
-                        </div>
-                    </div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">COLOR</div>
-                        <div class="product__table-cell">Lorem ipsum dolor</div>
-                    </div>
-                    <div class="product__table-row">
-                        <div class="product__table-cell">INFO</div>
-                        <div class="product__table-cell">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-                            optio a illo, earum, iste doloribus.
-                        </div>
-                    </div>
-                    <div class="product__option">ALL SPECIFICATIONS</div>
-                </div>
-                <!-- <div class="product__grid">
-                    <img src="assets/imgs/glasses/glass1.png" /><img src="assets/imgs/glasses/glass2.png" /><img
-                        src="assets/imgs/glasses/glass3.png" /><img src="assets/imgs/glasses/glass4.png" /><img
-                        src="assets/imgs/glasses/glass1.png" />
-                </div> -->
-            </div>
-
+            <% }) %>
 
             <div class="product__overlay"></div>
         </div>

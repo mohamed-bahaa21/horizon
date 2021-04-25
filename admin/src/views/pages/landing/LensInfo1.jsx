@@ -37,12 +37,6 @@ if (process.env.NODE_ENV === "production") {
   ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
-// for functional component
-
-// const [image, setImage] = useState(null);
-// const [url, setUrl] = useState("");
-// const [progress, setProgress] = useState(0);
-
 class LensInfo1 extends Component {
   constructor(props) {
     super(props);
@@ -66,11 +60,6 @@ class LensInfo1 extends Component {
       li1_parag_3: "...",
       li1_parag_4: "..."
     };
-
-    this.onChange_li1_parag_1 = this.onChange_li1_parag_1.bind(this);
-    this.onChange_li1_parag_2 = this.onChange_li1_parag_2.bind(this);
-    this.onChange_li1_parag_3 = this.onChange_li1_parag_3.bind(this);
-    this.onChange_li1_parag_4 = this.onChange_li1_parag_4.bind(this);
 
     this.onChange = this.onChange.bind(this);
 
@@ -109,47 +98,13 @@ class LensInfo1 extends Component {
 
   onChange(e) {
     const value = e.target.value;
+    console.log(value);
     this.setState({
       [e.target.name]: value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
     })
-  }
-
-  onChange_li1_parag_1(e) {
-    this.setState({
-      li1_parag_1: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
-  }
-  onChange_li1_parag_2(e) {
-    this.setState({
-      li1_parag_2: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
-  }
-
-  onChange_li1_parag_3(e) {
-    this.setState({
-      li1_parag_3: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
-  }
-
-  onChange_li1_parag_4(e) {
-    this.setState({
-      li1_parag_4: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
   }
 
   onSubmit(e) {
@@ -170,17 +125,6 @@ class LensInfo1 extends Component {
     // window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
     this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
   }
-
-  // Using imgbb for image hosting 
-  // onSubmitImgFile(e) {
-  //   e.preventDefault();
-
-  //   axios
-  //     .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
-  //     .then((res) => console.log(res));
-
-  //   window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
-  // }
 
   render() {
     return (

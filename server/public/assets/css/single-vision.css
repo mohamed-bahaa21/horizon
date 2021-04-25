@@ -194,7 +194,7 @@
   display: none;
 }
 .product__detail {
-  margin-top: auto;
+  margin-top: 1rem;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -206,7 +206,7 @@
   font-weight: 500;
 }
 .product__detail:hover {
-  margin-top: auto;
+  margin-top: 1.1rem;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;

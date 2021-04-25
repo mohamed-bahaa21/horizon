@@ -22,6 +22,7 @@ exports.getLanding = (req, res, next) => {
         blogs: blogs,
         ld1: result[1],
         li1: result[2],
+        ld2: result[3],
       })
     });
   });
@@ -159,8 +160,35 @@ exports.postLensInfo1 = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
+// Admin Gets, Edits -> Lens Info 1 Section Data 
+exports.getLensDesigns2 = (req, res, next) => {
+  Horizon.findById("6085432c5b363f4088e7e051").then((result) => {
+    res.json(result);
+  });
+};
 
+exports.postLensDesigns2 = (req, res, next) => {
+  const {
+    ld2_header,
+    ld2_desc,
+    ld2_designs
+  } = req.body;
 
+  Horizon.findById("6085432c5b363f4088e7e051")
+    .then((horizon) => {
+      console.log(req.body);
+      // horizon.name = name;
+      horizon.ld2_header = ld2_header;
+      horizon.ld2_desc = ld2_desc;
+      horizon.ld2_designs = ld2_designs;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
 
 // FUNCTIONALITIES
 // Admin gets Gallery
