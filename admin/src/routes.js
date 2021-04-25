@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Charts = React.lazy(() => import('./views/charts/Charts'));
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
+const Gallery = React.lazy(() => import('./views/Gallery/Gallery'));
+const Charts = React.lazy(() => import('./views/charts/Charts'));
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
@@ -19,6 +20,7 @@ const routes = [
   { path: '/landing/lens-designs-1', name: 'Lens Designs 1', component: LensDesigns1 },
   { path: '/landing/lens-info-1', name: 'Lens Info 1', component: LensInfo1 },
   
+  { path: '/gallery', name: 'Gallery', component: Gallery },
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/users', exact: true,  name: 'Users', component: Users },

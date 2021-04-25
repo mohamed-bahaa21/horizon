@@ -76,6 +76,16 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavItem',
+    name: 'Gallery',
+    to: '/gallery',
+    icon: 'cil-chart-pie',
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
     name: 'Charts',
     to: '/charts',
     icon: 'cil-chart-pie',

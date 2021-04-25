@@ -163,6 +163,14 @@ exports.postLensInfo1 = (req, res, next) => {
 
 
 // FUNCTIONALITIES
+// Admin gets Gallery
+exports.gallery = (req, res, next) => {
+  Gallery.find({}, {
+    __v: 0
+  }).then((result) => {
+    res.json(result);
+  });
+}
 
 // Admin Uploads Image TO DB
 exports.postImgToGallery = (req, res, next) => {

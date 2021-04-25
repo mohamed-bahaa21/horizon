@@ -21,6 +21,7 @@ route.get('/api/getLensInfo1', horizonController.getLensInfo1)
 route.post('/api/postLensInfo1', horizonController.postLensInfo1)
 
 // FUNCTIONALITIES
+route.get('/api/gallery', horizonController.gallery)
 route.post('/api/postImgToGallery', horizonController.postImgToGallery)
 route.get('/api/mailing-list', horizonController.mailList)
 route.post('/api/subscribe', horizonController.subscribe)
