@@ -19,10 +19,9 @@ exports.getLanding = (req, res, next) => {
       res.render("index", {
         msgs: req.flash('success'),
         horizon: result[0],
-        prog: result[1],
-        blog1: blogs[0],
-        blog2: blogs[1],
-        blog3: blogs[2]
+        blogs: blogs,
+        ld1: result[1],
+        li1: result[2],
       })
     });
   });
@@ -90,14 +89,14 @@ exports.postHeroData = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
-// Admin Gets -> Prog Design Section Data 
-exports.getProgData = (req, res, next) => {
+// Admin Gets, Edits -> Lens Designs 1 Section Data 
+exports.getLensDesigns1 = (req, res, next) => {
   Horizon.findById("606ff91fef83672e10f01feb").then((result) => {
     res.json(result);
   });
 };
-// Admin Edits -> Prog Design Section Data 
-exports.postProgData = (req, res, next) => {
+
+exports.postLensDesigns1 = (req, res, next) => {
   const {
     prog_card_1_img,
     prog_card_1_link,
@@ -122,6 +121,49 @@ exports.postProgData = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
+// Admin Gets, Edits -> Lens Info 1 Section Data 
+exports.getLensInfo1 = (req, res, next) => {
+  Horizon.findById("608514b45b363f4088e7e050").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postLensInfo1 = (req, res, next) => {
+  const {
+    li1_header,
+    li1_desc,
+    li1_img,
+    li1_parag_1,
+    li1_parag_2,
+    li1_parag_3,
+    li1_parag_4
+  } = req.body;
+
+  Horizon.findById("608514b45b363f4088e7e050")
+    .then((horizon) => {
+      console.log(req.body);
+      // horizon.name = name;
+      horizon.li1_header = li1_header;
+      horizon.li1_desc = li1_desc;
+      horizon.li1_img = li1_img;
+      horizon.li1_parag_1 = li1_parag_1;
+      horizon.li1_parag_2 = li1_parag_2;
+      horizon.li1_parag_3 = li1_parag_3;
+      horizon.li1_parag_4 = li1_parag_4;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+
+
+
+// FUNCTIONALITIES
+
 // Admin Uploads Image TO DB
 exports.postImgToGallery = (req, res, next) => {
   // console.log(req.body);
@@ -141,7 +183,10 @@ exports.postImgToGallery = (req, res, next) => {
 
 // Admin gets maillist
 exports.mailList = (req, res, next) => {
-  Mail.find({}, {_id: 0, __v:0}).then((result) => {
+  Mail.find({}, {
+    _id: 0,
+    __v: 0
+  }).then((result) => {
     res.json(result);
   });
 }

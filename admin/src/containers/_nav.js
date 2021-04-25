@@ -43,13 +43,19 @@ const _nav =  [
     className: 'm-3'
   },
   {
+    _tag: 'CSidebarNavItem',
+    name: 'Lens Designs 1/3',
+    to: '/landing/lens-designs-1',
+    icon: 'cil-pencil',
+  },
+  {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Lens Designs 1/3',
-    to: '/landing/lens-designs-1',
+    name: 'Lens Info 1/3',
+    to: '/landing/lens-info-1',
     icon: 'cil-pencil',
   },
   {

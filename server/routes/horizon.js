@@ -8,14 +8,20 @@ route.get('/', horizonController.getLanding)
 route.get('/about-us', horizonController.getAbout)
 route.get('/blog/:id', horizonController.getBlog)
 
+// ADMIN -> Hero Section
 route.get('/api/getLandingData', horizonController.getLandingData)
 route.post('/api/postHeroData', horizonController.postHeroData)
 
-route.get('/api/getProgData', horizonController.getProgData)
-route.post('/api/postProgData', horizonController.postProgData)
+// ADMIN -> Lens Designs 1 Section
+route.get('/api/getLensDesigns1', horizonController.getLensDesigns1)
+route.post('/api/postLensDesigns1', horizonController.postLensDesigns1)
 
+// ADMIN -> Lens Info 1 Section
+route.get('/api/getLensInfo1', horizonController.getLensInfo1)
+route.post('/api/postLensInfo1', horizonController.postLensInfo1)
+
+// FUNCTIONALITIES
 route.post('/api/postImgToGallery', horizonController.postImgToGallery)
-
 route.get('/api/mailing-list', horizonController.mailList)
 route.post('/api/subscribe', horizonController.subscribe)
 

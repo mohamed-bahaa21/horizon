@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
 // const [url, setUrl] = useState("");
 // const [progress, setProgress] = useState(0);
 
-class LensDesigns1 extends Component {
+class LensInfo1 extends Component {
   constructor(props) {
     super(props);
 
@@ -53,22 +53,26 @@ class LensDesigns1 extends Component {
       edited: false,
       submitClass: 'disabled',
       submitDisable: true,
+
       image: "...",
       url: "...",
       progress: "...",
-      name: "...",
-      prog_card_1_img: "...",
-      prog_card_1_link: "...",
-      prog_card_1_type: "...",
-      prog_card_1_header: "..."
+
+      li1_header: "...",
+      li1_desc: "...",
+      li1_img: "...",
+      li1_parag_1: "...",
+      li1_parag_2: "...",
+      li1_parag_3: "...",
+      li1_parag_4: "..."
     };
 
-    this.onChange_prog_card_1_img = this.onChange_prog_card_1_img.bind(this);
-    this.onChange_prog_card_1_link = this.onChange_prog_card_1_link.bind(this);
-    this.onChange_prog_card_1_type = this.onChange_prog_card_1_type.bind(this);
-    this.onChange_prog_card_1_header = this.onChange_prog_card_1_header.bind(
-      this
-    );
+    this.onChange_li1_parag_1 = this.onChange_li1_parag_1.bind(this);
+    this.onChange_li1_parag_2 = this.onChange_li1_parag_2.bind(this);
+    this.onChange_li1_parag_3 = this.onChange_li1_parag_3.bind(this);
+    this.onChange_li1_parag_4 = this.onChange_li1_parag_4.bind(this);
+
+    this.onChange = this.onChange.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -76,22 +80,26 @@ class LensDesigns1 extends Component {
 
   componentDidMount() {
     axios
-      .get(`${SERVER_URI}/api/getLensDesigns1`)
+      .get(`${SERVER_URI}/api/getLensInfo1`)
       .then((response) => {
         // console.log(response.data);
         const {
-          name,
-          prog_card_1_img,
-          prog_card_1_link,
-          prog_card_1_type,
-          prog_card_1_header
+          li1_header,
+          li1_desc,
+          li1_img,
+          li1_parag_1,
+          li1_parag_2,
+          li1_parag_3,
+          li1_parag_4,
         } = response.data;
         this.setState({
-          name: name,
-          prog_card_1_img: prog_card_1_img,
-          prog_card_1_link: prog_card_1_link,
-          prog_card_1_type: prog_card_1_type,
-          prog_card_1_header: prog_card_1_header
+          li1_header: li1_header,
+          li1_desc: li1_desc,
+          li1_img: li1_img,
+          li1_parag_1: li1_parag_1,
+          li1_parag_2: li1_parag_2,
+          li1_parag_3: li1_parag_3,
+          li1_parag_4: li1_parag_4,
         });
       })
       .catch((error) => {
@@ -99,35 +107,45 @@ class LensDesigns1 extends Component {
       });
   }
 
-  onChange_prog_card_1_img(e) {
+  onChange(e) {
+    const value = e.target.value;
     this.setState({
-      prog_card_1_img: e.target.value,
+      [e.target.name]: value,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
+    })
+  }
+
+  onChange_li1_parag_1(e) {
+    this.setState({
+      li1_parag_1: e.target.value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
     });
   }
-  onChange_prog_card_1_link(e) {
+  onChange_li1_parag_2(e) {
     this.setState({
-      prog_card_1_link: e.target.value,
+      li1_parag_2: e.target.value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
     });
   }
 
-  onChange_prog_card_1_type(e) {
+  onChange_li1_parag_3(e) {
     this.setState({
-      prog_card_1_type: e.target.value,
+      li1_parag_3: e.target.value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
     });
   }
 
-  onChange_prog_card_1_header(e) {
+  onChange_li1_parag_4(e) {
     this.setState({
-      prog_card_1_header: e.target.value,
+      li1_parag_4: e.target.value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
@@ -137,17 +155,19 @@ class LensDesigns1 extends Component {
   onSubmit(e) {
     e.preventDefault();
     const prog_section = {
-      name: this.state.name,
-      prog_card_1_img: this.state.prog_card_1_img,
-      prog_card_1_link: this.state.prog_card_1_link,
-      prog_card_1_type: this.state.prog_card_1_type,
-      prog_card_1_header: this.state.prog_card_1_header
+      li1_header: this.state.li1_header,
+      li1_desc: this.state.li1_desc,
+      li1_img: this.state.li1_img,
+      li1_parag_1: this.state.li1_parag_1,
+      li1_parag_2: this.state.li1_parag_2,
+      li1_parag_3: this.state.li1_parag_3,
+      li1_parag_4: this.state.li1_parag_4
     };
 
-    axios.post(`${SERVER_URI}/api/postProgData`, prog_section)
+    axios.post(`${SERVER_URI}/api/postLensInfo1`, prog_section)
       .then(res => console.log(res));
 
-    // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
+    // window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
     this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
   }
 
@@ -159,14 +179,14 @@ class LensDesigns1 extends Component {
   //     .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
   //     .then((res) => console.log(res));
 
-  //   window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
+  //   window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
   // }
 
   render() {
     return (
       <CRow>
         {
-          (this.state.edited === true) ?
+          (this.state.edited == true) ?
             <div>
               <FlashMessage duration={3000}>
                 <CAlert
@@ -185,46 +205,73 @@ class LensDesigns1 extends Component {
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>
               {/* #1 name */}
-              <h6>{this.state.name}</h6>
+              <h6>{this.state.li1_header}</h6>
+              <CInput
+                type="text"
+                id="li1_header"
+                name="li1_header"
+                placeholder="li1_header"
+                value={this.state.li1_header}
+                onChange={this.onChange}
+              />
+              <br />
+              <CInput
+                type="text"
+                id="li1_desc"
+                name="li1_desc"
+                placeholder="li1_desc"
+                value={this.state.li1_desc}
+                onChange={this.onChange}
+              />
+              <br />
               <CInputGroup className="mb-3">
                 <CInputGroupText id="basic-addon3">
                   Paste Image URL
               </CInputGroupText>
                 <CInput
                   type="text"
-                  id="prog_card_1_img"
-                  name="prog_card_1_img"
-                  placeholder="prog_card_1_img"
-                  value={this.state.prog_card_1_img}
-                  onChange={this.onChange_prog_card_1_img}
+                  id="li1_img"
+                  name="li1_img"
+                  placeholder="li1_img"
+                  value={this.state.li1_img}
+                  onChange={this.onChange}
                 />
               </CInputGroup>
               <br />
               <CInput
                 type="text"
-                id="prog_card_1_link"
-                name="prog_card_1_link"
-                placeholder="prog_card_1_link"
-                value={this.state.prog_card_1_link}
-                onChange={this.onChange_prog_card_1_link}
+                id="li1_parag_1"
+                name="li1_parag_1"
+                placeholder="li1_parag_1"
+                value={this.state.li1_parag_1}
+                onChange={this.onChange}
               />
               <br />
               <CInput
                 type="text"
-                id="prog_card_1_type"
-                name="prog_card_1_type"
-                placeholder="prog_card_1_type"
-                value={this.state.prog_card_1_type}
-                onChange={this.onChange_prog_card_1_type}
+                id="li1_parag_2"
+                name="li1_parag_2"
+                placeholder="li1_parag_2"
+                value={this.state.li1_parag_2}
+                onChange={this.onChange}
               />
               <br />
               <CInput
                 type="text"
-                id="prog_card_1_header"
-                name="prog_card_1_header"
-                placeholder="prog_card_1_header"
-                value={this.state.prog_card_1_header}
-                onChange={this.onChange_prog_card_1_header}
+                id="li1_parag_3"
+                name="li1_parag_3"
+                placeholder="li1_parag_3"
+                value={this.state.li1_parag_3}
+                onChange={this.onChange}
+              />
+              <br />
+              <CInput
+                type="text"
+                id="li1_parag_3"
+                name="li1_parag_3"
+                placeholder="li1_parag_3"
+                value={this.state.li1_parag_3}
+                onChange={this.onChange}
               />
             </CFormGroup>
 
@@ -246,23 +293,9 @@ class LensDesigns1 extends Component {
         </CCol>
 
         <UploadImg />
-
-        {/* <CCol>
-          <CForm onSubmit={this.onSubmitImgFile}>
-            <CInputFile name="prog_card_1_imgfile" />
-            <CInput
-              type="submit"
-              id="submit"
-              name="submit"
-              placeholder="submit"
-              className="bg-primary text-white bold"
-              value="SUBMIT"
-            />
-          </CForm>
-        </CCol> */}
       </CRow>
     );
   }
 }
 
-export default LensDesigns1;
+export default LensInfo1;

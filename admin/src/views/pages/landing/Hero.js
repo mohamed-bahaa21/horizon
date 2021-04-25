@@ -288,6 +288,7 @@ class Hero extends Component {
             </CFormGroup>
           </CForm>
           {/* {this.displayarag()} */}
+          
         </CCol>
       </CRow>
     )
