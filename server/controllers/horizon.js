@@ -15,7 +15,8 @@ exports.getLanding = (req, res, next) => {
   Horizon.find().then((result) => {
     Blog.find().limit(3).then(blogs => {
       // console.log(blogs;      
-      // console.log(result);
+      console.log(result[4]);
+      
       res.render("index", {
         msgs: req.flash('success'),
         horizon: result[0],
@@ -23,6 +24,7 @@ exports.getLanding = (req, res, next) => {
         ld1: result[1],
         li1: result[2],
         ld2: result[3],
+        li2: result[4]
       })
     });
   });
@@ -89,7 +91,7 @@ exports.postHeroData = (req, res, next) => {
     })
     .catch((err) => res.status(400).json("Error: " + err));
 };
-
+// END SECTION
 // Admin Gets, Edits -> Lens Designs 1 Section Data 
 exports.getLensDesigns1 = (req, res, next) => {
   Horizon.findById("606ff91fef83672e10f01feb").then((result) => {
@@ -121,7 +123,7 @@ exports.postLensDesigns1 = (req, res, next) => {
     })
     .catch((err) => res.status(400).json("Error: " + err));
 };
-
+// END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensInfo1 = (req, res, next) => {
   Horizon.findById("608514b45b363f4088e7e050").then((result) => {
@@ -159,7 +161,7 @@ exports.postLensInfo1 = (req, res, next) => {
     })
     .catch((err) => res.status(400).json("Error: " + err));
 };
-
+// END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensDesigns2 = (req, res, next) => {
   Horizon.findById("6085432c5b363f4088e7e051").then((result) => {
@@ -189,6 +191,39 @@ exports.postLensDesigns2 = (req, res, next) => {
     })
     .catch((err) => res.status(400).json("Error: " + err));
 };
+// END SECTION
+// Admin Gets, Edits -> Lens Info 1 Section Data 
+exports.getLensInfo2 = (req, res, next) => {
+  Horizon.findById("6086c203d9b6ec4c30d027de").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postLensInfo2 = (req, res, next) => {
+  const {
+    li2_header,
+    li2_desc,
+    li2_lft_parags,
+    li2_rght_paragas
+  } = req.body;
+
+  Horizon.findById("6086c203d9b6ec4c30d027de")
+    .then((horizon) => {
+      console.log(req.body);
+      // horizon.name = name;
+      horizon.li2_header = li2_header;
+      horizon.li2_desc = li2_desc;
+      horizon.li2_lft_parags = li2_lft_parags;
+      horizon.li2_rght_paragas = li2_rght_paragas;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
 
 // FUNCTIONALITIES
 // Admin gets Gallery

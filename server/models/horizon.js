@@ -140,7 +140,7 @@ const horizonSchema = new Schema({
     "ld2_designs": [{
         "_id": {
             type: Schema.ObjectId,
-            required: true
+            required: false
         },
         "header": {
             type: String,
@@ -165,7 +165,7 @@ const horizonSchema = new Schema({
         "specs": [{
             "_id": {
                 type: Schema.ObjectId,
-                required: true
+                required: false
             },
             "title": {
                 type: String,
@@ -176,9 +176,37 @@ const horizonSchema = new Schema({
                 required: false
             },
         }]
-    }]
+    }],
     // END SECTION
-
+    // START LENS Info 2 5/13
+    "li2_header": {
+        type: String,
+        required: false
+    },
+    "li2_desc": {
+        type: String,
+        required: false
+    },
+    "li2_lft_parags": [{
+        "parag_header": {
+            type: String,
+            required: false
+        },
+        "parag_content": {
+            type: String,
+            required: false
+        }
+    }],
+    "li2_rght_parags": [{
+        "parag_header": {
+            type: String,
+            required: false
+        },
+        "parag_content": {
+            type: String,
+            required: false
+        }
+    }]
 })
 
 module.exports = mongoose.model('Horizon', horizonSchema);

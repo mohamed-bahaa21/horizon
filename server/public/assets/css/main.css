@@ -687,6 +687,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   line-height: 45px;
   display: inline-block;
   margin: 0 10px 0.5rem;
+  color: #d39529 !important;
 }
 
 .main-features .one-feature .lnr {
@@ -1529,7 +1530,7 @@ footer .subscribe .subscribe-form .form-group .form-control:focus {
 
 footer .footer-widgets .widget {
   color: #fff;
-  margin: 4rem 0 0 0;
+  margin: 2rem 0 0 0;
 }
 
 footer .footer-widgets .widget img {

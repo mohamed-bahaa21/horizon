@@ -75,7 +75,7 @@
         <nav class="navbar navbar-expand-lg navbar-light" id="horizon_menu">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid" alt="" />
+                    <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid" style="padding: 5px 0;" width="150px" alt="navigation-bar-logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
                     aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -386,7 +386,7 @@
                 <div class="single-vision_logo">
                     <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
                 </div>
-                <div class="nav__text">
+                <div class="nav__text" style="text-align: center;">
                     H <br />
                     O <br />
                     R <br />
@@ -398,7 +398,16 @@
                 <div class="nav__cart" style="text-align: center;">
                     <span> <%= ld2.ld2_designs.length %></span>
                     <br>
+                    <% if(ld2.ld2_designs.length > 1) { %>
                     <span> Designs </span>
+
+                    <% } else if(ld2.ld2_designs.length = 1) { %>
+                    <span> Design </span>
+
+                    <% } else { %>
+                    <span></span>
+
+                    <% } %>
                 </div>
             </div>
             <!-- <div class="cover">
@@ -446,39 +455,30 @@
             <div class="row">
                 <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
                     <h2 class="section-header med-dark">
-                        <span style="border-bottom: 3px solid; padding: 0.5rem;">Lens Info 2/2</span>
+                        <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= li2.li2_header %></span>
                     </h2>
                     <div class="space-25"></div>
                     <p>
-                        Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                        amet.
+                        <%= li2.li2_header %>
                     </p>
                     <div class="space-25"></div>
                 </div>
             </div>
+            <!-- CONTENT -->
+            <!-- LEFT PARAGS -->
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-right left-side">
-                    <div class="one-feature one" data-aos="fade-right" data-aos-delay="1000">
-                        <h5>Lorem ipsum</h5>
-                        <span class="lnr lnr-rocket"></span>
-                        <p>Our system is a comprehensive system of applied creativity.</p>
-                    </div>
-                    <div class="one-feature" data-aos="fade-right" data-aos-delay="1400">
-                        <h5>Lorem ipsum</h5>
-                        <span class="lnr lnr-cog"></span>
+                    <% li2.li2_lft_parags.forEach(function(parag, index) { %>
+                    <div class="one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-right" data-aos-delay="1000">
+                        <h5><%= parag.parag_header %></h5>
+                        <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
-                            tempora.
+                            <%= parag.parag_content %>
                         </p>
                     </div>
-                    <div class="one-feature" data-aos="fade-right" data-aos-delay="1800">
-                        <h5>Lorem ipsum</h5>
-                        <span class="lnr lnr-cloud"></span>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
-                            tempora.</p>
-                    </div>
+                    <% }) %>
                 </div>
+                <!-- CENTER IMG & CIRCLES -->
                 <div class="col-lg-6 text-center">
                     <div class="features-circle">
                         <div class="circle-svg" data-aos="zoom-in" data-aos-delay="400">
@@ -497,32 +497,19 @@
                         <img data-aos="fade-up" data-aos-delay="200" src="assets/imgs/glasses/glass3.png"
                             class="img-fluid" alt="" />
                     </div>
+
                 </div>
+                <!-- RIGHT PARAGS -->
                 <div class="col-lg-3 right-side">
-                    <div class="one-feature" data-aos="fade-left" data-aos-delay="1000">
-                        <h5>Lorem ipsum</h5>
-                        <span class="lnr lnr-construction"></span>
+                    <% li2.li2_rght_parags.forEach(function(parag, index) { %>
+                    <div class="one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-left" data-aos-delay="1000">
+                        <h5><%= parag.parag_header %></h5>
+                        <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
-                            tempora.
+                            <%= parag.parag_content %>
                         </p>
                     </div>
-                    <div class="one-feature" data-aos="fade-left" data-aos-delay="1400">
-                        <h5>Lorem ipsum</h5>
-                        <span class="lnr lnr-gift"></span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
-                            tempora.
-                        </p>
-                    </div>
-                    <div class="one-feature" data-aos="fade-left" data-aos-delay="1800">
-                        <h5>Lorem ipsum</h5>
-                        <span class="lnr lnr-database"></span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro labore quaerat tempore
-                            tempora.
-                        </p>
-                    </div>
+                    <% }) %>
                 </div>
             </div>
         </div>
@@ -986,8 +973,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="">
-                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid" alt="" />
-                            <p class="light" style="padding: 0 1rem;">
+                            <img src="assets/imgs/horizon/HLogoW.png" style="padding: 1rem;" class="img-fluid" width="250px" alt="" />
+                            <p class="light" style="padding: 0 1rem; text-align: justify;">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
                                 nostrum odit facilis delectus quia rerum?Lorem ipsum dolor sit
                                 amet consectetur adipisicing elit. Aspernatur eius,
