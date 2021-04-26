@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 import {
+  CCardHeader,
+  CNav,
+  CNavItem,
+  CNavLink,
   CLabel,
   CForm,
   CInput,
@@ -18,6 +22,8 @@ import {
   CInputGroupText,
   CInputGroup,
 } from "@coreui/react";
+
+import Accordion from "../../../reusable/Accordion/Accordion";
 
 import UploadImg from "../../UploadImg/UploadImg";
 
@@ -56,11 +62,14 @@ class LensDesigns1 extends Component {
       ld2_header: "...",
       ld2_desc: "...",
       ld2_designs: [{
-        img: ''
+        img: '',
+        header: '',
+        sub_header: '',
+        content_before: '',
+        content_after: '',
       }]
     };
 
-    this.onChangeHeader = this.onChangeHeader.bind(this);
     this.onChangeDesign = this.onChangeDesign.bind(this);
     this.onChange = this.onChange.bind(this);
 
@@ -83,7 +92,7 @@ class LensDesigns1 extends Component {
           ld2_designs: ld2_designs,
         });
 
-        console.log("State:: ", this.state);
+        console.log("REQ_STATE:: ", this.state);
         console.log("______________________________________");
       })
       .catch((error) => {
@@ -96,44 +105,22 @@ class LensDesigns1 extends Component {
 
     // console.log(this.state);
 
-    const prog_section = {
-      ld2_header: this.state.ld2_header,
-      ld2_desc: this.state.ld2_desc,
-      ld2_designs: this.state.ld2_designs,
-    };
+    if(!this.state.submitDisable) {
+      const prog_section = {
+        ld2_header: this.state.ld2_header,
+        ld2_desc: this.state.ld2_desc,
+        ld2_designs: this.state.ld2_designs,
+      };
+  
+      console.log("POST_STATE:: ", prog_section);
+  
+      axios.post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
+        .then(res => console.log(res));
+  
+      // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
+      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
 
-    console.log(prog_section);
-
-    axios.post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
-      .then(res => console.log(res));
-
-    // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
-    this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
-  }
-
-  // onChange(e) {
-  //   const { id, value } = e.target;
-  //   console.log(value);
-  //   let { ld2_header, ld2_desc, ld2_designs } = this.state;
-
-  //   const targetIndex = ld2_designs.findIndex(datum => {
-  //     return datum._id == id;
-  //   });
-
-  //   if (targetIndex !== -1) {
-  //     ld2_designs[targetIndex].header = value;
-  //     this.setState({ ld2_designs });
-  //   }
-  // }
-
-  onChangeHeader(e) {
-    const { value, name } = e.target;
-    const { ld2_designs } = this.state;
-    console.log(value);
-
-    this.setState({
-      [ld2_designs.header]: value,
-    })
+    }
   }
 
   onChange(e) {
@@ -145,14 +132,14 @@ class LensDesigns1 extends Component {
       submitDisable: false,
       edited: false,
     })
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   onChangeDesign(e, i) {
     const { id, value, name } = e.target;
-    console.log('NAME:: ', name);
-    console.log('VALUE:: ', value);
-    console.log('_____________________________________');
+    // console.log('NAME:: ', name);
+    // console.log('VALUE:: ', value);
+    // console.log('_____________________________________');
 
     this.setState(prevState => {
       const ld2_designs = [...prevState.ld2_designs]
@@ -171,47 +158,71 @@ class LensDesigns1 extends Component {
     })
 
     // console.log(this.state.ld2_designs[i]);
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   render() {
     let listDesigns = this.state.ld2_designs.map((design, index) =>
       <div key={index}>
-        {/* INPUT #1 Design IMG */}
-        <CInputGroup className="mb-3">
-          <CInputGroupText id="basic-addon3">
-            Paste Image URL
+        <Accordion
+          title="Accordion Title"
+          content={
+            <div>
+              {/* INPUT #1 Design IMG */}
+              <CInputGroup className="mb-3">
+                <CInputGroupText id="basic-addon3">
+                  Paste Image URL
               </CInputGroupText>
-          <CInput
-            type="text"
-            placeholder="design_img"
-            name="img"
-            value={design.img}
-            onChange={event => this.onChangeDesign(event, index)}
-          />
-        </CInputGroup>
-        <br />
-        {/* INPUT #2 Design content_before */}
-        {/* <CInput
-          type="text"
-          id="design_content_before"
-          name="design_content_before"
-          placeholder="design_content_before"
-          value={design.content_before}
-          onChange={this.onChange}
-        /> */}
-        <br />
-        {/* INPUT #3 Design content_after */}
-        {/* <CInput
-          type="text"
-          id="design_content_after"
-          name="design_content_after"
-          placeholder="design_content_after"
-          value={design.content_after}
-          onChange={this.onChange}
-        /> */}
-        <br />
-        {/* {design.specs.map(spec =>
+                <CInput
+                  type="text"
+                  placeholder="design_img"
+                  name="img"
+                  value={design.img}
+                  onChange={event => this.onChangeDesign(event, index)}
+                />
+              </CInputGroup>
+              <br />
+              {/* INPUT #2 Design header */}
+              <CInput
+                type="text"
+                id="header"
+                name="header"
+                placeholder="header"
+                value={design.header}
+                onChange={event => this.onChangeDesign(event, index)}
+              />
+              <br />
+              {/* INPUT #3 Design sub_header */}
+              <CInput
+                type="text"
+                id="sub_header"
+                name="sub_header"
+                placeholder="sub_header"
+                value={design.sub_header}
+                onChange={event => this.onChangeDesign(event, index)}
+              />
+              <br />
+              {/* INPUT #4 Design content_before */}
+              <CInput
+                type="text"
+                id="content_before"
+                name="content_before"
+                placeholder="content_before"
+                value={design.content_before}
+                onChange={event => this.onChangeDesign(event, index)}
+              />
+              <br />
+              {/* INPUT #5 Design content_after */}
+              <CInput
+                type="text"
+                id="content_after"
+                name="content_after"
+                placeholder="content_after"
+                value={design.content_after}
+                onChange={event => this.onChangeDesign(event, index)}
+              />
+              <br />
+              {/* {design.specs.map(spec =>
           <div key={spec._id}>
             <CInput
               type="text"
@@ -231,6 +242,10 @@ class LensDesigns1 extends Component {
             />
           </div>
         )} */}
+            </div>
+          }
+        />
+        <hr />
       </div>
     )
     return (
@@ -244,17 +259,18 @@ class LensDesigns1 extends Component {
                   color="success"
                   dismissible={`${true}`}
                 >
-                  <strong>Uploaded</strong> Successfully...
+                  <strong>Updated</strong> Successfully...
               </CAlert>
               </FlashMessage>
             </div>
             :
             <p></p>
         }
+
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>
-              {/* #1 name */}
+              {/* #1 Section Header */}
               <h6>{this.state.ld2_header}</h6>
               <CInput
                 type="text"
@@ -275,12 +291,11 @@ class LensDesigns1 extends Component {
               />
               <hr />
               {/* {this.state.ld2_designs[0].sub_header} */}
+
               {listDesigns}
+
             </CFormGroup>
-
-            <hr />
             <br />
-
             <CFormGroup>
               <CInput
                 type="submit"
@@ -294,6 +309,10 @@ class LensDesigns1 extends Component {
             </CFormGroup>
           </CForm>
         </CCol>
+
+        <br />
+        <br /><br />
+        <hr />
 
         <UploadImg />
       </CRow>
