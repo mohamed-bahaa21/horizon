@@ -67,11 +67,16 @@ class LensDesigns1 extends Component {
         sub_header: '',
         content_before: '',
         content_after: '',
+        specs: [{
+          title: 'title',
+          desc: 'asda',
+        }]
       }]
     };
 
     this.onChangeDesign = this.onChangeDesign.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.onChangeSpec = this.onChangeSpec.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -105,18 +110,18 @@ class LensDesigns1 extends Component {
 
     // console.log(this.state);
 
-    if(!this.state.submitDisable) {
+    if (!this.state.submitDisable) {
       const prog_section = {
         ld2_header: this.state.ld2_header,
         ld2_desc: this.state.ld2_desc,
         ld2_designs: this.state.ld2_designs,
       };
-  
+
       console.log("POST_STATE:: ", prog_section);
-  
+
       axios.post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
         .then(res => console.log(res));
-  
+
       // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
       this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
 
@@ -161,9 +166,35 @@ class LensDesigns1 extends Component {
     // console.log(this.state);
   }
 
+  onChangeSpec(e, di, si) {
+    const { id, value, name } = e.target;
+    // console.log('NAME:: ', name);
+    // console.log('VALUE:: ', value);
+    // console.log('_____________________________________');
+
+    this.setState(prevState => {
+      let temp = {
+        ...prevState,
+        ld2_designs: [...prevState.ld2_designs]
+      }
+
+      temp.ld2_designs[di].specs[si][name] = value
+
+      return {
+        submitClass: 'primary',
+        submitDisable: false,
+        edited: false,
+        temp,
+      }
+    })
+
+    // console.log(this.state.ld2_designs[i]);
+    // console.log(this.state);
+  }
+
   render() {
-    let listDesigns = this.state.ld2_designs.map((design, index) =>
-      <div key={index}>
+    let listDesigns = this.state.ld2_designs.map((design, design_i) =>
+      <div key={design_i}>
         <Accordion
           title="Accordion Title"
           content={
@@ -178,7 +209,7 @@ class LensDesigns1 extends Component {
                   placeholder="design_img"
                   name="img"
                   value={design.img}
-                  onChange={event => this.onChangeDesign(event, index)}
+                  onChange={event => this.onChangeDesign(event, design_i)}
                 />
               </CInputGroup>
               <br />
@@ -189,7 +220,7 @@ class LensDesigns1 extends Component {
                 name="header"
                 placeholder="header"
                 value={design.header}
-                onChange={event => this.onChangeDesign(event, index)}
+                onChange={event => this.onChangeDesign(event, design_i)}
               />
               <br />
               {/* INPUT #3 Design sub_header */}
@@ -199,7 +230,7 @@ class LensDesigns1 extends Component {
                 name="sub_header"
                 placeholder="sub_header"
                 value={design.sub_header}
-                onChange={event => this.onChangeDesign(event, index)}
+                onChange={event => this.onChangeDesign(event, design_i)}
               />
               <br />
               {/* INPUT #4 Design content_before */}
@@ -209,7 +240,7 @@ class LensDesigns1 extends Component {
                 name="content_before"
                 placeholder="content_before"
                 value={design.content_before}
-                onChange={event => this.onChangeDesign(event, index)}
+                onChange={event => this.onChangeDesign(event, design_i)}
               />
               <br />
               {/* INPUT #5 Design content_after */}
@@ -219,29 +250,29 @@ class LensDesigns1 extends Component {
                 name="content_after"
                 placeholder="content_after"
                 value={design.content_after}
-                onChange={event => this.onChangeDesign(event, index)}
+                onChange={event => this.onChangeDesign(event, design_i)}
               />
               <br />
-              {/* {design.specs.map(spec =>
-          <div key={spec._id}>
-            <CInput
-              type="text"
-              id="design_spec_title"
-              name="design_spec_title"
-              placeholder="design_spec_title"
-              value={spec.title}
-              onChange={this.onChange}
-            />
-            <CInput
-              type="text"
-              id="design_spec_desc"
-              name="design_spec_desc"
-              placeholder="design_spec_desc"
-              value={spec.desc}
-              onChange={this.onChange}
-            />
-          </div>
-        )} */}
+              {design.specs.map((spec, spec_i) =>
+                <div key={spec_i}>
+                  <CInput
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="title"
+                    value={spec.title}
+                    onChange={event => this.onChangeSpec(event, design_i, spec_i)}
+                  />
+                  <CInput
+                    type="text"
+                    id="desc"
+                    name="desc"
+                    placeholder="desc"
+                    value={spec.desc}
+                    onChange={event => this.onChangeSpec(event, design_i, spec_i)}
+                  />
+                </div>
+              )}
             </div>
           }
         />
