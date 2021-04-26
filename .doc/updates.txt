@@ -114,4 +114,6 @@ V3.0 Requirements:
         - blog post inside page
         - Products inside page
         - Free form inside page
-
+        - Join our business ordering system:
+            - BG screen related to software
+            - google analytics 

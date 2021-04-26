@@ -56,21 +56,12 @@ class LensDesigns1 extends Component {
       ld2_header: "...",
       ld2_desc: "...",
       ld2_designs: [{
-        _id: 'id',
-        header: 'header',
-        sub_header: 'header',
-        img: 'header',
-        content_before: 'header',
-        content_after: 'header',
-        specs: [{
-          _id: 'id',
-          title: '213',
-          desc: '123',
-        }]
+        img: ''
       }]
     };
 
     this.onChangeHeader = this.onChangeHeader.bind(this);
+    this.onChangeDesign = this.onChangeDesign.bind(this);
     this.onChange = this.onChange.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -81,7 +72,6 @@ class LensDesigns1 extends Component {
     axios
       .get(`${SERVER_URI}/api/getLensDesigns2`)
       .then((response) => {
-        console.log(response.data);
         const {
           ld2_header,
           ld2_desc,
@@ -92,6 +82,9 @@ class LensDesigns1 extends Component {
           ld2_desc: ld2_desc,
           ld2_designs: ld2_designs,
         });
+
+        console.log("State:: ", this.state);
+        console.log("______________________________________");
       })
       .catch((error) => {
         console.log(error);
@@ -100,11 +93,16 @@ class LensDesigns1 extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+
+    // console.log(this.state);
+
     const prog_section = {
       ld2_header: this.state.ld2_header,
       ld2_desc: this.state.ld2_desc,
       ld2_designs: this.state.ld2_designs,
     };
+
+    console.log(prog_section);
 
     axios.post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
       .then(res => console.log(res));
@@ -129,84 +127,91 @@ class LensDesigns1 extends Component {
   // }
 
   onChangeHeader(e) {
-    const value = e.target.value;
+    const { value, name } = e.target;
+    const { ld2_designs } = this.state;
     console.log(value);
 
     this.setState({
-      ld2_header: value,
+      [ld2_designs.header]: value,
     })
   }
 
-
   onChange(e) {
-    const { id, value, name } = e.target;
-    console.log('id:: ', id);
-    console.log('value:: ', value);
-    console.log('name:: ', name);
+    const { id, name, value } = e.target;
 
-    this.setState(prevState => ({
-      [e.target.name]: value,
+    this.setState({
+      [name]: value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
     })
-    )
+    console.log(this.state);
+  }
+
+  onChangeDesign(e, i) {
+    const { id, value, name } = e.target;
+    console.log('NAME:: ', name);
+    console.log('VALUE:: ', value);
+    console.log('_____________________________________');
+
+    this.setState(prevState => {
+      const ld2_designs = [...prevState.ld2_designs]
+
+      ld2_designs[i] = {
+        ...ld2_designs[i],
+        [name]: value
+      }
+
+      return {
+        submitClass: 'primary',
+        submitDisable: false,
+        edited: false,
+        ld2_designs,
+      }
+    })
+
+    // console.log(this.state.ld2_designs[i]);
+    console.log(this.state);
   }
 
   render() {
-    let listDesigns = this.state.ld2_designs.map(design =>
-      <div key={design._id}>
+    let listDesigns = this.state.ld2_designs.map((design, index) =>
+      <div key={index}>
+        {/* INPUT #1 Design IMG */}
         <CInputGroup className="mb-3">
           <CInputGroupText id="basic-addon3">
             Paste Image URL
               </CInputGroupText>
           <CInput
             type="text"
-            id="design_img"
-            name="design_img"
             placeholder="design_img"
+            name="img"
             value={design.img}
-            onChange={this.onChange}
+            onChange={event => this.onChangeDesign(event, index)}
           />
         </CInputGroup>
         <br />
-        <CInput
-          type="text"
-          id={design._id}
-          name='header'
-          placeholder="design_header"
-          value={this.state.ld2_header}
-          onChange={this.onChangeHeader}
-        />
-        <br />
-        <CInput
-          type="text"
-          id="design_sub_header"
-          name="design_sub_header"
-          placeholder="design_sub_header"
-          value={design.sub_header}
-          onChange={this.onChange}
-        />
-        <br />
-        <CInput
+        {/* INPUT #2 Design content_before */}
+        {/* <CInput
           type="text"
           id="design_content_before"
           name="design_content_before"
           placeholder="design_content_before"
           value={design.content_before}
           onChange={this.onChange}
-        />
+        /> */}
         <br />
-        <CInput
+        {/* INPUT #3 Design content_after */}
+        {/* <CInput
           type="text"
           id="design_content_after"
           name="design_content_after"
           placeholder="design_content_after"
           value={design.content_after}
           onChange={this.onChange}
-        />
+        /> */}
         <br />
-        {design.specs.map(spec =>
+        {/* {design.specs.map(spec =>
           <div key={spec._id}>
             <CInput
               type="text"
@@ -225,7 +230,7 @@ class LensDesigns1 extends Component {
               onChange={this.onChange}
             />
           </div>
-        )}
+        )} */}
       </div>
     )
     return (
@@ -251,6 +256,24 @@ class LensDesigns1 extends Component {
             <CFormGroup>
               {/* #1 name */}
               <h6>{this.state.ld2_header}</h6>
+              <CInput
+                type="text"
+                id='ld2_header'
+                name='ld2_header'
+                placeholder="ld2_header"
+                value={this.state.ld2_header}
+                onChange={this.onChange}
+              />
+              <br />
+              <CInput
+                type="text"
+                id="ld2_desc"
+                name="ld2_desc"
+                placeholder="ld2_desc"
+                value={this.state.ld2_desc}
+                onChange={this.onChange}
+              />
+              <hr />
               {/* {this.state.ld2_designs[0].sub_header} */}
               {listDesigns}
             </CFormGroup>
