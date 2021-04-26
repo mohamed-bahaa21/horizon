@@ -1,12 +1,12 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 
-const _nav =  [
-  {
+const _nav = [{
     _tag: 'CSidebarNavItem',
     name: 'Dashboard',
     to: '/dashboard',
-    icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>
+    icon: < CIcon name = "cil-speedometer"
+    customClasses = "c-sidebar-nav-icon" / >
   },
   {
     _tag: 'CSidebarNavTitle',
@@ -70,6 +70,16 @@ const _nav =  [
   },
   {
     _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Lens Info 2/3',
+    to: '/landing/lens-info-2',
+    icon: 'cil-pencil',
+  },
+  {
+    _tag: 'CSidebarNavDivider',
     className: 'm-3'
   },
   {
@@ -120,7 +130,7 @@ const _nav =  [
     addLinkClass: 'c-disabled',
     'disabled': true
   },
-  
+
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'

@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
   ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
-class LensDesigns1 extends Component {
+class LensInfo2 extends Component {
   constructor(props) {
     super(props);
 
@@ -53,24 +53,21 @@ class LensDesigns1 extends Component {
       submitClass: 'disabled',
       submitDisable: true,
 
-      ld2_header: "...",
-      ld2_desc: "...",
-      ld2_designs: [{
-        img: '',
-        header: '',
-        sub_header: '',
-        content_before: '',
-        content_after: '',
-        specs: [{
-          title: 'title',
-          desc: 'asda',
-        }]
+      li2_header: "...",
+      li2_desc: "...",
+      li2_lft_parags: [{
+        parag_header: '',
+        parag_content: '',
+      }],
+      li2_rght_parags: [{
+        parag_header: '',
+        parag_content: '',
       }]
     };
 
-    this.onChangeDesign = this.onChangeDesign.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.onChangeSpec = this.onChangeSpec.bind(this);
+    this.onChangeLft = this.onChangeLft.bind(this);
+    this.onChangeRght = this.onChangeRght.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -78,17 +75,19 @@ class LensDesigns1 extends Component {
 
   componentDidMount() {
     axios
-      .get(`${SERVER_URI}/api/getLensDesigns2`)
+      .get(`${SERVER_URI}/api/getLensInfo2`)
       .then((response) => {
         const {
-          ld2_header,
-          ld2_desc,
-          ld2_designs,
+          li2_header,
+          li2_desc,
+          li2_lft_parags,
+          li2_rght_parags,
         } = response.data;
         this.setState({
-          ld2_header: ld2_header,
-          ld2_desc: ld2_desc,
-          ld2_designs: ld2_designs,
+          li2_header: li2_header,
+          li2_desc: li2_desc,
+          li2_lft_parags: li2_lft_parags,
+          li2_rght_parags: li2_rght_parags,
         });
 
         console.log("REQ_STATE:: ", this.state);
@@ -106,17 +105,18 @@ class LensDesigns1 extends Component {
 
     if (!this.state.submitDisable) {
       const prog_section = {
-        ld2_header: this.state.ld2_header,
-        ld2_desc: this.state.ld2_desc,
-        ld2_designs: this.state.ld2_designs,
+        li2_header: this.state.li2_header,
+        li2_desc: this.state.li2_desc,
+        li2_lft_parags: this.state.li2_lft_parags,
+        li2_rght_parags: this.state.li2_rght_parags,
       };
 
       console.log("POST_STATE:: ", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
+      axios.post(`${SERVER_URI}/api/postLensInfo2`, prog_section)
         .then(res => console.log(res));
 
-      // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
+      // window.location = `${ADMIN_URI}/#/landing/LensInfo2/`;
       this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
 
     }
@@ -134,17 +134,17 @@ class LensDesigns1 extends Component {
     // console.log(this.state);
   }
 
-  onChangeDesign(e, i) {
+  onChangeLft(e, i) {
     const { id, value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
     this.setState(prevState => {
-      const ld2_designs = [...prevState.ld2_designs]
+      const li2_lft_parags = [...prevState.li2_lft_parags]
 
-      ld2_designs[i] = {
-        ...ld2_designs[i],
+      li2_lft_parags[i] = {
+        ...li2_lft_parags[i],
         [name]: value
       }
 
@@ -152,7 +152,7 @@ class LensDesigns1 extends Component {
         submitClass: 'primary',
         submitDisable: false,
         edited: false,
-        ld2_designs,
+        li2_lft_parags,
       }
     })
 
@@ -160,25 +160,25 @@ class LensDesigns1 extends Component {
     // console.log(this.state);
   }
 
-  onChangeSpec(e, di, si) {
+  onChangeRght(e, i) {
     const { id, value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
     this.setState(prevState => {
-      let temp = {
-        ...prevState,
-        ld2_designs: [...prevState.ld2_designs]
-      }
+      const li2_rght_parags = [...prevState.li2_rght_parags]
 
-      temp.ld2_designs[di].specs[si][name] = value
+      li2_rght_parags[i] = {
+        ...li2_rght_parags[i],
+        [name]: value
+      }
 
       return {
         submitClass: 'primary',
         submitDisable: false,
         edited: false,
-        temp,
+        li2_rght_parags,
       }
     })
 
@@ -186,87 +186,67 @@ class LensDesigns1 extends Component {
     // console.log(this.state);
   }
 
+
   render() {
-    let listDesigns = this.state.ld2_designs.map((design, design_i) =>
-      <div key={design_i}>
+    let listLft = this.state.li2_lft_parags.map((parag, parag_i) =>
+      <div key={parag_i}>
         <Accordion
           title="Accordion Title"
           content={
             <div>
-              {/* INPUT #1 Design IMG */}
-              <CInputGroup className="mb-3">
-                <CInputGroupText id="basic-addon3">
-                  Paste Image URL
-              </CInputGroupText>
-                <CInput
-                  type="text"
-                  placeholder="design_img"
-                  name="img"
-                  value={design.img}
-                  onChange={event => this.onChangeDesign(event, design_i)}
-                />
-              </CInputGroup>
-              <br />
-              {/* INPUT #2 Design header */}
+              {/* INPUT #1 Parag Header */}
               <CInput
                 type="text"
-                id="header"
-                name="header"
-                placeholder="header"
-                value={design.header}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                id="parag_header"
+                name="parag_header"
+                placeholder="parag_header"
+                value={parag.parag_header}
+                onChange={event => this.onChangeDesign(event, parag_i)}
               />
               <br />
-              {/* INPUT #3 Design sub_header */}
+              {/* INPUT #2 Parag Content */}
               <CInput
                 type="text"
-                id="sub_header"
-                name="sub_header"
-                placeholder="sub_header"
-                value={design.sub_header}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                id="parag_content"
+                name="parag_content"
+                placeholder="parag_content"
+                value={parag.parag_content}
+                onChange={event => this.onChangeDesign(event, parag_i)}
               />
               <br />
-              {/* INPUT #4 Design content_before */}
+            </div>
+          }
+        />
+        <hr />
+      </div>
+    )
+
+    let listRght = this.state.li2_rght_parags.map((parag, parag_i) =>
+      <div key={parag_i}>
+        <Accordion
+          title="Accordion Title"
+          content={
+            <div>
+              {/* INPUT #1 Parag Header */}
               <CInput
                 type="text"
-                id="content_before"
-                name="content_before"
-                placeholder="content_before"
-                value={design.content_before}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                id="parag_header"
+                name="parag_header"
+                placeholder="parag_header"
+                value={parag.parag_header}
+                onChange={event => this.onChangeDesign(event, parag_i)}
               />
               <br />
-              {/* INPUT #5 Design content_after */}
+              {/* INPUT #2 Parag Content */}
               <CInput
                 type="text"
-                id="content_after"
-                name="content_after"
-                placeholder="content_after"
-                value={design.content_after}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                id="parag_content"
+                name="parag_content"
+                placeholder="parag_content"
+                value={parag.parag_content}
+                onChange={event => this.onChangeDesign(event, parag_i)}
               />
               <br />
-              {design.specs.map((spec, spec_i) =>
-                <div key={spec_i}>
-                  <CInput
-                    type="text"
-                    id="title"
-                    name="title"
-                    placeholder="title"
-                    value={spec.title}
-                    onChange={event => this.onChangeSpec(event, design_i, spec_i)}
-                  />
-                  <CInput
-                    type="text"
-                    id="desc"
-                    name="desc"
-                    placeholder="desc"
-                    value={spec.desc}
-                    onChange={event => this.onChangeSpec(event, design_i, spec_i)}
-                  />
-                </div>
-              )}
             </div>
           }
         />
@@ -299,26 +279,27 @@ class LensDesigns1 extends Component {
               <h6>{this.state.ld2_header}</h6>
               <CInput
                 type="text"
-                id='ld2_header'
-                name='ld2_header'
-                placeholder="ld2_header"
-                value={this.state.ld2_header}
+                id='li2_header'
+                name='li2_header'
+                placeholder="li2_header"
+                value={this.state.li2_header}
                 onChange={this.onChange}
               />
               <br />
               <CInput
                 type="text"
-                id="ld2_desc"
-                name="ld2_desc"
-                placeholder="ld2_desc"
-                value={this.state.ld2_desc}
+                id="li2_desc"
+                name="li2_desc"
+                placeholder="li2_desc"
+                value={this.state.li2_desc}
                 onChange={this.onChange}
               />
               <hr />
-              {/* {this.state.ld2_designs[0].sub_header} */}
 
-              {listDesigns}
-
+              {listLft}
+              
+              {listRght}
+              
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -345,4 +326,4 @@ class LensDesigns1 extends Component {
   }
 }
 
-export default LensDesigns1;
+export default LensInfo2;

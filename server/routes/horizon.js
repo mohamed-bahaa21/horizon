@@ -20,9 +20,13 @@ route.post('/api/postLensDesigns1', horizonController.postLensDesigns1)
 route.get('/api/getLensInfo1', horizonController.getLensInfo1)
 route.post('/api/postLensInfo1', horizonController.postLensInfo1)
 
-// ADMIN -> Lens Info 1 Section
+// ADMIN -> Lens Designs 2 Section
 route.get('/api/getLensDesigns2', horizonController.getLensDesigns2)
 route.post('/api/postLensDesigns2', horizonController.postLensDesigns2)
+
+// ADMIN -> Lens Info 1 Section
+route.get('/api/getLensInfo2', horizonController.getLensInfo2)
+route.post('/api/postLensInfo2', horizonController.postLensInfo2)
 
 // FUNCTIONALITIES
 route.get('/api/gallery', horizonController.gallery)
