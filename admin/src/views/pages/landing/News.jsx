@@ -17,6 +17,8 @@ import {
   CCardBody,
   CInputGroupText,
   CInputGroup,
+  CToast,
+  CToaster,
 } from "@coreui/react";
 
 import Accordion from "../../../reusable/Accordion/Accordion";
@@ -50,11 +52,14 @@ class News extends Component {
       submitClass: 'disabled',
       submitDisable: true,
 
+      fixedToasts: 0,
+
       image: "...",
       url: "...",
       progress: "...",
 
       blogs: [{
+        _id: '',
         date: '...',
         title: '...',
         summary: '...',
@@ -65,6 +70,7 @@ class News extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.addFixedToast = this.addFixedToast.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -115,28 +121,51 @@ class News extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    
-    const prog_section = {
-      blogs: this.state.blogs
-    };
 
-    console.log("POST_DATA::", prog_section);
+    if (!this.state.submitDisable) {
 
-    axios.post(`${SERVER_URI}/api/postBlogsData`, prog_section)
-      .then(res => console.log(res));
+      console.log(e.target.id);
 
-    // window.location = `${ADMIN_URI}/#/landing/News/`;
-    this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+      const prog_section = {
+        blogs: this.state.blogs
+      };
+
+      console.log("POST_DATA::", prog_section);
+
+      axios.post(`${SERVER_URI}/api/postBlogsData`, prog_section)
+        .then(res => console.log(res));
+
+      // window.location = `${ADMIN_URI}/#/landing/News/`;
+      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+      this.addFixedToast();
+    }
+  }
+
+  addFixedToast() {
+    console.log(this.state.fixedToasts);
+    this.setState({
+      fixedToasts: this.state.fixedToasts + 1
+    })
   }
 
   render() {
     let listBlogs = this.state.blogs.map((blog, blog_i) =>
       <div key={blog_i}>
         <Accordion
-          title="Accordion Title"
+          title={blog.title}
           content={
             <div>
               <CFormGroup>
+                <CInput
+                  disabled
+                  type="text"
+                  id="_id"
+                  name="_id"
+                  placeholder="_id"
+                  value={blog._id}
+                  onChange={event => this.onChange(event, blog_i)}
+                />
+                <br />
                 <CInput
                   type="text"
                   id="date"
@@ -210,14 +239,24 @@ class News extends Component {
           (this.state.edited == true) ?
             <div>
               <FlashMessage duration={3000}>
-                <CAlert
-                  width="1"
-                  color="success"
-                  dismissible={true}
-                >
-                  <strong>Uploaded</strong> Successfully...
-              </CAlert>
               </FlashMessage>
+              <CToaster>
+                <CToast
+                  key={this.state.fixedToasts}
+                  show={true}
+                  autohide={1000}
+                  fade={true}
+                  header="CToast fixed component"
+                >
+                  <CAlert
+                    width="1"
+                    color="success"
+                    dismissible={`${true}`}
+                  >
+                    <strong>Updated</strong> Successfully...
+                    </CAlert>
+                </CToast>
+              </CToaster >
             </div>
             :
             <p></p>
