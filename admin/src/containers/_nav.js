@@ -25,7 +25,7 @@ const _nav = [{
   {
     _tag: 'CSidebarNavItem',
     name: 'Latest News',
-    to: '/landing/news',
+    to: '/news',
     icon: 'cil-pencil',
   },
   {

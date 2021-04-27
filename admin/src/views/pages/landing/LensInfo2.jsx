@@ -21,6 +21,8 @@ import {
   CCardBody,
   CInputGroupText,
   CInputGroup,
+  CToast,
+  CToaster,
 } from "@coreui/react";
 
 import Accordion from "../../../reusable/Accordion/Accordion";
@@ -53,6 +55,8 @@ class LensInfo2 extends Component {
       submitClass: 'disabled',
       submitDisable: true,
 
+      fixedToasts: 0,
+
       li2_header: "...",
       li2_desc: "...",
       li2_lft_parags: [{
@@ -68,6 +72,7 @@ class LensInfo2 extends Component {
     this.onChange = this.onChange.bind(this);
     this.onChangeLft = this.onChangeLft.bind(this);
     this.onChangeRght = this.onChangeRght.bind(this);
+    this.addFixedToast = this.addFixedToast.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -118,6 +123,7 @@ class LensInfo2 extends Component {
 
       // window.location = `${ADMIN_URI}/#/landing/LensInfo2/`;
       this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+      this.addFixedToast();
 
     }
   }
@@ -187,11 +193,19 @@ class LensInfo2 extends Component {
   }
 
 
+  addFixedToast() {
+    console.log(this.state.fixedToasts);
+    this.setState({
+      fixedToasts: this.state.fixedToasts + 1
+    })
+  }
+
+
   render() {
     let listLft = this.state.li2_lft_parags.map((parag, parag_i) =>
       <div key={parag_i}>
         <Accordion
-          title="Accordion Title"
+          title={`#${parag_i+1} parag`}
           content={
             <div>
               {/* INPUT #1 Parag Header */}
@@ -201,7 +215,7 @@ class LensInfo2 extends Component {
                 name="parag_header"
                 placeholder="parag_header"
                 value={parag.parag_header}
-                onChange={event => this.onChangeDesign(event, parag_i)}
+                onChange={event => this.onChangeLft(event, parag_i)}
               />
               <br />
               {/* INPUT #2 Parag Content */}
@@ -211,20 +225,19 @@ class LensInfo2 extends Component {
                 name="parag_content"
                 placeholder="parag_content"
                 value={parag.parag_content}
-                onChange={event => this.onChangeDesign(event, parag_i)}
+                onChange={event => this.onChangeLft(event, parag_i)}
               />
               <br />
             </div>
           }
         />
-        <hr />
       </div>
     )
 
     let listRght = this.state.li2_rght_parags.map((parag, parag_i) =>
       <div key={parag_i}>
         <Accordion
-          title="Accordion Title"
+          title={`#${parag_i+1} parag`}
           content={
             <div>
               {/* INPUT #1 Parag Header */}
@@ -234,7 +247,7 @@ class LensInfo2 extends Component {
                 name="parag_header"
                 placeholder="parag_header"
                 value={parag.parag_header}
-                onChange={event => this.onChangeDesign(event, parag_i)}
+                onChange={event => this.onChangeRght(event, parag_i)}
               />
               <br />
               {/* INPUT #2 Parag Content */}
@@ -244,13 +257,12 @@ class LensInfo2 extends Component {
                 name="parag_content"
                 placeholder="parag_content"
                 value={parag.parag_content}
-                onChange={event => this.onChangeDesign(event, parag_i)}
+                onChange={event => this.onChangeRght(event, parag_i)}
               />
               <br />
             </div>
           }
         />
-        <hr />
       </div>
     )
     return (
@@ -259,14 +271,24 @@ class LensInfo2 extends Component {
           (this.state.edited === true) ?
             <div>
               <FlashMessage duration={3000}>
-                <CAlert
-                  width="1"
-                  color="success"
-                  dismissible={`${true}`}
-                >
-                  <strong>Updated</strong> Successfully...
-              </CAlert>
               </FlashMessage>
+              <CToaster>
+                <CToast
+                  key={this.state.fixedToasts}
+                  show={true}
+                  autohide={1000}
+                  fade={true}
+                  header="CToast fixed component"
+                >
+                  <CAlert
+                    width="1"
+                    color="success"
+                    dismissible={`${true}`}
+                  >
+                    <strong>Updated</strong> Successfully...
+                    </CAlert>
+                </CToast>
+              </CToaster >
             </div>
             :
             <p></p>
@@ -296,10 +318,16 @@ class LensInfo2 extends Component {
               />
               <hr />
 
+              <h6>Left Parags</h6>
+
               {listLft}
-              
+
+              <hr />
+
+              <h6>Right Parags</h6>
+
               {listRght}
-              
+
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -321,7 +349,7 @@ class LensInfo2 extends Component {
         <hr />
 
         <UploadImg />
-      </CRow>
+      </CRow >
     );
   }
 }

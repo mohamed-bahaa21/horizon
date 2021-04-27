@@ -16,7 +16,7 @@ exports.getLanding = (req, res, next) => {
     Blog.find().limit(3).then(blogs => {
       // console.log(blogs;      
       console.log(result[4]);
-      
+
       res.render("index", {
         msgs: req.flash('success'),
         horizon: result[0],
@@ -54,6 +54,43 @@ exports.getBlog = (req, res, next) => {
   })
 };
 
+// Admin Gets, Edits -> Blogs Data 
+exports.getBlogsData = (req, res, next) => {
+  Blog.find().then((result) => {
+    console.log(result);
+    res.json(result);
+  });
+};
+
+exports.postBlogsData = (req, res, next) => {
+  const {
+    date,
+    title,
+    summary,
+    content,
+    link,
+    bg,
+  } = req.body;
+
+  Blog.find()
+    .then((blogs) => {
+      console.log(req.body);
+      // horizon.name = name;
+      blogs.date = date;
+      blogs.title = title;
+      blogs.summary = summary;
+      blogs.content = content;
+      blogs.link = link;
+      blogs.bg = bg;
+
+      blogs
+        .save()
+        .then(() => res.json("Blogs Updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+// END SECTION
 // Landing page data
 exports.getLandingData = (req, res, next) => {
   var origin = req.originalUrl;
