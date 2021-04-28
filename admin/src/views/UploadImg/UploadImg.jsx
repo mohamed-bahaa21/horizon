@@ -32,12 +32,14 @@ const UploadImg = () => {
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [uploaded, setUploaded] = useState('false')
+  const [uploadBtnStateDisable, setUploadBtnStateDisable] = useState(true)
   const [copied, setCopied] = useState('false')
   const [visible, setVisible] = useState(false)
 
   const handleChange = e => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
+      setUploadBtnStateDisable(false)
     }
   };
 
@@ -85,6 +87,7 @@ const UploadImg = () => {
               .then(res => console.log(res));
 
             setUploaded('true')
+            setUploadBtnStateDisable(true)
 
             // window.location = `${ADMIN_URI}/#/landing/progDesigns/`;
           });
@@ -142,7 +145,7 @@ const UploadImg = () => {
 
                 <CListGroupItem>
                   <input type="file" onChange={handleChange} />
-                  <CButton color="secondary" onClick={handleUpload}>Upload</CButton>
+                  <CButton  color="secondary" onClick={handleUpload} disabled={uploadBtnStateDisable}>Upload</CButton>
                   <CCardText>
                     <strong> Image URL: </strong>
                     {url}
