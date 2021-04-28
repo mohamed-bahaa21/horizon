@@ -648,10 +648,12 @@ footer .subscribe .subscribe-form-2 .form-group {
   right: 0;
   left: 0;
   height: 0;
-  border-right: 100vw solid #fff;
-  border-top: 200px solid transparent;
+  border-right: 50vw solid #fff;
+  border-left: 50vw solid #fff;
+  border-top: 100px solid transparent;
   width: 0;
   z-index: 0;
+  opacity: 1;
 }
 
 .slide .content-bottom {
