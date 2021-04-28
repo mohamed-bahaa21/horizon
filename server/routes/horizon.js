@@ -12,6 +12,10 @@ route.get('/blog/:id', horizonController.getBlog)
 route.get('/api/getBlogsData', horizonController.getBlogsData)
 route.post('/api/postBlogsData', horizonController.postBlogsData)
 
+// ADMIN -> About Data
+route.get('/api/getAboutData', horizonController.getAboutData)
+route.post('/api/postAboutData', horizonController.postAboutData)
+
 // ADMIN -> Hero Section
 route.get('/api/getLandingData', horizonController.getLandingData)
 route.post('/api/postHeroData', horizonController.postHeroData)

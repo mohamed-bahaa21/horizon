@@ -203,6 +203,7 @@ a,
 footer .subscribe .subscribe-form-2 label,
 footer .subscribe .subscribe-form-2 .form-group {
   transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
 }
 
 .space-15 {
@@ -291,11 +292,36 @@ footer .subscribe .subscribe-form-2 .form-group {
   border-bottom-color: transparent;
   border-radius: 50%;
   box-sizing: border-box;
+
   animation: rotate 3s ease-in-out infinite;
+  -webkit-animation: rotate 3s ease-in-out infinite;
   transform: rotate(-200deg);
+  -webkit-transform: rotate(-200deg);
 }
 
 @keyframes rotate {
+  0% {
+    border-width: 10px;
+  }
+
+  25% {
+    border-width: 3px;
+  }
+
+  50% {
+    transform: rotate(115deg);
+    border-width: 10px;
+  }
+
+  75% {
+    border-width: 3px;
+  }
+
+  100% {
+    border-width: 10px;
+  }
+}
+@-webkit-keyframes rotate {
   0% {
     border-width: 10px;
   }
@@ -361,9 +387,26 @@ footer .subscribe .subscribe-form-2 .form-group {
   left: 0;
   box-shadow: 0px 13px 35px -12px rgba(0, 0, 0, 0.15);
   animation: menu_sticky 0.7s ease-in-out;
+  -webkit-animation: menu_sticky 0.7s ease-in-out;
 }
 
 @keyframes menu_sticky {
+  0% {
+    margin-top: -120px;
+    opacity: 0;
+  }
+
+  50% {
+    margin-top: -64px;
+    opacity: 0;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes menu_sticky {
   0% {
     margin-top: -120px;
     opacity: 0;
@@ -410,10 +453,13 @@ footer .subscribe .subscribe-form-2 .form-group {
   width: 0%;
   height: 3px;
   background-color: #fff;
+  
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .horizon-header .navbar .navbar-nav .nav-item>.nav-link:hover:before {
@@ -429,30 +475,48 @@ footer .subscribe .subscribe-form-2 .form-group {
   margin: 0;
   border-radius: 0;
   border: 0;
-  transform: translateY(-15px);
-  animation: hide_dropdown_menu 0.2s ease-in-out;
   display: block;
   opacity: 0;
   visibility: hidden;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.04);
   height: 0;
+
+  transform: translateY(-15px);
+  -webkit-transform: translateY(-15px);
+
+  animation: hide_dropdown_menu 0.2s ease-in-out;
+  -webkit-animation: hide_dropdown_menu 0.2s ease-in-out;
+
   transition: all ease 0.1s;
+  -webkit-transition: all ease 0.1s;
 }
 
 @keyframes hide_dropdown_menu {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
     opacity: 1;
   }
 
   100% {
-    transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hide_dropdown_menu {
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(15px);
     opacity: 0;
   }
 }
 
 .horizon-header .dropdown-menu.show {
   animation: show_dropdown_menu 0.2s ease-in-out forwards;
+  -webkit-animation: show_dropdown_menu 0.2s ease-in-out forwards;
   visibility: visible;
   height: auto;
 }
@@ -460,11 +524,26 @@ footer .subscribe .subscribe-form-2 .form-group {
 @keyframes show_dropdown_menu {
   0% {
     transform: translateY(15px);
+    -webkit-transform: translateY(15px);
     opacity: 0;
   }
 
   100% {
     transform: translateY(0);
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show_dropdown_menu {
+  0% {
+    transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
     opacity: 1;
   }
 }
@@ -585,7 +664,10 @@ footer .subscribe .subscribe-form-2 .form-group {
   bottom: 0;
   width: 0%;
   height: 5px;
+  
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+
   -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -827,9 +909,12 @@ footer .subscribe .subscribe-form-2 .form-group {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+
   border: 2px solid #fff;
   border-radius: 50%;
   animation: ripple_shadow 2s linear infinite;
+  -webkit-animation: ripple_shadow 2s linear infinite;
 }
 
 .watch-video .video a:after {
@@ -843,9 +928,25 @@ footer .subscribe .subscribe-form-2 .form-group {
   left: 55%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
 }
 
 @keyframes ripple_shadow {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
+      0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
+      0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0);
+  }
+}
+@-webkit-keyframes ripple_shadow {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
       0 0 0 20px rgba(255, 255, 255, 0.2), 0 0 0 40px rgba(255, 255, 255, 0.2);
@@ -1054,6 +1155,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   padding: 2px 0;
   letter-spacing: 2px;
   transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .prices .price-table .top h4 {
@@ -1157,6 +1259,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .our-team .team-slider .person:hover ul {
   transform: translateY(100%);
+  -webkit-transform: translateY(100%);
 }
 
 .our-team .team-slider .slick-dots li {
@@ -1223,6 +1326,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   position: absolute;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
+  -webkit-transform: translateY(-50%) rotate(45deg);
   background: #241F1F;
 }
 
@@ -1242,6 +1346,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 .faq .accordion .faq-card .faq-card-header h5 .btn.collapsed:after {
   background: #241F1F;
   transform: translateY(-50%) rotate(0deg);
+  -webkit-transform: translateY(-50%) rotate(0deg);
 }
 
 .faq .accordion .faq-card .faq-card-header h5 .btn.collapsed {
@@ -1389,6 +1494,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
   font-size: 35px;
   left: 35px;
 }
@@ -1440,6 +1546,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   width: 0%;
   height: 3px;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -1621,6 +1728,8 @@ footer .copyright p {
 
 .blog-page .blog-box .blog-details h3 a {
   transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  
 }
 
 .blog-page .blog-box .blog-details p {
@@ -1704,9 +1813,10 @@ aside.sidebar .search .form-group .form-control~.focus-border {
   width: 0%;
   height: 3px;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 aside.sidebar .search .form-group .form-control:focus~.focus-border {
@@ -1847,6 +1957,7 @@ aside.sidebar .tags ul li {
 
 .single-blog-page .blog-box .blog-details h3 {
   transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
 }
 
 .single-blog-page .blog-box .blog-details p {
@@ -1992,6 +2103,7 @@ aside.sidebar .tags ul li {
   width: 0%;
   height: 3px;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);

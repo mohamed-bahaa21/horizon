@@ -15,6 +15,8 @@
   left: 0;
   background: white;
   transition: background 1s ease;
+  -webkit-transition: background 1s ease;
+
   pointer-events: none;
   text-align: center;
   border-radius: 13%;
@@ -30,10 +32,15 @@
 .stack:active .card {
   border-radius: 50%;
   --bg-opacity: 5%;
+
   transition-duration: 2s;
+  -webkit-transition-duration: 2s;
+
   transition-timing-function: var(--easeInOutCirc);
-  transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
-    translateY(20vh) translateX(20vh);
+  -webkit-transition-timing-function: var(--easeInOutCirc);
+
+  transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset)) translateY(20vh) translateX(20vh);
+  -webkit-transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset)) translateY(20vh) translateX(20vh);
 }
 
 .stack:hover .card:nth-child(1),
@@ -64,32 +71,38 @@
 .stack:hover .card:nth-child(1)::after,
 .stack:active .card:nth-child(1)::after {
   transition-delay: 1.5s;
+  -webkit-transition-delay: 1.5s;
 }
 
 .stack:hover .card:nth-child(2)::after,
 .stack:active .card:nth-child(2)::after {
   transition-delay: 1.7s;
+  -webkit-transition-delay: 1.7s;
 }
 
 .stack:hover .card:nth-child(3)::after,
 .stack:active .card:nth-child(3)::after {
   transition-delay: 1.9s;
+  -webkit-transition-delay: 1.9s;
 }
 
 .stack:hover .card:nth-child(4)::after,
 .stack:active .card:nth-child(4)::after {
   transition-delay: 2.1s;
+  -webkit-transition-delay: 2.1s;
 }
 
 .stack:hover .card:nth-child(5)::after,
 .stack:active .card:nth-child(5)::after {
   transition-delay: 2.3s;
+  -webkit-transition-delay: 2.3s;
 }
 
 .stack:hover .card::after,
 .stack:active .card::after {
   opacity: 1;
   transform: rotate(-45deg) rotateY(45deg) translateX(0px);
+  -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(0px);
 }
 
 .stack:hover .card.content,
@@ -101,20 +114,29 @@
   transition: border-color 1s var(--easeInOutCirc) 0s,
     background-color 1s var(--easeInOutCirc) 0s,
     color 1s var(--easeInOutCirc) 0s, transform 1s var(--easeInOutCirc) 0s;
+
+  -webkit-transition: border-color 1s var(--easeInOutCirc) 0s,
+    background-color 1s var(--easeInOutCirc) 0s,
+    color 1s var(--easeInOutCirc) 0s, transform 1s var(--easeInOutCirc) 0s;
 }
 
 .stack:hover .card.padding,
 .stack:active .card.padding {
   transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
 }
 
 .stack:hover .card.border,
 .stack:active .card.border {
   transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.2);
+
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+
   display: block;
   margin: 0 auto;
 }
@@ -124,11 +146,14 @@
   background: rgba(224, 196, 64, 1);
   transition: background-color 2s var(--easeInOutCirc) 0.3s,
     transform 2s var(--easeInOutCirc) 0.2s;
+  -webkit-transition: background-color 2s var(--easeInOutCirc) 0.3s,
+    transform 2s var(--easeInOutCirc) 0.2s;
 }
 
 .stack:hover .card.box-shadow,
 .stack:active .card.box-shadow {
   transition-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
   box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.4), 0 7.6px 6.1px rgba(0, 0, 0, 0.051),
     0 14.3px 11.5px rgba(0, 0, 0, 0.059), 0 25.5px 20.5px rgba(0, 0, 0, 0.07),
     0 47.6px 38.4px rgba(0, 0, 0, 0.094), 0 114px 92px rgba(0, 0, 0, 0.19);
@@ -143,6 +168,7 @@
   --bg-opacity: 0%;
 
   transition: transform 4s ease;
+  -webkit-transition: transform 4s ease;
 
   width: 40vmin;
   height: 40vmin;
@@ -187,7 +213,9 @@
   border-radius: 4ch;
   opacity: 0;
   transition: opacity 0.5s ease 0s, transform 0.5s ease;
+  -webkit-transition: opacity 0.5s ease 0s, transform 0.5s ease;
   transform: rotate(-45deg) rotateY(45deg) translateX(20px);
+  -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(20px);
   background: rgba(0, 0, 0, 0.7);
 }
 
@@ -202,11 +230,13 @@
   z-index: 5;
   transition: border-color 4s ease, background-color 5s ease 2s,
     color 4s ease 0s, transform 4s ease 0s;
+  -webkit-transition: border-color 4s ease, background-color 5s ease 2s,
+    color 4s ease 0s, transform 4s ease 0s;
   padding: 5vmin;
   font-size: max(2.5vmin, 0.9rem);
   line-height: 1.5;
   background: #241F1F;
-  
+
 }
 
 .card.content::after {
@@ -224,6 +254,7 @@
   background: rgba(25, 96, 136, 1);
   z-index: 4;
   transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
   box-shadow: 0 0 30px -10px black;
 }
 
@@ -242,19 +273,18 @@
   left: 0;
   -webkit-clip-path: circle(40%);
   clip-path: circle(40%);
-  background: repeating-linear-gradient(
-    -45deg,
-    cyan,
-    cyan 1px,
-    rgba(255, 255, 254, 0.05) 1px,
-    rgba(255, 255, 254, 0.05) 10px
-  );
+  background: repeating-linear-gradient(-45deg,
+      cyan,
+      cyan 1px,
+      rgba(255, 255, 254, 0.05) 1px,
+      rgba(255, 255, 254, 0.05) 10px);
 }
 
 .card.border {
   z-index: 3;
   background: transparent;
   transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
   box-shadow: 0 0 30px -10px black;
 }
 
@@ -270,9 +300,11 @@
   right: 0;
   bottom: 0;
   left: 0;
+  background: rgba(255, 255, 255, 0.4);
+
   -webkit-clip-path: circle(50%);
   clip-path: circle(50%);
-  background: rgba(255, 255, 255, 0.4);
+
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   display: block;
@@ -283,6 +315,7 @@
 .card.background {
   z-index: 2;
   transition: background-color 4s ease 0.3s, transform 4s ease 0.3s;
+  -webkit-transition: background-color 4s ease 0.3s, transform 4s ease 0.3s;
 }
 
 .card.background::after {
@@ -293,6 +326,7 @@
   z-index: 1;
   background: transparent;
   transition: box-shadow 4s ease 0.4s, transform 4s ease 0.4s;
+  -webkit-transition: box-shadow 4s ease 0.4s, transform 4s ease 0.4s;
 
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),

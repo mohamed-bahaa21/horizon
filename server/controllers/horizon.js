@@ -1,5 +1,6 @@
 const Horizon = require("../models/horizon");
 const Blog = require("../models/Blog");
+const About = require("../models/About");
 const Gallery = require("../models/Gallery");
 const Mail = require("../models/Mail");
 
@@ -30,12 +31,53 @@ exports.getLanding = (req, res, next) => {
   });
 };
 
-// About Page
+// User -> About Page
 exports.getAbout = (req, res, next) => {
-  res.render("about", {
-    msgs: req.flash('success'),
+  About.findById('6088f039ce64255fe8d24880').then((about) => {
+    console.log(about);
+    res.render("about", {
+      msgs: req.flash('success'),
+      about: about
+    });
   });
 };
+
+// END
+// Admin -> About Data
+exports.getAboutData = (req, res, next) => {
+  About.find().then((result) => {
+    console.log(result);
+    res.json(result);
+  });
+};
+
+exports.postAboutData = (req, res, next) => {
+  const {
+    content
+  } = req.body;
+
+  About.find()
+    .then((about) => {
+      console.log(req.body);
+      // horizon.name = name;
+      about.content = content;
+
+      about
+        .save()
+        .then(() => res.json("Blogs Updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+
+
+
+
+
+
+
+
 
 // User Get Blog By ID route
 exports.getBlog = (req, res, next) => {

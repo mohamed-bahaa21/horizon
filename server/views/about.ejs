@@ -41,7 +41,7 @@
         <nav class="navbar navbar-expand-lg navbar-light" id="horizon_menu">
             <div class="container">
                 <a class="navbar-brand" href="/">
-                    <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid" alt="" />
+                    <img src="assets/imgs/horizon/HLogoW.png" width="150" class="img-fluid" alt="" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
                     aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Free Form Technology
+                                Free Form
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item anchor" href="/free-form/progressive">Progressive</a>
@@ -76,10 +76,10 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link anchor" href="#technical">Technical Information</a>
+                            <a class="nav-link anchor" href="/news">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link anchor" href="/about-us">About Us</a>
+                            <a class="nav-link anchor active" href="/about-us">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a id="contact-route" class="nav-link anchor" href="#contact">Contact Us</a>
@@ -97,53 +97,18 @@
             <p class="masthead-heading">Lenses Industry</p>
         </div>
     </section>
+
     <section class="introduction-section">
         <div class="container">
-            <h1>Introduction</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
-            </p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
-            </p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
-            </p>
-        </div>
-    </section>
-
-    <section class="location-section">
-        <div class="container">
-            <h1>Where we are</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
-            </p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
-            </p>
-        </div>
-    </section>
-
-    <section class="questions-section">
-        <div class="container">
-            <h1>More About Us</h1>
-            <h2>What is ...?</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
-            </p>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, ducimus ex officia hic dignissimos
-                voluptatibus odio nam reiciendis id, suscipit labore saepe, quidem minus dolores?
+            <h1><%= about.title %></h1>
+            <p>
+                <%= about.content %>
             </p>
         </div>
     </section>
 
     <!-- Start  Footer -->
     <footer class="padding-100 pb-0" id="footer">
-        <br><br>
         <div class="subscribe">
             <div class="container">
 
@@ -176,8 +141,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="">
-                            <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid" alt="" />
-                            <p class="light" style="padding: 0 1rem;">
+                            <img src="assets/imgs/horizon/HLogoW.png" style="padding: 1rem;" class="img-fluid" width="250px" alt="" />
+                            <p class="light" style="padding: 0 1rem; text-align: justify;">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
                                 nostrum odit facilis delectus quia rerum?Lorem ipsum dolor sit
                                 amet consectetur adipisicing elit. Aspernatur eius,

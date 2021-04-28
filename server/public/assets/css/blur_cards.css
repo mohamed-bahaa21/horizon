@@ -59,17 +59,23 @@
   border-radius: var(--spacing-l);
   bottom: 0;
   filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  -webkit-filter: brightness(0.75) saturate(1.2) contrast(0.85);
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
   transform-origin: center;
+  -webkit-transform-origin: center;
+  
   transform: scale(1) translateZ(0);
+  -webkit-transform: scale(1) translateZ(0);
   transition: filter 200ms linear, transform 200ms linear;
+  -webkit-transition: filter 200ms linear, transform 200ms linear;
 }
 
 .blur-card:hover .blur-card__background {
   transform: scale(1.05) translateZ(0);
+  -webkit-transform: scale(1.05) translateZ(0);
 }
 
 .blur-card-grid:hover > .blur-card:not(:hover) .blur-card__background {
