@@ -19,7 +19,7 @@
 
   pointer-events: none;
   text-align: center;
-  border-radius: 13%;
+  border-radius: 50%;
 }
 
 .stack:hover:before,

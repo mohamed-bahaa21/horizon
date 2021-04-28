@@ -51,6 +51,10 @@ p {
   line-height: 30px;
 }
 
+section {
+  padding: 0 1rem;
+}
+
 .section-header {
   font-weight: 600;
 }
