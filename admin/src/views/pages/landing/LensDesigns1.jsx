@@ -28,12 +28,6 @@ if (process.env.NODE_ENV === "production") {
   SERVER_URI = "https://horizon-server.herokuapp.com";
 }
 
-// for functional component
-
-// const [image, setImage] = useState(null);
-// const [url, setUrl] = useState("");
-// const [progress, setProgress] = useState(0);
-
 class LensDesigns1 extends Component {
   constructor(props) {
     super(props);
@@ -44,9 +38,12 @@ class LensDesigns1 extends Component {
       edited: false,
       submitClass: 'disabled',
       submitDisable: true,
+
       image: "...",
       url: "...",
       progress: "...",
+
+      ld1_section_display: true,
       name: "...",
       prog_card_1_img: "...",
       prog_card_1_link: "...",
@@ -54,12 +51,8 @@ class LensDesigns1 extends Component {
       prog_card_1_header: "..."
     };
 
-    this.onChange_prog_card_1_img = this.onChange_prog_card_1_img.bind(this);
-    this.onChange_prog_card_1_link = this.onChange_prog_card_1_link.bind(this);
-    this.onChange_prog_card_1_type = this.onChange_prog_card_1_type.bind(this);
-    this.onChange_prog_card_1_header = this.onChange_prog_card_1_header.bind(
-      this
-    );
+    this.onChange = this.onChange.bind(this);
+    this.toggleCheckbox = this.toggleCheckbox.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -71,13 +64,16 @@ class LensDesigns1 extends Component {
       .then((response) => {
         // console.log(response.data);
         const {
+          ld1_section_display,
           name,
           prog_card_1_img,
           prog_card_1_link,
           prog_card_1_type,
           prog_card_1_header
         } = response.data;
+
         this.setState({
+          ld1_section_display: ld1_section_display,
           name: name,
           prog_card_1_img: prog_card_1_img,
           prog_card_1_link: prog_card_1_link,
@@ -90,68 +86,47 @@ class LensDesigns1 extends Component {
       });
   }
 
-  onChange_prog_card_1_img(e) {
-    this.setState({
-      prog_card_1_img: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
-  }
-  onChange_prog_card_1_link(e) {
-    this.setState({
-      prog_card_1_link: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
-  }
+  onChange(e) {
+    const { name, value } = e.target;
 
-  onChange_prog_card_1_type(e) {
     this.setState({
-      prog_card_1_type: e.target.value,
+      [name]: value,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
-    });
-  }
-
-  onChange_prog_card_1_header(e) {
-    this.setState({
-      prog_card_1_header: e.target.value,
-      submitClass: 'primary',
-      submitDisable: false,
-      edited: false,
-    });
+    })
+    // console.log(this.state);
   }
 
   onSubmit(e) {
     e.preventDefault();
     const prog_section = {
       name: this.state.name,
+      ld1_section_display: this.state.ld1_section_display,
       prog_card_1_img: this.state.prog_card_1_img,
       prog_card_1_link: this.state.prog_card_1_link,
       prog_card_1_type: this.state.prog_card_1_type,
       prog_card_1_header: this.state.prog_card_1_header
     };
 
-    axios.post(`${SERVER_URI}/api/postProgData`, prog_section)
+    console.log(prog_section);
+
+    axios.post(`${SERVER_URI}/api/postLensDesigns1`, prog_section)
       .then(res => console.log(res));
 
     // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
     this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
   }
 
-  // Using imgbb for image hosting 
-  // onSubmitImgFile(e) {
-  //   e.preventDefault();
-
-  //   axios
-  //     .post(`https://api.imgbb.com/1/upload?expiration=600&key=5654e1ea6c180344bb90d5fad457ef02`)
-  //     .then((res) => console.log(res));
-
-  //   window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
-  // }
+  toggleCheckbox(e) {
+    e.preventDefault();
+    this.setState({
+      ld1_section_display: !this.state.ld1_section_display,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
+    });
+  }
 
   render() {
     return (
@@ -185,6 +160,21 @@ class LensDesigns1 extends Component {
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
+
+            <CFormGroup>
+              {/* #1 */}
+              {/* Checkbox to Toggle Sections */}
+              <h4>{this.state.ld1_section_display ? "Show" : "hide"}</h4>
+              <a href="#" role="button" onClick={this.toggleCheckbox}>
+                <input
+                  type="checkbox"
+                  title="ld1_section_display"
+                  name="ld1_section_display"
+                  checked={this.state.ld1_section_display}
+                  readOnly
+                />_Show Section</a>
+            </CFormGroup>
+
             <CFormGroup>
               {/* #1 name */}
               <h6>{this.state.name}</h6>
@@ -198,7 +188,7 @@ class LensDesigns1 extends Component {
                   name="prog_card_1_img"
                   placeholder="prog_card_1_img"
                   value={this.state.prog_card_1_img}
-                  onChange={this.onChange_prog_card_1_img}
+                  onChange={this.onChange}
                 />
               </CInputGroup>
               <br />
@@ -208,7 +198,7 @@ class LensDesigns1 extends Component {
                 name="prog_card_1_link"
                 placeholder="prog_card_1_link"
                 value={this.state.prog_card_1_link}
-                onChange={this.onChange_prog_card_1_link}
+                onChange={this.onChange}
               />
               <br />
               <CInput
@@ -217,7 +207,7 @@ class LensDesigns1 extends Component {
                 name="prog_card_1_type"
                 placeholder="prog_card_1_type"
                 value={this.state.prog_card_1_type}
-                onChange={this.onChange_prog_card_1_type}
+                onChange={this.onChange}
               />
               <br />
               <CInput
@@ -226,7 +216,7 @@ class LensDesigns1 extends Component {
                 name="prog_card_1_header"
                 placeholder="prog_card_1_header"
                 value={this.state.prog_card_1_header}
-                onChange={this.onChange_prog_card_1_header}
+                onChange={this.onChange}
               />
             </CFormGroup>
 

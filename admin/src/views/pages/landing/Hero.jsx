@@ -39,6 +39,7 @@ class Hero extends Component {
       submitClass: 'disabled',
       submitDisable: true,
 
+      hero_section_display: true,
       name: '...',
       hero_parag_1: '...',
       hero_header_1: '...',
@@ -266,13 +267,6 @@ class Hero extends Component {
                   <CFormGroup>
                     {/* #1 */}
                     {/* Checkbox to show the lenses design */}
-                    {/* <CFormCheck
-                      className="mb-3"
-                      label="Lenses Design"
-                      onChange={e => {
-                        console.log(e.target)
-                      }}
-                    /> */}
                     <h4>{this.state.design_state ? "Show" : "hide"}</h4>
                     <a href="#" role="button" onClick={this.toggleCheckbox}>
                       <input

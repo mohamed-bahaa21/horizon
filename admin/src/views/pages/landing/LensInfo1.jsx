@@ -43,6 +43,7 @@ class LensInfo1 extends Component {
       url: "...",
       progress: "...",
 
+      li1_section_display: true,
       li1_header: "...",
       li1_desc: "...",
       li1_img: "...",

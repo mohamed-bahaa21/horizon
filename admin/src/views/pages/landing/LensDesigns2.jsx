@@ -40,6 +40,7 @@ class LensDesigns1 extends Component {
       submitClass: 'disabled',
       submitDisable: true,
 
+      ld2_section_display: true,
       ld2_header: "...",
       ld2_desc: "...",
       ld2_designs: [{

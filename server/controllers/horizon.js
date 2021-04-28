@@ -94,7 +94,6 @@ exports.getBlog = (req, res, next) => {
   Blog.findById(blogID).then(result => {
     Blog.find().limit(3).then(blogs => {
       // console.log(result);
-
       res.render('blog', {
         msgs: req.flash('success'),
         blog: result,
@@ -153,6 +152,7 @@ exports.getLandingData = (req, res, next) => {
 // Admin Edits -> Hero Section Data 
 exports.postHeroData = (req, res, next) => {
   const {
+    hero_section_display,
     name,
     hero_parag_1,
     hero_header_1,
@@ -166,6 +166,7 @@ exports.postHeroData = (req, res, next) => {
   Horizon.findById("606f5689ff5464449437a646")
     .then((horizon) => {
       // console.log(req.body);
+      horizon.hero_section_display = hero_section_display;
       horizon.name = name;
       horizon.hero_parag_1 = hero_parag_1;
       horizon.hero_header_1 = hero_header_1;
@@ -192,16 +193,21 @@ exports.getLensDesigns1 = (req, res, next) => {
 
 exports.postLensDesigns1 = (req, res, next) => {
   const {
+    name,
+    ld1_section_display,
     prog_card_1_img,
     prog_card_1_link,
     prog_card_1_type,
     prog_card_1_header,
   } = req.body;
 
+  // console.log(req.body);
+
   Horizon.findById("606ff91fef83672e10f01feb")
     .then((horizon) => {
       // console.log(req.body);
-      // horizon.name = name;
+      horizon.name = name;
+      horizon.ld1_section_display = ld1_section_display;
       horizon.prog_card_1_img = prog_card_1_img;
       horizon.prog_card_1_link = prog_card_1_link;
       horizon.prog_card_1_type = prog_card_1_type;

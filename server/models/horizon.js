@@ -7,6 +7,10 @@ const horizonSchema = new Schema({
         type: String,
         required: false
     },
+    "hero_section_display": {
+        type: Boolean,
+        required: false
+    },
     "hero_header_1": {
         type: String,
         required: false
@@ -37,6 +41,10 @@ const horizonSchema = new Schema({
     },
     // END HERO SECTION
     // Start Lens Design 1 Section 2/13
+    "ld1_section_display": {
+        type: Boolean,
+        required: false
+    },
     "prog_card_1_link": {
         type: String,
         required: false
@@ -107,6 +115,10 @@ const horizonSchema = new Schema({
 
     // END SECTION
     // START LENS INFO 1 3/13
+    "li1_section_display": {
+        type: Boolean,
+        required: false
+    },
     "li1_header": {
         type: String,
         required: false
@@ -137,6 +149,10 @@ const horizonSchema = new Schema({
     },
     // END SECTION
     // START LENS DESIGNS 2 4/13
+    "ld2_section_display": {
+        type: Boolean,
+        required: false
+    },
     "ld2_header": {
         type: String,
         required: false
@@ -187,6 +203,10 @@ const horizonSchema = new Schema({
     }],
     // END SECTION
     // START LENS Info 2 5/13
+    "li2_section_display": {
+        type: Boolean,
+        required: false
+    },
     "li2_header": {
         type: String,
         required: false

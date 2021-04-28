@@ -39,7 +39,8 @@ class LensInfo2 extends Component {
       submitDisable: true,
 
       fixedToasts: 0,
-
+      
+      li2_section_display: true,
       li2_header: "...",
       li2_desc: "...",
       li2_lft_parags: [{
