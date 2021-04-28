@@ -99,8 +99,9 @@
 .blur-card__heading {
   color: var(--text-lighter);
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  background: rgba(136, 98, 37, 0.3);
+  text-align: left;
+  /* background: rgba(136, 98, 37, 0.3); */
+  background: transparent;
   line-height: 1.5;
   border-radius: 25px;
   padding: 0.5rem 0;

@@ -69,8 +69,8 @@
   -webkit-transition-delay: 0.5s;
 }
 .news-slider__item.swiper-slide-active .news-slider__content > *:nth-child(4) {
-  transition-delay: 0.6s;
-  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.0s;
+  -webkit-transition-delay: 0.0s;
 }
 .news-slider__item.swiper-slide-active .news-slider__content > *:nth-child(5) {
   transition-delay: 0.7s;

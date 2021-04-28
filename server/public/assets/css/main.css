@@ -34,6 +34,11 @@
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext");
 
+:root {
+  --main-color: rgb(211, 149, 41);
+  --border-color: rgb(36, 31, 31);
+}
+
 * {
   box-sizing: border-box;
   font-family: "Lato", sans-serif !important;
@@ -116,13 +121,48 @@ a:hover {
   min-height: 600px;
 }
 
+.btn {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 10px 25px -5px var(--main-color);
+  border-radius: 5px;
+  font-weight: 500;
+}
+
 .btn-primary {
-  border-radius: 25px;
-  padding: 15px 45px;
-  text-transform: uppercase;
-  font-size: 14px;
-  display: inline-block;
-  border: 0;
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+
+  background-color: var(--main-color);
+  border: 0px solid;
+  color: white;
+
+  box-shadow: 0 10px 25px -5px var(--main-color) !important;
+  border-radius: 5px;
+  font-weight: 500;
+
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  margin-top: 1rem;
+  padding: 0.5rem 3rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+
+  background-color: white;
+  color: var(--main-color);
+  box-shadow: 0 -5px 25px -5px var(--main-color);
 }
 
 .btn-colord {
