@@ -46,7 +46,7 @@ body {
 }
 
 p {
-  font-weight: 500 !important; 
+  font-weight: 500 !important;
   color: #241F1F !important;
   line-height: 30px;
 }
@@ -62,12 +62,15 @@ section {
 .dark {
   color: #241F1F !important;
 }
+
 .med-dark {
   color: #d39529 !important
 }
+
 .light {
-  color: #F7EBD0 !important;  
+  color: #F7EBD0 !important;
 }
+
 .med-light {
   color: #FFD952 !important;
 }
@@ -325,6 +328,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     border-width: 10px;
   }
 }
+
 @-webkit-keyframes rotate {
   0% {
     border-width: 10px;
@@ -410,6 +414,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes menu_sticky {
   0% {
     margin-top: -120px;
@@ -457,7 +462,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   width: 0%;
   height: 3px;
   background-color: #fff;
-  
+
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
 
@@ -506,6 +511,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     opacity: 0;
   }
 }
+
 @-webkit-keyframes hide_dropdown_menu {
   0% {
     -webkit-transform: translateY(0);
@@ -538,6 +544,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes show_dropdown_menu {
   0% {
     transform: translateY(15px);
@@ -668,7 +675,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   bottom: 0;
   width: 0%;
   height: 5px;
-  
+
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
 
@@ -950,6 +957,7 @@ footer .subscribe .subscribe-form-2 .form-group {
       0 0 0 40px rgba(255, 255, 255, 0.2), 0 0 0 60px rgba(255, 255, 255, 0);
   }
 }
+
 @-webkit-keyframes ripple_shadow {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2),
@@ -1565,8 +1573,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   box-shadow: none;
 }
 
-.git-in-touch .contact-info .info-box {
-}
+.git-in-touch .contact-info .info-box {}
 
 .git-in-touch .contact-info .info-box span {
   display: block;
@@ -1733,7 +1740,7 @@ footer .copyright p {
 .blog-page .blog-box .blog-details h3 a {
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
-  
+
 }
 
 .blog-page .blog-box .blog-details p {
