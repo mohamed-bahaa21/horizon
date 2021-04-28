@@ -28,8 +28,8 @@
   box-shadow: 0 0 25px -5px black;
 }
 
-.stack:hover .card,
-.stack:active .card {
+.stack:hover .lens_card,
+.stack:active .lens_card {
   border-radius: 50%;
   --bg-opacity: 5%;
 
@@ -43,72 +43,72 @@
   -webkit-transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset)) translateY(20vh) translateX(20vh);
 }
 
-.stack:hover .card:nth-child(1),
-.stack:active .card:nth-child(1) {
+.stack:hover .lens_card:nth-child(1),
+.stack:active .lens_card:nth-child(1) {
   --z-offset: 50vh;
 }
 
-.stack:hover .card:nth-child(2),
-.stack:active .card:nth-child(2) {
+.stack:hover .lens_card:nth-child(2),
+.stack:active .lens_card:nth-child(2) {
   --z-offset: 35vh;
 }
 
-.stack:hover .card:nth-child(3),
-.stack:active .card:nth-child(3) {
+.stack:hover .lens_card:nth-child(3),
+.stack:active .lens_card:nth-child(3) {
   --z-offset: 25vh;
 }
 
-.stack:hover .card:nth-child(4),
-.stack:active .card:nth-child(4) {
+.stack:hover .lens_card:nth-child(4),
+.stack:active .lens_card:nth-child(4) {
   --z-offset: 15vh;
 }
 
-.stack:hover .card:nth-child(5),
-.stack:active .card:nth-child(5) {
+.stack:hover .lens_card:nth-child(5),
+.stack:active .lens_card:nth-child(5) {
   --z-offset: 5vh;
 }
 
-.stack:hover .card:nth-child(1)::after,
-.stack:active .card:nth-child(1)::after {
+.stack:hover .lens_card:nth-child(1)::after,
+.stack:active .lens_card:nth-child(1)::after {
   transition-delay: 1.5s;
   -webkit-transition-delay: 1.5s;
 }
 
-.stack:hover .card:nth-child(2)::after,
-.stack:active .card:nth-child(2)::after {
+.stack:hover .lens_card:nth-child(2)::after,
+.stack:active .lens_card:nth-child(2)::after {
   transition-delay: 1.7s;
   -webkit-transition-delay: 1.7s;
 }
 
-.stack:hover .card:nth-child(3)::after,
-.stack:active .card:nth-child(3)::after {
+.stack:hover .lens_card:nth-child(3)::after,
+.stack:active .lens_card:nth-child(3)::after {
   transition-delay: 1.9s;
   -webkit-transition-delay: 1.9s;
 }
 
-.stack:hover .card:nth-child(4)::after,
-.stack:active .card:nth-child(4)::after {
+.stack:hover .lens_card:nth-child(4)::after,
+.stack:active .lens_card:nth-child(4)::after {
   transition-delay: 2.1s;
   -webkit-transition-delay: 2.1s;
 }
 
-.stack:hover .card:nth-child(5)::after,
-.stack:active .card:nth-child(5)::after {
+.stack:hover .lens_card:nth-child(5)::after,
+.stack:active .lens_card:nth-child(5)::after {
   transition-delay: 2.3s;
   -webkit-transition-delay: 2.3s;
 }
 
-.stack:hover .card::after,
-.stack:active .card::after {
+.stack:hover .lens_card::after,
+.stack:active .lens_card::after {
   opacity: 1;
   transform: rotate(-45deg) rotateY(45deg) translateX(0px);
   -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(0px);
 }
 
-.stack:hover .card.content,
-.stack:active .card.content {
+.stack:hover .lens_card.lens_content,
+.stack:active .lens_card.lens_content {
   text-align: center;
-  background: black;
+  background: rgb(0, 0, 0, 0.5);
   color: white;
   border-color: transparent;
   transition: border-color 1s var(--easeInOutCirc) 0s,
@@ -118,16 +118,20 @@
   -webkit-transition: border-color 1s var(--easeInOutCirc) 0s,
     background-color 1s var(--easeInOutCirc) 0s,
     color 1s var(--easeInOutCirc) 0s, transform 1s var(--easeInOutCirc) 0s;
+
+    backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.stack:hover .card.padding,
-.stack:active .card.padding {
+.stack:hover .lens_card.lens_padding,
+.stack:active .lens_card.lens_padding {
   transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
 }
 
-.stack:hover .card.border,
-.stack:active .card.border {
+.stack:hover .lens_card.lens_border,
+.stack:active .lens_card.lens_border {
   transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
 
@@ -138,20 +142,23 @@
   -webkit-backdrop-filter: blur(5px);
 
   display: block;
-  margin: 0 auto;
 }
 
-.stack:hover .card.background,
-.stack:active .card.background {
-  background: rgba(224, 196, 64, 1);
+.stack:hover .lens_card.lens_background,
+.stack:active .lens_card.lens_background {
+  background: rgba(224, 196, 64, 0.5);
   transition: background-color 2s var(--easeInOutCirc) 0.3s,
     transform 2s var(--easeInOutCirc) 0.2s;
   -webkit-transition: background-color 2s var(--easeInOutCirc) 0.3s,
     transform 2s var(--easeInOutCirc) 0.2s;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.stack:hover .card.box-shadow,
-.stack:active .card.box-shadow {
+.stack:hover .lens_card.lens_box-shadow,
+.stack:active .lens_card.lens_box-shadow {
   transition-delay: 0.4s;
   -webkit-transition-delay: 0.4s;
   box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.4), 0 7.6px 6.1px rgba(0, 0, 0, 0.051),
@@ -159,7 +166,7 @@
     0 47.6px 38.4px rgba(0, 0, 0, 0.094), 0 114px 92px rgba(0, 0, 0, 0.19);
 }
 
-.card {
+.lens_card {
   border-radius: 50%;
   grid-area: stack;
 
@@ -180,28 +187,28 @@
 }
 
 @media (orientation: landscape) {
-  .card {
+  .lens_card {
     width: 40vh;
     height: 40vh;
   }
 }
 
 @media (max-width: 540px) {
-  .card {
+  .lens_card {
     width: 60vw;
     height: 60vw;
   }
 }
 
-.card:nth-child(1) {
+.lens_card:nth-child(1) {
   z-index: 3;
 }
 
-.card:nth-child(2) {
+.lens_card:nth-child(2) {
   z-index: 2;
 }
 
-.card::after {
+.lens_card::after {
   content: "Box";
   position: absolute;
   left: -45%;
@@ -220,50 +227,57 @@
 }
 
 @media (max-width: 540px) {
-  .card::after {
+  .lens_card::after {
     left: -20%;
     top: 70%;
   }
 }
 
-.card.content {
+.lens_card.lens_content {
   z-index: 5;
-  transition: border-color 4s ease, background-color 5s ease 2s,
+  transition: border-color 4s ease, background-color 0.5s ease 1s,
     color 4s ease 0s, transform 4s ease 0s;
-  -webkit-transition: border-color 4s ease, background-color 5s ease 2s,
+  -webkit-transition: border-color 4s ease, background-color 0.5s ease 1s,
     color 4s ease 0s, transform 4s ease 0s;
   padding: 5vmin;
   font-size: max(2.5vmin, 0.9rem);
   line-height: 1.5;
-  background: #241F1F;
+  background: rgb(36, 31, 31, 0.9);
 
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.card.content::after {
+.lens_card.lens_content::after {
   content: "Lens Description";
   left: -50%;
 }
 
 @media (max-width: 540px) {
-  .card.content::after {
+  .lens_card.lens_content::after {
     left: -23%;
   }
 }
 
-.card.padding {
-  background: rgba(25, 96, 136, 1);
+.lens_card.lens_padding {
+  background: rgba(25, 96, 136, 0.5);
   z-index: 4;
   transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
+
   box-shadow: 0 0 30px -10px black;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.card.padding::after {
+.lens_card.lens_padding::after {
   content: "1st Layer";
   box-shadow: 0 0 30px -10px black;
 }
 
-.card.padding::before {
+.lens_card.lens_padding::before {
   content: "";
   box-shadow: 0 0 30px -10px black;
   position: absolute;
@@ -280,20 +294,24 @@
       rgba(255, 255, 254, 0.05) 10px);
 }
 
-.card.border {
+.lens_card.lens_border {
   z-index: 3;
   background: transparent;
   transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
+
   box-shadow: 0 0 30px -10px black;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.card.border::after {
+.lens_card.lens_border::after {
   content: "2nd Layer";
   box-shadow: 0 0 30px -10px black;
 }
 
-.card.border::before {
+.lens_card.lens_border::before {
   content: "";
   position: absolute;
   top: 0;
@@ -312,19 +330,23 @@
   box-shadow: 0 0 30px -10px black;
 }
 
-.card.background {
+.lens_card.lens_background {
   z-index: 2;
   transition: background-color 4s ease 0.3s, transform 4s ease 0.3s;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   -webkit-transition: background-color 4s ease 0.3s, transform 4s ease 0.3s;
 }
 
-.card.background::after {
+.lens_card.lens_background::after {
   content: "3rd Layer";
 }
 
-.card.box-shadow {
+.lens_card.lens_box-shadow {
   z-index: 1;
-  background: transparent;
+  background: rgb(255, 255, 255, 0.5);
   transition: box-shadow 4s ease 0.4s, transform 4s ease 0.4s;
   -webkit-transition: box-shadow 4s ease 0.4s, transform 4s ease 0.4s;
 
@@ -332,9 +354,13 @@
     0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.card.box-shadow::after {
+.lens_card.lens_box-shadow::after {
   content: "4th Layer";
 }
 
