@@ -3,7 +3,7 @@
 :root {
     --dark: #241F1F;
     --light: #F7EBD0;
-    --med-dark:#d39529
+    --med-dark: #d39529
 }
 
 .dark {
@@ -29,7 +29,8 @@ body {
     font-family: "Lato", sans-serif !important;
 }
 
-h1,h2 {
+h1,
+h2 {
     color: var(--dark) !important;
 }
 
@@ -341,16 +342,16 @@ footer {
     background: url("../../img/footer-bg.jpg") no-repeat center center/cover;
     padding: 2rem 0;
 }
-  
-  footer .subscribe .subscribe-form {
+
+footer .subscribe .subscribe-form {
     background: #fff;
     padding: 25px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-  }
-  
-  footer .subscribe .subscribe-form .form-group .form-control {
+}
+
+footer .subscribe .subscribe-form .form-group .form-control {
     border: none;
     border-bottom: 2px solid;
     border-radius: 0;
@@ -361,56 +362,56 @@ footer {
     background: rgba(158, 158, 158, 0.1);
     border-radius: 50px;
     border: none;
-  }
-  
-  footer .subscribe .subscribe-form .form-group .form-control:focus {
+}
+
+footer .subscribe .subscribe-form .form-group .form-control:focus {
     outline: none;
     box-shadow: none;
-  }
-  
-  footer .footer-widgets .widget {
+}
+
+footer .footer-widgets .widget {
     color: #fff;
     margin: 2rem 0 0 0;
-  }
-  
-  footer .footer-widgets .widget img {
+}
+
+footer .footer-widgets .widget img {
     margin-bottom: 15px;
-  }
-  
-  footer .footer-widgets .widget h6 {
+}
+
+footer .footer-widgets .widget h6 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 1.5em;
     color: #fff;
-  }
-  
-  footer .footer-widgets .widget ul {
+}
+
+footer .footer-widgets .widget ul {
     padding: 0;
     margin: 0;
     list-style: none;
-  }
-  
-  footer .footer-widgets .widget ul li {
+}
+
+footer .footer-widgets .widget ul li {
     margin-bottom: 1em;
     line-height: 30px;
-  }
-  
-  footer .footer-widgets .widget ul li span {
+}
+
+footer .footer-widgets .widget ul li span {
     color: #fff;
-  }
-  
-  footer .footer-widgets .widget ul li a {
+}
+
+footer .footer-widgets .widget ul li a {
     color: #fff;
-  }
-  
-  footer .copyright {
+}
+
+footer .copyright {
     padding: 15px 0;
     background: rgba(0, 0, 0, 0.2);
-  }
-  
-  footer .copyright p {
+}
+
+footer .copyright p {
     font-weight: 400;
     margin: 0;
     line-height: 40px;
     color: #fff;
-  }
+}

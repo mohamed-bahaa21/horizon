@@ -20,7 +20,8 @@ import {
 } from "@coreui/react";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react'
-import  ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+
 
 import UploadImg from "../../UploadImg/UploadImg";
 
@@ -144,10 +145,11 @@ class About extends Component {
                         content={this.state.content}
                         editor={ClassicEditor}
                         data={this.state.content}
+                        contentsCss = '/css/mysitestyles.css'
                         onChange={this.onChangeEditor}
                     />
-                    
-                    <hr/>
+
+                    <hr />
 
 
                     <CForm onSubmit={this.onSubmit}>
