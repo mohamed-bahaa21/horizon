@@ -9,6 +9,8 @@ import {
   CAlert,
   CInputGroupText,
   CInputGroup,
+  CToaster,
+  CToast
 } from "@coreui/react";
 
 import UploadImg from "../../UploadImg/UploadImg";
@@ -122,18 +124,29 @@ class LensInfo1 extends Component {
           (this.state.edited === true) ?
             <div>
               <FlashMessage duration={3000}>
-                <CAlert
-                  width="1"
-                  color="success"
-                  dismissible={true}
-                >
-                  <strong>Uploaded</strong> Successfully...
-              </CAlert>
               </FlashMessage>
+              <CToaster>
+                <CToast
+                  key={this.state.fixedToasts}
+                  show={true}
+                  autohide={1000}
+                  fade={true}
+                  header="CToast fixed component"
+                >
+                  <CAlert
+                    width="1"
+                    color="success"
+                    dismissible={`${true}`}
+                  >
+                    <strong>Updated</strong> Successfully...
+                    </CAlert>
+                </CToast>
+              </CToaster >
             </div>
             :
             <p></p>
         }
+
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>

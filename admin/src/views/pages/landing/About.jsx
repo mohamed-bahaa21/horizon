@@ -9,6 +9,8 @@ import {
     CRow,
     CAlert,
     CCard,
+    CToaster,
+    CToast
 } from "@coreui/react";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react'
@@ -117,14 +119,24 @@ class About extends Component {
                     (this.state.edited === true) ?
                         <div>
                             <FlashMessage duration={3000}>
-                                <CAlert
-                                    width="1"
-                                    color="success"
-                                    dismissible={`true`}
-                                >
-                                    <strong>Uploaded</strong> Successfully...
-              </CAlert>
                             </FlashMessage>
+                            <CToaster>
+                                <CToast
+                                    key={this.state.fixedToasts}
+                                    show={true}
+                                    autohide={1000}
+                                    fade={true}
+                                    header="CToast fixed component"
+                                >
+                                    <CAlert
+                                        width="1"
+                                        color="success"
+                                        dismissible={`${true}`}
+                                    >
+                                        <strong>Updated</strong> Successfully...
+                    </CAlert>
+                                </CToast>
+                            </CToaster >
                         </div>
                         :
                         <p></p>

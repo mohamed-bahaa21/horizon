@@ -27,6 +27,14 @@ const horizonSchema = new Schema({
         type: String,
         required: false
     },
+    "design_state": {
+        type: Boolean,
+        required: false
+    },
+    "design_img": {
+        type: String,
+        required: false
+    },
     // END HERO SECTION
     // Start Lens Design 1 Section 2/13
     "prog_card_1_link": {

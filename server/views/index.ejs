@@ -18,6 +18,7 @@
                 </div>
                 <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
                     <!-- <img src="assets/img/mobile-1.png" class="img-fluid d-block mx-auto" alt=""> -->
+                    <% if(horizon.design_state) { %>
                     <div class="stack">
                         <div class="lens_content lens_card">
                             <p class="white">
@@ -28,10 +29,10 @@
                                 </b>
                             </p>
                             <p class="white" style="
-                      font-size: 1rem;
-                      font-weight: 600;
-                      line-height: 1.5rem;
-                    ">
+                          font-size: 1rem;
+                          font-weight: 600;
+                          line-height: 1.5rem;
+                        ">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique atque
                                 vero accusamus, dolorem quae voluptates laudantium magnam quod.
                             </p>
@@ -41,6 +42,10 @@
                         <div class="lens_background lens_card"></div>
                         <div class="lens_box-shadow lens_card"></div>
                     </div>
+                    <% } else { %>
+                    <img src="<%= horizon.design_img %>" alt="Hero Section Image">
+                    <% } %>
+
                 </div>
             </div>
         </div>

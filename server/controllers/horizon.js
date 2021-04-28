@@ -159,6 +159,8 @@ exports.postHeroData = (req, res, next) => {
     hero_parag_2,
     hero_link_1_name,
     hero_link_1_href,
+    design_state,
+    design_img
   } = req.body;
 
   Horizon.findById("606f5689ff5464449437a646")
@@ -170,6 +172,8 @@ exports.postHeroData = (req, res, next) => {
       horizon.hero_parag_2 = hero_parag_2;
       horizon.hero_link_1_name = hero_link_1_name;
       horizon.hero_link_1_href = hero_link_1_href;
+      horizon.design_state = design_state;
+      horizon.design_img = design_img;
 
       horizon
         .save()
