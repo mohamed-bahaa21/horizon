@@ -35,7 +35,7 @@ const _nav = [{
   {
     _tag: 'CSidebarNavItem',
     name: 'About Us',
-    to: '/landing/about',
+    to: '/about',
     icon: 'cil-pencil',
   },
   {

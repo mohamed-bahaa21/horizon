@@ -16,7 +16,7 @@ exports.getLanding = (req, res, next) => {
   Horizon.find().then((result) => {
     Blog.find().limit(3).then(blogs => {
       // console.log(blogs;      
-      console.log(result[4]);
+      // console.log(result[4]);
 
       res.render("index", {
         msgs: req.flash('success'),
@@ -45,9 +45,9 @@ exports.getAbout = (req, res, next) => {
 // END
 // Admin -> About Data
 exports.getAboutData = (req, res, next) => {
-  About.find().then((result) => {
-    console.log(result);
-    res.json(result);
+  About.findById('6088f039ce64255fe8d24880').then((about) => {
+    console.log(about);
+    res.json(about);
   });
 };
 
@@ -56,7 +56,7 @@ exports.postAboutData = (req, res, next) => {
     content
   } = req.body;
 
-  About.find()
+  About.findById('6088f039ce64255fe8d24880')
     .then((about) => {
       console.log(req.body);
       // horizon.name = name;
@@ -85,7 +85,7 @@ exports.getBlog = (req, res, next) => {
 
   Blog.findById(blogID).then(result => {
     Blog.find().limit(3).then(blogs => {
-      console.log(result);
+      // console.log(result);
 
       res.render('blog', {
         msgs: req.flash('success'),
@@ -116,7 +116,7 @@ exports.postBlogsData = (req, res, next) => {
 
   Blog.find()
     .then((blogs) => {
-      console.log(req.body);
+      // console.log(req.body);
       // horizon.name = name;
       blogs.date = date;
       blogs.title = title;
@@ -155,7 +155,7 @@ exports.postHeroData = (req, res, next) => {
 
   Horizon.findById("606f5689ff5464449437a646")
     .then((horizon) => {
-      console.log(req.body);
+      // console.log(req.body);
       horizon.name = name;
       horizon.hero_parag_1 = hero_parag_1;
       horizon.hero_header_1 = hero_header_1;
@@ -188,7 +188,7 @@ exports.postLensDesigns1 = (req, res, next) => {
 
   Horizon.findById("606ff91fef83672e10f01feb")
     .then((horizon) => {
-      console.log(req.body);
+      // console.log(req.body);
       // horizon.name = name;
       horizon.prog_card_1_img = prog_card_1_img;
       horizon.prog_card_1_link = prog_card_1_link;
@@ -223,7 +223,7 @@ exports.postLensInfo1 = (req, res, next) => {
 
   Horizon.findById("608514b45b363f4088e7e050")
     .then((horizon) => {
-      console.log(req.body);
+      // console.log(req.body);
       // horizon.name = name;
       horizon.li1_header = li1_header;
       horizon.li1_desc = li1_desc;
@@ -257,7 +257,7 @@ exports.postLensDesigns2 = (req, res, next) => {
 
   Horizon.findById("6085432c5b363f4088e7e051")
     .then((horizon) => {
-      console.log(req.body);
+      // console.log(req.body);
       // horizon.name = name;
       horizon.ld2_header = ld2_header;
       horizon.ld2_desc = ld2_desc;
@@ -288,7 +288,7 @@ exports.postLensInfo2 = (req, res, next) => {
 
   Horizon.findById("6086c203d9b6ec4c30d027de")
     .then((horizon) => {
-      console.log(req.body);
+      // console.log(req.body);
       // horizon.name = name;
       horizon.li2_header = li2_header;
       horizon.li2_desc = li2_desc;
@@ -343,7 +343,7 @@ exports.mailList = (req, res, next) => {
 
 // User Subscribes
 exports.subscribe = (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
 
   const {
     mail_email

@@ -11,6 +11,8 @@ const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 
 const Hero = React.lazy(() => import('./views/pages/landing/Hero'));
+const About = React.lazy(() => import('./views/pages/landing/About'));
+
 const LensDesigns1 = React.lazy(() => import('./views/pages/landing/LensDesigns1'));
 const LensInfo1 = React.lazy(() => import('./views/pages/landing/LensInfo1'));
 const LensDesigns2 = React.lazy(() => import('./views/pages/landing/LensDesigns2'));
@@ -19,6 +21,7 @@ const LensInfo2 = React.lazy(() => import('./views/pages/landing/LensInfo2'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/about', name: 'About Us', component: About },
   { path: '/news', name: 'Latest News', component: News },
 
   { path: '/landing/hero', name: 'Hero', component: Hero },
