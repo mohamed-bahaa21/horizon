@@ -61,7 +61,7 @@ section {
 }
 
 .section-header {
-  font-weight: 7  00;
+  font-weight: 7 00;
 }
 
 .dark {
@@ -298,9 +298,18 @@ footer .subscribe .subscribe-form-2 .form-group {
   margin: 0 auto;
 }
 
+@media (max-width: 1000px) {
+  .img-1000 {
+    max-width: 50vw;
+  }
+}
+
 @media (max-width: 768px) {
   .section-title h3 {
     font-size: 40px;
+  }
+  .img-1000 {
+    display: none;
   }
 }
 
@@ -657,7 +666,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .slide .content-bottom {
-  padding-top: 10rem;
+  padding: 10rem 2rem;
   position: relative;
   z-index: 1;
 }
