@@ -1,8 +1,27 @@
 // todo: disabled button styles
+
+:root {
+  --primary: #303C54 !important;
+}
+
+.c-app {
+  --primary: #303C54 !important;
+}
+
+.btn-primary {
+  background-color: #303C54;
+  border-color: #303C54;
+}
+
+.bg-primary {
+  background-color: #303C54 !important;
+}
+
 button {
   &:disabled {
     cursor: default;
   }
+
   &.disabled {
     cursor: default;
   }
