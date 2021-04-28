@@ -14,16 +14,13 @@ import axios from "axios";
 import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
-var ADMIN_URI = "http://localhost:3000";
 
 if (process.env.NODE_ENV === "development") {
     SERVER_URI = "http://localhost:5000";
-    ADMIN_URI = "http://localhost:3000";
 }
 
 if (process.env.NODE_ENV === "production") {
     SERVER_URI = "https://horizon-server.herokuapp.com";
-    ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
 class Gallery extends Component {
@@ -47,10 +44,13 @@ class Gallery extends Component {
                 
                 gallery.map(img => {
                     lista.push((img))
+                    return lista
                 })
+
                 this.setState({
                     imgs: lista
                 })
+
                 console.log(this.state.imgs);
             })
 
@@ -91,7 +91,7 @@ class Gallery extends Component {
             <CRow>
 
                 {
-                    (this.state.edited == true) ?
+                    (this.state.edited === true) ?
                         <div>
                             <FlashMessage duration={3000}>
                                 <CAlert

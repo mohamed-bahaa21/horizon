@@ -1,24 +1,12 @@
 import React, { Component } from "react";
 
 import {
-  CCardHeader,
-  CNav,
-  CNavItem,
-  CNavLink,
-  CLabel,
   CForm,
   CInput,
-  CInputFile,
-  CTextarea,
-  CFormText,
   CFormGroup,
-  CButton,
   CCol,
   CRow,
   CAlert,
-  CCollapse,
-  CCard,
-  CCardBody,
   CInputGroupText,
   CInputGroup,
 } from "@coreui/react";
@@ -31,16 +19,13 @@ import axios from "axios";
 import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
-var ADMIN_URI = "http://localhost:3000";
 
 if (process.env.NODE_ENV === "development") {
   SERVER_URI = "http://localhost:5000";
-  ADMIN_URI = "http://localhost:3000";
 }
 
 if (process.env.NODE_ENV === "production") {
   SERVER_URI = "https://horizon-server.herokuapp.com";
-  ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
 class LensDesigns1 extends Component {
@@ -123,7 +108,7 @@ class LensDesigns1 extends Component {
   }
 
   onChange(e) {
-    const { id, name, value } = e.target;
+    const { name, value } = e.target;
 
     this.setState({
       [name]: value,
@@ -135,7 +120,7 @@ class LensDesigns1 extends Component {
   }
 
   onChangeDesign(e, i) {
-    const { id, value, name } = e.target;
+    const { value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
@@ -161,7 +146,7 @@ class LensDesigns1 extends Component {
   }
 
   onChangeSpec(e, di, si) {
-    const { id, value, name } = e.target;
+    const { value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');

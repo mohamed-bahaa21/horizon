@@ -18,7 +18,6 @@ import {
 import CIcon from "@coreui/icons-react";
 
 import Preview from "../views/Preview/Preview";
-import UploadImg from "../views/UploadImg/UploadImg";
 import './preview-modal.css'
 
 // routes config
@@ -28,19 +27,6 @@ const TheHeader = () => {
   const dispatch = useDispatch();
   const sidebarShow = useSelector((state) => state.sidebarShow);
   const [modal, setModal] = useState(false);
-
-  var SERVER_URI = "http://localhost:5000"
-  var ADMIN_URI = "http://localhost:3000"
-
-  if (process.env.NODE_ENV === 'development') {
-    SERVER_URI = "http://localhost:5000"
-    ADMIN_URI = "http://localhost:3000"
-  }
-
-  if (process.env.NODE_ENV === 'production') {
-    SERVER_URI = "https://horizon-server.herokuapp.com"
-    ADMIN_URI = "https://horizon-admin.herokuapp.com"
-  }
 
   const toggle = () => {
     setModal(!modal);

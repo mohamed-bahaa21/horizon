@@ -1,26 +1,12 @@
 import React, { Component } from "react";
 
 import {
-  CCardHeader,
-  CNav,
-  CNavItem,
-  CNavLink,
-  CLabel,
   CForm,
   CInput,
-  CInputFile,
-  CTextarea,
-  CFormText,
   CFormGroup,
-  CButton,
   CCol,
   CRow,
   CAlert,
-  CCollapse,
-  CCard,
-  CCardBody,
-  CInputGroupText,
-  CInputGroup,
   CToast,
   CToaster,
 } from "@coreui/react";
@@ -33,16 +19,13 @@ import axios from "axios";
 import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
-var ADMIN_URI = "http://localhost:3000";
 
 if (process.env.NODE_ENV === "development") {
   SERVER_URI = "http://localhost:5000";
-  ADMIN_URI = "http://localhost:3000";
 }
 
 if (process.env.NODE_ENV === "production") {
   SERVER_URI = "https://horizon-server.herokuapp.com";
-  ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
 class LensInfo2 extends Component {
@@ -129,7 +112,7 @@ class LensInfo2 extends Component {
   }
 
   onChange(e) {
-    const { id, name, value } = e.target;
+    const { name, value } = e.target;
 
     this.setState({
       [name]: value,
@@ -141,7 +124,7 @@ class LensInfo2 extends Component {
   }
 
   onChangeLft(e, i) {
-    const { id, value, name } = e.target;
+    const { value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
@@ -167,7 +150,7 @@ class LensInfo2 extends Component {
   }
 
   onChangeRght(e, i) {
-    const { id, value, name } = e.target;
+    const { value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
@@ -205,7 +188,7 @@ class LensInfo2 extends Component {
     let listLft = this.state.li2_lft_parags.map((parag, parag_i) =>
       <div key={parag_i}>
         <Accordion
-          title={`#${parag_i+1} parag`}
+          title={`#${parag_i + 1} parag`}
           content={
             <div>
               {/* INPUT #1 Parag Header */}
@@ -237,7 +220,7 @@ class LensInfo2 extends Component {
     let listRght = this.state.li2_rght_parags.map((parag, parag_i) =>
       <div key={parag_i}>
         <Accordion
-          title={`#${parag_i+1} parag`}
+          title={`#${parag_i + 1} parag`}
           content={
             <div>
               {/* INPUT #1 Parag Header */}

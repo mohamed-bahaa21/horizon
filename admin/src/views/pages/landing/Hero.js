@@ -1,18 +1,14 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { Component } from 'react'
 import {
-  CLabel,
   CForm,
   CInput,
   CTextarea,
   CFormText,
   CFormGroup,
-  CButton,
   CCol,
   CRow,
   CInputGroup,
-  CInputGroupText,
   CAlert,
-  CInputCheckbox,
 } from '@coreui/react'
 
 import axios from 'axios';
@@ -24,16 +20,13 @@ import { from } from 'apollo-link';
 // import { LOAD_HORIZON } from "../../../queries/queries";
 
 var SERVER_URI = "http://localhost:5000"
-var ADMIN_URI = "http://localhost:3000"
 
 if (process.env.NODE_ENV === 'development') {
   SERVER_URI = "http://localhost:5000"
-  ADMIN_URI = "http://localhost:3000"
 }
 
 if (process.env.NODE_ENV === 'production') {
   SERVER_URI = "https://horizon-server.herokuapp.com"
-  ADMIN_URI = "https://horizon-admin.herokuapp.com"
 }
 
 class Hero extends Component {
@@ -172,7 +165,7 @@ class Hero extends Component {
     return (
       <CRow>
         {
-          (this.state.edited == true) ?
+          (this.state.edited === true) ?
             <div>
               <FlashMessage duration={3000}>
                 <CAlert

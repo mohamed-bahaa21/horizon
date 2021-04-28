@@ -1,31 +1,26 @@
 import React, { Component } from 'react'
 import {
-    CBadge,
     CCard,
     CCardBody,
     CCardHeader,
     CCol,
     CDataTable,
     CRow,
-    CPagination
 } from '@coreui/react'
 // react-csv
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 // axios
 import axios from 'axios';
 
 
 var SERVER_URI = "http://localhost:5000"
-var ADMIN_URI = "http://localhost:3000"
 
 if (process.env.NODE_ENV === 'development') {
     SERVER_URI = "http://localhost:5000"
-    ADMIN_URI = "http://localhost:3000"
 }
 
 if (process.env.NODE_ENV === 'production') {
     SERVER_URI = "https://horizon-server.herokuapp.com"
-    ADMIN_URI = "https://horizon-admin.herokuapp.com"
 }
 
 class MailingList extends Component {
@@ -51,7 +46,9 @@ class MailingList extends Component {
                 // console.log(mailing_list[0].mail_email);
                 mailing_list.map(mail => {
                     lista.push(([mail.mail_email]))
+                    return lista
                 })
+
                 this.setState({
                     mailingList: lista
                 })
@@ -72,6 +69,7 @@ class MailingList extends Component {
         this.state.mailingList.map(item => {
             let row = { "email": item }
             tableItems.push(row)
+            return tableItems
         })
         // console.log("table: ", tableItems);
 

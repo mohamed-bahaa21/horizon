@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
 import { storage } from "../../firebase/firebase";
 
 import {
@@ -19,16 +18,13 @@ import axios from "axios";
 import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
-var ADMIN_URI = "http://localhost:3000";
 
 if (process.env.NODE_ENV === "development") {
   SERVER_URI = "http://localhost:5000";
-  ADMIN_URI = "http://localhost:3000";
 }
 
 if (process.env.NODE_ENV === "production") {
   SERVER_URI = "https://horizon-server.herokuapp.com";
-  ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
 const UploadImg = () => {
@@ -37,7 +33,6 @@ const UploadImg = () => {
   const [progress, setProgress] = useState(0);
   const [uploaded, setUploaded] = useState('false')
   const [copied, setCopied] = useState('false')
-  const [uploadBtnState, setUploadBtnState] = useState('false');
   const [visible, setVisible] = useState(false)
 
   const handleChange = e => {

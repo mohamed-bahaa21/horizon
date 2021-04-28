@@ -4,19 +4,11 @@ import {
     CLabel,
     CForm,
     CInput,
-    CInputFile,
-    CTextarea,
-    CFormText,
     CFormGroup,
-    CButton,
     CCol,
     CRow,
     CAlert,
-    CCollapse,
     CCard,
-    CCardBody,
-    CInputGroupText,
-    CInputGroup,
 } from "@coreui/react";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react'
@@ -122,7 +114,7 @@ class About extends Component {
         return (
             <CRow>
                 {
-                    (this.state.edited == true) ?
+                    (this.state.edited === true) ?
                         <div>
                             <FlashMessage duration={3000}>
                                 <CAlert
@@ -145,7 +137,7 @@ class About extends Component {
                         content={this.state.content}
                         editor={ClassicEditor}
                         data={this.state.content}
-                        contentsCss = '/css/mysitestyles.css'
+                        contentsCss='/css/mysitestyles.css'
                         onChange={this.onChangeEditor}
                     />
 

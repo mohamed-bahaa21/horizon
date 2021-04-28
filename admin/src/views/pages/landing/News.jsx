@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 
 import {
-  CLabel,
   CForm,
   CInput,
-  CInputFile,
-  CTextarea,
-  CFormText,
   CFormGroup,
-  CButton,
   CCol,
   CRow,
   CAlert,
-  CCollapse,
-  CCard,
-  CCardBody,
   CInputGroupText,
   CInputGroup,
   CToast,
@@ -29,16 +21,13 @@ import axios from "axios";
 import FlashMessage from 'react-flash-message'
 
 var SERVER_URI = "http://localhost:5000";
-var ADMIN_URI = "http://localhost:3000";
 
 if (process.env.NODE_ENV === "development") {
   SERVER_URI = "http://localhost:5000";
-  ADMIN_URI = "http://localhost:3000";
 }
 
 if (process.env.NODE_ENV === "production") {
   SERVER_URI = "https://horizon-server.herokuapp.com";
-  ADMIN_URI = "https://horizon-admin.herokuapp.com";
 }
 
 class News extends Component {
@@ -96,7 +85,7 @@ class News extends Component {
   }
 
   onChange(e, i) {
-    const { id, value, name } = e.target;
+    const { value, name } = e.target;
     // console.log('NAME:: ', name);
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
@@ -236,7 +225,7 @@ class News extends Component {
     return (
       <CRow>
         {
-          (this.state.edited == true) ?
+          (this.state.edited === true) ?
             <div>
               <FlashMessage duration={3000}>
               </FlashMessage>
