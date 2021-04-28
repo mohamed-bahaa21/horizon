@@ -6,6 +6,7 @@ const horizonController = require(path.resolve(__basename, 'controllers', 'horiz
 
 route.get('/', horizonController.getLanding)
 route.get('/about-us', horizonController.getAbout)
+route.get('/news', horizonController.getBlogs)
 route.get('/blog/:id', horizonController.getBlog)
 
 // ADMIN -> Blogs Data

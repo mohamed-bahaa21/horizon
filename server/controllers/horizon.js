@@ -75,11 +75,16 @@ exports.postAboutData = (req, res, next) => {
 
 
 
-
-
-
-
-
+// User Get Blogs list
+exports.getBlogs = (req, res, next) => {
+  Blog.find().then(result => {
+    // console.log(result);
+    res.render('blogs', {
+      msgs: req.flash('success'),
+      blogs: result
+    })
+  })
+};
 
 
 // User Get Blog By ID route
