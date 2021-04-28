@@ -19,6 +19,9 @@ import {
     CInputGroup,
 } from "@coreui/react";
 
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+import  ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
@@ -57,6 +60,7 @@ class About extends Component {
         };
 
         this.onChange = this.onChange.bind(this);
+        this.onChangeEditor = this.onChangeEditor.bind(this);
 
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -90,6 +94,16 @@ class About extends Component {
         })
     }
 
+    onChangeEditor(e, editor) {
+        const data = editor.getData();
+        this.setState({
+            content: data,
+            submitClass: 'primary',
+            submitDisable: false,
+            edited: false,
+        })
+    }
+
     onSubmit(e) {
         e.preventDefault();
         const prog_section = {
@@ -113,7 +127,7 @@ class About extends Component {
                                 <CAlert
                                     width="1"
                                     color="success"
-                                    dismissible={true}
+                                    dismissible={`true`}
                                 >
                                     <strong>Uploaded</strong> Successfully...
               </CAlert>
@@ -123,10 +137,22 @@ class About extends Component {
                         <p></p>
                 }
                 <CCol xs="12">
+
+                    <CKEditor
+                        name="body"
+                        placeholder="About Page"
+                        content={this.state.content}
+                        editor={ClassicEditor}
+                        data={this.state.content}
+                        onChange={this.onChangeEditor}
+                    />
+                    
+                    <hr/>
+
+
                     <CForm onSubmit={this.onSubmit}>
                         <CFormGroup>
                             {/* #1 name */}
-                            <h6>{this.state.content}</h6>
                             <CInput
                                 type="text"
                                 id="content"
@@ -135,8 +161,10 @@ class About extends Component {
                                 value={this.state.content}
                                 onChange={this.onChange}
                             />
-
                         </CFormGroup>
+
+                        <CLabel>Content: </CLabel>
+                        <CCard dangerouslySetInnerHTML={{ __html: this.state.content }} />
 
                         <hr />
                         <br />

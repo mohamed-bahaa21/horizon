@@ -37,6 +37,8 @@
     "express-validator": "^6.2.0",
     "firebase": "^8.3.3",
     "graphql": "^15.5.0",
+    "htmlparser2": "^6.1.0",
+    "jsdom": "^16.5.3",
     "lodash": "^4.17.21",
     "mongoose": "^5.12.3"
   },

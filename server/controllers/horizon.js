@@ -4,6 +4,8 @@ const About = require("../models/About");
 const Gallery = require("../models/Gallery");
 const Mail = require("../models/Mail");
 
+const htmlparser2 = require("htmlparser2");
+
 // const SENDGRID_API = process.env.SENDGRID_API
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(SENDGRID_API)
@@ -33,11 +35,12 @@ exports.getLanding = (req, res, next) => {
 
 // User -> About Page
 exports.getAbout = (req, res, next) => {
-  About.findById('6088f039ce64255fe8d24880').then((about) => {
-    console.log(about);
+  About.findById('6088f039ce64255fe8d24880').then((result) => {
+    // console.log(result);
+
     res.render("about", {
       msgs: req.flash('success'),
-      about: about
+      about: result
     });
   });
 };
