@@ -186,6 +186,21 @@ const _nav = [{
 
 
 
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Footer',
+    icon: 'cil-ban',
+    addLinkClass: 'c-disabled',
+    'disabled': true
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-3'
+  },
+
+
+
+
 
 
 
