@@ -115,6 +115,71 @@ const _nav = [{
   },
   {
     _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Screen Shots',
+    to: '/landing/screen-shots',
+    icon: 'cil-pencil',
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Production Info',
+    icon: 'cil-ban',
+    addLinkClass: 'c-disabled',
+    'disabled': true
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Technical Info',
+    icon: 'cil-ban',
+    addLinkClass: 'c-disabled',
+    'disabled': true
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Logos',
+    icon: 'cil-ban',
+    addLinkClass: 'c-disabled',
+    'disabled': true
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Contact Us',
+    icon: 'cil-ban',
+    addLinkClass: 'c-disabled',
+    'disabled': true
+  },
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Map',
+    icon: 'cil-ban',
+    addLinkClass: 'c-disabled',
+    'disabled': true
+  },
+  {
+    _tag: 'CSidebarNavDivider',
     className: 'm-3'
   },
 
@@ -155,7 +220,10 @@ const _nav = [{
     addLinkClass: 'c-disabled',
     'disabled': true
   },
-
+  {
+    _tag: 'CSidebarNavDivider',
+    className: 'm-1'
+  },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'

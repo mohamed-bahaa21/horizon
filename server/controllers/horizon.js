@@ -28,7 +28,8 @@ exports.getLanding = (req, res, next) => {
         li1: result[2],
         ld2: result[3],
         li2: result[4],
-        wv: result[5]
+        wv: result[5],
+        ss: result[6]
       })
     });
   });
@@ -232,13 +233,13 @@ exports.getLensInfo1 = (req, res, next) => {
 exports.postLensInfo1 = (req, res, next) => {
   const {
     li1_section_display = li1_section_display,
-    li1_header,
-    li1_desc,
-    li1_img,
-    li1_parag_1,
-    li1_parag_2,
-    li1_parag_3,
-    li1_parag_4
+      li1_header,
+      li1_desc,
+      li1_img,
+      li1_parag_1,
+      li1_parag_2,
+      li1_parag_3,
+      li1_parag_4
   } = req.body;
 
   Horizon.findById("608514b45b363f4088e7e050")
@@ -271,6 +272,7 @@ exports.getLensDesigns2 = (req, res, next) => {
 
 exports.postLensDesigns2 = (req, res, next) => {
   const {
+    ld2_section_display,
     ld2_header,
     ld2_desc,
     ld2_designs
@@ -280,6 +282,7 @@ exports.postLensDesigns2 = (req, res, next) => {
     .then((horizon) => {
       // console.log(req.body);
       // horizon.name = name;
+      horizon.ld2_section_display = ld2_section_display;
       horizon.ld2_header = ld2_header;
       horizon.ld2_desc = ld2_desc;
       horizon.ld2_designs = ld2_designs;
@@ -359,6 +362,32 @@ exports.postWatchVideo = (req, res, next) => {
       horizon.wv_header = wv_header;
       horizon.wv_desc = wv_desc;
       horizon.wv_link = wv_link;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+// Admin Gets, Edits -> Watch Video Section Data 
+exports.getScreenShots = (req, res, next) => {
+  Horizon.findById("608a9ecdea47782954fcabea").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postScreenShots = (req, res, next) => {
+  const {
+    ss_section_display,
+  } = req.body;
+
+  Horizon.findById("608a9ecdea47782954fcabea")
+    .then((horizon) => {
+      // console.log(req.body);
+      // horizon.name = name;
+      horizon.ss_section_display = ss_section_display;
 
       horizon
         .save()

@@ -240,7 +240,7 @@ const horizonSchema = new Schema({
         }
     }],
     // END SECTION
-    // START LENS Info 2 5/13
+    // START Watch Video 5/13
     "wv_section_display": {
         type: Boolean,
         required: false
@@ -254,6 +254,20 @@ const horizonSchema = new Schema({
         required: false
     },
     "wv_link": {
+        type: String,
+        required: false
+    },
+    // END SECTION
+    // START Sceeen Shots 5/13
+    "ss_section_display": {
+        type: Boolean,
+        required: false
+    },
+    "ss_header": {
+        type: String,
+        required: false
+    },
+    "ss_desc": {
         type: String,
         required: false
     }

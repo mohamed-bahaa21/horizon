@@ -37,9 +37,13 @@ route.post('/api/postLensDesigns2', horizonController.postLensDesigns2)
 route.get('/api/getLensInfo2', horizonController.getLensInfo2)
 route.post('/api/postLensInfo2', horizonController.postLensInfo2)
 
-// ADMIN -> Lens Info 1 Section
+// ADMIN -> Watch Video Section
 route.get('/api/getWatchVideo', horizonController.getWatchVideo)
 route.post('/api/postWatchVideo', horizonController.postWatchVideo)
+
+// ADMIN -> Screen Shots Section
+route.get('/api/getScreenShots', horizonController.getScreenShots)
+route.post('/api/postScreenShots', horizonController.postScreenShots)
 
 // FUNCTIONALITIES
 route.get('/api/gallery', horizonController.gallery)

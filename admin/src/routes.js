@@ -19,6 +19,7 @@ const LensDesigns2 = React.lazy(() => import('./views/pages/landing/LensDesigns2
 const LensInfo2 = React.lazy(() => import('./views/pages/landing/LensInfo2'));
 
 const WatchVideo = React.lazy(() => import('./views/pages/landing/WatchVideo'));
+const Screenshots = React.lazy(() => import('./views/pages/landing/Screenshots'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -33,6 +34,7 @@ const routes = [
   { path: '/landing/lens-info-2', name: 'Lens Info 2', component: LensInfo2 },
   
   { path: '/landing/watch-video', name: 'Watch Video', component: WatchVideo },
+  { path: '/landing/screen-shots', name: 'Screen Shots', component: Screenshots },
   
   { path: '/gallery', name: 'Gallery', component: Gallery },
   { path: '/mailing-list', exact: true,  name: 'Mailing List', component: MailingList },

@@ -59,6 +59,7 @@ class LensDesigns1 extends Component {
     this.onChangeDesign = this.onChangeDesign.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onChangeSpec = this.onChangeSpec.bind(this);
+    this.toggleCheckbox = this.toggleCheckbox.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -69,11 +70,13 @@ class LensDesigns1 extends Component {
       .get(`${SERVER_URI}/api/getLensDesigns2`)
       .then((response) => {
         const {
+          ld2_section_display,
           ld2_header,
           ld2_desc,
           ld2_designs,
         } = response.data;
         this.setState({
+          ld2_section_display: ld2_section_display,
           ld2_header: ld2_header,
           ld2_desc: ld2_desc,
           ld2_designs: ld2_designs,
@@ -94,6 +97,7 @@ class LensDesigns1 extends Component {
 
     if (!this.state.submitDisable) {
       const prog_section = {
+        ld2_section_display: this.state.ld2_section_display,
         ld2_header: this.state.ld2_header,
         ld2_desc: this.state.ld2_desc,
         ld2_designs: this.state.ld2_designs,
@@ -172,6 +176,16 @@ class LensDesigns1 extends Component {
 
     // console.log(this.state.ld2_designs[i]);
     // console.log(this.state);
+  }
+
+  toggleCheckbox(e) {
+    e.preventDefault();
+    this.setState({
+      ld2_section_display: !this.state.ld2_section_display,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
+    });
   }
 
   render() {
@@ -292,6 +306,20 @@ class LensDesigns1 extends Component {
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
+            <CFormGroup>
+              {/* #1 */}
+              {/* Checkbox to Toggle Sections */}
+              <h4>{this.state.ld2_section_display ? "Show" : "hide"}</h4>
+              <a href="#" role="button" onClick={this.toggleCheckbox}>
+                <input
+                  type="checkbox"
+                  title="ld2_section_display"
+                  name="ld2_section_display"
+                  checked={this.state.ld2_section_display}
+                  readOnly
+                />_Show Section</a>
+            </CFormGroup>
+
             <CFormGroup>
               {/* #1 Section Header */}
               <h6>{this.state.ld2_header}</h6>
