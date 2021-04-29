@@ -1,6 +1,7 @@
 const Horizon = require("../models/horizon");
 const Blog = require("../models/Blog");
 const About = require("../models/About");
+const Product = require("../models/About");
 const Gallery = require("../models/Gallery");
 const Mail = require("../models/Mail");
 
@@ -35,6 +36,46 @@ exports.getLanding = (req, res, next) => {
   });
 };
 
+// START User -> Product Page
+exports.getProduct = (req, res, next) => {
+  const {
+    brand
+  } = req.params
+
+  console.log(brand);
+
+  if (brand == "Zeiss") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Zeiss"
+    });
+  } else if (brand == "ltl") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello LTL"
+    });
+
+  } else if (brand == "divel") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Divel"
+    });
+
+  } else if (brand == "roger-bacon") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Roger-Bacon"
+    });
+
+  } else {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Zeiss"
+    });
+  }
+};
+// END
+
 // User -> About Page
 exports.getAbout = (req, res, next) => {
   About.findById('6088f039ce64255fe8d24880').then((result) => {
@@ -46,8 +87,9 @@ exports.getAbout = (req, res, next) => {
     });
   });
 };
-
 // END
+
+
 // Admin -> About Data
 exports.getAboutData = (req, res, next) => {
   About.findById('6088f039ce64255fe8d24880').then((about) => {
@@ -87,7 +129,6 @@ exports.getBlogs = (req, res, next) => {
     })
   })
 };
-
 
 // User Get Blog By ID route
 exports.getBlog = (req, res, next) => {
@@ -142,6 +183,11 @@ exports.postBlogsData = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 // END SECTION
+
+
+
+
+
 // Landing page data
 exports.getLandingData = (req, res, next) => {
   var origin = req.originalUrl;
