@@ -18,6 +18,8 @@ const LensInfo1 = React.lazy(() => import('./views/pages/landing/LensInfo1'));
 const LensDesigns2 = React.lazy(() => import('./views/pages/landing/LensDesigns2'));
 const LensInfo2 = React.lazy(() => import('./views/pages/landing/LensInfo2'));
 
+const WatchVideo = React.lazy(() => import('./views/pages/landing/WatchVideo'));
+
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -29,6 +31,8 @@ const routes = [
   { path: '/landing/lens-info-1', name: 'Lens Info 1', component: LensInfo1 },
   { path: '/landing/lens-designs-2', name: 'Lens Designs 2', component: LensDesigns2 },
   { path: '/landing/lens-info-2', name: 'Lens Info 2', component: LensInfo2 },
+  
+  { path: '/landing/watch-video', name: 'Watch Video', component: WatchVideo },
   
   { path: '/gallery', name: 'Gallery', component: Gallery },
   { path: '/mailing-list', exact: true,  name: 'Mailing List', component: MailingList },

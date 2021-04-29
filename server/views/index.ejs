@@ -195,6 +195,7 @@
 <!-- End lenses Designs 1/3 -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Lens Info (1/2) -->
+<% if(li1.li1_section_display) { %>
 <section id="about" class="why-us padding-100 background-fullwidth background-fixed" style="background-image: url()">
     <div class="container" style="background-color: white; border-radius: 24px">
         <div class="row align-items-center">
@@ -254,9 +255,11 @@
         </div>
     </div>
 </section>
+<% } %>
 <!-- End Lens Info (1/2) -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start lens Designs 2/3 -->
+<% if(ld2.ld2_section_display) { %>
 <section id="single-vision" class="hero-section">
     <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
         <h2 class="section-header white">
@@ -334,9 +337,11 @@
         <div class="product__overlay"></div>
     </div>
 </section>
+<% } %>
 <!-- End lenses Designs 2/3 -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Lens Info 2/2 -->
+<% if(li2.li2_section_display) { %>
 <section id="main_features" class="main-features padding-100">
     <div class="container">
         <div class="row">
@@ -400,10 +405,11 @@
         </div>
     </div>
 </section>
+<% } %>
 <!-- End Lens Info 2/2 -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start lenses Designs 3/3 -->
-<section id="" class="hero-section padding-100">
+<!-- <section id="" class="hero-section padding-100">
     <div class="container">
         <div class="row">
             <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
@@ -424,8 +430,8 @@
                 <section id="bifocal" class="">
                     <div class="options">
                         <div class="option active" style="
-                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
-                  ">
+                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
+                      ">
                             <div class="shadow"></div>
                             <div class="label">
                                 <div class="icon">
@@ -438,8 +444,8 @@
                             </div>
                         </div>
                         <div class="option" style="
-                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
-                  ">
+                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
+                      ">
                             <div class="shadow"></div>
                             <div class="label">
                                 <div class="icon">
@@ -452,8 +458,8 @@
                             </div>
                         </div>
                         <div class="option" style="
-                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
-                  ">
+                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
+                      ">
                             <div class="shadow"></div>
                             <div class="label">
                                 <div class="icon">
@@ -466,8 +472,8 @@
                             </div>
                         </div>
                         <div class="option" style="
-                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
-                  ">
+                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
+                      ">
                             <div class="shadow"></div>
                             <div class="label">
                                 <div class="icon">
@@ -480,8 +486,8 @@
                             </div>
                         </div>
                         <div class="option" style="
-                    --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
-                  ">
+                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
+                      ">
                             <div class="shadow"></div>
                             <div class="label">
                                 <div class="icon">
@@ -498,36 +504,36 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End lenses Designs 3/3  -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Watch Video -->
+<% if(wv.wv_section_display) { %>
 <section id="watch_video" class="watch-video padding-100">
     <div class="container-fluid">
         <div class="row">
             <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
                 <h2 class="section-header med-dark">
-                    <span style="border-bottom: 3px solid; padding: 0.5rem;">Watch Video</span>
+                    <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= wv.wv_header %></span>
                 </h2>
                 <div class="space-25"></div>
                 <p class="">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
+                    <%= wv.wv_desc %>
                 </p>
                 <div class="space-50"></div>
             </div>
             <div class="col-md-6 offset-md-3" data-aos="fade-up">
                 <div class="video" style="
-                background-image: url('https://via.placeholder.com/699x351');
-              ">
+                    background-image: url('https://via.placeholder.com/699x351');
+                  ">
                     <img src="assets/img/mobile-4-4.png" class="img-fluid d-block mx-auto" alt="" />
-                    <a href="http://www.youtube.com/watch?v=XSGBVzeBUbk" data-lity></a>
+                    <a href="<%= wv.wv_link %>" data-lity></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<% } %>
 <!-- End Watch Video  -->
 <!-- ------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------- -->

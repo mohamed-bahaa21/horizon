@@ -9,6 +9,8 @@ import {
   CAlert,
   CToast,
   CToaster,
+  CInputGroup,
+  CInputGroupText
 } from "@coreui/react";
 
 import Accordion from "../../../reusable/Accordion/Accordion";
@@ -39,10 +41,11 @@ class LensInfo2 extends Component {
       submitDisable: true,
 
       fixedToasts: 0,
-      
+
       li2_section_display: true,
       li2_header: "...",
       li2_desc: "...",
+      li2_image: "...",
       li2_lft_parags: [{
         parag_header: '',
         parag_content: '',
@@ -57,6 +60,7 @@ class LensInfo2 extends Component {
     this.onChangeLft = this.onChangeLft.bind(this);
     this.onChangeRght = this.onChangeRght.bind(this);
     this.addFixedToast = this.addFixedToast.bind(this);
+    this.toggleCheckbox = this.toggleCheckbox.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -67,14 +71,18 @@ class LensInfo2 extends Component {
       .get(`${SERVER_URI}/api/getLensInfo2`)
       .then((response) => {
         const {
+          li2_section_display,
           li2_header,
           li2_desc,
+          li2_image,
           li2_lft_parags,
           li2_rght_parags,
         } = response.data;
         this.setState({
+          li2_section_display: li2_section_display,
           li2_header: li2_header,
           li2_desc: li2_desc,
+          li2_image: li2_image,
           li2_lft_parags: li2_lft_parags,
           li2_rght_parags: li2_rght_parags,
         });
@@ -94,8 +102,10 @@ class LensInfo2 extends Component {
 
     if (!this.state.submitDisable) {
       const prog_section = {
+        li2_section_display: this.state.li2_section_display,
         li2_header: this.state.li2_header,
         li2_desc: this.state.li2_desc,
+        li2_image: this.state.li2_image,
         li2_lft_parags: this.state.li2_lft_parags,
         li2_rght_parags: this.state.li2_rght_parags,
       };
@@ -182,6 +192,16 @@ class LensInfo2 extends Component {
     this.setState({
       fixedToasts: this.state.fixedToasts + 1
     })
+  }
+
+  toggleCheckbox(e) {
+    e.preventDefault();
+    this.setState({
+      li2_section_display: !this.state.li2_section_display,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
+    });
   }
 
 
@@ -281,6 +301,19 @@ class LensInfo2 extends Component {
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>
+              {/* #1 */}
+              {/* Checkbox to Toggle Section */}
+              <h4>{this.state.li2_section_display ? "Show" : "hide"}</h4>
+              <a href="#" role="button" onClick={this.toggleCheckbox}>
+                <input
+                  type="checkbox"
+                  title="li2_section_display"
+                  name="li2_section_display"
+                  checked={this.state.li2_section_display}
+                  readOnly
+                />_Show Section</a>
+            </CFormGroup>
+            <CFormGroup>
               {/* #1 Section Header */}
               <h6>{this.state.ld2_header}</h6>
               <CInput
@@ -305,6 +338,20 @@ class LensInfo2 extends Component {
               <h6>Left Parags</h6>
 
               {listLft}
+
+              <hr />
+
+              <CInputGroup className="mb-3">
+                <CInputGroupText id="basic-addon3">Image URL</CInputGroupText>
+                <CInput
+                  type="text"
+                  id="li2_image"
+                  name="li2_image"
+                  placeholder="li2_image"
+                  value={this.state.li2_image}
+                  onChange={this.onChange}
+                />
+              </CInputGroup>
 
               <hr />
 

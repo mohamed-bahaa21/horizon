@@ -54,6 +54,7 @@ class LensInfo1 extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.toggleCheckbox = this.toggleCheckbox.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -65,6 +66,7 @@ class LensInfo1 extends Component {
       .then((response) => {
         // console.log(response.data);
         const {
+          li1_section_display,
           li1_header,
           li1_desc,
           li1_img,
@@ -74,6 +76,7 @@ class LensInfo1 extends Component {
           li1_parag_4,
         } = response.data;
         this.setState({
+          li1_section_display: li1_section_display,
           li1_header: li1_header,
           li1_desc: li1_desc,
           li1_img: li1_img,
@@ -102,6 +105,7 @@ class LensInfo1 extends Component {
   onSubmit(e) {
     e.preventDefault();
     const prog_section = {
+      li1_section_display: this.state.li1_section_display,
       li1_header: this.state.li1_header,
       li1_desc: this.state.li1_desc,
       li1_img: this.state.li1_img,
@@ -116,6 +120,16 @@ class LensInfo1 extends Component {
 
     // window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
     this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+  }
+
+  toggleCheckbox(e) {
+    e.preventDefault();
+    this.setState({
+      li1_section_display: !this.state.li1_section_display,
+      submitClass: 'primary',
+      submitDisable: false,
+      edited: false,
+    });
   }
 
   render() {
@@ -150,6 +164,19 @@ class LensInfo1 extends Component {
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
+            <CFormGroup>
+              {/* #1 */}
+              {/* Checkbox to Toggle Sections */}
+              <h4>{this.state.li1_section_display ? "Show" : "hide"}</h4>
+              <a href="#" role="button" onClick={this.toggleCheckbox}>
+                <input
+                  type="checkbox"
+                  title="li1_section_display"
+                  name="li1_section_display"
+                  checked={this.state.li1_section_display}
+                  readOnly
+                />_Show Section</a>
+            </CFormGroup>
             <CFormGroup>
               {/* #1 name */}
               <h6>{this.state.li1_header}</h6>

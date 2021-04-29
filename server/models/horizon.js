@@ -215,6 +215,10 @@ const horizonSchema = new Schema({
         type: String,
         required: false
     },
+    "li2_image": {
+        type: String,
+        required: false
+    },
     "li2_lft_parags": [{
         "parag_header": {
             type: String,
@@ -234,7 +238,25 @@ const horizonSchema = new Schema({
             type: String,
             required: false
         }
-    }]
+    }],
+    // END SECTION
+    // START LENS Info 2 5/13
+    "wv_section_display": {
+        type: Boolean,
+        required: false
+    },
+    "wv_header": {
+        type: String,
+        required: false
+    },
+    "wv_desc": {
+        type: String,
+        required: false
+    },
+    "wv_link": {
+        type: String,
+        required: false
+    }
 })
 
 module.exports = mongoose.model('Horizon', horizonSchema);

@@ -27,7 +27,8 @@ exports.getLanding = (req, res, next) => {
         ld1: result[1],
         li1: result[2],
         ld2: result[3],
-        li2: result[4]
+        li2: result[4],
+        wv: result[5]
       })
     });
   });
@@ -230,6 +231,7 @@ exports.getLensInfo1 = (req, res, next) => {
 
 exports.postLensInfo1 = (req, res, next) => {
   const {
+    li1_section_display = li1_section_display,
     li1_header,
     li1_desc,
     li1_img,
@@ -243,6 +245,7 @@ exports.postLensInfo1 = (req, res, next) => {
     .then((horizon) => {
       // console.log(req.body);
       // horizon.name = name;
+      horizon.li1_section_display = li1_section_display;
       horizon.li1_header = li1_header;
       horizon.li1_desc = li1_desc;
       horizon.li1_img = li1_img;
@@ -298,8 +301,10 @@ exports.getLensInfo2 = (req, res, next) => {
 
 exports.postLensInfo2 = (req, res, next) => {
   const {
+    li2_section_display,
     li2_header,
     li2_desc,
+    li2_image,
     li2_lft_parags,
     li2_rght_paragas
   } = req.body;
@@ -308,8 +313,10 @@ exports.postLensInfo2 = (req, res, next) => {
     .then((horizon) => {
       // console.log(req.body);
       // horizon.name = name;
+      horizon.li2_section_display = li2_section_display;
       horizon.li2_header = li2_header;
       horizon.li2_desc = li2_desc;
+      horizon.li2_image = li2_image;
       horizon.li2_lft_parags = li2_lft_parags;
       horizon.li2_rght_paragas = li2_rght_paragas;
 
@@ -321,6 +328,45 @@ exports.postLensInfo2 = (req, res, next) => {
     .catch((err) => res.status(400).json("Error: " + err));
 };
 
+
+
+
+
+
+
+
+
+// Admin Gets, Edits -> Watch Video Section Data 
+exports.getWatchVideo = (req, res, next) => {
+  Horizon.findById("608a6c37ea47782954fcabe9").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postWatchVideo = (req, res, next) => {
+  const {
+    wv_section_display,
+    wv_header,
+    wv_desc,
+    wv_link
+  } = req.body;
+
+  Horizon.findById("608a6c37ea47782954fcabe9")
+    .then((horizon) => {
+      // console.log(req.body);
+      // horizon.name = name;
+      horizon.wv_section_display = wv_section_display;
+      horizon.wv_header = wv_header;
+      horizon.wv_desc = wv_desc;
+      horizon.wv_link = wv_link;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
 
 // FUNCTIONALITIES
 // Admin gets Gallery
