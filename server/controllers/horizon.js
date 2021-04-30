@@ -23,14 +23,14 @@ exports.getLanding = (req, res, next) => {
 
       res.render("index", {
         msgs: req.flash('success'),
-        horizon: result[0],
         blogs: blogs,
+        horizon: result[0],
         ld1: result[1],
         li1: result[2],
-        ld2: result[3],
-        li2: result[4],
-        wv: result[5],
-        ss: result[6]
+        ld2: result[6],
+        li2: result[3],
+        wv: result[4],
+        ss: result[5]
       })
     });
   });
@@ -311,7 +311,7 @@ exports.postLensInfo1 = (req, res, next) => {
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensDesigns2 = (req, res, next) => {
-  Horizon.findById("6085432c5b363f4088e7e051").then((result) => {
+  Horizon.findById("608b563eea47782954fcabeb").then((result) => {
     res.json(result);
   });
 };
@@ -324,7 +324,7 @@ exports.postLensDesigns2 = (req, res, next) => {
     ld2_designs
   } = req.body;
 
-  Horizon.findById("6085432c5b363f4088e7e051")
+  Horizon.findById("608b563eea47782954fcabeb")
     .then((horizon) => {
       // console.log(req.body);
       // horizon.name = name;
