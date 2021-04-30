@@ -355,7 +355,7 @@ exports.postLensInfo2 = (req, res, next) => {
     li2_desc,
     li2_image,
     li2_lft_parags,
-    li2_rght_paragas
+    li2_rght_parags
   } = req.body;
 
   Horizon.findById("6086c203d9b6ec4c30d027de")
@@ -367,7 +367,7 @@ exports.postLensInfo2 = (req, res, next) => {
       horizon.li2_desc = li2_desc;
       horizon.li2_image = li2_image;
       horizon.li2_lft_parags = li2_lft_parags;
-      horizon.li2_rght_paragas = li2_rght_paragas;
+      horizon.li2_rght_parags = li2_rght_parags;
 
       horizon
         .save()
