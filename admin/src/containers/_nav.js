@@ -93,9 +93,8 @@ const _nav = [{
   {
     _tag: 'CSidebarNavItem',
     name: 'Lens Designs 3/3',
-    icon: 'cil-ban',
-    addLinkClass: 'c-disabled',
-    'disabled': true
+    to: '/landing/lens-designs-3',
+    icon: 'cil-pencil',
   },
   {
     _tag: 'CSidebarNavDivider',
@@ -130,9 +129,8 @@ const _nav = [{
   {
     _tag: 'CSidebarNavItem',
     name: 'Production Info',
-    icon: 'cil-ban',
-    addLinkClass: 'c-disabled',
-    'disabled': true
+    to: '/landing/production-info',
+    icon: 'cil-pencil',
   },
   {
     _tag: 'CSidebarNavDivider',
@@ -141,9 +139,8 @@ const _nav = [{
   {
     _tag: 'CSidebarNavItem',
     name: 'Technical Info',
-    icon: 'cil-ban',
-    addLinkClass: 'c-disabled',
-    'disabled': true
+    to: '/landing/technical-info',
+    icon: 'cil-pencil',
   },
   {
     _tag: 'CSidebarNavDivider',

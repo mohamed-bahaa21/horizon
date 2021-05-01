@@ -1,7 +1,7 @@
 const Horizon = require("../models/horizon");
 const Blog = require("../models/Blog");
 const About = require("../models/About");
-const Product = require("../models/About");
+const Product = require("../models/Products");
 const Gallery = require("../models/Gallery");
 const Mail = require("../models/Mail");
 
@@ -30,7 +30,10 @@ exports.getLanding = (req, res, next) => {
         ld2: result[6],
         li2: result[3],
         wv: result[4],
-        ss: result[5]
+        ss: result[5],
+        ld3: result[7],
+        pi: result[8],
+        ti: result[9]
       })
     });
   });
@@ -164,7 +167,7 @@ exports.postBlogsData = (req, res, next) => {
     bg,
   } = req.body;
 
-  Blog.find()
+  Blog.findById()
     .then((blogs) => {
       // console.log(req.body);
       // horizon.name = name;
@@ -434,6 +437,102 @@ exports.postScreenShots = (req, res, next) => {
       // console.log(req.body);
       // horizon.name = name;
       horizon.ss_section_display = ss_section_display;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+// Admin Gets, Edits -> Lens Designs 3 Section Data 
+exports.getLensDesigns3 = (req, res, next) => {
+  Horizon.findById("608d230c48453073fc2d6146").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postLensDesigns3 = (req, res, next) => {
+  const {
+    ld3_section_display,
+    ld3_header,
+    ld3_desc,
+    ld3_imgs
+  } = req.body;
+
+  Horizon.findById("608d230c48453073fc2d6146")
+    .then((horizon) => {
+      // console.log(req.body);
+      // horizon.name = name;
+      horizon.ld3_section_display = ld3_section_display;
+      horizon.ld3_header = ld3_header;
+      horizon.ld3_desc = ld3_desc;
+      horizon.ld3_imgs = ld3_imgs;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+// Admin Gets, Edits -> Production Info Section Data 
+exports.getProductionInfo = (req, res, next) => {
+  Horizon.findById("608d49ce48453073fc2d6147").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postProductionInfo = (req, res, next) => {
+  const {
+    pi_section_display,
+    pi_header,
+    pi_desc,
+    pi_items
+  } = req.body;
+
+  Horizon.findById("608d49ce48453073fc2d6147")
+    .then((horizon) => {
+      // console.log(req.body);
+      // horizon.name = name;
+      horizon.pi_section_display = pi_section_display;
+      horizon.pi_header = pi_header;
+      horizon.pi_desc = pi_desc;
+      horizon.pi_items = pi_items;
+
+      horizon
+        .save()
+        .then(() => res.json("Horizon Updated !!!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+};
+
+// Admin Gets, Edits -> Production Info Section Data 
+exports.getTechnicalInfo = (req, res, next) => {
+  Horizon.findById("608d5ce648453073fc2d6149").then((result) => {
+    res.json(result);
+  });
+};
+
+exports.postTechnicalInfo = (req, res, next) => {
+  const {
+    ti_section_display,
+    ti_header,
+    ti_desc,
+    ti_items
+  } = req.body;
+
+  Horizon.findById("608d5ce648453073fc2d6149")
+    .then((horizon) => {
+      // console.log(req.body);
+      // horizon.name = name;
+      horizon.ti_section_display = ti_section_display;
+      horizon.ti_header = ti_header;
+      horizon.ti_desc = ti_desc;
+      horizon.ti_items = ti_items;
 
       horizon
         .save()

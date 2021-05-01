@@ -44,9 +44,9 @@
                         <div class="lens_box-shadow lens_card"></div>
                     </div>
                     <% } else { %>
-                        <div>
-                            <img src="<%= horizon.design_img %>" class="img-1000" alt="Hero Section Image">
-                        </div>
+                    <div style="text-align: center;">
+                        <img src="<%= horizon.design_img %>" class="img-1000" alt="Hero Section Image">
+                    </div>
                     <% } %>
 
                 </div>
@@ -340,7 +340,7 @@
     </div>
 </section>
 <% } %>
-<!-- End lenses Designs 2/3 -->
+<!-- End lens Designs 2/3 -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Lens Info 2/2 -->
 <% if(li2.li2_section_display) { %>
@@ -410,19 +410,18 @@
 <% } %>
 <!-- End Lens Info 2/2 -->
 <!-- ------------------------------------------------------------- -->
-<!-- Start lenses Designs 3/3 -->
+<!-- Start lens Designs 3/3 -->
+<% if(ld3.ld3_section_display) { %>
 <section id="" class="hero-section padding-100">
     <div class="container">
         <div class="row">
             <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
                 <h2 class="section-header med-light">
-                    <span style="border-bottom: 3px solid; padding: 0.5rem;">Lens Designs 3/3</span>
+                    <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= ld3.ld3_header %></span>
                 </h2>
                 <div class="space-25"></div>
                 <p class="white">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
+                    <%= ld3.ld3_desc %>
                 </p>
                 <div class="space-25"></div>
             </div>
@@ -431,82 +430,32 @@
             <div class="col-12">
                 <section id="bifocal" class="">
                     <div class="options">
-                        <div class="option active" style="
-                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
-                      ">
+
+                        <% ld3.ld3_imgs.forEach(function(img, index) { %>
+                        <div class="option 
+                            <% if (index === 0) { %>
+                                active
+                            <% } %> " style="--optionBackground: url(<%= img.img_link %>); background-size: cover;">
                             <div class="shadow"></div>
-                            <div class="label">
+                            <div class="label" style="background-color: white; border-radius: 15px 0 0 15px;">
                                 <div class="icon">
                                     <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
                                 </div>
-                                <div class="info">
-                                    <div class="main">Lens Title</div>
-                                    <div class="sub">Lens Subtitle</div>
+                                <div class="info dark"
+                                    style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
+                                    <div class="main"><%= img.img_title %></div>
+                                    <div class="sub"><%= img.img_sub %></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="option" style="
-                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
-                      ">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                                </div>
-                                <div class="info">
-                                    <div class="main">Lens Title</div>
-                                    <div class="sub">Lens Subtitle</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option" style="
-                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
-                      ">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                                </div>
-                                <div class="info">
-                                    <div class="main">Lens Title</div>
-                                    <div class="sub">Lens Subtitle</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option" style="
-                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54352.png);
-                      ">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                                </div>
-                                <div class="info">
-                                    <div class="main">Lens Title</div>
-                                    <div class="sub">Lens Subtitle</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option" style="
-                        --optionBackground: url(https://pngimg.com/uploads/glasses/glasses_PNG54356.png);
-                      ">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                                </div>
-                                <div class="info">
-                                    <div class="main">Lens Title</div>
-                                    <div class="sub">Lens Subtitle</div>
-                                </div>
-                            </div>
-                        </div>
+                        <% }) %>
                     </div>
                 </section>
             </div>
         </div>
     </div>
 </section>
+<% } %>
 <!-- End lenses Designs 3/3  -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Watch Video -->
@@ -583,151 +532,88 @@
 <% } %>
 <!-- End Screenshots -->
 <!-- ------------------------------------------------------------- -->
-<!-- Start Fun Facts -->
+<!-- Start Production Info -->
+<% if(pi.pi_section_display) { %>
 <section id="facts" class="fun-facts padding-100 background-withcolor" style="color: white">
     <div class="container">
         <div class="row">
             <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
                 <h2 class="section-header">
-                    <span style="border-bottom: 3px solid; padding: 0.5rem;">Production Info</span>
+                    <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= pi.pi_header %></span>
                 </h2>
                 <div class="space-25"></div>
                 <p class="light">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
+                    <%= pi.pi_desc %>
                 </p>
                 <div class="space-50"></div>
             </div>
         </div>
         <div class="row align-items-center">
+            <% pi.pi_items.forEach(function(item) { %>
             <div class="col-lg-3 col-md-6 col-12">
                 <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
-                    <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
-                    <h5>1</h5>
-                    <h6>Bifocal</h6>
+                    <img src="<%= item.item_img %>" class="img-fluid" alt="" />
+                    <h5><%= item.item_num %></h5>
+                    <h6><%= item.item_title %></h6>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="800">
-                    <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
-                    <h5>3000</h5>
-                    <h6>Single Vision</h6>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="1200">
-                    <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
-                    <h5>763</h5>
-                    <h6>Other Lens</h6>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12">
-                <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="1600">
-                    <img src="assets/imgs/horizon/logoIcon.png" class="img-fluid" alt="" />
-                    <h5>360</h5>
-                    <h6>Other Lens</h6>
-                </div>
-            </div>
+            <% }) %>
         </div>
     </div>
 </section>
+<% } %>
 <!-- End Fun Facts  -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start FAQ -->
+<% if(ti.ti_section_display) { %>
 <section id="technical" class="faq padding-100">
     <div class="container">
         <div class="row">
             <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
                 <h2 class="section-header med-dark">
-                    <span style="border-bottom: 3px solid; padding: 0.5rem;">Technical Info</span>
+                    <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= ti.ti_header %></span>
                 </h2>
                 <div class="space-25"></div>
                 <p class="">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
+                    <%= ti.ti_desc %>
                 </p>
                 <div class="space-50"></div>
             </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row align-items-center justify-content-center">
             <!--align-items-center-->
-            <div class="col-md-8 col-12" data-aos="fade-right">
+            <div class="col-md-12 col-lg-8" data-aos="fade-right">
                 <div class="accordion" id="faqAccordion">
+                    <% ti.ti_items.forEach(function(item, index) { %>
                     <div class="faq-card shadow">
-                        <div class="faq-card-header" id="heading_1">
+                        <div class="faq-card-header" id="heading_<%=index%>">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
-                                    What Is Horizon
+                                    data-target="#collapse_<%=index%>" aria-expanded="true" aria-controls="collapse_1">
+                                    <%= item.item_title %>
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapse_1" class="collapse show" aria-labelledby="heading_1"
-                            data-parent="#faqAccordion">
+                        <div id="collapse_<%=index%>" class="collapse 
+                        <% if (index === 0) { %>
+                            show
+                        <% } %>" aria-labelledby="heading_<%=index%>" data-parent="#faqAccordion">
                             <div class="faq-card-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Harum tenetur dicta commodi, totam atque fugit ut magnam
-                                laboriosam dignissimos dolorum minus quia sed distinctio in
-                                mollitia laborum sint delectus accusamus!
-                                <br />
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Harum tenetur dicta commodi, totam atque fugit ut magnam.
+                                <%= item.item_content %>
                             </div>
                         </div>
                     </div>
-                    <div class="faq-card shadow">
-                        <div class="faq-card-header" id="heading_2">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">
-                                    What Is Horizon
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#faqAccordion">
-                            <div class="faq-card-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Harum tenetur dicta commodi, totam atque fugit ut magnam
-                                laboriosam dignissimos dolorum minus quia sed distinctio in
-                                mollitia laborum sint delectus accusamus!
-                                <br />
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Harum tenetur dicta commodi, totam atque fugit ut magnam.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="faq-card shadow">
-                        <div class="faq-card-header" id="heading_3">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapse_3" aria-expanded="false" aria-controls="collapse_3">
-                                    What Is Horizon
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#faqAccordion">
-                            <div class="faq-card-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Harum tenetur dicta commodi, totam atque fugit ut magnam
-                                laboriosam dignissimos dolorum minus quia sed distinctio in
-                                mollitia laborum sint delectus accusamus!
-                                <br />
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Harum tenetur dicta commodi, totam atque fugit ut magnam.
-                            </div>
-                        </div>
-                    </div>
+                    <% }) %>
                 </div>
             </div>
-            <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="400">
+            <!-- <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="400">
                 <img src="assets/img/mobile-1.png" class="img-fluid b-block mx-auto" alt="" />
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
+<% } %>
 <!-- End FAQ  -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Logos -->

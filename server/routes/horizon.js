@@ -48,6 +48,18 @@ route.post('/api/postWatchVideo', horizonController.postWatchVideo)
 route.get('/api/getScreenShots', horizonController.getScreenShots)
 route.post('/api/postScreenShots', horizonController.postScreenShots)
 
+// ADMIN -> Lens Designs 3 Section
+route.get('/api/getLensDesigns3', horizonController.getLensDesigns3)
+route.post('/api/postLensDesigns3', horizonController.postLensDesigns3)
+
+// ADMIN -> Production Info Section
+route.get('/api/getProductionInfo', horizonController.getProductionInfo)
+route.post('/api/postProductionInfo', horizonController.postProductionInfo)
+
+// ADMIN -> Production Info Section
+route.get('/api/getTechnicalInfo', horizonController.getTechnicalInfo)
+route.post('/api/postTechnicalInfo', horizonController.postTechnicalInfo)
+
 // FUNCTIONALITIES
 route.get('/api/gallery', horizonController.gallery)
 route.post('/api/postImgToGallery', horizonController.postImgToGallery)

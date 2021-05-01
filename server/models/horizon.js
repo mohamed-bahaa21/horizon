@@ -270,7 +270,88 @@ const horizonSchema = new Schema({
     "ss_desc": {
         type: String,
         required: false
-    }
+    },
+    // END SECTION
+    // START Sceeen Shots 5/13
+    "ld3_section_display": {
+        type: Boolean,
+        required: false
+    },
+    "ld3_header": {
+        type: String,
+        required: false
+    },
+    "ld3_desc": {
+        type: String,
+        required: false
+    },
+    "ld3_imgs": [{
+        "img_title": {
+            type: String,
+            required: false
+        },
+        "img_sub": {
+            type: String,
+            required: false
+        },
+        "img_link": {
+            type: String,
+            required: false
+        },
+    }],
+    // END SECTION
+    // START Production Info 5/13
+    "pi_section_display": {
+        type: Boolean,
+        required: false
+    },
+    "pi_header": {
+        type: String,
+        required: false
+    },
+    "pi_desc": {
+        type: String,
+        required: false
+    },
+    "pi_items": [{
+        "item_img": {
+            type: String,
+            required: false
+        },
+        "item_num": {
+            type: Number,
+            required: false
+        },
+        "item_title": {
+            type: String,
+            required: false
+        },
+    }],
+    // END SECTION
+    // START Technical Info 5/13
+    "ti_section_display": {
+        type: Boolean,
+        required: false
+    },
+    "ti_header": {
+        type: String,
+        required: false
+    },
+    "ti_desc": {
+        type: String,
+        required: false
+    },
+    "ti_items": [{
+        "item_title": {
+            type: String,
+            required: false
+        },
+        "item_content": {
+            type: String,
+            required: false
+        },
+    }]
+    
 })
 
 module.exports = mongoose.model('Horizon', horizonSchema);

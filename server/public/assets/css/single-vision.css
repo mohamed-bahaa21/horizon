@@ -569,6 +569,6 @@
 }
 
 .single-vision_container:not(.single-vision_container--detail) .product:hover .product__img {
-  transform: scale(1.07);
-  -webkit-transform: scale(1.07);
+  transform: scale(1);
+  -webkit-transform: scale(1);
 }

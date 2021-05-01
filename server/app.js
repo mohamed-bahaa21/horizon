@@ -51,16 +51,16 @@ const csrfProtection = csrf();
 app.use(
     // Parsers for POST data
     express.json({
-        limit: '20mb'
+        limit: '10mb'
     }),
     express.urlencoded({
         extended: false,
-        limit: '20mb'
+        limit: '10mb'
     }),
     express.static(path.join(__dirname, 'public')),
     // setting session
     session({
-        secret: '123456',
+        secret: '@010#44$vm=2001',
         resave: false,
         saveUninitialized: false,
         store: store

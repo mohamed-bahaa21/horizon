@@ -17,9 +17,13 @@ const LensDesigns1 = React.lazy(() => import('./views/pages/landing/LensDesigns1
 const LensInfo1 = React.lazy(() => import('./views/pages/landing/LensInfo1'));
 const LensDesigns2 = React.lazy(() => import('./views/pages/landing/LensDesigns2'));
 const LensInfo2 = React.lazy(() => import('./views/pages/landing/LensInfo2'));
+const LensDesigns3 = React.lazy(() => import('./views/pages/landing/LensDesigns3'));
 
 const WatchVideo = React.lazy(() => import('./views/pages/landing/WatchVideo'));
 const Screenshots = React.lazy(() => import('./views/pages/landing/Screenshots'));
+
+const ProductionInfo = React.lazy(() => import('./views/pages/landing/ProductionInfo'));
+const TechnicalInfo = React.lazy(() => import('./views/pages/landing/TechnicalInfo'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -32,9 +36,13 @@ const routes = [
   { path: '/landing/lens-info-1', name: 'Lens Info 1', component: LensInfo1 },
   { path: '/landing/lens-designs-2', name: 'Lens Designs 2', component: LensDesigns2 },
   { path: '/landing/lens-info-2', name: 'Lens Info 2', component: LensInfo2 },
+  { path: '/landing/lens-designs-3', name: 'Lens Designs 3', component: LensDesigns3 },
   
   { path: '/landing/watch-video', name: 'Watch Video', component: WatchVideo },
   { path: '/landing/screen-shots', name: 'Screen Shots', component: Screenshots },
+
+  { path: '/landing/production-info', name: 'Production Info', component: ProductionInfo },
+  { path: '/landing/technical-info', name: 'Technical Info', component: TechnicalInfo },
   
   { path: '/gallery', name: 'Gallery', component: Gallery },
   { path: '/mailing-list', exact: true,  name: 'Mailing List', component: MailingList },
