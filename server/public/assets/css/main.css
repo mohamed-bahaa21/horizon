@@ -1441,6 +1441,11 @@ footer .subscribe .subscribe-form-2 .form-group {
   margin: 0 30px;
 }
 
+.logos .logos-slider .item img{
+  max-height: 3rem;
+  width: auto;
+}
+
 @media (max-width: 768px) {
   .logos .logos-slider .slick-next {
     right: 0;

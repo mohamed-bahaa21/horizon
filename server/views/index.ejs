@@ -548,9 +548,9 @@
                 <div class="space-50"></div>
             </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row align-items-center" style="padding: 0 1rem;">
             <% pi.pi_items.forEach(function(item) { %>
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-3 col-md-6 col-6">
                 <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
                     <img src="<%= item.item_img %>" class="img-fluid" alt="" />
                     <h5><%= item.item_num %></h5>
@@ -582,7 +582,7 @@
         </div>
         <div class="row align-items-center justify-content-center">
             <!--align-items-center-->
-            <div class="col-md-12 col-lg-8" data-aos="fade-right">
+            <div class="col-md-12 col-lg-8" data-aos="fade-right" style="margin: 0 1rem;">
                 <div class="accordion" id="faqAccordion">
                     <% ti.ti_items.forEach(function(item, index) { %>
                     <div class="faq-card shadow">
@@ -617,7 +617,7 @@
 <!-- End FAQ  -->
 <!-- ------------------------------------------------------------- -->
 <!-- Start Logos -->
-<section id="logos" class="logos background-withcolor">
+<section id="logos" class="logos background-withcolor" style="padding: 1rem 1rem;">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -714,9 +714,14 @@
 <!-- ------------------------------------------------------------- -->
 <!-- Start  Map -->
 <section class="map">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37709962986!2d31.22344494535329!3d30.059483810352845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1540147674461"
-        style="border: 0" allowfullscreen></iframe>
+    <div style="margin: 2rem; box-shadow: 0px 5px 30px -5px rgba(34, 35, 58, 0.7);">
+        <iframe width="600" height="450" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37709962986!2d31.22344494535329!3d30.059483810352845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1540147674461">
+        </iframe>
+    </div>
+    <!-- <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&map_ids=MAP_ID&callback=initMap">
+    </script> -->
 </section>
 <!-- End  Map  -->
 <!-- ------------------------------------------------------------- -->
