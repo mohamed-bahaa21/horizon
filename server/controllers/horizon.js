@@ -79,6 +79,46 @@ exports.getProduct = (req, res, next) => {
 };
 // END
 
+// START User -> Product Page
+exports.getFreeForm = (req, res, next) => {
+  const {
+    brand
+  } = req.params
+
+  console.log(brand);
+
+  if (brand == "Zeiss") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Zeiss"
+    });
+  } else if (brand == "ltl") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello LTL"
+    });
+
+  } else if (brand == "divel") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Divel"
+    });
+
+  } else if (brand == "roger-bacon") {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Roger-Bacon"
+    });
+
+  } else {
+    res.render("product", {
+      msgs: req.flash('success'),
+      test: "Hello Zeiss"
+    });
+  }
+};
+// END
+
 // User -> About Page
 exports.getAbout = (req, res, next) => {
   About.findById('6088f039ce64255fe8d24880').then((result) => {

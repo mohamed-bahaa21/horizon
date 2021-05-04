@@ -12,6 +12,9 @@ route.get('/blog/:id', horizonController.getBlog)
 // Products pages
 route.get('/products/:brand', horizonController.getProduct)
 
+// Free Form pages
+route.get('/free-form/:freeform', horizonController.getFreeForm)
+
 // ADMIN -> Blogs Data
 route.get('/api/getBlogsData', horizonController.getBlogsData)
 route.post('/api/postBlogsData', horizonController.postBlogsData)
