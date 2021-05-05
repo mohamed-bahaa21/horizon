@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext");
 
+#ckeditor img {
+    width: 100%;
+}
+
+#ckeditor p {
+    max-width: 10%;
+    text-align: justify;
+}
+
+
+
 :root {
     --dark: #241F1F;
     --light: #F7EBD0;

@@ -16,6 +16,8 @@ import {
 import { CKEditor } from '@ckeditor/ckeditor5-react'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 
+import ReactHtmlParser from 'react-html-parser'
+
 
 import UploadImg from "../../UploadImg/UploadImg";
 
@@ -170,7 +172,10 @@ class About extends Component {
                         </CFormGroup>
 
                         <CLabel>Content: </CLabel>
-                        <CCard dangerouslySetInnerHTML={{ __html: this.state.content }} />
+                        {/* <CCard dangerouslySetInnerHTML={{ __html: this.state.content }} /> */}
+                        <CCard>
+                            {ReactHtmlParser(this.state.content)}
+                        </CCard>
 
                         <hr />
                         <br />
