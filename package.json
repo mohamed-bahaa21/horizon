@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Mohamed-Elzohary/horizon/issues"
   },
-  "homepage": "https://github.com/Mohamed-Elzohary/horizon#readme"
+  "homepage": "https://github.com/Mohamed-Elzohary/horizon#readme",
+  "devDependencies": {
+    "concurrently": "^6.0.2"
+  }
 }
