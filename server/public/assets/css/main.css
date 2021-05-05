@@ -60,8 +60,33 @@ section {
   padding: 0 1rem;
 }
 
-.section-header {
-  font-weight: 7 00;
+.section-header-a, .section-header-b, .section-header-c {
+  font-weight: 700;
+}
+
+/* section header A */
+.section-header-a .section-header-1 {
+  color: var(--main-color);
+}
+.section-header-a .section-header-2 {
+  color: #fff;
+  padding: 0 1rem;
+  background-color: var(--main-color);
+}
+/* section header B */
+.section-header-b .section-header-1 {
+  color: #E2B55D;
+}
+.section-header-b .section-header-2 {
+  color: #fff;
+}
+
+/* section header C */
+.section-header-c .section-header-1 {
+  color: #E1B35A;
+}
+.section-header-c .section-header-2 {
+  color: var(--main-color);
 }
 
 .dark {
