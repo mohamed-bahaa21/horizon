@@ -4,6 +4,7 @@ import {
     CLabel,
     CForm,
     CInput,
+    CTextarea,
     CFormGroup,
     CCol,
     CRow,
@@ -161,7 +162,7 @@ class About extends Component {
                     <CForm onSubmit={this.onSubmit}>
                         <CFormGroup>
                             {/* #1 name */}
-                            <CInput
+                            <CTextarea
                                 type="text"
                                 id="content"
                                 name="content"
