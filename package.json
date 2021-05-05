@@ -1,12 +1,14 @@
 {
   "name": "horizon",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "",
   "proxy": "http://localhost:5000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "admin": "cd admin && npm start ",
     "server": "cd server && npm start ",
+    "admin": "cd admin && npm start ",
+    "dev-server": "npm run server",
+    "dev-admin": "npm run admin",
     "dev": "concurrently \"npm run server\" \"npm run admin\""
   },
   "repository": {
