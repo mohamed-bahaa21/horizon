@@ -25,17 +25,23 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  padding-bottom: 50px;
   overflow: hidden;
-  background-color: rgb(24, 23, 23);
+  /* background-color: rgb(24, 23, 23); */
+  background-color: black;
   color: white;
 }
 
 .container {
   padding-left: 100px;
   overflow: hidden;
-  margin-top: 20vh;
   background-image: url('../images/horizon/1.JPG');
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-item {
+  margin: auto;
 }
 
 .logo {
@@ -107,17 +113,19 @@ body {
   color: white;
 }
 
-.subscribe-form a {
+.subscribe-form input[type=submit] {
   /* display: block; */
   width: fit-content;
   background-color: #ECCF94;
   padding: 14px 20px;
+  margin-top: -15px;
   border-radius: 15px;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(59, 59, 59);
   border: none;
   text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {
