@@ -12,8 +12,6 @@
 
   <title>Horizon | Coming Soon</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-
 </head>
 
 <body>
@@ -34,10 +32,25 @@
           </h1>
 
           <p class="main__paragraph">
-            Hello Wierdos! We're currently building our new Websites for User & Admin. Add your email below to stay up-to-date with announcements
+            Hello Wierdos! We're currently building our new Websites for User & Admin. Add your email below to stay
+            up-to-date with announcements
             and our launch details.
           </p>
+
+          <form class="subscribe-form" action="/api/subscribe" method="POST">
+
+            <% if(msgs[0]) { %>
+            <div class="alert alert-success fade show" role="alert">
+              <strong style="color: #F7EBD0; margin: 1rem;"><%= msgs[0] %></strong>
+            </div>
+            <% } %> %>
+
+            <input name="mail_email" id="mail_email" type="email" class="form-control" placeholder="Enter Your Email" />
+            <a href="#" class="btn btn-primary shadow d-block btn-colord btn-theme"><span>Subscribe</span></a>
+
+          </form>
         </div>
+
 
         <div class="main__img-container">
           <img src="./assets/coming-soon/images/horizon/1.JPG" alt="" class="main__img" />

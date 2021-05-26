@@ -40,7 +40,9 @@ exports.getLanding = (req, res, next) => {
 };
 
 exports.getComingSoon = (req, res, next) => {
-  res.render('coming-soon/index')
+  res.render('coming-soon/index', {
+    msgs: req.flash('success')
+  })
 }
 
 // START User -> Product Page
