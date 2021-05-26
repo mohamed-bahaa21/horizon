@@ -4,7 +4,9 @@ const route = express.Router()
 
 const horizonController = require(path.resolve(__basename, 'controllers', 'horizon'))
 
-route.get('/', horizonController.getLanding)
+// route.get('/', horizonController.getLanding)
+route.get('/', horizonController.getComingSoon)
+
 route.get('/about-us', horizonController.getAbout)
 route.get('/news', horizonController.getBlogs)
 route.get('/blog/:id', horizonController.getBlog)

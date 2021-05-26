@@ -39,6 +39,10 @@ exports.getLanding = (req, res, next) => {
   });
 };
 
+exports.getComingSoon = (req, res, next) => {
+  res.render('coming-soon/index')
+}
+
 // START User -> Product Page
 exports.getProduct = (req, res, next) => {
   const {
