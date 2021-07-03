@@ -1,19 +1,41 @@
+Landing Sections (17):
+    +1 Nav
+    +1 hero section
+    +1 news section
+    +++3 lens info sections
+    ++-3 lens designs sections
+    +1 Watch Video
+    +1 Logos
+    +1 Screenshots
+    +1 Production info
+    +1 Technical info
+    +1 Contact us
+    +1 Map
+    +1 Footer section
+
+Pages (11):
+    + Home
+    ++++ Products (4)
+    +++ Free Form (3)
+    + News
+    + About Us
+    + Contact Us
+
+
 Blog Data:
-    - date, title, summary
+    + date, title, summary
+    + content
+    + other blogs
+    + social media
+    - comment, reply, share 
 
 3rd Party Features:
     SEO: prerender, ogp
     MailChimp: API
+    Analytics: Google
+    Realtime-Chat: 
 
-Landing Sections:
-    1 nav
-    1 hero section
-    1 news section
-    2 lens info sections
-    2 designs sections
-    1 footer section
-
-all:
+Updates:
     content font weight 300
     subtitles 400
     buttons animation (safari ios), (read-more, subscribe, contact)
@@ -25,14 +47,14 @@ all:
     newslater list & csv file
     mailchimp API integration
 
-footer:
+Footer:
     delete technical-info, news
     delete technology from (free form)
     remain contact, about
     positions issue
     powererd by ayk instead of (terms of use, policy)
 
-header:
+Header:
     font-weight: lighter than 400
     animation in safari
     - remove latest news
@@ -41,11 +63,11 @@ header:
     nav header will not redirect to page sections
     header dropdown rounded border (low)
 
-hero
+Hero
     option from admin: to change between (upload img OR design)
     first text to control color
 
-latest news:
+Latest news:
     blog card img effect lower
 
 progressive designs:

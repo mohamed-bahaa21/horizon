@@ -1,7 +1,0 @@
-- news list
-- news page
-- products list
-- product page
-- free form list
-- free form page
-- technical info page

@@ -52,8 +52,8 @@ body {
 
 p {
   font-weight: 500 !important;
-  color: #241F1F !important;
   line-height: 30px;
+  /* color: #241F1F !important; */
 }
 
 section {
@@ -65,7 +65,9 @@ section {
   font-weight: 700 !important;
 }
 
-.section-header-a, .section-header-b, .section-header-c {
+.section-header-a,
+.section-header-b,
+.section-header-c {
   font-weight: 700;
 }
 
@@ -73,15 +75,18 @@ section {
 .section-header-a .section-header-1 {
   color: var(--main-color);
 }
+
 .section-header-a .section-header-2 {
   color: #fff;
   padding: 0 1rem;
   background-color: var(--main-color);
 }
+
 /* section header B */
 .section-header-b .section-header-1 {
   color: #E2B55D;
 }
+
 .section-header-b .section-header-2 {
   color: #fff;
 }
@@ -90,6 +95,7 @@ section {
 .section-header-c .section-header-1 {
   color: #E1B35A;
 }
+
 .section-header-c .section-header-2 {
   color: var(--main-color);
 }
@@ -338,6 +344,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   .section-title h3 {
     font-size: 40px;
   }
+
   .img-1000 {
     display: none;
   }
@@ -808,13 +815,21 @@ footer .subscribe .subscribe-form-2 .form-group {
     06. START WHY US SECTION
 ------------------------------*/
 
+.dark-card {
+  background: radial-gradient(#3b342e 25%, #2e2b27 150%);
+  margin-bottom: 5em;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 50px -15px #3e3e3e;
+}
+
 .why-us h3 {
   font-size: 40px;
   font-weight: 900;
 }
 
 .why-us p {
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -956,7 +971,6 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 
 /* ------------------------ */
-
 .main_features .one-feature {
   background: radial-gradient(#3b342e 25%, #2e2b27 150%);
   margin-bottom: 5em;
@@ -1582,7 +1596,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   margin: 0 30px;
 }
 
-.logos .logos-slider .item img{
+.logos .logos-slider .item img {
   max-height: 3rem;
   width: auto;
 }
