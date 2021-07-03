@@ -60,6 +60,11 @@ section {
   padding: 0 1rem;
 }
 
+.sec-desc {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+}
+
 .section-header-a, .section-header-b, .section-header-c {
   font-weight: 700;
 }
@@ -829,13 +834,13 @@ footer .subscribe .subscribe-form-2 .form-group {
     07. START MAIN FEATURES SECTION
 ------------------------------*/
 
-.main-features .features-circle {
+.main_features .features-circle {
   position: relative;
 }
 
 .features-circle .circle-svg {
   position: absolute;
-  top: 100px;
+  top: -115px;
   left: 0;
   right: 0;
   z-index: -1;
@@ -847,60 +852,171 @@ footer .subscribe .subscribe-form-2 .form-group {
   transform-origin: 50%;
 }
 
-.main-features .one-feature {
-  margin-bottom: 5em;
+/* Lens Info 2 section new style  */
+
+.main_features .heading-container {
+  text-align: center;
 }
 
-.main-features .one-feature h5 {
+.main_features .heading {
+  font-weight: 600;
+}
+
+.main_features .credit {
+  margin: 10px 0px;
+  color: #888888;
+  font-size: 25px;
+  transition: all 0.5s;
+}
+
+.main_features .credit a {
+  color: inherit;
+}
+
+.main_features a,
+.main_features .card__exit,
+.main_features .card__icon {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.main_features a::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.main_features a:hover::after {
+  width: 100%;
+}
+
+.main_features .main-container {
+  padding: 30px;
+}
+
+.main_features .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main_features .card {
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s;
+}
+
+.main_features .card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.main_features .card__exit {
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.main_features .card__icon {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.main_features .card__title {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.main_features .card__apply {
+  grid-row: 4/5;
+  align-self: center;
+}
+
+.main_features .card-1 {
+  background: radial-gradient(#e9c886 90%, #e9bc70 75%);
+}
+
+@media (max-width: 1600px) {
+  .main_features .card-container {
+    justify-content: center;
+  }
+}
+
+
+/* ------------------------ */
+
+.main_features .one-feature {
+  background: radial-gradient(#3b342e 25%, #2e2b27 150%);
+  margin-bottom: 5em;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 50px -15px #3e3e3e;
+}
+
+.main_features .one-feature h5 {
   font-size: 20px;
   line-height: 45px;
   display: inline-block;
   margin: 0 10px 0.5rem;
-  color: #d39529 !important;
+  color: #fff !important;
+  font-weight: bold;
 }
 
-.main-features .one-feature .lnr {
+.main_features .one-feature .lnr {
   font-size: 35px;
 }
 
-.main-features .one-feature p {
+.main_features .one-feature p {
   margin-bottom: 0;
+  color: white;
 }
 
-.main-features .left-side .one-feature span {
+.main_features .left-side .one-feature span {
   float: right;
 }
 
-.main-features .left-side .one-feature:nth-child(3),
-.main-features .right-side .one-feature:nth-child(3) {
+.main_features .left-side .one-feature:nth-child(3),
+.main_features .right-side .one-feature:nth-child(3) {
   margin-bottom: 0;
 }
 
-.main-features .right-side .one-feature span {
+.main_features .right-side .one-feature span {
   float: left;
 }
 
 @media (min-width: 992px) {
 
-  .main-features .left-side .one-feature:nth-child(1),
-  .main-features .left-side .one-feature:nth-child(3) {
+  .main_features .left-side .one-feature:nth-child(1),
+  .main_features .left-side .one-feature:nth-child(3) {
     position: relative;
     left: 50px;
   }
 
-  .main-features .right-side .one-feature:nth-child(1),
-  .main-features .right-side .one-feature:nth-child(3) {
+  .main_features .right-side .one-feature:nth-child(1),
+  .main_features .right-side .one-feature:nth-child(3) {
     position: relative;
     right: 50px;
   }
 }
 
 @media (max-width: 992px) {
-  .main-features .one-feature {
+  .main_features .one-feature {
     margin-bottom: 1.5em;
   }
 
-  .main-features .left-side .one-feature span {
+  .main_features .left-side .one-feature span {
     float: left;
   }
 }
@@ -1404,7 +1520,7 @@ footer .subscribe .subscribe-form-2 .form-group {
   white-space: unset;
   text-decoration: none;
   padding: 15px 60px 15px 30px;
-  color: #2a3659;
+  color: #fff;
   position: relative;
 }
 

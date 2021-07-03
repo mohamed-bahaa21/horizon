@@ -1,769 +1,1130 @@
 <%- include('./partials/home_head.ejs') %>
-<%- include('./partials/nav.ejs') %>
+    <%- include('./partials/nav.ejs') %>
 
-<!-- ------------------------------------------------------------- -->
-<!-- Start Hero -->
-<section id="hero-section" class="slide background-withcolor">
-    <div id='stars'></div>
-    <div class="content-bottom">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6" data-aos="fade-right">
-                    <h1><%= horizon.name %></h1>
-                    <p id="hero-parag-1" class="white mb-0"><%= horizon.hero_parag_1 %></p>
-                    <h2 id="hero-header-1"><%= horizon.hero_header_1 %></h2>
-                    <p id="hero-parag-2" class="white"><%= horizon.hero_parag_2 %></p>
-                    <!-- call to action btn -->
-                    <a id="hero-link-1" href="<%= horizon.hero_link_1_href %>"
-                        class="btn btn-primary"><span><b><%= horizon.hero_link_1_name %></b></span></a>
-                </div>
-                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
-                    <!-- <img src="assets/img/mobile-1.png" class="img-fluid d-block mx-auto" alt=""> -->
-                    <% if(horizon.design_state) { %>
-                    <div class="stack">
-                        <div class="lens_content lens_card">
-                            <p class="white">
-                                <b>
-                                    <span id="desktop-prompt" class="white">Hover</span>
-                                    <span id="mobile-prompt" class="white">Tap</span>
-                                    To See
-                                </b>
+        <!-- ------------------------------------------------------------- -->
+        <!-- Start Hero -->
+        <section id="hero-section" class="slide background-withcolor">
+            <div id='stars'></div>
+            <div class="content-bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6" data-aos="fade-right">
+                            <h1 style="font-weight: 900;">
+                                <%= horizon.name %>
+                            </h1>
+                            <p id="hero-parag-1" class="white mb-0">
+                                <%= horizon.hero_parag_1 %>
                             </p>
-                            <p class="white" style="
+                            <h2 id="hero-header-1">
+                                <%= horizon.hero_header_1 %>
+                            </h2>
+                            <p id="hero-parag-2" class="white">
+                                <%= horizon.hero_parag_2 %>
+                            </p>
+                            <!-- call to action btn -->
+                            <a id="hero-link-1" href="<%= horizon.hero_link_1_href %>" class="btn btn-primary"><span><b>
+                                        <%= horizon.hero_link_1_name %>
+                                    </b></span></a>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                            <!-- <img src="assets/img/mobile-1.png" class="img-fluid d-block mx-auto" alt=""> -->
+                            <% if(horizon.design_state) { %>
+                                <div class="stack">
+                                    <div class="lens_content lens_card">
+                                        <p class="white">
+                                            <b>
+                                                <span id="desktop-prompt" class="white">Hover</span>
+                                                <span id="mobile-prompt" class="white">Tap</span>
+                                                To See
+                                            </b>
+                                        </p>
+                                        <p class="white" style="
                           font-size: 1rem;
                           font-weight: 600;
                           line-height: 1.5rem;
                         ">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique atque
-                                vero accusamus, dolorem quae voluptates laudantium magnam quod.
-                            </p>
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique
+                                            atque
+                                            vero accusamus, dolorem quae voluptates laudantium magnam quod.
+                                        </p>
+                                    </div>
+                                    <div class="lens_padding lens_card"></div>
+                                    <div class="lens_border lens_card"></div>
+                                    <div class="lens_background lens_card"></div>
+                                    <div class="lens_box-shadow lens_card"></div>
+                                </div>
+                                <% } else { %>
+                                    <div style="text-align: center;">
+                                        <img src="<%= horizon.design_img %>" class="img-1000" alt="Hero Section Image">
+                                    </div>
+                                    <% } %>
+
                         </div>
-                        <div class="lens_padding lens_card"></div>
-                        <div class="lens_border lens_card"></div>
-                        <div class="lens_background lens_card"></div>
-                        <div class="lens_box-shadow lens_card"></div>
                     </div>
-                    <% } else { %>
-                    <div style="text-align: center;">
-                        <img src="<%= horizon.design_img %>" class="img-1000" alt="Hero Section Image">
+                </div>
+            </div>
+        </section>
+        <!-- End Hero -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- Start Recent News -->
+        <section id="blog" class="padding-100">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                        <h2 class="section-header-a">
+                            <span class="section-header-1">Latest</span>
+                            <span class="section-header-2">News</span>
+                        </h2>
+                        <div class="space-25"></div>
+                        <p class="sec-desc">
+                            Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                            amet.
+                        </p>
                     </div>
-                    <% } %>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <section id="news" class="">
+                            <div class="news-slider">
+                                <div class="news-slider__wrp swiper-wrapper">
+                                    <% blogs.forEach(function(blog) { %>
+                                        <div class="news-slider__item swiper-slide">
+                                            <div class="news-slider__img">
+                                                <img src="<%= blog.bg %>" alt="" />
+                                            </div>
+                                            <div class="news-slider__content">
+                                                <span class="news-slider__code">
+                                                    <%= blog.date %>
+                                                </span>
+                                                <div class="news-slider__title">
+                                                    <%= blog.title %>
+                                                </div>
+                                                <div class="news-slider__text">
+                                                    <%= blog.summary %>
+                                                </div>
+                                                <a href="/blog/<%= blog.id %>" class="btn-primary">READ MORE</a>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                                <div class="news-slider__pagination"></div>
+                                <!-- <a class="" style="float: right; margin: -1rem; background-color: white;" href="#">View all
+                                >></a> -->
+                            </div>
+                        </section>
+                    </div>
 
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- End Hero -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Recent News -->
-<section id="blog" class="padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-a">
-                    <span class="section-header-1">Latest</span>
-                    <span class="section-header-2">News</span>
-                </h2>
-                <div class="space-25"></div>
-                <p>
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
-                </p>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-12">
-                <section id="news" class="">
-                    <div class="news-slider">
-                        <div class="news-slider__wrp swiper-wrapper">
-                            <% blogs.forEach(function(blog) { %>
-                            <div class="news-slider__item swiper-slide">
-                                <div class="news-slider__img">
-                                    <img src="<%= blog.bg %>" alt="" />
-                                </div>
-                                <div class="news-slider__content">
-                                    <span class="news-slider__code"><%= blog.date %></span>
-                                    <div class="news-slider__title"><%= blog.title %></div>
-                                    <div class="news-slider__text">
-                                        <%= blog.summary %>
-                                    </div>
-                                    <a href="/blog/<%= blog.id %>" class="btn-primary">READ MORE</a>
-                                </div>
-                            </div>
-                            <% }) %>
-                        </div>
-                        <div class="news-slider__pagination"></div>
-                        <!-- <a class="" style="float: right; margin: -1rem; background-color: white;" href="#">View all
-                                >></a> -->
-                    </div>
-                </section>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- End Recent News  -->
-<!-- ------------------------------------------------------------- -->
-<!-- lenses Lens Designs 1/3 -->
-<% if(ld1.ld1_section_display) { %>
-<div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-<section id="" class="hero-section padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-b">
-                    <span class="section-header-1">Lens</span>
-                    <span class="section-header-2">Designs 1</span>
-                </h2>
-                <!-- <span style="border-bottom: 3px solid; padding: 0.5rem;">
+        </section>
+        <!-- End Recent News  -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- lenses Lens Designs 1/3 -->
+        <% if(ld1.ld1_section_display) { %>
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
+            <section id="" class="hero-section padding-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                            <h2 class="section-header-b">
+                                <span class="section-header-1">Lens</span>
+                                <span class="section-header-2">Designs 1</span>
+                            </h2>
+                            <!-- <span style="border-bottom: 3px solid; padding: 0.5rem;">
                         <%= ld1.name %>
                     </span> -->
-                <div class="space-25"></div>
-                <p class="white">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
-                </p>
-            </div>
-        </div>
-
-        <div class="row align-items-center">
-            <div class="col-12">
-                <section id="" class="" style="margin: 2rem 0">
-                    <div class="blur-card-grid">
-                        <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
-                            <div class="blur-card__background" style="
-                          background-image: url(<%=ld1.prog_card_1_img%>);
-                        "></div>
-                            <div class="blur-card__content">
-                                <p class="blur-card__category white">
-                                    <%= ld1.prog_card_1_type %>
-                                </p>
-                                <h3 class="blur-card__heading">
-                                    <%= ld1.prog_card_1_header %>
-                                </h3>
-                            </div>
-                        </a>
-
-                        <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
-                            <div class="blur-card__background" style="
-                          background-image: url(<%=ld1.prog_card_1_img%>);
-                        "></div>
-                            <div class="blur-card__content">
-                                <p class="blur-card__category white">
-                                    <%= ld1.prog_card_1_type %>
-                                </p>
-                                <h3 class="blur-card__heading">
-                                    <%= ld1.prog_card_1_header %>
-                                </h3>
-                            </div>
-                        </a>
-
-                        <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
-                            <div class="blur-card__background" style="
-                          background-image: url(<%=ld1.prog_card_1_img%>);
-                        "></div>
-                            <div class="blur-card__content">
-                                <p class="blur-card__category white">
-                                    <%= ld1.prog_card_1_type %>
-                                </p>
-                                <h3 class="blur-card__heading">
-                                    <%= ld1.prog_card_1_header %>
-                                </h3>
-                            </div>
-                        </a>
-
-                        <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
-                            <div class="blur-card__background" style="
-                          background-image: url(<%=ld1.prog_card_1_img%>);
-                        "></div>
-                            <div class="blur-card__content">
-                                <p class="blur-card__category white">
-                                    <%= ld1.prog_card_1_type %>
-                                </p>
-                                <h3 class="blur-card__heading">
-                                    <%= ld1.prog_card_1_header %>
-                                </h3>
-                            </div>
-                        </a>
+                            <div class="space-25"></div>
+                            <p class="sec-desc white">
+                                Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+                                eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
+                                amet.
+                            </p>
+                        </div>
                     </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End lenses Designs 1/3 -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Lens Info (1/2) -->
-<% if(li1.li1_section_display) { %>
-<section id="about" class="why-us padding-100 background-fullwidth background-fixed" style="background-image: url()">
-    <div class="container" style="background-color: white; border-radius: 24px">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center" data-aos="fade-right">
-                <img src="<%= li1.li1_img %>" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-6" data-aos="fade-zoom-in" data-aos-delay="200">
-                <h2 class="section-header-c" style="text-align: center;">
-                    <span class="section-header-1">Lens</span>
-                    <span class="section-header-2">Info 1</span>
-                </h2>
-                <!-- <h2 style="text-align: center; margin: 0 0 2rem 0;"><span
+
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <section id="" class="" style="margin: 2rem 0">
+                                <div class="blur-card-grid">
+                                    <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
+                                        <div class="blur-card__background" style="
+                          background-image: url(<%=ld1.prog_card_1_img%>);
+                        "></div>
+                                        <div class="blur-card__content">
+                                            <p class="blur-card__category white">
+                                                <%= ld1.prog_card_1_type %>
+                                            </p>
+                                            <h3 class="blur-card__heading">
+                                                <%= ld1.prog_card_1_header %>
+                                            </h3>
+                                        </div>
+                                    </a>
+
+                                    <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
+                                        <div class="blur-card__background" style="
+                          background-image: url(<%=ld1.prog_card_1_img%>);
+                        "></div>
+                                        <div class="blur-card__content">
+                                            <p class="blur-card__category white">
+                                                <%= ld1.prog_card_1_type %>
+                                            </p>
+                                            <h3 class="blur-card__heading">
+                                                <%= ld1.prog_card_1_header %>
+                                            </h3>
+                                        </div>
+                                    </a>
+
+                                    <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
+                                        <div class="blur-card__background" style="
+                          background-image: url(<%=ld1.prog_card_1_img%>);
+                        "></div>
+                                        <div class="blur-card__content">
+                                            <p class="blur-card__category white">
+                                                <%= ld1.prog_card_1_type %>
+                                            </p>
+                                            <h3 class="blur-card__heading">
+                                                <%= ld1.prog_card_1_header %>
+                                            </h3>
+                                        </div>
+                                    </a>
+
+                                    <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
+                                        <div class="blur-card__background" style="
+                          background-image: url(<%=ld1.prog_card_1_img%>);
+                        "></div>
+                                        <div class="blur-card__content">
+                                            <p class="blur-card__category white">
+                                                <%= ld1.prog_card_1_type %>
+                                            </p>
+                                            <h3 class="blur-card__heading">
+                                                <%= ld1.prog_card_1_header %>
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+                <!-- End lenses Designs 1/3 -->
+                <!-- ------------------------------------------------------------- -->
+                <!-- Start Lens Info (1/2) -->
+                <% if(li1.li1_section_display) { %>
+                    <section id="about" class="why-us padding-100 background-fullwidth background-fixed"
+                        style="background-image: url()">
+                        <div class="container" style="background-color: white; border-radius: 24px">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 text-center" data-aos="fade-right">
+                                    <img src="<%= li1.li1_img %>" class="img-fluid" alt="" />
+                                </div>
+                                <div class="col-md-6" data-aos="fade-zoom-in" data-aos-delay="200">
+                                    <h2 class="section-header-c" style="text-align: center;">
+                                        <span class="section-header-1">Lens</span>
+                                        <span class="section-header-2">Info 1</span>
+                                    </h2>
+                                    <!-- <h2 style="text-align: center; margin: 0 0 2rem 0;"><span
                         style="color: #d39529; border-bottom: 3px solid; padding: 0.5rem;"><%= li1.li1_header %></span>
                 </h2> -->
-                <p>
-                    <%= li1.li1_desc %>
-                </p>
-                <div class="space-50">
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="why-us-icon">
-                            <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                            <p>
-                                <%= li1.li1_parag_1 %>
-                            </p>
+                                    <p class="sec-desc">
+                                        <%= li1.li1_desc %>
+                                    </p>
+                                    <div class="space-50">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in"
+                                            data-aos-delay="400">
+                                            <div class="why-us-icon">
+                                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                                <p>
+                                                    <%= li1.li1_parag_1 %>
+                                                </p>
+                                            </div>
+                                            <div class="space-25"></div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in"
+                                            data-aos-delay="600">
+                                            <div class="why-us-icon">
+                                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                                <p>
+                                                    <%= li1.li1_parag_2 %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="space-25"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in"
+                                            data-aos-delay="800">
+                                            <div class="why-us-icon">
+                                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                                <p>
+                                                    <%= li1.li1_parag_3 %>
+                                                </p>
+                                            </div>
+                                            <div class="space-25"></div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in"
+                                            data-aos-delay="1000">
+                                            <div class="why-us-icon">
+                                                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                                <p>
+                                                    <%= li1.li1_parag_4 %>
+                                                </p>
+                                            </div>
+                                            <div class="space-25"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="space-25"></div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="why-us-icon">
-                            <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                            <p>
-                                <%= li1.li1_parag_2 %>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="space-25"></div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="800">
-                        <div class="why-us-icon">
-                            <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                            <p>
-                                <%= li1.li1_parag_3 %>
-                            </p>
-                        </div>
-                        <div class="space-25"></div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="1000">
-                        <div class="why-us-icon">
-                            <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                            <p>
-                                <%= li1.li1_parag_4 %>
-                            </p>
-                        </div>
-                        <div class="space-25"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End Lens Info (1/2) -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start lens Designs 2/3 -->
-<% if(ld2.ld2_section_display) { %>
-<section id="single-vision" class="hero-section">
-    <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-        <h2 class="section-header-b" style="text-align: center;">
-            <span class="section-header-1">Lens</span>
-            <span class="section-header-2">Designs 2</span>
-        </h2>
-        <!-- <h2 class="section-header white">
+                    </section>
+                    <% } %>
+                        <!-- End Lens Info (1/2) -->
+                        <!-- ------------------------------------------------------------- -->
+                        <!-- Start Lens Info (1/2) -->
+                        <% if(li1.li1_section_display) { %>
+                            <section id="about" class="why-us padding-100">
+                                <div class=" container" style="border-radius: 24px">
+                                    <div class="row align-items-center">
+
+                                        <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                                            <h2 class="section-header-c">
+                                                <span class="section-header-1">Lens</span>
+                                                <span class="section-header-2">Info 1</span>
+                                            </h2>
+                                            <!-- <span style="border-bottom: 3px solid; padding: 0.5rem;">
+                                <%= ld1.name %>
+                            </span> -->
+                                            <div class="space-25"></div>
+                                            <p class="sec-desc" style="margin: 0 auto;">
+                                                <%= li1.li1_desc %>
+                                            </p>
+                                        </div>
+
+                                        <!-- Section content -->
+                                        <div class="col-lg-12 col-md-12" data-aos="fade-zoom-in" data-aos-delay="200"
+                                            style="text-align: center; margin: 0 auto;">
+
+                                            <!-- Section Header -->
+                                            <!-- <h2 class="section-header-c" style="text-align: center;">
+                                        <span class="section-header-1">Lens</span>
+                                        <span class="section-header-2">Info 1</span>
+                                    </h2>
+                                    <p>
+                                        <%= li1.li1_desc %>
+                                    </p> -->
+
+                                            <div class="space-25">
+                                            </div>
+
+                                            <div class="row" style="justify-content: space-evenly;">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in"
+                                                    data-aos-delay="100"
+                                                    style="text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 50px -20px grey; border-radius: 15px; border-color: transparent;">
+                                                    <div class="why-us-icon">
+                                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px"
+                                                            alt="" />
+                                                        <p>
+                                                            <%= li1.li1_parag_1 %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in"
+                                                    data-aos-delay="100"
+                                                    style="text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 25px -10px grey; border-radius: 15px; border-color: transparent;">
+                                                    <div class="why-us-icon">
+                                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px"
+                                                            alt="" />
+                                                        <p>
+                                                            <%= li1.li1_parag_1 %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="space-50">
+                                            </div>
+
+                                            <div class="row" style="justify-content: space-evenly;">
+                                                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in"
+                                                    data-aos-delay="100"
+                                                    style="align-self: center; text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 50px -20px grey; border-radius: 15px; border-color: transparent;">
+                                                    <div class="why-us-icon">
+                                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px"
+                                                            alt="" />
+                                                        <p>
+                                                            <%= li1.li1_parag_1 %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- section img -->
+                                                <div class="col-lg-6 col-md-8 col-sm-8" data-aos="fade-right"
+                                                    style="text-align: center;">
+                                                    <img src="<%= li1.li1_img %>" class="img-fluid" alt="" />
+                                                </div>
+
+                                                <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in"
+                                                    data-aos-delay="100"
+                                                    style="align-self: center; text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 50px -20px grey; border-radius: 15px; border-color: transparent;">
+                                                    <div class="why-us-icon">
+                                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px"
+                                                            alt="" />
+                                                        <p>
+                                                            <%= li1.li1_parag_1 %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="space-25">
+                                            </div>
+
+                                            <div class="row" style="justify-content: space-evenly;">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in"
+                                                    data-aos-delay="100"
+                                                    style="text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 50px -20px grey; border-radius: 15px; border-color: transparent;">
+                                                    <div class="why-us-icon">
+                                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px"
+                                                            alt="" />
+                                                        <p>
+                                                            <%= li1.li1_parag_1 %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12" data-aos="zoom-in"
+                                                    data-aos-delay="100"
+                                                    style="text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 25px -10px grey; border-radius: 15px; border-color: transparent;">
+                                                    <div class="why-us-icon">
+                                                        <img src="assets/imgs/horizon/logoIcon.png" width="35px"
+                                                            alt="" />
+                                                        <p>
+                                                            <%= li1.li1_parag_1 %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <% } %>
+                                <!-- End Lens Info (1/2) -->
+                                <!-- ------------------------------------------------------------- -->
+                                <!-- Start lens Designs 2/3 -->
+                                <% if(ld2.ld2_section_display) { %>
+                                    <section id="single-vision" class="hero-section">
+                                        <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
+                                            <h2 class="section-header-b" style="text-align: center;">
+                                                <span class="section-header-1">Lens</span>
+                                                <span class="section-header-2">Designs 2</span>
+                                            </h2>
+                                            <!-- <h2 class="section-header white">
             <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= ld2.ld2_header %></span>
         </h2> -->
-        <div class="space-25"></div>
-        <p class="white">
-            <%= ld2.ld2_desc %>
-        </p>
-        <div class="space-25"></div>
-    </div>
-    <div class="single-vision_container">
-        <div class="single-vision_nav">
-            <div class="single-vision_logo">
-                <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-            </div>
-            <div class="nav__text" style="text-align: center;">
-                H <br />
-                O <br />
-                R <br />
-                I <br />
-                Z <br />
-                O <br />
-                N
-            </div>
-            <div class="nav__cart" style="text-align: center;">
-                <span> <%= ld2.ld2_designs.length %></span>
-                <br>
-                <% if(ld2.ld2_designs.length > 1) { %>
-                <span> Designs </span>
+                                            <div class="space-25"></div>
+                                            <p class="sec-desc white">
+                                                <%= ld2.ld2_desc %>
+                                            </p>
+                                            <div class="space-25"></div>
+                                        </div>
+                                        <div class="single-vision_container">
+                                            <div class="single-vision_nav">
+                                                <div class="single-vision_logo">
+                                                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                                                </div>
+                                                <div class="nav__text" style="text-align: center;">
+                                                    H <br />
+                                                    O <br />
+                                                    R <br />
+                                                    I <br />
+                                                    Z <br />
+                                                    O <br />
+                                                    N
+                                                </div>
+                                                <div class="nav__cart" style="text-align: center;">
+                                                    <span>
+                                                        <%= ld2.ld2_designs.length %>
+                                                    </span>
+                                                    <br>
+                                                    <% if(ld2.ld2_designs.length> 1) { %>
+                                                        <span> Designs </span>
 
-                <% } else if(ld2.ld2_designs.length = 1) { %>
-                <span> Design </span>
+                                                        <% } else if(ld2.ld2_designs.length=1) { %>
+                                                            <span> Design </span>
 
-                <% } else { %>
-                <span></span>
+                                                            <% } else { %>
+                                                                <span></span>
 
-                <% } %>
-            </div>
-        </div>
-        <!-- <div class="cover">
+                                                                <% } %>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="cover">
                 <h2>Single Vision<br />Lenses</h2>
             </div> -->
-        <% ld2.ld2_designs.forEach(function(design, index) { %>
-        <div class="product" data-index="<%= index %>">
-            <div class="product__close">Close</div>
-            <div class="product__new">NEW</div>
-            <div class="product__detail">VIEW DETAILS</div>
-            <img class="product__img" src="<%= design.img %>" />
-            <div class="product__brand"><%= design.header %></div>
-            <div class="product__title"><%= design.sub_header %></div>
-            <!-- <div class="product__price">$13,200</div> -->
-            <div class="product__subtitle">
-                <%= design.content_before %>
-            </div>
-            <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
-                <%= design.content_after %>
-            </div>
-            <div class="product__table">
-                <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
+                                            <% ld2.ld2_designs.forEach(function(design, index) { %>
+                                                <div class="product" data-index="<%= index %>">
+                                                    <div class="product__close">Close</div>
+                                                    <div class="product__new">NEW</div>
+                                                    <div class="product__detail">VIEW DETAILS</div>
+                                                    <img class="product__img" src="<%= design.img %>" />
+                                                    <div class="product__brand">
+                                                        <%= design.header %>
+                                                    </div>
+                                                    <div class="product__title">
+                                                        <%= design.sub_header %>
+                                                    </div>
+                                                    <!-- <div class="product__price">$13,200</div> -->
+                                                    <div class="product__subtitle">
+                                                        <%= design.content_before %>
+                                                    </div>
+                                                    <div class="product__subtitle product__subtitle--expanded"
+                                                        style="--delay: 0.3s">
+                                                        <%= design.content_after %>
+                                                    </div>
+                                                    <div class="product__table">
+                                                        <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
 
-                <% design.specs.forEach(function(spec) { %>
-                <div class="product__table-row">
-                    <div class="product__table-cell"><%= spec.title %></div>
-                    <div class="product__table-cell">
-                        <%= spec.desc %>
-                    </div>
-                </div>
-                <% }) %>
-                <div class="product__option">ALL SPECIFICATIONS</div>
-            </div>
-        </div>
-        <% }) %>
+                                                        <% design.specs.forEach(function(spec) { %>
+                                                            <div class="product__table-row">
+                                                                <div class="product__table-cell">
+                                                                    <%= spec.title %>
+                                                                </div>
+                                                                <div class="product__table-cell">
+                                                                    <%= spec.desc %>
+                                                                </div>
+                                                            </div>
+                                                            <% }) %>
+                                                                <div class="product__option">ALL SPECIFICATIONS</div>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
 
-        <div class="product__overlay"></div>
-    </div>
-</section>
-<% } %>
-<!-- End lens Designs 2/3 -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Lens Info 2/2 -->
-<% if(li2.li2_section_display) { %>
-<section id="main_features" class="main-features padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-c" style="text-align: center;">
-                    <span class="section-header-1">Lens</span>
-                    <span class="section-header-2">Info 2</span>
-                </h2>
-                <!-- <h2 class="section-header med-dark">
+                                                    <div class="product__overlay"></div>
+                                        </div>
+                                    </section>
+                                    <% } %>
+                                        <!-- End lens Designs 2/3 -->
+                                        <!-- ------------------------------------------------------------- -->
+                                        <!-- Start Lens Info 2/2 -->
+                                        <% if(li2.li2_section_display) { %>
+                                            <section id="main_features" class="main_features padding-100">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="text-center col-12 section-title"
+                                                            data-aos="fade-zoom-in">
+                                                            <h2 class="section-header-c" style="text-align: center;">
+                                                                <span class="section-header-1">Lens</span>
+                                                                <span class="section-header-2">Info 2</span>
+                                                            </h2>
+                                                            <!-- <h2 class="section-header med-dark">
                     <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= li2.li2_header %></span>
                 </h2> -->
-                <div class="space-25"></div>
-                <p>
-                    <%= li2.li2_header %>
-                </p>
-                <div class="space-25"></div>
-            </div>
-        </div>
-        <!-- CONTENT -->
-        <!-- LEFT PARAGS -->
-        <div class="row align-items-center">
-            <div class="col-lg-3 text-lg-right left-side">
-                <% li2.li2_lft_parags.forEach(function(parag, index) { %>
-                <div class="one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-right" data-aos-delay="1000">
-                    <h5><%= parag.parag_header %></h5>
-                    <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
-                    <p>
-                        <%= parag.parag_content %>
-                    </p>
-                </div>
-                <% }) %>
-            </div>
-            <!-- CENTER IMG & CIRCLES -->
-            <div class="col-lg-6 text-center">
-                <div class="features-circle">
-                    <div class="circle-svg" data-aos="zoom-in" data-aos-delay="400">
-                        <svg version="1.1" id="features_circle" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="543px" height="542.953px"
-                            viewBox="0 0 543 542.953" enable-background="new 0 0 543 542.953" xml:space="preserve">
-                            <g>
-                                <circle fill="none" stroke="#" stroke-width="3" stroke-miterlimit="10"
-                                    stroke-dasharray="11.9474,11.9474" cx="271.5" cy="271.516" r="270" />
-                                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="50s"
-                                    repeatCount="indefinite"></animateTransform>
-                            </g>
-                        </svg>
-                    </div>
-                    <img data-aos="fade-up" data-aos-delay="200" src="assets/imgs/glasses/glass3.png" class="img-fluid"
-                        alt="" />
-                </div>
+                                                            <div class="space-25"></div>
+                                                            <p class="sec-desc">
+                                                                <%= li2.li2_header %>
+                                                            </p>
+                                                            <div class="space-25"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- CONTENT -->
+                                                    <div class="row align-items-center"
+                                                        style="justify-content: center;">
+                                                        <!-- LEFT PARAGS -->
+                                                        <div class="col-lg-3 col-md-6 col-sm-8 left-side"
+                                                            style="justify-self: center;">
+                                                            <% li2.li2_lft_parags.forEach(function(parag, index) { %>
+                                                                <div class="col-lg-12 one-feature <% index==0 ? 'one' : '' %>"
+                                                                    data-aos="fade-right" data-aos-delay="250">
+                                                                    <h5>
+                                                                        <%= parag.parag_header %>
+                                                                    </h5>
+                                                                    <span><img src="assets/imgs/horizon/logoIcon.png"
+                                                                            width="35px"></span>
+                                                                    <p style="color: white !important">
+                                                                        <%= parag.parag_content %>
+                                                                    </p>
+                                                                </div>
+                                                                <% }) %>
+                                                        </div>
+                                                        <!-- CENTER IMG & CIRCLES -->
+                                                        <div class="col-lg-6 text-center">
+                                                            <div class="features-circle">
+                                                                <div class="circle-svg" data-aos="zoom-in"
+                                                                    data-aos-delay="400">
+                                                                    <svg version="1.1" id="features_circle"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        x="0px" y="0px" width="543px" height="542.953px"
+                                                                        viewBox="0 0 543 542.953"
+                                                                        enable-background="new 0 0 543 542.953"
+                                                                        xml:space="preserve">
+                                                                        <g>
+                                                                            <circle fill="none" stroke="#"
+                                                                                stroke-width="3" stroke-miterlimit="10"
+                                                                                stroke-dasharray="11.9474,11.9474"
+                                                                                cx="271.5" cy="271.516" r="270" />
+                                                                            <animateTransform attributeName="transform"
+                                                                                type="rotate" from="0" to="360"
+                                                                                dur="50s" repeatCount="indefinite">
+                                                                            </animateTransform>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <img data-aos="fade-up" data-aos-delay="200"
+                                                                    src="assets/imgs/glasses/glass3.png"
+                                                                    class="img-fluid" alt="" />
+                                                            </div>
 
-            </div>
-            <!-- RIGHT PARAGS -->
-            <div class="col-lg-3 right-side">
-                <% li2.li2_rght_parags.forEach(function(parag, index) { %>
-                <div class="one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-left" data-aos-delay="1000">
-                    <h5><%= parag.parag_header %></h5>
-                    <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
-                    <p>
-                        <%= parag.parag_content %>
-                    </p>
-                </div>
-                <% }) %>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End Lens Info 2/2 -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start lens Designs 3/3 -->
-<% if(ld3.ld3_section_display) { %>
-<section id="" class="hero-section padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-b" style="text-align: center;">
-                    <span class="section-header-1">Lens</span>
-                    <span class="section-header-2">Designs 3</span>
-                </h2>
-                <!-- <h2 class="section-header med-light">
+                                                        </div>
+                                                        <!-- RIGHT PARAGS -->
+                                                        <div class="col-lg-3 col-md-6 col-sm-8 right-side"
+                                                            style="justify-self: center;">
+                                                            <% li2.li2_rght_parags.forEach(function(parag, index) { %>
+                                                                <div class="one-feature <% index==0 ? 'one' : '' %>"
+                                                                    data-aos="fade-left" data-aos-delay="250">
+                                                                    <h5>
+                                                                        <%= parag.parag_header %>
+                                                                    </h5>
+                                                                    <span><img src="assets/imgs/horizon/logoIcon.png"
+                                                                            width="35px"></span>
+                                                                    <p style="color: white !important">
+                                                                        <%= parag.parag_content %>
+                                                                    </p>
+                                                                </div>
+                                                                <% }) %>
+                                                        </div>
+                                                        <!-- END RIGHT  -->
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <% } %>
+                                                <!-- End Lens Info 2/2 -->
+
+                                                <!-- ------------------------------------------------------------- -->
+                                                <!-- Start lens Designs 3/3 -->
+                                                <% if(ld3.ld3_section_display) { %>
+                                                    <section id="" class="hero-section padding-100">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="text-center col-12 section-title"
+                                                                    data-aos="fade-zoom-in">
+                                                                    <h2 class="section-header-b"
+                                                                        style="text-align: center;">
+                                                                        <span class="section-header-1">Lens</span>
+                                                                        <span class="section-header-2">Designs
+                                                                            3</span>
+                                                                    </h2>
+                                                                    <!-- <h2 class="section-header med-light">
                     <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= ld3.ld3_header %></span>
                 </h2> -->
-                <div class="space-25"></div>
-                <p class="white">
-                    <%= ld3.ld3_desc %>
-                </p>
-                <div class="space-25"></div>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-12">
-                <section id="bifocal" class="">
-                    <div class="options">
+                                                                    <div class="space-25"></div>
+                                                                    <p class="white">
+                                                                        <%= ld3.ld3_desc %>
+                                                                    </p>
+                                                                    <div class="space-25"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row align-items-center">
+                                                                <div class="col-12">
+                                                                    <section id="bifocal" class="">
+                                                                        <div class="options">
 
-                        <% ld3.ld3_imgs.forEach(function(img, index) { %>
-                        <div class="option 
+                                                                            <% ld3.ld3_imgs.forEach(function(img, index)
+                                                                                { %>
+                                                                                <div class="option 
                             <% if (index === 0) { %>
                                 active
                             <% } %> " style="--optionBackground: url(<%= img.img_link %>); background-size: cover;">
-                            <div class="shadow"></div>
-                            <div class="label" style="background-color: white; border-radius: 15px 0 0 15px;">
-                                <div class="icon">
-                                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
-                                </div>
-                                <div class="info dark"
-                                    style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
-                                    <div class="main"><%= img.img_title %></div>
-                                    <div class="sub"><%= img.img_sub %></div>
-                                </div>
-                            </div>
-                        </div>
-                        <% }) %>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End lenses Designs 3/3  -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Watch Video -->
-<% if(wv.wv_section_display) { %>
-<section id="watch_video" class="watch-video padding-100">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-c" style="text-align: center;">
-                    <span class="section-header-1">Watch</span>
-                    <span class="section-header-2">Video</span>
-                </h2>
-                <!-- <h2 class="section-header med-dark">
-                    <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= wv.wv_header %></span>
-                </h2> -->
-                <div class="space-25"></div>
-                <p class="">
-                    <%= wv.wv_desc %>
-                </p>
-                <div class="space-50"></div>
-            </div>
-            <div class="col-md-6 offset-md-3" data-aos="fade-up">
-                <div class="video" style="
-                    background-image: url('https://via.placeholder.com/699x351');
-                  ">
-                    <img src="assets/img/mobile-4-4.png" class="img-fluid d-block mx-auto" alt="" />
-                    <a href="<%= wv.wv_link %>" data-lity></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End Watch Video  -->
-<!-- ------------------------------------------------------------- -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Screenshots -->
-<% if(ss.ss_section_display) { %>
-<section id="screenshots" class="hero-section background-withcolor" style="color: white">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-b" style="text-align: center;">
-                    <span class="section-header-1">Screen</span>
-                    <span class="section-header-2">Shots</span>
-                </h2>
-                <!-- <h2 class="section-header">
+                                                                                    <div class="shadow"></div>
+                                                                                    <div class="label"
+                                                                                        style="background-color: white; border-radius: 15px 0 0 15px;">
+                                                                                        <div class="icon">
+                                                                                            <img src="assets/imgs/horizon/logoIcon.png"
+                                                                                                width="35px" alt="" />
+                                                                                        </div>
+                                                                                        <div class="info dark"
+                                                                                            style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
+                                                                                            <div class="main">
+                                                                                                <%= img.img_title %>
+                                                                                            </div>
+                                                                                            <div class="sub">
+                                                                                                <%= img.img_sub %>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <% }) %>
+                                                                        </div>
+                                                                    </section>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <% } %>
+                                                        <!-- End lenses Designs 3/3  -->
+                                                        <!-- ------------------------------------------------------------- -->
+                                                        <!-- Start Screenshots -->
+                                                        <% if(ss.ss_section_display) { %>
+                                                            <section id="screenshots"
+                                                                class="hero-section background-withcolor"
+                                                                style="color: white">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="text-center col-12 section-title"
+                                                                            data-aos="fade-zoom-in">
+                                                                            <h2 class="section-header-b"
+                                                                                style="text-align: center;">
+                                                                                <span
+                                                                                    class="section-header-1">Screen</span>
+                                                                                <span
+                                                                                    class="section-header-2">Shots</span>
+                                                                            </h2>
+                                                                            <!-- <h2 class="section-header">
                     <span style="border-bottom: 3px solid; padding: 0.5rem;">Screenshots</span>
                 </h2> -->
-                <div class="space-25"></div>
-                <p class="light">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
-                </p>
-                <div class="space-50"></div>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-12">
-                <div class="screenshots-slider" data-aos="fade-up">
-                    <div class="item">
-                        <img src="assets/imgs/glasses/glass1.png" class="img-fluid d-block mx-auto" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/glasses/glass2.png" class="img-fluid d-block mx-auto" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/glasses/glass4.png" class="img-fluid d-block mx-auto" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/glasses/glass3.png" class="img-fluid d-block mx-auto" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/glasses/glass4.png" class="img-fluid d-block mx-auto" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End Screenshots -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Production Info -->
-<% if(pi.pi_section_display) { %>
-<section id="facts" class="fun-facts padding-100 background-withcolor" style="color: white">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-b" style="text-align: center;">
-                    <span class="section-header-1">Production</span>
-                    <span class="section-header-2">Info</span>
-                </h2>
-                <!-- <h2 class="section-header">
+                                                                            <div class="space-25"></div>
+                                                                            <p class="sec-desc light">
+                                                                                Lorem ipsum madolor sit amet,
+                                                                                consectetur
+                                                                                adipisicing elit, sed do
+                                                                                eiusmod tempor coli incidit
+                                                                                labore lorem
+                                                                                ipsum
+                                                                                amet madolor sit
+                                                                                amet.
+                                                                            </p>
+                                                                            <div class="space-50"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-12">
+                                                                            <div class="screenshots-slider"
+                                                                                data-aos="fade-up">
+                                                                                <div class="item">
+                                                                                    <img src="assets/imgs/glasses/glass1.png"
+                                                                                        class="img-fluid d-block mx-auto"
+                                                                                        alt="" />
+                                                                                </div>
+                                                                                <div class="item">
+                                                                                    <img src="assets/imgs/glasses/glass2.png"
+                                                                                        class="img-fluid d-block mx-auto"
+                                                                                        alt="" />
+                                                                                </div>
+                                                                                <div class="item">
+                                                                                    <img src="assets/imgs/glasses/glass4.png"
+                                                                                        class="img-fluid d-block mx-auto"
+                                                                                        alt="" />
+                                                                                </div>
+                                                                                <div class="item">
+                                                                                    <img src="assets/imgs/glasses/glass3.png"
+                                                                                        class="img-fluid d-block mx-auto"
+                                                                                        alt="" />
+                                                                                </div>
+                                                                                <div class="item">
+                                                                                    <img src="assets/imgs/glasses/glass4.png"
+                                                                                        class="img-fluid d-block mx-auto"
+                                                                                        alt="" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                            <% } %>
+                                                                <!-- End Screenshots -->
+                                                                <!-- ------------------------------------------------------------- -->
+                                                                <!-- ------------------------------------------------------------- -->
+                                                                <!-- Start Watch Video -->
+                                                                <% if(wv.wv_section_display) { %>
+                                                                    <section id="watch_video"
+                                                                        class="watch-video padding-100">
+                                                                        <div class="container-fluid">
+                                                                            <div class="row">
+                                                                                <div class="text-center col-12 section-title"
+                                                                                    data-aos="fade-zoom-in">
+                                                                                    <h2 class="section-header-c"
+                                                                                        style="text-align: center;">
+                                                                                        <span
+                                                                                            class="section-header-1">Watch</span>
+                                                                                        <span
+                                                                                            class="section-header-2">Video</span>
+                                                                                    </h2>
+                                                                                    <!-- <h2 class="section-header med-dark">
+                    <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= wv.wv_header %></span>
+                </h2> -->
+                                                                                    <div class="space-25"></div>
+                                                                                    <p class="">
+                                                                                        <%= wv.wv_desc %>
+                                                                                    </p>
+                                                                                    <div class="space-50"></div>
+                                                                                </div>
+                                                                                <div class="col-md-6 offset-md-3"
+                                                                                    data-aos="fade-up">
+                                                                                    <div class="video" style="
+                    background-image: url('https://via.placeholder.com/699x351');
+                    ">
+                                                                                        <img src="assets/img/mobile-4-4.png"
+                                                                                            class="img-fluid d-block mx-auto"
+                                                                                            alt="" />
+                                                                                        <a href="<%= wv.wv_link %>"
+                                                                                            data-lity></a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </section>
+                                                                    <% } %>
+                                                                        <!-- End Watch Video  -->
+                                                                        <!-- ------------------------------------------------------------- -->
+                                                                        <!-- Start Production Info -->
+                                                                        <% if(pi.pi_section_display) { %>
+                                                                            <section id="facts"
+                                                                                class="fun-facts padding-100 background-withcolor"
+                                                                                style="color: white">
+                                                                                <div class="container">
+                                                                                    <div class="row">
+                                                                                        <div class="text-center col-12 section-title"
+                                                                                            data-aos="fade-zoom-in">
+                                                                                            <h2 class="section-header-b"
+                                                                                                style="text-align: center;">
+                                                                                                <span
+                                                                                                    class="section-header-1">Production</span>
+                                                                                                <span
+                                                                                                    class="section-header-2">Info</span>
+                                                                                            </h2>
+                                                                                            <!-- <h2 class="section-header">
                     <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= pi.pi_header %></span>
                 </h2> -->
-                <div class="space-25"></div>
-                <p class="light">
-                    <%= pi.pi_desc %>
-                </p>
-                <div class="space-50"></div>
-            </div>
-        </div>
-        <div class="row align-items-center" style="padding: 0 1rem;">
-            <% pi.pi_items.forEach(function(item) { %>
-            <div class="col-lg-3 col-md-6 col-6">
-                <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
-                    <img src="<%= item.item_img %>" class="img-fluid" alt="" />
-                    <h5><%= item.item_num %></h5>
-                    <h6><%= item.item_title %></h6>
-                </div>
-            </div>
-            <% }) %>
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End Fun Facts  -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start FAQ -->
-<% if(ti.ti_section_display) { %>
-<section id="technical" class="faq padding-100">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-c" style="text-align: center;">
-                    <span class="section-header-1">Technical</span>
-                    <span class="section-header-2">Info</span>
-                </h2>
-                <!-- <h2 class="section-header med-dark">
+                                                                                            <div class="space-25">
+                                                                                            </div>
+                                                                                            <p class="light">
+                                                                                                <%= pi.pi_desc %>
+                                                                                            </p>
+                                                                                            <div class="space-50">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="row align-items-center"
+                                                                                        style="padding: 0 1rem;">
+                                                                                        <% pi.pi_items.forEach(function(item)
+                                                                                            { %>
+                                                                                            <div
+                                                                                                class="col-lg-3 col-md-6 col-6">
+                                                                                                <div class="fact-box text-center"
+                                                                                                    data-aos="fade-up"
+                                                                                                    data-aos-delay="400">
+                                                                                                    <img src="<%= item.item_img %>"
+                                                                                                        class="img-fluid"
+                                                                                                        alt="" />
+                                                                                                    <h5>
+                                                                                                        <%= item.item_num
+                                                                                                            %>
+                                                                                                    </h5>
+                                                                                                    <h6>
+                                                                                                        <%= item.item_title
+                                                                                                            %>
+                                                                                                    </h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <% }) %>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </section>
+                                                                            <% } %>
+                                                                                <!-- End Fun Facts  -->
+                                                                                <!-- ------------------------------------------------------------- -->
+                                                                                <!-- Start FAQ -->
+                                                                                <% if(ti.ti_section_display) { %>
+                                                                                    <section id="technical"
+                                                                                        class="faq padding-100">
+                                                                                        <div class="container">
+                                                                                            <div class="row">
+                                                                                                <div class="text-center col-12 section-title"
+                                                                                                    data-aos="fade-zoom-in">
+                                                                                                    <h2 class="section-header-c"
+                                                                                                        style="text-align: center;">
+                                                                                                        <span
+                                                                                                            class="section-header-1">Technical</span>
+                                                                                                        <span
+                                                                                                            class="section-header-2">Info</span>
+                                                                                                    </h2>
+                                                                                                    <!-- <h2 class="section-header med-dark">
                     <span style="border-bottom: 3px solid; padding: 0.5rem;"><%= ti.ti_header %></span>
                 </h2> -->
-                <div class="space-25"></div>
-                <p class="">
-                    <%= ti.ti_desc %>
-                </p>
-                <div class="space-50"></div>
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-center">
-            <!--align-items-center-->
-            <div class="col-md-12 col-lg-8" data-aos="fade-right" style="margin: 0 1rem;">
-                <div class="accordion" id="faqAccordion">
-                    <% ti.ti_items.forEach(function(item, index) { %>
-                    <div class="faq-card shadow">
-                        <div class="faq-card-header" id="heading_<%=index%>">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                    data-target="#collapse_<%=index%>" aria-expanded="true" aria-controls="collapse_1">
-                                    <%= item.item_title %>
-                                </button>
-                            </h5>
-                        </div>
+                                                                                                    <div
+                                                                                                        class="space-25">
+                                                                                                    </div>
+                                                                                                    <p class="">
+                                                                                                        <%= ti.ti_desc
+                                                                                                            %>
+                                                                                                    </p>
+                                                                                                    <div
+                                                                                                        class="space-50">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="row align-items-center justify-content-center">
+                                                                                                <!--align-items-center-->
+                                                                                                <div class="col-md-12 col-lg-8"
+                                                                                                    data-aos="fade-right"
+                                                                                                    style="margin: 0 1rem;">
+                                                                                                    <div class="accordion"
+                                                                                                        id="faqAccordion">
+                                                                                                        <% ti.ti_items.forEach(function(item,
+                                                                                                            index) { %>
+                                                                                                            <div
+                                                                                                                class="faq-card shadow">
+                                                                                                                <div class="faq-card-header"
+                                                                                                                    id="heading_<%=index%>">
+                                                                                                                    <h5
+                                                                                                                        class="mb-0">
+                                                                                                                        <button
+                                                                                                                            class="btn btn-link"
+                                                                                                                            type="button"
+                                                                                                                            data-toggle="collapse"
+                                                                                                                            data-target="#collapse_<%=index%>"
+                                                                                                                            aria-expanded="true"
+                                                                                                                            aria-controls="collapse_1">
+                                                                                                                            <%= item.item_title
+                                                                                                                                %>
+                                                                                                                        </button>
+                                                                                                                    </h5>
+                                                                                                                </div>
 
-                        <div id="collapse_<%=index%>" class="collapse 
+                                                                                                                <div id="collapse_<%=index%>"
+                                                                                                                    class="collapse 
                         <% if (index === 0) { %>
                             show
                         <% } %>" aria-labelledby="heading_<%=index%>" data-parent="#faqAccordion">
-                            <div class="faq-card-body">
-                                <%= item.item_content %>
-                            </div>
-                        </div>
-                    </div>
-                    <% }) %>
-                </div>
-            </div>
-            <!-- <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="400">
+                                                                                                                    <div
+                                                                                                                        class="faq-card-body">
+                                                                                                                        <%= item.item_content
+                                                                                                                            %>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <% }) %>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- <div class="col-md-4 col-12" data-aos="fade-left" data-aos-delay="400">
                 <img src="assets/img/mobile-1.png" class="img-fluid b-block mx-auto" alt="" />
             </div> -->
-        </div>
-    </div>
-</section>
-<% } %>
-<!-- End FAQ  -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start Logos -->
-<section id="logos" class="logos background-withcolor" style="padding: 1rem 1rem;">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="logos-slider">
-                    <div class="item">
-                        <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/img/logo-en-lg.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                    <div class="item">
-                        <img src="assets/imgs/horizon/HLogoW.png" class="img-fluid mx-auto b-block" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Logos -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start  Get in touch -->
-<section id="contact" class="git-in-touch padding-100 background-withcolor">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                <h2 class="section-header-b" style="text-align: center;">
-                    <span class="section-header-1">Contact</span>
-                    <span class="section-header-2">Us</span>
-                </h2>
-                <!-- <h2 class="section-header">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </section>
+                                                                                    <% } %>
+                                                                                        <!-- End FAQ  -->
+                                                                                        <!-- ------------------------------------------------------------- -->
+                                                                                        <!-- Start Logos -->
+                                                                                        <section id="logos"
+                                                                                            class="logos background-withcolor"
+                                                                                            style="padding: 1rem 1rem;">
+                                                                                            <div class="container">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-12">
+                                                                                                        <div
+                                                                                                            class="logos-slider">
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/img/logo-en-lg.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/imgs/horizon/HLogoW.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/img/logo-en-lg.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/imgs/horizon/HLogoW.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/img/logo-en-lg.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/imgs/horizon/HLogoW.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/img/logo-en-lg.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="item">
+                                                                                                                <img src="assets/imgs/horizon/HLogoW.png"
+                                                                                                                    class="img-fluid mx-auto b-block"
+                                                                                                                    alt="" />
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </section>
+                                                                                        <!-- End Logos -->
+                                                                                        <!-- ------------------------------------------------------------- -->
+                                                                                        <!-- Start  Get in touch -->
+                                                                                        <section id="contact"
+                                                                                            class="git-in-touch padding-100 background-withcolor">
+                                                                                            <div class="container">
+                                                                                                <div class="row">
+                                                                                                    <div class="text-center col-12 section-title"
+                                                                                                        data-aos="fade-zoom-in">
+                                                                                                        <h2 class="section-header-b"
+                                                                                                            style="text-align: center;">
+                                                                                                            <span
+                                                                                                                class="section-header-1">Contact</span>
+                                                                                                            <span
+                                                                                                                class="section-header-2">Us</span>
+                                                                                                        </h2>
+                                                                                                        <!-- <h2 class="section-header">
                     <span style="border-bottom: 3px solid; padding: 0.5rem;">Contact Us</span>
                 </h2> -->
-                <div class="space-25"></div>
-                <p class="light">
-                    Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-                    amet.
-                </p>
-                <div class="space-50"></div>
-            </div>
-        </div>
-        <div class="container-contact100">
-            <div class="wrap-contact100">
-                <form class="contact100-form validate-form">
-                    <!-- <span class="contact100-form-title">
+                                                                                                        <div
+                                                                                                            class="space-25">
+                                                                                                        </div>
+                                                                                                        <p
+                                                                                                            class="light">
+                                                                                                            Lorem
+                                                                                                            ipsum
+                                                                                                            madolor
+                                                                                                            sit
+                                                                                                            amet,
+                                                                                                            consectetur
+                                                                                                            adipisicing
+                                                                                                            elit,
+                                                                                                            sed
+                                                                                                            do
+                                                                                                            eiusmod
+                                                                                                            tempor
+                                                                                                            coli
+                                                                                                            incidit
+                                                                                                            labore
+                                                                                                            lorem
+                                                                                                            ipsum
+                                                                                                            amet
+                                                                                                            madolor
+                                                                                                            sit
+                                                                                                            amet.
+                                                                                                        </p>
+                                                                                                        <div
+                                                                                                            class="space-50">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="container-contact100">
+                                                                                                    <div
+                                                                                                        class="wrap-contact100">
+                                                                                                        <form
+                                                                                                            class="contact100-form validate-form">
+                                                                                                            <!-- <span class="contact100-form-title">
                             Send Us A Message
                         </span> -->
 
-                    <div class="wrap-input100 validate-input" data-validate="Please enter your name">
-                        <input class="input100" type="text" name="name" placeholder="Full Name">
-                        <span class="focus-input100"></span>
-                    </div>
+                                                                                                            <div class="wrap-input100 validate-input"
+                                                                                                                data-validate="Please enter your name">
+                                                                                                                <input
+                                                                                                                    class="input100"
+                                                                                                                    type="text"
+                                                                                                                    name="name"
+                                                                                                                    placeholder="Full Name">
+                                                                                                                <span
+                                                                                                                    class="focus-input100"></span>
+                                                                                                            </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Please enter your email: e@a.x">
-                        <input class="input100" type="text" name="email" placeholder="E-mail">
-                        <span class="focus-input100"></span>
-                    </div>
+                                                                                                            <div class="wrap-input100 validate-input"
+                                                                                                                data-validate="Please enter your email: e@a.x">
+                                                                                                                <input
+                                                                                                                    class="input100"
+                                                                                                                    type="text"
+                                                                                                                    name="email"
+                                                                                                                    placeholder="E-mail">
+                                                                                                                <span
+                                                                                                                    class="focus-input100"></span>
+                                                                                                            </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Please enter your phone">
-                        <input class="input100" type="text" name="phone" placeholder="Phone">
-                        <span class="focus-input100"></span>
-                    </div>
+                                                                                                            <div class="wrap-input100 validate-input"
+                                                                                                                data-validate="Please enter your phone">
+                                                                                                                <input
+                                                                                                                    class="input100"
+                                                                                                                    type="text"
+                                                                                                                    name="phone"
+                                                                                                                    placeholder="Phone">
+                                                                                                                <span
+                                                                                                                    class="focus-input100"></span>
+                                                                                                            </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Please enter your message">
-                        <textarea class="input100" name="message" placeholder="Your Message"></textarea>
-                        <span class="focus-input100"></span>
-                    </div>
+                                                                                                            <div class="wrap-input100 validate-input"
+                                                                                                                data-validate="Please enter your message">
+                                                                                                                <textarea
+                                                                                                                    class="input100"
+                                                                                                                    name="message"
+                                                                                                                    placeholder="Your Message"></textarea>
+                                                                                                                <span
+                                                                                                                    class="focus-input100"></span>
+                                                                                                            </div>
 
-                    <div class="container-contact100-form-btn">
-                        <button class="btn btn-primary btn-white shadow btn-theme">
-                            <span>
-                                Send
-                            </span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="space-50"></div>
-    </div>
-</section>
-<!-- End  Git in touch  -->
-<!-- ------------------------------------------------------------- -->
-<!-- Start  Map -->
-<section class="map">
-    <div style="margin: 2rem; box-shadow: 0px 5px 30px -5px rgba(34, 35, 58, 0.7);">
-        <iframe width="600" height="450" loading="lazy" allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37709962986!2d31.22344494535329!3d30.059483810352845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1540147674461">
-        </iframe>
-    </div>
-    <!-- <div id="map"></div>
+                                                                                                            <div
+                                                                                                                class="container-contact100-form-btn">
+                                                                                                                <button
+                                                                                                                    class="btn btn-primary btn-white shadow btn-theme">
+                                                                                                                    <span>
+                                                                                                                        Send
+                                                                                                                    </span>
+                                                                                                                </button>
+                                                                                                            </div>
+                                                                                                        </form>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="space-50">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </section>
+                                                                                        <!-- End  Git in touch  -->
+                                                                                        <!-- ------------------------------------------------------------- -->
+                                                                                        <!-- Start  Map -->
+                                                                                        <section class="map">
+                                                                                            <div
+                                                                                                style="margin: 2rem; box-shadow: 0px 5px 30px -5px rgba(34, 35, 58, 0.7);">
+                                                                                                <iframe width="600"
+                                                                                                    height="450"
+                                                                                                    loading="lazy"
+                                                                                                    allowfullscreen
+                                                                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37709962986!2d31.22344494535329!3d30.059483810352845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C+Cairo+Governorate!5e0!3m2!1sen!2seg!4v1540147674461">
+                                                                                                </iframe>
+                                                                                            </div>
+                                                                                            <!-- <div id="map"></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&map_ids=MAP_ID&callback=initMap">
     </script> -->
-</section>
-<!-- End  Map  -->
-<!-- ------------------------------------------------------------- -->
+                                                                                        </section>
+                                                                                        <!-- End  Map  -->
+                                                                                        <!-- ------------------------------------------------------------- -->
 
-<%- include('./partials/footer.ejs') %>
-<%- include('./partials/home_end.ejs') %>
+                                                                                        <%- include('./partials/footer.ejs')
+                                                                                            %>
+                                                                                            <%- include('./partials/home_end.ejs')
+                                                                                                %>
