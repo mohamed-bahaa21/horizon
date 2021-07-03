@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./",
     "start": "nodemon app.js",
     "start-server-only": "nodemon server-only.js"
   },
@@ -44,6 +45,7 @@
     "mongoose": "^5.12.3"
   },
   "devDependencies": {
+    "eslint": "^7.30.0",
     "nodemon": "^1.19.2"
   }
 }

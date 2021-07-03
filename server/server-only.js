@@ -1,17 +1,18 @@
-require('dotenv').config()
-const path = require('path')
+require('dotenv').config();
+const path = require('path');
 global.__basename = __dirname;
 
-const express = require('express')
-const session = require('express-session')
-const csrf = require('csurf')
-const cors = require('cors')
-const flash = require('connect-flash')
+const express = require('express');
+const session = require('express-session');
+const csrf = require('csurf');
+const cors = require('cors');
+const flash = require('connect-flash');
 
-const app = express()
+const app = express();
 
 // set ejs to be template view engine  
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
+
 const csrfProtection = csrf();
 app.use(
     // Parsers for POST data
