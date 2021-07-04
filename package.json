@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Mohamed-Elzohary/horizon#readme",
   "devDependencies": {
     "concurrently": "^6.0.2"
+  },
+  "dependencies": {
+    "jshint": "^2.13.0"
   }
 }
