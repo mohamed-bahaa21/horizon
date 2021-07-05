@@ -1,12 +1,12 @@
-- nav items active by hover instead of click.
+- nav items active by hover instead of click. (DONE)
 - Hero design: 
-    - active by default.
-    - Remove the flicker at the end.
-    - Remove white eye and leave the lenses.
+    - active by default. (DONE)
+    - Remove the flicker at the end. 
+    - Remove white eye and leave the lenses. (DONE)
     - Make the first layer (black lens) visible from the background.
     - Add 3d lens at the bottom.
 
-- Homepage taps:
+- Homepage taps: (DONE)
     - Logo
     - Home
     - Brands:
@@ -71,11 +71,3 @@
 - Brands page
     - One slider for each Design
     http://www.betaoptik.com/en/coatings/pixarUv
-
-
-
-
-
-
-
-

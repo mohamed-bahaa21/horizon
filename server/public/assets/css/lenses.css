@@ -1,3 +1,4 @@
+/* New Update:: delete active  */
 .stack {
   padding: 3rem 0;
   display: grid;
@@ -13,7 +14,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: white;
+  /* background: white; */
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   
   transition: background 1s ease;
@@ -25,13 +26,13 @@
 }
 
 .stack:hover:before,
-.stack:active:before {
-  background: #241F1F;
+.stack:before {
+  /* background: #241F1F; */
   box-shadow: 0 0 25px -5px black;
 }
 
 .stack:hover .lens_card,
-.stack:active .lens_card {
+.stack .lens_card {
   border-radius: 50%;
   --bg-opacity: 5%;
 
@@ -46,69 +47,69 @@
 }
 
 .stack:hover .lens_card:nth-child(1),
-.stack:active .lens_card:nth-child(1) {
+.stack .lens_card:nth-child(1) {
   --z-offset: 50vh;
 }
 
 .stack:hover .lens_card:nth-child(2),
-.stack:active .lens_card:nth-child(2) {
+.stack .lens_card:nth-child(2) {
   --z-offset: 35vh;
 }
 
 .stack:hover .lens_card:nth-child(3),
-.stack:active .lens_card:nth-child(3) {
+.stack .lens_card:nth-child(3) {
   --z-offset: 25vh;
 }
 
 .stack:hover .lens_card:nth-child(4),
-.stack:active .lens_card:nth-child(4) {
+.stack .lens_card:nth-child(4) {
   --z-offset: 15vh;
 }
 
 .stack:hover .lens_card:nth-child(5),
-.stack:active .lens_card:nth-child(5) {
+.stack .lens_card:nth-child(5) {
   --z-offset: 5vh;
 }
 
 .stack:hover .lens_card:nth-child(1)::after,
-.stack:active .lens_card:nth-child(1)::after {
+.stack .lens_card:nth-child(1)::after {
   transition-delay: 1.5s;
   -webkit-transition-delay: 1.5s;
 }
 
 .stack:hover .lens_card:nth-child(2)::after,
-.stack:active .lens_card:nth-child(2)::after {
+.stack .lens_card:nth-child(2)::after {
   transition-delay: 1.7s;
   -webkit-transition-delay: 1.7s;
 }
 
 .stack:hover .lens_card:nth-child(3)::after,
-.stack:active .lens_card:nth-child(3)::after {
+.stack .lens_card:nth-child(3)::after {
   transition-delay: 1.9s;
   -webkit-transition-delay: 1.9s;
 }
 
 .stack:hover .lens_card:nth-child(4)::after,
-.stack:active .lens_card:nth-child(4)::after {
+.stack .lens_card:nth-child(4)::after {
   transition-delay: 2.1s;
   -webkit-transition-delay: 2.1s;
 }
 
 .stack:hover .lens_card:nth-child(5)::after,
-.stack:active .lens_card:nth-child(5)::after {
+.stack .lens_card:nth-child(5)::after {
   transition-delay: 2.3s;
   -webkit-transition-delay: 2.3s;
 }
 
 .stack:hover .lens_card::after,
-.stack:active .lens_card::after {
+.stack .lens_card::after {
   opacity: 1;
   transform: rotate(-45deg) rotateY(45deg) translateX(0px);
   -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(0px);
 }
 
 .stack:hover .lens_card.lens_content,
-.stack:active .lens_card.lens_content {
+.stack .lens_card.lens_content {
   text-align: center;
   background: rgb(0, 0, 0, 0.5);
   color: white;
@@ -127,13 +128,13 @@
 }
 
 .stack:hover .lens_card.lens_padding,
-.stack:active .lens_card.lens_padding {
+.stack .lens_card.lens_padding {
   transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
 }
 
 .stack:hover .lens_card.lens_border,
-.stack:active .lens_card.lens_border {
+.stack .lens_card.lens_border {
   transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
 
@@ -147,7 +148,7 @@
 }
 
 .stack:hover .lens_card.lens_background,
-.stack:active .lens_card.lens_background {
+.stack .lens_card.lens_background {
   background: rgba(224, 196, 64, 0.5);
   transition: background-color 2s var(--easeInOutCirc) 0.3s,
     transform 2s var(--easeInOutCirc) 0.2s;
@@ -160,7 +161,7 @@
 }
 
 .stack:hover .lens_card.lens_box-shadow,
-.stack:active .lens_card.lens_box-shadow {
+.stack .lens_card.lens_box-shadow {
   transition-delay: 0.4s;
   -webkit-transition-delay: 0.4s;
   box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.4), 0 7.6px 6.1px rgba(0, 0, 0, 0.051),
@@ -367,7 +368,7 @@
 }
 
 p:first-of-type {
-  margin-top: 0;
+  /* margin-top: 0; */
 }
 
 @media (hover: hover) {
