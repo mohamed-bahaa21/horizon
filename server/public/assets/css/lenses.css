@@ -28,7 +28,7 @@
 .stack:hover:before,
 .stack:before {
   /* background: #241F1F; */
-  box-shadow: 0 0 25px -5px black;
+  /* box-shadow: 0 0 25px -5px black; */
 }
 
 .stack:hover .lens_card,

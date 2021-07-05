@@ -82,6 +82,7 @@ section {
     color: #fff;
     padding: 0 1rem;
     background-color: var(--main-color);
+    border-radius: 5px;
 }
 
 /* section header B */
