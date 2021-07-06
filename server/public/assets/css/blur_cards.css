@@ -71,7 +71,7 @@
     -webkit-transform: scale(1) translateZ(0);
     transition: filter 200ms linear, transform 200ms linear;
     -webkit-transition: filter 200ms linear, transform 200ms linear;
-    animation: all 1s ease-in-out;
+    transition: all 0.3s;
 }
 
 .blur-card:hover .blur-card__background {

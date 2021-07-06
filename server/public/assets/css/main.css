@@ -82,7 +82,7 @@ section {
     color: #fff;
     padding: 0 1rem;
     background-color: var(--main-color);
-    border-radius: 5px;
+    border-radius: 1rem 3rem;
 }
 
 /* section header B */
@@ -219,7 +219,7 @@ a:hover {
     color: white;
 
     box-shadow: 0 10px 25px -5px var(--main-color) !important;
-    border-radius: 5px;
+    border-radius: 1rem 2rem;
     font-weight: 500;
 
     transition: all 0.3s;
@@ -236,6 +236,7 @@ a:hover {
     background-color: white;
     color: var(--main-color);
     box-shadow: 0 -5px 25px -5px var(--main-color);
+    border-radius: 2rem 1rem;
 }
 
 .btn-colord {
@@ -572,7 +573,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 .horizon-header .navbar .navbar-nav .nav-item>.nav-link {
     color: #fff;
     /* margin: 20px 10px; */
-    font-weight: 400;
+    font-weight: 700;
     position: relative;
     padding: 1rem;
 }
