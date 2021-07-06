@@ -866,8 +866,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     font-weight: 900;
 }
 
-.why-us p {
-}
+.why-us p {}
 
 .why-us .why-us-icon {
     margin-bottom: 20px;
@@ -1950,6 +1949,7 @@ footer .copyright p {
 .page-head {
     position: relative;
     padding: 2rem 0;
+    background: linear-gradient(355deg, #241F1F 75%, #0d0b0b 0%) !important;
 }
 
 .page-head h1 {
