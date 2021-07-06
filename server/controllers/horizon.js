@@ -44,8 +44,8 @@ exports.getComingSoon = (req, res, next) => {
     });
 };
 
-// START User -> Product Page
-exports.getProduct = (req, res, next) => {
+// START User -> Brand Page
+exports.getBrand = (req, res, next) => {
     const {
         brand
     } = req.params;
@@ -53,36 +53,36 @@ exports.getProduct = (req, res, next) => {
     console.log(brand);
 
     if (brand == 'Zeiss') {
-        res.render('product', {
+        res.render('brand', {
             msgs: req.flash('success'),
             test: 'Hello Zeiss'
         });
-    } else if (brand == 'ltl') {
-        res.render('product', {
+    } else if (brand == 'LTL') {
+        res.render('brand', {
             msgs: req.flash('success'),
             test: 'Hello LTL'
         });
 
-    } else if (brand == 'divel') {
-        res.render('product', {
+    } else if (brand == 'Divel') {
+        res.render('brand', {
             msgs: req.flash('success'),
             test: 'Hello Divel'
         });
 
-    } else if (brand == 'roger-bacon') {
-        res.render('product', {
+    } else if (brand == 'Roger_Bacon') {
+        res.render('brand', {
             msgs: req.flash('success'),
             test: 'Hello Roger-Bacon'
         });
 
     } else {
-        res.render('product', {
+        res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Hello Zeiss'
+            test: 'Hello Brand'
         });
     }
 };
-// END
+// ----------------------------------------------------------------- END
 
 // START User -> Product Page
 exports.getFreeForm = (req, res, next) => {
@@ -122,12 +122,34 @@ exports.getFreeForm = (req, res, next) => {
         });
     }
 };
-// END
+// ------------------------ END
+
+// START User -> Product Page
+exports.getProduct = (req, res, next) => {
+    const {
+        product
+    } = req.params;
+
+    console.log(product);
+
+    if (product == 'stock_lenses') {
+        res.render('product_stock_lenses', {
+            msgs: req.flash('success'),
+            test: 'Stock Lenses'
+        });
+    } else {
+        res.render('product', {
+            msgs: req.flash('success'),
+            test: 'Hello Product'
+        });
+    }
+};
+// ------------------------ END
 
 // User -> About Page
 exports.getAbout = (req, res, next) => {
     About.findById('6088f039ce64255fe8d24880').then((result) => {
-    // console.log(result);
+        // console.log(result);
 
         res.render('about', {
             msgs: req.flash('success'),
@@ -170,7 +192,7 @@ exports.postAboutData = (req, res, next) => {
 // User Get Blogs list
 exports.getBlogs = (req, res, next) => {
     Blog.find().then(result => {
-    // console.log(result);
+        // console.log(result);
         res.render('blogs', {
             msgs: req.flash('success'),
             blogs: result

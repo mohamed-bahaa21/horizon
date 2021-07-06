@@ -4,6 +4,7 @@ const route = express.Router();
 
 const horizonController = require(path.resolve(__basename, 'controllers', 'horizon'));
 
+// USER_PAGES
 route.get('/', horizonController.getLanding);
 // route.get('/', horizonController.getComingSoon)
 
@@ -12,10 +13,16 @@ route.get('/news', horizonController.getBlogs);
 route.get('/blog/:id', horizonController.getBlog);
 
 // Products pages
-route.get('/products/:brand', horizonController.getProduct);
+route.get('/brands/:brand', horizonController.getBrand);
 
 // Free Form pages
 route.get('/free-form/:freeform', horizonController.getFreeForm);
+
+// Free Form pages
+route.get('/products/:product', horizonController.getProduct);
+
+// ------------------------------------------------------
+// Start API GET::POST
 
 // ADMIN -> Blogs Data
 route.get('/api/getBlogsData', horizonController.getBlogsData);

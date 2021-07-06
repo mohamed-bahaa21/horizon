@@ -42,7 +42,7 @@ nav {
     top: 150%;
     width: 300px;
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(14, 12, 12, 0.95);
     z-index: 9999;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
@@ -67,7 +67,7 @@ nav {
   }
   #mainnav ul.submenu > li > a {
     display: block;
-    color: #0d0b0b;
+    color: #fff;
     text-decoration: none;
     padding: 0 0 0 20px;
     line-height: 45px;

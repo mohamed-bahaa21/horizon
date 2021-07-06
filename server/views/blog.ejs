@@ -1,58 +1,67 @@
 <%- include('./partials/new_head.ejs') %>
-<%- include('./partials/nav.ejs') %>
+    <%- include('./partials/nav.ejs') %>
 
 
-<!-- Start Page Head -->
-<section class="page-head background-withcolor">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 style="font-size: x-large;">Horizon / News / <%= blog.title %></h1>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Page Head -->
-
-<!-- Start Blog Page Section -->
-<section class="single-blog-with-sidebar single-blog-page padding-100">
-    <div class="container">
-        <div class="row">
-            <!-- Start All Blogs -->
-            <div class="col-md-12 col-lg-8">
-                <div class="row">
+        <!-- Start Page Head -->
+        <section class="page-head background-withcolor">
+            <div id='stars'></div>
+            <div id='stars1'></div>
+            <div id='stars2'></div>
+            <div class="container">
+                <div class="row text-center">
                     <div class="col-md-12">
-                        <div class="blog-box">
-                            <div class="blog-img">
-                                <img src="<%= blog.bg %>" class="img-fluid" alt="">
-                            </div>
-                            <div class="blog-details">
-                                <div class="space-15"></div>
-                                <h3><%= blog.title %></h3>
-                                <div class="space-15"></div>
-                                <ul class="news-meta">
-                                    <li><span class="lnr lnr-user"></span> By Horizon</li>
-                                    <li><span class="lnr lnr-clock"></span> <%= blog.date %></li>
-                                </ul>
-                                <div class="space-15"></div>
-
-                                <p>
-                                    <%= blog.content %>
-                                </p>
-
-                                <blockquote>
-                                    <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit quaerat
-                                        fuga praesentium ut!”</p>
-                                </blockquote>
-
-                            </div>
-                            <hr>
-                        </div>
+                        <h1 style="font-size: x-large;">Horizon / News / <%= blog.title %>
+                        </h1>
                     </div>
                 </div>
             </div>
-            <!-- End All Blogs -->
-            <!-- 
+        </section>
+        <!-- End Page Head -->
+
+        <!-- Start Blog Page Section -->
+        <section class="single-blog-with-sidebar single-blog-page padding-100">
+            <div class="container">
+                <div class="row">
+                    <!-- Start All Blogs -->
+                    <div class="col-md-12 col-lg-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="blog-box">
+                                    <div class="blog-img">
+                                        <img src="<%= blog.bg %>" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="blog-details">
+                                        <div class="space-15"></div>
+                                        <h3>
+                                            <%= blog.title %>
+                                        </h3>
+                                        <div class="space-15"></div>
+                                        <ul class="news-meta">
+                                            <li><span class="lnr lnr-user"></span> By Horizon</li>
+                                            <li><span class="lnr lnr-clock"></span>
+                                                <%= blog.date %>
+                                            </li>
+                                        </ul>
+                                        <div class="space-15"></div>
+
+                                        <p>
+                                            <%= blog.content %>
+                                        </p>
+
+                                        <blockquote>
+                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit
+                                                quaerat
+                                                fuga praesentium ut!”</p>
+                                        </blockquote>
+
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End All Blogs -->
+                    <!-- 
 
 
 
@@ -63,44 +72,48 @@
 
                     
                  -->
-            <!-- Start Sidebar -->
-            <div class="col-md-12 col-lg-4">
-                <aside class="sidebar">
-                    <div class="gray-panel follow-me">
-                        <h3>Follow Us</h3>
-                        <ul>
-                            <li class="facebook">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li class="instagram">
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="gray-panel recent-post">
-                        <h3>Recent Post</h3>
-                        <% blogs.forEach(function(blog) { %>
-                        <div class="post d-flex align-items-top">
-                            <figure>
-                                <a href="#"><img src="<%= blog.bg %>" class="img-fluid" alt=""></a>
-                            </figure>
-                            <div>
-                                <h4><a href="<%= blog.id %>"><%= blog.title %></a></h4>
-                                <ul class="news-meta">
-                                    <li><span class="lnr lnr-clock"></span><%= blog.date %></li>
+                    <!-- Start Sidebar -->
+                    <div class="col-md-12 col-lg-4">
+                        <aside class="sidebar">
+                            <div class="gray-panel follow-me">
+                                <h3>Follow Us</h3>
+                                <ul>
+                                    <li class="facebook">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li class="instagram">
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
                                 </ul>
                             </div>
-                        </div>
-                        <% }) %>
+
+                            <div class="gray-panel recent-post">
+                                <h3>Recent Post</h3>
+                                <% blogs.forEach(function(blog) { %>
+                                    <div class="post d-flex align-items-top">
+                                        <figure>
+                                            <a href="#"><img src="<%= blog.bg %>" class="img-fluid" alt=""></a>
+                                        </figure>
+                                        <div>
+                                            <h4><a href="<%= blog.id %>">
+                                                    <%= blog.title %>
+                                                </a></h4>
+                                            <ul class="news-meta">
+                                                <li><span class="lnr lnr-clock"></span>
+                                                    <%= blog.date %>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                        </aside>
                     </div>
-                </aside>
+                    <!-- End Sidebar -->
+                </div>
             </div>
-            <!-- End Sidebar -->
-        </div>
-    </div>
-</section>
+        </section>
 
 
-<%- include('./partials/footer.ejs') %>
-<%- include('./partials/new_end.ejs') %>
+        <%- include('./partials/footer.ejs') %>
+            <%- include('./partials/new_end.ejs') %>

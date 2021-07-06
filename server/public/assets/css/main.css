@@ -490,7 +490,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .nav-link {
     font-size: 0.85rem !important;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0;
     padding: 0;
 }
@@ -573,7 +573,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 .horizon-header .navbar .navbar-nav .nav-item>.nav-link {
     color: #fff;
     /* margin: 20px 10px; */
-    font-weight: 700;
+    font-weight: 500;
     position: relative;
     padding: 1rem;
 }
