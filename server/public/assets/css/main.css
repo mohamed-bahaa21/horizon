@@ -1848,6 +1848,8 @@ footer .subscribe .subscribe-form-2 .form-group {
 ------------------------------*/
 .map {
     line-height: 0;
+    background: linear-gradient(180deg, #241f1f, #282828);
+    margin: -5rem 0rem;
 }
 
 .map iframe {
