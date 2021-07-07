@@ -28,7 +28,11 @@
         - Contact Us (remove)
     - Online Ordering
 
-- Stock lenses (internal page sections) -> technical info section
+- Home Before the news section: (DONE)
+    - We need regular slider like this one for each progressive design 
+    https://www.rodenstock.com/com/en/distance-spectacles.html
+
+- Stock lenses (internal page sections) -> technical info section (DONE)
     - Add like this section for the Indexes and Materials  (1.51- 1.69 - Trivex - Polycarbonate)
 
 - RX lenses (internal page sections):
@@ -60,10 +64,6 @@
     - Fitting
     - Rimless (technical section)
     - Tinting
-
-- Home Before the news section:
-    - We need regular slider like this one for each progressive design 
-    https://www.rodenstock.com/com/en/distance-spectacles.html
 
 - Lens Designs 3
     - Put this infographic in this tab instead of our icon For the brands & products and services internal pages connection
