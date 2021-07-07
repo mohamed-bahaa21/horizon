@@ -1951,7 +1951,7 @@ footer .copyright p {
 .page-head {
     position: relative;
     padding: 2rem 0;
-    background: linear-gradient(355deg, #241F1F 75%, #0d0b0b 0%) !important;
+    background: linear-gradient(355deg, #fff -250%, #241F1F 75%, #0d0b0b 100%) !important;
 }
 
 .page-head h1 {
