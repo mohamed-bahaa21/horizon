@@ -48,7 +48,11 @@
     width: 50%;
 }
 
-#before_after .container .slider {
+/* ------------------ SLIDER ------------------ */
+
+#before_after .container .slider,
+#before_after .container .slider2,
+#before_after .container .slider3 {
     position: absolute;
     -webkit-appearance: none;
     appearance: none;
@@ -63,11 +67,15 @@
     align-items: center;
 }
 
-#before_after .container .slider:hover {
+#before_after .container .slider:hover,
+#before_after .container .slider2:hover,
+#before_after .container .slider3:hover {
     background: rgba(242, 242, 242, 0.1);
 }
 
-#before_after .container .slider::-webkit-slider-thumb {
+#before_after .container .slider::-webkit-slider-thumb,
+#before_after .container .slider2::-webkit-slider-thumb,
+#before_after .container .slider3::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 6px;
@@ -76,14 +84,18 @@
     cursor: pointer;
 }
 
-#before_after .container .slider::-moz-range-thumb {
+#before_after .container .slider::-moz-range-thumb,
+#before_after .container .slider2::-moz-range-thumb,
+#before_after .container .slider3::-moz-range-thumb {
     width: 6px;
     height: 600px;
     background: white;
     cursor: pointer;
 }
 
-#before_after .container .slider-button {
+#before_after .container .slider-button,
+#before_after .container .slider-button2,
+#before_after .container .slider-button3 {
     pointer-events: none;
     position: absolute;
     width: 30px;
@@ -97,7 +109,9 @@
     align-items: center;
 }
 
-#before_after .container .slider-button:after {
+#before_after .container .slider-button:after,
+#before_after .container .slider-button2:after,
+#before_after .container .slider-button3:after {
     content: "";
     padding: 3px;
     display: inline-block;
@@ -106,7 +120,9 @@
     transform: rotate(-45deg);
 }
 
-#before_after .container .slider-button:before {
+#before_after .container .slider-button:before,
+#before_after .container .slider-button2:before,
+#before_after .container .slider-button3:before {
     content: "";
     padding: 3px;
     display: inline-block;

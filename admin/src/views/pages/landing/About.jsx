@@ -15,7 +15,7 @@ import {
 } from "@coreui/react";
 
 import { CKEditor } from '@ckeditor/ckeditor5-react'
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import ReactHtmlParser from 'react-html-parser'
 
@@ -154,9 +154,16 @@ class About extends Component {
             contentsCss='/css/mysitestyles.css'
             onChange={this.onChangeEditor}
           />
+          <CKEditor
+          name="body"
+          placeholder="About Page"
+          content={this.state.content}
+          editor={ClassicEditor}
+          data={this.state.content}
+          contentsCss='/css/mysitestyles.css'
+          onChange={this.onChangeEditor} />
 
           <hr />
-
 
           <CForm onSubmit={this.onSubmit}>
             <CFormGroup>
