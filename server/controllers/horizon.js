@@ -55,24 +55,24 @@ exports.getBrand = (req, res) => {
     if (brand == 'Zeiss') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Hello Zeiss'
+            test: 'Zeiss'
         });
     } else if (brand == 'LTL') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Hello LTL'
+            test: 'LTL'
         });
 
     } else if (brand == 'Divel') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Hello Divel'
+            test: 'Divel'
         });
 
     } else if (brand == 'Roger_Bacon') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Hello Roger-Bacon'
+            test: 'Roger-Bacon'
         });
 
     } else {
