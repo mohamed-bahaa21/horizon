@@ -380,13 +380,13 @@ exports.postLensInfo1 = (req, res, next) => {
 };
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensDesigns2 = (req, res, next) => {
+exports.getLensDesigns2 = (req, res) => {
     Horizon.findById('608b563eea47782954fcabeb').then((result) => {
         res.json(result);
     });
 };
 
-exports.postLensDesigns2 = (req, res, next) => {
+exports.postLensDesigns2 = (req, res) => {
     const {
         ld2_section_display,
         ld2_header,

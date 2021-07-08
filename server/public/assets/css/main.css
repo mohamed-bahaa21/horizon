@@ -1951,11 +1951,11 @@ footer .copyright p {
 .page-head {
     position: relative;
     padding: 2rem 0;
-    background: linear-gradient(355deg, #fff -250%, #241F1F 75%, #0d0b0b 100%) !important;
+    /* background: linear-gradient(355deg, #fff -250%, #241F1F 75%, #0d0b0b 100%) !important; */
 }
 
 .page-head h1 {
-    font-size: 60px;
+    font-size: x-large;
     font-weight: 900;
     margin: 0;
     padding: 100px 0 10px;
@@ -2048,8 +2048,17 @@ nav .pagination li a:hover {
 ------------------------------*/
 aside.sidebar .gray-panel {
     background: rgba(158, 158, 158, 0.1);
-    padding: 15px 30px;
+    padding: 2rem; 
     margin-bottom: 30px;
+    border-radius: 1rem 7rem;
+    box-shadow: 0px 14px 80px rgb(34 35 58 / 20%);
+}
+
+aside.sidebar .gray-panel img{
+    border-radius: 1rem 7rem;
+}
+aside.sidebar .gray-panel figure{
+    margin: 0;
 }
 
 aside.sidebar .search .form-group {

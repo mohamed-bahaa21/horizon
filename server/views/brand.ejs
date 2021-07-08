@@ -10,7 +10,8 @@
                 <div id='stars2'></div>
                 <div class="row text-center">
                     <div class="col-md-12">
-                        <h1 style="font-size: x-large;"><span style="color: #110f0f">Brands / </span>
+                        <h1>
+                            <!-- <span style="color: #110f0f">Brands / </span> -->
                             <%= test %>
                         </h1>
                     </div>
@@ -20,7 +21,7 @@
         <!-- End Page Head -->
 
         <!-- Start Blog Page Section -->
-        <section class="single-blog-with-sidebar single-blog-page padding-100">
+        <section class="single-blog-with-sidebar single-blog-page padding-50" style="margin: 5rem 0;">
             <div class="container">
                 <div class="row">
                     <!-- Start All Blogs -->
@@ -42,58 +43,141 @@
                         </div>
                     </div>
                     <!-- End All Blogs -->
-                    <!-- 
-
-
-
-
-
-
-
-
-                    
-                 -->
+                    <!-- -->
                     <!-- Start Sidebar -->
                     <div class="col-md-12 col-lg-4">
                         <aside class="sidebar">
                             <div class="gray-panel follow-me">
-                                <h3>Follow Us</h3>
-                                <ul>
-                                    <li class="facebook">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                </ul>
+                                <figure>
+                                    <img class="img-fluid" src="/assets/imgs/horizon/before3.jpg" alt="">
+                                    <!-- <figcaption style="text-align: center;">PIC 1</figcaption> -->
+                                </figure>
                             </div>
 
                             <div class="gray-panel recent-post">
-                                <h3>Other Brands</h3>
-
-                                <div class="post d-flex align-items-top">
-                                    <figure>
-                                        <a href="#"><img src="<%= test %>" class="img-fluid" alt=""></a>
-                                    </figure>
-                                    <div>
-                                        <h4><a href="<%= test %>">
-                                                <%= test %>
-                                            </a></h4>
-                                        <ul class="news-meta">
-                                            <li><span class="lnr lnr-clock"></span>
-                                                <%= test %>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <!-- <div class="post d-flex align-items-top"> -->
+                                <figure>
+                                    <img class="img-fluid" src="/assets/imgs/horizon/after3.jpg" alt="">
+                                    <!-- <figcaption style="text-align: center;">PIC 1</figcaption> -->
+                                </figure>
+                                <!-- </div> -->
 
                             </div>
                         </aside>
                     </div>
                     <!-- End Sidebar -->
                 </div>
+                <hr>
             </div>
         </section>
+        <!-- END BLOG SECTION -->
+        <!-- 
+
+
+
+
+
+
+
+
+
+
+         -->
+        <!-- Start Brand Designs Section -->
+        <section class="single-blog-with-sidebar single-blog-page padding-50">
+            <div class="container">
+                <div class="row">
+                    <!-- Start All Blogs -->
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="blog-box">
+
+                                    <div class="map-container">
+                                        <div class="inner-basic division-map div-toggle" data-target=".division-details"
+                                            id="divisiondetail">
+                                            <button class="mlod_link map-point-sm" data-show=".darwin">
+                                                <div class="content">
+                                                    <div class="centered-y">
+                                                        <span>Office</span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            <button class="mlod_link map-point-sm" data-show=".ptown">
+                                                <div class="content">
+                                                    <div class="centered-y">
+                                                        <span>Driving</span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            <button class="mlod_link map-point-sm" data-show=".philly">
+                                                <div class="content">
+                                                    <div class="centered-y">
+                                                        <span>Computer</span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div><!-- end inner basic -->
+                                    </div>
+
+
+                                    <div class="map-container">
+                                        <div class="inner-basic division-details">
+                                            <div class="initialmsg">
+                                                <p style="margin: 1rem 0;">Pick One Design</p>
+                                            </div>
+                                            <div class="darwin hide">
+                                                <!-- Start Lenses Design -->
+                                                <section id="before_after" class="">
+                                                    <div class='container'>
+                                                        <div class='img background-img'></div>
+                                                        <div class='img foreground-img'></div>
+                                                        <input type="range" min="1" max="100" value="50" class="slider"
+                                                            name='slider' id="slider">
+                                                        <div class='slider-button'></div>
+                                                    </div>
+                                                </section>
+                                                <!-- End Slide -->
+                                            </div>
+                                            <div class="ptown hide">
+                                                <!-- Start Lenses Design -->
+                                                <section id="before_after" class="">
+                                                    <div class='container'>
+                                                        <div class='img background-img2'></div>
+                                                        <div class='img foreground-img2'></div>
+                                                        <input type="range" min="1" max="100" value="50" class="slider"
+                                                            name='slider' id="slider">
+                                                        <div class='slider-button'></div>
+                                                    </div>
+                                                </section>
+                                                <!-- End Slide -->
+                                            </div>
+                                            <div class="philly hide">
+                                                <!-- Start Lenses Design -->
+                                                <section id="before_after" class="">
+                                                    <div class='container'>
+                                                        <div class='img background-img3'>
+                                                        </div>
+                                                        <div class='img foreground-img3'>
+                                                        </div>
+                                                        <input type="range" min="1" max="100" value="50" class="slider"
+                                                            name='slider' id="slider">
+                                                        <div class='slider-button'></div>
+                                                    </div>
+                                                </section>
+                                                <!-- End Slide -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Brand Designs Section -->
+                </div>
+            </div>
+        </section>
+        <!-- END BLOG SECTION -->
 
 
         <%- include('./partials/footer.ejs') %>

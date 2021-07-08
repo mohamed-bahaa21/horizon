@@ -1,6 +1,5 @@
 #before_after {
-    margin: 0;
-    height: 100vh;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +27,24 @@
 
 #before_after .container .foreground-img {
     background-image: url("../imgs/horizon/after.jpg");
+    width: 50%;
+}
+
+#before_after .container .background-img2 {
+    background-image: url("../imgs/horizon/before2.jpg");
+}
+
+#before_after .container .foreground-img2 {
+    background-image: url("../imgs/horizon/after2.jpg");
+    width: 50%;
+}
+
+#before_after .container .background-img3 {
+    background-image: url("../imgs/horizon/before3.jpg");
+}
+
+#before_after .container .foreground-img3 {
+    background-image: url("../imgs/horizon/after3.jpg");
     width: 50%;
 }
 
