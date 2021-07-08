@@ -38,14 +38,14 @@ exports.getLanding = (req, res) => {
     });
 };
 
-exports.getComingSoon = (req, res, next) => {
+exports.getComingSoon = (req, res) => {
     res.render('coming-soon/index', {
         msgs: req.flash('success')
     });
 };
 
 // START User -> Brand Page
-exports.getBrand = (req, res, next) => {
+exports.getBrand = (req, res) => {
     const {
         brand
     } = req.params;
@@ -85,7 +85,7 @@ exports.getBrand = (req, res, next) => {
 // ----------------------------------------------------------------- END
 
 // START User -> Product Page
-exports.getFreeForm = (req, res, next) => {
+exports.getFreeForm = (req, res) => {
     const {
         brand
     } = req.params;
@@ -125,7 +125,7 @@ exports.getFreeForm = (req, res, next) => {
 // ------------------------ END
 
 // START User -> Product Page
-exports.getProduct = (req, res, next) => {
+exports.getProduct = (req, res) => {
     const {
         product
     } = req.params;
@@ -147,7 +147,7 @@ exports.getProduct = (req, res, next) => {
 // ------------------------ END
 
 // User -> About Page
-exports.getAbout = (req, res, next) => {
+exports.getAbout = (req, res) => {
     About.findById('6088f039ce64255fe8d24880').then((result) => {
         // console.log(result);
 
@@ -161,14 +161,14 @@ exports.getAbout = (req, res, next) => {
 
 
 // Admin -> About Data
-exports.getAboutData = (req, res, next) => {
+exports.getAboutData = (req, res) => {
     About.findById('6088f039ce64255fe8d24880').then((about) => {
         console.log(about);
         res.json(about);
     });
 };
 
-exports.postAboutData = (req, res, next) => {
+exports.postAboutData = (req, res) => {
     const {
         content
     } = req.body;
@@ -190,7 +190,7 @@ exports.postAboutData = (req, res, next) => {
 
 
 // User Get Blogs list
-exports.getBlogs = (req, res, next) => {
+exports.getBlogs = (req, res) => {
     Blog.find().then(result => {
         // console.log(result);
         res.render('blogs', {
@@ -201,7 +201,7 @@ exports.getBlogs = (req, res, next) => {
 };
 
 // User Get Blog By ID route
-exports.getBlog = (req, res, next) => {
+exports.getBlog = (req, res) => {
     const blogID = req.params.id;
 
     Blog.findById(blogID).then(result => {
@@ -217,14 +217,14 @@ exports.getBlog = (req, res, next) => {
 };
 
 // Admin Gets, Edits -> Blogs Data 
-exports.getBlogsData = (req, res, next) => {
+exports.getBlogsData = (req, res) => {
     Blog.find().then((result) => {
         console.log(result);
         res.json(result);
     });
 };
 
-exports.postBlogsData = (req, res, next) => {
+exports.postBlogsData = (req, res) => {
     const {
         date,
         title,
@@ -259,7 +259,7 @@ exports.postBlogsData = (req, res, next) => {
 
 
 // Landing page data
-exports.getLandingData = (req, res, next) => {
+exports.getLandingData = (req, res) => {
     var origin = req.originalUrl;
 
     Horizon.find().then((result) => {
@@ -268,7 +268,7 @@ exports.getLandingData = (req, res, next) => {
 };
 
 // Admin Edits -> Hero Section Data 
-exports.postHeroData = (req, res, next) => {
+exports.postHeroData = (req, res) => {
     const {
         hero_section_display,
         name,
@@ -303,13 +303,13 @@ exports.postHeroData = (req, res, next) => {
 };
 // END SECTION
 // Admin Gets, Edits -> Lens Designs 1 Section Data 
-exports.getLensDesigns1 = (req, res, next) => {
+exports.getLensDesigns1 = (req, res) => {
     Horizon.findById('606ff91fef83672e10f01feb').then((result) => {
         res.json(result);
     });
 };
 
-exports.postLensDesigns1 = (req, res, next) => {
+exports.postLensDesigns1 = (req, res) => {
     const {
         name,
         ld1_section_display,
@@ -340,13 +340,13 @@ exports.postLensDesigns1 = (req, res, next) => {
 };
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensInfo1 = (req, res, next) => {
+exports.getLensInfo1 = (req, res) => {
     Horizon.findById('608514b45b363f4088e7e050').then((result) => {
         res.json(result);
     });
 };
 
-exports.postLensInfo1 = (req, res, next) => {
+exports.postLensInfo1 = (req, res) => {
     const {
         li1_section_display = li1_section_display,
         li1_header,
@@ -412,13 +412,13 @@ exports.postLensDesigns2 = (req, res) => {
 };
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensInfo2 = (req, res, next) => {
+exports.getLensInfo2 = (req, res) => {
     Horizon.findById('6086c203d9b6ec4c30d027de').then((result) => {
         res.json(result);
     });
 };
 
-exports.postLensInfo2 = (req, res, next) => {
+exports.postLensInfo2 = (req, res) => {
     const {
         li2_section_display,
         li2_header,
@@ -456,13 +456,13 @@ exports.postLensInfo2 = (req, res, next) => {
 
 
 // Admin Gets, Edits -> Watch Video Section Data 
-exports.getWatchVideo = (req, res, next) => {
+exports.getWatchVideo = (req, res) => {
     Horizon.findById('608a6c37ea47782954fcabe9').then((result) => {
         res.json(result);
     });
 };
 
-exports.postWatchVideo = (req, res, next) => {
+exports.postWatchVideo = (req, res) => {
     const {
         wv_section_display,
         wv_header,
@@ -488,13 +488,13 @@ exports.postWatchVideo = (req, res, next) => {
 };
 
 // Admin Gets, Edits -> Watch Video Section Data 
-exports.getScreenShots = (req, res, next) => {
+exports.getScreenShots = (req, res) => {
     Horizon.findById('608a9ecdea47782954fcabea').then((result) => {
         res.json(result);
     });
 };
 
-exports.postScreenShots = (req, res, next) => {
+exports.postScreenShots = (req, res) => {
     const {
         ss_section_display,
     } = req.body;
@@ -514,13 +514,13 @@ exports.postScreenShots = (req, res, next) => {
 };
 
 // Admin Gets, Edits -> Lens Designs 3 Section Data 
-exports.getLensDesigns3 = (req, res, next) => {
+exports.getLensDesigns3 = (req, res) => {
     Horizon.findById('608d230c48453073fc2d6146').then((result) => {
         res.json(result);
     });
 };
 
-exports.postLensDesigns3 = (req, res, next) => {
+exports.postLensDesigns3 = (req, res) => {
     const {
         ld3_section_display,
         ld3_header,
@@ -546,13 +546,13 @@ exports.postLensDesigns3 = (req, res, next) => {
 };
 
 // Admin Gets, Edits -> Production Info Section Data 
-exports.getProductionInfo = (req, res, next) => {
+exports.getProductionInfo = (req, res) => {
     Horizon.findById('608d49ce48453073fc2d6147').then((result) => {
         res.json(result);
     });
 };
 
-exports.postProductionInfo = (req, res, next) => {
+exports.postProductionInfo = (req, res) => {
     const {
         pi_section_display,
         pi_header,
@@ -578,13 +578,13 @@ exports.postProductionInfo = (req, res, next) => {
 };
 
 // Admin Gets, Edits -> Production Info Section Data 
-exports.getTechnicalInfo = (req, res, next) => {
+exports.getTechnicalInfo = (req, res) => {
     Horizon.findById('608d5ce648453073fc2d6149').then((result) => {
         res.json(result);
     });
 };
 
-exports.postTechnicalInfo = (req, res, next) => {
+exports.postTechnicalInfo = (req, res) => {
     const {
         ti_section_display,
         ti_header,
@@ -611,7 +611,7 @@ exports.postTechnicalInfo = (req, res, next) => {
 
 // FUNCTIONALITIES
 // Admin gets Gallery
-exports.gallery = (req, res, next) => {
+exports.gallery = (req, res) => {
     Gallery.find({}, {
         __v: 0
     }).then((result) => {
@@ -620,7 +620,7 @@ exports.gallery = (req, res, next) => {
 };
 
 // Admin Uploads Image TO DB
-exports.postImgToGallery = (req, res, next) => {
+exports.postImgToGallery = (req, res) => {
     // console.log(req.body);
 
     const {
@@ -637,7 +637,7 @@ exports.postImgToGallery = (req, res, next) => {
 };
 
 // Admin gets maillist
-exports.mailList = (req, res, next) => {
+exports.mailList = (req, res) => {
     Mail.find({}, {
         _id: 0,
         __v: 0
@@ -647,7 +647,7 @@ exports.mailList = (req, res, next) => {
 };
 
 // User Subscribes
-exports.subscribe = (req, res, next) => {
+exports.subscribe = (req, res) => {
     // console.log(req.body);
 
     const {

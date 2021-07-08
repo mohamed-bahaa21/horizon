@@ -4,6 +4,7 @@
         "commonjs": true,
         "es2021": true,
         "es6": true,
+        "esversion": 6,
         "jquery": true
     },
     "parserOptions": {
