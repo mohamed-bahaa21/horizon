@@ -15,7 +15,7 @@
     border-radius: 3rem 15rem;
     min-height: 45rem;
     width: 90rem;
-    background-color: whitesmoke;
+    background: linear-gradient(30deg, #413D3C, #282828);
     box-shadow: 0 2rem 3rem rgba(17, 15, 15, 0.2);
 }
 
@@ -69,7 +69,9 @@
 }
 
 #stock_lenses h1 {
+    color: #fff !important;
     padding: 2rem 3rem 2rem 0;
+    font-weight: 700;
 }
 
 #stock_lenses .question-container {
@@ -86,12 +88,13 @@
 }
 
 #stock_lenses .question p {
-    color: #4a4b5e;
+    color: #fff;
     font-weight: 400;
+    transition: all 0.5s ease-in-out;
 }
 
 #stock_lenses .question:hover p {
-    color: #f47c57;
+    color: #EBCD91;
 }
 
 #stock_lenses .hidden {
@@ -99,18 +102,23 @@
 }
 
 #stock_lenses .hidden p {
-    color: #787887;
+    color: #fff;
     padding: 1rem 3rem 0 0;
 }
 
 #stock_lenses .question-active p {
-    color: #1d1e35;
-    font-weight: 700;
+    color: #ffffff;
+    font-weight: 900 !important;
     font-size: 1.3rem;
+    background: black;
+    padding: 1rem;
+    border-radius: 1rem 3rem;
+    transition: all 0.5s ease-in-out;
 }
 
 #stock_lenses .question-active:hover p {
     color: #1d1e35;
+    background-color: #fff;
 }
 
 #stock_lenses .arrow {
