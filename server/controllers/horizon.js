@@ -55,7 +55,7 @@ exports.getBrand = (req, res) => {
     if (brand == 'Zeiss') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Zeiss'
+            test: `<h1 class="section-header-a">Zeiss</h1><br>`
         });
     } else if (brand == 'LTL') {
         res.render('brand', {
