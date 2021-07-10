@@ -77,7 +77,7 @@ app.use(
 
 )
 // routes
-const horizonRoute = require('./routes/horizon');
+const horizonRoute = require('./routes/horizon.routes');
 const {
     Horizon
 } = require('./models/horizon');

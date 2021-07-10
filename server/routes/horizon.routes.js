@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const route = express.Router();
 
-const horizonController = require(path.resolve(__basename, 'controllers', 'horizon'));
+const horizonController = require(path.resolve(__basename, 'controllers', 'horizon.controllers'));
 
 // USER_PAGES
 route.get('/', horizonController.getLanding);
@@ -12,14 +12,15 @@ route.get('/about-us', horizonController.getAbout);
 route.get('/news', horizonController.getBlogs);
 route.get('/blog/:id', horizonController.getBlog);
 
-// Products pages
+// Brands pages
 route.get('/brands/:brand', horizonController.getBrand);
 
-// Free Form pages
-route.get('/free-form/:freeform', horizonController.getFreeForm);
+// Products pages
+route.get('/products/:product', horizonController.getProduct);
 
 // Free Form pages
-route.get('/products/:product', horizonController.getProduct);
+// DEPRECATED
+// route.get('/free-form/:freeform', horizonController.getFreeForm);
 
 // ------------------------------------------------------
 // Start API GET::POST

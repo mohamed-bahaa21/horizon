@@ -55,73 +55,79 @@ exports.getBrand = (req, res) => {
     if (brand == 'Zeiss') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: `<h1 class="section-header-a">Zeiss</h1><br>`
+            test: `<h1 class="section-header-a">Zeiss</h1><br>`,
+            title: `Zeiss`
         });
     } else if (brand == 'LTL') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'LTL'
+            test: 'LTL',
+            title: `LTL`
         });
 
     } else if (brand == 'Divel') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Divel'
+            test: 'Divel',
+            title: `Divel`
         });
 
     } else if (brand == 'Roger_Bacon') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Roger-Bacon'
+            test: 'Roger Bacon',
+            title: `Roger Bacon`
         });
 
     } else {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: 'Hello Brand'
+            test: 'Unknown',
+            title: `Unknown`
         });
     }
 };
 // ----------------------------------------------------------------- END
 
 // START User -> Product Page
-exports.getFreeForm = (req, res) => {
-    const {
-        brand
-    } = req.params;
+// DEPRECATED
+// exports.getFreeForm = (req, res) => {
+//     const {
+//         brand
+//     } = req.params;
 
-    console.log(brand);
+//     console.log(brand);
 
-    if (brand == 'Zeiss') {
-        res.render('product', {
-            msgs: req.flash('success'),
-            test: 'Hello Zeiss'
-        });
-    } else if (brand == 'ltl') {
-        res.render('product', {
-            msgs: req.flash('success'),
-            test: 'Hello LTL'
-        });
+//     if (brand == 'Zeiss') {
+//         res.render('product', {
+//             msgs: req.flash('success'),
+//             test: 'Hello Zeiss'
+//         });
+//     } else if (brand == 'ltl') {
+//         res.render('product', {
+//             msgs: req.flash('success'),
+//             test: 'Hello LTL'
+//         });
 
-    } else if (brand == 'divel') {
-        res.render('product', {
-            msgs: req.flash('success'),
-            test: 'Hello Divel'
-        });
+//     } else if (brand == 'divel') {
+//         res.render('product', {
+//             msgs: req.flash('success'),
+//             test: 'Hello Divel'
+//         });
 
-    } else if (brand == 'roger-bacon') {
-        res.render('product', {
-            msgs: req.flash('success'),
-            test: 'Hello Roger-Bacon'
-        });
+//     } else if (brand == 'roger-bacon') {
+//         res.render('product', {
+//             msgs: req.flash('success'),
+//             test: 'Hello Roger-Bacon'
+//         });
 
-    } else {
-        res.render('product', {
-            msgs: req.flash('success'),
-            test: 'Hello Zeiss'
-        });
-    }
-};
+//     } else {
+//         res.render('product', {
+//             msgs: req.flash('success'),
+//             test: 'Hello Zeiss'
+//         });
+//     }
+// };
 // ------------------------ END
 
 // START User -> Product Page
