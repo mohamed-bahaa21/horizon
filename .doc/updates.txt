@@ -139,3 +139,9 @@ V3.0 Requirements:
         - Join our business ordering system:
             - BG screen related to software
             - google analytics 
+
+V4.0 Req:
+    - Update User: 
+        - Front-end
+        - Before after component
+        - Brand Designs
