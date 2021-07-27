@@ -16,11 +16,11 @@ import FlashMessage from 'react-flash-message'
 var SERVER_URI = "http://localhost:5000";
 
 if (process.env.NODE_ENV === "development") {
-    SERVER_URI = "http://localhost:5000";
+    SERVER_URI = process.env.REACT_APP_DEV_SERVER;
 }
 
 if (process.env.NODE_ENV === "production") {
-    SERVER_URI = "https://horizon-server.herokuapp.com";
+    SERVER_URI = process.env.REACT_APP_PROD_SERVER;
 }
 
 class Gallery extends Component {
@@ -41,7 +41,7 @@ class Gallery extends Component {
                 const gallery = response.data
                 let lista = []
                 console.log(gallery[0]);
-                
+
                 gallery.map(img => {
                     lista.push((img))
                     return lista

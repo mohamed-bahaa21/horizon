@@ -20,15 +20,7 @@ import UploadImg from "../../UploadImg/UploadImg";
 import axios from "axios";
 import FlashMessage from 'react-flash-message'
 
-var SERVER_URI = "http://localhost:5000";
-
-if (process.env.NODE_ENV === "development") {
-  SERVER_URI = "http://localhost:5000";
-}
-
-if (process.env.NODE_ENV === "production") {
-  SERVER_URI = "https://horizon-server.herokuapp.com";
-}
+import SERVER_URI from "../../../reusable/api";
 
 class TechnicalInfo extends Component {
   constructor(props) {
