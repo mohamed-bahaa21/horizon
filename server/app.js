@@ -41,6 +41,13 @@ const store = new MongoDBStore({
 // }
 
 // set ejs to be template view engine  
+app.enable('trust proxy');
+app.use(function (request, response, next) {
+    if (process.env.NODE_ENV != 'development' && !request.secure) {
+        return response.redirect("https://" + request.headers.host + request.url);
+    }
+    next();
+})
 app.set('view engine', 'ejs')
 const csrfProtection = csrf();
 // app.use(function (req, res, next) {
