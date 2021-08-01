@@ -2,16 +2,17 @@ require('dotenv').config()
 const path = require('path')
 global.__basename = __dirname;
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
-const session = require('express-session')
-const MongoDBStore = require('connect-mongodb-session')(session)
-const csrf = require('csurf')
-const cors = require('cors')
-const flash = require('connect-flash')
+var compression = require('compression');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const csrf = require('csurf');
+const cors = require('cors');
+const flash = require('connect-flash');
 
-const app = express()
+const app = express();
 
 const MONGODB_URI = process.env.MONGODB_URI;
 // connect session w/ mongodb
@@ -57,6 +58,7 @@ const csrfProtection = csrf();
 // });
 app.use(
     // Parsers for POST data
+    compression(),
     express.json({
         limit: '10mb'
     }),
