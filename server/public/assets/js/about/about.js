@@ -1,6 +1,10 @@
 /*jslint browser: true*/
 /*global $, jQuery ,AOS*/
 
+// var str = $('p').html();
+// str = str.replace(/&nbsp;/g, ' ');
+// $('#ckeditor').html(str);
+
 (function ($) {
 
     "use strict";
