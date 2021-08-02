@@ -1,38 +1,49 @@
 <%- include('./partials/news_head.ejs') %>
-<%- include('./partials/nav.ejs') %>
+    <%- include('./partials/nav.ejs') %>
 
 
-<!-- Start Page Head -->
-<section class="page-head background-withcolor">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 style="font-size: x-large;">Horizon / News</h1>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Page Head -->
-
-<% blogs.forEach(function(blog) { %>
-<section id="" class="" style="margin: 3rem 0; color: black !important;">
-    <div class="news-slider">
-        <div class="news-slider__item swiper-slide">
-            <div class="news-slider__img">
-                <img src="<%= blog.bg %>" alt="" />
-            </div>
-            <div class="news-slider__content">
-                <span class="news-slider__code"><%= blog.date %></span>
-                <div class="news-slider__title"><%= blog.title %></div>
-                <div class="news-slider__text">
-                    <%= blog.summary %>
+        <!-- Start Page Head -->
+        <!-- Start Page Head -->
+        <section class="page-head background-withcolor">
+            <div class="container">
+                <div id='stars'></div>
+                <div id='stars1'></div>
+                <div id='stars2'></div>
+                <div class="row text-center">
+                    <div class="col-md-12" style="margin: 3rem auto !important">
+                        <span style="color: white; letter-spacing: 0.5rem;">Horizon </span>
+                        <h1 style="font-size: x-large; display: inline-block;">
+                            <!-- <span style="color: #FFD952">Products / </span> -->
+                            / News
+                        </h1>
+                    </div>
                 </div>
-                <a href="/blog/<%= blog.id %>" class="news-slider__button">READ MORE</a>
             </div>
-        </div>
-    </div>
-</section>
-<% }) %>
+        </section>
 
-<%- include('./partials/footer.ejs') %>
-<%- include('./partials/new_end.ejs') %>
+        <% blogs.forEach(function(blog) { %>
+            <section id="" class="" style="margin: 3rem 0; color: black !important;">
+                <div class="news-slider">
+                    <div class="news-slider__item">
+                        <div class="news-slider__img_blogs">
+                            <img src="<%= blog.bg %>" alt="" />
+                        </div>
+                        <div class="">
+                            <span class="news-slider__code">
+                                <%= blog.date %>
+                            </span>
+                            <div class="news-slider__title">
+                                <%= blog.title %>
+                            </div>
+                            <div class="news-slider__text">
+                                <%= blog.summary %>
+                            </div>
+                            <a href="/blog/<%= blog.id %>" class="">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <% }) %>
+
+                <%- include('./partials/footer.ejs') %>
+                    <%- include('./partials/new_end.ejs') %>

@@ -52,11 +52,11 @@ app.use(function (request, response, next) {
 
 app.set('view engine', 'ejs')
 const csrfProtection = csrf();
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://admin.horizon.aykmall.net"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 app.use(
     // Parsers for POST data
     compression(),
@@ -76,12 +76,12 @@ app.use(
         store: store
     }),
     // using csrf protection
-    // csrfProtection,
-    // (req, res, next) => {
-    // //     res.locals.isLoggedIn = req.session.isLoggedIn;
-    //     res.locals.csrfToken = req.csrfToken();
-    //     next();
-    // },
+    csrfProtection,
+    (req, res, next) => {
+        // res.locals.isLoggedIn = req.session.isLoggedIn;
+        res.locals.csrfToken = req.csrfToken();
+        next();
+    },
     cors(),
     flash(),
 
