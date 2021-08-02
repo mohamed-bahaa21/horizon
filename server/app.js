@@ -49,6 +49,7 @@ app.use(function (request, response, next) {
     }
     next();
 })
+
 app.set('view engine', 'ejs')
 const csrfProtection = csrf();
 // app.use(function (req, res, next) {
@@ -103,6 +104,7 @@ mongoose
     .then(result => {
         app.listen(PORT);
         console.log(`MongoDB & Server is listening: ${PORT}`);
+        console.log(process.env.NODE_ENV);
     })
     .catch(err => {
         console.log(err);

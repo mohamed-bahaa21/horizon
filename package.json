@@ -5,10 +5,10 @@
   "proxy": "http://localhost:5000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cd server && npm start ",
-    "admin": "cd admin && npm start ",
-    "dev-server": "npm run server",
-    "dev-admin": "npm run admin",
+    "server": "cd server && npm start",
+    "admin": "cd admin && npm start",
+    "server-prod": "npm run server",
+    "admin-dev": "npm run admin",
     "dev": "concurrently \"npm run server\" \"npm run admin\""
   },
   "repository": {
