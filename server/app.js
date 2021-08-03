@@ -2,17 +2,23 @@ require('dotenv').config()
 const path = require('path')
 global.__basename = __dirname;
 
-var compression = require('compression');
+const compression = require('compression');
+const helmet = require('helmet');
 const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
-const csrf = require('csurf');
+const csrf = require('csurf')
+const csrfProtection = csrf({ cookie: true })
+const parseForm = bodyParser.urlencoded({ extended: false })
 const cors = require('cors');
 const flash = require('connect-flash');
 
 const app = express();
+
+const mongoose = require('mongoose');
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const MONGODB_URI = process.env.MONGODB_URI;
 // connect session w/ mongodb
@@ -20,6 +26,8 @@ const store = new MongoDBStore({
     uri: MONGODB_URI,
     collection: 'sessions'
 });
+
+const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 
 // const {
 //     graphqlHTTP
@@ -51,15 +59,22 @@ app.use(function (request, response, next) {
 })
 
 app.set('view engine', 'ejs')
-const csrfProtection = csrf();
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://admin.horizon.aykmall.net"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
 app.use(
     // Parsers for POST data
+    bodyParser.json(),
+    bodyParser.urlencoded({ extended: false }),
     compression(),
+    helmet(),
+    cookieParser(),
+    csrfProtection(),
+    parseForm(),
+    cors(),
     express.json({
         limit: '10mb'
     }),
@@ -70,27 +85,22 @@ app.use(
     express.static(path.join(__dirname, 'public')),
     // setting session
     session({
-        secret: '@010#44$vm=2001',
+        secret: '@010#44$vm=2001ayk2020horizon',
+        name: 'sessionId',
         resave: false,
         saveUninitialized: false,
-        store: store
+        store: store,
+        path: '/',
+        httpOnly: false,
+        secure: true,
+        domain: 'horizon.aykmall.net',
+        expires: expiryDate
     }),
-    // using csrf protection
-    csrfProtection,
-    (req, res, next) => {
-        // res.locals.isLoggedIn = req.session.isLoggedIn;
-        res.locals.csrfToken = req.csrfToken();
-        next();
-    },
-    cors(),
-    flash(),
-
+    flash()
 )
 // routes
 const horizonRoute = require('./routes/horizon.routes');
-const {
-    Horizon
-} = require('./models/horizon');
+const { Horizon } = require('./models/horizon');
 
 app.use('/', horizonRoute)
 

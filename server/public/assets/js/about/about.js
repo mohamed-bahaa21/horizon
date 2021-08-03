@@ -6,9 +6,7 @@
 // $('#ckeditor').html(str);
 
 (function ($) {
-
     "use strict";
-
     var $window = $(window),
         $body = $('body'),
         $horizonMenu = $('.horizon-header');
