@@ -4,6 +4,9 @@ const About = require('../models/About');
 const Gallery = require('../models/Gallery');
 const Mail = require('../models/Mail');
 
+const Logger = require('../services/logger.service');
+const logger = new Logger('horizon.controller');
+
 // const htmlparser2 = require('htmlparser2');
 
 // const SENDGRID_API = process.env.SENDGRID_API
@@ -50,7 +53,8 @@ exports.getBrand = (req, res) => {
         brand
     } = req.params;
 
-    console.log(brand);
+    // console.log(brand);
+    logger.info("return brand data", brand);
 
     if (brand == 'Zeiss') {
         res.render('brand', {

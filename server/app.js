@@ -10,12 +10,14 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
 const csrf = require('csurf')
-const csrfProtection = csrf({ cookie: true })
-const parseForm = bodyParser.urlencoded({ extended: false })
 const cors = require('cors');
+
 const flash = require('connect-flash');
 
 const app = express();
+
+const horizonRoute = require('./routes/horizon.routes');
+const { Horizon } = require('./models/horizon');
 
 const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
@@ -50,20 +52,22 @@ const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 // }
 
 // set ejs to be template view engine  
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "https://admin.horizon.aykmall.net"); // update to match the domain you will make the request from
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
+
+app.set('view engine', 'ejs');
+
 app.enable('trust proxy');
+
 app.use(function (request, response, next) {
     if (process.env.NODE_ENV != 'development' && !request.secure) {
         return response.redirect("https://" + request.headers.host + request.url);
     }
     next();
 })
-
-app.set('view engine', 'ejs')
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://admin.horizon.aykmall.net"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 app.use(
     // Parsers for POST data
@@ -72,8 +76,6 @@ app.use(
     compression(),
     helmet(),
     cookieParser(),
-    csrfProtection(),
-    parseForm(),
     cors(),
     express.json({
         limit: '10mb'
@@ -96,12 +98,11 @@ app.use(
         domain: 'horizon.aykmall.net',
         expires: expiryDate
     }),
+    csrf(),
     flash()
 )
-// routes
-const horizonRoute = require('./routes/horizon.routes');
-const { Horizon } = require('./models/horizon');
 
+// routes
 app.use('/', horizonRoute)
 
 // connect database & server
