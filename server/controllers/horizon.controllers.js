@@ -264,10 +264,6 @@ exports.postBlogsData = (req, res) => {
 };
 // END SECTION
 
-
-
-
-
 // Landing page data
 exports.getLandingData = (req, res) => {
     var origin = req.originalUrl;
