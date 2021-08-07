@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: 'config/prod.env' })
 const path = require('path')
 global.__basename = __dirname;
 
@@ -106,7 +106,7 @@ app.use(
 app.use('/', horizonRoute)
 
 // connect database & server
-let PORT = process.env.PORT || 5000;
+let PORT = process.env.PORT || 80;
 mongoose
     .connect(MONGODB_URI, {
         useNewUrlParser: true,
