@@ -58,16 +58,15 @@ const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 //     next();
 // });
 
+// app.enable('trust proxy');
+// app.use(function (request, response, next) {
+//     if (process.env.NODE_ENV != 'development' && !request.secure) {
+//         return response.redirect("https://" + request.headers.host + request.url);
+//     }
+//     next();
+// })
+
 app.set('view engine', 'ejs');
-
-app.enable('trust proxy');
-
-app.use(function (request, response, next) {
-    if (process.env.NODE_ENV != 'development' && !request.secure) {
-        return response.redirect("https://" + request.headers.host + request.url);
-    }
-    next();
-})
 
 app.use(
     // Parsers for POST data
