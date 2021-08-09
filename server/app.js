@@ -105,7 +105,7 @@ app.use(
 app.use('/', horizonRoute)
 
 // connect database & server
-let PORT = process.env.PORT || 5000;
+let PORT = 5000;
 mongoose
     .connect(MONGODB_URI, {
         useNewUrlParser: true,

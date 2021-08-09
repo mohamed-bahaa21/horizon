@@ -8,10 +8,10 @@ const horizonController = require(path.resolve(__basename, 'controllers', 'horiz
 
 
 // GLOBAL HEADER CONTROLLER
-route.get('/*', function (req, res, next) {
-    res.header('Content-Security-Policy', "img-src https://pngimg.com");
-    next();
-});
+//route.get('/*', function (req, res, next) {
+//    res.header('Content-Security-Policy', "img-src 'http://pngimg.com'");
+//    next();
+//});
 
 // USER_PAGES
 route.get('/', horizonController.getLanding);
