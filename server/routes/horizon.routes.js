@@ -4,6 +4,15 @@ const route = express.Router();
 
 const horizonController = require(path.resolve(__basename, 'controllers', 'horizon.controllers'));
 
+
+
+
+// GLOBAL HEADER CONTROLLER
+route.get('/*', function (req, res, next) {
+    res.header('Content-Security-Policy', "img-src https://pngimg.com");
+    next();
+});
+
 // USER_PAGES
 route.get('/', horizonController.getLanding);
 // route.get('/', horizonController.getComingSoon)
@@ -18,8 +27,8 @@ route.get('/brands/:brand', horizonController.getBrand);
 // Products pages
 route.get('/products/:product', horizonController.getProduct);
 
-// Free Form pages
 // DEPRECATED
+// Free Form pages
 // route.get('/free-form/:freeform', horizonController.getFreeForm);
 
 // ------------------------------------------------------
