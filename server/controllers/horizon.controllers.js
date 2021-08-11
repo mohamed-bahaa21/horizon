@@ -74,7 +74,7 @@ exports.getBrand = (req, res) => {
     if (brand == 'Zeiss') {
         res.render('brand', {
             msgs: req.flash('success'),
-            test: `<h1 class="section-header-a">Zeiss</h1><br>`,
+            test: `Zeiss`,
             title: `Zeiss`
         });
     } else if (brand == 'LTL') {
@@ -158,17 +158,33 @@ exports.getProduct = (req, res) => {
     // console.log(product);
     logger.info("return Product DATA", product);
 
-    if (product == 'stock_lenses') {
-        res.render('product_stock_lenses', {
-            msgs: req.flash('success'),
-            test: 'Stock Lenses'
-        });
-    } else {
-        res.render('product', {
-            msgs: req.flash('success'),
-            test: 'Hello Product'
-        });
-    }
+    let products_arr = [
+        "stock_lenses",
+        "rx_lenses",
+        "lens_coating_materials",
+        "thickness_reduction",
+        "finishing_services",
+        "contact_lenses",
+        "delivery",
+    ]
+
+    res.render('product', {
+        msgs: req.flash('success'),
+        title: product,
+        test: product
+    });
+
+    // if (product == 'stock_lenses') {
+    //     res.render('product_stock_lenses', {
+    //         msgs: req.flash('success'),
+    //         test: 'Stock Lenses'
+    //     });
+    // } else {
+    //     res.render('product', {
+    //         msgs: req.flash('success'),
+    //         test: 'Hello Product'
+    //     });
+    // }
 };
 // ------------------------ END
 
