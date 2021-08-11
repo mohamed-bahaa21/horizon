@@ -1,4 +1,4 @@
-require('dotenv').config({ path: 'config/dev.env' })
+require('dotenv').config({ path: 'config/prod.env' })
 const path = require('path')
 global.__basename = __dirname;
 
@@ -94,7 +94,7 @@ app.use(
         path: '/',
         httpOnly: false,
         secure: true,
-        domain: 'horizon.aykmall.net',
+        domain: 'aykmall.net',
         expires: expiryDate
     }),
     csrf(),
