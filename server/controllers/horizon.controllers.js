@@ -50,6 +50,18 @@ exports.getComingSoon = (req, res) => {
     });
 };
 
+// exports.getunknown = (req, res) => {
+//     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+//     logger.error("GET 404 Not Found", fullUrl);
+//     res.redirect('/404');
+// }
+
+exports.get404 = (req, res) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    logger.error("GET 404 Not Found", fullUrl);
+    res.status(404).render('404/index');
+};
+
 // START User -> Brand Page
 exports.getBrand = (req, res) => {
     const {

@@ -1,2 +1,15 @@
 8/3/2021, 11:34:52 PM | ERROR | return brand datadata "Zeissas" | 
 8/3/2021, 11:34:52 PM | ERROR | return brand datadata "Unknown" | 
+8/11/2021, 5:50:21 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/404" | 
+8/11/2021, 5:54:46 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/404" | 
+8/11/2021, 5:54:47 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/404" | 
+8/11/2021, 5:54:58 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/404" | 
+8/11/2021, 5:54:58 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/404" | 
+8/11/2021, 5:56:53 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/asd" | 
+8/11/2021, 5:56:54 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 5:57:05 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 5:57:05 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 5:57:15 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/hello" | 
+8/11/2021, 5:57:15 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 5:58:50 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/cascx" | 
+8/11/2021, 5:58:50 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
