@@ -8,8 +8,8 @@
 
 # production
 /build
-/log
 /logs
+/log
 
 # misc
 .eslintcache
