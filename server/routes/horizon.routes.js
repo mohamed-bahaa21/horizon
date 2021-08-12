@@ -9,15 +9,15 @@ const horizonController = require(path.resolve(__basename, 'controllers', 'horiz
 
 // GLOBAL HEADER CONTROLLER
 route.get('/*', function (req, res, next) {
-   res.header('Content-Security-Policy', "img-src self http://pngimg.com/uploads/glasses https://firebasestorage.googleapis.com https://via.placeholder.com");
-   res.header('Content-Security-Policy', "script-src self https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js");
-   res.header('Content-Security-Policy', "frame-src self https://www.google.com/");
-   next();
+    res.header('Content-Security-Policy', "img-src self http://pngimg.com/uploads/glasses https://firebasestorage.googleapis.com https://via.placeholder.com");
+    res.header('Content-Security-Policy', "script-src self https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js");
+    res.header('Content-Security-Policy', "frame-src self https://www.google.com/");
+    next();
 });
 
 // USER_PAGES
 route.get('/', horizonController.getLanding);
-// route.get('/', horizonController.getComingSoon)
+route.get('/coming-soon', horizonController.getComingSoon)
 
 route.get('/about-us', horizonController.getAbout);
 route.get('/news', horizonController.getBlogs);
@@ -89,6 +89,11 @@ route.get('/api/gallery', horizonController.gallery);
 route.post('/api/postImgToGallery', horizonController.postImgToGallery);
 route.get('/api/mailing-list', horizonController.mailList);
 route.post('/api/subscribe', horizonController.subscribe);
+
+
+// 404
+// route.get('/404', horizonController.get404);
+route.get('*', horizonController.get404);
 
 module.exports = route;
 

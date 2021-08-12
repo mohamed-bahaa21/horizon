@@ -1,2 +1,16 @@
-8/3/2021, 11:34:52 PM | ERROR | return brand datadata "Zeissas" | 
-8/3/2021, 11:34:52 PM | ERROR | return brand datadata "Unknown" | 
+8/11/2021, 6:40:48 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/accessories" | 
+8/11/2021, 6:40:48 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 6:40:59 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/online_ordering" | 
+8/11/2021, 6:40:59 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 6:41:07 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/products_services" | 
+8/11/2021, 6:41:08 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/assets/coming-soon/images/horizon/1.JPG" | 
+8/11/2021, 7:00:15 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/robots.txt" | 
+8/11/2021, 8:51:58 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/solr/" | 
+8/11/2021, 9:05:25 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/wp-content/plugins/iva-business-hours-pro/assets/fontello/LICENSE.txt" | 
+8/11/2021, 9:52:29 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/robots.txt" | 
+8/11/2021, 9:52:29 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/sddas" | 
+8/11/2021, 10:14:58 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/accessories" | 
+8/11/2021, 10:30:00 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/online_ordering" | 
+8/11/2021, 10:56:48 PM | ERROR | GET 404 Not Founddata "http://localhost:5000/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application" | 
+8/12/2021, 12:04:30 AM | ERROR | GET 404 Not Founddata "http://localhost:5000/remote/fgt_lang?lang=/../../../..//////////dev/cmdb/sslvpn_websession" | 
+8/12/2021, 1:04:31 AM | ERROR | GET 404 Not Founddata "http://localhost:5000/products" | 
