@@ -8,13 +8,6 @@
 
 # production
 /build
-<<<<<<< HEAD
-/log
-/logs
-=======
-/logs
-/log
->>>>>>> 56466dc757188db0133706b6a7d73df7d700e89e
 
 # misc
 .eslintcache
