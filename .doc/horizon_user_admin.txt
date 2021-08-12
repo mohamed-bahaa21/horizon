@@ -1,3 +1,144 @@
+// this file only contains commits to the master branch from the horizon v3.0 repo.
+// other repos or branches are not included.
+
+commit 121b62d470475da55af0760229fdaf4664180c87
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Wed Aug 11 20:34:28 2021 +0200
+
+    updated: gitignore
+
+commit 9dcd588360d177543bde9cb6f847bf5f8cb7c336
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Wed Aug 11 19:18:45 2021 +0200
+
+    updated: brands, products, 404 routes
+
+commit d7e21a568259c972413baeb7e3df4ae03eee5377
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Wed Aug 11 18:58:13 2021 +0200
+
+    updated: logs, added: 404
+
+commit 23bbc2cc07a1d85d0ec235bdf05017c22fa1fd48
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Tue Aug 10 20:13:58 2021 +0200
+
+    updated: code counter
+
+commit 25842abbad34abd8b36612f10b7cd993c15ee3df
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Tue Aug 10 20:11:05 2021 +0200
+
+    updated:: controller new logs
+
+commit 391c970e1bc2a806b7abab05f60d40c21ca604ae
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 9 18:15:52 2021 +0200
+
+    updated:: 2 imgs http to https
+
+commit 4f44056b449b0f3632973718e4eb25a8a16b6fe3
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 9 18:02:15 2021 +0200
+
+    updated::security Content-Security-Policy img-src script-src frame-src
+
+commit 88fd72587dc55c59d07b01e2a5b2a97defeab2ee
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 9 14:36:24 2021 +0200
+
+    added:: global header controller
+
+commit bf17b9f66d27d68db974607033baf1434e686543
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 9 14:17:13 2021 +0200
+
+    updated:: commented trust proxy
+
+commit 541be74f2ec96230194d18a057aba021ca98efd0
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sun Aug 8 19:42:00 2021 +0200
+
+    added:: admin react build
+
+commit d7b443b597d300085b9987b1841e6d3e4433cca6
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sat Aug 7 19:22:05 2021 +0200
+
+    updated:: server port 3000
+
+commit a2aa7b823c833eea9d37b85ba0ef06b4cb1d1962
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sat Aug 7 18:53:48 2021 +0200
+
+    updated:: config dir, prod-env
+
+commit aef40618c31d972d56edcd800d00b5dcc5d99a05
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Thu Aug 5 14:15:30 2021 +0200
+
+    horizon changes
+
+commit 240509ed95b694191d8fe935b319bb05ebbbc2e0
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Tue Aug 3 23:38:04 2021 +0200
+
+    added:: winston logger service
+
+commit b55188a1f01e7091db45d7b8b2ef207376f2755f
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Tue Aug 3 18:59:17 2021 +0200
+
+    updated::security:: tls, helmet, session & cookies, snyk, csurf, cors
+
+commit 6e84cf7fff8c9f8857e2e393989e08989924519e
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 2 18:42:23 2021 +0200
+
+    updated:: editss
+
+commit 4de015a9f116cbf677883e967ff4539437231c71
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 2 15:33:15 2021 +0200
+
+    updated:: blogs page, blog-layout page
+
+commit 134fccb6a6f43b1f24ff7f05533b46a52905f898
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Mon Aug 2 12:09:17 2021 +0200
+
+    added:: NODE_ENV
+
+commit 7a6c758054b3dd66d3fe7d22d13e6e24845b9ea7
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sun Aug 1 19:28:11 2021 +0200
+
+    added:: node compression middleware
+
+commit c1c3e7081e6b7d28b0dd5eb14c402c99b210ef65
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sun Aug 1 19:23:49 2021 +0200
+
+    added:: force https redirection on production env
+
+commit 05cd201bf6a80b555c9ec553835ce7cd4ef5fc70
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sun Aug 1 19:11:36 2021 +0200
+
+    updated:: before after section homepage
+
+commit 8d1ea802435f6538950639ff943f97f48fd75343
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Tue Jul 27 03:33:00 2021 +0200
+
+    edited: SERVER_URI import (admin)
+
+commit a3bb658db06783aaf8d3599deb8ff6bce77299da
+Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
+Date:   Sun Jul 25 11:24:51 2021 +0200
+
+    added:: commits log.txt | edited:: routes
+
 commit c28641b815a76fe188e3e0b366419817237b8c64
 Author: Mohamed-Elzohary <MohamedElzohary2001@outlook.com>
 Date:   Sat Jul 10 13:38:51 2021 +0200
