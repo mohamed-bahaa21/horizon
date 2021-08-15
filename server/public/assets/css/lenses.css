@@ -211,7 +211,7 @@
   z-index: 2;
 }
 
-.lens_card::after {
+.lens_card:hover::after {
   content: "Box";
   position: absolute;
   left: -45%;
@@ -276,7 +276,7 @@
 }
 
 .lens_card.lens_padding::after {
-  content: "1st Layer";
+  content: "Hydrophobic Layer";
   box-shadow: 0 0 30px -10px black;
 }
 
@@ -310,7 +310,7 @@
 }
 
 .lens_card.lens_border::after {
-  content: "2nd Layer";
+  content: "AR Layer";
   box-shadow: 0 0 30px -10px black;
 }
 
@@ -344,7 +344,7 @@
 }
 
 .lens_card.lens_background::after {
-  content: "3rd Layer";
+  content: "Adhesive Layer";
 }
 
 .lens_card.lens_box-shadow {
@@ -364,7 +364,7 @@
 }
 
 .lens_card.lens_box-shadow::after {
-  content: "4th Layer";
+  content: "HC Layer";
 }
 
 p:first-of-type {

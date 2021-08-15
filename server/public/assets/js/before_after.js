@@ -5,7 +5,6 @@ $(document).on('click', '.map-point-sm', function (e) {
     $(this).addClass("mlod_link_active").siblings().removeClass("mlod_link_active");
 });
 
-
 $("#slider").on("input change", (e) => {
     const sliderPos = e.target.value;
     // Update the width of the foreground image

@@ -1,13 +1,14 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 
-const _nav = [{
-    _tag: 'CSidebarNavItem',
-    name: 'Dashboard',
-    to: '/dashboard',
-    icon: < CIcon name = "cil-speedometer"
-    customClasses = "c-sidebar-nav-icon" / >
-  },
+const _nav = [
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: 'Dashboard',
+  //   to: '/dashboard',
+  //   icon: `< CIcon name="cil-speedometer"
+  //     customClasses="c-sidebar-nav-icon" />`
+  // },
   {
     _tag: 'CSidebarNavTitle',
     _children: ['Landing Page Sections']
@@ -146,13 +147,13 @@ const _nav = [{
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Logos',
-    icon: 'cil-ban',
-    addLinkClass: 'c-disabled',
-    'disabled': true
-  },
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: 'Logos',
+  //   icon: 'cil-ban',
+  //   addLinkClass: 'c-disabled',
+  //   'disabled': true
+  // },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
@@ -170,11 +171,18 @@ const _nav = [{
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Map',
+    name: 'Online Ordering',
     icon: 'cil-ban',
     addLinkClass: 'c-disabled',
     'disabled': true
   },
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: 'Map',
+  //   icon: 'cil-ban',
+  //   addLinkClass: 'c-disabled',
+  //   'disabled': true
+  // },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-3'
@@ -183,17 +191,17 @@ const _nav = [{
 
 
 
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Footer',
-    icon: 'cil-ban',
-    addLinkClass: 'c-disabled',
-    'disabled': true
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-3'
-  },
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: 'Footer',
+  //   icon: 'cil-ban',
+  //   addLinkClass: 'c-disabled',
+  //   'disabled': true
+  // },
+  // {
+  //   _tag: 'CSidebarNavDivider',
+  //   className: 'm-3'
+  // },
 
 
 
@@ -225,48 +233,21 @@ const _nav = [{
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Blog',
-    icon: 'cil-ban',
-    addLinkClass: 'c-disabled',
-    'disabled': true
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-  {
-    _tag: 'CSidebarNavDivider',
-    className: 'm-1'
-  },
-
-
-
-  {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Components for Dashboard']
-  },
+  // {
+  //   _tag: 'CSidebarNavItem',
+  //   name: 'Blog',
+  //   icon: 'cil-ban',
+  //   addLinkClass: 'c-disabled',
+  //   'disabled': true
+  // },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
   {
-    _tag: 'CSidebarNavItem',
-    name: 'Charts',
-    to: '/charts',
-    icon: 'cil-chart-pie',
-  },
-  {
     _tag: 'CSidebarNavDivider',
     className: 'm-1'
   },
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Widgets',
-    to: '/widgets',
-    icon: 'cil-calculator',
-  }
 ]
 
 export default _nav

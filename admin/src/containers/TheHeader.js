@@ -64,12 +64,12 @@ const TheHeader = () => {
 
       <CHeaderNav className="d-md-down-none mr-auto">
         {/* Dashboard Page */}
-        <CHeaderNavItem className="px-3">
+        {/* <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/dashboard">Dashboard</CHeaderNavLink>
-        </CHeaderNavItem>
+        </CHeaderNavItem> */}
         {/* Users Page */}
         <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/users">Users</CHeaderNavLink>
+          <CHeaderNavLink to="/gallery">Gallery</CHeaderNavLink>
         </CHeaderNavItem>
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/mailing-list">Mailing List</CHeaderNavLink>

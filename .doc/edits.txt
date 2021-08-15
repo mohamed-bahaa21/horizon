@@ -71,3 +71,27 @@
 - Brands page
     - One slider for each Design
     http://www.betaoptik.com/en/coatings/pixarUv
+------------------------------------------------------------
+ADMIN:
+- remove top span grey BG
+- remove underscore from ceckbox input   
+- sections w/ database
+- lens info 1 to w/ database
+
+USER:
+Sections
+- NAV: subtasks
+
+- HERO: lenses tooltips on hover (DONE)
+- HERO: expand lenses onLoad & onScroll (...)
+- HERO: 3D design lens
+- HERO: link 
+- News: link
+- News: img bg w/ safari 
+
+- before_after: design #1
+- before_after: sub-tabs
+- brands: title, before_after
+- products: title, design tabs, 
+- online_ordering: form 
+- 
