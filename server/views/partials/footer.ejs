@@ -17,13 +17,17 @@
                     <form class="subscribe-form row m-0 align-items-center" action="/api/subscribe" method="POST">
                         <div class="col-lg-9 col-md-8">
                             <div class="form-group mb-0">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                 <input name="mail_email" id="mail_email" type="email" class="form-control"
                                     placeholder="Enter Your Email" />
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-4">
-                            <a href="#"
-                                class="btn btn-primary shadow d-block btn-colord btn-theme"><span>subscribe</span></a>
+                            <!-- <a href="#" class="btn btn-primary shadow d-block btn-colord btn-theme">
+                                <span>Subscribe</span>
+                            </a> -->
+                            <input type="submit" class="btn btn-primary shadow d-block btn-colord btn-theme"
+                                placeholder="Subscribe" />
                         </div>
                     </form>
         </div>
