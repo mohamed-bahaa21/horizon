@@ -1223,9 +1223,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     10. START SCREENSHOTS SECTION
 ------------------------------*/
 
-#screenshot {
-    
-}
+#screenshot {}
 
 .screenshots .screenshots-slider {
     margin: 0 -15px;
@@ -1688,6 +1686,10 @@ footer .subscribe .subscribe-form-2 .form-group {
     margin-right: 15px;
 }
 
+.news-meta li svg {
+    margin: 0 0.25rem;
+}
+
 .news-meta ul li span {
     margin-right: 5px;
 }
@@ -2016,6 +2018,12 @@ footer .copyright p {
     margin: 0;
 }
 
+.blog-img {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
 .blog-page .blog-box .blog-img a {
     display: block;
 }
@@ -2163,6 +2171,10 @@ aside.sidebar .follow-me ul li {
     margin-bottom: 10px;
 }
 
+aside.sidebar .follow-me ul li svg {
+    color: white;
+}
+
 aside.sidebar .follow-me ul li a {
     font-size: 30px;
     height: 80px;
@@ -2266,7 +2278,7 @@ aside.sidebar .tags ul li {
 .single-blog-page .blog-box .blog-details h3 {
     font-size: 22px;
     font-weight: 900;
-    margin: 0;
+    margin: 1rem 0;
 }
 
 .single-blog-page .blog-box .blog-img img {

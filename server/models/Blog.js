@@ -27,7 +27,11 @@ const BlogSchema = new Schema({
         type: String,
         required: true
     },
-    "bg": {
+    "main_img": {
+        type: String,
+        required: true
+    },
+    "thumb_img": {
         type: String,
         required: true
     }
