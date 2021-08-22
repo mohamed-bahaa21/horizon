@@ -200,7 +200,7 @@ class TechnicalInfo extends Component {
                     dismissible={`${true}`}
                   >
                     <strong>Updated</strong> Successfully...
-                    </CAlert>
+                  </CAlert>
                 </CToast>
               </CToaster >
             </div>
@@ -213,7 +213,8 @@ class TechnicalInfo extends Component {
             <CFormGroup>
               {/* #1 */}
               {/* Checkbox to Toggle Sections */}
-              <h4>{this.state.ti_section_display ? "Show" : "hide"}</h4>
+              {/* OLD CHECKBOX *RIP* */}
+              {/* <h4>{this.state.ti_section_display ? "Show" : "hide"}</h4>
               <a href="#" role="button" onClick={this.toggleCheckbox}>
                 <input
                   type="checkbox"
@@ -221,7 +222,20 @@ class TechnicalInfo extends Component {
                   name="ti_section_display"
                   checked={this.state.ti_section_display}
                   readOnly
-                />_Show Section</a>
+                />_Show Section</a> */}
+
+              {/* NEW LOOK - it's all about that */}
+              <a class="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+                <label class="show_design">
+                  <input class="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.ti_section_display} readOnly />
+                  <span class="label__text">
+                    <span class="label__check">
+                      <i class="fa fa-check icon"></i>
+                    </span>
+                  </span>
+                  <label class="show_design_label" for="show_design">Show Section</label>
+                </label>
+              </a>
             </CFormGroup>
 
             <CFormGroup>

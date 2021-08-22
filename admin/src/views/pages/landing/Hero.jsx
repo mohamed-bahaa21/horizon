@@ -148,7 +148,7 @@ class Hero extends Component {
                     dismissible={`${true}`}
                   >
                     <strong>Updated</strong> Successfully...
-                    </CAlert>
+                  </CAlert>
                 </CToast>
               </CToaster >
             </div>
@@ -259,8 +259,10 @@ class Hero extends Component {
                   <CFormGroup>
                     {/* #1 */}
                     {/* Checkbox to show the lenses design */}
-                    <h4>{this.state.design_state ? "Show" : "hide"}</h4>
-                    <a href="#" role="button" onClick={this.toggleCheckbox}>
+                    {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
+
+                    {/* OLD CHECKBOX *RIP* */}
+                    {/* <a href="#" role="button" onClick={this.toggleCheckbox}>
                       <input
                         type="checkbox"
                         title="design_state"
@@ -268,7 +270,20 @@ class Hero extends Component {
                         checked={this.state.design_state}
                         readOnly
                       />
-                       _Show Lenses Design
+                      Show Lenses Design
+                    </a> */}
+
+                    {/* NEW LOOK - it's all about that */}
+                    <a class="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+                      <label class="show_design">
+                        <input class="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.design_state} readOnly />
+                        <span class="label__text">
+                          <span class="label__check">
+                            <i class="fa fa-check icon"></i>
+                          </span>
+                        </span>
+                        <label class="show_design_label" for="show_design">Show Lenses Design</label>
+                      </label>
                     </a>
                   </CFormGroup>
 

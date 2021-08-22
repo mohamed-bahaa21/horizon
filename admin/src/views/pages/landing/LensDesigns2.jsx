@@ -191,7 +191,7 @@ class LensDesigns1 extends Component {
               <CInputGroup className="mb-3">
                 <CInputGroupText id="basic-addon3">
                   Paste Image URL
-              </CInputGroupText>
+                </CInputGroupText>
                 <CInput
                   type="text"
                   placeholder="design_img"
@@ -288,7 +288,7 @@ class LensDesigns1 extends Component {
                     dismissible={`${true}`}
                   >
                     <strong>Updated</strong> Successfully...
-                    </CAlert>
+                  </CAlert>
                 </CToast>
               </CToaster >
             </div>
@@ -301,7 +301,7 @@ class LensDesigns1 extends Component {
             <CFormGroup>
               {/* #1 */}
               {/* Checkbox to Toggle Sections */}
-              <h4>{this.state.ld2_section_display ? "Show" : "hide"}</h4>
+              {/* <h4>{this.state.ld2_section_display ? "Show" : "hide"}</h4>
               <a href="#" role="button" onClick={this.toggleCheckbox}>
                 <input
                   type="checkbox"
@@ -309,7 +309,31 @@ class LensDesigns1 extends Component {
                   name="ld2_section_display"
                   checked={this.state.ld2_section_display}
                   readOnly
-                />_Show Section</a>
+                />_Show Section</a> */}
+              {/* OLD CHECKBOX *RIP* */}
+              {/* <h4>{this.state.ld1_section_display ? "Show" : "hide"}</h4>
+              <a href="#" role="button" onClick={this.toggleCheckbox}>
+                <input
+                  type="checkbox"
+                  title="ld1_section_display"
+                  name="ld1_section_display"
+                  checked={this.state.ld1_section_display}
+                  readOnly
+                />_Show Section</a> */}
+              {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
+
+              {/* NEW LOOK - it's all about that */}
+              <a class="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+                <label class="show_design">
+                  <input class="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.ld2_section_display} readOnly />
+                  <span class="label__text">
+                    <span class="label__check">
+                      <i class="fa fa-check icon"></i>
+                    </span>
+                  </span>
+                  <label class="show_design_label" for="show_design">Show Section</label>
+                </label>
+              </a>
             </CFormGroup>
 
             <CFormGroup>
