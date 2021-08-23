@@ -18,6 +18,81 @@ const { sections } = require('../sample.data/landing.sections.model')
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
+logStringContent = (string) => {
+    // console.log(string);
+    let tmp_result = { "tag": string.tag, "classes": string.classes, "content": "string" };
+
+    return tmp_result;
+}
+
+logArrayContent = (array) => {
+    // console.log(array);
+    let tmp_result = { "tag": array.tag, "classes": array.classes, "content": checkSectionContent(array.content) };
+
+    return tmp_result;
+}
+
+logObjectContent = (object) => {
+    // console.log(object);
+    let tmp_result = { "tag": object.tag, "classes": object.classes, "content": checkSectionContent(object.content) };
+
+    return tmp_result;
+}
+
+checkSectionContent = (section_content) => {
+
+    let result = [];
+
+
+    if (typeof (section_content) == "string") {
+        let tmp_str;
+        tmp_str = logStringContent(section_content);
+
+        result.push(tmp_str);
+
+    } else if (typeof (section_content) == "object" && Array.isArray(section_content)) {
+        let tmp_arr = [];
+
+        section_content.forEach(content => {
+            tmp_arr.push(logArrayContent(content));
+        })
+
+        result.push(tmp_arr);
+
+    } else if (typeof (section_content) == "object" && !Array.isArray(section_content)) {
+        let tmp_result;
+        tmp_result = logObjectContent(section_content);
+
+        result.push(tmp_result);
+
+    } else {
+        let tmp_result = { "tag": "unknown", "content": typeof (section_content) };
+
+        result.push(tmp_result);
+    }
+
+    return result;
+
+    // console.log('result: ', result);
+    // console.log('content: ', typeof (content));
+    // console.log('____________________________________');
+    // if (typeof (content) == "string") {
+    //     result += `{${content.tag}, ${typeof (content.content)}}, `;
+    // } else if (typeof (content) == "object") {
+    //     if (Array.isArray(content)) {
+    //         content.map(cont => {
+    //             array_content = []
+    //             checkContentArray(result, cont);
+    //         });
+    //     } else {
+    //         result += `{${content.tag}, ${typeof (content.content)}}, `;
+    //         this.content = content;
+    //         this.result = result;
+    //         return checkSectionContent(result, content.content);
+    //     }
+    // }
+}
+
 // landing local_data
 exports.getLandingLocal = (req, res) => {
     // console.log(blogs;      
@@ -25,10 +100,21 @@ exports.getLandingLocal = (req, res) => {
     // logger.info("return Landing PAGE & DATA", result);
     // logger.info("return Blogs Data", blogs);
 
-    res.render('local_index', {
-        msgs: req.flash('success'),
-        sections: sections
+    let result = [];
+
+    sections.map(section => {
+
+        let section_content = checkSectionContent(section.content);
+
+        result.push({ "tag": section.tag, "classes": section.classes, "content": section_content });
     });
+
+    res.send(result);
+
+    // res.render('local_index', {
+    //     msgs: req.flash('success'),
+    //     sections: sections
+    // });
 };
 
 // Landing Page

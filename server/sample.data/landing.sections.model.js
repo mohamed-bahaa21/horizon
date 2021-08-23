@@ -68,88 +68,185 @@ style="background: linear-gradient(355deg, #241F1F 90%, #0d0b0b 0%);">
 
 exports.sections = [
     {
-        // #1
-        _id: '0',
-        tag: 'div',
-        id: '',
-        classes: 'content-bottom',
-        content: {
-            // #2
-            _id: '0',
-            tag: 'div',
-            id: '',
-            classes: 'container',
-            content: {
-                // #3
-                _id: '0',
-                tag: 'div',
-                id: '',
-                classes: 'row align-items-center',
-                content: {
-                    // #4
-                    id: '0',
-                    index: '0',
-                    tag: 'div',
-                    classes: 'col-md-6',
-                    attrs: `data-aos="fade-right"`,
-                    content: [
-                        // $5
-                        {
-                            index: '0',
-                            tag: 'h1',
-                            id: '',
-                            classes: '',
-                            style: 'font-weight: 900; color: #E2B55D;',
-                            attrs: '',
-                            content: 'Horizon'
-                        },
-                        {
-                            index: '2',
-                            tag: 'p',
-                            id: 'hero-parag-1',
-                            classes: 'white mb-0',
-                            style: '',
-                            attrs: '',
-                            content: 'lorem ipusum osdpasc cmkfdsv joasdcmnoai aosjcn9siou aoskcmokasm odjfnv kasjcnk vcop coasjnicakn cakosc csac.'
-                        },
-                        {
-                            index: '3',
-                            tag: 'h2',
-                            id: 'hero-header-1',
-                            classes: '',
-                            style: '',
-                            attrs: '',
-                            content: 'Its all about vision'
-                        },
-                        {
-                            index: '4',
-                            tag: 'p',
-                            id: 'hero-parag-2',
-                            classes: 'white',
-                            style: '',
-                            attrs: '',
-                            content: 'c,sapdcmoasnvs asodcknmasopdnvc opasmkdco'
-                        },
-                        {
-                            index: '5',
-                            tag: 'a',
-                            id: 'hero-link-1',
-                            classes: 'btn btn-primary',
-                            style: '',
-                            href: 'https://google.com',
-                            attrs: '',
-                            content: {
-                                tag: 'span',
-                                content: {
-                                    tag: 'b',
-                                    content: 'Click Here'
+        "_id": "0",
+        "lvl": "0",
+        "tag": "div",
+        "id": "",
+        "classes": "content-bottom",
+        "content": {
+            "_id": "0",
+            "lvl": "1",
+            "tag": "div",
+            "id": "",
+            "classes": "container",
+            "content": {
+                "_id": "0",
+                "lvl": "2",
+                "tag": "div",
+                "id": "",
+                "classes": "row align-items-center",
+                "content": [
+                    {
+                        "id": "0",
+                        "lvl": "3",
+                        "index": "0",
+                        "tag": "div",
+                        "classes": "col-md-6",
+                        "attrs": "data-aos='fade-right'",
+                        "content": [
+                            {
+                                "lvl": "4",
+                                "index": "0",
+                                "tag": "h1",
+                                "id": "",
+                                "classes": "",
+                                "style": "'font-weight': 900; 'color': #E2B55D;",
+                                "attrs": "",
+                                "content": "Horizon"
+                            },
+                            {
+                                "lvl": "4",
+                                "index": "2",
+                                "tag": "p",
+                                "id": "hero-parag-1",
+                                "classes": "white mb-0",
+                                "style": "",
+                                "attrs": "",
+                                "content": "lorem ipusum osdpasc cmkfdsv joasdcmnoai aosjcn9siou aoskcmokasm odjfnv kasjcnk vcop coasjnicakn cakosc csac."
+                            },
+                            {
+                                "lvl": "4",
+                                "index": "3",
+                                "tag": "h2",
+                                "id": "hero-header-1",
+                                "classes": "",
+                                "style": "",
+                                "attrs": "",
+                                "content": "Its all about vision"
+                            },
+                            {
+                                "lvl": "4",
+                                "index": "4",
+                                "tag": "p",
+                                "id": "hero-parag-2",
+                                "classes": "white",
+                                "style": "",
+                                "attrs": "",
+                                "content": "c,sapdcmoasnvs asodcknmasopdnvc opasmkdco"
+                            },
+                            {
+                                "lvl": "4",
+                                "index": "5",
+                                "tag": "a",
+                                "id": "hero-link-1",
+                                "classes": "btn btn-primary",
+                                "style": "",
+                                "href": "https://google.com",
+                                "attrs": "",
+                                "content": {
+                                    "lvl": "5",
+                                    "tag": "span",
+                                    "content": {
+                                        "lvl": "6",
+                                        "tag": "b",
+                                        "content": "Click Here"
+                                    }
                                 }
                             }
-                        },
-                    ]
-                }
+                        ]
+                    },
+                    {
+                        "id": "0",
+                        "lvl": "3",
+                        "index": "0",
+                        "tag": "div",
+                        "classes": "col-md-6",
+                        "attrs": "data-aos='fade-left' data-aos-delay='200'",
+                        "content": {
+                            "lvl": "4",
+                            "tag": "div",
+                            "classes": "stack",
+                            "content": [
+                                {
+                                    "lvl": "5",
+                                    "tag": "div",
+                                    "classes": "lens_content lens_card",
+                                    "content": [
+                                        {
+                                            "lvl": "6",
+                                            "tag": "p",
+                                            "classes": "white",
+                                            "content": {
+                                                "lvl": "7",
+                                                "tag": "b",
+                                                "content": [
+                                                    {
+                                                        "lvl": "8",
+                                                        "tag": 'span',
+                                                        "id": "desktop-prompt",
+                                                        "classes": "white",
+                                                        "content": "Hover"
+                                                    },
+                                                    {
+                                                        "lvl": "8",
+                                                        "tag": 'span',
+                                                        "id": "mobile-prompt",
+                                                        "classes": "white",
+                                                        "content": "Tap"
+                                                    },
+                                                    {
+                                                        "lvl": "8",
+                                                        "tag": 'span',
+                                                        "content": "To See"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "lvl": "6",
+                                            "tag": "p",
+                                            "classes": "white",
+                                            "style": "font-size: 1rem;font-weight: 600;line-height: 1.5rem;",
+                                            "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique atque vero accusamus, dolorem quae voluptates laudantium magnam quod."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "lvl": "5",
+                                    "tag": "div",
+                                    "classes": "lens_padding lens_card"
+                                },
+                                {
+                                    "lvl": "5",
+                                    "tag": "div",
+                                    "classes": "lens_border lens_card"
+                                },
+                                {
+                                    "lvl": "5",
+                                    "tag": "div",
+                                    "classes": "lens_background lens_card"
+                                },
+                                {
+                                    "lvl": "5",
+                                    "tag": "div",
+                                    "classes": "lens_box-shadow lens_card"
+                                }
+
+
+
+                            ]
+                        }
+                    }
+                ]
             }
         }
-
     },
+    {
+        "_id": "0",
+        "lvl": "0",
+        "tag": "end",
+        "id": "",
+        "classes": "",
+        "content": "end"
+    }
 ]
