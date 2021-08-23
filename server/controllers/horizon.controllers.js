@@ -7,6 +7,8 @@ const Mail = require('../models/Mail');
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
 
+const { sections } = require('../sample.data/landing.sections.model')
+
 // const htmlparser2 = require('htmlparser2');
 
 // const SENDGRID_API = process.env.SENDGRID_API
@@ -15,6 +17,19 @@ const logger = new Logger('horizon.controller');
 
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+// landing local_data
+exports.getLandingLocal = (req, res) => {
+    // console.log(blogs;      
+    // console.log(result[4]);
+    // logger.info("return Landing PAGE & DATA", result);
+    // logger.info("return Blogs Data", blogs);
+
+    res.render('local_index', {
+        msgs: req.flash('success'),
+        sections: sections
+    });
+};
 
 // Landing Page
 exports.getLanding = (req, res) => {
