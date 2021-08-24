@@ -11,8 +11,8 @@
 }
 
 .show_design_label {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1em;
   letter-spacing: 0rem;
   cursor: pointer;
   margin: 0;
@@ -23,6 +23,9 @@
   color: #303C54;
   display: inline-block;
 }
+.show_design_link label{
+  margin-bottom: 0;
+}
 
 .label__checkbox {
   display: none;
@@ -30,13 +33,13 @@
 
 .label__check {
   display: inline-block;
-  border-radius: 50%;
+  // border-radius: 50%;
   border: 5px solid rgba(0, 0, 0, 0.1);
   background: white;
   vertical-align: middle;
-  margin-right: 20px;
-  width: 2rem;
-  height: 2rem;
+  margin-right: 0.5rem;
+  width: 2rem !important;
+  height: 1.5rem !important;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -89,40 +92,40 @@
 
 @keyframes check {
   0% {
-    width: 1.5em;
-    height: 1.5em;
-    border-width: 5px;
+    // width: 1.5em;
+    // height: 1.5em;
+    // border-width: 5px;
   }
 
   10% {
-    width: 1.5em;
-    height: 1.5em;
+    // width: 1.5em;
+    // height: 1.5em;
+    // border-width: 15px;
     opacity: 0.1;
     background: rgba(0, 0, 0, 0.2);
-    border-width: 15px;
   }
 
   12% {
-    width: 1.5em;
-    height: 1.5em;
+    // width: 1.5em;
+    // height: 1.5em;
+    // border-width: 0;
     opacity: 0.4;
     background: rgba(0, 0, 0, 0.1);
-    border-width: 0;
   }
 
   50% {
-    width: 2rem;
-    height: 2rem;
-    background: #00d478;
+    // width: 2rem;
+    // height: 2rem;
     border: 0;
+    background: #00d478;
     opacity: 0.6;
   }
 
   100% {
-    width: 2rem;
-    height: 2rem;
-    background: #00d478;
+    // width: 2rem;
+    // height: 2rem;
     border: 0;
+    background: #00d478;
     opacity: 1;
   }
 }
