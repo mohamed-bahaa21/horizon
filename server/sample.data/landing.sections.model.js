@@ -87,10 +87,11 @@ exports.sections = [
                 "classes": "row align-items-center",
                 "content": [
                     {
-                        "id": "0",
+                        "_id": "0",
                         "lvl": "3",
                         "index": "0",
                         "tag": "div",
+                        "id": "",
                         "classes": "col-md-6",
                         "attrs": "data-aos='fade-right'",
                         "content": [
@@ -156,29 +157,35 @@ exports.sections = [
                         ]
                     },
                     {
-                        "id": "0",
+                        "_id": "0",
                         "lvl": "3",
                         "index": "0",
                         "tag": "div",
+                        "id": "",
                         "classes": "col-md-6",
                         "attrs": "data-aos='fade-left' data-aos-delay='200'",
                         "content": {
                             "lvl": "4",
                             "tag": "div",
+                            "id": "",
                             "classes": "stack",
                             "content": [
                                 {
                                     "lvl": "5",
                                     "tag": "div",
+                                    "id": "",
                                     "classes": "lens_content lens_card",
                                     "content": [
                                         {
                                             "lvl": "6",
                                             "tag": "p",
+                                            "id": "",
                                             "classes": "white",
                                             "content": {
                                                 "lvl": "7",
                                                 "tag": "b",
+                                                "id": "",
+                                                "classes": "",
                                                 "content": [
                                                     {
                                                         "lvl": "8",
@@ -197,6 +204,8 @@ exports.sections = [
                                                     {
                                                         "lvl": "8",
                                                         "tag": 'span',
+                                                        "id": "",
+                                                        "classes": "",
                                                         "content": "To See"
                                                     }
                                                 ]
@@ -205,6 +214,7 @@ exports.sections = [
                                         {
                                             "lvl": "6",
                                             "tag": "p",
+                                            "id": "",
                                             "classes": "white",
                                             "style": "font-size: 1rem;font-weight: 600;line-height: 1.5rem;",
                                             "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique atque vero accusamus, dolorem quae voluptates laudantium magnam quod."
@@ -214,21 +224,25 @@ exports.sections = [
                                 {
                                     "lvl": "5",
                                     "tag": "div",
+                                    "id": "",
                                     "classes": "lens_padding lens_card"
                                 },
                                 {
                                     "lvl": "5",
                                     "tag": "div",
+                                    "id": "",
                                     "classes": "lens_border lens_card"
                                 },
                                 {
                                     "lvl": "5",
                                     "tag": "div",
+                                    "id": "",
                                     "classes": "lens_background lens_card"
                                 },
                                 {
                                     "lvl": "5",
                                     "tag": "div",
+                                    "id": "",
                                     "classes": "lens_box-shadow lens_card"
                                 }
 
@@ -244,9 +258,9 @@ exports.sections = [
     {
         "_id": "0",
         "lvl": "0",
-        "tag": "end",
+        "tag": "span",
         "id": "",
         "classes": "",
-        "content": "end"
+        "content": "<hr>Powered By AYK"
     }
 ]

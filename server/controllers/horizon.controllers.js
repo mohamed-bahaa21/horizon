@@ -8,90 +8,11 @@ const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
 
 const { sections } = require('../sample.data/landing.sections.model')
-
-// const htmlparser2 = require('htmlparser2');
-
-// const SENDGRID_API = process.env.SENDGRID_API
-// const sgMail = require('@sendgrid/mail')
-// sgMail.setApiKey(SENDGRID_API)
-
-// const sgMail = require('@sendgrid/mail')
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-
-logStringContent = (string) => {
-    // console.log(string);
-    let tmp_result = { "tag": string.tag, "classes": string.classes, "content": "string" };
-
-    return tmp_result;
-}
-
-logArrayContent = (array) => {
-    // console.log(array);
-    let tmp_result = { "tag": array.tag, "classes": array.classes, "content": checkSectionContent(array.content) };
-
-    return tmp_result;
-}
-
-logObjectContent = (object) => {
-    // console.log(object);
-    let tmp_result = { "tag": object.tag, "classes": object.classes, "content": checkSectionContent(object.content) };
-
-    return tmp_result;
-}
-
-checkSectionContent = (section_content) => {
-
-    let result = [];
+const { checkSectionContent, parse_json_html_return } = require('./json_html.controllers')
 
 
-    if (typeof (section_content) == "string") {
-        let tmp_str;
-        tmp_str = logStringContent(section_content);
 
-        result.push(tmp_str);
 
-    } else if (typeof (section_content) == "object" && Array.isArray(section_content)) {
-        let tmp_arr = [];
-
-        section_content.forEach(content => {
-            tmp_arr.push(logArrayContent(content));
-        })
-
-        result.push(tmp_arr);
-
-    } else if (typeof (section_content) == "object" && !Array.isArray(section_content)) {
-        let tmp_result;
-        tmp_result = logObjectContent(section_content);
-
-        result.push(tmp_result);
-
-    } else {
-        let tmp_result = { "tag": "unknown", "content": typeof (section_content) };
-
-        result.push(tmp_result);
-    }
-
-    return result;
-
-    // console.log('result: ', result);
-    // console.log('content: ', typeof (content));
-    // console.log('____________________________________');
-    // if (typeof (content) == "string") {
-    //     result += `{${content.tag}, ${typeof (content.content)}}, `;
-    // } else if (typeof (content) == "object") {
-    //     if (Array.isArray(content)) {
-    //         content.map(cont => {
-    //             array_content = []
-    //             checkContentArray(result, cont);
-    //         });
-    //     } else {
-    //         result += `{${content.tag}, ${typeof (content.content)}}, `;
-    //         this.content = content;
-    //         this.result = result;
-    //         return checkSectionContent(result, content.content);
-    //     }
-    // }
-}
 
 // landing local_data
 exports.getLandingLocal = (req, res) => {
@@ -101,19 +22,25 @@ exports.getLandingLocal = (req, res) => {
     // logger.info("return Blogs Data", blogs);
 
     let result = [];
+    let html = ``;
 
     sections.map(section => {
 
         let section_content = checkSectionContent(section.content);
 
         result.push({ "tag": section.tag, "classes": section.classes, "content": section_content });
+        html += `<${section.tag} id="${section.id}" class="${section.classes}"> ${checkSectionContent(section.content)} </${section.tag}>`;
     });
 
-    res.send(result);
+    if (parse_json_html_return == "html") {
+        res.send(html);
+    } else {
+        res.send(result);
+    }
 
     // res.render('local_index', {
     //     msgs: req.flash('success'),
-    //     sections: sections
+    //     sections: html
     // });
 };
 
@@ -150,12 +77,6 @@ exports.getComingSoon = (req, res) => {
         msgs: req.flash('success')
     });
 };
-
-// exports.getunknown = (req, res) => {
-//     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-//     logger.error("GET 404 Not Found", fullUrl);
-//     res.redirect('/404');
-// }
 
 exports.get404 = (req, res) => {
     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -207,50 +128,7 @@ exports.getBrand = (req, res) => {
         });
     }
 };
-// ----------------------------------------------------------------- END
 
-// START User -> Product Page
-// DEPRECATED
-// exports.getFreeForm = (req, res) => {
-//     const {
-//         brand
-//     } = req.params;
-
-//     console.log(brand);
-
-//     if (brand == 'Zeiss') {
-//         res.render('product', {
-//             msgs: req.flash('success'),
-//             test: 'Hello Zeiss'
-//         });
-//     } else if (brand == 'ltl') {
-//         res.render('product', {
-//             msgs: req.flash('success'),
-//             test: 'Hello LTL'
-//         });
-
-//     } else if (brand == 'divel') {
-//         res.render('product', {
-//             msgs: req.flash('success'),
-//             test: 'Hello Divel'
-//         });
-
-//     } else if (brand == 'roger-bacon') {
-//         res.render('product', {
-//             msgs: req.flash('success'),
-//             test: 'Hello Roger-Bacon'
-//         });
-
-//     } else {
-//         res.render('product', {
-//             msgs: req.flash('success'),
-//             test: 'Hello Zeiss'
-//         });
-//     }
-// };
-// ------------------------ END
-
-// START User -> Product Page
 exports.getProduct = (req, res) => {
     const {
         product
@@ -805,60 +683,3 @@ exports.subscribe = (req, res) => {
         .catch((err) => res.status(400).json('Error: ' + err));
 };
 
-// const nodemailer = require('nodemailer')
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-// var transporter = nodemailer.createTransport({
-//     host: "smtp-mail.outlook.com", // hostname
-//     port: 587,
-//     secure: false, // true for 465, false for other ports
-//     auth: {
-//         user: 'horizon@outlook.com',
-//         pass: 'horizon123'
-//     }
-// });
-
-// const sendgridTransport = require('nodemailer-sendgrid-transport')
-// const {
-//     validationResult
-// } = require('express-validator')
-
-// const transporter = nodemailer.createTransport(sendgridTransport({
-//     auth: {
-//         api_key: sendgrid_api_key
-//     }
-// }))
-
-// Create the transporter with the required configuration for Outlook
-// change the user and pass !
-
-// setup e-mail data, even with unicode symbols
-// function setupMail(mail){
-//     var mailOptions = {
-//         from: '"Horiozon" <horizon@outlook.com>', // sender address (who sends)
-//         to: mail, // list of receivers (who receives)
-//         subject: 'Hello ', // Subject line
-//         text: 'Hello world ', // plaintext body
-//         html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
-//     };
-//     return mailOptions;
-// }
-
-// if (result) {
-//     const sendEmail = await sgMail.send({
-//         to: email,
-//         from: 'Horizon@outlook.com',
-//         subject: "You've signed up to Horizon, we are so excited to have you on board!",
-//         html: `
-//             <h3 style="text-align: left">
-//             Hey <b>${name}</b>!
-//             <br>
-//             You've successfully signed up <br>
-//             </h3>
-//             `
-//     });
-
-//     if (sendEmail) {
-//         const result = await req.flash('success', 'You Joined the Waitlist Successfully.')
-//     }
-//     return res.redirect('/')
-// }
