@@ -2,7 +2,8 @@ const path = require('path');
 const express = require('express');
 const route = express.Router();
 
-const horizonController = require(path.resolve(__basename, 'controllers', 'horizon.controllers'));
+const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
+const apiCtrl = require(path.resolve(__basename, 'controllers', 'api.controllers'));
 
 
 
@@ -16,18 +17,18 @@ route.get('/*', function (req, res, next) {
 });
 
 // USER_PAGES
-route.get('/', horizonController.getLandingLocal);
-route.get('/coming-soon', horizonController.getComingSoon)
+route.get('/', userCtrl.getLandingLocal);
+route.get('/coming-soon', userCtrl.getComingSoon)
 
-route.get('/about-us', horizonController.getAbout);
-route.get('/news', horizonController.getBlogs);
-route.get('/blog/:id', horizonController.getBlog);
+route.get('/about-us', userCtrl.getAbout);
+route.get('/news', userCtrl.getBlogs);
+route.get('/blog/:id', userCtrl.getBlog);
 
 // Brands pages
-route.get('/brands/:brand', horizonController.getBrand);
+route.get('/brands/:brand', userCtrl.getBrand);
 
 // Products pages
-route.get('/products/:product', horizonController.getProduct);
+route.get('/products/:product', userCtrl.getProduct);
 
 // DEPRECATED
 // Free Form pages
@@ -37,63 +38,63 @@ route.get('/products/:product', horizonController.getProduct);
 // Start API GET::POST
 
 // ADMIN -> Blogs Data
-route.get('/api/getBlogsData', horizonController.getBlogsData);
-route.post('/api/postBlogsData', horizonController.postBlogsData);
+route.get('/api/getBlogsData', apiCtrl.getBlogsData);
+route.post('/api/postBlogsData', apiCtrl.postBlogsData);
 
 // ADMIN -> About Data
-route.get('/api/getAboutData', horizonController.getAboutData);
-route.post('/api/postAboutData', horizonController.postAboutData);
+route.get('/api/getAboutData', apiCtrl.getAboutData);
+route.post('/api/postAboutData', apiCtrl.postAboutData);
 
 // ADMIN -> Hero Section
-route.get('/api/getLandingData', horizonController.getLandingData);
-route.post('/api/postHeroData', horizonController.postHeroData);
+route.get('/api/getLandingData', apiCtrl.getLandingData);
+route.post('/api/postHeroData', apiCtrl.postHeroData);
 
 // ADMIN -> Lens Designs 1 Section
-route.get('/api/getLensDesigns1', horizonController.getLensDesigns1);
-route.post('/api/postLensDesigns1', horizonController.postLensDesigns1);
+route.get('/api/getLensDesigns1', apiCtrl.getLensDesigns1);
+route.post('/api/postLensDesigns1', apiCtrl.postLensDesigns1);
 
 // ADMIN -> Lens Info 1 Section
-route.get('/api/getLensInfo1', horizonController.getLensInfo1);
-route.post('/api/postLensInfo1', horizonController.postLensInfo1);
+route.get('/api/getLensInfo1', apiCtrl.getLensInfo1);
+route.post('/api/postLensInfo1', apiCtrl.postLensInfo1);
 
 // ADMIN -> Lens Designs 2 Section
-route.get('/api/getLensDesigns2', horizonController.getLensDesigns2);
-route.post('/api/postLensDesigns2', horizonController.postLensDesigns2);
+route.get('/api/getLensDesigns2', apiCtrl.getLensDesigns2);
+route.post('/api/postLensDesigns2', apiCtrl.postLensDesigns2);
 
 // ADMIN -> Lens Info 1 Section
-route.get('/api/getLensInfo2', horizonController.getLensInfo2);
-route.post('/api/postLensInfo2', horizonController.postLensInfo2);
+route.get('/api/getLensInfo2', apiCtrl.getLensInfo2);
+route.post('/api/postLensInfo2', apiCtrl.postLensInfo2);
 
 // ADMIN -> Watch Video Section
-route.get('/api/getWatchVideo', horizonController.getWatchVideo);
-route.post('/api/postWatchVideo', horizonController.postWatchVideo);
+route.get('/api/getWatchVideo', apiCtrl.getWatchVideo);
+route.post('/api/postWatchVideo', apiCtrl.postWatchVideo);
 
 // ADMIN -> Screen Shots Section
-route.get('/api/getScreenShots', horizonController.getScreenShots);
-route.post('/api/postScreenShots', horizonController.postScreenShots);
+route.get('/api/getScreenShots', apiCtrl.getScreenShots);
+route.post('/api/postScreenShots', apiCtrl.postScreenShots);
 
 // ADMIN -> Lens Designs 3 Section
-route.get('/api/getLensDesigns3', horizonController.getLensDesigns3);
-route.post('/api/postLensDesigns3', horizonController.postLensDesigns3);
+route.get('/api/getLensDesigns3', apiCtrl.getLensDesigns3);
+route.post('/api/postLensDesigns3', apiCtrl.postLensDesigns3);
 
 // ADMIN -> Production Info Section
-route.get('/api/getProductionInfo', horizonController.getProductionInfo);
-route.post('/api/postProductionInfo', horizonController.postProductionInfo);
+route.get('/api/getProductionInfo', apiCtrl.getProductionInfo);
+route.post('/api/postProductionInfo', apiCtrl.postProductionInfo);
 
 // ADMIN -> Production Info Section
-route.get('/api/getTechnicalInfo', horizonController.getTechnicalInfo);
-route.post('/api/postTechnicalInfo', horizonController.postTechnicalInfo);
+route.get('/api/getTechnicalInfo', apiCtrl.getTechnicalInfo);
+route.post('/api/postTechnicalInfo', apiCtrl.postTechnicalInfo);
 
 // FUNCTIONALITIES
-route.get('/api/gallery', horizonController.gallery);
-route.post('/api/postImgToGallery', horizonController.postImgToGallery);
-route.get('/api/mailing-list', horizonController.mailList);
-route.post('/api/subscribe', horizonController.subscribe);
+route.get('/api/gallery', apiCtrl.gallery);
+route.post('/api/postImgToGallery', apiCtrl.postImgToGallery);
+route.get('/api/mailing-list', apiCtrl.mailList);
+route.post('/api/subscribe', apiCtrl.subscribe);
 
 
 // 404
 // route.get('/404', horizonController.get404);
-route.get('*', horizonController.get404);
+route.get('*', userCtrl.get404);
 
 module.exports = route;
 
