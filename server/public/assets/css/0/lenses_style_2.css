@@ -1,4 +1,4 @@
-/* OLD LENSES */
+/* New Update:: delete active  */
 .stack {
     padding: 3rem 0;
     display: grid;
@@ -27,11 +27,12 @@
 
 .stack:hover:before,
 .stack:before {
-    /* background: #241f1f;
-    box-shadow: 0 0 25px -5px black; */
+    /* background: #241F1F; */
+    /* box-shadow: 0 0 25px -5px black; */
 }
 
-.stack.loaded .lens_card {
+.stack:hover .lens_card,
+.stack .lens_card {
     border-radius: 50%;
     --bg-opacity: 5%;
 
@@ -47,57 +48,70 @@
         translateY(20vh) translateX(20vh);
 }
 
-.stack.loaded .lens_card:nth-child(1) {
-    --z-offset: 40vh;
+.stack:hover .lens_card:nth-child(1),
+.stack .lens_card:nth-child(1) {
+    --z-offset: 50vh;
 }
 
-.stack.loaded .lens_card:nth-child(2) {
-    --z-offset: 30vh;
+.stack:hover .lens_card:nth-child(2),
+.stack .lens_card:nth-child(2) {
+    --z-offset: 35vh;
 }
 
-.stack.loaded .lens_card:nth-child(3) {
+.stack:hover .lens_card:nth-child(3),
+.stack .lens_card:nth-child(3) {
+    --z-offset: 25vh;
+}
+
+.stack:hover .lens_card:nth-child(4),
+.stack .lens_card:nth-child(4) {
     --z-offset: 15vh;
 }
 
-.stack.loaded .lens_card:nth-child(4) {
-    --z-offset: 10vh;
+.stack:hover .lens_card:nth-child(5),
+.stack .lens_card:nth-child(5) {
+    --z-offset: 5vh;
 }
 
-.stack.loaded .lens_card:nth-child(5) {
-    --z-offset: 0vh;
-}
-
-.stack.loaded .lens_card:nth-child(1)::after {
+.stack:hover .lens_card:nth-child(1)::after,
+.stack .lens_card:nth-child(1)::after {
     transition-delay: 1.5s;
     -webkit-transition-delay: 1.5s;
 }
 
-.stack.loaded .lens_card:nth-child(2)::after {
+.stack:hover .lens_card:nth-child(2)::after,
+.stack .lens_card:nth-child(2)::after {
     transition-delay: 1.7s;
     -webkit-transition-delay: 1.7s;
 }
 
-.stack.loaded .lens_card:nth-child(3)::after {
+.stack:hover .lens_card:nth-child(3)::after,
+.stack .lens_card:nth-child(3)::after {
     transition-delay: 1.9s;
     -webkit-transition-delay: 1.9s;
 }
 
-.stack.loaded .lens_card:nth-child(4)::after {
+.stack:hover .lens_card:nth-child(4)::after,
+.stack .lens_card:nth-child(4)::after {
     transition-delay: 2.1s;
     -webkit-transition-delay: 2.1s;
 }
 
-.stack.loaded .lens_card:nth-child(5)::after {
+.stack:hover .lens_card:nth-child(5)::after,
+.stack .lens_card:nth-child(5)::after {
     transition-delay: 2.3s;
     -webkit-transition-delay: 2.3s;
 }
 
-.stack.loaded .lens_card::after {   
+.stack:hover .lens_card::after,
+.stack .lens_card::after {
+    opacity: 1;
     transform: rotate(-45deg) rotateY(45deg) translateX(0px);
     -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(0px);
 }
 
-.stack.loaded .lens_card.lens_content {
+.stack:hover .lens_card.lens_content,
+.stack .lens_card.lens_content {
     text-align: center;
     background: rgb(0, 0, 0, 0.5);
     color: white;
@@ -115,12 +129,14 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.stack.loaded .lens_card.lens_padding {
+.stack:hover .lens_card.lens_padding,
+.stack .lens_card.lens_padding {
     transition-delay: 0.1s;
     -webkit-transition-delay: 0.1s;
 }
 
-.stack.loaded .lens_card.lens_border {
+.stack:hover .lens_card.lens_border,
+.stack .lens_card.lens_border {
     transition-delay: 0.2s;
     -webkit-transition-delay: 0.2s;
 
@@ -133,7 +149,8 @@
     display: block;
 }
 
-.stack.loaded .lens_card.lens_background {
+.stack:hover .lens_card.lens_background,
+.stack .lens_card.lens_background {
     background: rgba(224, 196, 64, 0.5);
     transition: background-color 2s var(--easeInOutCirc) 0.3s,
         transform 2s var(--easeInOutCirc) 0.2s;
@@ -145,7 +162,8 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.stack.loaded .lens_card.lens_box-shadow {
+.stack:hover .lens_card.lens_box-shadow,
+.stack .lens_card.lens_box-shadow {
     transition-delay: 0.4s;
     -webkit-transition-delay: 0.4s;
     box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.4),
@@ -201,17 +219,17 @@
     position: absolute;
     left: -45%;
     top: 110%;
-    font-size: 1.15rem;
-    text-shadow: 0 1px 3px rgb(0 0 0 / 75%);
+    font-size: 1.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
     white-space: nowrap;
-    padding: 0.5rem 2rem;
-    border-radius: 1rem 3rem;
+    padding: 1ch 2ch;
+    border-radius: 4ch;
     opacity: 0;
     transition: opacity 0.5s ease 0s, transform 0.5s ease;
     -webkit-transition: opacity 0.5s ease 0s, transform 0.5s ease;
     transform: rotate(-45deg) rotateY(45deg) translateX(20px);
     -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(20px);
-    background: rgb(228 197 144 / 19%);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 540px) {
@@ -240,6 +258,7 @@
 .lens_card.lens_content::after {
     content: "Lens Description";
     left: -50%;
+    display: none;
 }
 
 @media (max-width: 540px) {

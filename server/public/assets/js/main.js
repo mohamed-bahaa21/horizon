@@ -18,10 +18,21 @@
 
     /*START PRELOADER JS & REFRESH AOS*/
     $window.on('load', function () {
-        $('.preloader').delay(350).fadeOut('slow');
-        AOS.refresh();
+        // $('.preloader').delay(350).fadeOut('slow');
+        // AOS.refresh();
+        $(".stack").addClass("loaded");
     });
     /*END PRELOADER JS & REFRESH AOS*/
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        //>=, not <=
+        if (scroll >= 500) {
+            //clearHeader, not clearheader - caps H
+            $(".stack").removeClass("loaded");
+        } else {
+            $(".stack").addClass("loaded");
+        }
+    }); //missing );
 
 
     $(document).ready(function () {
@@ -81,16 +92,16 @@
                 focusOnSelect: true,
                 arrows: false,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {}
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 1,
-                            centerPadding: '0',
-                        }
-                    },
+                    breakpoint: 1200,
+                    settings: {}
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        centerPadding: '0',
+                    }
+                },
                 ]
             });
         }
@@ -106,16 +117,16 @@
                 focusOnSelect: true,
                 arrows: false,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {}
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 1,
-                            centerPadding: '0',
-                        }
-                    },
+                    breakpoint: 1200,
+                    settings: {}
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        centerPadding: '0',
+                    }
+                },
                 ]
             });
         }
@@ -131,16 +142,16 @@
                 infinite: false,
                 arrows: false,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {}
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
+                    breakpoint: 1200,
+                    settings: {}
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
                 ]
             });
         }
@@ -162,16 +173,16 @@
                 infinite: false,
                 arrows: false,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {}
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
+                    breakpoint: 1200,
+                    settings: {}
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
                 ]
             });
         }
@@ -186,16 +197,16 @@
                 infinite: false,
                 arrows: true,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {}
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
+                    breakpoint: 1200,
+                    settings: {}
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
                 ]
             });
         }
@@ -210,16 +221,16 @@
                 infinite: false,
                 arrows: false,
                 responsive: [{
-                        breakpoint: 1200,
-                        settings: {}
-                    },
-                    {
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
+                    breakpoint: 1200,
+                    settings: {}
+                },
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
                 ]
             });
         }
