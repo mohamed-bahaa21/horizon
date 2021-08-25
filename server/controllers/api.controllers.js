@@ -7,9 +7,6 @@ const Mail = require('../models/Mail');
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
 
-const { sections } = require('../sample.data/landing.sections.model')
-const { checkSectionContent, parse_json_html_return } = require('./json_html.controllers')
-
 
 
 // Admin -> About Data

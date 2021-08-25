@@ -1,3 +1,6 @@
+const Landing = require('../models/Landing');
+// const { section } = require('../sample.data/landing.sections.model')
+
 // html OR json
 let parse_json_html_return = "html";
 exports.parse_json_html_return = parse_json_html_return;
@@ -113,3 +116,58 @@ exports.checkSectionContent = (section_content) => {
     //     }
     // }
 }
+
+
+
+// landing local_data
+exports.getLandingLocal = (req, res) => {
+
+    let result = [];
+    let html = ``;
+
+    // in case json_html data were array of sections
+    Landing.findOne({ section_index: 0 }).then(section => {
+        let content = section.section_content;
+
+        result.push({ "content": content });
+        html += `<${content.tag} id="${content.id}" class="${content.classes}"> ${this.checkSectionContent(content.content)} </${content.tag}>`;
+
+        if (parse_json_html_return == "html") {
+            // res.send(html);
+            res.render('local_index', {
+                msgs: req.flash('success'),
+                sections: html
+            });
+        } else {
+            res.send(result);
+        }
+    });
+
+
+    // section.section_content.map(section_content => {
+    //     let content = checkSectionContent(section_content.content);
+    //     result.push({ "tag": content.tag, "classes": content.classes, "content": content });
+    //     html += `<${content.tag} id="${content.id}" class="${content.classes}"> ${checkSectionContent(content.content)} </${content.tag}>`;
+    // });
+
+
+    // in case json_html data were object of one section
+    // Landing.findOne({ section_index: 0 }).then(section => {
+    //     let section_content = checkSectionContent(section.section_content);
+    //     console.log(section_content);
+    //     result.push({ "section_content": section_content });
+    //     html += `<${section_content.tag} id="${section_content.id}" class="${section_content.classes}"> ${checkSectionContent(section_content.content)} </${section_content.tag}>`;
+
+    //     if (parse_json_html_return == "html") {
+    //         // res.send(html);
+    //         res.render('local_index', {
+    //             msgs: req.flash('success'),
+    //             sections: html
+    //         });
+    //     } else {
+    //         res.send(result);
+    //     }
+    // });
+
+};
+

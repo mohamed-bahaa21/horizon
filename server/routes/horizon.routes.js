@@ -4,6 +4,7 @@ const route = express.Router();
 
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
 const apiCtrl = require(path.resolve(__basename, 'controllers', 'api.controllers'));
+const JsonHtmlParserCtrl = require(path.resolve(__basename, 'controllers', 'json_html_parser.controllers'));
 
 
 
@@ -17,7 +18,7 @@ route.get('/*', function (req, res, next) {
 });
 
 // USER_PAGES
-route.get('/', userCtrl.getLandingLocal);
+route.get('/', JsonHtmlParserCtrl.getLandingLocal);
 route.get('/coming-soon', userCtrl.getComingSoon)
 
 route.get('/about-us', userCtrl.getAbout);
