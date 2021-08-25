@@ -16,7 +16,7 @@ route.get('/*', function (req, res, next) {
 });
 
 // USER_PAGES
-route.get('/', horizonController.getLanding);
+route.get('/', horizonController.getLandingLocal);
 route.get('/coming-soon', horizonController.getComingSoon)
 
 route.get('/about-us', horizonController.getAbout);

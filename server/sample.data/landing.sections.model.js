@@ -101,7 +101,7 @@ exports.sections = [
                                 "tag": "h1",
                                 "id": "",
                                 "classes": "",
-                                "style": "'font-weight': 900; 'color': #E2B55D;",
+                                "style": "font-weight: 900; color: #E2B55D;",
                                 "attrs": "",
                                 "content": "Horizon"
                             },

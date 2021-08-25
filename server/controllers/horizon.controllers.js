@@ -33,15 +33,14 @@ exports.getLandingLocal = (req, res) => {
     });
 
     if (parse_json_html_return == "html") {
-        res.send(html);
+        // res.send(html);
+        res.render('local_index', {
+            msgs: req.flash('success'),
+            sections: html
+        });
     } else {
         res.send(result);
     }
-
-    // res.render('local_index', {
-    //     msgs: req.flash('success'),
-    //     sections: html
-    // });
 };
 
 // Landing Page

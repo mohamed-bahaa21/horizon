@@ -2,11 +2,21 @@
 let parse_json_html_return = "html";
 exports.parse_json_html_return = parse_json_html_return;
 
+elementAttrs = (ele) => {
+
+    let id = `${ele.id ? `id="${ele.id}"` : ''}`;
+    let classes = `${ele.classes ? `class="${ele.classes}"` : ''}`;
+    let style = `${ele.style ? `style="${ele.style}"` : ''}`;
+    let href = `${ele.href ? `href="${ele.href}"` : ''}`;
+
+    return `${id} ${classes} ${style} ${href}`
+}
+
 logStringContent = (string) => {
     // console.log(string);
     // let tmp_result = { "tag": string.tag, "classes": string.classes, "content": "string" };
     let tmp_result = `${string}`;
-    let tmp_html = `<${string.tag} id="${string.id}" class="${string.classes}"> ${string} </${string.tag}>`;
+    let tmp_html = `<${string.tag} ${elementAttrs(string)}> ${string} </${string.tag}>`;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
@@ -18,7 +28,7 @@ logStringContent = (string) => {
 logArrayContent = (array) => {
     // console.log(array);
     let tmp_result = { "tag": array.tag, "classes": array.classes, "content": this.checkSectionContent(array.content) };
-    let tmp_html = `<${array.tag} id="${array.id}" class="${array.classes}"> ${this.checkSectionContent(array.content)} </${array.tag}>`;
+    let tmp_html = `<${array.tag} ${elementAttrs(array)}> ${this.checkSectionContent(array.content)} </${array.tag}>`;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
@@ -30,7 +40,7 @@ logArrayContent = (array) => {
 logObjectContent = (object) => {
     // console.log(object);
     let tmp_result = { "tag": object.tag, "classes": object.classes, "content": this.checkSectionContent(object.content) };
-    let tmp_html = `<${object.tag} id="${object.id}" class="${object.classes}"> ${this.checkSectionContent(object.content)} </${object.tag}>`;
+    let tmp_html = `<${object.tag} ${elementAttrs(object)}> ${this.checkSectionContent(object.content)} </${object.tag}>`;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
