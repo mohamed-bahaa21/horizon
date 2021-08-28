@@ -94,21 +94,21 @@ app.use(
         path: '/',
         httpOnly: false,
         secure: true,
-        domain: 'aykmall.net',
+        domain: '',
         expires: expiryDate
     }),
-    csrf(),
-    (req, res, next) => {
-        var token = req.csrfToken();
-        res.cookie('XSRF-TOKEN', token);
-        res.locals.csrfToken = token;
-        next()
-    },
+    // csrf(),
+    // (req, res, next) => {
+    //     var token = req.csrfToken();
+    //     res.cookie('XSRF-TOKEN', token);
+    //     res.locals.csrfToken = token;
+    //     next()
+    // },
     flash()
 )
 
 // routes
-app.use('/', horizonRoute)
+app.use('/', horizonRoute);
 
 // connect database & server
 let PORT = 5000;

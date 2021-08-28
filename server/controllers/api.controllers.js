@@ -79,10 +79,10 @@ exports.postBlogsData = (req, res) => {
 // END SECTION
 
 // Landing page data
-exports.getLandingData = (req, res) => {
+exports.getHeroData = (req, res) => {
     var origin = req.originalUrl;
 
-    Horizon.find().then((result) => {
+    Horizon.findById('606f5689ff5464449437a646').then((result) => {
         res.json(result);
     });
 };

@@ -6,13 +6,13 @@ let parse_json_html_return = "html";
 exports.parse_json_html_return = parse_json_html_return;
 
 elementAttrs = (ele) => {
-
+    let _id = `${ele._id ? `_id="${ele._id}"` : ''}`;
     let id = `${ele.id ? `id="${ele.id}"` : ''}`;
     let classes = `${ele.classes ? `class="${ele.classes}"` : ''}`;
     let style = `${ele.style ? `style="${ele.style}"` : ''}`;
     let href = `${ele.href ? `href="${ele.href}"` : ''}`;
 
-    return `${id} ${classes} ${style} ${href}`
+    return `${_id} ${id} ${classes} ${style} ${href}`;
 }
 
 logStringContent = (string) => {
@@ -20,8 +20,12 @@ logStringContent = (string) => {
     // let tmp_result = { "tag": string.tag, "classes": string.classes, "content": "string" };
     let tmp_result = `${string}`;
     let tmp_html = `<${string.tag} ${elementAttrs(string)}> ${string} </${string.tag}>`;
+    let tmp_form = `
+        ${string.tag ? `<${string.tag} ${elementAttrs(string)}> ${string} </${string.tag}>` : `${string}`}
+    `;
 
     if (parse_json_html_return == "html") {
+        // return tmp_form;
         return tmp_html;
     } else {
         return tmp_result;
@@ -31,7 +35,10 @@ logStringContent = (string) => {
 logArrayContent = (array) => {
     // console.log(array);
     let tmp_result = { "tag": array.tag, "classes": array.classes, "content": this.checkSectionContent(array.content) };
-    let tmp_html = `<${array.tag} ${elementAttrs(array)}> ${this.checkSectionContent(array.content)} </${array.tag}>`;
+    let tmp_html = `
+        <${array.tag} ${elementAttrs(array)}> ${this.checkSectionContent(array.content)} </${array.tag}>
+        ${typeof (array.content) == "string" ? `<input id="${array._id}" value="${array.content}" />` : ""}
+    `;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
@@ -43,7 +50,11 @@ logArrayContent = (array) => {
 logObjectContent = (object) => {
     // console.log(object);
     let tmp_result = { "tag": object.tag, "classes": object.classes, "content": this.checkSectionContent(object.content) };
-    let tmp_html = `<${object.tag} ${elementAttrs(object)}> ${this.checkSectionContent(object.content)} </${object.tag}>`;
+    let tmp_html = `
+        <${object.tag} ${elementAttrs(object)}> ${this.checkSectionContent(object.content)} </${object.tag}>
+        <br> 
+        ${typeof (object.content) == "string" ? `<input id="${object._id}" value="${object.content}" />` : ""}
+    `;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
@@ -96,54 +107,15 @@ exports.checkSectionContent = (section_content) => {
     } else {
         return result;
     }
-
-    // console.log('result: ', result);
-    // console.log('content: ', typeof (content));
-    // console.log('____________________________________');
-    // if (typeof (content) == "string") {
-    //     result += `{${content.tag}, ${typeof (content.content)}}, `;
-    // } else if (typeof (content) == "object") {
-    //     if (Array.isArray(content)) {
-    //         content.map(cont => {
-    //             array_content = []
-    //             checkContentArray(result, cont);
-    //         });
-    //     } else {
-    //         result += `{${content.tag}, ${typeof (content.content)}}, `;
-    //         this.content = content;
-    //         this.result = result;
-    //         return checkSectionContent(result, content.content);
-    //     }
-    // }
 }
 
-
-
-// landing local_data
+// landing local_data & DB_data
 exports.getLandingLocal = (req, res) => {
 
     let result = [];
     let html = ``;
 
     // in case json_html data were array of sections
-    Landing.findOne({ section_index: 0 }).then(section => {
-        let content = section.section_content;
-
-        result.push({ "content": content });
-        html += `<${content.tag} id="${content.id}" class="${content.classes}"> ${this.checkSectionContent(content.content)} </${content.tag}>`;
-
-        if (parse_json_html_return == "html") {
-            // res.send(html);
-            res.render('local_index', {
-                msgs: req.flash('success'),
-                sections: html
-            });
-        } else {
-            res.send(result);
-        }
-    });
-
-
     // section.section_content.map(section_content => {
     //     let content = checkSectionContent(section_content.content);
     //     result.push({ "tag": content.tag, "classes": content.classes, "content": content });
@@ -152,22 +124,45 @@ exports.getLandingLocal = (req, res) => {
 
 
     // in case json_html data were object of one section
-    // Landing.findOne({ section_index: 0 }).then(section => {
-    //     let section_content = checkSectionContent(section.section_content);
-    //     console.log(section_content);
-    //     result.push({ "section_content": section_content });
-    //     html += `<${section_content.tag} id="${section_content.id}" class="${section_content.classes}"> ${checkSectionContent(section_content.content)} </${section_content.tag}>`;
+    Landing.findOne({ section_index: 0 }).then(section => {
+        let content = section.section_content;
 
-    //     if (parse_json_html_return == "html") {
-    //         // res.send(html);
-    //         res.render('local_index', {
-    //             msgs: req.flash('success'),
-    //             sections: html
-    //         });
-    //     } else {
-    //         res.send(result);
-    //     }
-    // });
+        result.push({ "content": content });
+        html += `<${content.tag} id="${content.id}" class="${content.classes}"> ${this.checkSectionContent(content.content)} </${content.tag}>`;
+
+        if (parse_json_html_return == "html") {
+            // res.send(html);
+            res.render('json_html_parser/local_index', {
+                msgs: req.flash('success'),
+                sections: html
+            });
+        } else {
+            res.send(result);
+        }
+    });
 
 };
 
+
+exports.getSectionForm = (req, res) => {
+
+    let result = [];
+    let html = ``;
+
+    Landing.findOne({ section_index: 0 }).then(section => {
+        let content = section.section_content;
+
+        result.push({ "content": content });
+        html += `<${content.tag} id="${content.id}" class="${content.classes}"> ${this.checkSectionContent(content.content)} </${content.tag}>`;
+
+        if (parse_json_html_return == "html") {
+            // res.send(html);
+            res.render('json_html_parser/section_form', {
+                msgs: req.flash('success'),
+                form: html
+            });
+        } else {
+            res.send(result);
+        }
+    });
+}

@@ -13,7 +13,7 @@ route.get('/getAboutData', apiCtrl.getAboutData);
 route.post('/postAboutData', apiCtrl.postAboutData);
 
 // ADMIN -> Hero Section
-route.get('/getLandingData', apiCtrl.getLandingData);
+route.get('/getHeroData', apiCtrl.getHeroData);
 route.post('/postHeroData', apiCtrl.postHeroData);
 
 // ADMIN -> Lens Designs 1 Section
