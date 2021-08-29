@@ -23,7 +23,7 @@ route.get('/products/:product', userCtrl.getProduct);
 // route.get('/free-form/:freeform', horizonController.getFreeForm);
 
 // 404
-// route.get('/404', horizonController.get404);
+route.get('/404', userCtrl.get404);
 // route.get('*', userCtrl.get404);
 
 module.exports = route;

@@ -6,6 +6,7 @@ const JsonHtmlParserCtrl = require(path.resolve(__basename, 'controllers', 'json
 
 // parser
 route.get('/', JsonHtmlParserCtrl.getLandingLocal);
+route.post('/', JsonHtmlParserCtrl.postLandingLocal);
 
 route.get('/form', JsonHtmlParserCtrl.getSectionForm);
 

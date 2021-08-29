@@ -11,8 +11,9 @@ elementAttrs = (ele) => {
     let classes = `${ele.classes ? `class="${ele.classes}"` : ''}`;
     let style = `${ele.style ? `style="${ele.style}"` : ''}`;
     let href = `${ele.href ? `href="${ele.href}"` : ''}`;
+    let attrs = `${ele.attrs ? `${ele.attrs}` : ''}`;
 
-    return `${_id} ${id} ${classes} ${style} ${href}`;
+    return `${_id} ${id} ${classes} ${style} ${attrs}`;
 }
 
 logStringContent = (string) => {
@@ -35,10 +36,15 @@ logStringContent = (string) => {
 logArrayContent = (array) => {
     // console.log(array);
     let tmp_result = { "tag": array.tag, "classes": array.classes, "content": this.checkSectionContent(array.content) };
-    let tmp_html = `
-        <${array.tag} ${elementAttrs(array)}> ${this.checkSectionContent(array.content)} </${array.tag}>
-        ${typeof (array.content) == "string" ? `<input id="${array._id}" value="${array.content}" />` : ""}
-    `;
+
+    // without input ele
+    let tmp_html = `<${array.tag} ${elementAttrs(array)}> ${this.checkSectionContent(array.content)} </${array.tag}>`;
+
+    // with input ele
+    // let tmp_html = `
+    //     <${array.tag} ${elementAttrs(array)}> ${this.checkSectionContent(array.content)} </${array.tag}>
+    //     ${typeof (array.content) == "string" ? `<input id="${array._id}" value="${array.content}" />` : ""}
+    // `;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
@@ -50,11 +56,16 @@ logArrayContent = (array) => {
 logObjectContent = (object) => {
     // console.log(object);
     let tmp_result = { "tag": object.tag, "classes": object.classes, "content": this.checkSectionContent(object.content) };
-    let tmp_html = `
-        <${object.tag} ${elementAttrs(object)}> ${this.checkSectionContent(object.content)} </${object.tag}>
-        <br> 
-        ${typeof (object.content) == "string" ? `<input id="${object._id}" value="${object.content}" />` : ""}
-    `;
+
+    // without input ele
+    let tmp_html = `<${object.tag} ${elementAttrs(object)}> ${this.checkSectionContent(object.content)} </${object.tag}>`;
+
+    // with input ele
+    // let tmp_html = `
+    //     <${object.tag} ${elementAttrs(object)}> ${this.checkSectionContent(object.content)} </${object.tag}>
+    //     <br> 
+    //     ${typeof (object.content) == "string" ? `<input id="${object._id}" value="${object.content}" />` : ""}
+    // `;
 
     if (parse_json_html_return == "html") {
         return tmp_html;
@@ -128,7 +139,7 @@ exports.getLandingLocal = (req, res) => {
         let content = section.section_content;
 
         result.push({ "content": content });
-        html += `<${content.tag} id="${content.id}" class="${content.classes}"> ${this.checkSectionContent(content.content)} </${content.tag}>`;
+        html += `<${content.tag} id="${content.id}" class="${content.classes}" contenteditable="true"> ${this.checkSectionContent(content.content)} </${content.tag}>`;
 
         if (parse_json_html_return == "html") {
             // res.send(html);
@@ -142,6 +153,10 @@ exports.getLandingLocal = (req, res) => {
     });
 
 };
+
+exports.postLandingLocal = (req, res) => {
+    res.send(req.body)
+}
 
 
 exports.getSectionForm = (req, res) => {
@@ -166,3 +181,5 @@ exports.getSectionForm = (req, res) => {
         }
     });
 }
+
+
