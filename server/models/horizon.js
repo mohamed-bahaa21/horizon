@@ -62,56 +62,56 @@ const horizonSchema = new Schema({
         required: false
     },
 
-    // "prog_card_2_link": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_2_img": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_2_type": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_2_header": {
-    //     type: String,
-    //     required: false
-    // },
+    "prog_card_2_link": {
+        type: String,
+        required: false
+    },
+    "prog_card_2_img": {
+        type: String,
+        required: false
+    },
+    "prog_card_2_type": {
+        type: String,
+        required: false
+    },
+    "prog_card_2_header": {
+        type: String,
+        required: false
+    },
 
-    // "prog_card_3_link": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_3_img": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_3_type": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_3_header": {
-    //     type: String,
-    //     required: false
-    // },
+    "prog_card_3_link": {
+        type: String,
+        required: false
+    },
+    "prog_card_3_img": {
+        type: String,
+        required: false
+    },
+    "prog_card_3_type": {
+        type: String,
+        required: false
+    },
+    "prog_card_3_header": {
+        type: String,
+        required: false
+    },
 
-    // "prog_card_4_link": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_4_img": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_4_type": {
-    //     type: String,
-    //     required: false
-    // },
-    // "prog_card_4_header": {
-    //     type: String,
-    //     required: false
-    // },
+    "prog_card_4_link": {
+        type: String,
+        required: false
+    },
+    "prog_card_4_img": {
+        type: String,
+        required: false
+    },
+    "prog_card_4_type": {
+        type: String,
+        required: false
+    },
+    "prog_card_4_header": {
+        type: String,
+        required: false
+    },
 
     // END SECTION
     // START LENS INFO 1 3/13
@@ -351,7 +351,7 @@ const horizonSchema = new Schema({
             required: false
         },
     }]
-    
+
 })
 
 module.exports = mongoose.model('Horizon', horizonSchema);

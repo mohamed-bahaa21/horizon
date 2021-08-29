@@ -137,6 +137,18 @@ exports.postLensDesigns1 = (req, res) => {
         prog_card_1_link,
         prog_card_1_type,
         prog_card_1_header,
+        prog_card_2_img,
+        prog_card_2_link,
+        prog_card_2_type,
+        prog_card_2_header,
+        prog_card_3_img,
+        prog_card_3_link,
+        prog_card_3_type,
+        prog_card_3_header,
+        prog_card_4_img,
+        prog_card_4_link,
+        prog_card_4_type,
+        prog_card_4_header,
     } = req.body;
 
     // console.log(req.body);
@@ -150,6 +162,18 @@ exports.postLensDesigns1 = (req, res) => {
             horizon.prog_card_1_link = prog_card_1_link;
             horizon.prog_card_1_type = prog_card_1_type;
             horizon.prog_card_1_header = prog_card_1_header;
+            horizon.prog_card_2_img = prog_card_2_img;
+            horizon.prog_card_2_link = prog_card_2_link;
+            horizon.prog_card_2_type = prog_card_2_type;
+            horizon.prog_card_2_header = prog_card_2_header;
+            horizon.prog_card_3_img = prog_card_3_img;
+            horizon.prog_card_3_link = prog_card_3_link;
+            horizon.prog_card_3_type = prog_card_3_type;
+            horizon.prog_card_3_header = prog_card_3_header;
+            horizon.prog_card_4_img = prog_card_4_img;
+            horizon.prog_card_4_link = prog_card_4_link;
+            horizon.prog_card_4_type = prog_card_4_type;
+            horizon.prog_card_4_header = prog_card_4_header;
 
             horizon
                 .save()
