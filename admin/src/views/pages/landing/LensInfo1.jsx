@@ -10,7 +10,7 @@ import {
   CInputGroupText,
   CInputGroup,
   CToaster,
-  CToast
+  CToast,
 } from "@coreui/react";
 
 import UploadImg from "../../UploadImg/UploadImg";
@@ -219,6 +219,9 @@ class LensInfo1 extends Component {
                 />
               </CInputGroup>
               <br />
+              <hr />
+
+              <h6>Top Left Parag</h6>
               <CInput
                 type="text"
                 id="li1_parag_1"
@@ -228,6 +231,9 @@ class LensInfo1 extends Component {
                 onChange={this.onChange}
               />
               <br />
+              <hr />
+
+              <h6>Top Right Parag</h6>
               <CInput
                 type="text"
                 id="li1_parag_2"
@@ -237,6 +243,9 @@ class LensInfo1 extends Component {
                 onChange={this.onChange}
               />
               <br />
+              <hr />
+
+              <h6>Bottom Left Parag</h6>
               <CInput
                 type="text"
                 id="li1_parag_3"
@@ -246,12 +255,15 @@ class LensInfo1 extends Component {
                 onChange={this.onChange}
               />
               <br />
+              <hr />
+
+              <h6>Bottom Right Parag</h6>
               <CInput
                 type="text"
-                id="li1_parag_3"
-                name="li1_parag_3"
-                placeholder="li1_parag_3"
-                value={this.state.li1_parag_3}
+                id="li1_parag_4"
+                name="li1_parag_4"
+                placeholder="li1_parag_4"
+                value={this.state.li1_parag_4}
                 onChange={this.onChange}
               />
             </CFormGroup>
