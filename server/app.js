@@ -5,14 +5,16 @@ global.__basename = __dirname;
 const compression = require('compression');
 const helmet = require('helmet');
 const express = require('express');
-
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
 const csrf = require('csurf')
 const cors = require('cors');
-
 const flash = require('connect-flash');
+
+const passport = require("passport");
+const passportLocal = require("passport-local").Strategy;
+const bcrypt = require("bcryptjs");
 
 const app = express();
 
@@ -30,6 +32,9 @@ const store = new MongoDBStore({
 });
 
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+
+// ---------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------
 
 // const {
 //     graphqlHTTP
@@ -66,37 +71,51 @@ const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 //     next();
 // })
 
+// Middleware
+require("./services/admin.passport.service")(passport);
 app.set('view engine', 'ejs');
-
 app.use(
     // Parsers for POST data
     bodyParser.json(),
-    bodyParser.urlencoded({ extended: false }),
-    compression(),
-    helmet(),
-    cookieParser(),
-    cors(),
+    bodyParser.urlencoded({ extended: true }),
     express.json({
         limit: '10mb'
     }),
     express.urlencoded({
-        extended: false,
+        extended: true,
         limit: '10mb'
     }),
     express.static(path.join(__dirname, 'public')),
-    // setting session
+    flash(),
+    compression(),
+    helmet(),
+    cors({
+        origin: "http://localhost:3000", // allow to server to accept request from different origin
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        credentials: true, // allow session cookie from browser to pass through
+    }),
     session({
         secret: '@010#44$vm=2001ayk2020horizon',
         name: 'sessionId',
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
         store: store,
         path: '/',
         httpOnly: false,
         secure: true,
-        domain: '',
+        domain: 'admin.horizon.aykmall.net',
         expires: expiryDate
     }),
+    cookieParser("@010#44$vm=2001ayk2020horizon"),
+    passport.initialize(),
+    passport.session(),
+    // function loggedIn(req, res, next) {
+    //     if (req.user) {
+    //         res.send('logged in');
+    //     } else {
+    //         res.send('not logged in');
+    //     }
+    // }
     // csrf(),
     // (req, res, next) => {
     //     var token = req.csrfToken();
@@ -104,7 +123,6 @@ app.use(
     //     res.locals.csrfToken = token;
     //     next()
     // },
-    flash()
 )
 
 // routes
@@ -115,7 +133,7 @@ let PORT = 5000;
 mongoose
     .connect(MONGODB_URI, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
     })
     .then(result => {
         app.listen(PORT);

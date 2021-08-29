@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from "react";
 import {
   CButton,
   CCard,
@@ -14,8 +14,24 @@ import {
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
+import Axios from "axios";
 
 const Register = () => {
+  const [registerUsername, setRegisterUsername] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+
+  const register = () => {
+    Axios({
+      method: "POST",
+      data: {
+        username: registerUsername,
+        password: registerPassword,
+      },
+      withCredentials: true,
+      url: "http://localhost:5000/api/postAdminRegister",
+    }).then((res) => console.log(res));
+  };
+
   return (
     <div className="c-app c-default-layout flex-row align-items-center">
       <CContainer>
@@ -32,42 +48,42 @@ const Register = () => {
                         <CIcon name="cil-user" />
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput type="text" placeholder="Username" autoComplete="username" />
+                    <CInput type="text" placeholder="Username" autoComplete="username" onChange={(e) => setRegisterUsername(e.target.value)} />
                   </CInputGroup>
-                  <CInputGroup className="mb-3">
+                  {/* <CInputGroup className="mb-3">
                     <CInputGroupPrepend>
                       <CInputGroupText>@</CInputGroupText>
                     </CInputGroupPrepend>
                     <CInput type="text" placeholder="Email" autoComplete="email" />
-                  </CInputGroup>
+                  </CInputGroup> */}
                   <CInputGroup className="mb-3">
                     <CInputGroupPrepend>
                       <CInputGroupText>
                         <CIcon name="cil-lock-locked" />
                       </CInputGroupText>
                     </CInputGroupPrepend>
-                    <CInput type="password" placeholder="Password" autoComplete="new-password" />
+                    <CInput type="password" placeholder="Password" autoComplete="new-password" onChange={(e) => setRegisterPassword(e.target.value)} />
                   </CInputGroup>
-                  <CInputGroup className="mb-4">
+                  {/* <CInputGroup className="mb-4">
                     <CInputGroupPrepend>
                       <CInputGroupText>
                         <CIcon name="cil-lock-locked" />
                       </CInputGroupText>
                     </CInputGroupPrepend>
                     <CInput type="password" placeholder="Repeat password" autoComplete="new-password" />
-                  </CInputGroup>
-                  <CButton color="success" block>Create Account</CButton>
+                  </CInputGroup> */}
+                  <CButton color="success" block onClick={register}>Create Account</CButton>
                 </CForm>
               </CCardBody>
               <CCardFooter className="p-4">
-                <CRow>
+                {/* <CRow>
                   <CCol xs="12" sm="6">
                     <CButton className="btn-facebook mb-1" block><span>facebook</span></CButton>
                   </CCol>
                   <CCol xs="12" sm="6">
                     <CButton className="btn-twitter mb-1" block><span>twitter</span></CButton>
                   </CCol>
-                </CRow>
+                </CRow> */}
               </CCardFooter>
             </CCard>
           </CCol>

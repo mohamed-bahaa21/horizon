@@ -158,15 +158,15 @@ class WatchVideo extends Component {
                 />_Show Section</a> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a class="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
-                <label class="show_design">
-                  <input class="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.wv_section_display} readOnly />
-                  <span class="label__text">
-                    <span class="label__check">
-                      <i class="fa fa-check icon"></i>
+              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+                <label className="show_design">
+                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.wv_section_display} readOnly />
+                  <span className="label__text">
+                    <span className="label__check">
+                      <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label class="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
                 </label>
               </a>
             </CFormGroup>

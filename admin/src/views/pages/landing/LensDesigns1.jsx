@@ -223,26 +223,26 @@ class LensDesigns1 extends Component {
 
               {/* NEW LOOK - it's all about that */}
               <a
-                class="show_design_link"
+                className="show_design_link"
                 href="#"
                 role="button"
                 onClick={this.toggleCheckbox}
               >
-                <label class="show_design">
+                <label className="show_design">
                   <input
-                    class="label__checkbox"
+                    className="label__checkbox"
                     id="show_design"
                     name="show_design"
                     type="checkbox"
                     checked={this.state.ld1_section_display}
                     readOnly
                   />
-                  <span class="label__text">
-                    <span class="label__check">
-                      <i class="fa fa-check icon"></i>
+                  <span className="label__text">
+                    <span className="label__check">
+                      <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label class="show_design_label" htmlFor="show_design">
+                  <label className="show_design_label" htmlFor="show_design">
                     Show Section
                   </label>
                 </label>

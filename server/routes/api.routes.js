@@ -4,6 +4,11 @@ const route = express.Router();
 
 const apiCtrl = require(path.resolve(__basename, 'controllers', 'api.controllers'));
 
+// ADMIN -> Auth
+route.post('/postAdminLogin', apiCtrl.postAdminLogin);
+route.post('/postAdminRegister', apiCtrl.postAdminRegister);
+route.get('/getAdminUser', apiCtrl.getAdminUser);
+
 // ADMIN -> Blogs Data
 route.get('/getBlogsData', apiCtrl.getBlogsData);
 route.post('/postBlogsData', apiCtrl.postBlogsData);
