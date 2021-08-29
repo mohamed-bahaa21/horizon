@@ -74,6 +74,9 @@ const TheHeader = () => {
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/mailing-list">Mailing List</CHeaderNavLink>
         </CHeaderNavItem>
+        <CHeaderNavItem className="px-3">
+          <CHeaderNavLink to="#">CMS</CHeaderNavLink>
+        </CHeaderNavItem>
       </CHeaderNav>
 
       <CSubheader className="px-3 justify-content-between">

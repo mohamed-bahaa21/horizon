@@ -53,7 +53,7 @@ const _nav = [
 
   {
     _tag: 'CSidebarNavItem',
-    name: 'Lens Designs 1/3',
+    name: 'Lens Designs 1',
     to: '/landing/lens-designs-1',
     icon: 'cil-pencil',
   },
@@ -63,8 +63,14 @@ const _nav = [
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Lens Info 1/3',
+    name: 'Lens Info 1',
     to: '/landing/lens-info-1',
+    icon: 'cil-pencil',
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Lens Info 3',
+    to: '/landing/lens-info-3',
     icon: 'cil-pencil',
   },
   {
@@ -73,7 +79,7 @@ const _nav = [
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Lens Designs 2/3',
+    name: 'Lens Designs 2',
     to: '/landing/lens-designs-2',
     icon: 'cil-pencil',
   },
@@ -83,7 +89,7 @@ const _nav = [
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Lens Info 2/3',
+    name: 'Lens Info 2',
     to: '/landing/lens-info-2',
     icon: 'cil-pencil',
   },
@@ -93,7 +99,7 @@ const _nav = [
   },
   {
     _tag: 'CSidebarNavItem',
-    name: 'Lens Designs 3/3',
+    name: 'Lens Designs 3',
     to: '/landing/lens-designs-3',
     icon: 'cil-pencil',
   },

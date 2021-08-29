@@ -222,6 +222,52 @@ exports.postLensInfo1 = (req, res) => {
         })
         .catch((err) => res.status(400).json('Error: ' + err));
 };
+
+// END SECTION
+// Admin Gets, Edits -> Lens Info 1 Section Data 
+exports.getLensInfo3 = (req, res) => {
+    Horizon.findById('612b8765c6bdeb39f0b921b7').then((result) => {
+        res.json(result);
+    });
+};
+
+exports.postLensInfo3 = (req, res) => {
+    const {
+        li3_section_display = li3_section_display,
+        li3_header,
+        li3_desc,
+        li3_img,
+        li3_parag_1,
+        li3_parag_2,
+        li3_parag_3,
+        li3_parag_4,
+        li3_parag_5,
+        li3_parag_6
+    } = req.body;
+
+    Horizon.findById('612b8765c6bdeb39f0b921b7')
+        .then((horizon) => {
+            // console.log(req.body);
+            // horizon.name = name;
+            horizon.li3_section_display = li3_section_display;
+            horizon.li3_header = li3_header;
+            horizon.li3_desc = li3_desc;
+            horizon.li3_img = li3_img;
+            horizon.li3_parag_1 = li3_parag_1;
+            horizon.li3_parag_2 = li3_parag_2;
+            horizon.li3_parag_3 = li3_parag_3;
+            horizon.li3_parag_4 = li3_parag_4;
+            horizon.li3_parag_5 = li3_parag_5;
+            horizon.li3_parag_6 = li3_parag_6;
+
+            horizon
+                .save()
+                .then(() => res.json('Horizon Updated !!!'))
+                .catch((err) => res.status(400).json('Error: ' + err));
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
+};
+
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensDesigns2 = (req, res) => {

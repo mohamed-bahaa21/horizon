@@ -148,6 +148,48 @@ const horizonSchema = new Schema({
         required: false
     },
     // END SECTION
+    // START LENS INFO 3 3/14
+    "li3_section_display": {
+        type: Boolean,
+        required: false
+    },
+    "li3_header": {
+        type: String,
+        required: false
+    },
+    "li3_desc": {
+        type: String,
+        required: false
+    },
+    "li3_img": {
+        type: String,
+        required: false
+    },
+    "li3_parag_1": {
+        type: String,
+        required: false
+    },
+    "li3_parag_2": {
+        type: String,
+        required: false
+    },
+    "li3_parag_3": {
+        type: String,
+        required: false
+    },
+    "li3_parag_4": {
+        type: String,
+        required: false
+    },
+    "li3_parag_5": {
+        type: String,
+        required: false
+    },
+    "li3_parag_6": {
+        type: String,
+        required: false
+    },
+    // END SECTION
     // START LENS DESIGNS 2 4/13
     "ld2_section_display": {
         type: Boolean,

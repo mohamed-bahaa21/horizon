@@ -24,6 +24,10 @@ route.post('/postLensDesigns1', apiCtrl.postLensDesigns1);
 route.get('/getLensInfo1', apiCtrl.getLensInfo1);
 route.post('/postLensInfo1', apiCtrl.postLensInfo1);
 
+// ADMIN -> Lens Info 3 Section
+route.get('/getLensInfo3', apiCtrl.getLensInfo3);
+route.post('/postLensInfo3', apiCtrl.postLensInfo3);
+
 // ADMIN -> Lens Designs 2 Section
 route.get('/getLensDesigns2', apiCtrl.getLensDesigns2);
 route.post('/postLensDesigns2', apiCtrl.postLensDesigns2);

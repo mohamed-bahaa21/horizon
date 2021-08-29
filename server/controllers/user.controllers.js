@@ -13,6 +13,13 @@ exports.getLanding = (req, res) => {
             // console.log(result[4]);
             logger.info("return Landing PAGE & DATA", result);
             logger.info("return Blogs Data", blogs);
+            let sections = [];
+
+            result.map(section => {
+                sections += `${section._id}, <br>`;
+            })
+
+            // res.send(sections)
 
             res.render('index', {
                 msgs: req.flash('success'),
@@ -20,6 +27,7 @@ exports.getLanding = (req, res) => {
                 horizon: result[0],
                 ld1: result[1],
                 li1: result[2],
+                li3: result[10],
                 ld2: result[6],
                 li2: result[3],
                 wv: result[4],

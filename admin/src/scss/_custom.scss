@@ -4,6 +4,15 @@
   width: 100%;
 }
 
+.badgeee {
+  display: inline-block;
+  border: 0.1rem solid;
+  padding: 0.2rem 0.3rem;
+  background-color: rgba(224, 230, 241, 0.75);
+  border-radius: 0.3rem;
+  box-shadow: -2px 1px 0 0 #3c4b64;
+}
+
 // checkbox
 .show_design {
   display: flex;
@@ -23,7 +32,8 @@
   color: #303C54;
   display: inline-block;
 }
-.show_design_link label{
+
+.show_design_link label {
   margin-bottom: 0;
 }
 

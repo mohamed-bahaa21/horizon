@@ -11,6 +11,7 @@ import {
   CInputGroup,
   CToaster,
   CToast,
+  CTextarea,
 } from "@coreui/react";
 
 import UploadImg from "../../UploadImg/UploadImg";
@@ -20,7 +21,7 @@ import FlashMessage from 'react-flash-message'
 
 import SERVER_URI from "../../../reusable/api";
 
-class LensInfo1 extends Component {
+class LensInfo3 extends Component {
   constructor(props) {
     super(props);
 
@@ -35,14 +36,16 @@ class LensInfo1 extends Component {
       url: "...",
       progress: "...",
 
-      li1_section_display: true,
-      li1_header: "...",
-      li1_desc: "...",
-      li1_img: "...",
-      li1_parag_1: "...",
-      li1_parag_2: "...",
-      li1_parag_3: "...",
-      li1_parag_4: "..."
+      li3_section_display: true,
+      li3_header: "...",
+      li3_desc: "...",
+      li3_img: "...",
+      li3_parag_1: "...",
+      li3_parag_2: "...",
+      li3_parag_3: "...",
+      li3_parag_4: "...",
+      li3_parag_5: "...",
+      li3_parag_6: "..."
     };
 
     this.onChange = this.onChange.bind(this);
@@ -54,28 +57,32 @@ class LensInfo1 extends Component {
 
   componentDidMount() {
     axios
-      .get(`${SERVER_URI}/api/getLensInfo1`)
+      .get(`${SERVER_URI}/api/getLensInfo3`)
       .then((response) => {
         // console.log(response.data);
         const {
-          li1_section_display,
-          li1_header,
-          li1_desc,
-          li1_img,
-          li1_parag_1,
-          li1_parag_2,
-          li1_parag_3,
-          li1_parag_4,
+          li3_section_display,
+          li3_header,
+          li3_desc,
+          li3_img,
+          li3_parag_1,
+          li3_parag_2,
+          li3_parag_3,
+          li3_parag_4,
+          li3_parag_5,
+          li3_parag_6,
         } = response.data;
         this.setState({
-          li1_section_display: li1_section_display,
-          li1_header: li1_header,
-          li1_desc: li1_desc,
-          li1_img: li1_img,
-          li1_parag_1: li1_parag_1,
-          li1_parag_2: li1_parag_2,
-          li1_parag_3: li1_parag_3,
-          li1_parag_4: li1_parag_4,
+          li3_section_display: li3_section_display,
+          li3_header: li3_header,
+          li3_desc: li3_desc,
+          li3_img: li3_img,
+          li3_parag_1: li3_parag_1,
+          li3_parag_2: li3_parag_2,
+          li3_parag_3: li3_parag_3,
+          li3_parag_4: li3_parag_4,
+          li3_parag_5: li3_parag_5,
+          li3_parag_6: li3_parag_6,
         });
       })
       .catch((error) => {
@@ -97,17 +104,19 @@ class LensInfo1 extends Component {
   onSubmit(e) {
     e.preventDefault();
     const prog_section = {
-      li1_section_display: this.state.li1_section_display,
-      li1_header: this.state.li1_header,
-      li1_desc: this.state.li1_desc,
-      li1_img: this.state.li1_img,
-      li1_parag_1: this.state.li1_parag_1,
-      li1_parag_2: this.state.li1_parag_2,
-      li1_parag_3: this.state.li1_parag_3,
-      li1_parag_4: this.state.li1_parag_4
+      li3_section_display: this.state.li3_section_display,
+      li3_header: this.state.li3_header,
+      li3_desc: this.state.li3_desc,
+      li3_img: this.state.li3_img,
+      li3_parag_1: this.state.li3_parag_1,
+      li3_parag_2: this.state.li3_parag_2,
+      li3_parag_3: this.state.li3_parag_3,
+      li3_parag_4: this.state.li3_parag_4,
+      li3_parag_5: this.state.li3_parag_5,
+      li3_parag_6: this.state.li3_parag_6
     };
 
-    axios.post(`${SERVER_URI}/api/postLensInfo1`, prog_section)
+    axios.post(`${SERVER_URI}/api/postLensInfo3`, prog_section)
       .then(res => console.log(res));
 
     // window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
@@ -117,7 +126,7 @@ class LensInfo1 extends Component {
   toggleCheckbox(e) {
     e.preventDefault();
     this.setState({
-      li1_section_display: !this.state.li1_section_display,
+      li3_section_display: !this.state.li3_section_display,
       submitClass: 'primary',
       submitDisable: false,
       edited: false,
@@ -130,8 +139,7 @@ class LensInfo1 extends Component {
         {
           (this.state.edited === true) ?
             <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
+              <FlashMessage duration={3000} />
               <CToaster>
                 <CToast
                   key={this.state.fixedToasts}
@@ -160,13 +168,13 @@ class LensInfo1 extends Component {
               {/* #1 */}
               {/* Checkbox to Toggle Sections */}
               {/* OLD CHECKBOX *RIP* */}
-              {/* <h4>{this.state.li1_section_display ? "Show" : "hide"}</h4>
+              {/* <h4>{this.state.li3_section_display ? "Show" : "hide"}</h4>
               <a href="#" role="button" onClick={this.toggleCheckbox}>
                 <input
                   type="checkbox"
-                  title="li1_section_display"
-                  name="li1_section_display"
-                  checked={this.state.li1_section_display}
+                  title="li3_section_display"
+                  name="li3_section_display"
+                  checked={this.state.li3_section_display}
                   readOnly
                 />_Show Section</a> */}
               {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
@@ -174,7 +182,7 @@ class LensInfo1 extends Component {
               {/* NEW LOOK - it's all about that */}
               <a class="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
                 <label class="show_design">
-                  <input class="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.li1_section_display} readOnly />
+                  <input class="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.li3_section_display} readOnly />
                   <span class="label__text">
                     <span class="label__check">
                       <i class="fa fa-check icon"></i>
@@ -186,22 +194,22 @@ class LensInfo1 extends Component {
             </CFormGroup>
             <CFormGroup>
               {/* #1 name */}
-              <h6 className="badgeee">{this.state.li1_header}</h6>
+              <h6>{this.state.li3_header}</h6>
               <CInput
                 type="text"
-                id="li1_header"
-                name="li1_header"
-                placeholder="li1_header"
-                value={this.state.li1_header}
+                id="li3_header"
+                name="li3_header"
+                placeholder="li3_header"
+                value={this.state.li3_header}
                 onChange={this.onChange}
               />
               <br />
               <CInput
                 type="text"
-                id="li1_desc"
-                name="li1_desc"
-                placeholder="li1_desc"
-                value={this.state.li1_desc}
+                id="li3_desc"
+                name="li3_desc"
+                placeholder="li3_desc"
+                value={this.state.li3_desc}
                 onChange={this.onChange}
               />
               <br />
@@ -211,10 +219,10 @@ class LensInfo1 extends Component {
                 </CInputGroupText>
                 <CInput
                   type="text"
-                  id="li1_img"
-                  name="li1_img"
-                  placeholder="li1_img"
-                  value={this.state.li1_img}
+                  id="li3_img"
+                  name="li3_img"
+                  placeholder="li3_img"
+                  value={this.state.li3_img}
                   onChange={this.onChange}
                 />
               </CInputGroup>
@@ -224,10 +232,10 @@ class LensInfo1 extends Component {
               <h6 className="badgeee">Top Left Parag</h6>
               <CInput
                 type="text"
-                id="li1_parag_1"
-                name="li1_parag_1"
-                placeholder="li1_parag_1"
-                value={this.state.li1_parag_1}
+                id="li3_parag_1"
+                name="li3_parag_1"
+                placeholder="li3_parag_1"
+                value={this.state.li3_parag_1}
                 onChange={this.onChange}
               />
               <br />
@@ -236,10 +244,34 @@ class LensInfo1 extends Component {
               <h6 className="badgeee">Top Right Parag</h6>
               <CInput
                 type="text"
-                id="li1_parag_2"
-                name="li1_parag_2"
-                placeholder="li1_parag_2"
-                value={this.state.li1_parag_2}
+                id="li3_parag_2"
+                name="li3_parag_2"
+                placeholder="li3_parag_2"
+                value={this.state.li3_parag_2}
+                onChange={this.onChange}
+              />
+              <br />
+              <hr />
+
+              <h6 className="badgeee">Left Parag</h6>
+              <CInput
+                type="text"
+                id="li3_parag_3"
+                name="li3_parag_3"
+                placeholder="li3_parag_3"
+                value={this.state.li3_parag_3}
+                onChange={this.onChange}
+              />
+              <br />
+              <hr />
+
+              <h6 className="badgeee">Right Parag</h6>
+              <CInput
+                type="text"
+                id="li3_parag_4"
+                name="li3_parag_4"
+                placeholder="li3_parag_4"
+                value={this.state.li3_parag_4}
                 onChange={this.onChange}
               />
               <br />
@@ -248,10 +280,10 @@ class LensInfo1 extends Component {
               <h6 className="badgeee">Bottom Left Parag</h6>
               <CInput
                 type="text"
-                id="li1_parag_3"
-                name="li1_parag_3"
-                placeholder="li1_parag_3"
-                value={this.state.li1_parag_3}
+                id="li3_parag_5"
+                name="li3_parag_5"
+                placeholder="li3_parag_5"
+                value={this.state.li3_parag_5}
                 onChange={this.onChange}
               />
               <br />
@@ -260,10 +292,10 @@ class LensInfo1 extends Component {
               <h6 className="badgeee">Bottom Right Parag</h6>
               <CInput
                 type="text"
-                id="li1_parag_4"
-                name="li1_parag_4"
-                placeholder="li1_parag_4"
-                value={this.state.li1_parag_4}
+                id="li3_parag_6"
+                name="li3_parag_6"
+                placeholder="li3_parag_6"
+                value={this.state.li3_parag_6}
                 onChange={this.onChange}
               />
             </CFormGroup>
@@ -291,4 +323,4 @@ class LensInfo1 extends Component {
   }
 }
 
-export default LensInfo1;
+export default LensInfo3;
