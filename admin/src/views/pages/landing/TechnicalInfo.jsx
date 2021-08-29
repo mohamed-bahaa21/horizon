@@ -233,7 +233,7 @@ class TechnicalInfo extends Component {
                       <i class="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label class="show_design_label" for="show_design">Show Section</label>
+                  <label class="show_design_label" htmlFor="show_design">Show Section</label>
                 </label>
               </a>
             </CFormGroup>

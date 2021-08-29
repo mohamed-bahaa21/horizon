@@ -303,7 +303,7 @@ class Hero extends Component {
                             <i class="fa fa-check icon"></i>
                           </span>
                         </span>
-                        <label class="show_design_label" for="show_design">
+                        <label class="show_design_label" htmlFor="show_design">
                           Show Lenses Design
                         </label>
                       </label>
