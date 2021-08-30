@@ -8,9 +8,9 @@ const Mail = require('../models/Mail');
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
 
-const passport = require("passport");
-const passportLocal = require("passport-local").Strategy;
-const bcrypt = require("bcryptjs");
+// const passport = require("passport");
+// const passportLocal = require("passport-local").Strategy;
+// const bcrypt = require("bcryptjs");
 
 
 // Admin Auth
