@@ -1,4 +1,4 @@
-require('dotenv').config({ path: 'config/prod.env' })
+require('dotenv').config({ path: 'config/dev.env' })
 const path = require('path')
 global.__basename = __dirname;
 
@@ -32,6 +32,19 @@ const store = new MongoDBStore({
 });
 
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+
+var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon.aykmall.net'] // allow to server to accept request from different origin
+var corsOptions = {
+    origin: function (origin, callback) {
+        if (corsWhiteList.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    },
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // allow session cookie from browser to pass through
+}
 
 // ---------------------------------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------
@@ -89,11 +102,7 @@ app.use(
     flash(),
     compression(),
     helmet(),
-    cors({
-        origin: "http://localhost:3000", // allow to server to accept request from different origin
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        credentials: true, // allow session cookie from browser to pass through
-    }),
+    cors(corsOptions),
     session({
         secret: '@010#44$vm=2001ayk2020horizon',
         name: 'sessionId',
