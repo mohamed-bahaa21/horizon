@@ -107,8 +107,8 @@ app.use(
         expires: expiryDate
     }),
     cookieParser("@010#44$vm=2001ayk2020horizon"),
-    passport.initialize(),
-    passport.session(),
+    // passport.initialize(),
+    // passport.session(),
     // function loggedIn(req, res, next) {
     //     if (req.user) {
     //         res.send('logged in');
