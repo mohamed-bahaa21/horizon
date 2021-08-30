@@ -12,9 +12,9 @@ const csrf = require('csurf')
 const cors = require('cors');
 const flash = require('connect-flash');
 
-const passport = require("passport");
-const passportLocal = require("passport-local").Strategy;
-const bcrypt = require("bcryptjs");
+// const passport = require("passport");
+// const passportLocal = require("passport-local").Strategy;
+// const bcrypt = require("bcryptjs");
 
 const app = express();
 
@@ -72,7 +72,7 @@ const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 // })
 
 // Middleware
-require("./services/admin.passport.service")(passport);
+// require("./services/admin.passport.service")(passport);
 app.set('view engine', 'ejs');
 app.use(
     // Parsers for POST data
