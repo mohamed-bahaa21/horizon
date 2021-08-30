@@ -18,7 +18,7 @@ import Accordion from "../../../reusable/Accordion/Accordion";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -30,7 +30,7 @@ class News extends Component {
       visible: false,
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       fixedToasts: 0,
@@ -39,15 +39,17 @@ class News extends Component {
       url: "...",
       progress: "...",
 
-      blogs: [{
-        _id: '',
-        date: '...',
-        title: '...',
-        summary: '...',
-        content: '...',
-        link: '...',
-        bg: '...',
-      }]
+      blogs: [
+        {
+          _id: "",
+          date: "...",
+          title: "...",
+          summary: "...",
+          content: "...",
+          link: "...",
+          bg: "...",
+        },
+      ],
     };
 
     this.onChange = this.onChange.bind(this);
@@ -55,7 +57,6 @@ class News extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
   }
-
 
   componentDidMount() {
     axios
@@ -82,42 +83,45 @@ class News extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const blogs = [...prevState.blogs]
+    this.setState((prevState) => {
+      const blogs = [...prevState.blogs];
 
       blogs[i] = {
         ...blogs[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         blogs,
-      }
-    })
+      };
+    });
   }
-
 
   onSubmit(e) {
     e.preventDefault();
 
     if (!this.state.submitDisable) {
-
       console.log(e.target.id);
 
       const prog_section = {
-        blogs: this.state.blogs
+        blogs: this.state.blogs,
       };
 
       console.log("POST_DATA::", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postBlogsData`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postBlogsData`, prog_section)
+        .then((res) => console.log(res));
 
       // window.location = `${ADMIN_URI}/#/landing/News/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
       this.addFixedToast();
     }
   }
@@ -125,12 +129,12 @@ class News extends Component {
   addFixedToast() {
     console.log(this.state.fixedToasts);
     this.setState({
-      fixedToasts: this.state.fixedToasts + 1
-    })
+      fixedToasts: this.state.fixedToasts + 1,
+    });
   }
 
   render() {
-    let listBlogs = this.state.blogs.map((blog, blog_i) =>
+    let listBlogs = this.state.blogs.map((blog, blog_i) => (
       <div key={blog_i}>
         <Accordion
           title={blog.title}
@@ -144,7 +148,7 @@ class News extends Component {
                   name="_id"
                   placeholder="_id"
                   value={blog._id}
-                  onChange={event => this.onChange(event, blog_i)}
+                  onChange={(event) => this.onChange(event, blog_i)}
                 />
                 <br />
                 <CInput
@@ -153,7 +157,7 @@ class News extends Component {
                   name="date"
                   placeholder="date"
                   value={blog.date}
-                  onChange={event => this.onChange(event, blog_i)}
+                  onChange={(event) => this.onChange(event, blog_i)}
                 />
                 <br />
                 <CInput
@@ -162,20 +166,20 @@ class News extends Component {
                   name="title"
                   placeholder="title"
                   value={blog.title}
-                  onChange={event => this.onChange(event, blog_i)}
+                  onChange={(event) => this.onChange(event, blog_i)}
                 />
                 <br />
                 <CInputGroup className="mb-3">
                   <CInputGroupText id="basic-addon3">
                     Paste Image URL
-              </CInputGroupText>
+                  </CInputGroupText>
                   <CInput
                     type="text"
                     id="bg"
                     name="bg"
                     placeholder="bg"
                     value={blog.bg}
-                    onChange={event => this.onChange(event, blog_i)}
+                    onChange={(event) => this.onChange(event, blog_i)}
                   />
                 </CInputGroup>
                 <br />
@@ -185,7 +189,7 @@ class News extends Component {
                   name="summary"
                   placeholder="summary"
                   value={blog.summary}
-                  onChange={event => this.onChange(event, blog_i)}
+                  onChange={(event) => this.onChange(event, blog_i)}
                 />
                 <br />
                 <CInput
@@ -194,7 +198,7 @@ class News extends Component {
                   name="content"
                   placeholder="content"
                   value={blog.content}
-                  onChange={event => this.onChange(event, blog_i)}
+                  onChange={(event) => this.onChange(event, blog_i)}
                 />
                 <br />
                 <CInput
@@ -203,49 +207,42 @@ class News extends Component {
                   name="link"
                   placeholder="link"
                   value={blog.link}
-                  onChange={event => this.onChange(event, blog_i)}
+                  onChange={(event) => this.onChange(event, blog_i)}
                 />
                 <br />
               </CFormGroup>
-
             </div>
           }
         />
+        <hr />
       </div>
-    )
+    ));
 
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                    </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
-
             {listBlogs}
 
             <hr />
@@ -266,7 +263,7 @@ class News extends Component {
         </CCol>
 
         <UploadImg />
-      </CRow >
+      </CRow>
     );
   }
 }
