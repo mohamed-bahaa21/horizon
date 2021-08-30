@@ -1,0 +1,323 @@
+Date : 2021-08-30 19:18:38
+Directory : d:\horizon
+Total : 235 files,  52305 codes, 2920 comments, 3135 blanks, all 58360 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| JSON             |         12 |     26,414 |         13 |          6 |     26,433 |
+| CSS              |         42 |      9,599 |        571 |      1,336 |     11,506 |
+| HTML             |         37 |      7,220 |      1,087 |        527 |      8,834 |
+| JavaScript       |        120 |      5,082 |      1,002 |        685 |      6,769 |
+| JavaScript React |         18 |      3,834 |        181 |        533 |      4,548 |
+| SCSS             |          4 |        135 |         65 |         39 |        239 |
+| Markdown         |          1 |         13 |          0 |          7 |         20 |
+| XML              |          1 |          8 |          1 |          2 |         11 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                     |        235 |     52,305 |      2,920 |      3,135 |     58,360 |
+| admin                                                                 |        118 |     26,594 |        885 |        925 |     28,404 |
+| admin\build                                                           |         42 |        148 |         53 |          1 |        202 |
+| admin\build\static                                                    |         39 |         40 |         53 |          0 |         93 |
+| admin\build\static\css                                                |         11 |         12 |         23 |          0 |         35 |
+| admin\build\static\js                                                 |         28 |         28 |         30 |          0 |         58 |
+| admin\public                                                          |          2 |         39 |         27 |          7 |         73 |
+| admin\src                                                             |         69 |      6,804 |        792 |        909 |      8,505 |
+| admin\src\assets                                                      |          4 |        274 |          0 |          6 |        280 |
+| admin\src\assets\icons                                                |          4 |        274 |          0 |          6 |        280 |
+| admin\src\containers                                                  |          8 |        422 |         51 |         67 |        540 |
+| admin\src\firebase                                                    |          1 |         15 |          1 |          5 |         21 |
+| admin\src\queries                                                     |          1 |          0 |         17 |          6 |         23 |
+| admin\src\reusable                                                    |          6 |        164 |         11 |         30 |        205 |
+| admin\src\reusable\Accordion                                          |          3 |        100 |         11 |         23 |        134 |
+| admin\src\routes                                                      |          1 |         10 |          0 |          4 |         14 |
+| admin\src\scss                                                        |          4 |        135 |         65 |         39 |        239 |
+| admin\src\services                                                    |          1 |         25 |          0 |          6 |         31 |
+| admin\src\views                                                       |         35 |      5,505 |        526 |        670 |      6,701 |
+| admin\src\views\Gallery                                               |          1 |        120 |          0 |         22 |        142 |
+| admin\src\views\Preview                                               |          2 |         19 |          1 |          7 |         27 |
+| admin\src\views\UploadImg                                             |          1 |        143 |          1 |         29 |        173 |
+| admin\src\views\charts                                                |          4 |        499 |          5 |         41 |        545 |
+| admin\src\views\dashboard                                             |          1 |         27 |        300 |          5 |        332 |
+| admin\src\views\mailing                                               |          1 |         90 |          5 |         18 |        113 |
+| admin\src\views\pages                                                 |         19 |      3,784 |        212 |        490 |      4,486 |
+| admin\src\views\pages\landing                                         |         15 |      3,528 |        178 |        469 |      4,175 |
+| admin\src\views\pages\login                                           |          1 |         96 |         18 |         10 |        124 |
+| admin\src\views\pages\page404                                         |          1 |         42 |          0 |          3 |         45 |
+| admin\src\views\pages\page500                                         |          1 |         42 |          0 |          3 |         45 |
+| admin\src\views\pages\register                                        |          1 |         76 |         16 |          5 |         97 |
+| admin\src\views\users                                                 |          3 |        157 |          0 |         30 |        187 |
+| admin\src\views\widgets                                               |          3 |        666 |          2 |         28 |        696 |
+| server                                                                |        115 |     24,978 |      2,035 |      2,209 |     29,222 |
+| server\controllers                                                    |          4 |        704 |        214 |        168 |      1,086 |
+| server\models                                                         |          8 |        487 |         23 |         21 |        531 |
+| server\public                                                         |         51 |     10,004 |        629 |      1,411 |     12,044 |
+| server\public\assets                                                  |         51 |     10,004 |        629 |      1,411 |     12,044 |
+| server\public\assets\coming-soon                                      |          1 |        122 |         27 |         29 |        178 |
+| server\public\assets\coming-soon\css                                  |          1 |        122 |         27 |         29 |        178 |
+| server\public\assets\css                                              |         29 |      9,464 |        514 |      1,297 |     11,275 |
+| server\public\assets\css\0                                            |          2 |        654 |          6 |        132 |        792 |
+| server\public\assets\css\_reusable                                    |          2 |         55 |          0 |         16 |         71 |
+| server\public\assets\css\about                                        |          1 |        330 |         22 |         76 |        428 |
+| server\public\assets\css\nav                                          |          3 |        180 |          4 |         19 |        203 |
+| server\public\assets\img                                              |          1 |          8 |          1 |          2 |         11 |
+| server\public\assets\js                                               |         20 |        410 |         87 |         83 |        580 |
+| server\public\assets\js\about                                         |          1 |         45 |         13 |         13 |         71 |
+| server\routes                                                         |          4 |         66 |         36 |         32 |        134 |
+| server\sample.data                                                    |          4 |        338 |          1 |          5 |        344 |
+| server\schema                                                         |          1 |         38 |          2 |          7 |         47 |
+| server\services                                                       |          3 |         83 |         14 |         16 |        113 |
+| server\views                                                          |         33 |      7,152 |      1,058 |        520 |      8,730 |
+| server\views\0                                                        |          9 |      3,531 |        465 |        254 |      4,250 |
+| server\views\404                                                      |          1 |         37 |          7 |         11 |         55 |
+| server\views\coming-soon                                              |          1 |         43 |          7 |         15 |         65 |
+| server\views\json_html_parser                                         |          2 |         31 |         25 |         12 |         68 |
+| server\views\partials                                                 |         12 |        614 |        179 |        113 |        906 |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                              | language         | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| d:\horizon\admin\REACT.md                                             | Markdown         |         13 |          0 |          7 |         20 |
+| d:\horizon\admin\build\asset-manifest.json                            | JSON             |         92 |          0 |          0 |         92 |
+| d:\horizon\admin\build\index.html                                     | HTML             |          1 |          0 |          0 |          1 |
+| d:\horizon\admin\build\manifest.json                                  | JSON             |         15 |          0 |          1 |         16 |
+| d:\horizon\admin\build\static\css\1.32263268.chunk.css                | CSS              |          2 |          7 |          0 |          9 |
+| d:\horizon\admin\build\static\css\10.f97facc2.chunk.css               | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\11.f97facc2.chunk.css               | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\12.f97facc2.chunk.css               | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\13.f97facc2.chunk.css               | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\4.f5fd07a3.chunk.css                | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\6.f97facc2.chunk.css                | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\7.f97facc2.chunk.css                | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\8.f97facc2.chunk.css                | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\9.f97facc2.chunk.css                | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\css\main.e7eb32e2.chunk.css             | CSS              |          1 |          7 |          0 |          8 |
+| d:\horizon\admin\build\static\js\0.9a48460d.chunk.js                  | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\1.892cfbb1.chunk.js                  | JavaScript       |          1 |          2 |          0 |          3 |
+| d:\horizon\admin\build\static\js\10.8bc8bd4b.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\11.f263f7a5.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\12.ff5da2c7.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\13.0dde4c8e.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\14.47bca291.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\15.46d9ff19.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\16.f782d41f.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\17.45a74af8.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\18.4f154f88.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\19.baaf09db.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\20.1c97e759.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\21.d06db8f3.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\22.44eb0ce8.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\23.2abad6fd.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\24.5b8038df.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\25.7c9baa37.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\26.39164d6b.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\27.51c2f028.chunk.js                 | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\4.6887b4b7.chunk.js                  | JavaScript       |          1 |          2 |          0 |          3 |
+| d:\horizon\admin\build\static\js\5.bd9c4fb4.chunk.js                  | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\6.a06146a0.chunk.js                  | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\7.c9acc93f.chunk.js                  | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\8.61e5966c.chunk.js                  | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\9.30d083e4.chunk.js                  | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\main.9a34dbdf.chunk.js               | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\build\static\js\runtime-main.e129571e.js             | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\admin\jsconfig.json                                        | JSON             |          6 |          0 |          0 |          6 |
+| d:\horizon\admin\package-lock.json                                    | JSON             |     19,503 |          0 |          1 |     19,504 |
+| d:\horizon\admin\package.json                                         | JSON             |         76 |         10 |          0 |         86 |
+| d:\horizon\admin\public\index.html                                    | HTML             |         24 |         27 |          6 |         57 |
+| d:\horizon\admin\public\manifest.json                                 | JSON             |         15 |          0 |          1 |         16 |
+| d:\horizon\admin\src\App.js                                           | JavaScript       |         28 |         31 |         13 |         72 |
+| d:\horizon\admin\src\App.test.js                                      | JavaScript       |         17 |          0 |          5 |         22 |
+| d:\horizon\admin\src\assets\icons\index.js                            | JavaScript       |        259 |          0 |          3 |        262 |
+| d:\horizon\admin\src\assets\icons\logo-negative.js                    | JavaScript       |          3 |          0 |          1 |          4 |
+| d:\horizon\admin\src\assets\icons\logo.js                             | JavaScript       |          3 |          0 |          1 |          4 |
+| d:\horizon\admin\src\assets\icons\sygnet.js                           | JavaScript       |          9 |          0 |          1 |         10 |
+| d:\horizon\admin\src\containers\TheContent.js                         | JavaScript       |         41 |          1 |          5 |         47 |
+| d:\horizon\admin\src\containers\TheFooter.js                          | JavaScript       |         17 |          0 |          3 |         20 |
+| d:\horizon\admin\src\containers\TheHeader.js                          | JavaScript       |        100 |          2 |         12 |        114 |
+| d:\horizon\admin\src\containers\TheLayout.js                          | JavaScript       |         22 |          0 |          4 |         26 |
+| d:\horizon\admin\src\containers\TheSidebar.js                         | JavaScript       |         44 |          9 |          5 |         58 |
+| d:\horizon\admin\src\containers\_nav.js                               | JavaScript       |        186 |         39 |         35 |        260 |
+| d:\horizon\admin\src\containers\index.js                              | JavaScript       |         12 |          0 |          2 |         14 |
+| d:\horizon\admin\src\containers\preview-modal.css                     | CSS              |          0 |          0 |          1 |          1 |
+| d:\horizon\admin\src\firebase\firebase.js                             | JavaScript       |         15 |          1 |          5 |         21 |
+| d:\horizon\admin\src\index.js                                         | JavaScript       |         26 |         34 |         13 |         73 |
+| d:\horizon\admin\src\polyfill.js                                      | JavaScript       |         26 |         26 |         12 |         64 |
+| d:\horizon\admin\src\queries\queries.js                               | JavaScript       |          0 |         17 |          6 |         23 |
+| d:\horizon\admin\src\reusable\Accordion\Accordion.css                 | CSS              |         44 |          9 |          9 |         62 |
+| d:\horizon\admin\src\reusable\Accordion\Accordion.jsx                 | JavaScript React |         38 |          2 |         11 |         51 |
+| d:\horizon\admin\src\reusable\Accordion\Chevron.jsx                   | JavaScript React |         18 |          0 |          3 |         21 |
+| d:\horizon\admin\src\reusable\api.js                                  | JavaScript       |          8 |          0 |          4 |         12 |
+| d:\horizon\admin\src\reusable\index.js                                | JavaScript       |          3 |          0 |          1 |          4 |
+| d:\horizon\admin\src\reusable\old_Accordion.js                        | JavaScript       |         53 |          0 |          2 |         55 |
+| d:\horizon\admin\src\routes.js                                        | JavaScript       |         45 |          0 |         14 |         59 |
+| d:\horizon\admin\src\routes\PrivateRoute.js                           | JavaScript       |         10 |          0 |          4 |         14 |
+| d:\horizon\admin\src\scss\_custom.scss                                | SCSS             |        105 |         16 |         21 |        142 |
+| d:\horizon\admin\src\scss\_fixes.scss                                 | SCSS             |         26 |         44 |         13 |         83 |
+| d:\horizon\admin\src\scss\_variables.scss                             | SCSS             |          0 |          1 |          1 |          2 |
+| d:\horizon\admin\src\scss\style.scss                                  | SCSS             |          4 |          4 |          4 |         12 |
+| d:\horizon\admin\src\serviceWorker.js                                 | JavaScript       |         85 |         30 |         13 |        128 |
+| d:\horizon\admin\src\services\Auth.js                                 | JavaScript       |         25 |          0 |          6 |         31 |
+| d:\horizon\admin\src\setupTests.js                                    | JavaScript       |         13 |          0 |          3 |         16 |
+| d:\horizon\admin\src\store.js                                         | JavaScript       |         14 |          0 |          3 |         17 |
+| d:\horizon\admin\src\views\Gallery\Gallery.jsx                        | JavaScript React |        120 |          0 |         22 |        142 |
+| d:\horizon\admin\src\views\Preview\Preview.js                         | JavaScript       |         19 |          1 |          6 |         26 |
+| d:\horizon\admin\src\views\Preview\preview.css                        | CSS              |          0 |          0 |          1 |          1 |
+| d:\horizon\admin\src\views\UploadImg\UploadImg.jsx                    | JavaScript React |        143 |          1 |         29 |        173 |
+| d:\horizon\admin\src\views\charts\ChartBarSimple.js                   | JavaScript       |         65 |          2 |          9 |         76 |
+| d:\horizon\admin\src\views\charts\ChartLineSimple.js                  | JavaScript       |        136 |          2 |         15 |        153 |
+| d:\horizon\admin\src\views\charts\Charts.js                           | JavaScript       |        205 |          0 |          9 |        214 |
+| d:\horizon\admin\src\views\charts\MainChartExample.js                 | JavaScript       |         93 |          1 |          8 |        102 |
+| d:\horizon\admin\src\views\dashboard\Dashboard.js                     | JavaScript       |         27 |        300 |          5 |        332 |
+| d:\horizon\admin\src\views\mailing\MailingList.js                     | JavaScript       |         90 |          5 |         18 |        113 |
+| d:\horizon\admin\src\views\pages\landing\About.jsx                    | JavaScript React |        166 |          4 |         30 |        200 |
+| d:\horizon\admin\src\views\pages\landing\Hero.jsx                     | JavaScript React |        306 |         12 |         37 |        355 |
+| d:\horizon\admin\src\views\pages\landing\LensDesigns1.jsx             | JavaScript React |        446 |         21 |         36 |        503 |
+| d:\horizon\admin\src\views\pages\landing\LensDesigns1Card.jsx         | JavaScript React |         99 |          8 |         13 |        120 |
+| d:\horizon\admin\src\views\pages\landing\LensDesigns2.jsx             | JavaScript React |        321 |         27 |         43 |        391 |
+| d:\horizon\admin\src\views\pages\landing\LensDesigns3.jsx             | JavaScript React |        255 |         15 |         39 |        309 |
+| d:\horizon\admin\src\views\pages\landing\LensInfo1.jsx                | JavaScript React |        257 |          9 |         29 |        295 |
+| d:\horizon\admin\src\views\pages\landing\LensInfo2.jsx                | JavaScript React |        323 |         20 |         54 |        397 |
+| d:\horizon\admin\src\views\pages\landing\LensInfo3.jsx                | JavaScript React |        287 |          9 |         31 |        327 |
+| d:\horizon\admin\src\views\pages\landing\News.jsx                     | JavaScript React |        233 |          4 |         35 |        272 |
+| d:\horizon\admin\src\views\pages\landing\ProductionInfo.jsx           | JavaScript React |        254 |         15 |         38 |        307 |
+| d:\horizon\admin\src\views\pages\landing\Screenshots.jsx              | JavaScript React |        134 |          9 |         14 |        157 |
+| d:\horizon\admin\src\views\pages\landing\TechnicalInfo.jsx            | JavaScript React |        240 |         15 |         38 |        293 |
+| d:\horizon\admin\src\views\pages\landing\WatchVideo.jsx               | JavaScript React |        194 |         10 |         31 |        235 |
+| d:\horizon\admin\src\views\pages\landing\_demo_lensdesigns2.js        | JavaScript       |         13 |          0 |          1 |         14 |
+| d:\horizon\admin\src\views\pages\login\Login.js                       | JavaScript       |         96 |         18 |         10 |        124 |
+| d:\horizon\admin\src\views\pages\page404\Page404.js                   | JavaScript       |         42 |          0 |          3 |         45 |
+| d:\horizon\admin\src\views\pages\page500\Page500.js                   | JavaScript       |         42 |          0 |          3 |         45 |
+| d:\horizon\admin\src\views\pages\register\Register.js                 | JavaScript       |         76 |         16 |          5 |         97 |
+| d:\horizon\admin\src\views\users\User.js                              | JavaScript       |         37 |          0 |          5 |         42 |
+| d:\horizon\admin\src\views\users\Users.js                             | JavaScript       |         80 |          0 |          9 |         89 |
+| d:\horizon\admin\src\views\users\UsersData.js                         | JavaScript       |         40 |          0 |         16 |         56 |
+| d:\horizon\admin\src\views\widgets\Widgets.js                         | JavaScript       |        362 |          0 |          9 |        371 |
+| d:\horizon\admin\src\views\widgets\WidgetsBrand.js                    | JavaScript       |        164 |          1 |         13 |        178 |
+| d:\horizon\admin\src\views\widgets\WidgetsDropdown.js                 | JavaScript       |        140 |          1 |          6 |        147 |
+| d:\horizon\admin\static.json                                          | JSON             |          5 |          3 |          0 |          8 |
+| d:\horizon\package-lock.json                                          | JSON             |        702 |          0 |          1 |        703 |
+| d:\horizon\package.json                                               | JSON             |         31 |          0 |          0 |         31 |
+| d:\horizon\server\.eslintrc.json                                      | JSON             |         32 |          0 |          0 |         32 |
+| d:\horizon\server\app.js                                              | JavaScript       |         78 |         53 |         15 |        146 |
+| d:\horizon\server\controllers\api.controllers.js                      | JavaScript       |        464 |         55 |         82 |        601 |
+| d:\horizon\server\controllers\comments.controllers.js                 | JavaScript       |          0 |        103 |         20 |        123 |
+| d:\horizon\server\controllers\json_html_parser.controllers.js         | JavaScript       |        112 |         31 |         43 |        186 |
+| d:\horizon\server\controllers\user.controllers.js                     | JavaScript       |        128 |         25 |         23 |        176 |
+| d:\horizon\server\models\About.js                                     | JavaScript       |         13 |          0 |          2 |         15 |
+| d:\horizon\server\models\Admin.js                                     | JavaScript       |         13 |          0 |          2 |         15 |
+| d:\horizon\server\models\Blog.js                                      | JavaScript       |         37 |          1 |          2 |         40 |
+| d:\horizon\server\models\Gallery.js                                   | JavaScript       |          9 |          0 |          2 |         11 |
+| d:\horizon\server\models\Landing.js                                   | JavaScript       |         22 |          1 |          2 |         25 |
+| d:\horizon\server\models\Mail.js                                      | JavaScript       |          9 |          0 |          2 |         11 |
+| d:\horizon\server\models\Products.js                                  | JavaScript       |         13 |          0 |          2 |         15 |
+| d:\horizon\server\models\horizon.js                                   | JavaScript       |        371 |         21 |          7 |        399 |
+| d:\horizon\server\package-lock.json                                   | JSON             |      5,879 |          0 |          1 |      5,880 |
+| d:\horizon\server\package.json                                        | JSON             |         58 |          0 |          1 |         59 |
+| d:\horizon\server\pm2.config.js                                       | JavaScript       |         15 |          0 |          1 |         16 |
+| d:\horizon\server\public\assets\coming-soon\css\style.css             | CSS              |        122 |         27 |         29 |        178 |
+| d:\horizon\server\public\assets\css\0\lenses_style_1.css              | CSS              |        328 |          1 |         66 |        395 |
+| d:\horizon\server\public\assets\css\0\lenses_style_2.css              | CSS              |        326 |          5 |         66 |        397 |
+| d:\horizon\server\public\assets\css\_reusable\chrome_safari_anims.css | CSS              |         52 |          0 |         16 |         68 |
+| d:\horizon\server\public\assets\css\_reusable\editor.css              | CSS              |          3 |          0 |          0 |          3 |
+| d:\horizon\server\public\assets\css\about\about.css                   | CSS              |        330 |         22 |         76 |        428 |
+| d:\horizon\server\public\assets\css\aos.css                           | CSS              |          1 |          1 |          0 |          2 |
+| d:\horizon\server\public\assets\css\before_after.css                  | CSS              |        101 |        134 |         15 |        250 |
+| d:\horizon\server\public\assets\css\bifocal.css                       | CSS              |        175 |          3 |         32 |        210 |
+| d:\horizon\server\public\assets\css\blur_cards.css                    | CSS              |        177 |         14 |         46 |        237 |
+| d:\horizon\server\public\assets\css\bootstrap.min.css                 | CSS              |          1 |          6 |          0 |          7 |
+| d:\horizon\server\public\assets\css\color-1.css                       | CSS              |        100 |         18 |         14 |        132 |
+| d:\horizon\server\public\assets\css\contact.css                       | CSS              |        260 |         15 |         58 |        333 |
+| d:\horizon\server\public\assets\css\contactUtil.css                   | CSS              |      2,824 |         71 |         89 |      2,984 |
+| d:\horizon\server\public\assets\css\fontawesome-all.min.css           | CSS              |          1 |          4 |          0 |          5 |
+| d:\horizon\server\public\assets\css\lenses.css                        | CSS              |        307 |          5 |         66 |        378 |
+| d:\horizon\server\public\assets\css\linearicons.css                   | CSS              |        526 |          1 |          4 |        531 |
+| d:\horizon\server\public\assets\css\lity.min.css                      | CSS              |        195 |          3 |         21 |        219 |
+| d:\horizon\server\public\assets\css\main.css                          | CSS              |      1,849 |        191 |        414 |      2,454 |
+| d:\horizon\server\public\assets\css\mlod.css                          | CSS              |         58 |          1 |          5 |         64 |
+| d:\horizon\server\public\assets\css\nav\nav.css                       | CSS              |        137 |          2 |         18 |        157 |
+| d:\horizon\server\public\assets\css\nav\nav.html                      | HTML             |         11 |          1 |          0 |         12 |
+| d:\horizon\server\public\assets\css\nav\old.nav.html                  | HTML             |         32 |          1 |          1 |         34 |
+| d:\horizon\server\public\assets\css\news.css                          | CSS              |        314 |          3 |         53 |        370 |
+| d:\horizon\server\public\assets\css\product_stock_lenses.css          | CSS              |        152 |          4 |         28 |        184 |
+| d:\horizon\server\public\assets\css\single-vision.css                 | CSS              |        496 |          2 |         76 |        574 |
+| d:\horizon\server\public\assets\css\slick-theme.css                   | CSS              |        170 |          4 |         31 |        205 |
+| d:\horizon\server\public\assets\css\slick.css                         | CSS              |         87 |          1 |         27 |        115 |
+| d:\horizon\server\public\assets\css\testimonials.css                  | CSS              |        216 |          1 |         38 |        255 |
+| d:\horizon\server\public\assets\css\timeline.css                      | CSS              |        235 |          0 |         37 |        272 |
+| d:\horizon\server\public\assets\img\circle.svg                        | XML              |          8 |          1 |          2 |         11 |
+| d:\horizon\server\public\assets\js\about\about.js                     | JavaScript       |         45 |         13 |         13 |         71 |
+| d:\horizon\server\public\assets\js\aos.js                             | JavaScript       |          1 |          1 |          0 |          2 |
+| d:\horizon\server\public\assets\js\before_after.js                    | JavaScript       |         20 |          6 |          5 |         31 |
+| d:\horizon\server\public\assets\js\bifocal.js                         | JavaScript       |          4 |          0 |          2 |          6 |
+| d:\horizon\server\public\assets\js\bootstrap.min.js                   | JavaScript       |          1 |          6 |          0 |          7 |
+| d:\horizon\server\public\assets\js\contact.js                         | JavaScript       |         38 |          2 |         14 |         54 |
+| d:\horizon\server\public\assets\js\jquery-3.3.1.min.js                | JavaScript       |          1 |          1 |          1 |          3 |
+| d:\horizon\server\public\assets\js\jquery.counterup.js                | JavaScript       |          1 |          0 |          0 |          1 |
+| d:\horizon\server\public\assets\js\lity.min.js                        | JavaScript       |          1 |          3 |          0 |          4 |
+| d:\horizon\server\public\assets\js\main.js                            | JavaScript       |        198 |         29 |         22 |        249 |
+| d:\horizon\server\public\assets\js\mlod.js                            | JavaScript       |          0 |          0 |          1 |          1 |
+| d:\horizon\server\public\assets\js\news.js                            | JavaScript       |         12 |          2 |          1 |         15 |
+| d:\horizon\server\public\assets\js\popper.min.js                      | JavaScript       |          1 |          4 |          1 |          6 |
+| d:\horizon\server\public\assets\js\product_stock_lenses.js            | JavaScript       |          5 |          1 |          0 |          6 |
+| d:\horizon\server\public\assets\js\showInput.js                       | JavaScript       |          3 |         11 |         15 |         29 |
+| d:\horizon\server\public\assets\js\single-vision.js                   | JavaScript       |         47 |          0 |          6 |         53 |
+| d:\horizon\server\public\assets\js\slick.min.js                       | JavaScript       |          1 |          2 |          2 |          5 |
+| d:\horizon\server\public\assets\js\testimonials.js                    | JavaScript       |         12 |          0 |          0 |         12 |
+| d:\horizon\server\public\assets\js\timeline.js                        | JavaScript       |         18 |          0 |          0 |         18 |
+| d:\horizon\server\public\assets\js\waypoints.min.js                   | JavaScript       |          1 |          6 |          0 |          7 |
+| d:\horizon\server\routes\api.routes.js                                | JavaScript       |         38 |         15 |         17 |         70 |
+| d:\horizon\server\routes\horizon.routes.js                            | JavaScript       |          7 |         12 |          3 |         22 |
+| d:\horizon\server\routes\json_html_parser.routes.js                   | JavaScript       |          8 |          1 |          4 |         13 |
+| d:\horizon\server\routes\user.routes.js                               | JavaScript       |         13 |          8 |          8 |         29 |
+| d:\horizon\server\sample.data\demo.js                                 | JavaScript       |         20 |          0 |          0 |         20 |
+| d:\horizon\server\sample.data\hero.data.js                            | JavaScript       |          0 |          0 |          1 |          1 |
+| d:\horizon\server\sample.data\horizon.sample.data.js                  | JavaScript       |         45 |          0 |          2 |         47 |
+| d:\horizon\server\sample.data\landing.sections.model.js               | JavaScript       |        273 |          1 |          2 |        276 |
+| d:\horizon\server\schema\schema.js                                    | JavaScript       |         38 |          2 |          7 |         47 |
+| d:\horizon\server\server-only.js                                      | JavaScript       |         36 |          5 |          6 |         47 |
+| d:\horizon\server\services\admin.passport.service.js                  | JavaScript       |         33 |          0 |          3 |         36 |
+| d:\horizon\server\services\firebase.service.js                        | JavaScript       |          0 |          0 |          1 |          1 |
+| d:\horizon\server\services\logger.service.js                          | JavaScript       |         50 |         14 |         12 |         76 |
+| d:\horizon\server\test-eslint.js                                      | JavaScript       |          8 |          0 |          5 |         13 |
+| d:\horizon\server\views\0\frontend_parse_json_html.ejs                | HTML             |         49 |          5 |          9 |         63 |
+| d:\horizon\server\views\0\news-single-test.ejs                        | HTML             |        481 |         47 |         33 |        561 |
+| d:\horizon\server\views\0\news-single.html                            | HTML             |        455 |         59 |         30 |        544 |
+| d:\horizon\server\views\0\news-with-sidebar-one-col-test.ejs          | HTML             |        454 |         59 |         31 |        544 |
+| d:\horizon\server\views\0\news-with-sidebar-one-col.html              | HTML             |        454 |         59 |         31 |        544 |
+| d:\horizon\server\views\0\news-with-sidebar-test.ejs                  | HTML             |        454 |         60 |         32 |        546 |
+| d:\horizon\server\views\0\news-with-sidebar.html                      | HTML             |        454 |         60 |         32 |        546 |
+| d:\horizon\server\views\0\news-without-sidebar-test.ejs               | HTML             |        365 |         58 |         28 |        451 |
+| d:\horizon\server\views\0\news-without-sidebar.html                   | HTML             |        365 |         58 |         28 |        451 |
+| d:\horizon\server\views\404\index.ejs                                 | HTML             |         37 |          7 |         11 |         55 |
+| d:\horizon\server\views\about.ejs                                     | HTML             |         59 |          4 |          7 |         70 |
+| d:\horizon\server\views\blog.ejs                                      | HTML             |        100 |         22 |          9 |        131 |
+| d:\horizon\server\views\blogs.ejs                                     | HTML             |         42 |          3 |          4 |         49 |
+| d:\horizon\server\views\brand.ejs                                     | HTML             |        204 |         38 |         14 |        256 |
+| d:\horizon\server\views\coming-soon\index.ejs                         | HTML             |         43 |          7 |         15 |         65 |
+| d:\horizon\server\views\demo.ejs                                      | HTML             |      1,334 |        142 |         25 |      1,501 |
+| d:\horizon\server\views\free_form.ejs                                 | HTML             |         71 |         18 |          8 |         97 |
+| d:\horizon\server\views\index.ejs                                     | HTML             |        983 |        127 |         36 |      1,146 |
+| d:\horizon\server\views\json_html_parser\local_index.ejs              | HTML             |         16 |         25 |          7 |         48 |
+| d:\horizon\server\views\json_html_parser\section_form.ejs             | HTML             |         15 |          0 |          5 |         20 |
+| d:\horizon\server\views\partials\about_end.ejs                        | HTML             |          0 |          0 |          1 |          1 |
+| d:\horizon\server\views\partials\about_head.ejs                       | HTML             |         49 |         21 |         16 |         86 |
+| d:\horizon\server\views\partials\footer.ejs                           | HTML             |        119 |          5 |          2 |        126 |
+| d:\horizon\server\views\partials\home_end.ejs                         | HTML             |         24 |         18 |         10 |         52 |
+| d:\horizon\server\views\partials\home_head.ejs                        | HTML             |         34 |         32 |         13 |         79 |
+| d:\horizon\server\views\partials\nav.ejs                              | HTML             |         86 |         15 |          2 |        103 |
+| d:\horizon\server\views\partials\new_end.ejs                          | HTML             |         21 |         16 |         10 |         47 |
+| d:\horizon\server\views\partials\new_head.ejs                         | HTML             |         47 |         22 |         15 |         84 |
+| d:\horizon\server\views\partials\news_head.ejs                        | HTML             |        123 |         23 |         28 |        174 |
+| d:\horizon\server\views\partials\product_end.ejs                      | HTML             |          0 |          0 |          1 |          1 |
+| d:\horizon\server\views\partials\product_head.ejs                     | HTML             |         48 |         21 |         15 |         84 |
+| d:\horizon\server\views\partials\temp.ejs                             | HTML             |         63 |          6 |          0 |         69 |
+| d:\horizon\server\views\product.ejs                                   | HTML             |        103 |         21 |         12 |        136 |
+| Total                                                                 |                  |     52,305 |      2,920 |      3,135 |     58,360 |
++-----------------------------------------------------------------------+------------------+------------+------------+------------+------------+
