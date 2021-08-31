@@ -2,7 +2,7 @@
   "name": "horizon",
   "version": "3.0.0",
   "description": "",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://horizon.aykmall.net",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cd server && npm start",
