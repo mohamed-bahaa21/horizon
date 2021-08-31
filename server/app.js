@@ -102,7 +102,7 @@ app.use(
     flash(),
     compression(),
     helmet(),
-    cors(corsOptions),
+    // cors(corsOptions),
     session({
         secret: '@010#44$vm=2001ayk2020horizon',
         name: 'sessionId',
