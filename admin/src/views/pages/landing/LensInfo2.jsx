@@ -282,7 +282,7 @@ class LensInfo2 extends Component {
                     dismissible={`${true}`}
                   >
                     <strong>Updated</strong> Successfully...
-                  </CAlert>
+                    </CAlert>
                 </CToast>
               </CToaster >
             </div>
@@ -295,9 +295,7 @@ class LensInfo2 extends Component {
             <CFormGroup>
               {/* #1 */}
               {/* Checkbox to Toggle Section */}
-
-              {/* OLD CHECKBOX *RIP* */}
-              {/* <h4>{this.state.li2_section_display ? "Show" : "hide"}</h4>
+              <h4>{this.state.li2_section_display ? "Show" : "hide"}</h4>
               <a href="#" role="button" onClick={this.toggleCheckbox}>
                 <input
                   type="checkbox"
@@ -305,21 +303,7 @@ class LensInfo2 extends Component {
                   name="li2_section_display"
                   checked={this.state.li2_section_display}
                   readOnly
-                />_Show Section</a> */}
-              {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
-
-              {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
-                <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.li2_section_display} readOnly />
-                  <span className="label__text">
-                    <span className="label__check">
-                      <i className="fa fa-check icon"></i>
-                    </span>
-                  </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
-                </label>
-              </a>
+                />_Show Section</a>
             </CFormGroup>
             <CFormGroup>
               {/* #1 Section Header */}

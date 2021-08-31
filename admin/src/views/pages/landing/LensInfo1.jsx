@@ -10,7 +10,7 @@ import {
   CInputGroupText,
   CInputGroup,
   CToaster,
-  CToast,
+  CToast
 } from "@coreui/react";
 
 import UploadImg from "../../UploadImg/UploadImg";
@@ -146,7 +146,7 @@ class LensInfo1 extends Component {
                     dismissible={`${true}`}
                   >
                     <strong>Updated</strong> Successfully...
-                  </CAlert>
+                    </CAlert>
                 </CToast>
               </CToaster >
             </div>
@@ -159,8 +159,7 @@ class LensInfo1 extends Component {
             <CFormGroup>
               {/* #1 */}
               {/* Checkbox to Toggle Sections */}
-              {/* OLD CHECKBOX *RIP* */}
-              {/* <h4>{this.state.li1_section_display ? "Show" : "hide"}</h4>
+              <h4>{this.state.li1_section_display ? "Show" : "hide"}</h4>
               <a href="#" role="button" onClick={this.toggleCheckbox}>
                 <input
                   type="checkbox"
@@ -168,25 +167,11 @@ class LensInfo1 extends Component {
                   name="li1_section_display"
                   checked={this.state.li1_section_display}
                   readOnly
-                />_Show Section</a> */}
-              {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
-
-              {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
-                <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.li1_section_display} readOnly />
-                  <span className="label__text">
-                    <span className="label__check">
-                      <i className="fa fa-check icon"></i>
-                    </span>
-                  </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
-                </label>
-              </a>
+                />_Show Section</a>
             </CFormGroup>
             <CFormGroup>
               {/* #1 name */}
-              <h6 className="badgeee">{this.state.li1_header}</h6>
+              <h6>{this.state.li1_header}</h6>
               <CInput
                 type="text"
                 id="li1_header"
@@ -208,7 +193,7 @@ class LensInfo1 extends Component {
               <CInputGroup className="mb-3">
                 <CInputGroupText id="basic-addon3">
                   Paste Image URL
-                </CInputGroupText>
+              </CInputGroupText>
                 <CInput
                   type="text"
                   id="li1_img"
@@ -219,9 +204,6 @@ class LensInfo1 extends Component {
                 />
               </CInputGroup>
               <br />
-              <hr />
-
-              <h6 className="badgeee">Top Left Parag</h6>
               <CInput
                 type="text"
                 id="li1_parag_1"
@@ -231,9 +213,6 @@ class LensInfo1 extends Component {
                 onChange={this.onChange}
               />
               <br />
-              <hr />
-
-              <h6 className="badgeee">Top Right Parag</h6>
               <CInput
                 type="text"
                 id="li1_parag_2"
@@ -243,9 +222,6 @@ class LensInfo1 extends Component {
                 onChange={this.onChange}
               />
               <br />
-              <hr />
-
-              <h6 className="badgeee">Bottom Left Parag</h6>
               <CInput
                 type="text"
                 id="li1_parag_3"
@@ -255,15 +231,12 @@ class LensInfo1 extends Component {
                 onChange={this.onChange}
               />
               <br />
-              <hr />
-
-              <h6 className="badgeee">Bottom Right Parag</h6>
               <CInput
                 type="text"
-                id="li1_parag_4"
-                name="li1_parag_4"
-                placeholder="li1_parag_4"
-                value={this.state.li1_parag_4}
+                id="li1_parag_3"
+                name="li1_parag_3"
+                placeholder="li1_parag_3"
+                value={this.state.li1_parag_3}
                 onChange={this.onChange}
               />
             </CFormGroup>

@@ -39,6 +39,7 @@ const TheSidebar = () => {
         <h2 className="c-sidebar-brand-minimized">H</h2>
       </CSidebarBrand>
       <CSidebarNav>
+
         <CCreateElement
           items={navigation}
           components={{
