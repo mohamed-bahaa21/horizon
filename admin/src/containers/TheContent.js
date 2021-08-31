@@ -5,6 +5,7 @@ import {
   Switch
 } from 'react-router-dom'
 import { CContainer, CFade } from '@coreui/react'
+import PrivateRoute from "../routes/PrivateRoute";
 
 // routes config
 import routes from '../routes'
@@ -15,6 +16,10 @@ const loading = (
   </div>
 )
 
+
+
+
+
 const TheContent = () => {
   return (
     <main className="c-main">
@@ -23,16 +28,17 @@ const TheContent = () => {
           <Switch>
             {routes.map((route, idx) => {
               return route.component && (
-                <Route
+                <PrivateRoute
                   key={idx}
                   path={route.path}
                   exact={route.exact}
                   name={route.name}
-                  render={props => (
+                  component={props => (
                     <CFade>
                       <route.component {...props} />
                     </CFade>
-                  )} />
+                  )}
+                />
               )
             })}
             <Redirect from="/" to="/landing/hero" />

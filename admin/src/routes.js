@@ -1,30 +1,32 @@
 import React from 'react';
 
-const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
-const News = React.lazy(() => import('./views/pages/landing/News'));
+// const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
 
-const Gallery = React.lazy(() => import('./views/Gallery/Gallery'));
-const MailingList = React.lazy(() => import('./views/mailing/MailingList'));
-const Charts = React.lazy(() => import('./views/charts/Charts'));
-const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
-const Users = React.lazy(() => import('./views/users/Users'));
-const User = React.lazy(() => import('./views/users/User'));
+import Dashboard from './views/dashboard/Dashboard';
+import News from './views/pages/landing/News';
 
-const Hero = React.lazy(() => import('./views/pages/landing/Hero'));
-const About = React.lazy(() => import('./views/pages/landing/About'));
+import Gallery from './views/Gallery/Gallery';
+import MailingList from './views/mailing/MailingList';
+import Charts from './views/charts/Charts';
+import Widgets from './views/widgets/Widgets';
+import Users from './views/users/Users';
+import User from './views/users/User';
 
-const LensDesigns1 = React.lazy(() => import('./views/pages/landing/LensDesigns1'));
-const LensInfo1 = React.lazy(() => import('./views/pages/landing/LensInfo1'));
-const LensInfo3 = React.lazy(() => import('./views/pages/landing/LensInfo3'));
-const LensDesigns2 = React.lazy(() => import('./views/pages/landing/LensDesigns2'));
-const LensInfo2 = React.lazy(() => import('./views/pages/landing/LensInfo2'));
-const LensDesigns3 = React.lazy(() => import('./views/pages/landing/LensDesigns3'));
+import Hero from './views/pages/landing/Hero';
+import About from './views/pages/landing/About';
 
-const WatchVideo = React.lazy(() => import('./views/pages/landing/WatchVideo'));
-const Screenshots = React.lazy(() => import('./views/pages/landing/Screenshots'));
+import LensDesigns1 from './views/pages/landing/LensDesigns1';
+import LensInfo1 from './views/pages/landing/LensInfo1';
+import LensInfo3 from './views/pages/landing/LensInfo3';
+import LensDesigns2 from './views/pages/landing/LensDesigns2';
+import LensInfo2 from './views/pages/landing/LensInfo2';
+import LensDesigns3 from './views/pages/landing/LensDesigns3';
 
-const ProductionInfo = React.lazy(() => import('./views/pages/landing/ProductionInfo'));
-const TechnicalInfo = React.lazy(() => import('./views/pages/landing/TechnicalInfo'));
+import WatchVideo from './views/pages/landing/WatchVideo';
+import Screenshots from './views/pages/landing/Screenshots';
+
+import ProductionInfo from './views/pages/landing/ProductionInfo';
+import TechnicalInfo from './views/pages/landing/TechnicalInfo';
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },

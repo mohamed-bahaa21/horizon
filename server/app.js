@@ -115,7 +115,7 @@ app.use(
         expires: expiryDate
     }),
     cookieParser("@010#44$vm=2001ayk2020horizon"),
-    // cors(corsOptions),
+    cors(),
     // passport.initialize(),
     // passport.session(),
     // function loggedIn(req, res, next) {

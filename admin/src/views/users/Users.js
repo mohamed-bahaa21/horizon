@@ -23,7 +23,7 @@ const getBadge = status => {
   }
 }
 
-console.log((usersData.length/5).toFixed(0));
+// console.log((usersData.length/5).toFixed(0));
 
 const Users = () => {
   const history = useHistory()
@@ -75,7 +75,7 @@ const Users = () => {
             activePage={page}
             onActivePageChange={pageChange}
             pages={(usersData.length/5).toFixed(0)}
-            doubleArrows={false} 
+            doubleArrows={false}
             align="center"
           />
           </CCardBody>
