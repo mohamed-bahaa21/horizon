@@ -1,4 +1,4 @@
-require('dotenv').config({ path: 'config/prod.env' })
+require('dotenv').config({ path: 'config/dev.env' })
 const path = require('path')
 global.__basename = __dirname;
 
@@ -142,6 +142,8 @@ mongoose
     .connect(MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true
     })
     .then(result => {
         app.listen(PORT);
