@@ -57,10 +57,10 @@ class Hero extends Component {
     axios
       .get(`${SERVER_URI}/api/getHeroData`)
       .then((response) => {
-        console.log("====================================");
-        console.log("server: ", SERVER_URI);
-        console.log(response);
-        console.log("====================================");
+        // console.log("====================================");
+        // console.log("server: ", SERVER_URI);
+        // console.log(response);
+        // console.log("====================================");
         // console.log(response.data[0]);
         const {
           name,
