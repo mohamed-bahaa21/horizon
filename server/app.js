@@ -1,4 +1,4 @@
-require('dotenv').config({ path: 'config/prod.env' })
+require('dotenv').config({ path: 'config/dev.env' })
 const path = require('path')
 global.__basename = __dirname;
 
@@ -115,6 +115,7 @@ app.use(
         expires: expiryDate
     }),
     cookieParser("@010#44$vm=2001ayk2020horizon"),
+    // cors(corsOptions),
     // passport.initialize(),
     // passport.session(),
     // function loggedIn(req, res, next) {

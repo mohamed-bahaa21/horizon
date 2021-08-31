@@ -22,6 +22,7 @@ import './preview-modal.css'
 
 // routes config
 import routes from "../routes";
+import { firebase_app } from "src/firebase/firebase";
 
 const TheHeader = () => {
   const dispatch = useDispatch();
@@ -74,6 +75,9 @@ const TheHeader = () => {
         <CHeaderNavItem className="px-3">
           <CHeaderNavLink to="/mailing-list">Mailing List</CHeaderNavLink>
         </CHeaderNavItem>
+        <CHeaderNavItem className="px-3">
+          <CHeaderNavLink to="#">CMS</CHeaderNavLink>
+        </CHeaderNavItem>
       </CHeaderNav>
 
       <CSubheader className="px-3 justify-content-between">
@@ -82,6 +86,9 @@ const TheHeader = () => {
           routes={routes}
         />
         <div className="d-md-down-none mfe-2 c-subheader-nav">
+          <CButton color='primary' onClick={() => firebase_app.auth().signOut()} className="mr-1">
+            Sign out
+          </CButton>
           <CButton color='primary' onClick={toggle} className="mr-1">
             Preview
           </CButton>
