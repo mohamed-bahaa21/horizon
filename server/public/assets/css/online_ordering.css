@@ -29,7 +29,7 @@ a.active {
     color: var(--main-color) !important;
 }
 
-input, textarea {
+.brown-input {
     background-color: #241F1F !important;
 }
 
