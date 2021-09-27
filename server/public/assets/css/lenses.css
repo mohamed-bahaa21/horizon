@@ -1,3 +1,71 @@
+/* =============== INDEX
+
+.stack 
+.stack::before 
+.stack:hover::before, .stack::before 
+.stack.loaded .lens_card 
+.stack.loaded .lens_card:nth-child(1) 
+.stack.loaded .lens_card:nth-child(2) 
+.stack.loaded .lens_card:nth-child(3) 
+.stack.loaded .lens_card:nth-child(4) 
+.stack.loaded .lens_card:nth-child(5) 
+.stack.loaded .lens_card:nth-child(1)::after 
+.stack.loaded .lens_card:nth-child(2)::after 
+.stack.loaded .lens_card:nth-child(3)::after 
+.stack.loaded .lens_card:nth-child(4)::after 
+.stack.loaded .lens_card:nth-child(5)::after 
+.stack.loaded .lens_card::after 
+.stack.loaded .lens_card.lens_content 
+.stack.loaded .lens_card.lens_padding 
+.stack.loaded .lens_card.lens_border 
+.stack.loaded .lens_card.lens_background 
+.stack.loaded .lens_card.lens_box-shadow 
+===================================================================
+
+.lens_card 
+@media (orientation: landscape) 
+    .lens_card 
+@media (max-width: 540px) 
+    .lens_card 
+    .lens_card:hover::after
+@media (max-width: 540px) 
+    .lens_card::after
+===================================================================
+
+.lens_card.lens_content 
+.lens_card.lens_content::after 
+@media (max-width: 540px) 
+    .lens_card.lens_content::after 
+===================================================================
+
+.lens_card.lens_padding 
+.lens_card.lens_padding::after 
+.lens_card.lens_padding::before 
+===================================================================
+
+.lens_card.lens_border 
+.lens_card.lens_border::after 
+.lens_card.lens_border::before 
+===================================================================
+
+.lens_card.lens_background 
+.lens_card.lens_background::after 
+===================================================================
+
+.lens_card.lens_box-shadow 
+.lens_card.lens_box-shadow::after 
+===================================================================
+
+p:first-of-type 
+@media (hover: hover) 
+    #mobile-prompt 
+@media (hover: none) 
+    #desktop-prompt 
+@media (max-width: 750px) 
+    .stack
+
+*/
+
 /* OLD LENSES */
 .stack {
     padding: 3rem 0;
@@ -7,7 +75,7 @@
     text-align: center;
 }
 
-.stack:before {
+.stack::before {
     content: "";
     position: fixed;
     top: 0;
@@ -25,11 +93,11 @@
     border-radius: 50%;
 }
 
-.stack:hover:before,
-.stack:before {
-    /* background: #241f1f;
-    box-shadow: 0 0 25px -5px black; */
-}
+/* big eye background */
+/* .stack:hover::before, .stack::before {
+    background: #241f1f;
+    box-shadow: 0 0 25px -5px black;
+} */
 
 .stack.loaded .lens_card {
     border-radius: 50%;
@@ -67,9 +135,9 @@
     --z-offset: 0vh;
 }
 
-.stack.loaded .lens_card:nth-child(1)::after {
-    transition-delay: 1.5s;
-    -webkit-transition-delay: 1.5s;
+/* .stack.loaded .lens_card:nth-child(1)::after {
+    transition-delay: 3s;
+    -webkit-transition-delay: 3s;
 }
 
 .stack.loaded .lens_card:nth-child(2)::after {
@@ -90,18 +158,21 @@
 .stack.loaded .lens_card:nth-child(5)::after {
     transition-delay: 2.3s;
     -webkit-transition-delay: 2.3s;
-}
+} */
 
-.stack.loaded .lens_card::after {   
+.stack.loaded .lens_card::after {
     transform: rotate(-45deg) rotateY(45deg) translateX(0px);
     -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(0px);
 }
 
 .stack.loaded .lens_card.lens_content {
     text-align: center;
-    background: rgb(0, 0, 0, 0.5);
+
+    background: rgb(0, 0, 0, 0.7);
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-color: transparent;
+
     transition: border-color 1s var(--easeInOutCirc) 0s,
         background-color 1s var(--easeInOutCirc) 0s,
         color 1s var(--easeInOutCirc) 0s, transform 1s var(--easeInOutCirc) 0s;
@@ -112,7 +183,6 @@
 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .stack.loaded .lens_card.lens_padding {
@@ -155,6 +225,7 @@
 }
 
 .lens_card {
+    content: "";
     border-radius: 50%;
     grid-area: stack;
 
@@ -174,6 +245,33 @@
     position: relative;
 }
 
+.lens_card::after {
+    content: "Box";
+    background: rgb(228 197 144 / 19%);
+
+    position: absolute;
+    opacity: 0;
+
+    font-size: 1.15rem;
+    text-shadow: 0 1px 3px rgb(0 0 0 / 75%);
+
+    white-space: nowrap;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem 3rem;
+}
+
+.lens_card:hover::after {
+    opacity: 1;
+    left: -45%;
+    top: 110%;
+
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+
+    transform: rotate(-45deg) rotateY(45deg) translateX(20px);
+    -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(20px);
+}
+
 @media (orientation: landscape) {
     .lens_card {
         width: 40vh;
@@ -188,32 +286,6 @@
     }
 }
 
-.lens_card:nth-child(1) {
-    z-index: 3;
-}
-
-.lens_card:nth-child(2) {
-    z-index: 2;
-}
-
-.lens_card:hover::after {
-    content: "Box";
-    position: absolute;
-    left: -45%;
-    top: 110%;
-    font-size: 1.15rem;
-    text-shadow: 0 1px 3px rgb(0 0 0 / 75%);
-    white-space: nowrap;
-    padding: 0.5rem 2rem;
-    border-radius: 1rem 3rem;
-    opacity: 0;
-    transition: opacity 0.5s ease 0s, transform 0.5s ease;
-    -webkit-transition: opacity 0.5s ease 0s, transform 0.5s ease;
-    transform: rotate(-45deg) rotateY(45deg) translateX(20px);
-    -webkit-transform: rotate(-45deg) rotateY(45deg) translateX(20px);
-    background: rgb(228 197 144 / 19%);
-}
-
 @media (max-width: 540px) {
     .lens_card::after {
         left: -20%;
@@ -223,18 +295,20 @@
 
 .lens_card.lens_content {
     z-index: 5;
-    transition: border-color 4s ease, background-color 0.5s ease 1s,
-        color 4s ease 0s, transform 4s ease 0s;
-    -webkit-transition: border-color 4s ease, background-color 0.5s ease 1s,
-        color 4s ease 0s, transform 4s ease 0s;
-    padding: 5vmin;
-    font-size: max(2.5vmin, 0.9rem);
-    line-height: 1.5;
-    background: rgb(36, 31, 31, 0.9);
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: max(0.5em, 0.9em);
+    line-height: 1.5em;
+    /* background: rgb(36, 31, 31, 0.9); */
 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    transition: border-color 4s ease, background-color 0.5s ease 1s,
+        color 4s ease 0s, transform 4s ease 0s;
+
+    -webkit-transition: border-color 4s ease, background-color 0.5s ease 1s,
+        color 4s ease 0s, transform 4s ease 0s;
 }
 
 .lens_card.lens_content::after {

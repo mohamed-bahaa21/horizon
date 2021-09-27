@@ -11,8 +11,8 @@ exports.getLanding = (req, res) => {
         Blog.find().limit(3).then(blogs => {
             // console.log(blogs;      
             // console.log(result[4]);
-            logger.info("return Landing PAGE & DATA", result);
-            logger.info("return Blogs Data", blogs);
+            logger.info("return Landing PAGE & DATA");
+            logger.info("return Blogs Data");
             let sections = [];
 
             result.map(section => {
@@ -60,7 +60,7 @@ exports.getBrand = (req, res) => {
     } = req.params;
 
     // console.log(brand);
-    logger.info("return brand PAGE & DATA", brand);
+    logger.info("return brand PAGE & DATA");
 
     if (brand == 'Zeiss') {
         res.render('brand', {
@@ -104,7 +104,7 @@ exports.getProduct = (req, res) => {
     } = req.params;
 
     // console.log(product);
-    logger.info("return Product DATA", product);
+    logger.info("return Product DATA");
 
     let products_arr = [
         "stock_lenses",
