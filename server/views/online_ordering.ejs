@@ -1,0 +1,121 @@
+<%- include('./partials/news_head.ejs') %>
+    <%- include('./partials/nav.ejs') %>
+
+
+        <!-- Start Page Head -->
+        <!-- Start Page Head -->
+        <section class="page-head background-withcolor">
+            <div class="container">
+                <div id='stars'></div>
+                <div id='stars1'></div>
+                <div id='stars2'></div>
+                <div class="row text-center">
+                    <div class="col-md-12" style="margin: 3rem auto !important">
+                        <span style="color: white; letter-spacing: 0.5rem;">Horizon </span>
+                        <h1 style="font-size: x-large; display: inline-block;">
+                            <!-- <span style="color: #FFD952">Products / </span> -->
+                            / Online Ordering
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="online_ordering" class="padding-100 background-withoutcolor">
+            <div class="container">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="white">
+                            <a class="btn-primary active" href="#already_client" aria-controls="Already Client"
+                                role="tab" data-toggle="tab">
+                                Already Client
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a class="btn-primary" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                Join Us
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active form-are" id="already_client">
+                            <div class="container-contact100">
+                                <div class="wrap-contact100">
+                                    <form class="contact100-form validate-form">
+
+                                        <div class="wrap-input100 validate-input"
+                                            data-validate="Please enter your email: e@a.x">
+                                            <input class="input100" type="text" name="email" placeholder="E-mail">
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input"
+                                            data-validate="Please enter your password">
+                                            <input class="input100" type="password" name="password" placeholder="password">
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="container-contact100-form-btn">
+                                            <button class="btn btn-primary shadow btn-theme">
+                                                <span>
+                                                    Login
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="container-contact100">
+                                <div class="wrap-contact100">
+                                    <form class="contact100-form validate-form">
+
+                                        <div class="wrap-input100 validate-input"
+                                            data-validate="Please enter your name">
+                                            <input class="input100" type="text" name="name" placeholder="Full Name">
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input"
+                                            data-validate="Please enter your email: e@a.x">
+                                            <input class="input100" type="text" name="email" placeholder="E-mail">
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input"
+                                            data-validate="Please enter your phone">
+                                            <input class="input100" type="text" name="phone" placeholder="Phone">
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input"
+                                            data-validate="Please enter your message">
+                                            <textarea class="input100" name="message"
+                                                placeholder="Your Message"></textarea>
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="container-contact100-form-btn">
+                                            <button class="btn btn-primary shadow btn-theme">
+                                                <span>
+                                                    Join
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-50">
+                </div>
+            </div>
+        </section>
+
+
+        <%- include('./partials/footer.ejs') %>
+            <%- include('./partials/new_end.ejs') %>

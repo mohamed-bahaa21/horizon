@@ -9,7 +9,7 @@
     "admin": "cd admin && npm start",
     "server-prod": "npm run server",
     "admin-dev": "npm run admin",
-    "dev": "concurrently \"npm run server\" \"npm run admin\""
+    "start": "concurrently \"npm run server\" \"npm run admin\""
   },
   "repository": {
     "type": "git",

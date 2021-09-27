@@ -174,3 +174,10 @@ exports.getBlog = (req, res) => {
         });
     });
 };
+
+// User Get Online Ordering
+exports.getOnlineOrdering = (req, res) => {
+    res.render('online_ordering', {
+        msgs: req.flash('success')
+    });
+};

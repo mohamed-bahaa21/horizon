@@ -1,0 +1,38 @@
+#online_ordering {
+    margin: 0 auto;
+    justify-self: center;
+}
+
+.nav-tabs { 
+    border-bottom: 0 !important;
+}
+
+ul {
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 3rem !important;
+}
+
+.btn-primary:active {
+    background-color: var(--main-color) !important;
+    color: white !important;
+}
+a {
+    margin: 0 1rem;
+}
+
+a.active {
+    border-bottom: 0.5rem solid var(--main-color) !important;
+}
+.active {
+    background-color: white !important;
+    color: var(--main-color) !important;
+}
+
+input, textarea {
+    background-color: #241F1F !important;
+}
+
+button.btn-primary {
+    background-color: var(--main-color) !important;
+}
