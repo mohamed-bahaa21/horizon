@@ -30,7 +30,7 @@ route.get('/404', userCtrl.get404);
 // if environment = development, 404 will be handled by application/API-layer (expressjs)
 // if environment = production, 404 will be handled by server-layer (nginx)
 if (process.env.NODE_ENV == "development") {
-    route.get('*', (req, res) => res.redirect('/404'))
+    // route.get('*', (req, res) => res.redirect('/404'))
 }
 
 module.exports = route;

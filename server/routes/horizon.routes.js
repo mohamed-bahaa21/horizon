@@ -21,7 +21,7 @@ route.get('/*', function (req, res, next) {
     res.header('Content-Security-Policy', "frame-src https://www.google.com/ https://www.youtube.com/ https://youtube.com/");
 
     // Website you wish to allow to connect
-    // res.setHeader('Access-Control-Allow-Origin', 'https://admin.horizon.aykmall.net');
+    // res.setHeader('Access-Control-Allow-Origin', 'https://admin.horizon-lenses.com');
     // res.setHeader('Access-Control-Allow-Origin', "*");
     // Request methods you wish to allow
     // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

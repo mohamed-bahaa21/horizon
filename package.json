@@ -2,7 +2,7 @@
   "name": "horizon",
   "version": "3.0.0",
   "description": "",
-  "proxy": "https://horizon.aykmall.net",
+  "proxy": "https://beta.horizon-lenses.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cd server && npm start",

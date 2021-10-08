@@ -33,7 +33,7 @@ const store = new MongoDBStore({
 
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 
-var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon.aykmall.net'] // allow to server to accept request from different origin
+var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon-lenses.com'] // allow to server to accept request from different origin
 var corsOptions = {
     origin: function (origin, callback) {
         if (corsWhiteList.indexOf(origin) !== -1) {
@@ -71,7 +71,7 @@ var corsOptions = {
 
 // set ejs to be template view engine  
 // app.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "https://admin.horizon.aykmall.net"); // update to match the domain you will make the request from
+//     res.header("Access-Control-Allow-Origin", "https://admin.horizon-lenses.com"); // update to match the domain you will make the request from
 //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 //     next();
 // });
@@ -111,7 +111,7 @@ app.use(
         path: '/',
         httpOnly: false,
         secure: true,
-        domain: 'admin.horizon.aykmall.net',
+        domain: 'admin.horizon-lenses.com',
         expires: expiryDate
     }),
     cookieParser("@010#44$vm=2001ayk2020horizon"),

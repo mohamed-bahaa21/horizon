@@ -20,7 +20,7 @@ ReactDOM.render(
   <Auth0Provider
     domain="dev-9v2irmh0.us.auth0.com"
     clientId="Ue5bRivqStA85NNiluSxrTstNCdtPoWm"
-    redirectUri="admin.horizon.aykmall.net/hero"
+    redirectUri="admin.horizon-lenses.com/hero"
   >
     <Provider store={store}>
       <App />
