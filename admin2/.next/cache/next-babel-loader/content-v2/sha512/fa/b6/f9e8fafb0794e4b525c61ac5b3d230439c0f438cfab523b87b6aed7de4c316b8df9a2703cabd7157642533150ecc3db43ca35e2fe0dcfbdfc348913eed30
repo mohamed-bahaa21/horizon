@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useCallback, useState } from 'react';\nexport default function useForceUpdate() {\n  const {\n    1: update\n  } = useState(Object.create(null));\n  return useCallback(() => {\n    update(Object.create(null));\n  }, [update]);\n}","map":null,"metadata":{},"sourceType":"module"}

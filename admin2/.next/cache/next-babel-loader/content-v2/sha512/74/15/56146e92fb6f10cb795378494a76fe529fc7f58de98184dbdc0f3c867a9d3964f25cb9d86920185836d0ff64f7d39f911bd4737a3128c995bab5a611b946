@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { combineReducers } from 'redux';\nimport app from './actions/app';\nimport user from './actions/user';\nimport websites from './actions/websites';\nimport queries from './actions/queries';\nexport default combineReducers({\n  app: app,\n  user: user,\n  websites: websites,\n  queries: queries\n});","map":null,"metadata":{},"sourceType":"module"}

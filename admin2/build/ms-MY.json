@@ -1,0 +1,126 @@
+{
+  "label.accounts": { "defaultMessage": "Akaun" },
+  "label.add-account": { "defaultMessage": "Tambah akaun" },
+  "label.add-website": { "defaultMessage": "Tambah laman web" },
+  "label.administrator": { "defaultMessage": "Pentadbir" },
+  "label.all": { "defaultMessage": "Semua" },
+  "label.all-events": { "defaultMessage": "Semua peristiwa" },
+  "label.all-websites": { "defaultMessage": "Semua laman web" },
+  "label.back": { "defaultMessage": "Kembali" },
+  "label.cancel": { "defaultMessage": "Batal" },
+  "label.change-password": { "defaultMessage": "Tukar kata laluan" },
+  "label.confirm-password": { "defaultMessage": "Sahkan kata laluan" },
+  "label.copy-to-clipboard": { "defaultMessage": "Salin ke papan keratan" },
+  "label.current-password": { "defaultMessage": "Kata laluan semasa" },
+  "label.custom-range": { "defaultMessage": "Julat khas" },
+  "label.dashboard": { "defaultMessage": "Papan pemuka" },
+  "label.date-range": { "defaultMessage": "Julat tarikh" },
+  "label.default-date-range": { "defaultMessage": "Julat tarikh lalai" },
+  "label.delete": { "defaultMessage": "Padam" },
+  "label.delete-account": { "defaultMessage": "Padam akaun" },
+  "label.delete-website": { "defaultMessage": "Padam laman web" },
+  "label.dismiss": { "defaultMessage": "Ketepikan" },
+  "label.domain": { "defaultMessage": "Domain" },
+  "label.edit": { "defaultMessage": "Edit" },
+  "label.edit-account": { "defaultMessage": "Edit akaun" },
+  "label.edit-website": { "defaultMessage": "Edit laman web" },
+  "label.enable-share-url": { "defaultMessage": "Aktifkan url berkongsi" },
+  "label.invalid": { "defaultMessage": "Tidak sah" },
+  "label.invalid-domain": { "defaultMessage": "Domain tidak sah" },
+  "label.last-days": { "defaultMessage": "{x} hari lepas" },
+  "label.last-hours": { "defaultMessage": "{x} jam lepas" },
+  "label.logged-in-as": { "defaultMessage": "Log masuk sebagai {username}" },
+  "label.login": { "defaultMessage": "Log masuk" },
+  "label.logout": { "defaultMessage": "Log keluar" },
+  "label.more": { "defaultMessage": "Lebih banyak lagi" },
+  "label.name": { "defaultMessage": "Nama" },
+  "label.new-password": { "defaultMessage": "Kata laluan baru" },
+  "label.password": { "defaultMessage": "Kata laluan" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Kata laluan tidak sepadan"
+  },
+  "label.profile": { "defaultMessage": "Profil" },
+  "label.realtime": { "defaultMessage": "Siaran langsung" },
+  "label.realtime-logs": { "defaultMessage": "Log secara siaran langsung" },
+  "label.refresh": { "defaultMessage": "Muat semula" },
+  "label.required": { "defaultMessage": "Diperlukan" },
+  "label.reset": { "defaultMessage": "Tetapkan semula" },
+  "label.save": { "defaultMessage": "Simpan" },
+  "label.settings": { "defaultMessage": "Tetapan" },
+  "label.share-url": { "defaultMessage": "Kongsikan URL" },
+  "label.single-day": { "defaultMessage": "Satu hari" },
+  "label.this-month": { "defaultMessage": "Bulan ini" },
+  "label.this-week": { "defaultMessage": "Minggu ini" },
+  "label.this-year": { "defaultMessage": "Tahun ini" },
+  "label.timezone": { "defaultMessage": "Zon masa" },
+  "label.today": { "defaultMessage": "Hari ini" },
+  "label.tracking-code": { "defaultMessage": "Kod penjejakan" },
+  "label.unknown": { "defaultMessage": "Tidak diketahui" },
+  "label.username": { "defaultMessage": "Nama pengguna" },
+  "label.view-details": { "defaultMessage": "Lihat butiran" },
+  "label.websites": { "defaultMessage": "Laman web" },
+  "message.active-users": {
+    "defaultMessage": "{x} semasa {x, plural, one {pelawat} other {pelawat}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Pastikah anda ingin memadam {target}?"
+  },
+  "message.copied": { "defaultMessage": "Disalin!" },
+  "message.delete-warning": {
+    "defaultMessage": "Semua data yang berkaitan juga akan dihapuskan."
+  },
+  "message.failure": { "defaultMessage": "Ada yang tidak kena." },
+  "message.get-share-url": { "defaultMessage": "Dapatkan URL berkongsi" },
+  "message.get-tracking-code": { "defaultMessage": "Dapatkan kod penjejakan" },
+  "message.go-to-settings": { "defaultMessage": "Pergi ke tetapan" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Pengguna/kata laluan tidak betul."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Pelawat dari {country} mengguna {browser} pada {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Versi baru umami {version} boleh didapati!"
+  },
+  "message.no-data-available": {
+    "defaultMessage": "Tiada data yang boleh didapati."
+  },
+  "message.no-websites-configured": {
+    "defaultMessage": "Anda tidak ada sebarang laman web yang telah dikonfigurasikan."
+  },
+  "message.page-not-found": { "defaultMessage": "Halaman tidak dijumpai." },
+  "message.powered-by": { "defaultMessage": "Disediakan oleh {name}" },
+  "message.save-success": { "defaultMessage": "Berjaya disimpan." },
+  "message.share-url": {
+    "defaultMessage": "Ini adalah URL berkongsi untuk {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Untuk menjejak statistik bagi {target}, letakkan kod berikut di bahagian {head} laman web anda."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Taip {delete} di dalam kotak di bawah untuk pengesahan."
+  },
+  "metrics.actions": { "defaultMessage": "Aksi" },
+  "metrics.average-visit-time": {
+    "defaultMessage": "Purata tempoh masa lawatan"
+  },
+  "metrics.bounce-rate": { "defaultMessage": "Kadar lantunan" },
+  "metrics.browsers": { "defaultMessage": "Pelayar web" },
+  "metrics.countries": { "defaultMessage": "Negara" },
+  "metrics.device.desktop": { "defaultMessage": "Desktop" },
+  "metrics.device.laptop": { "defaultMessage": "Laptop" },
+  "metrics.device.mobile": { "defaultMessage": "Telefon bimbit" },
+  "metrics.device.tablet": { "defaultMessage": "Tablet" },
+  "metrics.devices": { "defaultMessage": "Peranti" },
+  "metrics.events": { "defaultMessage": "Peristiwa" },
+  "metrics.filter.combined": { "defaultMessage": "Digabungkan" },
+  "metrics.filter.domain-only": { "defaultMessage": "Domain sahaja" },
+  "metrics.filter.raw": { "defaultMessage": "Mentah" },
+  "metrics.operating-systems": { "defaultMessage": "Sistem operasi" },
+  "metrics.page-views": { "defaultMessage": "Paparan halaman" },
+  "metrics.pages": { "defaultMessage": "Halaman" },
+  "metrics.referrers": { "defaultMessage": "Perujuk" },
+  "metrics.unique-visitors": { "defaultMessage": "Pelawat unik" },
+  "metrics.views": { "defaultMessage": "Lawatan" },
+  "metrics.visitors": { "defaultMessage": "Pelawat" }
+}

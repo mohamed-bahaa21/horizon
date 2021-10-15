@@ -1,0 +1,119 @@
+{
+  "label.accounts": { "defaultMessage": "Hesaplar" },
+  "label.add-account": { "defaultMessage": "Hesap ekle" },
+  "label.add-website": { "defaultMessage": "Web sitesi ekle" },
+  "label.administrator": { "defaultMessage": "Yönetici" },
+  "label.all": { "defaultMessage": "Tümü" },
+  "label.all-websites": { "defaultMessage": "Tüm web siteleri" },
+  "label.back": { "defaultMessage": "Geri" },
+  "label.cancel": { "defaultMessage": "İptal" },
+  "label.change-password": { "defaultMessage": "Şifre değiştir" },
+  "label.confirm-password": { "defaultMessage": "Parolayı onayla" },
+  "label.copy-to-clipboard": { "defaultMessage": "Panoya kopyala" },
+  "label.current-password": { "defaultMessage": "Mevcut parola" },
+  "label.custom-range": { "defaultMessage": "Özelleştirilmiş aralık" },
+  "label.dashboard": { "defaultMessage": "Kontrol Paneli" },
+  "label.date-range": { "defaultMessage": "Tarih aralığı" },
+  "label.default-date-range": { "defaultMessage": "Varsayılan tarih aralığı" },
+  "label.delete": { "defaultMessage": "Sil" },
+  "label.delete-account": { "defaultMessage": "Hesabı sil" },
+  "label.delete-website": { "defaultMessage": "Web sitesini sil" },
+  "label.dismiss": { "defaultMessage": "Reddet" },
+  "label.domain": { "defaultMessage": "Alan adı" },
+  "label.edit": { "defaultMessage": "Düzenle" },
+  "label.edit-account": { "defaultMessage": "Hesabı düzenle" },
+  "label.edit-website": { "defaultMessage": "Web sitesini düzenle" },
+  "label.enable-share-url": { "defaultMessage": "Anonim paylaşım URL'i aktif" },
+  "label.invalid": { "defaultMessage": "Geçersiz" },
+  "label.invalid-domain": { "defaultMessage": "Geçersiz alan adı" },
+  "label.last-days": { "defaultMessage": "Son {x} gün" },
+  "label.last-hours": { "defaultMessage": "Son {x} saat" },
+  "label.logged-in-as": {
+    "defaultMessage": "{username} olarak giriş yapıldı."
+  },
+  "label.login": { "defaultMessage": "Giriş Yap" },
+  "label.logout": { "defaultMessage": "Çıkış Yap" },
+  "label.more": { "defaultMessage": "Detaylı göster" },
+  "label.name": { "defaultMessage": "İsim" },
+  "label.new-password": { "defaultMessage": "Yeni parola" },
+  "label.password": { "defaultMessage": "Parola" },
+  "label.passwords-dont-match": { "defaultMessage": "Parolalar uyuşmuyor" },
+  "label.profile": { "defaultMessage": "Profil" },
+  "label.realtime": { "defaultMessage": "Gerçek Zamanlı" },
+  "label.realtime-logs": { "defaultMessage": "Gerçek zamanlı kayıtlar" },
+  "label.refresh": { "defaultMessage": "Yenile" },
+  "label.required": { "defaultMessage": "Zorunlu alan" },
+  "label.reset": { "defaultMessage": "Sıfırla" },
+  "label.save": { "defaultMessage": "Kaydet" },
+  "label.settings": { "defaultMessage": "Ayarlar" },
+  "label.share-url": { "defaultMessage": "Paylaşım adresi" },
+  "label.single-day": { "defaultMessage": "Tekil gün" },
+  "label.this-month": { "defaultMessage": "Bu ay" },
+  "label.this-week": { "defaultMessage": "Bu hafta" },
+  "label.this-year": { "defaultMessage": "Bu yıl" },
+  "label.timezone": { "defaultMessage": "Zaman dilimi" },
+  "label.today": { "defaultMessage": "Bugün" },
+  "label.tracking-code": { "defaultMessage": "İzleme kodu" },
+  "label.unknown": { "defaultMessage": "Bilinmeyen" },
+  "label.username": { "defaultMessage": "Kullanıcı adı" },
+  "label.view-details": { "defaultMessage": "Detayı incele" },
+  "label.websites": { "defaultMessage": "Web siteleri" },
+  "message.active-users": { "defaultMessage": "{x} aktif ziyaretçi" },
+  "message.confirm-delete": {
+    "defaultMessage": "{target} kaydını silmek istediğinizden emin misiniz?"
+  },
+  "message.copied": { "defaultMessage": "Panoya kopyalandı!" },
+  "message.delete-warning": {
+    "defaultMessage": "İlişkili tüm veriler de  silinecektir."
+  },
+  "message.failure": { "defaultMessage": "Bir şeyler ters gitti!" },
+  "message.get-share-url": { "defaultMessage": "Paylaşım adresini al" },
+  "message.get-tracking-code": { "defaultMessage": "İzleme kodunu al" },
+  "message.go-to-settings": { "defaultMessage": "Ayarlara git" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Hatalı kullanıcı adı ya da parola."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Yeni ziyaretçi: {country}, {os}, {device}, {browser}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "umami'nin yeni bir versiyonu ({version}) mevcut!"
+  },
+  "message.no-data-available": { "defaultMessage": "Henüz hiç veri yok." },
+  "message.no-websites-configured": {
+    "defaultMessage": "Henüz hiç web sitesi tanımlamadınız"
+  },
+  "message.page-not-found": { "defaultMessage": "Sayfa bulunamadı." },
+  "message.powered-by": { "defaultMessage": "Sağlayıcı: {name}" },
+  "message.save-success": { "defaultMessage": "Başarıyla kaydedildi." },
+  "message.share-url": {
+    "defaultMessage": "{target} için kullanılabilir anonim paylaşım adresidir."
+  },
+  "message.track-stats": {
+    "defaultMessage": "{target} alanı adı istatistiklerini takip etmek için, aşağıdaki kodu web sitenizin {head} bloğuna yerleştirin."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Onaylamak için kutuya {delete} yazın."
+  },
+  "metrics.actions": { "defaultMessage": "Hareketler" },
+  "metrics.average-visit-time": { "defaultMessage": "Ortalama ziyaret süresi" },
+  "metrics.bounce-rate": { "defaultMessage": "Çıkma oranı" },
+  "metrics.browsers": { "defaultMessage": "Tarayıcılar" },
+  "metrics.countries": { "defaultMessage": "Ülkeler" },
+  "metrics.device.desktop": { "defaultMessage": "Masaüstü" },
+  "metrics.device.laptop": { "defaultMessage": "Dizüstü" },
+  "metrics.device.mobile": { "defaultMessage": "Mobil Cihaz" },
+  "metrics.device.tablet": { "defaultMessage": "Tablet" },
+  "metrics.devices": { "defaultMessage": "Cihazlar" },
+  "metrics.events": { "defaultMessage": "Olaylar" },
+  "metrics.filter.combined": { "defaultMessage": "Birleşik" },
+  "metrics.filter.domain-only": { "defaultMessage": "Yalnızca alan adı" },
+  "metrics.filter.raw": { "defaultMessage": "Ham" },
+  "metrics.operating-systems": { "defaultMessage": "İşletim sistemi" },
+  "metrics.page-views": { "defaultMessage": "Sayfa görünümü" },
+  "metrics.pages": { "defaultMessage": "Sayfalar" },
+  "metrics.referrers": { "defaultMessage": "Yönlendirenler" },
+  "metrics.unique-visitors": { "defaultMessage": "Tekil kullanıcı" },
+  "metrics.views": { "defaultMessage": "Görüntüleme" },
+  "metrics.visitors": { "defaultMessage": "Ziyaretçi" }
+}

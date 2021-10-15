@@ -1,0 +1,128 @@
+{
+  "label.accounts": { "defaultMessage": "Usuarios" },
+  "label.add-account": { "defaultMessage": "Agregar usuario" },
+  "label.add-website": { "defaultMessage": "Agregar sitio" },
+  "label.administrator": { "defaultMessage": "Administrador" },
+  "label.all": { "defaultMessage": "Todos" },
+  "label.all-events": { "defaultMessage": "Todos los eventos" },
+  "label.all-websites": { "defaultMessage": "Todos los sitios" },
+  "label.back": { "defaultMessage": "Atrás" },
+  "label.cancel": { "defaultMessage": "Cancelar" },
+  "label.change-password": { "defaultMessage": "Cambiar contraseña" },
+  "label.confirm-password": { "defaultMessage": "Confirmar contraseña" },
+  "label.copy-to-clipboard": { "defaultMessage": "Copiar al portapapeles" },
+  "label.current-password": { "defaultMessage": "Contraseña actual" },
+  "label.custom-range": { "defaultMessage": "Intervalo personalizado" },
+  "label.dashboard": { "defaultMessage": "Panel de control" },
+  "label.date-range": { "defaultMessage": "Fechas" },
+  "label.default-date-range": { "defaultMessage": "Intervalo por defecto" },
+  "label.delete": { "defaultMessage": "Eliminar" },
+  "label.delete-account": { "defaultMessage": "Eliminar usuario" },
+  "label.delete-website": { "defaultMessage": "Eliminar sitio" },
+  "label.dismiss": { "defaultMessage": "Ignorar" },
+  "label.domain": { "defaultMessage": "Dominio" },
+  "label.edit": { "defaultMessage": "Editar" },
+  "label.edit-account": { "defaultMessage": "Editar usuario" },
+  "label.edit-website": { "defaultMessage": "Editar sitio" },
+  "label.enable-share-url": { "defaultMessage": "Habilitar compartir URL" },
+  "label.invalid": { "defaultMessage": "Inválido" },
+  "label.invalid-domain": { "defaultMessage": "Dominio inválido" },
+  "label.last-days": { "defaultMessage": "Últimos {x} días" },
+  "label.last-hours": { "defaultMessage": "Últimas {x} horas" },
+  "label.logged-in-as": { "defaultMessage": "Sesión iniciada como {username}" },
+  "label.login": { "defaultMessage": "Iniciar sesión" },
+  "label.logout": { "defaultMessage": "Cerrar sesión" },
+  "label.more": { "defaultMessage": "Más" },
+  "label.name": { "defaultMessage": "Nombre" },
+  "label.new-password": { "defaultMessage": "Nueva contraseña" },
+  "label.password": { "defaultMessage": "Contraseña" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Las contraseñas no coinciden"
+  },
+  "label.profile": { "defaultMessage": "Perfil" },
+  "label.realtime": { "defaultMessage": "Tiempo real" },
+  "label.realtime-logs": { "defaultMessage": "Registros en tiempo real" },
+  "label.refresh": { "defaultMessage": "Actualizar" },
+  "label.required": { "defaultMessage": "Requerido" },
+  "label.reset": { "defaultMessage": "Reiniciar" },
+  "label.save": { "defaultMessage": "Guardar" },
+  "label.settings": { "defaultMessage": "Configuraciones" },
+  "label.share-url": { "defaultMessage": "Compartir URL" },
+  "label.single-day": { "defaultMessage": "Dia" },
+  "label.this-month": { "defaultMessage": "Este mes" },
+  "label.this-week": { "defaultMessage": "Esta semana" },
+  "label.this-year": { "defaultMessage": "Este año" },
+  "label.timezone": { "defaultMessage": "Zona horaria" },
+  "label.today": { "defaultMessage": "Hoy" },
+  "label.tracking-code": { "defaultMessage": "Código de rastreo" },
+  "label.unknown": { "defaultMessage": "Desconocida" },
+  "label.username": { "defaultMessage": "Nombre de usuario" },
+  "label.view-details": { "defaultMessage": "Ver detalles" },
+  "label.websites": { "defaultMessage": "Sitios" },
+  "message.active-users": {
+    "defaultMessage": "{x} {x, plural, one {activo} other {activos}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "¿Estás seguro(a) de querer eliminar {target}?"
+  },
+  "message.copied": { "defaultMessage": "Copiado!" },
+  "message.delete-warning": {
+    "defaultMessage": "Toda la información relacionada será eliminada."
+  },
+  "message.failure": { "defaultMessage": "Algo falló." },
+  "message.get-share-url": { "defaultMessage": "Obtener URL para compartir" },
+  "message.get-tracking-code": {
+    "defaultMessage": "Obtener código de rastreo"
+  },
+  "message.go-to-settings": { "defaultMessage": "Ir a la configuración" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Nombre de usuario o contraseña incorrectos."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Visitante desde {country} usando {browser} en {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Una nueva versíon de umami {version} esta disponible!"
+  },
+  "message.no-data-available": {
+    "defaultMessage": "Sin información disponible."
+  },
+  "message.no-websites-configured": {
+    "defaultMessage": "No tienes ningún sitio configurado."
+  },
+  "message.page-not-found": { "defaultMessage": "Page not found" },
+  "message.powered-by": { "defaultMessage": "Desarrollado con {name}" },
+  "message.save-success": { "defaultMessage": "Guardado exitosamente." },
+  "message.share-url": {
+    "defaultMessage": "Esta es la URL compartida públicamente para {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Para registrar estadísticas para {target}, copia el siguiente código dentro de la etiqueta {head} de tu sitio."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Escribe {delete} abajo para confirmar."
+  },
+  "metrics.actions": { "defaultMessage": "Acciones" },
+  "metrics.average-visit-time": {
+    "defaultMessage": "Tiempo promedio de visita"
+  },
+  "metrics.bounce-rate": { "defaultMessage": "Porcentaje de rebote" },
+  "metrics.browsers": { "defaultMessage": "Navegadores" },
+  "metrics.countries": { "defaultMessage": "Países" },
+  "metrics.device.desktop": { "defaultMessage": "Desktop" },
+  "metrics.device.laptop": { "defaultMessage": "Laptop" },
+  "metrics.device.mobile": { "defaultMessage": "Mobile" },
+  "metrics.device.tablet": { "defaultMessage": "Tableta" },
+  "metrics.devices": { "defaultMessage": "Dispositivos" },
+  "metrics.events": { "defaultMessage": "Eventos" },
+  "metrics.filter.combined": { "defaultMessage": "Combinado" },
+  "metrics.filter.domain-only": { "defaultMessage": "Únicamente dominio" },
+  "metrics.filter.raw": { "defaultMessage": "Personalizado" },
+  "metrics.operating-systems": { "defaultMessage": "Sistemas operativos" },
+  "metrics.page-views": { "defaultMessage": "Vistas" },
+  "metrics.pages": { "defaultMessage": "Páginas" },
+  "metrics.referrers": { "defaultMessage": "Referentes" },
+  "metrics.unique-visitors": { "defaultMessage": "Visitantes únicos" },
+  "metrics.views": { "defaultMessage": "Vistas" },
+  "metrics.visitors": { "defaultMessage": "Visitantes" }
+}

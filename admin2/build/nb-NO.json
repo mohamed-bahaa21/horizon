@@ -1,0 +1,121 @@
+{
+  "label.accounts": { "defaultMessage": "Kontoer" },
+  "label.add-account": { "defaultMessage": "Legg til konto" },
+  "label.add-website": { "defaultMessage": "Legg til nettsted" },
+  "label.administrator": { "defaultMessage": "Administrator" },
+  "label.all": { "defaultMessage": "Alle" },
+  "label.all-websites": { "defaultMessage": "Alle nettsteder" },
+  "label.back": { "defaultMessage": "Tilbake" },
+  "label.cancel": { "defaultMessage": "Avvis" },
+  "label.change-password": { "defaultMessage": "Bytt passord" },
+  "label.confirm-password": { "defaultMessage": "Godkjenn passord" },
+  "label.copy-to-clipboard": { "defaultMessage": "Kopier til utklippstavle" },
+  "label.current-password": { "defaultMessage": "Nåværende passord" },
+  "label.custom-range": { "defaultMessage": "Egendefinert utvalg" },
+  "label.dashboard": { "defaultMessage": "Dashboard" },
+  "label.date-range": { "defaultMessage": "Datointervall" },
+  "label.default-date-range": { "defaultMessage": "Standard datoperiode" },
+  "label.delete": { "defaultMessage": "Slett" },
+  "label.delete-account": { "defaultMessage": "Slett konto" },
+  "label.delete-website": { "defaultMessage": "Slett nettstedet" },
+  "label.dismiss": { "defaultMessage": "Avbryt" },
+  "label.domain": { "defaultMessage": "Domene" },
+  "label.edit": { "defaultMessage": "Rediger" },
+  "label.edit-account": { "defaultMessage": "Rediger konto" },
+  "label.edit-website": { "defaultMessage": "Rediger nettsted" },
+  "label.enable-share-url": { "defaultMessage": "Aktiver delings-URL" },
+  "label.invalid": { "defaultMessage": "Ugyldig" },
+  "label.invalid-domain": { "defaultMessage": "Ugyldig domene" },
+  "label.last-days": { "defaultMessage": "Siste {x} dager" },
+  "label.last-hours": { "defaultMessage": "Siste {x} timer" },
+  "label.logged-in-as": { "defaultMessage": "Logget på som {brukernavn}" },
+  "label.login": { "defaultMessage": "Logg inn" },
+  "label.logout": { "defaultMessage": "Logg ut" },
+  "label.more": { "defaultMessage": "Mer" },
+  "label.name": { "defaultMessage": "Navn" },
+  "label.new-password": { "defaultMessage": "Nytt passord" },
+  "label.password": { "defaultMessage": "Passord" },
+  "label.passwords-dont-match": { "defaultMessage": "Passordene er ikke like" },
+  "label.profile": { "defaultMessage": "Profil" },
+  "label.realtime": { "defaultMessage": "Sanntid" },
+  "label.realtime-logs": { "defaultMessage": "Sanntidslogger" },
+  "label.refresh": { "defaultMessage": "Oppdater" },
+  "label.required": { "defaultMessage": "Påkrevd" },
+  "label.reset": { "defaultMessage": "Nullstill" },
+  "label.save": { "defaultMessage": "Lagre" },
+  "label.settings": { "defaultMessage": "Innstillinger" },
+  "label.share-url": { "defaultMessage": "Del URL" },
+  "label.single-day": { "defaultMessage": "Enkelt dag" },
+  "label.this-month": { "defaultMessage": "Denne måneden" },
+  "label.this-week": { "defaultMessage": "Denne uka" },
+  "label.this-year": { "defaultMessage": "I år" },
+  "label.timezone": { "defaultMessage": "Tidssone" },
+  "label.today": { "defaultMessage": "I dag" },
+  "label.tracking-code": { "defaultMessage": "Sporingskode" },
+  "label.unknown": { "defaultMessage": "Ukjent" },
+  "label.username": { "defaultMessage": "Brukernavn" },
+  "label.view-details": { "defaultMessage": "Vis detaljer" },
+  "label.websites": { "defaultMessage": "Nettsteder" },
+  "message.active-users": {
+    "defaultMessage": "{x} {x, plural, one {besøkende} other {besøkende}} nå"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Er du sikker på at du vil slette {target}?"
+  },
+  "message.copied": { "defaultMessage": "Kopiert!" },
+  "message.delete-warning": {
+    "defaultMessage": "Alle tilknyttede data slettes også."
+  },
+  "message.failure": { "defaultMessage": "Noe gikk galt." },
+  "message.get-share-url": { "defaultMessage": "Få delings-URL" },
+  "message.get-tracking-code": { "defaultMessage": "Få sporingskode" },
+  "message.go-to-settings": { "defaultMessage": "Gå til innstillinger" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Ugyldig brukernavn/passord."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Besøkende fra {country} med {browser} på {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "En ny versjon av umami {version} er tilgjengelig!"
+  },
+  "message.no-data-available": { "defaultMessage": "Ingen data tilgjengelig." },
+  "message.no-websites-configured": {
+    "defaultMessage": "Du har ikke satt opp noen nettsteder."
+  },
+  "message.page-not-found": { "defaultMessage": "Side ikke funnet." },
+  "message.powered-by": { "defaultMessage": "Drevet av {name}" },
+  "message.save-success": { "defaultMessage": "Lagret!" },
+  "message.share-url": {
+    "defaultMessage": "Dette er den offentlige delings-URL-en for {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "For å spore statistikk for {target}, plasser følgende kode i {head}-delen av nettstedet ditt."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Skriv inn {delete} i boksen nedenfor for å bekrefte."
+  },
+  "metrics.actions": { "defaultMessage": "Handlinger" },
+  "metrics.average-visit-time": {
+    "defaultMessage": "Gjennomsnittlig besøkelsestid"
+  },
+  "metrics.bounce-rate": { "defaultMessage": "Avvisningsfrekvens" },
+  "metrics.browsers": { "defaultMessage": "Nettlesere" },
+  "metrics.countries": { "defaultMessage": "Land" },
+  "metrics.device.desktop": { "defaultMessage": "Stasjonær" },
+  "metrics.device.laptop": { "defaultMessage": "Bærbar" },
+  "metrics.device.mobile": { "defaultMessage": "Mobiltelefon" },
+  "metrics.device.tablet": { "defaultMessage": "Nettbrett" },
+  "metrics.devices": { "defaultMessage": "Enheter" },
+  "metrics.events": { "defaultMessage": "Arrangementer" },
+  "metrics.filter.combined": { "defaultMessage": "Kombinert" },
+  "metrics.filter.domain-only": { "defaultMessage": "Bare domene" },
+  "metrics.filter.raw": { "defaultMessage": "Rå" },
+  "metrics.operating-systems": { "defaultMessage": "Operativsystemer" },
+  "metrics.page-views": { "defaultMessage": "Sidevisninger" },
+  "metrics.pages": { "defaultMessage": "Sider" },
+  "metrics.referrers": { "defaultMessage": "Referanser" },
+  "metrics.unique-visitors": { "defaultMessage": "Unike besøkende" },
+  "metrics.views": { "defaultMessage": "Visninger" },
+  "metrics.visitors": { "defaultMessage": "Besøkende" }
+}

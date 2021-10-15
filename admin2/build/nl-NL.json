@@ -1,0 +1,126 @@
+{
+  "label.accounts": { "defaultMessage": "Gebruikers" },
+  "label.add-account": { "defaultMessage": "Account toevoegen" },
+  "label.add-website": { "defaultMessage": "Website toevoegen" },
+  "label.administrator": { "defaultMessage": "Administrator" },
+  "label.all": { "defaultMessage": "Alles" },
+  "label.all-events": { "defaultMessage": "Alle gebeurtenissen" },
+  "label.all-websites": { "defaultMessage": "Alle websites" },
+  "label.back": { "defaultMessage": "Terug" },
+  "label.cancel": { "defaultMessage": "Annuleren" },
+  "label.change-password": { "defaultMessage": "Wachtwoord wijzigen" },
+  "label.confirm-password": { "defaultMessage": "Wachtwoord bevestigen" },
+  "label.copy-to-clipboard": { "defaultMessage": "Kopiëer naar klembord" },
+  "label.current-password": { "defaultMessage": "Huidig wachtwoord" },
+  "label.custom-range": { "defaultMessage": "Aangepast bereik" },
+  "label.dashboard": { "defaultMessage": "Overzicht" },
+  "label.date-range": { "defaultMessage": "Datumbereik" },
+  "label.default-date-range": { "defaultMessage": "Standaard bereik" },
+  "label.delete": { "defaultMessage": "Verwijderen" },
+  "label.delete-account": { "defaultMessage": "Account verwijderen" },
+  "label.delete-website": { "defaultMessage": "Website verwijderen" },
+  "label.dismiss": { "defaultMessage": "Negeren" },
+  "label.domain": { "defaultMessage": "Domein" },
+  "label.edit": { "defaultMessage": "Bewerken" },
+  "label.edit-account": { "defaultMessage": "Account bewerken" },
+  "label.edit-website": { "defaultMessage": "Website bewerken" },
+  "label.enable-share-url": {
+    "defaultMessage": "Sta delen via openbare URL toe"
+  },
+  "label.invalid": { "defaultMessage": "Ongeldig" },
+  "label.invalid-domain": { "defaultMessage": "Ongeldig domein" },
+  "label.last-days": { "defaultMessage": "Laatste {x} dagen" },
+  "label.last-hours": { "defaultMessage": "Laatste {x} uur" },
+  "label.logged-in-as": { "defaultMessage": "Ingelogd als {username}" },
+  "label.login": { "defaultMessage": "Inloggen" },
+  "label.logout": { "defaultMessage": "Uitloggen" },
+  "label.more": { "defaultMessage": "Toon meer" },
+  "label.name": { "defaultMessage": "Naam" },
+  "label.new-password": { "defaultMessage": "Nieuw wachtwoord" },
+  "label.password": { "defaultMessage": "Wachtwoord" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Wachtwoorden komen niet overeen"
+  },
+  "label.profile": { "defaultMessage": "Profiel" },
+  "label.realtime": { "defaultMessage": "Actueel" },
+  "label.realtime-logs": { "defaultMessage": "Actueel logboek" },
+  "label.refresh": { "defaultMessage": "Vernieuwen" },
+  "label.required": { "defaultMessage": "Verplicht" },
+  "label.reset": { "defaultMessage": "Resetten" },
+  "label.save": { "defaultMessage": "Opslaan" },
+  "label.settings": { "defaultMessage": "Instellingen" },
+  "label.share-url": { "defaultMessage": "URL delen" },
+  "label.single-day": { "defaultMessage": "Enkele dag" },
+  "label.this-month": { "defaultMessage": "Deze maand" },
+  "label.this-week": { "defaultMessage": "Deze week" },
+  "label.this-year": { "defaultMessage": "Dit jaar" },
+  "label.timezone": { "defaultMessage": "Tijdzone" },
+  "label.today": { "defaultMessage": "Vandaag" },
+  "label.tracking-code": { "defaultMessage": "Volgcode" },
+  "label.unknown": { "defaultMessage": "Onbekend" },
+  "label.username": { "defaultMessage": "Gebruikersnaam" },
+  "label.view-details": { "defaultMessage": "Meer details" },
+  "label.websites": { "defaultMessage": "Websites" },
+  "message.active-users": {
+    "defaultMessage": "{x} actieve {x, plural, one {bezoeker} other {bezoekers}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Weet je zeker dat je {target} wilt verwijderen?"
+  },
+  "message.copied": { "defaultMessage": "Gekopiëerd!" },
+  "message.delete-warning": {
+    "defaultMessage": "Alle verwante gegezens zullen ook verwijderd worden."
+  },
+  "message.failure": { "defaultMessage": "Er is iets misgegaan." },
+  "message.get-share-url": { "defaultMessage": "Openbare URL" },
+  "message.get-tracking-code": { "defaultMessage": "Tracking code" },
+  "message.go-to-settings": { "defaultMessage": "Naar instellingen" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Incorrecte gebruikersnaam/wachtwoord."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Bezoeker uit {country} met {browser} op een {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Een nieuwe versie van umami {version} is beschikbaar!"
+  },
+  "message.no-data-available": {
+    "defaultMessage": "Geen gegevens beschikbaar."
+  },
+  "message.no-websites-configured": {
+    "defaultMessage": "Je hebt geen websites ingesteld."
+  },
+  "message.page-not-found": { "defaultMessage": "Pagina niet gevonden." },
+  "message.powered-by": { "defaultMessage": "mogelijk gemaakt door {name}" },
+  "message.save-success": { "defaultMessage": "Opslaan succesvol." },
+  "message.share-url": {
+    "defaultMessage": "Met deze URL kan {target} openbaar gedeeld worden."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Om statistieken voor {target} bij te houden, plaats je de volgende code in het {head} gedeelte van je website."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Type {delete} in onderstaande veld om dit te bevestigen."
+  },
+  "metrics.actions": { "defaultMessage": "Acties" },
+  "metrics.average-visit-time": { "defaultMessage": "Gemiddelde bezoektijd" },
+  "metrics.bounce-rate": { "defaultMessage": "Bouncepercentage" },
+  "metrics.browsers": { "defaultMessage": "Browsers" },
+  "metrics.countries": { "defaultMessage": "Landen" },
+  "metrics.device.desktop": { "defaultMessage": "Desktop" },
+  "metrics.device.laptop": { "defaultMessage": "Laptop" },
+  "metrics.device.mobile": { "defaultMessage": "Mobiel" },
+  "metrics.device.tablet": { "defaultMessage": "Tablet" },
+  "metrics.devices": { "defaultMessage": "Apparaten" },
+  "metrics.events": { "defaultMessage": "Gebeurtenissen" },
+  "metrics.filter.combined": { "defaultMessage": "Gecombineerd" },
+  "metrics.filter.domain-only": { "defaultMessage": "Alleen domein" },
+  "metrics.filter.raw": { "defaultMessage": "Ruw" },
+  "metrics.operating-systems": { "defaultMessage": "Besturingssysteem" },
+  "metrics.page-views": { "defaultMessage": "Paginaweergaven" },
+  "metrics.pages": { "defaultMessage": "Pagina's" },
+  "metrics.referrers": { "defaultMessage": "Verwijzers" },
+  "metrics.unique-visitors": { "defaultMessage": "Unieke bezoekers" },
+  "metrics.views": { "defaultMessage": "Weergaven" },
+  "metrics.visitors": { "defaultMessage": "Bezoekers" }
+}

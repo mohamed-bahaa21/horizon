@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function chunk(arr, size) {\n  const chunks = [];\n  let index = 0;\n\n  while (index < arr.length) {\n    chunks.push(arr.slice(index, size + index));\n    index += size;\n  }\n\n  return chunks;\n}","map":null,"metadata":{},"sourceType":"module"}

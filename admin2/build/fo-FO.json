@@ -1,0 +1,121 @@
+{
+  "label.accounts": { "defaultMessage": "Brúkarar" },
+  "label.add-account": { "defaultMessage": "Ger brúkara" },
+  "label.add-website": { "defaultMessage": "Legg heimasíðu afturat" },
+  "label.administrator": { "defaultMessage": "Fyrisitari" },
+  "label.all": { "defaultMessage": "Alt" },
+  "label.all-websites": { "defaultMessage": "Allar heimasíður" },
+  "label.back": { "defaultMessage": "Aftur" },
+  "label.cancel": { "defaultMessage": "Strika" },
+  "label.change-password": { "defaultMessage": "Skift loyniorð" },
+  "label.confirm-password": { "defaultMessage": "Vátta loyniorð" },
+  "label.copy-to-clipboard": { "defaultMessage": "Avrita til setiðborð" },
+  "label.current-password": { "defaultMessage": "Núverandi loyniorð" },
+  "label.custom-range": { "defaultMessage": "Tillaga  spenni" },
+  "label.dashboard": { "defaultMessage": "Yvirlitsskíggi" },
+  "label.date-range": { "defaultMessage": "Vel dato" },
+  "label.default-date-range": { "defaultMessage": "Forsett dato" },
+  "label.delete": { "defaultMessage": "Sletta" },
+  "label.delete-account": { "defaultMessage": "Sletta brúkara" },
+  "label.delete-website": { "defaultMessage": "Sletta heimasíðu" },
+  "label.dismiss": { "defaultMessage": "Lat fara" },
+  "label.domain": { "defaultMessage": "Økisnavn" },
+  "label.edit": { "defaultMessage": "Ger broyting" },
+  "label.edit-account": { "defaultMessage": "Broyt brúkara" },
+  "label.edit-website": { "defaultMessage": "Broyt heimasíðu" },
+  "label.enable-share-url": { "defaultMessage": "Virkja deili leinki" },
+  "label.invalid": { "defaultMessage": "Ógilda" },
+  "label.invalid-domain": { "defaultMessage": "Ógilt økisnavn" },
+  "label.last-days": { "defaultMessage": "Seinastu {x} dagarnar" },
+  "label.last-hours": { "defaultMessage": "Seinastu {x} tímarnar" },
+  "label.logged-in-as": { "defaultMessage": "Ritaður inn sum {username}" },
+  "label.login": { "defaultMessage": "Rita inn" },
+  "label.logout": { "defaultMessage": "Rita út" },
+  "label.more": { "defaultMessage": "Meira" },
+  "label.name": { "defaultMessage": "Navn" },
+  "label.new-password": { "defaultMessage": "Nýtt loyniorð" },
+  "label.password": { "defaultMessage": "Loyniorð" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Loyniorðini eru ikki eins"
+  },
+  "label.profile": { "defaultMessage": "Vangi" },
+  "label.realtime": { "defaultMessage": "Beinleiðis" },
+  "label.realtime-logs": { "defaultMessage": "Beinleiðis skrá" },
+  "label.refresh": { "defaultMessage": "Endurskapa" },
+  "label.required": { "defaultMessage": "Kravt" },
+  "label.reset": { "defaultMessage": "Nulstilla" },
+  "label.save": { "defaultMessage": "Goym" },
+  "label.settings": { "defaultMessage": "Stillingar" },
+  "label.share-url": { "defaultMessage": "Deil leinku" },
+  "label.single-day": { "defaultMessage": "Einkultur dagur" },
+  "label.this-month": { "defaultMessage": "Hendan mánan" },
+  "label.this-week": { "defaultMessage": "Hesa vikuna" },
+  "label.this-year": { "defaultMessage": "Hetta árið" },
+  "label.timezone": { "defaultMessage": "Tíðarsona" },
+  "label.today": { "defaultMessage": "Í dag" },
+  "label.tracking-code": { "defaultMessage": "Spori kota" },
+  "label.unknown": { "defaultMessage": "Ókent" },
+  "label.username": { "defaultMessage": "Brúkaranavn" },
+  "label.view-details": { "defaultMessage": "Vís frágreiðing" },
+  "label.websites": { "defaultMessage": "Heimasíður" },
+  "message.active-users": {
+    "defaultMessage": "{x} í løtuni {x, plural, one {vitjandi} other { vitjandi }}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Ert tú sikkur at tú ynskir at strika {target}?"
+  },
+  "message.copied": { "defaultMessage": "Avrita!" },
+  "message.delete-warning": {
+    "defaultMessage": "Øll data ið er knýtt at verður eisini strika."
+  },
+  "message.failure": { "defaultMessage": "Okkurt bleiv gali." },
+  "message.get-share-url": { "defaultMessage": "Fá leinku sum tú kanst deila" },
+  "message.get-tracking-code": { "defaultMessage": "Fá sporings kotu" },
+  "message.go-to-settings": { "defaultMessage": "Far til stillingar" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Skeivt brúkaranavn/loyniorð."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Vitjandi frá {country} brúkar {browser} á {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Ein nýggj útgava av umami {version} er tøkt!"
+  },
+  "message.no-data-available": { "defaultMessage": "Einki data tøk." },
+  "message.no-websites-configured": {
+    "defaultMessage": "Tú hevur ongar heimasíður stillaða til."
+  },
+  "message.page-not-found": { "defaultMessage": "Síðan bleiv ikki funnin." },
+  "message.powered-by": { "defaultMessage": "Powered by {name}" },
+  "message.save-success": { "defaultMessage": "Goymt." },
+  "message.share-url": {
+    "defaultMessage": "Hettar er tann almenna leinkan av {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Fyri at spora hagtøl fyri {target}, koyr kotuna í {head} partin á tínari heimasíðu."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Skriva {delete} í feltið fyri at vátta"
+  },
+  "metrics.actions": { "defaultMessage": "Gerðir" },
+  "metrics.average-visit-time": { "defaultMessage": "Miðal vitjurnartíð " },
+  "metrics.bounce-rate": { "defaultMessage": "Bounce prosenttal" },
+  "metrics.browsers": { "defaultMessage": "Kagar" },
+  "metrics.countries": { "defaultMessage": "Lond" },
+  "metrics.device.desktop": { "defaultMessage": "Borðtelda" },
+  "metrics.device.laptop": { "defaultMessage": "Fartelda" },
+  "metrics.device.mobile": { "defaultMessage": "Telefon" },
+  "metrics.device.tablet": { "defaultMessage": "Teldil" },
+  "metrics.devices": { "defaultMessage": "Tóleindir" },
+  "metrics.events": { "defaultMessage": "Hendingar/tiltøk" },
+  "metrics.filter.combined": { "defaultMessage": "Samansett" },
+  "metrics.filter.domain-only": { "defaultMessage": "Bara økisnavn" },
+  "metrics.filter.raw": { "defaultMessage": "Óviðgjørt" },
+  "metrics.operating-systems": { "defaultMessage": "Stýrikervir" },
+  "metrics.page-views": { "defaultMessage": "Opnaðar síðir" },
+  "metrics.pages": { "defaultMessage": "Síðir" },
+  "metrics.referrers": { "defaultMessage": "Framsendingar" },
+  "metrics.unique-visitors": { "defaultMessage": "Einsýna vitjanir" },
+  "metrics.views": { "defaultMessage": "Sýningar" },
+  "metrics.visitors": { "defaultMessage": "Vitjandi" }
+}

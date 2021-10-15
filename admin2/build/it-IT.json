@@ -1,0 +1,125 @@
+{
+  "label.accounts": { "defaultMessage": "Utenti" },
+  "label.add-account": { "defaultMessage": "Aggiungi utente" },
+  "label.add-website": { "defaultMessage": "Aggiungi sito" },
+  "label.administrator": { "defaultMessage": "Amministratore" },
+  "label.all": { "defaultMessage": "Tutto" },
+  "label.all-websites": { "defaultMessage": "Tutti i siti web" },
+  "label.back": { "defaultMessage": "Indietro" },
+  "label.cancel": { "defaultMessage": "Annulla" },
+  "label.change-password": { "defaultMessage": "Modifica password" },
+  "label.confirm-password": { "defaultMessage": "Conferma password" },
+  "label.copy-to-clipboard": { "defaultMessage": "Copia" },
+  "label.current-password": { "defaultMessage": "Password corrente" },
+  "label.custom-range": { "defaultMessage": "Personalizzato" },
+  "label.dashboard": { "defaultMessage": "Dashboard" },
+  "label.date-range": { "defaultMessage": "Periodo" },
+  "label.default-date-range": { "defaultMessage": "Periodo standard" },
+  "label.delete": { "defaultMessage": "Elimina" },
+  "label.delete-account": { "defaultMessage": "Elimina account" },
+  "label.delete-website": { "defaultMessage": "Elimina sito" },
+  "label.dismiss": { "defaultMessage": "Scarta" },
+  "label.domain": { "defaultMessage": "Dominio" },
+  "label.edit": { "defaultMessage": "Modifica" },
+  "label.edit-account": { "defaultMessage": "Modifica account" },
+  "label.edit-website": { "defaultMessage": "Modifica sito" },
+  "label.enable-share-url": { "defaultMessage": "Abilita URL di condivisione" },
+  "label.invalid": { "defaultMessage": "Non valido" },
+  "label.invalid-domain": { "defaultMessage": "Dominio non valido" },
+  "label.last-days": { "defaultMessage": "Ultimi {x} giorni" },
+  "label.last-hours": { "defaultMessage": "Ultime {x} ore" },
+  "label.logged-in-as": { "defaultMessage": "Ciao {username}" },
+  "label.login": { "defaultMessage": "Login" },
+  "label.logout": { "defaultMessage": "Logout" },
+  "label.more": { "defaultMessage": "Dettagli" },
+  "label.name": { "defaultMessage": "Nome" },
+  "label.new-password": { "defaultMessage": "Nuova password" },
+  "label.password": { "defaultMessage": "Password" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Le password non corrispondono"
+  },
+  "label.profile": { "defaultMessage": "Profilo" },
+  "label.realtime": { "defaultMessage": "Realtime" },
+  "label.realtime-logs": { "defaultMessage": "Log in realtime" },
+  "label.refresh": { "defaultMessage": "Ricarica" },
+  "label.required": { "defaultMessage": "Obbligatorio" },
+  "label.reset": { "defaultMessage": "Reset" },
+  "label.save": { "defaultMessage": "Salva" },
+  "label.settings": { "defaultMessage": "Impostazioni" },
+  "label.share-url": { "defaultMessage": "Share URL" },
+  "label.single-day": { "defaultMessage": "Singolo giorno" },
+  "label.this-month": { "defaultMessage": "Questo mese" },
+  "label.this-week": { "defaultMessage": "Questa settimana" },
+  "label.this-year": { "defaultMessage": "Quest'anno" },
+  "label.timezone": { "defaultMessage": "Fuso orario" },
+  "label.today": { "defaultMessage": "Oggi" },
+  "label.tracking-code": { "defaultMessage": "Codice di tracking" },
+  "label.unknown": { "defaultMessage": "Sconosciuto" },
+  "label.username": { "defaultMessage": "Username" },
+  "label.view-details": { "defaultMessage": "Vedi dettagli" },
+  "label.websites": { "defaultMessage": "Siti web" },
+  "message.active-users": {
+    "defaultMessage": "{x} {x, plural, one {visitatore} other {visitatori}} online"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Sei sicuro di voler eliminare {target}?"
+  },
+  "message.copied": { "defaultMessage": "Copiato!" },
+  "message.delete-warning": {
+    "defaultMessage": "Saranno eliminati anche tutti i dati associati."
+  },
+  "message.failure": { "defaultMessage": "Si è verificato un errore." },
+  "message.get-share-url": {
+    "defaultMessage": "Ottieni l'URL di condivisione"
+  },
+  "message.get-tracking-code": {
+    "defaultMessage": "Ottieni il codice di tracking"
+  },
+  "message.go-to-settings": { "defaultMessage": "Vai alle impostazioni" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Username o password non corretti."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Utenti da {country} tramite {browser} su {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Una nuova versione umami {version} è disponibile!"
+  },
+  "message.no-data-available": { "defaultMessage": "Nessun dato disponibile." },
+  "message.no-websites-configured": {
+    "defaultMessage": "Non hai ancora configurato alcun sito."
+  },
+  "message.page-not-found": { "defaultMessage": "Pagina non trovata" },
+  "message.powered-by": { "defaultMessage": "Powered by {name}" },
+  "message.save-success": { "defaultMessage": "Salvato!" },
+  "message.share-url": {
+    "defaultMessage": "Questo è l'URL di condivisione per {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Per tracciare le statistiche di {target}, inserisci questo codice nella sezione {head} del tuo sito web."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Digita {delete} nel box qui sotto per confermare."
+  },
+  "metrics.actions": { "defaultMessage": "Azioni" },
+  "metrics.average-visit-time": { "defaultMessage": "Tempo medio di visita" },
+  "metrics.bounce-rate": { "defaultMessage": "Frequenza di rimbalzo" },
+  "metrics.browsers": { "defaultMessage": "Browser" },
+  "metrics.countries": { "defaultMessage": "Nazioni" },
+  "metrics.device.desktop": { "defaultMessage": "Desktop" },
+  "metrics.device.laptop": { "defaultMessage": "Laptop" },
+  "metrics.device.mobile": { "defaultMessage": "Mobile" },
+  "metrics.device.tablet": { "defaultMessage": "Tablet" },
+  "metrics.devices": { "defaultMessage": "Dispositivi" },
+  "metrics.events": { "defaultMessage": "Eventi" },
+  "metrics.filter.combined": { "defaultMessage": "Aggregati" },
+  "metrics.filter.domain-only": { "defaultMessage": "Solo dominio" },
+  "metrics.filter.raw": { "defaultMessage": "Raw" },
+  "metrics.operating-systems": { "defaultMessage": "Sistemi operativi" },
+  "metrics.page-views": { "defaultMessage": "Visualizzazioni di pagina" },
+  "metrics.pages": { "defaultMessage": "Pagine" },
+  "metrics.referrers": { "defaultMessage": "Referr" },
+  "metrics.unique-visitors": { "defaultMessage": "Visitatori unici" },
+  "metrics.views": { "defaultMessage": "Visualizzazioni" },
+  "metrics.visitors": { "defaultMessage": "Visitatori" }
+}

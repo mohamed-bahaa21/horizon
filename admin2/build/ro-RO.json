@@ -1,0 +1,127 @@
+{
+  "label.accounts": { "defaultMessage": "Conturi" },
+  "label.add-account": { "defaultMessage": "Adăugare cont" },
+  "label.add-website": { "defaultMessage": "Adăugare site web" },
+  "label.administrator": { "defaultMessage": "Administrator" },
+  "label.all": { "defaultMessage": "All" },
+  "label.all-websites": { "defaultMessage": "All websites" },
+  "label.back": { "defaultMessage": "Înapoi" },
+  "label.cancel": { "defaultMessage": "Anulează" },
+  "label.change-password": { "defaultMessage": "Schimbare parolă" },
+  "label.confirm-password": { "defaultMessage": "Confirmare parolă" },
+  "label.copy-to-clipboard": { "defaultMessage": "Copiază în clipboard" },
+  "label.current-password": { "defaultMessage": "Parola curentă" },
+  "label.custom-range": { "defaultMessage": "Interval personalizat" },
+  "label.dashboard": { "defaultMessage": "Tablou de bord" },
+  "label.date-range": { "defaultMessage": "Interval de date" },
+  "label.default-date-range": { "defaultMessage": "Interval de date implicit" },
+  "label.delete": { "defaultMessage": "Șterge" },
+  "label.delete-account": { "defaultMessage": "Ștergere cont" },
+  "label.delete-website": { "defaultMessage": "Ștergere site web" },
+  "label.dismiss": { "defaultMessage": "Renunță" },
+  "label.domain": { "defaultMessage": "Domeniu" },
+  "label.edit": { "defaultMessage": "Editare" },
+  "label.edit-account": { "defaultMessage": "Editare cont" },
+  "label.edit-website": { "defaultMessage": "Editare site web" },
+  "label.enable-share-url": {
+    "defaultMessage": "Activare adresa URL de distribuire"
+  },
+  "label.invalid": { "defaultMessage": "Invalid" },
+  "label.invalid-domain": { "defaultMessage": "Invalid domain" },
+  "label.last-days": { "defaultMessage": "Ultimele {x} zile" },
+  "label.last-hours": { "defaultMessage": "Ultimele {x} ore" },
+  "label.logged-in-as": { "defaultMessage": "Autentificat ca {username}" },
+  "label.login": { "defaultMessage": "Autentificare" },
+  "label.logout": { "defaultMessage": "Dezautentificare" },
+  "label.more": { "defaultMessage": "Mai mult" },
+  "label.name": { "defaultMessage": "Nume" },
+  "label.new-password": { "defaultMessage": "Parola nouă" },
+  "label.password": { "defaultMessage": "Parolă" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Parolele nu se potrivesc"
+  },
+  "label.profile": { "defaultMessage": "Profil" },
+  "label.realtime": { "defaultMessage": "Realtime" },
+  "label.realtime-logs": { "defaultMessage": "Realtime logs" },
+  "label.refresh": { "defaultMessage": "Reîmprospătare" },
+  "label.required": { "defaultMessage": "Obligatoriu" },
+  "label.reset": { "defaultMessage": "Resetează" },
+  "label.save": { "defaultMessage": "Salvează" },
+  "label.settings": { "defaultMessage": "Setări" },
+  "label.share-url": { "defaultMessage": "Partajare URL" },
+  "label.single-day": { "defaultMessage": "O singură zi" },
+  "label.this-month": { "defaultMessage": "Această lună" },
+  "label.this-week": { "defaultMessage": "Această săptămână" },
+  "label.this-year": { "defaultMessage": "Acest an" },
+  "label.timezone": { "defaultMessage": "Fus orar" },
+  "label.today": { "defaultMessage": "Astăzi" },
+  "label.tracking-code": { "defaultMessage": "Cod de urmărire" },
+  "label.unknown": { "defaultMessage": "Necunoscut" },
+  "label.username": { "defaultMessage": "Username" },
+  "label.view-details": { "defaultMessage": "Vizualizare detalii" },
+  "label.websites": { "defaultMessage": "Site-uri web" },
+  "message.active-users": {
+    "defaultMessage": "{x} {x, plural, one {vizitator activ} other {vizitatori activi}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Sunteți sigur că doriți să ștergeți {target}?"
+  },
+  "message.copied": { "defaultMessage": "Copiat!" },
+  "message.delete-warning": {
+    "defaultMessage": "Toate datele asociate vor fi șterse, de asemenea."
+  },
+  "message.failure": { "defaultMessage": "Ceva n-a mers bine." },
+  "message.get-share-url": {
+    "defaultMessage": "Obține adresa URL de partajare"
+  },
+  "message.get-tracking-code": { "defaultMessage": "Obține codul de urmărire" },
+  "message.go-to-settings": { "defaultMessage": "Mergi la Setări" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Username/parolă incorecte."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Visitor from {country} using {browser} on {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Este disponibilă o nouă versiune {version} de umami!"
+  },
+  "message.no-data-available": {
+    "defaultMessage": "Nicio informație disponibilă."
+  },
+  "message.no-websites-configured": {
+    "defaultMessage": "Nu aveți niciun site web configurat."
+  },
+  "message.page-not-found": { "defaultMessage": "Pagina nu a fost găsită." },
+  "message.powered-by": { "defaultMessage": "Cu sprijinul {name}" },
+  "message.save-success": { "defaultMessage": "Salvat cu succes." },
+  "message.share-url": {
+    "defaultMessage": "Aceasta este adresa URL de partajare pentru {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Pentru a urmări statisticile pentru {target}, plasați următorul cod în secțiunea {head} a site-ului dvs. web."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Tastați {delete} în casuța de mai jos pentru a confirma."
+  },
+  "metrics.actions": { "defaultMessage": "Acțiuni" },
+  "metrics.average-visit-time": { "defaultMessage": "Timp mediu de vizitare" },
+  "metrics.bounce-rate": { "defaultMessage": "Rata de respingere" },
+  "metrics.browsers": { "defaultMessage": "Browsere" },
+  "metrics.countries": { "defaultMessage": "Țări" },
+  "metrics.device.desktop": { "defaultMessage": "Desktop" },
+  "metrics.device.laptop": { "defaultMessage": "Laptop" },
+  "metrics.device.mobile": { "defaultMessage": "Mobil" },
+  "metrics.device.tablet": { "defaultMessage": "Tabletă" },
+  "metrics.devices": { "defaultMessage": "Dispozitive" },
+  "metrics.events": { "defaultMessage": "Evenimente" },
+  "metrics.filter.combined": { "defaultMessage": "Combinat" },
+  "metrics.filter.domain-only": { "defaultMessage": "Numai domeniu" },
+  "metrics.filter.raw": { "defaultMessage": "Brut" },
+  "metrics.operating-systems": { "defaultMessage": "Sisteme de operare" },
+  "metrics.page-views": { "defaultMessage": "Vizualizări de pagină" },
+  "metrics.pages": { "defaultMessage": "Pagini" },
+  "metrics.referrers": { "defaultMessage": "Site-uri de proveniență" },
+  "metrics.unique-visitors": { "defaultMessage": "Vizitatori unici" },
+  "metrics.views": { "defaultMessage": "Vizualizări" },
+  "metrics.visitors": { "defaultMessage": "Vizitatori" }
+}

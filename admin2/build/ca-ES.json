@@ -1,0 +1,130 @@
+{
+  "label.accounts": { "defaultMessage": "Comptes" },
+  "label.add-account": { "defaultMessage": "Afegeix compte" },
+  "label.add-website": { "defaultMessage": "Afegeix lloc web" },
+  "label.administrator": { "defaultMessage": "Administrador" },
+  "label.all": { "defaultMessage": "Tots" },
+  "label.all-events": { "defaultMessage": "Tots els esdeveniments" },
+  "label.all-websites": { "defaultMessage": "Tots els llocs web" },
+  "label.back": { "defaultMessage": "Enrere" },
+  "label.cancel": { "defaultMessage": "Cancel·la" },
+  "label.change-password": { "defaultMessage": "Canvia la contrasenya" },
+  "label.confirm-password": { "defaultMessage": "Confirma la contrasenya" },
+  "label.copy-to-clipboard": { "defaultMessage": "Copia al porta-retalls" },
+  "label.current-password": { "defaultMessage": "Contrasenya actual" },
+  "label.custom-range": { "defaultMessage": "Rang personalitzat" },
+  "label.dashboard": { "defaultMessage": "Panell" },
+  "label.date-range": { "defaultMessage": "Interval de dates" },
+  "label.default-date-range": {
+    "defaultMessage": "Interval de dates per defecte"
+  },
+  "label.delete": { "defaultMessage": "Esborra" },
+  "label.delete-account": { "defaultMessage": "Esborra el compte" },
+  "label.delete-website": { "defaultMessage": "Esborra el lloc web" },
+  "label.dismiss": { "defaultMessage": "Descarta" },
+  "label.domain": { "defaultMessage": "Domini" },
+  "label.edit": { "defaultMessage": "Edita" },
+  "label.edit-account": { "defaultMessage": "Edita el compte" },
+  "label.edit-website": { "defaultMessage": "Edita el lloc web" },
+  "label.enable-share-url": {
+    "defaultMessage": "Activa l'enllaç per compartir"
+  },
+  "label.invalid": { "defaultMessage": "Invàlid" },
+  "label.invalid-domain": { "defaultMessage": "Domini invàlid" },
+  "label.last-days": { "defaultMessage": "Últims {x} dies" },
+  "label.last-hours": { "defaultMessage": "Últimes {x} hores" },
+  "label.logged-in-as": { "defaultMessage": "Connectat com {username}" },
+  "label.login": { "defaultMessage": "Connecta't" },
+  "label.logout": { "defaultMessage": "Desconnecta't" },
+  "label.more": { "defaultMessage": "Més" },
+  "label.name": { "defaultMessage": "Nom" },
+  "label.new-password": { "defaultMessage": "Contrasenya nova" },
+  "label.password": { "defaultMessage": "Contrasenya" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Les contrasenyes no coincideixen"
+  },
+  "label.profile": { "defaultMessage": "Perfil" },
+  "label.realtime": { "defaultMessage": "Temps real" },
+  "label.realtime-logs": { "defaultMessage": "Registres a temps real" },
+  "label.refresh": { "defaultMessage": "Refresca" },
+  "label.required": { "defaultMessage": "Obligatori" },
+  "label.reset": { "defaultMessage": "Restableix" },
+  "label.save": { "defaultMessage": "Desa" },
+  "label.settings": { "defaultMessage": "Configuració" },
+  "label.share-url": { "defaultMessage": "Enllaç per compartir" },
+  "label.single-day": { "defaultMessage": "Un sol dia" },
+  "label.this-month": { "defaultMessage": "Aquest mes" },
+  "label.this-week": { "defaultMessage": "Aquesta setmana" },
+  "label.this-year": { "defaultMessage": "Aquest any" },
+  "label.timezone": { "defaultMessage": "Zona horària" },
+  "label.today": { "defaultMessage": "Avui" },
+  "label.tracking-code": { "defaultMessage": "Codi de seguiment" },
+  "label.unknown": { "defaultMessage": "Desconegut" },
+  "label.username": { "defaultMessage": "Nom d'usuari" },
+  "label.view-details": { "defaultMessage": "Veure els detalls" },
+  "label.websites": { "defaultMessage": "Llocs web" },
+  "message.active-users": {
+    "defaultMessage": "{x} {x, plural, one {visitant actual} other {visitants actuals}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Segur que vols esborrar {target}?"
+  },
+  "message.copied": { "defaultMessage": "S'ha copiat" },
+  "message.delete-warning": {
+    "defaultMessage": "També s'esborraran totes les dades relacionades."
+  },
+  "message.failure": { "defaultMessage": "S'ha produït un error." },
+  "message.get-share-url": { "defaultMessage": "Obté l'enllaç per compartir" },
+  "message.get-tracking-code": {
+    "defaultMessage": "Obté el codi de seguiment"
+  },
+  "message.go-to-settings": { "defaultMessage": "Vés a la configuració" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Nom d'usuari o contrasenya incorrectes."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Visitant de {country} usant {browser} a {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Hi ha disponible una nova versió d'umami {version}!"
+  },
+  "message.no-data-available": {
+    "defaultMessage": "No hi ha dades disponibles."
+  },
+  "message.no-websites-configured": {
+    "defaultMessage": "No hi ha cap lloc web configurat."
+  },
+  "message.page-not-found": { "defaultMessage": "No s'ha trobat la pàgina." },
+  "message.powered-by": { "defaultMessage": "Funciona amb {name}" },
+  "message.save-success": { "defaultMessage": "S'ha desat amb èxit." },
+  "message.share-url": {
+    "defaultMessage": "Aquest és l'enllaç públic per compartir de {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Per seguir les estadístiques de {target}, col·loca el codi següent a la secció {head} del teu lloc web."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Escriu {delete} al quadre següent per confirmar."
+  },
+  "metrics.actions": { "defaultMessage": "Accions" },
+  "metrics.average-visit-time": { "defaultMessage": "Temps mitjà de visita" },
+  "metrics.bounce-rate": { "defaultMessage": "Percentatge de rebot" },
+  "metrics.browsers": { "defaultMessage": "Navegadors" },
+  "metrics.countries": { "defaultMessage": "Països" },
+  "metrics.device.desktop": { "defaultMessage": "Escriptori" },
+  "metrics.device.laptop": { "defaultMessage": "Portàtil" },
+  "metrics.device.mobile": { "defaultMessage": "Mòbil" },
+  "metrics.device.tablet": { "defaultMessage": "Tauleta" },
+  "metrics.devices": { "defaultMessage": "Dispositius" },
+  "metrics.events": { "defaultMessage": "Esdeveniments" },
+  "metrics.filter.combined": { "defaultMessage": "Combinat" },
+  "metrics.filter.domain-only": { "defaultMessage": "Només domini" },
+  "metrics.filter.raw": { "defaultMessage": "En cru" },
+  "metrics.operating-systems": { "defaultMessage": "Sistemes operatius" },
+  "metrics.page-views": { "defaultMessage": "Pàgines vistes" },
+  "metrics.pages": { "defaultMessage": "Pàgines" },
+  "metrics.referrers": { "defaultMessage": "Referents" },
+  "metrics.unique-visitors": { "defaultMessage": "Visitants únics" },
+  "metrics.views": { "defaultMessage": "Vistes" },
+  "metrics.visitors": { "defaultMessage": "Visitants" }
+}

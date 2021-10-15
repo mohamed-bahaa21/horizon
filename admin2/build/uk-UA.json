@@ -1,0 +1,124 @@
+{
+  "label.accounts": { "defaultMessage": "Облікові записи" },
+  "label.add-account": { "defaultMessage": "Додати обліковий запис" },
+  "label.add-website": { "defaultMessage": "Додати сайт" },
+  "label.administrator": { "defaultMessage": "Адміністратор" },
+  "label.all": { "defaultMessage": "Всі" },
+  "label.all-events": { "defaultMessage": "Всі події" },
+  "label.all-websites": { "defaultMessage": "Всі сайти" },
+  "label.back": { "defaultMessage": "Назад" },
+  "label.cancel": { "defaultMessage": "Відмінити" },
+  "label.change-password": { "defaultMessage": "Змінити пароль" },
+  "label.confirm-password": { "defaultMessage": "Підтвердити пароль" },
+  "label.copy-to-clipboard": { "defaultMessage": "Копіювати до буферу обміну" },
+  "label.current-password": { "defaultMessage": "Поточний пароль" },
+  "label.custom-range": { "defaultMessage": "Довільний період" },
+  "label.dashboard": { "defaultMessage": "Інформаційна панель" },
+  "label.date-range": { "defaultMessage": "Діапазон дат" },
+  "label.default-date-range": {
+    "defaultMessage": "Діапазон дат за замовчуванням"
+  },
+  "label.delete": { "defaultMessage": "Видалити" },
+  "label.delete-account": { "defaultMessage": "Видалити обліковий запис" },
+  "label.delete-website": { "defaultMessage": "Видалити сайт" },
+  "label.dismiss": { "defaultMessage": "Відхилити" },
+  "label.domain": { "defaultMessage": "Домен" },
+  "label.edit": { "defaultMessage": "Редагувати" },
+  "label.edit-account": { "defaultMessage": "Редагувати обліковий запис" },
+  "label.edit-website": { "defaultMessage": "Редагувати сайт" },
+  "label.enable-share-url": {
+    "defaultMessage": "Дозволити ділитися посиланням"
+  },
+  "label.invalid": { "defaultMessage": "Некоректний" },
+  "label.invalid-domain": { "defaultMessage": "Некоректний домен" },
+  "label.last-days": { "defaultMessage": "Останні {x} днів" },
+  "label.last-hours": { "defaultMessage": "Останні {x} годин" },
+  "label.logged-in-as": { "defaultMessage": "Ви увійшли як {username}" },
+  "label.login": { "defaultMessage": "Увійти" },
+  "label.logout": { "defaultMessage": "Вийти" },
+  "label.more": { "defaultMessage": "Більше" },
+  "label.name": { "defaultMessage": "Ім'я" },
+  "label.new-password": { "defaultMessage": "Новий пароль" },
+  "label.password": { "defaultMessage": "Пароль" },
+  "label.passwords-dont-match": { "defaultMessage": "Паролі не співпадають" },
+  "label.profile": { "defaultMessage": "Профіль" },
+  "label.realtime": { "defaultMessage": "У реальному часі" },
+  "label.realtime-logs": { "defaultMessage": "Логи у реальному часі" },
+  "label.refresh": { "defaultMessage": "Оновити" },
+  "label.required": { "defaultMessage": "Обов'язкове" },
+  "label.reset": { "defaultMessage": "Скинути" },
+  "label.save": { "defaultMessage": "Зберегти" },
+  "label.settings": { "defaultMessage": "Налаштування" },
+  "label.share-url": { "defaultMessage": "Поділитися посилання" },
+  "label.single-day": { "defaultMessage": "Один день" },
+  "label.this-month": { "defaultMessage": "Цього місяця" },
+  "label.this-week": { "defaultMessage": "Цього тижня" },
+  "label.this-year": { "defaultMessage": "Цього ріку" },
+  "label.timezone": { "defaultMessage": "Часовий пояс" },
+  "label.today": { "defaultMessage": "Сьогодні" },
+  "label.tracking-code": { "defaultMessage": "Код для відслідковування" },
+  "label.unknown": { "defaultMessage": "Невідомо" },
+  "label.username": { "defaultMessage": "Ім'я користувача" },
+  "label.view-details": { "defaultMessage": "Переглянути деталі" },
+  "label.websites": { "defaultMessage": "Сайти" },
+  "message.active-users": { "defaultMessage": "{x} поточних відвідувачів" },
+  "message.confirm-delete": {
+    "defaultMessage": "Ви впевнені, що бажаєте видалити {target}?"
+  },
+  "message.copied": { "defaultMessage": "Скопійовано!" },
+  "message.delete-warning": {
+    "defaultMessage": "Усі пов'язані дані будуть видалені також."
+  },
+  "message.failure": { "defaultMessage": "Щось пішло не так." },
+  "message.get-share-url": { "defaultMessage": "Отримати публічне посилання" },
+  "message.get-tracking-code": {
+    "defaultMessage": "Отримати код для відслідковування"
+  },
+  "message.go-to-settings": { "defaultMessage": "Перейти до налаштувань" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Невірне ім'я користувача або пароль."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Відвідувач з {country} використовуючи {browser} на {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Нова версія umami {version} доступна!"
+  },
+  "message.no-data-available": { "defaultMessage": "Немає даних." },
+  "message.no-websites-configured": {
+    "defaultMessage": "У вас немає налаштованих сайтів."
+  },
+  "message.page-not-found": { "defaultMessage": "Сторінку не знайдено." },
+  "message.powered-by": { "defaultMessage": "На базі {name}" },
+  "message.save-success": { "defaultMessage": "Збережено успішно." },
+  "message.share-url": {
+    "defaultMessage": "Це публічне посилання для {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Аби відслідковувати статистику для {target}, розмістіть наступний код у {head} секції вашого сайту."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Введіть {delete} у полі нижче щоб підтвердити."
+  },
+  "metrics.actions": { "defaultMessage": "Дії" },
+  "metrics.average-visit-time": { "defaultMessage": "Середній час візиту" },
+  "metrics.bounce-rate": { "defaultMessage": "Показник відмов" },
+  "metrics.browsers": { "defaultMessage": "Браузери" },
+  "metrics.countries": { "defaultMessage": "Країни" },
+  "metrics.device.desktop": { "defaultMessage": "Настільний ПК" },
+  "metrics.device.laptop": { "defaultMessage": "Ноутбук" },
+  "metrics.device.mobile": { "defaultMessage": "Мобільний" },
+  "metrics.device.tablet": { "defaultMessage": "Планшет" },
+  "metrics.devices": { "defaultMessage": "Пристрої" },
+  "metrics.events": { "defaultMessage": "Події" },
+  "metrics.filter.combined": { "defaultMessage": "Об'єднані" },
+  "metrics.filter.domain-only": { "defaultMessage": "Лише домен" },
+  "metrics.filter.raw": { "defaultMessage": "Сирі дані" },
+  "metrics.operating-systems": { "defaultMessage": "Операційні системи" },
+  "metrics.page-views": { "defaultMessage": "Перегляди сторінок" },
+  "metrics.pages": { "defaultMessage": "Сторінки" },
+  "metrics.referrers": { "defaultMessage": "Джерела" },
+  "metrics.unique-visitors": { "defaultMessage": "Унікальні відвідувачі" },
+  "metrics.views": { "defaultMessage": "Перегляди" },
+  "metrics.visitors": { "defaultMessage": "Відвідувачі" }
+}

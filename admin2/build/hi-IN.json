@@ -1,0 +1,123 @@
+{
+  "label.accounts": { "defaultMessage": "खाता" },
+  "label.add-account": { "defaultMessage": "खाता जोड़ें" },
+  "label.add-website": { "defaultMessage": "वेबसाइट" },
+  "label.administrator": { "defaultMessage": "प्रशासक" },
+  "label.all": { "defaultMessage": "सब" },
+  "label.all-websites": { "defaultMessage": "सभी वेबसाइटें" },
+  "label.back": { "defaultMessage": "पीछे" },
+  "label.cancel": { "defaultMessage": "रद्द करें" },
+  "label.change-password": { "defaultMessage": "पासवर्ड बदलें" },
+  "label.confirm-password": { "defaultMessage": "पासवर्ड की पुष्टि कीजिये" },
+  "label.copy-to-clipboard": { "defaultMessage": "क्लिपबोर्ड पर कॉपी करें" },
+  "label.current-password": { "defaultMessage": "वर्तमान पासवर्ड" },
+  "label.custom-range": { "defaultMessage": "कस्टम रेंज" },
+  "label.dashboard": { "defaultMessage": "नियंत्रण-पट्ट" },
+  "label.date-range": { "defaultMessage": "तिथि सीमा" },
+  "label.default-date-range": { "defaultMessage": "डिफ़ॉल्ट तिथि सीमा" },
+  "label.delete": { "defaultMessage": "खाता हटाएं" },
+  "label.delete-account": { "defaultMessage": "खाता हटाएं" },
+  "label.delete-website": { "defaultMessage": "वेबसाइट हटाएं" },
+  "label.dismiss": { "defaultMessage": "खारिज कीजिये" },
+  "label.domain": { "defaultMessage": "डोमेन" },
+  "label.edit": { "defaultMessage": "संपादित करें" },
+  "label.edit-account": { "defaultMessage": "खाता संपादित करें" },
+  "label.edit-website": { "defaultMessage": "वेबसाइट संपादित करें" },
+  "label.enable-share-url": { "defaultMessage": "शेयर URL सक्षम करें" },
+  "label.invalid": { "defaultMessage": "अमान्य" },
+  "label.invalid-domain": { "defaultMessage": "अमान्य डोमेन" },
+  "label.last-days": { "defaultMessage": "पिछले {x} दिन" },
+  "label.last-hours": { "defaultMessage": "पिछले {x} घंटे" },
+  "label.logged-in-as": { "defaultMessage": "{x} के रूप में लॉग इन किया" },
+  "label.login": { "defaultMessage": "लॉग इन" },
+  "label.logout": { "defaultMessage": "लॉग आउट" },
+  "label.more": { "defaultMessage": "और" },
+  "label.name": { "defaultMessage": "नाम" },
+  "label.new-password": { "defaultMessage": "नया पासवर्ड" },
+  "label.password": { "defaultMessage": "पासवर्ड" },
+  "label.passwords-dont-match": { "defaultMessage": "पासवर्ड मेल नहीं खाते" },
+  "label.profile": { "defaultMessage": "प्रोफ़ाइल" },
+  "label.realtime": { "defaultMessage": "वास्तव काल" },
+  "label.realtime-logs": { "defaultMessage": "वास्तविक समय लॉग" },
+  "label.refresh": { "defaultMessage": "रिफ्रेश" },
+  "label.required": { "defaultMessage": "अपेक्षित" },
+  "label.reset": { "defaultMessage": "रीसेट" },
+  "label.save": { "defaultMessage": "सहेजें" },
+  "label.settings": { "defaultMessage": "समायोजन" },
+  "label.share-url": { "defaultMessage": "यूआरएल साझा करें" },
+  "label.single-day": { "defaultMessage": "एक दिन" },
+  "label.this-month": { "defaultMessage": "इस महीने" },
+  "label.this-week": { "defaultMessage": "इस सप्ताह" },
+  "label.this-year": { "defaultMessage": "इस साल" },
+  "label.timezone": { "defaultMessage": "समय क्षेत्र" },
+  "label.today": { "defaultMessage": "आज" },
+  "label.tracking-code": { "defaultMessage": "ट्रैकिंग कोड" },
+  "label.unknown": { "defaultMessage": "अज्ञात" },
+  "label.username": { "defaultMessage": "उपयोगकर्ता नाम" },
+  "label.view-details": { "defaultMessage": "विवरण देखें" },
+  "label.websites": { "defaultMessage": "वेबसाइटों" },
+  "message.active-users": {
+    "defaultMessage": "{x} मौजूद {x, plural, one {आगंतुक} other {आगंतुकों}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "क्या आप वाकई में {target} हटाना चाहते हैं?"
+  },
+  "message.copied": { "defaultMessage": "कॉपी हो गया!" },
+  "message.delete-warning": {
+    "defaultMessage": "सभी संबद्ध डेटा को भी हटा दिया जाएगा।"
+  },
+  "message.failure": { "defaultMessage": "कुछ गलत हो गया।" },
+  "message.get-share-url": { "defaultMessage": "शेयर URL प्राप्त करें" },
+  "message.get-tracking-code": {
+    "defaultMessage": "ट्रैकिंग कोड प्राप्त करें"
+  },
+  "message.go-to-settings": { "defaultMessage": "समायोजन में जाइए" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "ग़लत उपयोगकर्ता नाम / पासवर्ड।"
+  },
+  "message.log.visitor": {
+    "defaultMessage": "{country} का आगंतुक, जो {browser} का उपयोग करता है, {os} यन्त्र पर"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "उमामी का नया संस्करण {version} उपलब्ध है!"
+  },
+  "message.no-data-available": { "defaultMessage": "कोई डेटा उपलब्ध नहीं है।" },
+  "message.no-websites-configured": {
+    "defaultMessage": "आपके पास कोई वेबसाइट कॉन्फ़िगर नहीं है।"
+  },
+  "message.page-not-found": { "defaultMessage": "पृष्ठ नहीं मिला।" },
+  "message.powered-by": { "defaultMessage": "{name} द्वारा संचालित" },
+  "message.save-success": {
+    "defaultMessage": "सफलतापूर्वक संचित कर लिया गया है।"
+  },
+  "message.share-url": {
+    "defaultMessage": "यह {target} के लिए सार्वजनिक रूप से साझा किया गया URL है।"
+  },
+  "message.track-stats": {
+    "defaultMessage": "{target} के आँकड़ों को ट्रैक करने के लिए, अपनी वेबसाइट के {head} अनुभाग में निम्नलिखित कोड रखें।"
+  },
+  "message.type-delete": {
+    "defaultMessage": "पुष्टि करने के लिए नीचे दिए गए बॉक्स में {delete} टाइप करें।"
+  },
+  "metrics.actions": { "defaultMessage": "कार्य" },
+  "metrics.average-visit-time": { "defaultMessage": "औसत दृश्य समय" },
+  "metrics.bounce-rate": { "defaultMessage": "उछाल दर" },
+  "metrics.browsers": { "defaultMessage": "वेब ब्राउज़र" },
+  "metrics.countries": { "defaultMessage": "देश" },
+  "metrics.device.desktop": { "defaultMessage": "डेस्कटॉप" },
+  "metrics.device.laptop": { "defaultMessage": "लैपटॉप" },
+  "metrics.device.mobile": { "defaultMessage": "मोबाइल फोन" },
+  "metrics.device.tablet": { "defaultMessage": "टैबलेट" },
+  "metrics.devices": { "defaultMessage": "उपकरण" },
+  "metrics.events": { "defaultMessage": "स्पर्धाएँ" },
+  "metrics.filter.combined": { "defaultMessage": "संयुक्त" },
+  "metrics.filter.domain-only": { "defaultMessage": "केवल डोमेन" },
+  "metrics.filter.raw": { "defaultMessage": "रॉ" },
+  "metrics.operating-systems": { "defaultMessage": "ऑपरेटिंग सिस्टम" },
+  "metrics.page-views": { "defaultMessage": "पृष्ठ दृश्य" },
+  "metrics.pages": { "defaultMessage": "पृष्ठों" },
+  "metrics.referrers": { "defaultMessage": "सन्दर्भदाता" },
+  "metrics.unique-visitors": { "defaultMessage": "अद्वितीय आगंतुकों" },
+  "metrics.views": { "defaultMessage": "दृश्य" },
+  "metrics.visitors": { "defaultMessage": "आगंतुकों" }
+}

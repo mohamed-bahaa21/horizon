@@ -1,0 +1,120 @@
+{
+  "label.accounts": { "defaultMessage": "حساب‌ها" },
+  "label.add-account": { "defaultMessage": "افزودن حساب" },
+  "label.add-website": { "defaultMessage": "افزودن وب‌سایت" },
+  "label.administrator": { "defaultMessage": "مدیر" },
+  "label.all": { "defaultMessage": "همه" },
+  "label.all-events": { "defaultMessage": "همه‌ی رویدادها" },
+  "label.all-websites": { "defaultMessage": "همه‌ی وب‌سایت‌ها" },
+  "label.back": { "defaultMessage": "برگشت" },
+  "label.cancel": { "defaultMessage": "انصراف" },
+  "label.change-password": { "defaultMessage": "تغییر رمز" },
+  "label.confirm-password": { "defaultMessage": "تایید رمز" },
+  "label.copy-to-clipboard": { "defaultMessage": "کپی به حافظه" },
+  "label.current-password": { "defaultMessage": "رمز فعلی" },
+  "label.custom-range": { "defaultMessage": "محدوده‌ی دلخواه" },
+  "label.dashboard": { "defaultMessage": "داشبورد" },
+  "label.date-range": { "defaultMessage": "محدوده‌ی تاریخ" },
+  "label.default-date-range": { "defaultMessage": "محدوده‌ی پیشفرض تاریخ" },
+  "label.delete": { "defaultMessage": "حذف" },
+  "label.delete-account": { "defaultMessage": "حذف حساب" },
+  "label.delete-website": { "defaultMessage": "حذف وب‌سایت" },
+  "label.dismiss": { "defaultMessage": "رد کردن" },
+  "label.domain": { "defaultMessage": "دامنه" },
+  "label.edit": { "defaultMessage": "ویرایش" },
+  "label.edit-account": { "defaultMessage": "ویرایش حساب" },
+  "label.edit-website": { "defaultMessage": "ویرایش وب‌سایت" },
+  "label.enable-share-url": { "defaultMessage": "فعال کردن اشتراک گذاری URL" },
+  "label.invalid": { "defaultMessage": "نامعتبر" },
+  "label.invalid-domain": { "defaultMessage": "دامنه‌ی نامعتبر" },
+  "label.last-days": { "defaultMessage": "لیست {x} روز" },
+  "label.last-hours": { "defaultMessage": "لیست {x} ساعت" },
+  "label.logged-in-as": { "defaultMessage": "وارد شده به عنوان {username}" },
+  "label.login": { "defaultMessage": "ورود" },
+  "label.logout": { "defaultMessage": "خروج" },
+  "label.more": { "defaultMessage": "بیشتر" },
+  "label.name": { "defaultMessage": "نام" },
+  "label.new-password": { "defaultMessage": "رمز جدید" },
+  "label.password": { "defaultMessage": "رمز" },
+  "label.passwords-dont-match": { "defaultMessage": "رمزها یکسان نیستند" },
+  "label.profile": { "defaultMessage": "پروفایل" },
+  "label.realtime": { "defaultMessage": "آمار زنده" },
+  "label.realtime-logs": { "defaultMessage": "لاگ‌های زنده" },
+  "label.refresh": { "defaultMessage": "به‌روزرسانی" },
+  "label.required": { "defaultMessage": "ضروری" },
+  "label.reset": { "defaultMessage": "بازنشانی" },
+  "label.save": { "defaultMessage": "ذخیره" },
+  "label.settings": { "defaultMessage": "تنظیمات" },
+  "label.share-url": { "defaultMessage": "به اشتراک گذاری URL" },
+  "label.single-day": { "defaultMessage": "یک روز" },
+  "label.this-month": { "defaultMessage": "این ماه" },
+  "label.this-week": { "defaultMessage": "این هفته" },
+  "label.this-year": { "defaultMessage": "امسال" },
+  "label.timezone": { "defaultMessage": "منطقه‌ی زمانی" },
+  "label.today": { "defaultMessage": "امروز" },
+  "label.tracking-code": { "defaultMessage": "کد رهگیری" },
+  "label.unknown": { "defaultMessage": "ناشناخته" },
+  "label.username": { "defaultMessage": "نام کاربری" },
+  "label.view-details": { "defaultMessage": "مشاهده‌ی جزئیات" },
+  "label.websites": { "defaultMessage": "وب‌سایت‌ها" },
+  "message.active-users": {
+    "defaultMessage": "{x} هم اکنون {x, plural, one {یک} other {از میان}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "آیا مطمئن هستید می‌خواهید {target} را حذف کنید?"
+  },
+  "message.copied": { "defaultMessage": "کپی شد!" },
+  "message.delete-warning": {
+    "defaultMessage": "همه‌ی داده‌های مرتبط هم حذف خواهد شد."
+  },
+  "message.failure": { "defaultMessage": "مشکلی پیش آمده است." },
+  "message.get-share-url": { "defaultMessage": "دریافت URL برای اشتراک گذاری" },
+  "message.get-tracking-code": { "defaultMessage": "گرفتن کد رهگیری" },
+  "message.go-to-settings": { "defaultMessage": "رفتن به تنظیمات" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "نام کاربری / رمز نادرست است."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "بازدیدکننده از کشور {country} با مروگر {browser} در {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "نسخه‌ی جدید umami ({version}) موجود است!"
+  },
+  "message.no-data-available": { "defaultMessage": "اطلاعاتی موجود نیست." },
+  "message.no-websites-configured": {
+    "defaultMessage": "شما هیچ وب‌سایتی را پیکربندی نکرده‌اید."
+  },
+  "message.page-not-found": { "defaultMessage": "صفحه یافت نشد." },
+  "message.powered-by": { "defaultMessage": "قدرت گرفته توسط {name}" },
+  "message.save-success": { "defaultMessage": "با موفقیت ذخیره شد." },
+  "message.share-url": {
+    "defaultMessage": "این URL به اشتراک گذاشته شده عمومی برای {target} است."
+  },
+  "message.track-stats": {
+    "defaultMessage": "برای ردیابی آمار {target}, کد روبرو را در قسمت {head} وب‌سایت قرار دهید."
+  },
+  "message.type-delete": {
+    "defaultMessage": "جهت اطمینان '{delete}' را در کادر زیر بنویسید."
+  },
+  "metrics.actions": { "defaultMessage": "اقدامات" },
+  "metrics.average-visit-time": { "defaultMessage": "میانگین زمان بازدید" },
+  "metrics.bounce-rate": { "defaultMessage": "نرخ Bounce" },
+  "metrics.browsers": { "defaultMessage": "مروگرها" },
+  "metrics.countries": { "defaultMessage": "کشورها" },
+  "metrics.device.desktop": { "defaultMessage": "دسکتاپ" },
+  "metrics.device.laptop": { "defaultMessage": "لپ‌تاپ" },
+  "metrics.device.mobile": { "defaultMessage": "موبایل" },
+  "metrics.device.tablet": { "defaultMessage": "تبلت" },
+  "metrics.devices": { "defaultMessage": "دستگاه‌ها" },
+  "metrics.events": { "defaultMessage": "رویدادها" },
+  "metrics.filter.combined": { "defaultMessage": "ترکیب شده" },
+  "metrics.filter.domain-only": { "defaultMessage": "فقط دامنه" },
+  "metrics.filter.raw": { "defaultMessage": "خام" },
+  "metrics.operating-systems": { "defaultMessage": "سیستم‌عامل‌ها" },
+  "metrics.page-views": { "defaultMessage": "بازدید صفحه" },
+  "metrics.pages": { "defaultMessage": "صفحه‌ها" },
+  "metrics.referrers": { "defaultMessage": "ارجاع دهندگان" },
+  "metrics.unique-visitors": { "defaultMessage": "بازدیدکننده‌های یکتا" },
+  "metrics.views": { "defaultMessage": "بازدید" },
+  "metrics.visitors": { "defaultMessage": "بازدیدکننده" }
+}

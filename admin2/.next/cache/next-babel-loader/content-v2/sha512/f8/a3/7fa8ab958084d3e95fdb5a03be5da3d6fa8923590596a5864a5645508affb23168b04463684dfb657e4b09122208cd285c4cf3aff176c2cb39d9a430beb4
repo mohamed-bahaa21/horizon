@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useAuth } from 'lib/middleware';\nimport { ok, unauthorized } from 'lib/response';\nexport default (async (req, res) => {\n  await useAuth(req, res);\n\n  if (req.auth) {\n    return ok(res, req.auth);\n  }\n\n  return unauthorized(res);\n});","map":null,"metadata":{},"sourceType":"module"}

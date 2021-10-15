@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { createSlice } from '@reduxjs/toolkit';\nconst user = createSlice({\n  name: 'user',\n  initialState: null,\n  reducers: {\n    updateUser(state, action) {\n      state = action.payload;\n      return state;\n    }\n\n  }\n});\nexport const {\n  updateUser\n} = user.actions;\nexport default user.reducer;","map":null,"metadata":{},"sourceType":"module"}

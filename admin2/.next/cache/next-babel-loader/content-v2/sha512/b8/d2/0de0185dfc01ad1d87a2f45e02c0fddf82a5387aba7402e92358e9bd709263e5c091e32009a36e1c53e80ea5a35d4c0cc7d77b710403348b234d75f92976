@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useEffect } from 'react';\nexport default function useDocumentClick(handler) {\n  useEffect(() => {\n    document.addEventListener('click', handler);\n    return () => {\n      document.removeEventListener('click', handler);\n    };\n  }, [handler]);\n  return null;\n}","map":null,"metadata":{},"sourceType":"module"}

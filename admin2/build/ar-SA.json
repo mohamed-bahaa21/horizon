@@ -1,0 +1,120 @@
+{
+  "label.accounts": { "defaultMessage": "الحسابات" },
+  "label.add-account": { "defaultMessage": "إضافة حساب" },
+  "label.add-website": { "defaultMessage": "إضافة موقع" },
+  "label.administrator": { "defaultMessage": "مدير عام؟" },
+  "label.all": { "defaultMessage": "الكل" },
+  "label.all-events": { "defaultMessage": "كافة الأحداث" },
+  "label.all-websites": { "defaultMessage": "كافة المواقع" },
+  "label.back": { "defaultMessage": "للخلف" },
+  "label.cancel": { "defaultMessage": "إلغاء" },
+  "label.change-password": { "defaultMessage": "تغيير كلمة المرور" },
+  "label.confirm-password": { "defaultMessage": "تأكيد كلمة المرور" },
+  "label.copy-to-clipboard": { "defaultMessage": "نسخ للحافظة" },
+  "label.current-password": { "defaultMessage": "كلمة المرور الحالية" },
+  "label.custom-range": { "defaultMessage": "فترة مخصصة" },
+  "label.dashboard": { "defaultMessage": "الشاشة الرئيسية" },
+  "label.date-range": { "defaultMessage": "فترة مخصصة" },
+  "label.default-date-range": { "defaultMessage": "الفترة المخصصة الافتراضية" },
+  "label.delete": { "defaultMessage": "حذف" },
+  "label.delete-account": { "defaultMessage": "حذف الحساب" },
+  "label.delete-website": { "defaultMessage": "حذف الموقع" },
+  "label.dismiss": { "defaultMessage": "اخفاء" },
+  "label.domain": { "defaultMessage": "نطاق" },
+  "label.edit": { "defaultMessage": "تعديل" },
+  "label.edit-account": { "defaultMessage": "تعديل الحساب" },
+  "label.edit-website": { "defaultMessage": "تعديل الموقع" },
+  "label.enable-share-url": { "defaultMessage": "تفعيل مشاركة الرابط" },
+  "label.invalid": { "defaultMessage": "غير صحيح" },
+  "label.invalid-domain": { "defaultMessage": "النطاق غير صحيح" },
+  "label.last-days": { "defaultMessage": "اخر {x} يوم/ايام" },
+  "label.last-hours": { "defaultMessage": "اخر {x} ساعة/ساعات" },
+  "label.logged-in-as": { "defaultMessage": "تم تسجيل الدخول كـ {username}" },
+  "label.login": { "defaultMessage": "تسجيل الدخول" },
+  "label.logout": { "defaultMessage": "تسجيل الخروج" },
+  "label.more": { "defaultMessage": "المزيد" },
+  "label.name": { "defaultMessage": "الإسم" },
+  "label.new-password": { "defaultMessage": "كلمة مرور جديدة" },
+  "label.password": { "defaultMessage": "كلمة المرور" },
+  "label.passwords-dont-match": { "defaultMessage": "كلمة المرور غير متطابقة" },
+  "label.profile": { "defaultMessage": "الملف الشخصي" },
+  "label.realtime": { "defaultMessage": "الوقت الفعلي" },
+  "label.realtime-logs": { "defaultMessage": "سجلات الوقت الفعلي" },
+  "label.refresh": { "defaultMessage": "تحديث" },
+  "label.required": { "defaultMessage": "اجباري" },
+  "label.reset": { "defaultMessage": "اعادة تعيين" },
+  "label.save": { "defaultMessage": "حفظ" },
+  "label.settings": { "defaultMessage": "اعدادات" },
+  "label.share-url": { "defaultMessage": "مشاركة الرابط" },
+  "label.single-day": { "defaultMessage": "يوم واحد" },
+  "label.this-month": { "defaultMessage": "الشهر الحالي" },
+  "label.this-week": { "defaultMessage": "الاسبوع الحالي" },
+  "label.this-year": { "defaultMessage": "السنة الحالية" },
+  "label.timezone": { "defaultMessage": "المنطقة الزمنية" },
+  "label.today": { "defaultMessage": "اليوم" },
+  "label.tracking-code": { "defaultMessage": "كود التتبع" },
+  "label.unknown": { "defaultMessage": "غير معروف" },
+  "label.username": { "defaultMessage": "اسم المستخدم" },
+  "label.view-details": { "defaultMessage": "عرض التفاصيل" },
+  "label.websites": { "defaultMessage": "المواقع" },
+  "message.active-users": {
+    "defaultMessage": "{x} حاليا {x, plural, one {زائر واحد} other {زوار}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "هل أنت متأكد من حذف {target}?"
+  },
+  "message.copied": { "defaultMessage": "تم النسخ!" },
+  "message.delete-warning": {
+    "defaultMessage": "كافة البيانات المرتبطة سيم حذفها ايضا."
+  },
+  "message.failure": { "defaultMessage": "حدث خطأ ما." },
+  "message.get-share-url": { "defaultMessage": "احصل على رابط المشاركة" },
+  "message.get-tracking-code": { "defaultMessage": "احصل على كود التتبع" },
+  "message.go-to-settings": { "defaultMessage": "الذهاب إلى الإعدادات" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "اسم المستخدم او كلمة المرور غير صحيحة."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "زائر من {country} يستخدم {browser} على {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "توجد نسخة جديدة من umami رقم {version} سارع بالتحديث!"
+  },
+  "message.no-data-available": { "defaultMessage": "لا توجد بيانات متاحة." },
+  "message.no-websites-configured": {
+    "defaultMessage": "لم تقم بإعداد اي موقع."
+  },
+  "message.page-not-found": { "defaultMessage": "الصفحة غير موجودة." },
+  "message.powered-by": { "defaultMessage": "مشغل بواسطة {name}" },
+  "message.save-success": { "defaultMessage": "تم الحفظ بنجاح." },
+  "message.share-url": {
+    "defaultMessage": "هذا الرابط الذي تم مشاركته بشكل عام لـ {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "لتتبع الاحصاىيات لـ {target}, ضع الكود التالي في منطقة {head} في موقعك."
+  },
+  "message.type-delete": {
+    "defaultMessage": "اكتب {delete} في الحقل التالي لتأكيد الحذف."
+  },
+  "metrics.actions": { "defaultMessage": "اجراءات" },
+  "metrics.average-visit-time": { "defaultMessage": "متوسط وقت الزيارة" },
+  "metrics.bounce-rate": { "defaultMessage": "معدل الارتداد" },
+  "metrics.browsers": { "defaultMessage": "المتصفحات" },
+  "metrics.countries": { "defaultMessage": "الدول" },
+  "metrics.device.desktop": { "defaultMessage": "كمبيوتر" },
+  "metrics.device.laptop": { "defaultMessage": "لابتوب" },
+  "metrics.device.mobile": { "defaultMessage": "جوال" },
+  "metrics.device.tablet": { "defaultMessage": "تابلت" },
+  "metrics.devices": { "defaultMessage": "الأجهزة" },
+  "metrics.events": { "defaultMessage": "الأحداث" },
+  "metrics.filter.combined": { "defaultMessage": "مجمعة" },
+  "metrics.filter.domain-only": { "defaultMessage": "نطاق فقط" },
+  "metrics.filter.raw": { "defaultMessage": "مفصلة" },
+  "metrics.operating-systems": { "defaultMessage": "نظام التشغيل" },
+  "metrics.page-views": { "defaultMessage": "مشاهدات الصفحة" },
+  "metrics.pages": { "defaultMessage": "الصفحات" },
+  "metrics.referrers": { "defaultMessage": "التحويلات" },
+  "metrics.unique-visitors": { "defaultMessage": "زائرون فريدون" },
+  "metrics.views": { "defaultMessage": "مشاهدات" },
+  "metrics.visitors": { "defaultMessage": "زوار" }
+}

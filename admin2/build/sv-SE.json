@@ -1,0 +1,121 @@
+{
+  "label.accounts": { "defaultMessage": "Konton" },
+  "label.add-account": { "defaultMessage": "Lägg till konto" },
+  "label.add-website": { "defaultMessage": "Lägg till webbsajt" },
+  "label.administrator": { "defaultMessage": "Administratör" },
+  "label.all": { "defaultMessage": "Alla" },
+  "label.all-websites": { "defaultMessage": "Alla sajter" },
+  "label.back": { "defaultMessage": "Tillbaka" },
+  "label.cancel": { "defaultMessage": "Avbryt" },
+  "label.change-password": { "defaultMessage": "Byt lösenord" },
+  "label.confirm-password": { "defaultMessage": "Bekräfta lösenord" },
+  "label.copy-to-clipboard": { "defaultMessage": "Kopiera till urklipp" },
+  "label.current-password": { "defaultMessage": "Nuvarande lösenord" },
+  "label.custom-range": { "defaultMessage": "Anpassat urval" },
+  "label.dashboard": { "defaultMessage": "Översikt" },
+  "label.date-range": { "defaultMessage": "Datumomfång" },
+  "label.default-date-range": { "defaultMessage": "Standard datum-urval" },
+  "label.delete": { "defaultMessage": "Radera" },
+  "label.delete-account": { "defaultMessage": "Radera konto" },
+  "label.delete-website": { "defaultMessage": "Radera webbsajt" },
+  "label.dismiss": { "defaultMessage": "Avbryt" },
+  "label.domain": { "defaultMessage": "Domän" },
+  "label.edit": { "defaultMessage": "Redigera" },
+  "label.edit-account": { "defaultMessage": "Redigera konto" },
+  "label.edit-website": { "defaultMessage": "Redigera webbsajt" },
+  "label.enable-share-url": { "defaultMessage": "Aktivera delnings-URL" },
+  "label.invalid": { "defaultMessage": "Ogiltig" },
+  "label.invalid-domain": { "defaultMessage": "Ogiltig domän" },
+  "label.last-days": { "defaultMessage": "Senaste {x} dagarna" },
+  "label.last-hours": { "defaultMessage": "Senaste {x} timmarna" },
+  "label.logged-in-as": { "defaultMessage": "Inloggad som {username}" },
+  "label.login": { "defaultMessage": "Logga in" },
+  "label.logout": { "defaultMessage": "Logga ut" },
+  "label.more": { "defaultMessage": "Mer" },
+  "label.name": { "defaultMessage": "Namn" },
+  "label.new-password": { "defaultMessage": "Nytt lösenord" },
+  "label.password": { "defaultMessage": "Lösenord" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Lösenorden är inte samma"
+  },
+  "label.profile": { "defaultMessage": "Profil" },
+  "label.realtime": { "defaultMessage": "Realtid" },
+  "label.realtime-logs": { "defaultMessage": "Realtidsloggar" },
+  "label.refresh": { "defaultMessage": "Uppdatera" },
+  "label.required": { "defaultMessage": "Krävs" },
+  "label.reset": { "defaultMessage": "Återställ" },
+  "label.save": { "defaultMessage": "Spara" },
+  "label.settings": { "defaultMessage": "Inställningar" },
+  "label.share-url": { "defaultMessage": "Delnings-URL" },
+  "label.single-day": { "defaultMessage": "En dag" },
+  "label.this-month": { "defaultMessage": "Denna månad" },
+  "label.this-week": { "defaultMessage": "Denna vecka" },
+  "label.this-year": { "defaultMessage": "Detta år" },
+  "label.timezone": { "defaultMessage": "Tidszon" },
+  "label.today": { "defaultMessage": "Idag" },
+  "label.tracking-code": { "defaultMessage": "Spårningskod" },
+  "label.unknown": { "defaultMessage": "Okänd" },
+  "label.username": { "defaultMessage": "Användarnamn" },
+  "label.view-details": { "defaultMessage": "Visa detaljer" },
+  "label.websites": { "defaultMessage": "Webbsajt" },
+  "message.active-users": {
+    "defaultMessage": "{x} {x, plural, one {besökare} other {besökare}} just nu"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Är du säker på att du vill radera {target}?"
+  },
+  "message.copied": { "defaultMessage": "Kopierad!" },
+  "message.delete-warning": {
+    "defaultMessage": "All tillhörande data kommer också raderas."
+  },
+  "message.failure": { "defaultMessage": "Något gick fel." },
+  "message.get-share-url": { "defaultMessage": "Visa delnings-URL" },
+  "message.get-tracking-code": { "defaultMessage": "Visa spårningskod" },
+  "message.go-to-settings": { "defaultMessage": "Gå till inställningar" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Felaktikt användarnamn/lösenord."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Besökare från {country} med {browser} på {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "En ny version av umami {version} är tillgänglig!"
+  },
+  "message.no-data-available": { "defaultMessage": "Ingen data tillgänglig." },
+  "message.no-websites-configured": {
+    "defaultMessage": "Du har inga webbsajter."
+  },
+  "message.page-not-found": { "defaultMessage": "Sidan kan inte hittas." },
+  "message.powered-by": { "defaultMessage": "Drivs av {name}" },
+  "message.save-success": { "defaultMessage": "Sparades!" },
+  "message.share-url": {
+    "defaultMessage": "Det här är den offentliga delnings-URL:en {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "För att spåra statistik för {target}, placera följande kod i {head}-avsnittet på din webbsajt."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Skriv {delete} i rutan nedan för att radera."
+  },
+  "metrics.actions": { "defaultMessage": "Händelser" },
+  "metrics.average-visit-time": { "defaultMessage": "Medelbesökstid" },
+  "metrics.bounce-rate": { "defaultMessage": "Avvisningfrekvens" },
+  "metrics.browsers": { "defaultMessage": "Webbläsare" },
+  "metrics.countries": { "defaultMessage": "Länder" },
+  "metrics.device.desktop": { "defaultMessage": "Stationär" },
+  "metrics.device.laptop": { "defaultMessage": "Bärbar" },
+  "metrics.device.mobile": { "defaultMessage": "Mobil" },
+  "metrics.device.tablet": { "defaultMessage": "Platta" },
+  "metrics.devices": { "defaultMessage": "Enheter" },
+  "metrics.events": { "defaultMessage": "Händelser" },
+  "metrics.filter.combined": { "defaultMessage": "Kombinerade" },
+  "metrics.filter.domain-only": { "defaultMessage": "Endast domän" },
+  "metrics.filter.raw": { "defaultMessage": "Rådata" },
+  "metrics.operating-systems": { "defaultMessage": "Operativsystem" },
+  "metrics.page-views": { "defaultMessage": "Sidvisningar" },
+  "metrics.pages": { "defaultMessage": "Sidor" },
+  "metrics.referrers": { "defaultMessage": "Hänvisare" },
+  "metrics.unique-visitors": { "defaultMessage": "Unika besökare" },
+  "metrics.views": { "defaultMessage": "Visningar" },
+  "metrics.visitors": { "defaultMessage": "Besökare" }
+}

@@ -1,0 +1,127 @@
+{
+  "label.accounts": { "defaultMessage": "Аккаунты" },
+  "label.add-account": { "defaultMessage": "Добавить аккаунт" },
+  "label.add-website": { "defaultMessage": "Добавить сайт" },
+  "label.administrator": { "defaultMessage": "Администратор" },
+  "label.all": { "defaultMessage": "Все" },
+  "label.all-events": { "defaultMessage": "Все события" },
+  "label.all-websites": { "defaultMessage": "Все сайты" },
+  "label.back": { "defaultMessage": "Назад" },
+  "label.cancel": { "defaultMessage": "Отменить" },
+  "label.change-password": { "defaultMessage": "Изменить пароль" },
+  "label.confirm-password": { "defaultMessage": "Подтвердить пароль" },
+  "label.copy-to-clipboard": { "defaultMessage": "Скопировать в буфер обмена" },
+  "label.current-password": { "defaultMessage": "Текущий пароль" },
+  "label.custom-range": { "defaultMessage": "Другой период" },
+  "label.dashboard": { "defaultMessage": "Информационная панель" },
+  "label.date-range": { "defaultMessage": "Диапазон дат" },
+  "label.default-date-range": { "defaultMessage": "Диапазон дат по-умолчанию" },
+  "label.delete": { "defaultMessage": "Удалить" },
+  "label.delete-account": { "defaultMessage": "Удалить аккаунт" },
+  "label.delete-website": { "defaultMessage": "Удалить сайт" },
+  "label.dismiss": { "defaultMessage": "Отклонить" },
+  "label.domain": { "defaultMessage": "Домен" },
+  "label.edit": { "defaultMessage": "Редактировать" },
+  "label.edit-account": { "defaultMessage": "Редактировать аккаунт" },
+  "label.edit-website": { "defaultMessage": "Редактировать сайт" },
+  "label.enable-share-url": { "defaultMessage": "Разрешить делиться ссылкой" },
+  "label.invalid": { "defaultMessage": "Некорректный" },
+  "label.invalid-domain": { "defaultMessage": "Некорректный домен" },
+  "label.last-days": { "defaultMessage": "Последние {x} дней" },
+  "label.last-hours": { "defaultMessage": "Последние {x} часа" },
+  "label.logged-in-as": { "defaultMessage": "Вы вошли как {username}" },
+  "label.login": { "defaultMessage": "Войти" },
+  "label.logout": { "defaultMessage": "Выйти" },
+  "label.more": { "defaultMessage": "Больше" },
+  "label.name": { "defaultMessage": "Имя" },
+  "label.new-password": { "defaultMessage": "Новый пароль" },
+  "label.password": { "defaultMessage": "Пароль" },
+  "label.passwords-dont-match": { "defaultMessage": "Пароли не совпадают" },
+  "label.profile": { "defaultMessage": "Профиль" },
+  "label.realtime": { "defaultMessage": "Реальное время" },
+  "label.realtime-logs": { "defaultMessage": "Логи в реальном времени" },
+  "label.refresh": { "defaultMessage": "Обновить" },
+  "label.required": { "defaultMessage": "Обязательное" },
+  "label.reset": { "defaultMessage": "Сбросить" },
+  "label.reset-website": { "defaultMessage": "Сбросить статистику" },
+  "label.save": { "defaultMessage": "Сохранить" },
+  "label.settings": { "defaultMessage": "Настройки" },
+  "label.share-url": { "defaultMessage": "Поделиться ссылкой" },
+  "label.single-day": { "defaultMessage": "Один день" },
+  "label.this-month": { "defaultMessage": "Этот месяц" },
+  "label.this-week": { "defaultMessage": "Эта неделя" },
+  "label.this-year": { "defaultMessage": "Этот год" },
+  "label.timezone": { "defaultMessage": "Часовой пояс" },
+  "label.today": { "defaultMessage": "Сегодня" },
+  "label.tracking-code": { "defaultMessage": "Код отслеживания" },
+  "label.unknown": { "defaultMessage": "Неизвестно" },
+  "label.username": { "defaultMessage": "Имя пользователя" },
+  "label.view-details": { "defaultMessage": "Посмотреть детали" },
+  "label.websites": { "defaultMessage": "Сайты" },
+  "message.active-users": { "defaultMessage": "{x} текущих посетителей" },
+  "message.confirm-delete": {
+    "defaultMessage": "Вы уверены, что хотите удалить {target}?"
+  },
+  "message.confirm-reset": {
+    "defaultMessage": "Вы уверены, что хотите сбросить статистику {target}?"
+  },
+  "message.copied": { "defaultMessage": "Скопировано!" },
+  "message.delete-warning": {
+    "defaultMessage": "Все связанные данные будут также удалены."
+  },
+  "message.failure": { "defaultMessage": "Что-то пошло не так." },
+  "message.get-share-url": { "defaultMessage": "Получить публичную ссылку" },
+  "message.get-tracking-code": {
+    "defaultMessage": "Получить код отслеживания"
+  },
+  "message.go-to-settings": { "defaultMessage": "Перейти к настройкам" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Неверное имя пользователя/пароль."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Посетитель из {country} используя {browser} на {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Доступна новая версия umami {version}"
+  },
+  "message.no-data-available": { "defaultMessage": "Нет данных." },
+  "message.no-websites-configured": {
+    "defaultMessage": "У вас нет настроенных сайтов."
+  },
+  "message.page-not-found": { "defaultMessage": "Страница не найдена." },
+  "message.powered-by": { "defaultMessage": "На движке {name}" },
+  "message.reset-warning": {
+    "defaultMessage": "Вся статистика для этого сайта будет удалена, но ваш код отслеживания останется нетронутым."
+  },
+  "message.save-success": { "defaultMessage": "Успешно сохранено." },
+  "message.share-url": {
+    "defaultMessage": "Это публичная ссылка для {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Чтобы отслеживать статистику для {target}, поместите следующий код в раздел {head} вашего сайта."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Напишите {delete} в поле ниже, чтобы подтвердить."
+  },
+  "metrics.actions": { "defaultMessage": "Действия" },
+  "metrics.average-visit-time": { "defaultMessage": "Среднее время посещения" },
+  "metrics.bounce-rate": { "defaultMessage": "Отказы" },
+  "metrics.browsers": { "defaultMessage": "Браузеры" },
+  "metrics.countries": { "defaultMessage": "Страны" },
+  "metrics.device.desktop": { "defaultMessage": "Настольный компьютер" },
+  "metrics.device.laptop": { "defaultMessage": "Ноутбук" },
+  "metrics.device.mobile": { "defaultMessage": "Смартфон" },
+  "metrics.device.tablet": { "defaultMessage": "Планшет" },
+  "metrics.devices": { "defaultMessage": "Устройства" },
+  "metrics.events": { "defaultMessage": "События" },
+  "metrics.filter.combined": { "defaultMessage": "Объединенные" },
+  "metrics.filter.domain-only": { "defaultMessage": "Только домен" },
+  "metrics.filter.raw": { "defaultMessage": "Сырые данные" },
+  "metrics.operating-systems": { "defaultMessage": "Операционные системы" },
+  "metrics.page-views": { "defaultMessage": "Просмотры страниц" },
+  "metrics.pages": { "defaultMessage": "Страницы" },
+  "metrics.referrers": { "defaultMessage": "Источники" },
+  "metrics.unique-visitors": { "defaultMessage": "Уникальные посетители" },
+  "metrics.views": { "defaultMessage": "Просмотры" },
+  "metrics.visitors": { "defaultMessage": "Посетители" }
+}

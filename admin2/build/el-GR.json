@@ -1,0 +1,129 @@
+{
+  "label.accounts": { "defaultMessage": "Λογαριασμοί" },
+  "label.add-account": { "defaultMessage": "Προσθήκη λογαριασμού" },
+  "label.add-website": { "defaultMessage": "Προσθήκη ιστότοπου" },
+  "label.administrator": { "defaultMessage": "Διαχειριστής" },
+  "label.all": { "defaultMessage": "All" },
+  "label.all-websites": { "defaultMessage": "All websites" },
+  "label.back": { "defaultMessage": "Πίσω" },
+  "label.cancel": { "defaultMessage": "Ακύρωση" },
+  "label.change-password": { "defaultMessage": "Αλλαγή κωδικού" },
+  "label.confirm-password": { "defaultMessage": "Επιβεβαίωση κωδικού" },
+  "label.copy-to-clipboard": { "defaultMessage": "Αντιγραφή στο πρόχειρο" },
+  "label.current-password": { "defaultMessage": "Τωρινός κωδικός πρόσβασης" },
+  "label.custom-range": { "defaultMessage": "Προσαρμοσμένο εύρος" },
+  "label.dashboard": { "defaultMessage": "Πίνακας" },
+  "label.date-range": { "defaultMessage": "Εύρος ημερομηνιών" },
+  "label.default-date-range": {
+    "defaultMessage": "Προεπιλεγμένο εύρος ημερομηνιών"
+  },
+  "label.delete": { "defaultMessage": "Διαγραφή" },
+  "label.delete-account": { "defaultMessage": "Διαγραφή λογαριασμού" },
+  "label.delete-website": { "defaultMessage": "Διαγραφή ιστότοπου" },
+  "label.dismiss": { "defaultMessage": "Dismiss" },
+  "label.domain": { "defaultMessage": "Τομέας" },
+  "label.edit": { "defaultMessage": "Επεξεργασία" },
+  "label.edit-account": { "defaultMessage": "Επεξεργασία λογαριασμού" },
+  "label.edit-website": { "defaultMessage": "Επεξεργασία ιστότοπου" },
+  "label.enable-share-url": {
+    "defaultMessage": "Ενεργοποίηση κοινής χρήσης URL"
+  },
+  "label.invalid": { "defaultMessage": "Μη έγκυρο" },
+  "label.invalid-domain": { "defaultMessage": "Μη έγκυρος τομέας" },
+  "label.last-days": { "defaultMessage": "Τελευταίες {x} ημέρες" },
+  "label.last-hours": { "defaultMessage": "Τελευταίες {x} ώρες" },
+  "label.logged-in-as": { "defaultMessage": "Συνδεθήκατε ως {username}" },
+  "label.login": { "defaultMessage": "Είσοδος" },
+  "label.logout": { "defaultMessage": "Αποσύνδεση" },
+  "label.more": { "defaultMessage": "Περισσότερα" },
+  "label.name": { "defaultMessage": "Όνομα" },
+  "label.new-password": { "defaultMessage": "Νέος κωδικός" },
+  "label.password": { "defaultMessage": "Κωδικός" },
+  "label.passwords-dont-match": {
+    "defaultMessage": "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+  },
+  "label.profile": { "defaultMessage": "Προφίλ" },
+  "label.realtime": { "defaultMessage": "Realtime" },
+  "label.realtime-logs": { "defaultMessage": "Realtime logs" },
+  "label.refresh": { "defaultMessage": "Ανανέωση" },
+  "label.required": { "defaultMessage": "Απαιτείται" },
+  "label.reset": { "defaultMessage": "Επαναφορά" },
+  "label.save": { "defaultMessage": "Αποθήκευση" },
+  "label.settings": { "defaultMessage": "Ρυθμίσεις" },
+  "label.share-url": { "defaultMessage": "Κοινοποίηση διεύθυνσης URL" },
+  "label.single-day": { "defaultMessage": "Ημερήσια" },
+  "label.this-month": { "defaultMessage": "Αυτο το μήνα" },
+  "label.this-week": { "defaultMessage": "Αυτή την εβδομάδα" },
+  "label.this-year": { "defaultMessage": "Αυτή την χρονιά" },
+  "label.timezone": { "defaultMessage": "Ζώνη ώρας" },
+  "label.today": { "defaultMessage": "Σήμερα" },
+  "label.tracking-code": { "defaultMessage": "Κωδικός παρακολούθησης" },
+  "label.unknown": { "defaultMessage": "Άγνωστο" },
+  "label.username": { "defaultMessage": "Όνομα χρήστη" },
+  "label.view-details": { "defaultMessage": "Λεπτομέρειες" },
+  "label.websites": { "defaultMessage": "Ιστότοποι" },
+  "message.active-users": {
+    "defaultMessage": "{x} ενεργοί {x, plural, one {επισκέπτης} other {επισκέπτες}}"
+  },
+  "message.confirm-delete": {
+    "defaultMessage": "Είστε βέβαιοι ότι θέλετε να διαγράψετε το {target};"
+  },
+  "message.copied": { "defaultMessage": "Αντιγράφηκε!" },
+  "message.delete-warning": {
+    "defaultMessage": "Όλα τα σχετικά δεδομένα θα διαγραφούν επίσης."
+  },
+  "message.failure": { "defaultMessage": "Κάτι πήγε στραβά." },
+  "message.get-share-url": { "defaultMessage": "Λήψη URL κοινής χρήσης" },
+  "message.get-tracking-code": {
+    "defaultMessage": "Λήψη κώδικα παρακολούθησης"
+  },
+  "message.go-to-settings": { "defaultMessage": "Μεταβείτε στις ρυθμίσεις" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Εσφαλμένο όνομα χρήστη / κωδικός πρόσβασης."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Visitor from {country} using {browser} on {os} {device}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "A new version of umami {version} is available!"
+  },
+  "message.no-data-available": {
+    "defaultMessage": "Δεν υπάρχουν διαθέσιμα δεδομένα."
+  },
+  "message.no-websites-configured": {
+    "defaultMessage": "Δεν έχετε ρυθμίσει κανένα ιστότοπο."
+  },
+  "message.page-not-found": { "defaultMessage": "Η σελίδα δεν βρέθηκε." },
+  "message.powered-by": { "defaultMessage": "Με την υποστήριξη του {name}" },
+  "message.save-success": { "defaultMessage": "Αποθηκεύτηκε επιτυχώς." },
+  "message.share-url": {
+    "defaultMessage": "Αυτό είναι το κοινόχρηστο URL για το {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Για να παρακολουθείτε στατιστικά στοιχεία για {target}, τοποθετήστε τον ακόλουθο κώδικα στην ενότητα {head} του ιστότοπού σας."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Πληκτρολογήστε {delete} στο παρακάτω πλαίσιο για επιβεβαίωση."
+  },
+  "metrics.actions": { "defaultMessage": "Ενέργειες" },
+  "metrics.average-visit-time": { "defaultMessage": "Μέσος χρόνος επίσκεψης" },
+  "metrics.bounce-rate": { "defaultMessage": "Ποσοστό αναπήδησης" },
+  "metrics.browsers": { "defaultMessage": "Προγράμματα περιήγησης" },
+  "metrics.countries": { "defaultMessage": "Χώρες" },
+  "metrics.device.desktop": { "defaultMessage": "Σταθερός υπολογιστής" },
+  "metrics.device.laptop": { "defaultMessage": "Λάπτοπ" },
+  "metrics.device.mobile": { "defaultMessage": "Κινητό" },
+  "metrics.device.tablet": { "defaultMessage": "Τάμπλετ" },
+  "metrics.devices": { "defaultMessage": "Συσκευές" },
+  "metrics.events": { "defaultMessage": "Γεγονότα" },
+  "metrics.filter.combined": { "defaultMessage": "Σε συνδυασμό" },
+  "metrics.filter.domain-only": { "defaultMessage": "Μόνο τομέας" },
+  "metrics.filter.raw": { "defaultMessage": "Ακατέργαστο" },
+  "metrics.operating-systems": { "defaultMessage": "Λειτουργικά συστήματα" },
+  "metrics.page-views": { "defaultMessage": "Προβολές σελίδας" },
+  "metrics.pages": { "defaultMessage": "Σελίδες" },
+  "metrics.referrers": { "defaultMessage": "Παραπομπές" },
+  "metrics.unique-visitors": { "defaultMessage": "Μοναδικοί επισκέπτες" },
+  "metrics.views": { "defaultMessage": "Προβολές" },
+  "metrics.visitors": { "defaultMessage": "Επισκέπτες" }
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import hero_section from './hero_section';\nimport ld1_section from './ld1_section';\nexport default {\n  hero_section,\n  ld1_section\n};","map":null,"metadata":{},"sourceType":"module"}

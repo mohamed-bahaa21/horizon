@@ -1,0 +1,119 @@
+{
+  "label.accounts": { "defaultMessage": "Akun" },
+  "label.add-account": { "defaultMessage": "Tambah akun" },
+  "label.add-website": { "defaultMessage": "Tambah situs web" },
+  "label.administrator": { "defaultMessage": "Pengelola" },
+  "label.all": { "defaultMessage": "Semua" },
+  "label.all-websites": { "defaultMessage": "Semua website" },
+  "label.back": { "defaultMessage": "Kembali" },
+  "label.cancel": { "defaultMessage": "Batal" },
+  "label.change-password": { "defaultMessage": "Ganti kata sandi" },
+  "label.confirm-password": { "defaultMessage": "Konfirmasi kata sandi" },
+  "label.copy-to-clipboard": { "defaultMessage": "Salin ke papan klip" },
+  "label.current-password": { "defaultMessage": "Kata sandi sekarang" },
+  "label.custom-range": { "defaultMessage": "Rentang khusus" },
+  "label.dashboard": { "defaultMessage": "Dasbor" },
+  "label.date-range": { "defaultMessage": "Rentang tanggal" },
+  "label.default-date-range": { "defaultMessage": "Rentang tanggal bawaan" },
+  "label.delete": { "defaultMessage": "Hapus" },
+  "label.delete-account": { "defaultMessage": "Hapus akun" },
+  "label.delete-website": { "defaultMessage": "Hapus situs web" },
+  "label.dismiss": { "defaultMessage": "Tutup" },
+  "label.domain": { "defaultMessage": "Domain" },
+  "label.edit": { "defaultMessage": "Sunting" },
+  "label.edit-account": { "defaultMessage": "Sunting akun" },
+  "label.edit-website": { "defaultMessage": "Sunting situs web" },
+  "label.enable-share-url": { "defaultMessage": "Aktifkan URL berbagi" },
+  "label.invalid": { "defaultMessage": "Tidak valid" },
+  "label.invalid-domain": { "defaultMessage": "Domain tidak valid" },
+  "label.last-days": { "defaultMessage": "{x} hari terakhir" },
+  "label.last-hours": { "defaultMessage": "{x} jam terakhir" },
+  "label.logged-in-as": { "defaultMessage": "Masuk sebagai {username}" },
+  "label.login": { "defaultMessage": "Masuk" },
+  "label.logout": { "defaultMessage": "Keluar" },
+  "label.more": { "defaultMessage": "Lebih banyak" },
+  "label.name": { "defaultMessage": "Nama" },
+  "label.new-password": { "defaultMessage": "Kata sandi baru" },
+  "label.password": { "defaultMessage": "Kata sandi" },
+  "label.passwords-dont-match": { "defaultMessage": "Kata sandi tidak cocok" },
+  "label.profile": { "defaultMessage": "Profil" },
+  "label.realtime": { "defaultMessage": "Waktu nyata" },
+  "label.realtime-logs": { "defaultMessage": "Log waktu nyata" },
+  "label.refresh": { "defaultMessage": "Segarkan" },
+  "label.required": { "defaultMessage": "Wajib" },
+  "label.reset": { "defaultMessage": "Atur ulang" },
+  "label.save": { "defaultMessage": "Simpan" },
+  "label.settings": { "defaultMessage": "Pengaturan" },
+  "label.share-url": { "defaultMessage": "Bagikan URL" },
+  "label.single-day": { "defaultMessage": "Sehari" },
+  "label.this-month": { "defaultMessage": "Bulan ini" },
+  "label.this-week": { "defaultMessage": "Minggu ini" },
+  "label.this-year": { "defaultMessage": "Tahun ini" },
+  "label.timezone": { "defaultMessage": "Zona waktu" },
+  "label.today": { "defaultMessage": "Hari ini" },
+  "label.tracking-code": { "defaultMessage": "Kode lacak" },
+  "label.unknown": { "defaultMessage": "Tidak diketahui" },
+  "label.username": { "defaultMessage": "Nama pengguna" },
+  "label.view-details": { "defaultMessage": "Lihat Detil" },
+  "label.websites": { "defaultMessage": "Situs web" },
+  "message.active-users": { "defaultMessage": "{x} pengunjung saat ini" },
+  "message.confirm-delete": {
+    "defaultMessage": "Apakah kamu yakin ingin menghapus {target}?"
+  },
+  "message.copied": { "defaultMessage": "Tersalin!" },
+  "message.delete-warning": {
+    "defaultMessage": "Semua data terkait juga akan dihapus."
+  },
+  "message.failure": { "defaultMessage": "Ada yang salah." },
+  "message.get-share-url": { "defaultMessage": "Dapatkan URL berbagi" },
+  "message.get-tracking-code": { "defaultMessage": "Dapatkan kode pelacakan" },
+  "message.go-to-settings": { "defaultMessage": "Pergi ke pengaturan" },
+  "message.incorrect-username-password": {
+    "defaultMessage": "Nama pengguna/kata sandi salah."
+  },
+  "message.log.visitor": {
+    "defaultMessage": "Pengunjung dari {country} dengan {browser} di {device} {os}"
+  },
+  "message.new-version-available": {
+    "defaultMessage": "Versi terbaru umami {version} telah tersedia!"
+  },
+  "message.no-data-available": { "defaultMessage": "Tidak ada data." },
+  "message.no-websites-configured": {
+    "defaultMessage": "Anda tidak memiliki situs web yang dikonfigurasi."
+  },
+  "message.page-not-found": { "defaultMessage": "Halaman tidak ditemukan." },
+  "message.powered-by": { "defaultMessage": "Didukung oleh {name}" },
+  "message.save-success": { "defaultMessage": "Berhasil disimpan." },
+  "message.share-url": {
+    "defaultMessage": "Ini adalah URL yang dibagikan secara publik untuk {target}."
+  },
+  "message.track-stats": {
+    "defaultMessage": "Untuk melacak statistik {target}, tempatkan kode berikut di bagian {head} situs web anda."
+  },
+  "message.type-delete": {
+    "defaultMessage": "Ketikkan {delete} pada kotak di bawah untuk konfirmasi."
+  },
+  "metrics.actions": { "defaultMessage": "Aksi" },
+  "metrics.average-visit-time": {
+    "defaultMessage": "Waktu kunjungan rata-rata"
+  },
+  "metrics.bounce-rate": { "defaultMessage": "Rasio pentalan" },
+  "metrics.browsers": { "defaultMessage": "Peramban" },
+  "metrics.countries": { "defaultMessage": "Negara" },
+  "metrics.device.desktop": { "defaultMessage": "Desktop" },
+  "metrics.device.laptop": { "defaultMessage": "Laptop" },
+  "metrics.device.mobile": { "defaultMessage": "Ponsel" },
+  "metrics.device.tablet": { "defaultMessage": "Tablet" },
+  "metrics.devices": { "defaultMessage": "Perangkat" },
+  "metrics.events": { "defaultMessage": "Perihal" },
+  "metrics.filter.combined": { "defaultMessage": "Gabungan" },
+  "metrics.filter.domain-only": { "defaultMessage": "Hanya domain" },
+  "metrics.filter.raw": { "defaultMessage": "Mentah" },
+  "metrics.operating-systems": { "defaultMessage": "Sistem Operasi" },
+  "metrics.page-views": { "defaultMessage": "Tampilan halaman" },
+  "metrics.pages": { "defaultMessage": "Halaman" },
+  "metrics.referrers": { "defaultMessage": "Perujuk" },
+  "metrics.unique-visitors": { "defaultMessage": "Pengunjung unik" },
+  "metrics.views": { "defaultMessage": "Tampilan" },
+  "metrics.visitors": { "defaultMessage": "Pengunjung" }
+}
