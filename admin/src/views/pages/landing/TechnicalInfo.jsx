@@ -18,7 +18,7 @@ import Accordion from "../../../reusable/Accordion/Accordion";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -29,16 +29,18 @@ class TechnicalInfo extends Component {
     this.state = {
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       ti_section_display: true,
       ti_header: "...",
       ti_desc: "...",
-      ti_items: [{
-        item_title: "...",
-        item_content: "..."
-      }]
+      ti_items: [
+        {
+          item_title: "...",
+          item_content: "...",
+        },
+      ],
     };
 
     this.onChangeItem = this.onChangeItem.bind(this);
@@ -48,17 +50,12 @@ class TechnicalInfo extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   componentDidMount() {
     axios
       .get(`${SERVER_URI}/api/getTechnicalInfo`)
       .then((response) => {
-        const {
-          ti_section_display,
-          ti_header,
-          ti_desc,
-          ti_items,
-        } = response.data;
+        const { ti_section_display, ti_header, ti_desc, ti_items } =
+          response.data.section_content;
         this.setState({
           ti_section_display: ti_section_display,
           ti_header: ti_header,
@@ -89,12 +86,16 @@ class TechnicalInfo extends Component {
 
       console.log("POST_STATE:: ", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postTechnicalInfo`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postTechnicalInfo`, prog_section)
+        .then((res) => console.log(res));
 
       // window.location = `${ADMIN_URI}/#/landing/TechnicalInfo/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
-
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
     }
   }
 
@@ -103,10 +104,10 @@ class TechnicalInfo extends Component {
 
     this.setState({
       [name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
     // console.log(this.state);
   }
 
@@ -116,21 +117,21 @@ class TechnicalInfo extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const ti_items = [...prevState.ti_items]
+    this.setState((prevState) => {
+      const ti_items = [...prevState.ti_items];
 
       ti_items[i] = {
         ...ti_items[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         ti_items,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.ti_items[i]);
     // console.log(this.state);
@@ -140,14 +141,14 @@ class TechnicalInfo extends Component {
     e.preventDefault();
     this.setState({
       ti_section_display: !this.state.ti_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
   }
 
   render() {
-    let listItems = this.state.ti_items.map((item, item_i) =>
+    let listItems = this.state.ti_items.map((item, item_i) => (
       <div key={item_i}>
         <Accordion
           title="Item Info"
@@ -160,7 +161,7 @@ class TechnicalInfo extends Component {
                 name="item_title"
                 placeholder="item_title"
                 value={item.item_title}
-                onChange={event => this.onChangeItem(event, item_i)}
+                onChange={(event) => this.onChangeItem(event, item_i)}
               />
               <br />
               {/* INPUT #2 item Number */}
@@ -170,7 +171,7 @@ class TechnicalInfo extends Component {
                 name="item_content"
                 placeholder="item_content"
                 value={item.item_content}
-                onChange={event => this.onChangeItem(event, item_i)}
+                onChange={(event) => this.onChangeItem(event, item_i)}
               />
               <br />
             </div>
@@ -178,35 +179,29 @@ class TechnicalInfo extends Component {
         />
         <hr />
       </div>
-    )
+    ));
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -225,15 +220,29 @@ class TechnicalInfo extends Component {
                 />_Show Section</a> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.ti_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.ti_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>
@@ -243,8 +252,8 @@ class TechnicalInfo extends Component {
               <h6>{this.state.ti_header}</h6>
               <CInput
                 type="text"
-                id='ti_header'
-                name='ti_header'
+                id="ti_header"
+                name="ti_header"
                 placeholder="ti_header"
                 value={this.state.ti_header}
                 onChange={this.onChange}
@@ -262,7 +271,6 @@ class TechnicalInfo extends Component {
               {/* {this.state.ti_items[0].sub_header} */}
 
               {listItems}
-
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -280,7 +288,8 @@ class TechnicalInfo extends Component {
         </CCol>
 
         <br />
-        <br /><br />
+        <br />
+        <br />
         <hr />
 
         <UploadImg />

@@ -41,7 +41,7 @@ const TheContent = () => {
                 />
               )
             })}
-            <Redirect from="/" to="/landing/hero" />
+            <Redirect from="/" to="/gallery" />
           </Switch>
         </Suspense>
       </CContainer>

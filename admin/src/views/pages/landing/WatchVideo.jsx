@@ -16,7 +16,7 @@ import {
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -28,7 +28,7 @@ class WatchVideo extends Component {
       visible: false,
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       image: "...",
@@ -47,24 +47,19 @@ class WatchVideo extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   componentDidMount() {
     axios
       .get(`${SERVER_URI}/api/getWatchVideo`)
       .then((response) => {
         // console.log(response.data);
-        const {
-          wv_section_display,
-          wv_header,
-          wv_desc,
-          wv_link
-        } = response.data;
+        const { wv_section_display, wv_header, wv_desc, wv_link } =
+          response.data.section_content;
 
         this.setState({
           wv_section_display: wv_section_display,
           wv_header: wv_header,
           wv_desc: wv_desc,
-          wv_link: wv_link
+          wv_link: wv_link,
         });
       })
       .catch((error) => {
@@ -77,10 +72,10 @@ class WatchVideo extends Component {
 
     this.setState({
       [name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
     // console.log(this.state);
   }
 
@@ -90,23 +85,28 @@ class WatchVideo extends Component {
       wv_section_display: this.state.wv_section_display,
       wv_header: this.state.wv_header,
       wv_desc: this.state.wv_desc,
-      wv_link: this.state.wv_link
+      wv_link: this.state.wv_link,
     };
 
     console.log(prog_section);
 
-    axios.post(`${SERVER_URI}/api/postWatchVideo`, prog_section)
-      .then(res => console.log(res));
+    axios
+      .post(`${SERVER_URI}/api/postWatchVideo`, prog_section)
+      .then((res) => console.log(res));
 
     // window.location = `${ADMIN_URI}/#/landing/WatchVideo/`;
-    this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+    this.setState({
+      edited: true,
+      submitClass: "disabled",
+      submitDisable: true,
+    });
   }
 
   toggleCheckbox(e) {
     e.preventDefault();
     this.setState({
       wv_section_display: !this.state.wv_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
@@ -115,34 +115,29 @@ class WatchVideo extends Component {
   render() {
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  ><strong>Updated</strong> Successfully...</CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
-
             <CFormGroup>
               {/* #1 */}
               {/* Checkbox to Toggle Sections */}
@@ -158,15 +153,29 @@ class WatchVideo extends Component {
                 />_Show Section</a> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.wv_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.wv_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>
@@ -196,7 +205,9 @@ class WatchVideo extends Component {
               <hr />
               <br />
               <CInputGroup className="mb-3">
-                <CInputGroupText id="basic-addon3">Paste Video URL</CInputGroupText>
+                <CInputGroupText id="basic-addon3">
+                  Paste Video URL
+                </CInputGroupText>
                 <CInput
                   type="text"
                   id="wv_link"
@@ -206,9 +217,7 @@ class WatchVideo extends Component {
                   onChange={this.onChange}
                 />
               </CInputGroup>
-
             </CFormGroup>
-
 
             <hr />
             <br />

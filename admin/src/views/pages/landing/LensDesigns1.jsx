@@ -70,8 +70,8 @@ class LensDesigns1 extends Component {
       .get(`${SERVER_URI}/api/getLensDesigns1`)
       .then((response) => {
         // console.log(response.data);
+        const { ld1_section_display } = response.data.section_display;
         const {
-          ld1_section_display,
           name,
           prog_card_1_img,
           prog_card_1_link,
@@ -89,7 +89,7 @@ class LensDesigns1 extends Component {
           prog_card_4_link,
           prog_card_4_type,
           prog_card_4_header,
-        } = response.data;
+        } = response.data.section_content;
 
         this.setState({
           ld1_section_display: ld1_section_display,
@@ -132,27 +132,28 @@ class LensDesigns1 extends Component {
   onSubmit(e) {
     e.preventDefault();
     const prog_section = {
-      name: this.state.name,
-      ld1_section_display: this.state.ld1_section_display,
-      prog_card_1_img: this.state.prog_card_1_img,
-      prog_card_1_link: this.state.prog_card_1_link,
-      prog_card_1_type: this.state.prog_card_1_type,
-      prog_card_1_header: this.state.prog_card_1_header,
+      section_display: this.state.ld1_section_display,
+      section_content: {
+        prog_card_1_img: this.state.prog_card_1_img,
+        prog_card_1_link: this.state.prog_card_1_link,
+        prog_card_1_type: this.state.prog_card_1_type,
+        prog_card_1_header: this.state.prog_card_1_header,
 
-      prog_card_2_img: this.state.prog_card_2_img,
-      prog_card_2_link: this.state.prog_card_2_link,
-      prog_card_2_type: this.state.prog_card_2_type,
-      prog_card_2_header: this.state.prog_card_2_header,
+        prog_card_2_img: this.state.prog_card_2_img,
+        prog_card_2_link: this.state.prog_card_2_link,
+        prog_card_2_type: this.state.prog_card_2_type,
+        prog_card_2_header: this.state.prog_card_2_header,
 
-      prog_card_3_img: this.state.prog_card_3_img,
-      prog_card_3_link: this.state.prog_card_3_link,
-      prog_card_3_type: this.state.prog_card_3_type,
-      prog_card_3_header: this.state.prog_card_3_header,
+        prog_card_3_img: this.state.prog_card_3_img,
+        prog_card_3_link: this.state.prog_card_3_link,
+        prog_card_3_type: this.state.prog_card_3_type,
+        prog_card_3_header: this.state.prog_card_3_header,
 
-      prog_card_4_img: this.state.prog_card_4_img,
-      prog_card_4_link: this.state.prog_card_4_link,
-      prog_card_4_type: this.state.prog_card_4_type,
-      prog_card_4_header: this.state.prog_card_4_header,
+        prog_card_4_img: this.state.prog_card_4_img,
+        prog_card_4_link: this.state.prog_card_4_link,
+        prog_card_4_type: this.state.prog_card_4_type,
+        prog_card_4_header: this.state.prog_card_4_header,
+      },
     };
 
     console.log(prog_section);

@@ -18,7 +18,7 @@ import Accordion from "../../../reusable/Accordion/Accordion";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -29,23 +29,27 @@ class LensDesigns1 extends Component {
     this.state = {
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       ld2_section_display: true,
       ld2_header: "...",
       ld2_desc: "...",
-      ld2_designs: [{
-        img: '',
-        header: '',
-        sub_header: '',
-        content_before: '',
-        content_after: '',
-        specs: [{
-          title: 'title',
-          desc: 'asda',
-        }]
-      }]
+      ld2_designs: [
+        {
+          img: "",
+          header: "",
+          sub_header: "",
+          content_before: "",
+          content_after: "",
+          specs: [
+            {
+              title: "title",
+              desc: "asda",
+            },
+          ],
+        },
+      ],
     };
 
     this.onChangeDesign = this.onChangeDesign.bind(this);
@@ -56,17 +60,13 @@ class LensDesigns1 extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   componentDidMount() {
     axios
       .get(`${SERVER_URI}/api/getLensDesigns2`)
       .then((response) => {
-        const {
-          ld2_section_display,
-          ld2_header,
-          ld2_desc,
-          ld2_designs,
-        } = response.data;
+        const { ld2_section_display, ld2_header, ld2_desc, ld2_designs } =
+          response.data.section_content;
+
         this.setState({
           ld2_section_display: ld2_section_display,
           ld2_header: ld2_header,
@@ -97,12 +97,16 @@ class LensDesigns1 extends Component {
 
       console.log("POST_STATE:: ", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postLensDesigns2`, prog_section)
+        .then((res) => console.log(res));
 
       // window.location = `${ADMIN_URI}/#/landing/LensDesigns1/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
-
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
     }
   }
 
@@ -111,10 +115,10 @@ class LensDesigns1 extends Component {
 
     this.setState({
       [name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
     // console.log(this.state);
   }
 
@@ -124,21 +128,21 @@ class LensDesigns1 extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const ld2_designs = [...prevState.ld2_designs]
+    this.setState((prevState) => {
+      const ld2_designs = [...prevState.ld2_designs];
 
       ld2_designs[i] = {
         ...ld2_designs[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         ld2_designs,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.ld2_designs[i]);
     // console.log(this.state);
@@ -150,21 +154,21 @@ class LensDesigns1 extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       let temp = {
         ...prevState,
-        ld2_designs: [...prevState.ld2_designs]
-      }
+        ld2_designs: [...prevState.ld2_designs],
+      };
 
-      temp.ld2_designs[di].specs[si][name] = value
+      temp.ld2_designs[di].specs[si][name] = value;
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         temp,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.ld2_designs[i]);
     // console.log(this.state);
@@ -174,14 +178,14 @@ class LensDesigns1 extends Component {
     e.preventDefault();
     this.setState({
       ld2_section_display: !this.state.ld2_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
   }
 
   render() {
-    let listDesigns = this.state.ld2_designs.map((design, design_i) =>
+    let listDesigns = this.state.ld2_designs.map((design, design_i) => (
       <div key={design_i}>
         <Accordion
           title="Accordion Title"
@@ -197,7 +201,7 @@ class LensDesigns1 extends Component {
                   placeholder="design_img"
                   name="img"
                   value={design.img}
-                  onChange={event => this.onChangeDesign(event, design_i)}
+                  onChange={(event) => this.onChangeDesign(event, design_i)}
                 />
               </CInputGroup>
               <br />
@@ -208,7 +212,7 @@ class LensDesigns1 extends Component {
                 name="header"
                 placeholder="header"
                 value={design.header}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                onChange={(event) => this.onChangeDesign(event, design_i)}
               />
               <br />
               {/* INPUT #3 Design sub_header */}
@@ -218,7 +222,7 @@ class LensDesigns1 extends Component {
                 name="sub_header"
                 placeholder="sub_header"
                 value={design.sub_header}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                onChange={(event) => this.onChangeDesign(event, design_i)}
               />
               <br />
               {/* INPUT #4 Design content_before */}
@@ -228,7 +232,7 @@ class LensDesigns1 extends Component {
                 name="content_before"
                 placeholder="content_before"
                 value={design.content_before}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                onChange={(event) => this.onChangeDesign(event, design_i)}
               />
               <br />
               {/* INPUT #5 Design content_after */}
@@ -238,10 +242,10 @@ class LensDesigns1 extends Component {
                 name="content_after"
                 placeholder="content_after"
                 value={design.content_after}
-                onChange={event => this.onChangeDesign(event, design_i)}
+                onChange={(event) => this.onChangeDesign(event, design_i)}
               />
               <br />
-              {design.specs.map((spec, spec_i) =>
+              {design.specs.map((spec, spec_i) => (
                 <div key={spec_i}>
                   <CInput
                     type="text"
@@ -249,7 +253,9 @@ class LensDesigns1 extends Component {
                     name="title"
                     placeholder="title"
                     value={spec.title}
-                    onChange={event => this.onChangeSpec(event, design_i, spec_i)}
+                    onChange={(event) =>
+                      this.onChangeSpec(event, design_i, spec_i)
+                    }
                   />
                   <CInput
                     type="text"
@@ -257,44 +263,40 @@ class LensDesigns1 extends Component {
                     name="desc"
                     placeholder="desc"
                     value={spec.desc}
-                    onChange={event => this.onChangeSpec(event, design_i, spec_i)}
+                    onChange={(event) =>
+                      this.onChangeSpec(event, design_i, spec_i)
+                    }
                   />
                 </div>
-              )}
+              ))}
             </div>
           }
         />
         <hr />
       </div>
-    )
+    ));
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -323,15 +325,29 @@ class LensDesigns1 extends Component {
               {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.ld2_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.ld2_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>
@@ -341,8 +357,8 @@ class LensDesigns1 extends Component {
               <h6>{this.state.ld2_header}</h6>
               <CInput
                 type="text"
-                id='ld2_header'
-                name='ld2_header'
+                id="ld2_header"
+                name="ld2_header"
                 placeholder="ld2_header"
                 value={this.state.ld2_header}
                 onChange={this.onChange}
@@ -360,7 +376,6 @@ class LensDesigns1 extends Component {
               {/* {this.state.ld2_designs[0].sub_header} */}
 
               {listDesigns}
-
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -378,7 +393,8 @@ class LensDesigns1 extends Component {
         </CCol>
 
         <br />
-        <br /><br />
+        <br />
+        <br />
         <hr />
 
         <UploadImg />

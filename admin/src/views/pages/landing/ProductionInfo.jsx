@@ -18,7 +18,7 @@ import Accordion from "../../../reusable/Accordion/Accordion";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -29,17 +29,19 @@ class ProductionInfo extends Component {
     this.state = {
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       pi_section_display: true,
       pi_header: "...",
       pi_desc: "...",
-      pi_items: [{
-        item_img: "...",
-        item_num: 0,
-        item_title: "...",
-      }]
+      pi_items: [
+        {
+          item_img: "...",
+          item_num: 0,
+          item_title: "...",
+        },
+      ],
     };
 
     this.onChangeItem = this.onChangeItem.bind(this);
@@ -49,17 +51,12 @@ class ProductionInfo extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   componentDidMount() {
     axios
       .get(`${SERVER_URI}/api/getProductionInfo`)
       .then((response) => {
-        const {
-          pi_section_display,
-          pi_header,
-          pi_desc,
-          pi_items,
-        } = response.data;
+        const { pi_section_display, pi_header, pi_desc, pi_items } =
+          response.data.section_content;
         this.setState({
           pi_section_display: pi_section_display,
           pi_header: pi_header,
@@ -90,12 +87,16 @@ class ProductionInfo extends Component {
 
       console.log("POST_STATE:: ", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postProductionInfo`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postProductionInfo`, prog_section)
+        .then((res) => console.log(res));
 
       // window.location = `${ADMIN_URI}/#/landing/ProductionInfo/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
-
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
     }
   }
 
@@ -104,10 +105,10 @@ class ProductionInfo extends Component {
 
     this.setState({
       [name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
     // console.log(this.state);
   }
 
@@ -117,21 +118,21 @@ class ProductionInfo extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const pi_items = [...prevState.pi_items]
+    this.setState((prevState) => {
+      const pi_items = [...prevState.pi_items];
 
       pi_items[i] = {
         ...pi_items[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         pi_items,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.pi_items[i]);
     // console.log(this.state);
@@ -141,14 +142,14 @@ class ProductionInfo extends Component {
     e.preventDefault();
     this.setState({
       pi_section_display: !this.state.pi_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
   }
 
   render() {
-    let listImgs = this.state.pi_items.map((item, item_i) =>
+    let listImgs = this.state.pi_items.map((item, item_i) => (
       <div key={item_i}>
         <Accordion
           title="Design item"
@@ -161,7 +162,7 @@ class ProductionInfo extends Component {
                 name="item_title"
                 placeholder="item_title"
                 value={item.item_title}
-                onChange={event => this.onChangeItem(event, item_i)}
+                onChange={(event) => this.onChangeItem(event, item_i)}
               />
               <br />
               {/* INPUT #2 item Number */}
@@ -171,7 +172,7 @@ class ProductionInfo extends Component {
                 name="item_num"
                 placeholder="item_num"
                 value={item.item_num}
-                onChange={event => this.onChangeItem(event, item_i)}
+                onChange={(event) => this.onChangeItem(event, item_i)}
               />
               {/* INPUT #1 item IMG Link*/}
               <CInputGroup className="mb-3">
@@ -183,7 +184,7 @@ class ProductionInfo extends Component {
                   placeholder="item_img"
                   name="item_img"
                   value={item.item_img}
-                  onChange={event => this.onChangeItem(event, item_i)}
+                  onChange={(event) => this.onChangeItem(event, item_i)}
                 />
               </CInputGroup>
               <br />
@@ -192,35 +193,29 @@ class ProductionInfo extends Component {
         />
         <hr />
       </div>
-    )
+    ));
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -239,15 +234,29 @@ class ProductionInfo extends Component {
                 />_Show Section</a> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.pi_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.pi_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>
@@ -257,8 +266,8 @@ class ProductionInfo extends Component {
               <h6>{this.state.pi_header}</h6>
               <CInput
                 type="text"
-                id='pi_header'
-                name='pi_header'
+                id="pi_header"
+                name="pi_header"
                 placeholder="pi_header"
                 value={this.state.pi_header}
                 onChange={this.onChange}
@@ -276,7 +285,6 @@ class ProductionInfo extends Component {
               {/* {this.state.pi_items[0].sub_header} */}
 
               {listImgs}
-
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -294,7 +302,8 @@ class ProductionInfo extends Component {
         </CCol>
 
         <br />
-        <br /><br />
+        <br />
+        <br />
         <hr />
 
         <UploadImg />

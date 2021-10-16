@@ -17,7 +17,7 @@ import {
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -29,7 +29,7 @@ class LensInfo3 extends Component {
       visible: false,
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       image: "...",
@@ -45,7 +45,7 @@ class LensInfo3 extends Component {
       li3_parag_3: "...",
       li3_parag_4: "...",
       li3_parag_5: "...",
-      li3_parag_6: "..."
+      li3_parag_6: "...",
     };
 
     this.onChange = this.onChange.bind(this);
@@ -53,7 +53,6 @@ class LensInfo3 extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
   }
-
 
   componentDidMount() {
     axios
@@ -71,7 +70,7 @@ class LensInfo3 extends Component {
           li3_parag_4,
           li3_parag_5,
           li3_parag_6,
-        } = response.data;
+        } = response.data.section_content;
         this.setState({
           li3_section_display: li3_section_display,
           li3_header: li3_header,
@@ -95,10 +94,10 @@ class LensInfo3 extends Component {
     console.log(value);
     this.setState({
       [e.target.name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
   }
 
   onSubmit(e) {
@@ -113,21 +112,26 @@ class LensInfo3 extends Component {
       li3_parag_3: this.state.li3_parag_3,
       li3_parag_4: this.state.li3_parag_4,
       li3_parag_5: this.state.li3_parag_5,
-      li3_parag_6: this.state.li3_parag_6
+      li3_parag_6: this.state.li3_parag_6,
     };
 
-    axios.post(`${SERVER_URI}/api/postLensInfo3`, prog_section)
-      .then(res => console.log(res));
+    axios
+      .post(`${SERVER_URI}/api/postLensInfo3`, prog_section)
+      .then((res) => console.log(res));
 
     // window.location = `${ADMIN_URI}/#/landing/LensInfo1/`;
-    this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+    this.setState({
+      edited: true,
+      submitClass: "disabled",
+      submitDisable: true,
+    });
   }
 
   toggleCheckbox(e) {
     e.preventDefault();
     this.setState({
       li3_section_display: !this.state.li3_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
@@ -136,31 +140,26 @@ class LensInfo3 extends Component {
   render() {
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000} />
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000} />
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -180,15 +179,29 @@ class LensInfo3 extends Component {
               {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.li3_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.li3_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>

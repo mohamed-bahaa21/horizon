@@ -71,7 +71,7 @@ class Hero extends Component {
           hero_link_1_href,
           design_state,
           design_img,
-        } = response.data;
+        } = response.data.section_content;
 
         // const { csrfToken } = response.data;
 

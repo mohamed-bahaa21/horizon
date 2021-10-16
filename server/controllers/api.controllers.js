@@ -168,13 +168,13 @@ exports.postHeroData = (req, res) => {
 exports.getLensDesigns1 = (req, res) => {
     Horizon.findById('6165f63fb58cb67e24ac85fa').then((result) => {
         res.json(result);
+        console.log(result);
     });
 };
 
 exports.postLensDesigns1 = (req, res) => {
+    const { section_display } = req.body;
     const {
-        name,
-        ld1_section_display,
         prog_card_1_img,
         prog_card_1_link,
         prog_card_1_type,
@@ -191,31 +191,34 @@ exports.postLensDesigns1 = (req, res) => {
         prog_card_4_link,
         prog_card_4_type,
         prog_card_4_header,
-    } = req.body;
+    } = req.body.section_content;
+
+    const section_content = {
+        prog_card_1_img: prog_card_1_img,
+        prog_card_1_link: prog_card_1_link,
+        prog_card_1_type: prog_card_1_type,
+        prog_card_1_header: prog_card_1_header,
+        prog_card_2_img: prog_card_2_img,
+        prog_card_2_link: prog_card_2_link,
+        prog_card_2_type: prog_card_2_type,
+        prog_card_2_header: prog_card_2_header,
+        prog_card_3_img: prog_card_3_img,
+        prog_card_3_link: prog_card_3_link,
+        prog_card_3_type: prog_card_3_type,
+        prog_card_3_header: prog_card_3_header,
+        prog_card_4_img: prog_card_4_img,
+        prog_card_4_link: prog_card_4_link,
+        prog_card_4_type: prog_card_4_type,
+        prog_card_4_header: prog_card_4_header,
+    }
 
     // console.log(req.body);
 
     Horizon.findById('6165f63fb58cb67e24ac85fa')
         .then((horizon) => {
             // console.log(req.body);
-            horizon.name = name;
-            horizon.ld1_section_display = ld1_section_display;
-            horizon.prog_card_1_img = prog_card_1_img;
-            horizon.prog_card_1_link = prog_card_1_link;
-            horizon.prog_card_1_type = prog_card_1_type;
-            horizon.prog_card_1_header = prog_card_1_header;
-            horizon.prog_card_2_img = prog_card_2_img;
-            horizon.prog_card_2_link = prog_card_2_link;
-            horizon.prog_card_2_type = prog_card_2_type;
-            horizon.prog_card_2_header = prog_card_2_header;
-            horizon.prog_card_3_img = prog_card_3_img;
-            horizon.prog_card_3_link = prog_card_3_link;
-            horizon.prog_card_3_type = prog_card_3_type;
-            horizon.prog_card_3_header = prog_card_3_header;
-            horizon.prog_card_4_img = prog_card_4_img;
-            horizon.prog_card_4_link = prog_card_4_link;
-            horizon.prog_card_4_type = prog_card_4_type;
-            horizon.prog_card_4_header = prog_card_4_header;
+            horizon.section_display = section_display;
+            horizon.section_content = section_content;
 
             horizon
                 .save()
@@ -227,7 +230,7 @@ exports.postLensDesigns1 = (req, res) => {
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensInfo1 = (req, res) => {
-    Horizon.findById('608514b45b363f4088e7e050').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85fb').then((result) => {
         res.json(result);
     });
 };
@@ -244,7 +247,7 @@ exports.postLensInfo1 = (req, res) => {
         li1_parag_4
     } = req.body;
 
-    Horizon.findById('608514b45b363f4088e7e050')
+    Horizon.findById('6165f63fb58cb67e24ac85fb')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -268,7 +271,7 @@ exports.postLensInfo1 = (req, res) => {
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensInfo3 = (req, res) => {
-    Horizon.findById('612b8765c6bdeb39f0b921b7').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac8603').then((result) => {
         res.json(result);
     });
 };
@@ -287,7 +290,7 @@ exports.postLensInfo3 = (req, res) => {
         li3_parag_6
     } = req.body;
 
-    Horizon.findById('612b8765c6bdeb39f0b921b7')
+    Horizon.findById('6165f63fb58cb67e24ac8603')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -313,7 +316,7 @@ exports.postLensInfo3 = (req, res) => {
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensDesigns2 = (req, res) => {
-    Horizon.findById('608b563eea47782954fcabeb').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85ff').then((result) => {
         res.json(result);
     });
 };
@@ -326,7 +329,7 @@ exports.postLensDesigns2 = (req, res) => {
         ld2_designs
     } = req.body;
 
-    Horizon.findById('608b563eea47782954fcabeb')
+    Horizon.findById('6165f63fb58cb67e24ac85ff')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -345,7 +348,7 @@ exports.postLensDesigns2 = (req, res) => {
 // END SECTION
 // Admin Gets, Edits -> Lens Info 1 Section Data 
 exports.getLensInfo2 = (req, res) => {
-    Horizon.findById('6086c203d9b6ec4c30d027de').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85fc').then((result) => {
         res.json(result);
     });
 };
@@ -360,7 +363,7 @@ exports.postLensInfo2 = (req, res) => {
         li2_rght_parags
     } = req.body;
 
-    Horizon.findById('6086c203d9b6ec4c30d027de')
+    Horizon.findById('6165f63fb58cb67e24ac85fc')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -389,7 +392,7 @@ exports.postLensInfo2 = (req, res) => {
 
 // Admin Gets, Edits -> Watch Video Section Data 
 exports.getWatchVideo = (req, res) => {
-    Horizon.findById('608a6c37ea47782954fcabe9').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85fd').then((result) => {
         res.json(result);
     });
 };
@@ -402,7 +405,7 @@ exports.postWatchVideo = (req, res) => {
         wv_link
     } = req.body;
 
-    Horizon.findById('608a6c37ea47782954fcabe9')
+    Horizon.findById('6165f63fb58cb67e24ac85fd')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -421,7 +424,7 @@ exports.postWatchVideo = (req, res) => {
 
 // Admin Gets, Edits -> Watch Video Section Data 
 exports.getScreenShots = (req, res) => {
-    Horizon.findById('608a9ecdea47782954fcabea').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85fe').then((result) => {
         res.json(result);
     });
 };
@@ -431,7 +434,7 @@ exports.postScreenShots = (req, res) => {
         ss_section_display,
     } = req.body;
 
-    Horizon.findById('608a9ecdea47782954fcabea')
+    Horizon.findById('6165f63fb58cb67e24ac85fe')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -447,7 +450,7 @@ exports.postScreenShots = (req, res) => {
 
 // Admin Gets, Edits -> Lens Designs 3 Section Data 
 exports.getLensDesigns3 = (req, res) => {
-    Horizon.findById('608d230c48453073fc2d6146').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac8600').then((result) => {
         res.json(result);
     });
 };
@@ -460,7 +463,7 @@ exports.postLensDesigns3 = (req, res) => {
         ld3_imgs
     } = req.body;
 
-    Horizon.findById('608d230c48453073fc2d6146')
+    Horizon.findById('6165f63fb58cb67e24ac8600')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -479,7 +482,7 @@ exports.postLensDesigns3 = (req, res) => {
 
 // Admin Gets, Edits -> Production Info Section Data 
 exports.getProductionInfo = (req, res) => {
-    Horizon.findById('608d49ce48453073fc2d6147').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac8601').then((result) => {
         res.json(result);
     });
 };
@@ -492,7 +495,7 @@ exports.postProductionInfo = (req, res) => {
         pi_items
     } = req.body;
 
-    Horizon.findById('608d49ce48453073fc2d6147')
+    Horizon.findById('6165f63fb58cb67e24ac8601')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;
@@ -511,7 +514,7 @@ exports.postProductionInfo = (req, res) => {
 
 // Admin Gets, Edits -> Production Info Section Data 
 exports.getTechnicalInfo = (req, res) => {
-    Horizon.findById('608d5ce648453073fc2d6149').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac8602').then((result) => {
         res.json(result);
     });
 };
@@ -524,7 +527,7 @@ exports.postTechnicalInfo = (req, res) => {
         ti_items
     } = req.body;
 
-    Horizon.findById('608d5ce648453073fc2d6149')
+    Horizon.findById('6165f63fb58cb67e24ac8602')
         .then((horizon) => {
             // console.log(req.body);
             // horizon.name = name;

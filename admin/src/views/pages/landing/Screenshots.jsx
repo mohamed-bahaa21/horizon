@@ -12,7 +12,7 @@ import {
 } from "@coreui/react";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -23,7 +23,7 @@ class ScreenShots extends Component {
     this.state = {
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       ss_section_display: true,
@@ -36,11 +36,9 @@ class ScreenShots extends Component {
     axios
       .get(`${SERVER_URI}/api/getScreenShots`)
       .then((response) => {
-        const {
-          ss_section_display
-        } = response.data;
+        const { ss_section_display } = response.data.section_content;
         this.setState({
-          ss_section_display: ss_section_display
+          ss_section_display: ss_section_display,
         });
         console.log("REQ_STATE:: ", this.state);
         console.log("______________________________________");
@@ -58,10 +56,15 @@ class ScreenShots extends Component {
         ss_section_display: this.state.ss_section_display,
       };
       console.log("POST_STATE:: ", prog_section);
-      axios.post(`${SERVER_URI}/api/postScreenShots`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postScreenShots`, prog_section)
+        .then((res) => console.log(res));
       // window.location = `${ADMIN_URI}/#/landing/ScreenShots/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
     }
   }
 
@@ -69,7 +72,7 @@ class ScreenShots extends Component {
     e.preventDefault();
     this.setState({
       ss_section_display: !this.state.ss_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
@@ -78,32 +81,26 @@ class ScreenShots extends Component {
   render() {
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -122,15 +119,29 @@ class ScreenShots extends Component {
                                 />_Show Section</a> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.ss_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.ss_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>

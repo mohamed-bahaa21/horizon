@@ -10,7 +10,7 @@ import {
   CToast,
   CToaster,
   CInputGroup,
-  CInputGroupText
+  CInputGroupText,
 } from "@coreui/react";
 
 import Accordion from "../../../reusable/Accordion/Accordion";
@@ -18,7 +18,7 @@ import Accordion from "../../../reusable/Accordion/Accordion";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -29,7 +29,7 @@ class LensInfo2 extends Component {
     this.state = {
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       fixedToasts: 0,
@@ -38,14 +38,18 @@ class LensInfo2 extends Component {
       li2_header: "...",
       li2_desc: "...",
       li2_image: "...",
-      li2_lft_parags: [{
-        parag_header: '',
-        parag_content: '',
-      }],
-      li2_rght_parags: [{
-        parag_header: '',
-        parag_content: '',
-      }]
+      li2_lft_parags: [
+        {
+          parag_header: "",
+          parag_content: "",
+        },
+      ],
+      li2_rght_parags: [
+        {
+          parag_header: "",
+          parag_content: "",
+        },
+      ],
     };
 
     this.onChange = this.onChange.bind(this);
@@ -56,7 +60,6 @@ class LensInfo2 extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
   }
-
 
   componentDidMount() {
     axios
@@ -69,7 +72,7 @@ class LensInfo2 extends Component {
           li2_image,
           li2_lft_parags,
           li2_rght_parags,
-        } = response.data;
+        } = response.data.section_content;
         this.setState({
           li2_section_display: li2_section_display,
           li2_header: li2_header,
@@ -104,13 +107,17 @@ class LensInfo2 extends Component {
 
       console.log("POST_STATE:: ", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postLensInfo2`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postLensInfo2`, prog_section)
+        .then((res) => console.log(res));
 
       // window.location = `${ADMIN_URI}/#/landing/LensInfo2/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
       this.addFixedToast();
-
     }
   }
 
@@ -119,10 +126,10 @@ class LensInfo2 extends Component {
 
     this.setState({
       [name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
     // console.log(this.state);
   }
 
@@ -132,21 +139,21 @@ class LensInfo2 extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const li2_lft_parags = [...prevState.li2_lft_parags]
+    this.setState((prevState) => {
+      const li2_lft_parags = [...prevState.li2_lft_parags];
 
       li2_lft_parags[i] = {
         ...li2_lft_parags[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         li2_lft_parags,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.ld2_designs[i]);
     // console.log(this.state);
@@ -158,47 +165,45 @@ class LensInfo2 extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const li2_rght_parags = [...prevState.li2_rght_parags]
+    this.setState((prevState) => {
+      const li2_rght_parags = [...prevState.li2_rght_parags];
 
       li2_rght_parags[i] = {
         ...li2_rght_parags[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         li2_rght_parags,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.ld2_designs[i]);
     // console.log(this.state);
   }
 
-
   addFixedToast() {
     console.log(this.state.fixedToasts);
     this.setState({
-      fixedToasts: this.state.fixedToasts + 1
-    })
+      fixedToasts: this.state.fixedToasts + 1,
+    });
   }
 
   toggleCheckbox(e) {
     e.preventDefault();
     this.setState({
       li2_section_display: !this.state.li2_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
   }
 
-
   render() {
-    let listLft = this.state.li2_lft_parags.map((parag, parag_i) =>
+    let listLft = this.state.li2_lft_parags.map((parag, parag_i) => (
       <div key={parag_i}>
         <Accordion
           title={`#${parag_i + 1} parag`}
@@ -211,7 +216,7 @@ class LensInfo2 extends Component {
                 name="parag_header"
                 placeholder="parag_header"
                 value={parag.parag_header}
-                onChange={event => this.onChangeLft(event, parag_i)}
+                onChange={(event) => this.onChangeLft(event, parag_i)}
               />
               <br />
               {/* INPUT #2 Parag Content */}
@@ -221,16 +226,16 @@ class LensInfo2 extends Component {
                 name="parag_content"
                 placeholder="parag_content"
                 value={parag.parag_content}
-                onChange={event => this.onChangeLft(event, parag_i)}
+                onChange={(event) => this.onChangeLft(event, parag_i)}
               />
               <br />
             </div>
           }
         />
       </div>
-    )
+    ));
 
-    let listRght = this.state.li2_rght_parags.map((parag, parag_i) =>
+    let listRght = this.state.li2_rght_parags.map((parag, parag_i) => (
       <div key={parag_i}>
         <Accordion
           title={`#${parag_i + 1} parag`}
@@ -243,7 +248,7 @@ class LensInfo2 extends Component {
                 name="parag_header"
                 placeholder="parag_header"
                 value={parag.parag_header}
-                onChange={event => this.onChangeRght(event, parag_i)}
+                onChange={(event) => this.onChangeRght(event, parag_i)}
               />
               <br />
               {/* INPUT #2 Parag Content */}
@@ -253,42 +258,36 @@ class LensInfo2 extends Component {
                 name="parag_content"
                 placeholder="parag_content"
                 value={parag.parag_content}
-                onChange={event => this.onChangeRght(event, parag_i)}
+                onChange={(event) => this.onChangeRght(event, parag_i)}
               />
               <br />
             </div>
           }
         />
       </div>
-    )
+    ));
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -309,15 +308,29 @@ class LensInfo2 extends Component {
               {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.li2_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.li2_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>
@@ -326,8 +339,8 @@ class LensInfo2 extends Component {
               <h6>{this.state.ld2_header}</h6>
               <CInput
                 type="text"
-                id='li2_header'
-                name='li2_header'
+                id="li2_header"
+                name="li2_header"
                 placeholder="li2_header"
                 value={this.state.li2_header}
                 onChange={this.onChange}
@@ -366,7 +379,6 @@ class LensInfo2 extends Component {
               <h6>Right Parags</h6>
 
               {listRght}
-
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -384,11 +396,12 @@ class LensInfo2 extends Component {
         </CCol>
 
         <br />
-        <br /><br />
+        <br />
+        <br />
         <hr />
 
         <UploadImg />
-      </CRow >
+      </CRow>
     );
   }
 }

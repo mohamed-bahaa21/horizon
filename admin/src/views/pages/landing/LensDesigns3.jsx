@@ -18,7 +18,7 @@ import Accordion from "../../../reusable/Accordion/Accordion";
 import UploadImg from "../../UploadImg/UploadImg";
 
 import axios from "axios";
-import FlashMessage from 'react-flash-message'
+import FlashMessage from "react-flash-message";
 
 import SERVER_URI from "../../../reusable/api";
 
@@ -29,17 +29,19 @@ class LensDesigns3 extends Component {
     this.state = {
       activeKey: 0,
       edited: false,
-      submitClass: 'disabled',
+      submitClass: "disabled",
       submitDisable: true,
 
       ld3_section_display: true,
       ld3_header: "...",
       ld3_desc: "...",
-      ld3_imgs: [{
-        img_title: "...",
-        img_sub: "...",
-        img_link: "..."
-      }]
+      ld3_imgs: [
+        {
+          img_title: "...",
+          img_sub: "...",
+          img_link: "...",
+        },
+      ],
     };
 
     this.onChangeImg = this.onChangeImg.bind(this);
@@ -49,17 +51,12 @@ class LensDesigns3 extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-
   componentDidMount() {
     axios
       .get(`${SERVER_URI}/api/getLensDesigns3`)
       .then((response) => {
-        const {
-          ld3_section_display,
-          ld3_header,
-          ld3_desc,
-          ld3_imgs,
-        } = response.data;
+        const { ld3_section_display, ld3_header, ld3_desc, ld3_imgs } =
+          response.data.section_content;
         this.setState({
           ld3_section_display: ld3_section_display,
           ld3_header: ld3_header,
@@ -90,12 +87,16 @@ class LensDesigns3 extends Component {
 
       console.log("POST_STATE:: ", prog_section);
 
-      axios.post(`${SERVER_URI}/api/postLensDesigns3`, prog_section)
-        .then(res => console.log(res));
+      axios
+        .post(`${SERVER_URI}/api/postLensDesigns3`, prog_section)
+        .then((res) => console.log(res));
 
       // window.location = `${ADMIN_URI}/#/landing/LensDesigns3/`;
-      this.setState({ edited: true, submitClass: 'disabled', submitDisable: true, })
-
+      this.setState({
+        edited: true,
+        submitClass: "disabled",
+        submitDisable: true,
+      });
     }
   }
 
@@ -104,10 +105,10 @@ class LensDesigns3 extends Component {
 
     this.setState({
       [name]: value,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
-    })
+    });
     // console.log(this.state);
   }
 
@@ -117,21 +118,21 @@ class LensDesigns3 extends Component {
     // console.log('VALUE:: ', value);
     // console.log('_____________________________________');
 
-    this.setState(prevState => {
-      const ld3_imgs = [...prevState.ld3_imgs]
+    this.setState((prevState) => {
+      const ld3_imgs = [...prevState.ld3_imgs];
 
       ld3_imgs[i] = {
         ...ld3_imgs[i],
-        [name]: value
-      }
+        [name]: value,
+      };
 
       return {
-        submitClass: 'primary',
+        submitClass: "primary",
         submitDisable: false,
         edited: false,
         ld3_imgs,
-      }
-    })
+      };
+    });
 
     // console.log(this.state.ld3_imgs[i]);
     // console.log(this.state);
@@ -141,14 +142,14 @@ class LensDesigns3 extends Component {
     e.preventDefault();
     this.setState({
       ld3_section_display: !this.state.ld3_section_display,
-      submitClass: 'primary',
+      submitClass: "primary",
       submitDisable: false,
       edited: false,
     });
   }
 
   render() {
-    let listImgs = this.state.ld3_imgs.map((img, img_i) =>
+    let listImgs = this.state.ld3_imgs.map((img, img_i) => (
       <div key={img_i}>
         <Accordion
           title="Design Img"
@@ -161,7 +162,7 @@ class LensDesigns3 extends Component {
                 name="img_title"
                 placeholder="img_title"
                 value={img.img_title}
-                onChange={event => this.onChangeImg(event, img_i)}
+                onChange={(event) => this.onChangeImg(event, img_i)}
               />
               <br />
               {/* INPUT #2 IMG Sub title */}
@@ -171,7 +172,7 @@ class LensDesigns3 extends Component {
                 name="img_sub"
                 placeholder="img_sub"
                 value={img.img_sub}
-                onChange={event => this.onChangeImg(event, img_i)}
+                onChange={(event) => this.onChangeImg(event, img_i)}
               />
               {/* INPUT #1 IMG Link*/}
               <CInputGroup className="mb-3">
@@ -183,7 +184,7 @@ class LensDesigns3 extends Component {
                   placeholder="img_link"
                   name="img_link"
                   value={img.img_link}
-                  onChange={event => this.onChangeImg(event, img_i)}
+                  onChange={(event) => this.onChangeImg(event, img_i)}
                 />
               </CInputGroup>
               <br />
@@ -192,35 +193,29 @@ class LensDesigns3 extends Component {
         />
         <hr />
       </div>
-    )
+    ));
     return (
       <CRow>
-        {
-          (this.state.edited === true) ?
-            <div>
-              <FlashMessage duration={3000}>
-              </FlashMessage>
-              <CToaster>
-                <CToast
-                  key={this.state.fixedToasts}
-                  show={true}
-                  autohide={1000}
-                  fade={true}
-                  header="CToast fixed component"
-                >
-                  <CAlert
-                    width="1"
-                    color="success"
-                    dismissible={`${true}`}
-                  >
-                    <strong>Updated</strong> Successfully...
-                  </CAlert>
-                </CToast>
-              </CToaster >
-            </div>
-            :
-            <p></p>
-        }
+        {this.state.edited === true ? (
+          <div>
+            <FlashMessage duration={3000}></FlashMessage>
+            <CToaster>
+              <CToast
+                key={this.state.fixedToasts}
+                show={true}
+                autohide={1000}
+                fade={true}
+                header="CToast fixed component"
+              >
+                <CAlert width="1" color="success" dismissible={`${true}`}>
+                  <strong>Updated</strong> Successfully...
+                </CAlert>
+              </CToast>
+            </CToaster>
+          </div>
+        ) : (
+          <p></p>
+        )}
 
         <CCol xs="12">
           <CForm onSubmit={this.onSubmit}>
@@ -241,15 +236,29 @@ class LensDesigns3 extends Component {
               {/* <h4>{this.state.design_state ? "Show" : "hide"}</h4> */}
 
               {/* NEW LOOK - it's all about that */}
-              <a className="show_design_link" href="#" role="button" onClick={this.toggleCheckbox}>
+              <a
+                className="show_design_link"
+                href="#"
+                role="button"
+                onClick={this.toggleCheckbox}
+              >
                 <label className="show_design">
-                  <input className="label__checkbox" id="show_design" name="show_design" type="checkbox" checked={this.state.ld3_section_display} readOnly />
+                  <input
+                    className="label__checkbox"
+                    id="show_design"
+                    name="show_design"
+                    type="checkbox"
+                    checked={this.state.ld3_section_display}
+                    readOnly
+                  />
                   <span className="label__text">
                     <span className="label__check">
                       <i className="fa fa-check icon"></i>
                     </span>
                   </span>
-                  <label className="show_design_label" htmlFor="show_design">Show Section</label>
+                  <label className="show_design_label" htmlFor="show_design">
+                    Show Section
+                  </label>
                 </label>
               </a>
             </CFormGroup>
@@ -259,8 +268,8 @@ class LensDesigns3 extends Component {
               <h6>{this.state.ld3_header}</h6>
               <CInput
                 type="text"
-                id='ld3_header'
-                name='ld3_header'
+                id="ld3_header"
+                name="ld3_header"
                 placeholder="ld3_header"
                 value={this.state.ld3_header}
                 onChange={this.onChange}
@@ -278,7 +287,6 @@ class LensDesigns3 extends Component {
               {/* {this.state.ld3_imgs[0].sub_header} */}
 
               {listImgs}
-
             </CFormGroup>
             <br />
             <CFormGroup>
@@ -296,7 +304,8 @@ class LensDesigns3 extends Component {
         </CCol>
 
         <br />
-        <br /><br />
+        <br />
+        <br />
         <hr />
 
         <UploadImg />
