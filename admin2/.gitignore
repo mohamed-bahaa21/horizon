@@ -9,12 +9,12 @@
 /coverage
 
 # next.js
-# /.next/
+/.next/
 /out/
 /prisma/schema.prisma
 
 # production
-# /build
+/build
 /public/horizon.js
 /public/geo
 /public/lang

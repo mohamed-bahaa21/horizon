@@ -33,7 +33,7 @@ const store = new MongoDBStore({
 
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 
-var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon-lenses.com'] // allow to server to accept request from different origin
+var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon-lenses.com', 'https://admin2.horizon-lenses.com'] // allow to server to accept request from different origin
 var corsOptions = {
     origin: function (origin, callback) {
         if (corsWhiteList.indexOf(origin) !== -1) {
