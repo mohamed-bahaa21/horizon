@@ -38,10 +38,8 @@ export default function WebsiteEditForm({ values, onSave, onClose }) {
   const [message, setMessage] = useState();
 
   const handleSubmit = async values => {
-    console.log('====================================');
-    console.log('Values: ', values);
-    console.log('====================================');
-    // const { ok, data } = await post('/api/website', values);
+    // console.log('websiteEditForm values: ', values);
+    const { ok, data } = await post('/api/website', values);
 
     if (ok) {
       onSave();

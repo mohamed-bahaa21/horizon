@@ -40,7 +40,7 @@ export default function CSection({
     getLink,
     {
       onDataLoad: data => {
-        console.log('Data: ', data.section_content);
+        // console.log('Data: ', data);
         setSectionValues(data);
       },
     },

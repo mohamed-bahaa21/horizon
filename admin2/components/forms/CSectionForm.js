@@ -36,10 +36,10 @@ export default function CSectionForm({
   const initialValues = initValues;
 
   const handleSubmit = async values => {
-    console.log('Submit: ', values);
-    const ok = true;
+    // console.log('Submit: ', values);
+    // const ok = true;
 
-    // const { ok, data } = await post(postLink, values);
+    const { ok, data } = await post(postLink, values);
 
     if (ok) {
       onSave();
