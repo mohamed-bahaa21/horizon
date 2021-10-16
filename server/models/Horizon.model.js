@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const horizonSchema = new Schema({
+const HorizonSchema = new Schema({
     "section_index": {
         type: Number,
         required: true,
@@ -21,4 +21,4 @@ const horizonSchema = new Schema({
     },
 })
 
-module.exports = mongoose.model('Horizon', horizonSchema);
+module.exports = mongoose.model('Horizon', HorizonSchema);

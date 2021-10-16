@@ -219,7 +219,7 @@ a:hover {
     color: white;
 
     box-shadow: 0 10px 25px -5px var(--main-color) !important;
-    border-radius: 1rem 2rem;
+    border-radius: 0.25rem;
     font-weight: 500;
 
     transition: all 0.3s;

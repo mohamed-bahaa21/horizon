@@ -12,25 +12,25 @@
       <div class="row align-items-center">
         <div class="col-md-6" data-aos="fade-right">
           <h1 style="font-weight: 900; color: #E2B55D;">
-            <%= horizon.name %>
+            <%= horizon.section_content.name %>
           </h1>
           <p id="hero-parag-1" class="white mb-0">
-            <%= horizon.hero_parag_1 %>
+            <%= horizon.section_content.hero_parag_1 %>
           </p>
           <h2 id="hero-header-1">
-            <%= horizon.hero_header_1 %>
+            <%= horizon.section_content.hero_header_1 %>
           </h2>
           <p id="hero-parag-2" class="white">
-            <%= horizon.hero_parag_2 %>
+            <%= horizon.section_content.hero_parag_2 %>
           </p>
           <!-- call to action btn -->
-          <a id="hero-link-1" href="https://<%= horizon.hero_link_1_href %>" class="btn btn-primary"><span><b>
-                <%= horizon.hero_link_1_name %>
+          <a id="hero-link-1" href="<%= horizon.section_content.hero_link_1_href %>" class="btn btn-primary"><span><b>
+                <%= horizon.section_content.hero_link_1_name %>
               </b></span></a>
         </div>
         <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
           <!-- <img src="assets/img/mobile-1.png" class="img-fluid d-block mx-auto" alt=""> -->
-          <% if(horizon.design_state) { %>
+          <% if(horizon.section_content.design_state) { %>
           <div class="stack">
             <div class="lens_content lens_card">
               <p class="white">
@@ -58,7 +58,7 @@
           </div>
           <% } else { %>
           <div style="text-align: center;">
-            <img src="<%= horizon.design_img %>" class="img-1000" alt="Hero Section Image">
+            <img src="<%= horizon.section_content.design_img %>" class="img-1000" alt="Hero Section Image">
           </div>
           <% } %>
 
@@ -69,6 +69,8 @@
 </section>
 <!-- End Hero -->
 <!-- ============================================================================ -->
+
+
 
 
 
@@ -150,7 +152,7 @@
 
 
 <!-- lenses Lens Designs 1/3 -->
-<% if(ld1.ld1_section_display) { %>
+<% if(ld1.section_display) { %>
 <div id='stars'></div>
 <div id='stars2'></div>
 <div id='stars3'></div>
@@ -163,7 +165,7 @@
           <span class="section-header-2">Designs 1</span>
         </h2>
         <!-- <span style="border-bottom: 3px solid; padding: 0.5rem;">
-                    <%= ld1.name %>
+                    <%= ld1.section_content.name %>
                 </span> -->
         <div class="space-25"></div>
         <p class="sec-desc white">
@@ -178,58 +180,58 @@
       <div class="col-12">
         <section id="" class="" style="margin: 2rem 0">
           <div class="blur-card-grid">
-            <a class="blur-card" href="<%= ld1.prog_card_1_link %>">
+            <a class="blur-card" href="<%= ld1.section_content.prog_card_1_link %>">
               <div class="blur-card__background" style="
-                        background-image: url(<%=ld1.prog_card_1_img%>);
+                        background-image: url(<%=ld1.section_content.prog_card_1_img%>);
                     "></div>
               <div class="blur-card__content">
                 <p class="blur-card__category white">
-                  <%= ld1.prog_card_1_type %>
+                  <%= ld1.section_content.prog_card_1_type %>
                 </p>
                 <h3 class="blur-card__heading">
-                  <%= ld1.prog_card_1_header %>
+                  <%= ld1.section_content.prog_card_1_header %>
                 </h3>
               </div>
             </a>
 
-            <a class="blur-card" href="<%= ld1.prog_card_2_link %>">
+            <a class="blur-card" href="<%= ld1.section_content.prog_card_2_link %>">
               <div class="blur-card__background" style="
-                        background-image: url(<%=ld1.prog_card_2_img%>);
+                        background-image: url(<%=ld1.section_content.prog_card_2_img%>);
                     "></div>
               <div class="blur-card__content">
                 <p class="blur-card__category white">
-                  <%= ld1.prog_card_2_type %>
+                  <%= ld1.section_content.prog_card_2_type %>
                 </p>
                 <h3 class="blur-card__heading">
-                  <%= ld1.prog_card_2_header %>
+                  <%= ld1.section_content.prog_card_2_header %>
                 </h3>
               </div>
             </a>
 
-            <a class="blur-card" href="<%= ld1.prog_card_3_link %>">
+            <a class="blur-card" href="<%= ld1.section_content.prog_card_3_link %>">
               <div class="blur-card__background" style="
-                        background-image: url(<%=ld1.prog_card_3_img%>);
+                        background-image: url(<%=ld1.section_content.prog_card_3_img%>);
                     "></div>
               <div class="blur-card__content">
                 <p class="blur-card__category white">
-                  <%= ld1.prog_card_3_type %>
+                  <%= ld1.section_content.prog_card_3_type %>
                 </p>
                 <h3 class="blur-card__heading">
-                  <%= ld1.prog_card_3_header %>
+                  <%= ld1.section_content.prog_card_3_header %>
                 </h3>
               </div>
             </a>
 
-            <a class="blur-card" href="<%= ld1.prog_card_4_link %>">
+            <a class="blur-card" href="<%= ld1.section_content.prog_card_4_link %>">
               <div class="blur-card__background" style="
-                        background-image: url(<%=ld1.prog_card_4_img%>);
+                        background-image: url(<%=ld1.section_content.prog_card_4_img%>);
                     "></div>
               <div class="blur-card__content">
                 <p class="blur-card__category white">
-                  <%= ld1.prog_card_4_type %>
+                  <%= ld1.section_content.prog_card_4_type %>
                 </p>
                 <h3 class="blur-card__heading">
-                  <%= ld1.prog_card_4_header %>
+                  <%= ld1.section_content.prog_card_4_header %>
                 </h3>
               </div>
             </a>
@@ -248,12 +250,12 @@
 
 
 <!-- Start Lens Info (1/2) -->
-<% if(li1.li1_section_display) { %>
+<% if(li1.section_display) { %>
 <section id="about" class="why-us padding-100 background-fullwidth background-fixed" style="background-image: url()">
   <div class="container" style="background-color: white; border-radius: 24px">
     <div class="row align-items-center">
       <div class="col-md-6 text-center" data-aos="fade-right">
-        <img src="<%= li1.li1_img %>" class="img-fluid" alt="" />
+        <img src="<%= li1.section_content.li1_img %>" class="img-fluid" alt="" />
       </div>
       <div class="col-md-6" data-aos="fade-zoom-in" data-aos-delay="200">
         <h2 class="section-header-c" style="text-align: center;">
@@ -261,10 +263,10 @@
           <span class="section-header-2">Info 1</span>
         </h2>
         <!-- <h2 style="text-align: center; margin: 0 0 2rem 0;"><span
-                        style="color: #d39529; border-bottom: 3px solid; padding: 0.5rem;"><%= li1.li1_header %></span>
+                        style="color: #d39529; border-bottom: 3px solid; padding: 0.5rem;"><%= li1.section_content.li1_header %></span>
                 </h2> -->
         <p class="sec-desc">
-          <%= li1.li1_desc %>
+          <%= li1.section_content.li1_desc %>
         </p>
         <div class="space-50">
         </div>
@@ -273,7 +275,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li1.li1_parag_1 %>
+                <%= li1.section_content.li1_parag_1 %>
               </p>
             </div>
             <div class="space-25"></div>
@@ -283,7 +285,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p style="color: white; font-weight: 300 !important">
-                <%= li1.li1_parag_2 %>
+                <%= li1.section_content.li1_parag_2 %>
               </p>
             </div>
           </div>
@@ -296,7 +298,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p style="color: white; font-weight: 300 !important">
-                <%= li1.li1_parag_3 %>
+                <%= li1.section_content.li1_parag_3 %>
               </p>
             </div>
             <div class="space-25"></div>
@@ -305,7 +307,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li1.li1_parag_4 %>
+                <%= li1.section_content.li1_parag_4 %>
               </p>
             </div>
             <div class="space-25"></div>
@@ -324,7 +326,7 @@
 
 
 <!-- Start Lens Info (1/2) -->
-<% if(li3.li3_section_display) { %>
+<% if(li3.section_display) { %>
 <section id="about" class="why-us padding-100">
   <div class=" container" style="border-radius: 24px">
     <div class="row align-items-center">
@@ -337,7 +339,7 @@
         <!-- <span style="border-bottom: 3px solid; padding: 0.5rem;"></span> -->
         <div class="space-25"></div>
         <p class="sec-desc">
-          <%= li3.li3_desc %>
+          <%= li3.section_content.li3_desc %>
         </p>
       </div>
 
@@ -352,7 +354,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li3.li3_parag_1 %>
+                <%= li3.section_content.li3_parag_1 %>
               </p>
             </div>
           </div>
@@ -360,7 +362,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li3.li3_parag_2 %>
+                <%= li3.section_content.li3_parag_2 %>
               </p>
             </div>
           </div>
@@ -374,21 +376,21 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li3.li3_parag_3 %>
+                <%= li3.section_content.li3_parag_3 %>
               </p>
             </div>
           </div>
 
           <!-- section img -->
           <div class="col-lg-6 col-md-8 col-sm-8" data-aos="fade-right" style="text-align: center;">
-            <img src="<%= li3.li3_img %>" class="img-fluid" alt="" />
+            <img src="<%= li3.section_content.li3_img %>" class="img-fluid" alt="" />
           </div>
 
           <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-aos="zoom-in" data-aos-delay="100" style="align-self: center; text-align: center; padding: 0.5rem; background-color: white; box-shadow: 0 0 50px -20px grey; border-radius: 15px; border-color: transparent;">
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li3.li3_parag_4 %>
+                <%= li3.section_content.li3_parag_4 %>
               </p>
             </div>
           </div>
@@ -402,7 +404,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li3.li3_parag_5 %>
+                <%= li3.section_content.li3_parag_5 %>
               </p>
             </div>
           </div>
@@ -410,7 +412,7 @@
             <div class="why-us-icon">
               <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
               <p>
-                <%= li3.li3_parag_6 %>
+                <%= li3.section_content.li3_parag_6 %>
               </p>
             </div>
           </div>
@@ -428,7 +430,7 @@
 
 
 <!-- Start lens Designs 2/3 -->
-<% if(ld2.ld2_section_display) { %>
+<% if(ld2.section_display) { %>
 <section id="single-vision" class="hero-section">
   <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
     <h2 class="section-header-b" style="text-align: center;">
@@ -438,7 +440,7 @@
 
     <div class="space-25"></div>
     <p class="sec-desc white">
-      <%= ld2.ld2_desc %>
+      <%= ld2.section_content.ld2_desc %>
     </p>
     <div class="space-25"></div>
   </div>
@@ -458,13 +460,13 @@
       </div>
       <div class="nav__cart" style="text-align: center;">
         <span>
-          <%= ld2.ld2_designs.length %>
+          <%= ld2.section_content.ld2_designs.length %>
         </span>
         <br>
-        <% if(ld2.ld2_designs.length> 1) { %>
+        <% if(ld2.section_content.ld2_designs.length> 1) { %>
         <span> Designs </span>
 
-        <% } else if(ld2.ld2_designs.length=1) { %>
+        <% } else if(ld2.section_content.ld2_designs.length=1) { %>
         <span> Design </span>
 
         <% } else { %>
@@ -476,7 +478,7 @@
     <!-- <div class="cover">
                 <h2>Single Vision<br />Lenses</h2>
             </div> -->
-    <% ld2.ld2_designs.forEach(function(design, index) { %>
+    <% ld2.section_content.ld2_designs.forEach(function(design, index) { %>
     <div class="product" data-index="<%= index %>">
       <div class="product__close">Close</div>
       <div class="product__new">NEW</div>
@@ -525,7 +527,7 @@
 
 
 <!-- Start Lens Info 2/2 -->
-<% if(li2.li2_section_display) { %>
+<% if(li2.section_display) { %>
 <section id="main_features" class="main_features padding-100">
   <div class="container">
     <div class="row">
@@ -537,7 +539,7 @@
 
         <div class="space-25"></div>
         <p class="sec-desc">
-          <%= li2.li2_header %>
+          <%= li2.section_content.li2_header %>
         </p>
         <div class="space-25"></div>
       </div>
@@ -546,7 +548,7 @@
     <div class="row align-items-center" style="justify-content: center;">
       <!-- LEFT PARAGS -->
       <div class="col-lg-3 col-md-6 col-sm-8 left-side" style="justify-self: center;">
-        <% li2.li2_lft_parags.forEach(function(parag, index) { %>
+        <% li2.section_content.li2_lft_parags.forEach(function(parag, index) { %>
         <div class="col-lg-12 one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-right" data-aos-delay="250">
           #D39529
           <h5>
@@ -577,7 +579,7 @@
       </div>
       <!-- RIGHT PARAGS -->
       <div class="col-lg-3 col-md-6 col-sm-8 right-side" style="justify-self: center;">
-        <% li2.li2_rght_parags.forEach(function(parag, index) { %>
+        <% li2.section_content.li2_rght_parags.forEach(function(parag, index) { %>
         <div class="one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-left" data-aos-delay="250">
           <h5>
             <%= parag.parag_header %>
@@ -602,20 +604,19 @@
 
 
 <!-- Start lens Designs 3/3 -->
-<% if(ld3.ld3_section_display) { %>
+<% if(ld3.section_display) { %>
 <section id="" class="hero-section padding-100">
   <div class="container">
     <div class="row">
       <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
         <h2 class="section-header-b" style="text-align: center;">
           <span class="section-header-1">Lens</span>
-          <span class="section-header-2">Designs
-            3</span>
+          <span class="section-header-2">Designs 3</span>
         </h2>
 
         <div class="space-25"></div>
         <p class="white">
-          <%= ld3.ld3_desc %>
+          <%= ld3.section_content.ld3_desc %>
         </p>
         <div class="space-25"></div>
       </div>
@@ -625,23 +626,23 @@
         <section id="bifocal" class="">
           <div class="options">
 
-            <% ld3.ld3_imgs.forEach(function(img, index) { %>
+            <% ld3.section_content.ld3_imgs.forEach(function(img, index) { %>
             <div class="option
                             <% if (index === 0) { %>
                                 active
                             <% } %> " style="--optionBackground: url(<%= img.img_link %>); background-size: cover;">
               <div class="shadow"></div>
-              <div class="label" style="background-color: white; border-radius: 15px 0 0 15px;">
+              <div class="label" style="border-radius: 15px 0 0 15px;">
                 <div class="icon">
                   <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
                 </div>
                 <div class="info dark" style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
-                  <div class="main">
-                    <%= img.img_title %>
-                  </div>
-                  <div class="sub">
-                    <%= img.img_sub %>
-                  </div>
+                  <!-- <div class="main">
+                     img.img_title 
+                  </div> -->
+                  <!-- <div class="sub">
+                    img.img_sub
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -661,14 +662,14 @@
 
 
 <!-- Start Screenshots -->
-<% if(ss.ss_section_display) { %>
+<% if(ss.section_display) { %>
 <section id="screenshots" class="hero-section background-withcolor" style="color: white">
   <div class="container-fluid">
     <div class="row">
       <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
         <h2 class="section-header-b" style="text-align: center;">
-          <span class="section-header-1">Screen</span>
-          <span class="section-header-2">Shots</span>
+          <span class="section-header-1">Sample</span>
+          <span class="section-header-2">Sample</span>
         </h2>
 
         <div class="space-25"></div>
@@ -717,7 +718,7 @@
 
 
 <!-- Start Watch Video -->
-<% if(wv.wv_section_display) { %>
+<% if(wv.section_display) { %>
 <section id="watch_video" class="watch-video padding-100">
   <div class="container-fluid">
     <div class="row">
@@ -751,7 +752,7 @@
 
 
 <!-- Start Production Info -->
-<% if(pi.pi_section_display) { %>
+<% if(pi.section_display) { %>
 <section id="facts" class="fun-facts padding-100 background-withcolor" style="color: white">
   <div class="container">
     <div class="row">
@@ -764,14 +765,14 @@
         <div class="space-25">
         </div>
         <p class="sec-desc light">
-          <%= pi.pi_desc %>
+          <%= pi.section_content.pi_desc %>
         </p>
         <div class="space-25">
         </div>
       </div>
     </div>
     <div class="row align-items-center" style="padding: 0 1rem;">
-      <% pi.pi_items.forEach(function(item) { %>
+      <% pi.section_content.pi_items.forEach(function(item) { %>
       <div class="col-lg-3 col-md-6 col-6">
         <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
           <img src="<%= item.item_img %>" class="img-fluid" alt="" />
@@ -796,7 +797,7 @@
 
 
 <!-- Start FAQ -->
-<% if(ti.ti_section_display) { %>
+<% if(ti.section_display) { %>
 <section id="technical" class="faq padding-100">
   <div class="container">
     <div class="row">
@@ -809,7 +810,7 @@
         <div class="space-25">
         </div>
         <p class="sec-desc">
-          <%= ti.ti_desc %>
+          <%= ti.section_content.ti_desc %>
         </p>
         <div class="space-25">
         </div>
@@ -819,7 +820,7 @@
       <!--align-items-center-->
       <div class="col-md-12 col-lg-8" data-aos="fade-right" style="margin: 0 1rem;">
         <div class="accordion" id="faqAccordion">
-          <% ti.ti_items.forEach(function(item, index) { %>
+          <% ti.section_content.ti_items.forEach(function(item, index) { %>
           <div class="faq-card shadow">
             <div class="faq-card-header" id="heading_<%=index%>">
               <h5 class="mb-0">
@@ -950,7 +951,7 @@
           </div>
 
           <div class="container-contact100-form-btn">
-            <button class="btn btn-primary btn-white shadow btn-theme">
+            <button class="btn btn-primary">
               <span>
                 Send
               </span>

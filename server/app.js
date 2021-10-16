@@ -19,7 +19,6 @@ const flash = require('connect-flash');
 const app = express();
 
 const horizonRoute = require('./routes/horizon.routes');
-const { Horizon } = require('./models/horizon');
 
 const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);

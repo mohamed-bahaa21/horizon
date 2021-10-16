@@ -396,4 +396,4 @@ const horizonSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('Horizon', horizonSchema);
+// module.exports = mongoose.model('Horizon', horizonSchema);

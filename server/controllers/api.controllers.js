@@ -1,5 +1,5 @@
 const Admin = require("../models/Admin");
-const Horizon = require('../models/horizon');
+const Horizon = require('../models/old_horizon2.model');
 const Blog = require('../models/Blog');
 const About = require('../models/About');
 const Gallery = require('../models/Gallery');

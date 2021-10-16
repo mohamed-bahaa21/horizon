@@ -1,4 +1,4 @@
-const Horizon = require('../models/horizon');
+const Horizon = require('../models/Horizon.model');
 const Blog = require('../models/Blog');
 const About = require('../models/About');
 
@@ -9,17 +9,17 @@ const logger = new Logger('horizon.controller');
 exports.getLanding = (req, res) => {
     Horizon.find().then((result) => {
         Blog.find().limit(3).then(blogs => {
-            // console.log(blogs;      
+            // console.log(blogs;
             // console.log(result[4]);
             logger.info("return Landing PAGE & DATA");
             logger.info("return Blogs Data");
             let sections = [];
 
-            result.map(section => {
-                sections += `${section._id}, <br>`;
-            })
-
+            // result.map(section => {
+            //     sections += section.section_name
+            // })
             // res.send(sections)
+
 
             res.render('index', {
                 msgs: req.flash('success'),
