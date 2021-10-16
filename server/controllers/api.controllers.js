@@ -124,7 +124,7 @@ exports.postBlogsData = (req, res) => {
 exports.getHeroData = (req, res) => {
     var origin = req.originalUrl;
 
-    Horizon.findById('606f5689ff5464449437a646').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85f9').then((result) => {
         res.json(result);
     });
 };
@@ -143,7 +143,7 @@ exports.postHeroData = (req, res) => {
         design_img
     } = req.body;
 
-    Horizon.findById('606f5689ff5464449437a646')
+    Horizon.findById('6165f63fb58cb67e24ac85f9')
         .then((horizon) => {
             // console.log(req.body);
             horizon.hero_section_display = hero_section_display;
@@ -166,7 +166,7 @@ exports.postHeroData = (req, res) => {
 // END SECTION
 // Admin Gets, Edits -> Lens Designs 1 Section Data 
 exports.getLensDesigns1 = (req, res) => {
-    Horizon.findById('606ff91fef83672e10f01feb').then((result) => {
+    Horizon.findById('6165f63fb58cb67e24ac85fa').then((result) => {
         res.json(result);
     });
 };
@@ -195,7 +195,7 @@ exports.postLensDesigns1 = (req, res) => {
 
     // console.log(req.body);
 
-    Horizon.findById('606ff91fef83672e10f01feb')
+    Horizon.findById('6165f63fb58cb67e24ac85fa')
         .then((horizon) => {
             // console.log(req.body);
             horizon.name = name;

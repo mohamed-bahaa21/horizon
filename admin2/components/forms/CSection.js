@@ -41,7 +41,7 @@ export default function CSection({
     {
       onDataLoad: data => {
         // console.log('Data: ', data);
-        setSectionValues(data);
+        setSectionValues(data.section_content);
       },
     },
     [saved],
