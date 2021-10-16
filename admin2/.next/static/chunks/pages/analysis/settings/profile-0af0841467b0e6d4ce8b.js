@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[32],{"UGg/":function(n,_,i){"use strict";i.r(_);var o=i("HB+M");_.default=o.default},bhAK:function(n,_,i){(window.__NEXT_P=window.__NEXT_P||[]).push(["/analysis/settings/profile",function(){return i("UGg/")}])}},[["bhAK",0,1,7,8,22,2,3,4,5,6,9,10,11,12,18]]]);

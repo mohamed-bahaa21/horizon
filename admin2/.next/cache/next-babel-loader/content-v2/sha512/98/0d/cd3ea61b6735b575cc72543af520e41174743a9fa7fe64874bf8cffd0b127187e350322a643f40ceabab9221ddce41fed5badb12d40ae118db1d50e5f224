@@ -1,1 +1,0 @@
-{"ast":null,"code":"var SERVER_URI = 'http://localhost:5000';\n\nif (false) {\n  SERVER_URI = process.env.NEXT_PUBLIC_DEV_SERVER;\n}\n\nif (true) {\n  SERVER_URI = process.env.NEXT_PUBLIC_PROD_SERVER;\n}\n\nexport default SERVER_URI;","map":null,"metadata":{},"sourceType":"module"}
