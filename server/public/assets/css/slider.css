@@ -12,67 +12,75 @@ body {
 } */
 
 #slider {
-    width: 100%;
+    width: 100vw;
     position: relative;
     margin: 0 auto;
     border-radius: 4px;
+    height: 500px;
+    /* overflow: hidden; */
 }
 
 #slider ul {
+    width: max-content;
+    height: 500px;
+    margin-left: -475px;
     position: relative;
     margin: 0;
     padding: 0;
-    height: 200px;
     list-style: none;
 }
-
 #slider ul li {
+    /* opacity: 0.5; */
     position: relative;
     display: block;
     float: left;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    width: 500px;
-    height: 300px;
+    width: 720px;
+    height: 500px;
     background: #ccc;
     text-align: center;
     line-height: 300px;
 }
 
-a.control_prev,
-a.control_next {
+#slider a.control_prev,
+#slider a.control_next {
     position: absolute;
-    top: 40%;
+    top: 25%;
     z-index: 999;
     display: block;
-    padding: 4% 3%;
-    width: auto;
+    width: 7rem;
     height: auto;
-    background: #2a2a2a;
+    background: #241F1F;
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 200;
+    font-size: 2.5rem;
     opacity: 0.8;
     cursor: pointer;
+    text-align: center;
+    border-radius: 0.5rem;
 }
 
-a.control_prev:hover,
-a.control_next:hover {
+#slider a.control_prev:hover,
+#slider a.control_next:hover {
     opacity: 1;
     -webkit-transition: all 0.2s ease;
 }
-
-a.control_prev {
-    border-radius: 0 2px 2px 0;
+#slider a.control_prev svg,
+#slider a.control_next svg {
+    margin: 100% auto;
+}
+#slider a.control_prev {
+    left: -15vw;
 }
 
-a.control_next {
-    right: 0;
-    border-radius: 2px 0 0 2px;
+#slider a.control_next {
+    right: -15vw;
 }
 
-.slider_option {
+
+#slider .slider_option {
     position: relative;
     margin: 10px auto;
     width: 160px;

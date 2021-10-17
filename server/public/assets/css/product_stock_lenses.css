@@ -12,10 +12,10 @@
 #stock_lenses .card-container {
     display: flex;
     margin: 2rem 0;
-    border-radius: 3rem 15rem;
+    border-radius: 1rem;
     min-height: 45rem;
     width: 90rem;
-    background: linear-gradient(30deg, #413D3C, #282828);
+    background: linear-gradient(30deg, #282828, #241F1F);
     box-shadow: 0 2rem 3rem rgba(17, 15, 15, 0.2);
 }
 
@@ -33,7 +33,7 @@
     overflow: hidden;
     position: relative;
     height: 100%;
-    background-image: url("https://raw.githubusercontent.com/ViktoriiaZaichuk/faq-accordion-card-main/48bb14e632a5bd5d9190da88b45d21622dd2ed14/img/bg-pattern-desktop.svg");
+    /* background-image: url("https://raw.githubusercontent.com/ViktoriiaZaichuk/faq-accordion-card-main/48bb14e632a5bd5d9190da88b45d21622dd2ed14/img/bg-pattern-desktop.svg"); */
     background-repeat: no-repeat;
     background-size: 190%;
     background-position: -455px -235px;

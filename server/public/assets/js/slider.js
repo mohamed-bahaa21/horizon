@@ -35,11 +35,13 @@ jQuery(document).ready(function ($) {
         });
     };
 
-    $('a.control_prev').click(function () {
+    $('a.control_prev').click(function (event) {
+        event.preventDefault();
         moveLeft();
     });
 
-    $('a.control_next').click(function () {
+    $('a.control_next').click(function (event) {
+        event.preventDefault();
         moveRight();
     });
 
