@@ -2122,7 +2122,7 @@ aside.sidebar .gray-panel {
 }
 
 aside.sidebar .gray-panel img {
-    border-radius: 1rem 7rem;
+    border-radius: 0.5em;
 }
 
 aside.sidebar .gray-panel figure {

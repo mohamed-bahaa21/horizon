@@ -3,7 +3,7 @@
     justify-self: center;
 }
 
-.nav-tabs { 
+.nav-tabs {
     border-bottom: 0 !important;
 }
 
@@ -23,6 +23,7 @@ a {
 
 a.active {
     border-bottom: 0.5rem solid var(--main-color) !important;
+    font-weight: 700;
 }
 .active {
     background-color: white !important;
@@ -30,7 +31,7 @@ a.active {
 }
 
 .brown-input {
-    background-color: #241F1F !important;
+    background-color: #241f1f !important;
 }
 
 button.btn-primary {
