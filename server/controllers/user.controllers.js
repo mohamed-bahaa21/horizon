@@ -7,7 +7,7 @@ const logger = new Logger('horizon.controller');
 
 // Landing Page
 exports.getLanding = (req, res) => {
-    Horizon.find().then((result) => {
+    Horizon.find().sort({section_index: 1}).then((result) => {
         Blog.find().limit(3).then(blogs => {
             // console.log(blogs;
             // console.log(result[4]);
@@ -19,6 +19,8 @@ exports.getLanding = (req, res) => {
             //     sections += section.section_name
             // })
             // res.send(sections)
+
+            // res.send(result[0])
 
 
             res.render('index', {
