@@ -21,9 +21,10 @@ body {
 }
 
 #slider ul {
-    width: max-content;
+    width: 3000px;
+    margin-left: -744px;
+    background-color: #241F1F;
     height: 500px;
-    margin-left: -475px;
     position: relative;
     margin: 0;
     padding: 0;
@@ -35,13 +36,15 @@ body {
     position: relative;
     display: block;
     float: left;
-    margin: 0 auto;
     padding: 0;
     width: 720px;
     height: 500px;
     background: #ccc;
     text-align: center;
     line-height: 300px;
+    margin: 1.5rem 1.5rem 0 0rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 5rem -3rem #d39529;
 }
 
 #slider a.control_prev,
