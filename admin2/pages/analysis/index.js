@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Layout from 'components/layout/Layout';
 import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 import useLocale from 'hooks/useLocale';
@@ -32,46 +33,39 @@ const analysis = ({ Component, pageProps }) => {
   }
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Horizon Admin</title>
-        <meta name="description" content="Horizon Admin" />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+    <Layout headerType={`content`}>
+      <div className={styles.container}>
+        <Head>
+          <title>Horizon Admin</title>
+          <meta name="description" content="Horizon Admin" />
+          <link rel="icon" href="/favicon.png" />
+        </Head>
 
-      <Intl>
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            <span className={styles.orange}>Analysis</span>
-          </h1>
+        <Intl>
+          <main className={styles.main}>
+            <h1 className={styles.title}>
+              <span className={styles.orange}>Analysis</span>
+            </h1>
 
-          <p className={styles.description}>
-            <code className={styles.code}>where secrets become stories</code>
-          </p>
+            <p className={styles.description}>
+              <code className={styles.code}>where secrets become stories</code>
+            </p>
 
-          <div className={styles.flex}>
-            <a href="/" className={styles.card}>
-              <h2>&larr; Home</h2>
-            </a>
-            <a href="/analysis/dashboard" className={styles.card}>
-              <h2>Dashboard &rarr;</h2>
-            </a>
-            <a href="/analysis/realtime" className={styles.card}>
-              <h2>Real Time &rarr;</h2>
-            </a>
-          </div>
-        </main>
-
-        <footer className={styles.footer}>
-          <a href="https://ayk-mall.com" target="_blank" rel="noopener noreferrer">
-            Powered by{' '}
-            <span className={styles.logo}>
-              <b>AYK.</b>
-            </span>
-          </a>
-        </footer>
-      </Intl>
-    </div>
+            <div className={styles.flex}>
+              <a href="/" className={styles.card}>
+                <h2>&larr; Home</h2>
+              </a>
+              <a href="/analysis/dashboard" className={styles.card}>
+                <h2>Dashboard &rarr;</h2>
+              </a>
+              <a href="/analysis/realtime" className={styles.card}>
+                <h2>Real Time &rarr;</h2>
+              </a>
+            </div>
+          </main>
+        </Intl>
+      </div>
+    </Layout>
   );
 };
 

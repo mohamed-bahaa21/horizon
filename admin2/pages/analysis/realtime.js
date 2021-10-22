@@ -27,10 +27,6 @@ export default function RealtimePage() {
           <a href="/analysis" className={styles.card}>
             <h2>&larr; Analysis</h2>
           </a>
-
-          <a href="/analysis/dashboard" className={styles.card}>
-            <h2>Dashboard &rarr;</h2>
-          </a>
         </div>
         {/* </main> */}
         <RealtimeDashboard />

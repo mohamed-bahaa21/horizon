@@ -53,18 +53,20 @@ export function checkVersion() {
       },
     } = getState();
 
-    const data = await fetch('https://api.github.com/repos/mikecao/umami/releases/latest', {
-      method: 'get',
-      headers: {
-        Accept: 'application/vnd.github.v3+json',
-      },
-    }).then(res => {
-      if (res.ok) {
-        return res.json();
-      }
+    const data = null
 
-      return null;
-    });
+    // const data = await fetch('https://api.github.com/repos/mikecao/umami/releases/latest', {
+    //   method: 'get',
+    //   headers: {
+    //     Accept: 'application/vnd.github.v3+json',
+    //   },
+    // }).then(res => {
+    //   if (res.ok) {
+    //     return res.json();
+    //   }
+
+    //   return null;
+    // });
 
     if (!data) {
       return;

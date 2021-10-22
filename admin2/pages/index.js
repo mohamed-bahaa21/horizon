@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import useRequireLogin from 'hooks/useRequireLogin';
 import Layout from 'components/layout/Layout';
 import styles from './Home.module.css';
+import Footer from 'components/layout/Footer';
 
 export default function Home() {
   const { loading } = useRequireLogin();
@@ -37,7 +38,7 @@ export default function Home() {
             <p>Control what can user see...</p>
           </a>
 
-          <a href="/analysis/dashboard" className={styles.card}>
+          <a href="/analysis" className={styles.card}>
             <h2>Analysis &rarr;</h2>
             <p>See what user did...</p>
           </a>
@@ -53,7 +54,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
       {/* </div> */}
     </Layout>
   );

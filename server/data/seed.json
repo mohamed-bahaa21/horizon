@@ -163,23 +163,22 @@
     "section_name": "production info",
     "section_content": {
         "pi_desc": "Production Info Desc",
-        "pi_items": [{
-            "item_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
-            "item_num": 230,
-            "item_title": "single vision"
-        }, {
-            "item_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass2.png?alt=media&token=5fe917c3-d271-4f60-a8a8-ee5fd41915e6",
-            "item_num": 230,
-            "item_title": "bifocal"
-        }, {
-            "item_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
-            "item_num": 15,
-            "item_title": "other lens 3"
-        }, {
-            "item_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass2.png?alt=media&token=5fe917c3-d271-4f60-a8a8-ee5fd41915e6",
-            "item_num": 26,
-            "item_title": "other lens 3"
-        }]
+
+        "pi_item_1_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
+        "pi_item_1_num": 230,
+        "pi_item_1_title": "single vision",
+
+        "pi_item_2_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass2.png?alt=media&token=5fe917c3-d271-4f60-a8a8-ee5fd41915e6",
+        "pi_item_2_num": 230,
+        "pi_item_2_title": "bifocal",
+
+        "pi_item_3_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
+        "pi_item_3_num": 15,
+        "pi_item_3_title": "other lens 3",
+
+        "pi_item_4_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass2.png?alt=media&token=5fe917c3-d271-4f60-a8a8-ee5fd41915e6",
+        "pi_item_4_num": 26,
+        "pi_item_4_title": "other lens 3"
     }
 }, {
     "section_index": 9,
@@ -187,22 +186,16 @@
     "section_name": "technical info",
     "section_content": {
         "ti_desc": "tech desc",
-        "ti_items": [{
-            "item_title": "What is Horizozn ?",
-            "item_content": "content 1asdasd \\n far white"
-        }, {
-            "item_title": "What is Horizozn ?",
-            "item_content": "content qwetqweqwqweqwe"
-        }, {
-            "item_title": "What is Horizozn ?",
-            "item_content": "content qwetqweqwqweqwe"
-        }, {
-            "item_title": "What is Horizozn ?",
-            "item_content": "content qwetqweqwqweqwe"
-        }, {
-            "item_title": "What is Horizozn ?",
-            "item_content": "content qwetqweqwqweqwe"
-        }]
+        "ti_item_1_title": "What is Horizozn ?",
+        "ti_item_1_content": "content 1asdasd \\n far white",
+        "ti_item_2_title": "What is Horizozn ?",
+        "ti_item_2_content": "content qwetqweqwqweqwe",
+        "ti_item_3_title": "What is Horizozn ?",
+        "ti_item_3_content": "content qwetqweqwqweqwe",
+        "ti_item_4_title": "What is Horizozn ?",
+        "ti_item_4_content": "content qwetqweqwqweqwe",
+        "ti_item_5_title": "What is Horizozn ?",
+        "ti_item_5_content": "content qwetqweqwqweqwe"
     }
 }, {
     "section_index": 10,
@@ -217,5 +210,37 @@
         "li3_parag_5": "Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiu...",
         "li3_parag_6": "Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiu...",
         "li3_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b"
+    }
+}, {
+    "_id": {
+        "$oid": "6165f63fb58cb67e24ac85ff"
+    },
+    "section_index": 6,
+    "section_display": true,
+    "section_name": "lens design 2",
+    "section_content": {
+        "ld2_design_1_header": "design header",
+        "ld2_design_1_sub_header": "design sub_header",
+        "ld2_design_1_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
+        "ld2_design_1_content_before": "design content before",
+        "ld2_design_1_content_after": "design content_after",
+
+        "ld2_design_2_header": "design header asd",
+        "ld2_design_2_sub_header": "design sub_header",
+        "ld2_design_2_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
+        "ld2_design_2_content_before": "design content before",
+        "ld2_design_2_content_after": "design content_after",
+
+        "ld2_design_3_header": "design header",
+        "ld2_design_3_sub_header": "design sub_header",
+        "ld2_design_3_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
+        "ld2_design_3_content_before": "design content before",
+        "ld2_design_3_content_after": "design content_after",
+
+        "ld2_design_4_header": "design header",
+        "ld2_design_4_sub_header": "design sub_header",
+        "ld2_design_4_img": "https://firebasestorage.googleapis.com/v0/b/horizon-28ad8.appspot.com/o/images%2Fglass1.png?alt=media&token=273d65f9-e15d-421b-80a1-fa520eb6553b",
+        "ld2_design_4_content_before": "design content before",
+        "ld2_design_4_content_after": "design content_after"
     }
 }]

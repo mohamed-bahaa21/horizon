@@ -34,10 +34,6 @@ export default function DashboardPage() {
           <a href="/analysis" className={styles.card}>
             <h2>&larr; Analysis</h2>
           </a>
-
-          <a href="/analysis/realtime" className={styles.card}>
-            <h2>Realtime &rarr;</h2>
-          </a>
         </div>
         {/* </main> */}
 

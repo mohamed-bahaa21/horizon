@@ -1,4 +1,5 @@
 import SERVER_URI from '.server.env';
+import {ld1} from '../sectionsId';
 
 export default {
   meta_formFields: ['section_index', 'section_name', 'section_display'],
@@ -67,6 +68,6 @@ export default {
     prog_card_4_type: '...',
     prog_card_4_header: '...',
   },
-  getLink: `${SERVER_URI}/api/getLensDesigns1`,
-  postLink: `${SERVER_URI}/api/postLensDesigns1`,
+  getLink: `${SERVER_URI}/api/getSectionData/${ld1}`,
+  postLink: `${SERVER_URI}/api/postSectionData`,
 };

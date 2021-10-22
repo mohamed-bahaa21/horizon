@@ -75,6 +75,33 @@ exports.getAdminUser = (req, res) => {
 
 
 
+const scetionsId = {
+    hero: '6165f63fb58cb67e24ac85f9',
+    ld1: '6165f63fb58cb67e24ac85fa',
+    li1: '6165f63fb58cb67e24ac85fb',
+    li3: '6165f63fb58cb67e24ac8603',
+    ld2: '6165f63fb58cb67e24ac85ff',
+    li2: '6165f63fb58cb67e24ac85fc',
+    wv: '6165f63fb58cb67e24ac85fd',
+    ss: '6165f63fb58cb67e24ac85fe',
+    ld3: '6165f63fb58cb67e24ac8600',
+    pi: '6165f63fb58cb67e24ac8601',
+    ti: '6165f63fb58cb67e24ac8602',
+}
+
+exports.getSectionData = (req, res) => {
+    Horizon.findOne({ _id: req.params.sectionId }).then(section => {
+        res.json(section);
+    })
+};
+
+exports.postSectionData = (req, res) => {
+    res.send(req.params);
+};
+
+
+
+
 
 
 
@@ -189,15 +216,6 @@ exports.postBlogsData = (req, res) => {
 
 
 // =========================================================
-// Landing page data
-exports.getHeroData = (req, res) => {
-    var origin = req.originalUrl;
-
-    Horizon.findById('6165f63fb58cb67e24ac85f9').then((result) => {
-        res.json(result);
-    });
-};
-
 // Admin Edits -> Hero Section Data 
 exports.postHeroData = (req, res) => {
     const {
@@ -233,31 +251,7 @@ exports.postHeroData = (req, res) => {
         .catch((err) => res.status(400).json('Error: ' + err));
 };
 // END SECTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // =========================================================
-// Admin Gets, Edits -> Lens Designs 1 Section Data 
-exports.getLensDesigns1 = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac85fa').then((result) => {
-        res.json(result);
-        console.log(result);
-    });
-};
-
 exports.postLensDesigns1 = (req, res) => {
     const { section_display } = req.body;
     const {
@@ -341,16 +335,8 @@ exports.postLensDesigns1 = (req, res) => {
 
 
 // =========================================================
-// Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensInfo1 = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac85fb').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postLensInfo1 = (req, res) => {
     const {
-        li1_section_display = li1_section_display,
         li1_header,
         li1_desc,
         li1_img,
@@ -405,13 +391,6 @@ exports.postLensInfo1 = (req, res) => {
 
 
 // =========================================================
-// Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensInfo3 = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac8603').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postLensInfo3 = (req, res) => {
     const {
         li3_section_display = li3_section_display,
@@ -465,18 +444,7 @@ exports.postLensInfo3 = (req, res) => {
 
 
 
-
-
-
-
 // =========================================================
-// Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensDesigns2 = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac85ff').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postLensDesigns2 = (req, res) => {
     const {
         ld2_section_display,
@@ -522,15 +490,7 @@ exports.postLensDesigns2 = (req, res) => {
 
 
 
-
 // =========================================================
-// Admin Gets, Edits -> Lens Info 1 Section Data 
-exports.getLensInfo2 = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac85fc').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postLensInfo2 = (req, res) => {
     const {
         li2_section_display,
@@ -576,15 +536,7 @@ exports.postLensInfo2 = (req, res) => {
 
 
 
-
 // =========================================================
-// Admin Gets, Edits -> Watch Video Section Data 
-exports.getWatchVideo = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac85fd').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postWatchVideo = (req, res) => {
     const {
         wv_section_display,
@@ -626,13 +578,6 @@ exports.postWatchVideo = (req, res) => {
 
 
 // =========================================================
-// Admin Gets, Edits -> Watch Video Section Data 
-exports.getScreenShots = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac85fe').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postScreenShots = (req, res) => {
     const {
         ss_section_display,
@@ -669,15 +614,7 @@ exports.postScreenShots = (req, res) => {
 
 
 
-
 // =========================================================
-// Admin Gets, Edits -> Lens Designs 3 Section Data 
-exports.getLensDesigns3 = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac8600').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postLensDesigns3 = (req, res) => {
     const {
         ld3_section_display,
@@ -717,13 +654,6 @@ exports.postLensDesigns3 = (req, res) => {
 
 
 // =========================================================
-// Admin Gets, Edits -> Production Info Section Data 
-exports.getProductionInfo = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac8601').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postProductionInfo = (req, res) => {
     const {
         pi_section_display,
@@ -766,13 +696,6 @@ exports.postProductionInfo = (req, res) => {
 
 
 // =========================================================
-// Admin Gets, Edits -> Production Info Section Data 
-exports.getTechnicalInfo = (req, res) => {
-    Horizon.findById('6165f63fb58cb67e24ac8602').then((result) => {
-        res.json(result);
-    });
-};
-
 exports.postTechnicalInfo = (req, res) => {
     const {
         ti_section_display,
@@ -818,7 +741,6 @@ exports.gallery = (req, res) => {
         res.json(result);
     });
 };
-
 
 
 

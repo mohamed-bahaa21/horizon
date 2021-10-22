@@ -1,4 +1,5 @@
 import SERVER_URI from '.server.env';
+import {hero} from '../sectionsId';
 
 export default {
   meta_formFields: ['section_index', 'section_name', 'section_display'],
@@ -24,25 +25,25 @@ export default {
     'design_img',
   ],
   formFieldsType: [
-    ['hero_name', 'text', 'input'],
-    ['hero_parag_1', 'textarea', 'textarea'],
-    ['hero_header_1', 'text', 'input'],
-    ['hero_parag_2', 'textarea', 'textarea'],
-    ['hero_link_1_name', 'text', 'input'],
-    ['hero_link_1_href', 'text', 'input'],
-    ['design_state', 'checkbox', 'input'],
-    ['design_img', 'text', 'input'],
+    ['hero_name',         'text',       'input'],
+    ['hero_parag_1',      'textarea',   'textarea'],
+    ['hero_header_1',     'text',       'input'],
+    ['hero_parag_2',      'textarea',   'textarea'],
+    ['hero_link_1_name',  'text',       'input'],
+    ['hero_link_1_href',  'text',       'input'],
+    ['design_state',      'checkbox',   'input'],
+    ['design_img',        'text',       'input'],
   ],
   init_formFieldsValues: {
-    hero_name: '...',
-    hero_parag_1: '...',
-    hero_header_1: '...',
-    hero_parag_2: '...',
+    hero_name:        '...',
+    hero_parag_1:     '...',
+    hero_header_1:    '...',
+    hero_parag_2:     '...',
     hero_link_1_name: '...',
     hero_link_1_href: '...',
-    design_state: true,
-    design_img: '...',
+    design_state:     true,
+    design_img:       '...',
   },
-  getLink: `${SERVER_URI}/api/getHeroData`,
-  postLink: `${SERVER_URI}/api/postHeroData`,
+  getLink: `${SERVER_URI}/api/getSectionData/${hero}`,
+  postLink: `${SERVER_URI}/api/postSectionData`,
 };

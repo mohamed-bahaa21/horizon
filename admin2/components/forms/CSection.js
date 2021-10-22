@@ -9,7 +9,8 @@ import Pen from 'assets/pen.svg';
 import EmptyPlaceholder from 'components/common/EmptyPlaceholder';
 import Modal from 'components/common/Modal';
 import CSectionForm from './CSectionForm';
-import SERVER_URI from '.server.env';
+import CLensDesign2Form from './sections/CLensDesign2Form';
+
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/600.css';
 
@@ -34,14 +35,15 @@ export default function CSection({
 }) {
   const [editSection, setEditSection] = useState();
   const [sectionValues, setSectionValues] = useState();
-  const [message, setMessage] = useState('...');
+  const [message, setMessage] = useState();
   const [saved, setSaved] = useState(0);
   const { data } = useFetch(
     getLink,
     {
       onDataLoad: data => {
-        // console.log('Data: ', data);
+        console.log(data.section_content);
         setSectionValues(data.section_content);
+        setMessage('Data loaded successfully !')
       },
     },
     [saved],
