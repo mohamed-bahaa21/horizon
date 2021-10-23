@@ -1,78 +1,13 @@
-const Admin = require("../models/Admin");
 const Horizon = require('../models/Horizon.model');
 const Blog = require('../models/Blog');
 const About = require('../models/About');
 const Gallery = require('../models/Gallery');
 const Mail = require('../models/Mail');
 
+const { GET_HORIZON_SECTION_CONTENT, POST_HORIZON_SECTION_CONTENT } = require('../queries/api.queries')
+
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
-
-// const passport = require("passport");
-// const passportLocal = require("passport-local").Strategy;
-// const bcrypt = require("bcryptjs");
-
-
-// Admin Auth
-exports.postAdminLogin = (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
-        if (err) throw err;
-        if (!user) res.send("No User Exists");
-        else {
-            req.logIn(user, (err) => {
-                if (err) throw err;
-                // res.send("Successfully Authenticated");
-                // console.log(req.user);
-                // return res.redirect('http://localhost:3000/' + req.user._id || req.session.user._id);
-                return res.send(req.user._id || req.session.user._id);
-            });
-        }
-    })(req, res, next);
-};
-
-exports.postAdminRegister = (req, res) => {
-    Admin.findOne({ username: req.body.username }, async (err, doc) => {
-        if (err) throw err;
-        if (doc) res.send("User Already Exists");
-        if (!doc) {
-            const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
-            const newUser = new Admin({
-                username: req.body.username,
-                password: hashedPassword,
-            });
-            await newUser.save();
-            res.send("User Created");
-        }
-    });
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.getAdminUser = (req, res) => {
-    res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
-};
-
-
 
 
 const scetionsId = {
@@ -90,13 +25,179 @@ const scetionsId = {
 }
 
 exports.getSectionData = (req, res) => {
-    Horizon.findOne({ _id: req.params.sectionId }).then(section => {
-        res.json(section);
-    })
+    GET_HORIZON_SECTION_CONTENT(req, res, req.params.sectionId);
 };
 
 exports.postSectionData = (req, res) => {
-    res.send(req.params);
+    switch (req.body.sectionID) {
+        case scetionsId.hero:
+            var data = {
+                hero_name: req.body.hero_name,
+                hero_parag_1: req.body.hero_parag_1,
+                hero_header_1: req.body.hero_header_1,
+                hero_parag_2: req.body.hero_parag_2,
+                hero_link_1_name: req.body.hero_link_1_name,
+                hero_link_1_href: req.body.hero_link_1_href,
+                design_state: req.body.design_state,
+                design_img: req.body.design_img,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.ld1:
+            var data = {
+                prog_card_1_img: req.body.prog_card_1_img,
+                prog_card_1_link: req.body.prog_card_1_link,
+                prog_card_1_type: req.body.prog_card_1_type,
+                prog_card_1_header: req.body.prog_card_1_header,
+                prog_card_2_img: req.body.prog_card_2_img,
+                prog_card_2_link: req.body.prog_card_2_link,
+                prog_card_2_type: req.body.prog_card_2_type,
+                prog_card_2_header: req.body.prog_card_2_header,
+                prog_card_3_img: req.body.prog_card_3_img,
+                prog_card_3_link: req.body.prog_card_3_link,
+                prog_card_3_type: req.body.prog_card_3_type,
+                prog_card_3_header: req.body.prog_card_3_header,
+                prog_card_4_img: req.body.prog_card_4_img,
+                prog_card_4_link: req.body.prog_card_4_link,
+                prog_card_4_type: req.body.prog_card_4_type,
+                prog_card_4_header: req.body.prog_card_4_header,
+            }
+            console.log(req.body);
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.li1:
+            var data = {
+                li1_img: req.body.li1_img,
+                li1_parag_1: req.body.li1_parag_1,
+                li1_parag_2: req.body.li1_parag_2,
+                li1_parag_3: req.body.li1_parag_3,
+                li1_parag_4: req.body.li1_parag_4,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.li3:
+            var data = {
+                li3_parag_1: req.body.li3_parag_1,
+                li3_parag_2: req.body.li3_parag_2,
+                li3_parag_3: req.body.li3_parag_3,
+                li3_parag_4: req.body.li3_parag_4,
+                li3_parag_5: req.body.li3_parag_5,
+                li3_parag_6: req.body.li3_parag_6,
+                li3_img: req.body.li3_img,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.ld2:
+            var data = {
+                ld2_design_1_header: req.body.ld2_design_1_header,
+                ld2_design_1_sub_header: req.body.ld2_design_1_sub_header,
+                ld2_design_1_img: req.body.ld2_design_1_img,
+                ld2_design_1_content_before: req.body.ld2_design_1_content_before,
+                ld2_design_1_content_after: req.body.ld2_design_1_content_after,
+                ld2_design_2_header: req.body.ld2_design_2_header,
+                ld2_design_2_sub_header: req.body.ld2_design_2_sub_header,
+                ld2_design_2_img: req.body.ld2_design_2_img,
+                ld2_design_2_content_before: req.body.ld2_design_2_content_before,
+                ld2_design_2_content_after: req.body.ld2_design_2_content_after,
+                ld2_design_3_header: req.body.ld2_design_3_header,
+                ld2_design_3_sub_header: req.body.ld2_design_3_sub_header,
+                ld2_design_3_img: req.body.ld2_design_3_img,
+                ld2_design_3_content_before: req.body.ld2_design_3_content_before,
+                ld2_design_3_content_after: req.body.ld2_design_3_content_after,
+                ld2_design_4_header: req.body.ld2_design_4_header,
+                ld2_design_4_sub_header: req.body.ld2_design_4_sub_header,
+                ld2_design_4_img: req.body.ld2_design_4_img,
+                ld2_design_4_content_before: req.body.ld2_design_4_content_before,
+                ld2_design_4_content_after: req.body.ld2_design_4_content_after,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.li2:
+            var data = {
+                li2_image: req.body.li2_image,
+                li2_lft_parag_1_header: req.body.li2_lft_parag_1_header,
+                li2_lft_parag_1_content: req.body.li2_lft_parag_1_content,
+                li2_lft_parag_2_header: req.body.li2_lft_parag_2_header,
+                li2_lft_parag_2_content: req.body.li2_lft_parag_2_content,
+                li2_lft_parag_3_header: req.body.li2_lft_parag_3_header,
+                li2_lft_parag_3_content: req.body.li2_lft_parag_3_content,
+                li2_rght_parag_1_header: req.body.li2_rght_parag_1_header,
+                li2_rght_parag_1_content: req.body.li2_rght_parag_1_content,
+                li2_rght_parag_2_header: req.body.li2_rght_parag_2_header,
+                li2_rght_parag_2_content: req.body.li2_rght_parag_2_content,
+                li2_rght_parag_3_header: req.body.li2_rght_parag_3_header,
+                li2_rght_parag_3_content: req.body.li2_rght_parag_3_content,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.wv:
+            var data = {
+                wv_desc: req.body.wv_desc,
+                wv_link: req.body.wv_link
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.ss:
+            var data = {
+                ss_desc: req.body.ss_desc
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.ld3:
+            var data = {
+                img_1_title: req.body.img_1_title,
+                img_1_sub: req.body.img_1_sub,
+                img_1_link: req.body.img_1_link,
+                img_2_title: req.body.img_2_title,
+                img_2_sub: req.body.img_2_sub,
+                img_2_link: req.body.img_2_link,
+                img_3_title: req.body.img_3_title,
+                img_3_sub: req.body.img_3_sub,
+                img_3_link: req.body.img_3_link,
+                img_4_title: req.body.img_4_title,
+                img_4_sub: req.body.img_4_sub,
+                img_4_link: req.body.img_4_link,
+                img_5_title: req.body.img_5_title,
+                img_5_sub: req.body.img_5_sub,
+                img_5_link: req.body.img_5_link,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.pi:
+            var data = {
+                pi_desc: req.body.pi_desc,
+                pi_item_1_img: req.body.pi_item_1_img,
+                pi_item_1_num: req.body.pi_item_1_num,
+                pi_item_1_title: req.body.pi_item_1_title,
+                pi_item_2_img: req.body.pi_item_2_img,
+                pi_item_2_num: req.body.pi_item_2_num,
+                pi_item_2_title: req.body.pi_item_2_title,
+                pi_item_3_img: req.body.pi_item_3_img,
+                pi_item_3_num: req.body.pi_item_3_num,
+                pi_item_3_title: req.body.pi_item_3_title,
+                pi_item_4_img: req.body.pi_item_4_img,
+                pi_item_4_num: req.body.pi_item_4_num,
+                pi_item_4_title: req.body.pi_item_4_title,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+        case scetionsId.ti:
+            var data = {
+                ti_desc: req.body.ti_desc,
+                ti_item_1_title: req.body.ti_item_1_title,
+                ti_item_1_content: req.body.ti_item_1_content,
+                ti_item_2_title: req.body.ti_item_2_title,
+                ti_item_2_content: req.body.ti_item_2_content,
+                ti_item_3_title: req.body.ti_item_3_title,
+                ti_item_3_content: req.body.ti_item_3_content,
+                ti_item_4_title: req.body.ti_item_4_title,
+                ti_item_4_content: req.body.ti_item_4_content,
+                ti_item_5_title: req.body.ti_item_5_title,
+                ti_item_5_content: req.body.ti_item_5_content,
+            }
+            POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
+            break;
+    }
 };
 
 
@@ -179,8 +280,6 @@ exports.postBlogsData = (req, res) => {
 
     Blog.findById()
         .then((blogs) => {
-            // console.log(req.body);
-            // horizon.name = name;
             blogs.date = date;
             blogs.title = title;
             blogs.summary = summary;
@@ -215,523 +314,9 @@ exports.postBlogsData = (req, res) => {
 
 
 
-// =========================================================
-// Admin Edits -> Hero Section Data 
-exports.postHeroData = (req, res) => {
-    const {
-        hero_section_display,
-        name,
-        hero_parag_1,
-        hero_header_1,
-        hero_parag_2,
-        hero_link_1_name,
-        hero_link_1_href,
-        design_state,
-        design_img
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac85f9')
-        .then((horizon) => {
-            // console.log(req.body);
-            horizon.hero_section_display = hero_section_display;
-            horizon.name = name;
-            horizon.hero_parag_1 = hero_parag_1;
-            horizon.hero_header_1 = hero_header_1;
-            horizon.hero_parag_2 = hero_parag_2;
-            horizon.hero_link_1_name = hero_link_1_name;
-            horizon.hero_link_1_href = hero_link_1_href;
-            horizon.design_state = design_state;
-            horizon.design_img = design_img;
-
-            horizon
-                .save()
-                .then(() => res.json('horizon updated!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-// END SECTION
-// =========================================================
-exports.postLensDesigns1 = (req, res) => {
-    const { section_display } = req.body;
-    const {
-        prog_card_1_img,
-        prog_card_1_link,
-        prog_card_1_type,
-        prog_card_1_header,
-        prog_card_2_img,
-        prog_card_2_link,
-        prog_card_2_type,
-        prog_card_2_header,
-        prog_card_3_img,
-        prog_card_3_link,
-        prog_card_3_type,
-        prog_card_3_header,
-        prog_card_4_img,
-        prog_card_4_link,
-        prog_card_4_type,
-        prog_card_4_header,
-    } = req.body.section_content;
-
-    const section_content = {
-        prog_card_1_img: prog_card_1_img,
-        prog_card_1_link: prog_card_1_link,
-        prog_card_1_type: prog_card_1_type,
-        prog_card_1_header: prog_card_1_header,
-        prog_card_2_img: prog_card_2_img,
-        prog_card_2_link: prog_card_2_link,
-        prog_card_2_type: prog_card_2_type,
-        prog_card_2_header: prog_card_2_header,
-        prog_card_3_img: prog_card_3_img,
-        prog_card_3_link: prog_card_3_link,
-        prog_card_3_type: prog_card_3_type,
-        prog_card_3_header: prog_card_3_header,
-        prog_card_4_img: prog_card_4_img,
-        prog_card_4_link: prog_card_4_link,
-        prog_card_4_type: prog_card_4_type,
-        prog_card_4_header: prog_card_4_header,
-    }
-
-    // console.log(req.body);
-
-    Horizon.findById('6165f63fb58cb67e24ac85fa')
-        .then((horizon) => {
-            // console.log(req.body);
-            horizon.section_display = section_display;
-            horizon.section_content = section_content;
-
-            horizon
-                .save()
-                .then(() => res.json('horizon updated!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-// END SECTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postLensInfo1 = (req, res) => {
-    const {
-        li1_header,
-        li1_desc,
-        li1_img,
-        li1_parag_1,
-        li1_parag_2,
-        li1_parag_3,
-        li1_parag_4
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac85fb')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.li1_section_display = li1_section_display;
-            horizon.li1_header = li1_header;
-            horizon.li1_desc = li1_desc;
-            horizon.li1_img = li1_img;
-            horizon.li1_parag_1 = li1_parag_1;
-            horizon.li1_parag_2 = li1_parag_2;
-            horizon.li1_parag_3 = li1_parag_3;
-            horizon.li1_parag_4 = li1_parag_4;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-// END SECTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postLensInfo3 = (req, res) => {
-    const {
-        li3_section_display = li3_section_display,
-        li3_header,
-        li3_desc,
-        li3_img,
-        li3_parag_1,
-        li3_parag_2,
-        li3_parag_3,
-        li3_parag_4,
-        li3_parag_5,
-        li3_parag_6
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac8603')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.li3_section_display = li3_section_display;
-            horizon.li3_header = li3_header;
-            horizon.li3_desc = li3_desc;
-            horizon.li3_img = li3_img;
-            horizon.li3_parag_1 = li3_parag_1;
-            horizon.li3_parag_2 = li3_parag_2;
-            horizon.li3_parag_3 = li3_parag_3;
-            horizon.li3_parag_4 = li3_parag_4;
-            horizon.li3_parag_5 = li3_parag_5;
-            horizon.li3_parag_6 = li3_parag_6;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-// END SECTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postLensDesigns2 = (req, res) => {
-    const {
-        ld2_section_display,
-        ld2_header,
-        ld2_desc,
-        ld2_designs
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac85ff')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.ld2_section_display = ld2_section_display;
-            horizon.ld2_header = ld2_header;
-            horizon.ld2_desc = ld2_desc;
-            horizon.ld2_designs = ld2_designs;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-// END SECTION
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postLensInfo2 = (req, res) => {
-    const {
-        li2_section_display,
-        li2_header,
-        li2_desc,
-        li2_image,
-        li2_lft_parags,
-        li2_rght_parags
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac85fc')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.li2_section_display = li2_section_display;
-            horizon.li2_header = li2_header;
-            horizon.li2_desc = li2_desc;
-            horizon.li2_image = li2_image;
-            horizon.li2_lft_parags = li2_lft_parags;
-            horizon.li2_rght_parags = li2_rght_parags;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postWatchVideo = (req, res) => {
-    const {
-        wv_section_display,
-        wv_header,
-        wv_desc,
-        wv_link
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac85fd')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.wv_section_display = wv_section_display;
-            horizon.wv_header = wv_header;
-            horizon.wv_desc = wv_desc;
-            horizon.wv_link = wv_link;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postScreenShots = (req, res) => {
-    const {
-        ss_section_display,
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac85fe')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.ss_section_display = ss_section_display;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postLensDesigns3 = (req, res) => {
-    const {
-        ld3_section_display,
-        ld3_header,
-        ld3_desc,
-        ld3_imgs
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac8600')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.ld3_section_display = ld3_section_display;
-            horizon.ld3_header = ld3_header;
-            horizon.ld3_desc = ld3_desc;
-            horizon.ld3_imgs = ld3_imgs;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postProductionInfo = (req, res) => {
-    const {
-        pi_section_display,
-        pi_header,
-        pi_desc,
-        pi_items
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac8601')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.pi_section_display = pi_section_display;
-            horizon.pi_header = pi_header;
-            horizon.pi_desc = pi_desc;
-            horizon.pi_items = pi_items;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =========================================================
-exports.postTechnicalInfo = (req, res) => {
-    const {
-        ti_section_display,
-        ti_header,
-        ti_desc,
-        ti_items
-    } = req.body;
-
-    Horizon.findById('6165f63fb58cb67e24ac8602')
-        .then((horizon) => {
-            // console.log(req.body);
-            // horizon.name = name;
-            horizon.ti_section_display = ti_section_display;
-            horizon.ti_header = ti_header;
-            horizon.ti_desc = ti_desc;
-            horizon.ti_items = ti_items;
-
-            horizon
-                .save()
-                .then(() => res.json('Horizon Updated !!!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-};
-
-
-
-
-
-
 
 // =========================================================
 // FUNCTIONALITIES
-
-
-
 // =========================================================
 // Admin gets Gallery
 exports.gallery = (req, res) => {
@@ -776,11 +361,6 @@ exports.postImgToGallery = (req, res) => {
 
 
 
-
-
-
-
-
 // =========================================================
 // Admin gets maillist
 exports.mailList = (req, res) => {
@@ -791,6 +371,11 @@ exports.mailList = (req, res) => {
         res.json(result);
     });
 };
+
+
+
+
+
 
 
 

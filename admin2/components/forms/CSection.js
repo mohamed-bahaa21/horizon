@@ -25,6 +25,7 @@ const Intl = ({ children }) => {
 };
 
 export default function CSection({
+  sectionID,
   sectionHeader,
   sectionHeaderID,
   formFields,
@@ -42,7 +43,10 @@ export default function CSection({
     {
       onDataLoad: data => {
         console.log(data.section_content);
-        setSectionValues(data.section_content);
+        setSectionValues({
+          sectionID: sectionID,
+          ...data.section_content
+        });
         setMessage('Data loaded successfully !')
       },
     },

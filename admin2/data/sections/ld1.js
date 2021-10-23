@@ -14,6 +14,7 @@ export default {
     section_display: true,
   },
   // ======================================================
+  sectionID: ld1,
   formFields: [
     'prog_card_1_img',
     'prog_card_1_link',

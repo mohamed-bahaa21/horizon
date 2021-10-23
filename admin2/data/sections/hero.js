@@ -14,6 +14,7 @@ export default {
     section_display: true,
   },
   // ======================================================
+  sectionID: hero,
   formFields: [
     'hero_name',
     'hero_parag_1',

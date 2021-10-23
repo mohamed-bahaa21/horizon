@@ -14,6 +14,7 @@ export default {
     section_display: true,
   },
   // ======================================================
+  sectionID: li2,
   formFields: [
     'li2_image',
     'li2_lft_parag_1_header',

@@ -57,21 +57,29 @@ export default function CSectionForm({
         {/* after:  */}
         {() => (
           <Form>
-            {formFields.map((field, index) => (
-              <FormRow>
-                <label htmlFor={`${field}`}>
-                  <FormattedMessage id={`label.${field}`} defaultMessage={`${field}`} />
-                </label>
-                <div>
-                  <Field
-                    name={`${field}`}
-                    type={`${formFieldsType[index][1]}`}
-                    as={`${formFieldsType[index][2]}`}
-                  />
-                  <FormError name={`${field}`} />
-                </div>
-              </FormRow>
-            ))}
+            <Field
+              name={`sectionID`}
+              type={`text`}
+              disabled
+              hidden
+            />
+            {
+              formFields.map((field, index) => (
+                <FormRow>
+                  <label htmlFor={`${field}`}>
+                    <FormattedMessage id={`label.${field}`} defaultMessage={`${field}`} />
+                  </label>
+                  <div>
+                    <Field
+                      name={`${field}`}
+                      type={`${formFieldsType[index][1]}`}
+                      as={`${formFieldsType[index][2]}`}
+                    />
+                    <FormError name={`${field}`} />
+                  </div>
+                </FormRow>
+              ))
+            }
 
             <FormButtons>
               <Button type="submit" variant="action">

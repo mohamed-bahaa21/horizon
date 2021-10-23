@@ -14,6 +14,7 @@ export default {
     section_display: true,
   },
   // ======================================================
+  sectionID: pi,
   formFields: [
     'pi_desc',
     'pi_item_1_img',

@@ -1,4 +1,5 @@
 import SERVER_URI from '.server.env';
+import { li1 } from '../sectionsId';
 
 export default {
     meta_formFields: ['section_index', 'section_name', 'section_display'],
@@ -13,6 +14,7 @@ export default {
         section_display: true,
     },
     // ======================================================
+    sectionID: li1,
     formFields: [
         'li1_img',
         'li1_parag_1',
@@ -34,6 +36,6 @@ export default {
         li1_parag_3: '...',
         li1_parag_4: '...',
     },
-    getLink: `${SERVER_URI}/api/getSectionData/6165f63fb58cb67e24ac85fb`,
+    getLink: `${SERVER_URI}/api/getSectionData/${li1}`,
     postLink: `${SERVER_URI}/api/postSectionData`,
 };

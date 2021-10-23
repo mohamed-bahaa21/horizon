@@ -14,6 +14,7 @@ export default {
     section_display: true,
   },
   // ======================================================
+  sectionID: ld2,
   formFields: [
     "ld2_design_1_header",
     "ld2_design_1_sub_header",
@@ -40,6 +41,7 @@ export default {
     "ld2_design_4_content_after",
   ],
   formFieldsType: [
+
     ['ld2_design_1_content_after', 'textarea', 'textarea'],
     ['ld2_design_1_content_before', 'textarea', 'textarea'],
     ['ld2_design_1_header', 'text', 'input'],

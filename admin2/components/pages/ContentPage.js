@@ -51,6 +51,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="Hero Section"
             sectionHeaderID="hero"
+            sectionID={index.hero.sectionID}
             formFields={index.hero.formFields}
             formFieldsType={index.hero.formFieldsType}
             init_formFieldsValues={index.hero.init_formFieldsValues}
@@ -62,6 +63,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="Lens Design 1"
             sectionHeaderID="ld1"
+            sectionID={index.ld1.sectionID}
             formFields={index.ld1.formFields}
             formFieldsType={index.ld1.formFieldsType}
             init_formFieldsValues={index.ld1.init_formFieldsValues}
@@ -73,6 +75,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="Lens Info 1"
             sectionHeaderID="li1"
+            sectionID={index.li1.sectionID}
             formFields={index.li1.formFields}
             formFieldsType={index.li1.formFieldsType}
             init_formFieldsValues={index.li1.init_formFieldsValues}
@@ -84,6 +87,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="Lens Design 2"
             sectionHeaderID="ld2"
+            sectionID={index.ld2.sectionID}
             formFields={index.ld2.formFields}
             formFieldsType={index.ld2.formFieldsType}
             init_formFieldsValues={index.ld2.init_formFieldsValues}
@@ -95,6 +99,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="LI3_SECTION"
             sectionHeaderID="li3"
+            sectionID={index.li3.sectionID}
             formFields={index.li3.formFields}
             formFieldsType={index.li3.formFieldsType}
             init_formFieldsValues={index.li3.init_formFieldsValues}
@@ -106,6 +111,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="LI2_SECTION"
             sectionHeaderID="li2"
+            sectionID={index.li2.sectionID}
             formFields={index.li2.formFields}
             formFieldsType={index.li2.formFieldsType}
             init_formFieldsValues={index.li2.init_formFieldsValues}
@@ -117,6 +123,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="WV_SECTION"
             sectionHeaderID="wv"
+            sectionID={index.wv.sectionID}
             formFields={index.wv.formFields}
             formFieldsType={index.wv.formFieldsType}
             init_formFieldsValues={index.wv.init_formFieldsValues}
@@ -128,6 +135,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="SS_SECTION"
             sectionHeaderID="ss"
+            sectionID={index.ss.sectionID}
             formFields={index.ss.formFields}
             formFieldsType={index.ss.formFieldsType}
             init_formFieldsValues={index.ss.init_formFieldsValues}
@@ -139,6 +147,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="LD3_SECTION"
             sectionHeaderID="ld3"
+            sectionID={index.ld3.sectionID}
             formFields={index.ld3.formFields}
             formFieldsType={index.ld3.formFieldsType}
             init_formFieldsValues={index.ld3.init_formFieldsValues}
@@ -150,6 +159,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="PI_SECTION"
             sectionHeaderID="pi"
+            sectionID={index.pi.sectionID}
             formFields={index.pi.formFields}
             formFieldsType={index.pi.formFieldsType}
             init_formFieldsValues={index.pi.init_formFieldsValues}
@@ -161,6 +171,7 @@ export default function ContentPage() {
           <CSection
             sectionHeader="TI_SECTION"
             sectionHeaderID="ti"
+            sectionID={index.ti.sectionID}
             formFields={index.ti.formFields}
             formFieldsType={index.ti.formFieldsType}
             init_formFieldsValues={index.ti.init_formFieldsValues}

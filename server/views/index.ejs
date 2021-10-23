@@ -481,60 +481,91 @@
       </div>
       <div class="nav__cart" style="text-align: center;">
         <span>
-          <%= ld2.section_content.ld2_designs.length %>
+          4 Designs
         </span>
-        <br>
-        <% if(ld2.section_content.ld2_designs.length> 1) { %>
-        <span> Designs </span>
-
-        <% } else if(ld2.section_content.ld2_designs.length=1) { %>
-        <span> Design </span>
-
-        <% } else { %>
-        <span></span>
-
-        <% } %>
       </div>
     </div>
-    <!-- <div class="cover">
-                <h2>Single Vision<br />Lenses</h2>
-            </div> -->
-    <% ld2.section_content.ld2_designs.forEach(function(design, index) { %>
-    <div class="product" data-index="<%= index %>">
+    <!-- =============================================== -->
+    <div class="product" data-index="1">
       <div class="product__close">Close</div>
       <div class="product__new">NEW</div>
       <div class="product__detail">VIEW DETAILS</div>
-      <img class="product__img" src="<%= design.img %>" />
+      <img class="product__img" src="<%= ld2.section_content.ld2_design_1_img %>" />
       <div class="product__brand">
-        <%= design.header %>
+        <%= ld2.section_content.ld2_design_1_header %>
       </div>
       <div class="product__title">
-        <%= design.sub_header %>
+        <%= ld2.section_content.ld2_design_1_sub_header %>
       </div>
       <!-- <div class="product__price">$13,200</div> -->
       <div class="product__subtitle">
-        <%= design.content_before %>
+        <%= ld2.section_content.ld2_design_1_content_before %>
       </div>
       <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
-        <%= design.content_after %>
-      </div>
-      <div class="product__table">
-        <div class="product__table-title">TECHNICAL SPECIFICATIONS</div>
-
-        <% design.specs.forEach(function(spec) { %>
-        <div class="product__table-row">
-          <div class="product__table-cell">
-            <%= spec.title %>
-          </div>
-          <div class="product__table-cell">
-            <%= spec.desc %>
-          </div>
-        </div>
-        <% }) %>
-        <div class="product__option">ALL SPECIFICATIONS</div>
+        <%= ld2.section_content.ld2_design_1_content_after %>
       </div>
     </div>
-    <% }) %>
+    <!-- =============================================== -->
+    <div class="product" data-index="2">
+        <div class="product__close">Close</div>
+        <div class="product__new">NEW</div>
+        <div class="product__detail">VIEW DETAILS</div>
+        <img class="product__img" src="<%= ld2.section_content.ld2_design_2_img %>" />
+        <div class="product__brand">
+          <%= ld2.section_content.ld2_design_2_header %>
+        </div>
+        <div class="product__title">
+          <%= ld2.section_content.ld2_design_2_sub_header %>
+        </div>
+        <!-- <div class="product__price">$13,200</div> -->
+        <div class="product__subtitle">
+          <%= ld2.section_content.ld2_design_2_content_before %>
+        </div>
+        <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
+          <%= ld2.section_content.ld2_design_2_content_after %>
+        </div>
+      </div>
+      <!-- =============================================== -->
+      <div class="product" data-index="3">
+        <div class="product__close">Close</div>
+        <div class="product__new">NEW</div>
+        <div class="product__detail">VIEW DETAILS</div>
+        <img class="product__img" src="<%= ld2.section_content.ld2_design_3_img %>" />
+        <div class="product__brand">
+          <%= ld2.section_content.ld2_design_3_header %>
+        </div>
+        <div class="product__title">
+          <%= ld2.section_content.ld2_design_3_sub_header %>
+        </div>
+        <!-- <div class="product__price">$13,200</div> -->
+        <div class="product__subtitle">
+          <%= ld2.section_content.ld2_design_3_content_before %>
+        </div>
+        <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
+          <%= ld2.section_content.ld2_design_3_content_after %>
+        </div>
+      </div>
+      <!-- =============================================== -->
+      <div class="product" data-index="4">
+        <div class="product__close">Close</div>
+        <div class="product__new">NEW</div>
+        <div class="product__detail">VIEW DETAILS</div>
+        <img class="product__img" src="<%= ld2.section_content.ld2_design_4_img %>" />
+        <div class="product__brand">
+          <%= ld2.section_content.ld2_design_4_header %>
+        </div>
+        <div class="product__title">
+          <%= ld2.section_content.ld2_design_4_sub_header %>
+        </div>
+        <!-- <div class="product__price">$13,200</div> -->
+        <div class="product__subtitle">
+          <%= ld2.section_content.ld2_design_4_content_before %>
+        </div>
+        <div class="product__subtitle product__subtitle--expanded" style="--delay: 0.3s">
+          <%= ld2.section_content.ld2_design_4_content_after %>
+        </div>
+      </div>
+      <!-- =============================================== -->
 
     <div class="product__overlay"></div>
   </div>
@@ -569,18 +600,42 @@
     <div class="row align-items-center" style="justify-content: center;">
       <!-- LEFT PARAGS -->
       <div class="col-lg-3 col-md-6 col-sm-8 left-side" style="justify-self: center;">
-        <% li2.section_content.li2_lft_parags.forEach(function(parag, index) { %>
-        <div class="col-lg-12 one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-right" data-aos-delay="250">
+        
+        <div class="col-lg-12 one-feature one" data-aos="fade-right" data-aos-delay="250">
           #D39529
           <h5>
-            <%= parag.parag_header %>
+            <%= li2.section_content.li2_lft_parag_1_header %>
           </h5>
           <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
           <p style="color: white !important">
-            <%= parag.parag_content %>
+            <%= li2.section_content.li2_lft_parag_1_content %>
           </p>
         </div>
-        <% }) %>
+        <!-- =========================================================================== -->
+        <div class="col-lg-12 one-feature" data-aos="fade-right" data-aos-delay="250">
+            #D39529
+            <h5>
+              <%= li2.section_content.li2_lft_parag_2_header %>
+            </h5>
+            <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
+            <p style="color: white !important">
+              <%= li2.section_content.li2_lft_parag_2_content %>
+            </p>
+          </div>
+          <!-- =========================================================================== -->
+          <div class="col-lg-12 one-feature one" data-aos="fade-right" data-aos-delay="250">
+            #D39529
+            <h5>
+              <%= li2.section_content.li2_lft_parag_3_header %>
+            </h5>
+            <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
+            <p style="color: white !important">
+              <%= li2.section_content.li2_lft_parag_3_content %>
+            </p>
+          </div>
+          <!-- =========================================================================== -->
+        
+        
       </div>
       <!-- CENTER IMG & CIRCLES -->
       <div class="col-lg-6 text-center">
@@ -600,17 +655,38 @@
       </div>
       <!-- RIGHT PARAGS -->
       <div class="col-lg-3 col-md-6 col-sm-8 right-side" style="justify-self: center;">
-        <% li2.section_content.li2_rght_parags.forEach(function(parag, index) { %>
-        <div class="one-feature <% index==0 ? 'one' : '' %>" data-aos="fade-left" data-aos-delay="250">
+        
+        <div class="one-feature one" data-aos="fade-left" data-aos-delay="250">
           <h5>
-            <%= parag.parag_header %>
+            <%= li2.section_content.li2_rght_parag_1_header %>
           </h5>
           <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
           <p style="color: white !important">
-            <%= parag.parag_content %>
+            <%= li2.section_content.li2_rght_parag_1_content %>
           </p>
         </div>
-        <% }) %>
+        <!-- ====================================================================== -->
+        <div class="one-feature" data-aos="fade-left" data-aos-delay="250">
+            <h5>
+              <%= li2.section_content.li2_rght_parag_2_header %>
+            </h5>
+            <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
+            <p style="color: white !important">
+              <%= li2.section_content.li2_rght_parag_2_content %>
+            </p>
+          </div>
+          <!-- ====================================================================== -->
+          <div class="one-feature one" data-aos="fade-left" data-aos-delay="250">
+            <h5>
+              <%= li2.section_content.li2_rght_parag_3_header %>
+            </h5>
+            <span><img src="assets/imgs/horizon/logoIcon.png" width="35px"></span>
+            <p style="color: white !important">
+              <%= li2.section_content.li2_rght_parag_3_content %>
+            </p>
+          </div>
+          <!-- ====================================================================== -->
+        
       </div>
       <!-- END RIGHT  -->
     </div>
@@ -647,27 +723,44 @@
         <section id="bifocal" class="">
           <div class="options">
 
-            <% ld3.section_content.ld3_imgs.forEach(function(img, index) { %>
-            <div class="option
-                            <% if (index === 0) { %>
-                                active
-                            <% } %> " style="--optionBackground: url(<%= img.img_link %>); background-size: cover;">
+
+            
+            <div class="option active" style="--optionBackground: url(<%= ld3.section_content.img_1_link %>); background-size: cover;">
               <div class="shadow"></div>
               <div class="label" style="border-radius: 15px 0 0 15px;">
                 <div class="icon">
                   <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
                 </div>
                 <div class="info dark" style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
-                  <!-- <div class="main">
-                     img.img_title 
-                  </div> -->
-                  <!-- <div class="sub">
-                    img.img_sub
-                  </div> -->
                 </div>
               </div>
             </div>
-            <% }) %>
+            <!-- ============================================================= -->
+            <div class="option active" style="--optionBackground: url(<%= ld3.section_content.img_2_link %>); background-size: cover;">
+                <div class="shadow"></div>
+                <div class="label" style="border-radius: 15px 0 0 15px;">
+                  <div class="icon">
+                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                  </div>
+                  <div class="info dark" style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
+                  </div>
+                </div>
+              </div>
+              <!-- ============================================================= -->
+              <div class="option active" style="--optionBackground: url(<%= ld3.section_content.img_3_link %>); background-size: cover;">
+                <div class="shadow"></div>
+                <div class="label" style="border-radius: 15px 0 0 15px;">
+                  <div class="icon">
+                    <img src="assets/imgs/horizon/logoIcon.png" width="35px" alt="" />
+                  </div>
+                  <div class="info dark" style="padding: 1rem 1rem !; font-size: 0.75rem; padding: 1rem 0;">
+                  </div>
+                </div>
+              </div>
+              <!-- ============================================================= -->
+            
+
+
           </div>
         </section>
       </div>
@@ -793,19 +886,58 @@
       </div>
     </div>
     <div class="row align-items-center" style="padding: 0 1rem;">
-      <% pi.section_content.pi_items.forEach(function(item) { %>
+      
+
       <div class="col-lg-3 col-md-6 col-6">
         <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
-          <img src="<%= item.item_img %>" class="img-fluid" alt="" />
+          <img src="<%= pi.section_content.pi_item_1_img %>" class="img-fluid" alt="" />
           <h5>
-            <%= item.item_num %>
+            <%= pi.section_content.pi_item_1_num %>
           </h5>
           <h6>
-            <%= item.item_title %>
+            <%= pi.section_content.pi_item_1_title %>
           </h6>
         </div>
       </div>
-      <% }) %>
+      <!-- ============================================================= -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
+          <img src="<%= pi.section_content.pi_item_2_img %>" class="img-fluid" alt="" />
+          <h5>
+            <%= pi.section_content.pi_item_2_num %>
+          </h5>
+          <h6>
+            <%= pi.section_content.pi_item_2_title %>
+          </h6>
+        </div>
+      </div>
+      <!-- ============================================================= -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
+          <img src="<%= pi.section_content.pi_item_3_img %>" class="img-fluid" alt="" />
+          <h5>
+            <%= pi.section_content.pi_item_3_num %>
+          </h5>
+          <h6>
+            <%= pi.section_content.pi_item_3_title %>
+          </h6>
+        </div>
+      </div>
+      <!-- ============================================================= -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <div class="fact-box text-center" data-aos="fade-up" data-aos-delay="400">
+          <img src="<%= pi.section_content.pi_item_4_img %>" class="img-fluid" alt="" />
+          <h5>
+            <%= pi.section_content.pi_item_4_num %>
+          </h5>
+          <h6>
+            <%= pi.section_content.pi_item_4_title %>
+          </h6>
+        </div>
+      </div>
+      <!-- ============================================================= -->
+      
+
     </div>
   </div>
 </section>
@@ -841,26 +973,89 @@
       <!--align-items-center-->
       <div class="col-md-12 col-lg-8" data-aos="fade-right" style="margin: 0 1rem;">
         <div class="accordion" id="faqAccordion">
-          <% ti.section_content.ti_items.forEach(function(item, index) { %>
+          
+
           <div class="faq-card shadow">
-            <div class="faq-card-header" id="heading_<%=index%>">
+            <div class="faq-card-header" id="heading_0">
               <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_<%=index%>" aria-expanded="true" aria-controls="collapse_1">
-                  <%= item.item_title %>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_0" aria-expanded="true" aria-controls="collapse_1">
+                  <%= ti.section_content.ti_item_1_title %>
                 </button>
               </h5>
             </div>
 
-            <div id="collapse_<%=index%>" class="collapse 
-                        <% if (index === 0) { %>
-                            show
-                        <% } %>" aria-labelledby="heading_<%=index%>" data-parent="#faqAccordion">
+            <div id="collapse_0" class="collapse show" aria-labelledby="heading_0" data-parent="#faqAccordion">
               <div class="faq-card-body">
-                <%= item.item_content %>
+                <%= ti.section_content.ti_item_1_content %>
               </div>
             </div>
           </div>
-          <% }) %>
+          <!-- ============================================================================ -->
+          <div class="faq-card shadow">
+            <div class="faq-card-header" id="heading_1">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+                  <%= ti.section_content.ti_item_2_title %>
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapse_1" class="collapse" aria-labelledby="heading_1" data-parent="#faqAccordion">
+              <div class="faq-card-body">
+                <%= ti.section_content.ti_item_2_content %>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================================ -->
+          <div class="faq-card shadow">
+            <div class="faq-card-header" id="heading_2">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_1">
+                  <%= ti.section_content.ti_item_3_title %>
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#faqAccordion">
+              <div class="faq-card-body">
+                <%= ti.section_content.ti_item_3_content %>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================================ -->
+          <div class="faq-card shadow">
+            <div class="faq-card-header" id="heading_3">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" aria-controls="collapse_1">
+                  <%= ti.section_content.ti_item_4_title %>
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapse_3" class="collapse" aria-labelledby="heading_3" data-parent="#faqAccordion">
+              <div class="faq-card-body">
+                <%= ti.section_content.ti_item_4_content %>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================================ -->
+          <div class="faq-card shadow">
+            <div class="faq-card-header" id="heading_4">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" aria-controls="collapse_1">
+                  <%= ti.section_content.ti_item_5_title %>
+                </button>
+              </h5>
+            </div>
+
+            <div id="collapse_4" class="collapse" aria-labelledby="heading_4" data-parent="#faqAccordion">
+              <div class="faq-card-body">
+                <%= ti.section_content.ti_item_5_content %>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================================ -->
+
         </div>
       </div>
     </div>

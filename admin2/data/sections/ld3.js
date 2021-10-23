@@ -14,6 +14,7 @@ export default {
     section_display: true,
   },
   // ======================================================
+  sectionID: ld3,
   formFields: [
     'img_1_title',
     'img_1_sub',
