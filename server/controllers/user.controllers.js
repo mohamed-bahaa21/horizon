@@ -4,10 +4,19 @@ const About = require('../models/About.model');
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
+pages = [
+    'landing',
+    'brands',
+    'products',
+    'accessories',
+    'news',
+    'about',
+    'online ordering'
+]
 
 // Landing Page
 exports.getLanding = (req, res) => {
-    Horizon.find().sort({section_index: 1}).then((result) => {
+    Horizon.find().sort({ section_index: 1 }).then((result) => {
         Blog.find().limit(3).then(blogs => {
             // console.log(blogs;
             // console.log(result[4]);
@@ -22,8 +31,7 @@ exports.getLanding = (req, res) => {
 
             // res.send(result[0])
 
-
-            res.render('index', {
+            res.render('pages/landing', {
                 msgs: req.flash('success'),
                 blogs: blogs,
                 horizon: result[0],
@@ -37,22 +45,9 @@ exports.getLanding = (req, res) => {
                 ld3: result[7],
                 pi: result[8],
                 ti: result[9]
-            });
+            })
         });
-    });
-};
-
-exports.getComingSoon = (req, res) => {
-    logger.info("GET Coming soon page");
-    res.render('coming-soon/index', {
-        msgs: req.flash('success')
-    });
-};
-
-exports.get404 = (req, res) => {
-    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-    logger.error("GET 404 Not Found", fullUrl);
-    res.status(404).render('404/index');
+    })
 };
 
 // START User -> Brand Page
@@ -65,37 +60,32 @@ exports.getBrand = (req, res) => {
     logger.info("return brand PAGE & DATA");
 
     if (brand == 'Zeiss') {
-        res.render('brand', {
+        res.render('pages/brand', {
             msgs: req.flash('success'),
-            test: `Zeiss`,
-            title: `Zeiss`
+            brand: `Zeiss`
         });
     } else if (brand == 'LTL') {
-        res.render('brand', {
+        res.render('pages/brand', {
             msgs: req.flash('success'),
-            test: 'LTL',
-            title: `LTL`
+            brand: 'LTL'
         });
 
     } else if (brand == 'Divel') {
-        res.render('brand', {
+        res.render('pages/brand', {
             msgs: req.flash('success'),
-            test: 'Divel',
-            title: `Divel`
+            brand: 'Divel'
         });
 
     } else if (brand == 'Roger_Bacon') {
-        res.render('brand', {
+        res.render('pages/brand', {
             msgs: req.flash('success'),
-            test: 'Roger Bacon',
-            title: `Roger Bacon`
+            brand: 'Roger Bacon'
         });
 
     } else {
-        res.render('brand', {
+        res.render('pages/brand', {
             msgs: req.flash('success'),
-            test: 'Unknown',
-            title: `Unknown`
+            brand: 'Unknown'
         });
     }
 };
@@ -151,10 +141,10 @@ exports.getAbout = (req, res) => {
 };
 
 // User Get Blogs list
-exports.getBlogs = (req, res) => {
+exports.getNews = (req, res) => {
     Blog.find().then(result => {
         // console.log(result);
-        res.render('blogs', {
+        res.render('pages/news', {
             msgs: req.flash('success'),
             blogs: result
         });
@@ -162,13 +152,13 @@ exports.getBlogs = (req, res) => {
 };
 
 // User Get Blog By ID route
-exports.getBlog = (req, res) => {
+exports.getNew = (req, res) => {
     const blogID = req.params.id;
 
     Blog.findById(blogID).then(result => {
         Blog.find().limit(3).then(blogs => {
             // console.log(result);
-            res.render('blog', {
+            res.render('pages/new', {
                 msgs: req.flash('success'),
                 blog: result,
                 blogs: blogs
@@ -179,7 +169,19 @@ exports.getBlog = (req, res) => {
 
 // User Get Online Ordering
 exports.getOnlineOrdering = (req, res) => {
-    res.render('online_ordering', {
+    res.render('pages/online_ordering', {
         msgs: req.flash('success')
     });
+};
+
+
+exports.get404 = (req, res) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    logger.error("GET 404 Not Found", fullUrl);
+    res.status(404).render('errors/404');
+};
+exports.get500 = (req, res) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    logger.error("GET 500 Internal Server Error", fullUrl);
+    res.status(500).render('errors/500');
 };

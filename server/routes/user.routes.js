@@ -6,11 +6,10 @@ const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controlle
 
 // USER_PAGES
 route.get('/', userCtrl.getLanding);
-route.get('/coming-soon', userCtrl.getComingSoon)
 
 route.get('/about-us', userCtrl.getAbout);
-route.get('/news', userCtrl.getBlogs);
-route.get('/blog/:id', userCtrl.getBlog);
+route.get('/news', userCtrl.getNews);
+route.get('/blog/:id', userCtrl.getNew);
 
 // Brands pages
 route.get('/brands/:brand', userCtrl.getBrand);
@@ -21,12 +20,10 @@ route.get('/products/:product', userCtrl.getProduct);
 // online ordering page
 route.get('/online_ordering', userCtrl.getOnlineOrdering);
 
-// DEPRECATED
-// Free Form pages
-// route.get('/free-form/:freeform', horizonController.getFreeForm);
-
 // 404
-route.get('/404', userCtrl.get404);
+route.use(userCtrl.get404);
+// 500
+route.use(userCtrl.get500);
 // if environment = development, 404 will be handled by application/API-layer (expressjs)
 // if environment = production, 404 will be handled by server-layer (nginx)
 if (process.env.NODE_ENV == "development") {
