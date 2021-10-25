@@ -4,7 +4,12 @@ const About = require('../models/About.model');
 const Gallery = require('../models/Gallery.model');
 const Mail = require('../models/Mail.model');
 
-const { GET_HORIZON_SECTION_CONTENT, POST_HORIZON_SECTION_CONTENT } = require('../queries/api.queries')
+const {
+    GET_HORIZON_SECTION_CONTENT,
+    POST_HORIZON_SECTION_CONTENT,
+    GET_HORIZON_SEO_DATA,
+    POST_HORIZON_SEO_DATA
+} = require('../queries/api.queries')
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
@@ -200,7 +205,27 @@ exports.postSectionData = (req, res) => {
 };
 
 
+exports.getSeoData = (req, res) => {
+    GET_HORIZON_SEO_DATA(req, res, req.params.page_id);
+};
 
+exports.postSeoData = (req, res) => {
+    const data = {
+        page_id: req.body.page_id,
+        page_title: req.body.page_title,
+        page_desc: req.body.page_desc,
+        page_robots: req.body.page_robots,
+        page_keywords: req.body.page_keywords,
+        card_site_name: req.body.card_site_name,
+        card_title: req.body.card_title,
+        card_desc: req.body.card_desc,
+        card_img: req.body.card_img,
+        card_url: req.body.card_url,
+        card_img_alt: req.body.card_img_alt,
+        twitter_card: req.body.twitter_card,
+    };
+    POST_HORIZON_SEO_DATA(req, res, req.body.page_id, data);
+};
 
 
 

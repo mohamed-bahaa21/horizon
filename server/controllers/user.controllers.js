@@ -155,6 +155,11 @@ exports.getOnlineOrdering = (req, res) => {
 };
 
 
+exports.get400 = (req, res) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    logger.error("GET 400 Bad Request", fullUrl);
+    res.status(400).render('errors/400');
+};
 exports.get404 = (req, res) => {
     var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     logger.error("GET 404 Not Found", fullUrl);

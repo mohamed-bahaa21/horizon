@@ -17,9 +17,13 @@ route.post('/postBlogsData', apiCtrl.postBlogsData);
 route.get('/getAboutData', apiCtrl.getAboutData);
 route.post('/postAboutData', apiCtrl.postAboutData);
 
-// ADMIN -> Hero Section
+// ADMIN -> Section Data
 route.get('/getSectionData/:sectionId', apiCtrl.getSectionData);
 route.post('/postSectionData', apiCtrl.postSectionData);
+
+// ADMIN -> Seo Data
+route.get('/getSeoData/:page_id', apiCtrl.getSeoData);
+route.post('/postSeoData', apiCtrl.postSeoData);
 
 // FUNCTIONALITIES
 route.get('/gallery', apiCtrl.gallery);

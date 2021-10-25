@@ -6,6 +6,8 @@ const userRoute = require('./user.routes');
 const apiRoute = require('./api.routes');
 const JsonHtmlParserRoute = require('./json_html_parser.routes');
 
+const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
+
 
 // GLOBAL HEADER CONTROLLER
 
@@ -37,5 +39,12 @@ route.get('/*', function (req, res, next) {
 route.use('/', userRoute);
 route.use('/api', apiRoute);
 // route.use('/parser', JsonHtmlParserRoute);
+
+// 404
+route.use(userCtrl.get400);
+// 404
+route.use(userCtrl.get404);
+// 500
+route.use(userCtrl.get500);
 
 module.exports = route;

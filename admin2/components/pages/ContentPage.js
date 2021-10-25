@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import CSection from 'components/forms/CSection';
 
-import index from 'data/index';
+import index from 'data/sections';
 
 const SECTIONS = '/content/landing';
 const HERO_SECTION = '/content/landing/hero_section';

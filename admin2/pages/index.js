@@ -35,14 +35,21 @@ export default function Home() {
         <div className={styles.grid}>
           <a href="/content" className={styles.card}>
             <h2>Content Management &rarr;</h2>
-            <p>Control what can user see...</p>
+            <p>Control what user can see...</p>
           </a>
 
-          <a href="/analysis" className={styles.card}>
-            <h2>Analysis &rarr;</h2>
-            <p>See what user did...</p>
+          <a href="/seo" className={styles.card}>
+            <h2>SEO &rarr;</h2>
+            <p>Control how engines will search...</p>
           </a>
+        </div>
 
+        <a href="/analysis" className={styles.card}>
+          <h2>Analysis &rarr;</h2>
+          <p>See what user did...</p>
+        </a>
+
+        <div className={styles.grid}>
           <a href="/onlineOrdering" className={styles.card}>
             <h2>Online Ordering &rarr;</h2>
             <p>Who ordered your product...</p>

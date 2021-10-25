@@ -20,10 +20,7 @@ route.get('/products/:product', userCtrl.getProduct);
 // online ordering page
 route.get('/online_ordering', userCtrl.getOnlineOrdering);
 
-// 404
-route.use(userCtrl.get404);
-// 500
-route.use(userCtrl.get500);
+
 // if environment = development, 404 will be handled by application/API-layer (expressjs)
 // if environment = production, 404 will be handled by server-layer (nginx)
 if (process.env.NODE_ENV == "development") {

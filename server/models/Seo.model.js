@@ -44,12 +44,12 @@ const SeoSchema = new Schema({
         type: String,
         required: false
     },
-
-    "twitter_card": {
+    "card_img_alt": {
         type: String,
         required: false
     },
-    "twitter_img_alt": {
+
+    "twitter_card": {
         type: String,
         required: false
     },

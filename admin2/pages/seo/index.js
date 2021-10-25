@@ -21,7 +21,7 @@ const Intl = ({ children }) => {
   );
 };
 
-const content = ({ Component, pageProps }) => {
+const seo = ({ Component, pageProps }) => {
   useForceSSL(process.env.FORCE_SSL);
   const { loading } = useRequireLogin();
   const router = useRouter();
@@ -44,18 +44,18 @@ const content = ({ Component, pageProps }) => {
         <Intl>
           <main className={styles.main}>
             <h1 className={styles.title}>
-              <span className={styles.orange}>Content Management</span>
+              <span className={styles.orange}>SEO</span>
             </h1>
 
             <p className={styles.description}>
-              <code className={styles.code}>Where changing content doesn't need a Developer</code>
+              <code className={styles.code}>Search Engines can't exist without Optimization</code>
             </p>
 
             <div className={styles.flex}>
               <a href="/" className={styles.card}>
                 <h2>&larr; Home</h2>
               </a>
-              <a href="/content/landing/" className={styles.card}>
+              <a href="/seo/landing/" className={styles.card}>
                 <h2>Landing &rarr;</h2>
               </a>
             </div>
@@ -66,4 +66,4 @@ const content = ({ Component, pageProps }) => {
   );
 };
 
-export default content;
+export default seo;

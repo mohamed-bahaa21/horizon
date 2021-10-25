@@ -1,5 +1,5 @@
 import SERVER_URI from '.server.env';
-import { ld2 } from '../sectionsId';
+import { ld2 } from './sectionsId';
 
 export default {
   meta_formFields: ['section_index', 'section_name', 'section_display'],
