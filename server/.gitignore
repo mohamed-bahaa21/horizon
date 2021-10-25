@@ -22,6 +22,7 @@ firebase.config
 .env.production.local
 
 /config/dev.env
+/config/prod.env
 /config/dev.firebase.config
 
 npm-debug.log*
