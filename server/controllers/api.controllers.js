@@ -1,14 +1,13 @@
 const Horizon = require('../models/Horizon.model');
-const Blog = require('../models/Blog');
-const About = require('../models/About');
-const Gallery = require('../models/Gallery');
-const Mail = require('../models/Mail');
+const Blog = require('../models/Blog.model');
+const About = require('../models/About.model');
+const Gallery = require('../models/Gallery.model');
+const Mail = require('../models/Mail.model');
 
 const { GET_HORIZON_SECTION_CONTENT, POST_HORIZON_SECTION_CONTENT } = require('../queries/api.queries')
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
-
 
 const scetionsId = {
     hero: '6165f63fb58cb67e24ac85f9',

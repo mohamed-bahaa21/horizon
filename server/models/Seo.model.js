@@ -1,40 +1,49 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const BlogSchema = new Schema({
-    // Section 1/13
-    "name": {
-        type: String,
-        required: false
+const SeoSchema = new Schema({
+    "page_title": {
+        type: Boolean,
+        required: true
     },
-    "date": {
+    "page_desc": {
         type: String,
         required: true
     },
-    "title": {
+    "page_robots": {
         type: String,
         required: true
     },
-    "summary": {
+
+    "og_site_name": {
         type: String,
         required: true
     },
-    "content": {
+    "og_title": {
         type: String,
         required: true
     },
-    "link": {
+    "og_description": {
         type: String,
         required: true
     },
-    "main_img": {
+    "og_image": {
         type: String,
         required: true
     },
-    "thumb_img": {
+    "og_url": {
         type: String,
         required: true
-    }
+    },
+
+    "twitter_card": {
+        type: String,
+        required: true
+    },
+    "twitter_image_alt": {
+        type: String,
+        required: true
+    },
 })
 
-module.exports = mongoose.model('Blog', BlogSchema);
+module.exports = mongoose.model('Seo', SeoSchema);

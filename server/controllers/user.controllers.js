@@ -1,6 +1,6 @@
 const Horizon = require('../models/Horizon.model');
-const Blog = require('../models/Blog');
-const About = require('../models/About');
+const Blog = require('../models/Blog.model');
+const About = require('../models/About.model');
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');

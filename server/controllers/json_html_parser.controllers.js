@@ -1,4 +1,4 @@
-const Landing = require('../models/Landing');
+const Landing = require('../models/Landing.model');
 // const { section } = require('../sample.data/landing.sections.model')
 
 // html OR json

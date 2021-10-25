@@ -92,6 +92,6 @@
     padding
     margin
 
+- SEO per pages
 
-
-
+- Chat system (user-admin)(one-many)
