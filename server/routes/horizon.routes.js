@@ -36,6 +36,7 @@ route.get('/*', function (req, res, next) {
     next();
 });
 
+route.get('/robots.txt', (req, res) => res.sendFile(path.resolve(__basename, 'robots.txt')))
 route.use('/', userRoute);
 route.use('/api', apiRoute);
 // route.use('/parser', JsonHtmlParserRoute);
