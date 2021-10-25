@@ -2,8 +2,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const SeoSchema = new Schema({
+    "page_id": {
+        type: String,
+        required: true,
+        unique: true
+    },
     "page_title": {
-        type: Boolean,
+        type: String,
         required: true
     },
     "page_desc": {
@@ -12,37 +17,41 @@ const SeoSchema = new Schema({
     },
     "page_robots": {
         type: String,
-        required: true
+        required: false
+    },
+    "page_keywords": {
+        type: String,
+        required: false
     },
 
-    "og_site_name": {
+    "card_site_name": {
         type: String,
-        required: true
+        required: false
     },
-    "og_title": {
+    "card_title": {
         type: String,
-        required: true
+        required: false
     },
-    "og_description": {
+    "card_desc": {
         type: String,
-        required: true
+        required: false
     },
-    "og_image": {
+    "card_img": {
         type: String,
-        required: true
+        required: false
     },
-    "og_url": {
+    "card_url": {
         type: String,
-        required: true
+        required: false
     },
 
     "twitter_card": {
         type: String,
-        required: true
+        required: false
     },
-    "twitter_image_alt": {
+    "twitter_img_alt": {
         type: String,
-        required: true
+        required: false
     },
 })
 

@@ -1,9 +1,11 @@
 const Horizon = require('../models/Horizon.model');
+const Seo = require('../models/Seo.model');
 const Blog = require('../models/Blog.model');
 const About = require('../models/About.model');
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
+
 pages = [
     'landing',
     'brands',
@@ -18,33 +20,36 @@ pages = [
 exports.getLanding = (req, res) => {
     Horizon.find().sort({ section_index: 1 }).then((result) => {
         Blog.find().limit(3).then(blogs => {
-            // console.log(blogs;
-            // console.log(result[4]);
-            logger.info("return Landing PAGE & DATA");
-            logger.info("return Blogs Data");
-            let sections = [];
+            Seo.findOne({ page_id: 'landing' }).then(seo => {
+                // console.log(blogs;
+                // console.log(result[4]);
+                logger.info("return Landing PAGE & DATA");
+                logger.info("return Blogs Data");
+                let sections = [];
 
-            // result.map(section => {
-            //     sections += section.section_name
-            // })
-            // res.send(sections)
+                // result.map(section => {
+                //     sections += section.section_name
+                // })
+                // res.send(sections)
 
-            // res.send(result[0])
+                // res.send(result[0])
 
-            res.render('pages/landing', {
-                msgs: req.flash('success'),
-                blogs: blogs,
-                horizon: result[0],
-                ld1: result[1],
-                li1: result[2],
-                li3: result[10],
-                ld2: result[6],
-                li2: result[3],
-                wv: result[4],
-                ss: result[5],
-                ld3: result[7],
-                pi: result[8],
-                ti: result[9]
+                res.render('pages/landing', {
+                    msgs: req.flash('success'),
+                    seo: seo,
+                    blogs: blogs,
+                    horizon: result[0],
+                    ld1: result[1],
+                    li1: result[2],
+                    li3: result[10],
+                    ld2: result[6],
+                    li2: result[3],
+                    wv: result[4],
+                    ss: result[5],
+                    ld3: result[7],
+                    pi: result[8],
+                    ti: result[9]
+                })
             })
         });
     })
@@ -59,35 +64,12 @@ exports.getBrand = (req, res) => {
     // console.log(brand);
     logger.info("return brand PAGE & DATA");
 
-    if (brand == 'Zeiss') {
-        res.render('pages/brand', {
-            msgs: req.flash('success'),
-            brand: `Zeiss`
-        });
-    } else if (brand == 'LTL') {
-        res.render('pages/brand', {
-            msgs: req.flash('success'),
-            brand: 'LTL'
-        });
-
-    } else if (brand == 'Divel') {
-        res.render('pages/brand', {
-            msgs: req.flash('success'),
-            brand: 'Divel'
-        });
-
-    } else if (brand == 'Roger_Bacon') {
-        res.render('pages/brand', {
-            msgs: req.flash('success'),
-            brand: 'Roger Bacon'
-        });
-
-    } else {
-        res.render('pages/brand', {
-            msgs: req.flash('success'),
-            brand: 'Unknown'
-        });
-    }
+    res.render('pages/brand', {
+        msgs: req.flash('success'),
+        page_title: "Horizon | " + brand,
+        seo: null,
+        brand: brand
+    })
 };
 
 exports.getProduct = (req, res) => {
@@ -108,23 +90,13 @@ exports.getProduct = (req, res) => {
         "delivery",
     ]
 
-    res.render('product', {
+    res.render('pages/product', {
         msgs: req.flash('success'),
+        page_title: "Horizon | " + product,
+        seo: null,
         title: product,
         test: product
     });
-
-    // if (product == 'stock_lenses') {
-    //     res.render('product_stock_lenses', {
-    //         msgs: req.flash('success'),
-    //         test: 'Stock Lenses'
-    //     });
-    // } else {
-    //     res.render('product', {
-    //         msgs: req.flash('success'),
-    //         test: 'Hello Product'
-    //     });
-    // }
 };
 // ------------------------ END
 
@@ -133,8 +105,10 @@ exports.getAbout = (req, res) => {
     About.findById('6088f039ce64255fe8d24880').then((result) => {
         // console.log(result);
 
-        res.render('about', {
+        res.render('pages/about', {
             msgs: req.flash('success'),
+            page_title: "Horizon | About",
+            seo: null,
             about: result
         });
     });
@@ -146,6 +120,8 @@ exports.getNews = (req, res) => {
         // console.log(result);
         res.render('pages/news', {
             msgs: req.flash('success'),
+            page_title: "Horizon | News",
+            seo: null,
             blogs: result
         });
     });
@@ -160,6 +136,8 @@ exports.getNew = (req, res) => {
             // console.log(result);
             res.render('pages/new', {
                 msgs: req.flash('success'),
+                page_title: "News | " + blog.title,
+                seo: null,
                 blog: result,
                 blogs: blogs
             });
@@ -170,7 +148,9 @@ exports.getNew = (req, res) => {
 // User Get Online Ordering
 exports.getOnlineOrdering = (req, res) => {
     res.render('pages/online_ordering', {
-        msgs: req.flash('success')
+        msgs: req.flash('success'),
+        page_title: "Horizon | Online Ordering",
+        seo: null,
     });
 };
 
