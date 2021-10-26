@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import useRequireLogin from 'hooks/useRequireLogin';
 import Layout from 'components/layout/Layout';
-import styles from './Home.module.css';
+import styles from 'styles/Home.module.css';
 import Footer from 'components/layout/Footer';
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
             <p>Who ordered your product...</p>
           </a>
 
-          <a href="/mailingList" className={styles.card}>
+          <a href="/mailing" className={styles.card}>
             <h2>Mailing List &rarr;</h2>
             <p>Send important messages...</p>
           </a>

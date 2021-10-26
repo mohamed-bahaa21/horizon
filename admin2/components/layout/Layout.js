@@ -17,6 +17,7 @@ export default function Layout({ title, children, header = true, footer = true, 
       </Head>
 
       {header && headerType === 'analysis' ? <Header /> : <CHeader />}
+
       <main className="container" dir={dir}>
         {children}
       </main>

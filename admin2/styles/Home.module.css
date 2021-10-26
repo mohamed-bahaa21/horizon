@@ -1,8 +1,15 @@
+
+.marginAuto {
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+}
 .orange {
   color: #d39529;
 }
 
 .container {
+  text-align: center;
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
@@ -52,6 +59,7 @@
 .title a {
   color: #d39529;
   text-decoration: none;
+  font-weight: 800;
 }
 
 .title a:hover,
@@ -100,6 +108,26 @@
   margin-top: 0rem;
 }
 
+.btn {
+  display: inline-block;
+  margin: 0 auto;
+  text-decoration: none;
+  border: 3px solid;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+}
+.btn:hover {
+  display: inline-block;
+  margin: 0 auto;
+  text-decoration: none;
+  border: 3px solid #d39529;
+  background-color: #d39529;
+  color: #eaeaea;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
@@ -122,6 +150,9 @@
 
 .card75 {
   width: 75%;
+}
+.card100 {
+  width: 100%;
 }
 
 

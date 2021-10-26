@@ -7,7 +7,7 @@ import styles from './EmptyPlaceholder.module.css';
 function EmptyPlaceholder({ msg, children }) {
   return (
     <div className={styles.placeholder}>
-      <Icon className={styles.icon} icon={<Logo />} size="xlarge" />
+      <Icon className={styles.icon} icon={<img src="/logoIcon.png" width={`50px`} />} size="small" />
       <h2 className={styles.msg}>{msg}</h2>
       {children}
     </div>
