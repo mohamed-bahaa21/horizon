@@ -2,6 +2,9 @@ require('dotenv').config();
 const pkg = require('./package.json');
 
 module.exports = {
+  images: {
+    domains: ['beta.horizon-lenses.com', 'firebasestorage.googleapis.com'],
+  },
   env: {
     VERSION: pkg.version,
     FORCE_SSL: !!process.env.FORCE_SSL,

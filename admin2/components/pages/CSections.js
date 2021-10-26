@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import Link from 'components/common/Link';
 import Table from 'components/common/Table';
 import Button from 'components/common/Button';
 import PageHeader from 'components/layout/PageHeader';
+import { FormattedMessage } from 'react-intl';
 import Modal from 'components/common/Modal';
 import SectionEditForm from 'components/forms/SectionEditForm';
 import DeleteForm from 'components/forms/DeleteForm';

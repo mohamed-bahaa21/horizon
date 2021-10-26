@@ -34,14 +34,14 @@ export default function content() {
   return (
     <Layout headerType={`content`}>
       <div className={styles.flex}>
-          <a href="/" className={styles.card}>
-            <h2>&larr; Home</h2>
-          </a>
+        <a href="/" className={styles.card}>
+          <h2>&larr; Home</h2>
+        </a>
 
-          <a href="/content" className={styles.card}>
-            <h2>&larr; Content</h2>
-          </a>
-        </div>
+        <a href="/content" className={styles.card}>
+          <h2>&larr; Content</h2>
+        </a>
+      </div>
       <ContentPage />
     </Layout>
   );

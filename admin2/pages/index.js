@@ -60,6 +60,11 @@ export default function Home() {
             <p>Send important messages...</p>
           </a>
         </div>
+
+        <a href="/gallery" className={styles.card}>
+          <h2>Gallery &rarr;</h2>
+          <p>your photo collection...</p>
+        </a>
       </main>
       {/* </div> */}
     </Layout>
