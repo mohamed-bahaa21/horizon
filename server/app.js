@@ -139,21 +139,40 @@ app.use('/', horizonRoute);
 
 // connect database & server
 let PORT = 5000;
-mongoose
-    .connect(MONGODB_URI, {
-        useNewUrlParser: true,
-        ssl: true,
-        sslValidate: false,
-        sslCA: fs.readFileSync(path.resolve(__basename, 'config/rds-combined-ca-bundle.pem')),
-        useUnifiedTopology: true,
-        useFindAndModify: false,
-        useCreateIndex: true
-    })
-    .then(result => {
-        app.listen(PORT);
-        console.log(`MongoDB & Server is listening: ${PORT}`);
-        console.log(process.env.NODE_ENV);
-    })
-    .catch(err => {
-        console.log(err);
-    });
+if (process.env.NODE_ENV == "development") {
+    mongoose
+        .connect(MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+            useCreateIndex: true
+        })
+        .then(result => {
+            app.listen(PORT);
+            console.log(`MongoDB & Server is listening: ${PORT}`);
+            console.log(process.env.NODE_ENV);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+} else {
+    mongoose
+        .connect(MONGODB_URI, {
+            useNewUrlParser: true,
+            ssl: true,
+            sslValidate: false,
+            sslCA: fs.readFileSync(path.resolve(__basename, 'config/rds-combined-ca-bundle.pem')),
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+            useCreateIndex: true
+        })
+        .then(result => {
+            app.listen(PORT);
+            console.log(`MongoDB & Server is listening: ${PORT}`);
+            console.log(process.env.NODE_ENV);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
