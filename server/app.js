@@ -1,5 +1,6 @@
 require('dotenv').config({ path: 'config/.env' })
 const path = require('path')
+const fs = require('fs');
 global.__basename = __dirname;
 
 const compression = require('compression');
@@ -141,6 +142,9 @@ let PORT = 5000;
 mongoose
     .connect(MONGODB_URI, {
         useNewUrlParser: true,
+        ssl: true,
+        sslValidate: false,
+        sslCA: fs.readFileSync('./rds-combined-ca-bundle.pem'),
         useUnifiedTopology: true,
         useFindAndModify: false,
         useCreateIndex: true
