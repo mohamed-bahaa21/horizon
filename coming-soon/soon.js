@@ -52,7 +52,7 @@ const horizonRoute = require('./routes/routes');
 app.use('/', horizonRoute)
 
 // connect database & server
-let PORT = process.env.PORT || 5001;
+let PORT = 5001;
 if (process.env.NODE_ENV == "development") {
     mongoose
         .connect(MONGODB_URI, {
