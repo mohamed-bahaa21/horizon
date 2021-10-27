@@ -1,5 +1,6 @@
 require('dotenv').config()
 const path = require('path')
+const fs = require('fs');
 global.__basename = __dirname;
 
 const express = require('express')
