@@ -422,7 +422,6 @@ exports.subscribe = (req, res) => {
     email.save()
         .then(() => {
             req.flash('success', 'Subscribed Successfully...');
-            res.redirect('https://horizon-lenses.com/#footer');
         })
         .catch((err) => res.status(400).json('Error: ' + err));
 };
