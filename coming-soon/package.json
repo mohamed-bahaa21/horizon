@@ -36,7 +36,7 @@
     "express-validator": "^6.12.2",
     "jsdom": "^16.7.0",
     "lodash": "^4.17.21",
-    "mongoose": "^5.13.10"
+    "mongoose": "^5.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
