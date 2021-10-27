@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: 'config/.env' })
 const path = require('path')
 const fs = require('fs');
 global.__basename = __dirname;
