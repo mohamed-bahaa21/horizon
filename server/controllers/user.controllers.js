@@ -16,6 +16,12 @@ pages = [
     'online ordering'
 ]
 
+exports.getComingSoon = (req, res, next) => {
+    res.render('pages/coming-soon/index', {
+        msgs: req.flash('success')
+    })
+}
+
 // Landing Page
 exports.getLanding = (req, res) => {
     Horizon.find().sort({ section_index: 1 }).then((result) => {

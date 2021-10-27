@@ -4,6 +4,9 @@ const route = express.Router();
 
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
 
+// coming-soon
+route.get('/coming-soon', userCtrl.getComingSoon)
+
 // USER_PAGES
 route.get('/', userCtrl.getLanding);
 
