@@ -95,11 +95,9 @@ router.post("/api/login", (req, res, next) => {
   res.redirect('/')
 });
 
-router.get("/api/chats", (req, res, next) => {
+router.get("/api/users", (req, res, next) => {
   res.setHeader("Content-Type", "application/json");
   res.statusCode = 200;
-  let username = req.session.username;
-  console.log(username);
 
   connectdb.then(db => {
     // let data = Chats.find({ message: "Anonymous" });
@@ -109,5 +107,34 @@ router.get("/api/chats", (req, res, next) => {
   });
 });
 
+router.get("/api/users/:username", (req, res, next) => {
+  res.setHeader("Content-Type", "application/json");
+  res.statusCode = 200;
+  let username = req.params.username;
+
+  connectdb.then(db => {
+    // let data = Chats.find({ message: "Anonymous" });
+    Users.findOne({ username: username }).populate('chat').then(user => {
+      res.json(user);
+    });
+  });
+});
+
+router.post("/api/users/:username", (req, res, next) => {
+  res.setHeader("Content-Type", "application/json");
+  res.statusCode = 200;
+  let username = req.params.username;
+
+
+  console.log("Admin sent a message");
+  Users.findOne({ username: username }).then(user => {
+    // console.log(chatMessage);
+    let chatMessage = new Chats({ username: req.body.username, sender: req.body.sender, message: req.body.message });
+    chatMessage.save().then(msg => {
+      user.chat.push(msg._id);
+      user.save()
+    })
+  })
+});
 
 module.exports = router;

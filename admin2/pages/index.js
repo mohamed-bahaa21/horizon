@@ -50,16 +50,21 @@ export default function Home() {
         </a>
 
         <div className={styles.grid}>
-          <a href="/onlineOrdering" className={styles.card}>
-            <h2>Online Ordering &rarr;</h2>
-            <p>Who ordered your product...</p>
-          </a>
-
           <a href="/mailing" className={styles.card}>
             <h2>Mailing List &rarr;</h2>
             <p>Send important messages...</p>
           </a>
+
+          <a href="/onlineOrdering" className={styles.card}>
+            <h2>Online Ordering &rarr;</h2>
+            <p>Who ordered your product...</p>
+          </a>
         </div>
+
+        <a href="/chat" className={styles.card}>
+          <h2>Chat &rarr;</h2>
+          <p>Keep no distance from your customers...</p>
+        </a>
 
         <a href="/gallery" className={styles.card}>
           <h2>Gallery &rarr;</h2>

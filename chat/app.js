@@ -7,6 +7,7 @@ const session = require('express-session');
 var cors = require('cors')
 const flash = require('connect-flash');
 const MongoDBStore = require('connect-mongodb-session')(session);
+var unless = require('express-unless');
 
 const http = require("http").Server(app); //require the http module
 const io = require("socket.io"); // require the socket.io module
@@ -29,7 +30,7 @@ var sessionMiddleware = session({
   expires: new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 });
 
-var allowlist = ['http://localhost:1234']
+var allowlist = ['http://localhost:1234', 'http://localhost:3001']
 
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;

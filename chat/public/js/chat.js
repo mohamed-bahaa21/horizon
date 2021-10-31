@@ -2,7 +2,8 @@ var socket = io();
 var messages = document.getElementById("messages");
 
 (function () {
-  socket.on('message', function (data, json) {
+  socket.on('message', function (username) {
+    console.log("data from here: ", username);
 
     $("form").submit(function (e) {
       let li = document.createElement("li");
@@ -10,7 +11,7 @@ var messages = document.getElementById("messages");
       let span = document.createElement("span");
 
       e.preventDefault(); // prevents page reloading
-      socket.emit("chat message", $("#message").val());
+      socket.emit("chat message", { username: username, sender: username, message: $("#message").val() });
 
       li.appendChild(p).append($("#message").val());
       li.appendChild(span).append("by " + "You" + ": " + "just now");
