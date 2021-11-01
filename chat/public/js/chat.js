@@ -1,6 +1,11 @@
 var socket = io();
 var messages = document.getElementById("messages");
 
+
+function updateScroll() {
+  messages.scrollTop = messages.scrollHeight;
+}
+
 (function () {
   socket.on('message', function (username) {
     console.log("data from here: ", username);
@@ -18,6 +23,7 @@ var messages = document.getElementById("messages");
       messages.appendChild(li);
 
       $("#message").val("");
+      updateScroll();
       return false;
     });
   });
@@ -27,6 +33,7 @@ var messages = document.getElementById("messages");
     let p = document.createElement("p");
     let span = document.createElement("span");
     var messages = document.getElementById("messages");
+    updateScroll();
 
     if (data.sender == data.username) {
       li.appendChild(p).append(data.message);
@@ -64,6 +71,7 @@ var messages = document.getElementById("messages");
           li.appendChild(span).append("by " + "Horizon" + ": " + formatTimeAgo(data.createdAt));
           messages.appendChild(li);
         }
+        updateScroll();
       });
     });
 })();

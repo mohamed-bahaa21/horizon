@@ -7,6 +7,10 @@ const Chats = require("../models/Chat");
 const app = express();
 const router = express.Router();
 
+
+// socket.emit("chat message", { username: username, sender: username, message: req.body.message });
+
+
 router.get("/login", (req, res, next) => {
   if (req.session.loggedIn) {
     req.flash('info', "You're logged in already")
@@ -124,7 +128,6 @@ router.post("/api/users/:username", (req, res, next) => {
   res.setHeader("Content-Type", "application/json");
   res.statusCode = 200;
   let username = req.params.username;
-
 
   console.log("Admin sent a message");
   Users.findOne({ username: username }).then(user => {
