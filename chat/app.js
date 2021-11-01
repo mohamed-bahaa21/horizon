@@ -15,7 +15,7 @@ socket = io(http); //integrating socketio
 
 // connect session w/ mongodb
 const store = new MongoDBStore({
-  uri: "mongodb://localhost:27017/chat",
+  uri: "mongodb+srv://mohammad123:mohammad123@blogdb-fslqm.mongodb.net/horizon",
   collection: 'sessions'
 });
 
@@ -30,7 +30,7 @@ var sessionMiddleware = session({
   expires: new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 });
 
-var allowlist = ['http://localhost:1234', 'http://localhost:3001']
+var allowlist = ['http://localhost:1234', 'http://localhost:3001', 'https://admin.horizon-lenses.com']
 
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
@@ -60,7 +60,7 @@ const wrap = middleware => (socket, next) => middleware(socket.request, {}, next
 socket.use(wrap(sessionMiddleware));
 require('./controllers/socketio.controller')(socket); // pass the socket.io object to the socketio.controller 
 
-const port = 5000;
+const port = 5001;
 http.listen(port, () => {
   console.log("Running on Port: " + port);
 });
