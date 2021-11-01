@@ -22,8 +22,43 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  res.send(req.body)
+  res.redirect('/signup/verify')
+  // let otp = 123456
+  // console.log("Phone = " + req.body.phone);
+  // console.log("Subject = " + "Signup Verification Code");
+  // console.log("OTP_Message = " + otp);
+
+  // var params = {
+  //   Message: otp,
+  //   PhoneNumber: req.body.phone,
+  //   MessageAttributes: {
+  //     'AWS.SNS.SMS.SenderID': {
+  //       'DataType': 'String',
+  //       'StringValue': "Signup Verification Code"
+  //     }
+  //   }
+  // };
+  // var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' }).publish(params).promise();
+
+  // publishTextPromise.then(
+  //   function (data) {
+
+  //     res.end(JSON.stringify({ MessageID: data.MessageId }));
+  //   }).catch(
+  //     function (err) {
+  //       res.end(JSON.stringify({ Error: err }));
+  //     });
 });
+
+router.get('/signup/verify', (req, res, next) => {
+  res.render('verify', {
+    msgs: req.flash('info')
+  })
+})
+
+router.post('/signup/verify', (req, res, next) => {
+  res.redirect('/')
+})
 
 
 router.get("/login", (req, res, next) => {

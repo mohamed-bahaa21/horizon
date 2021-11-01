@@ -1,15 +1,22 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Chat = require("./Chat")
 
 const UserSchema = new Schema({
     phone: {
-        type: Number
+        type: Number,
+        required: true,
+        unique: true
     },
     username: {
-        type: String
+        type: String,
+        required: true,
+        unique: true
     },
-    password: {
+    otp: {
+        type: Number,
+        expires: '1d'
+    },
+    otp_MessageId: {
         type: String
     },
     chat: [{
