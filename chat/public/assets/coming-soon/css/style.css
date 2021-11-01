@@ -110,7 +110,7 @@ body {
 .subscribe-form input {
   display: block !important;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.2em;
   font-weight: 500;
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -122,9 +122,10 @@ body {
 
 .subscribe-form input[type=submit] {
   background-color: #ECCF94;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   margin: 1em auto 0 auto;
-  border-radius: 0.25rem;
+  min-width: 100%;
+  border-radius: 0.2em;
   font-size: 1rem;
   font-weight: 700;
   color: rgb(59, 59, 59);
