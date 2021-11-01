@@ -10,6 +10,21 @@ const router = express.Router();
 
 // socket.emit("chat message", { username: username, sender: username, message: req.body.message });
 
+router.get("/signup", (req, res, next) => {
+  if (req.session.loggedIn) {
+    req.flash('info', "You're logged in already")
+    res.redirect('/')
+  } else {
+    res.render('signup', {
+      msgs: req.flash('info')
+    })
+  }
+});
+
+router.post("/signup", (req, res, next) => {
+  res.send(req.body)
+});
+
 
 router.get("/login", (req, res, next) => {
   if (req.session.loggedIn) {

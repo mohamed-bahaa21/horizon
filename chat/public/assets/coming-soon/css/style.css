@@ -5,6 +5,9 @@
 }
 
 
+.hide {
+  display: none;
+}
 
 .attribution {
   font-size: 11px;
@@ -105,7 +108,7 @@ body {
 }
 
 .subscribe-form input {
-  display: inline-block !important;
+  display: block !important;
   border: none;
   border-radius: 0.25rem;
   font-weight: 500;
@@ -113,13 +116,14 @@ body {
   padding: 0.5rem 1rem;
   background: rgb(59, 59, 59);
   color: white;
+  margin: 1em 0;
+  text-align: center;
 }
 
 .subscribe-form input[type=submit] {
-  display: inline-block;
   background-color: #ECCF94;
   padding: 0.5rem 1rem;
-  margin-top: -15px;
+  margin: 1em auto 0 auto;
   border-radius: 0.25rem;
   font-size: 1rem;
   font-weight: 700;
@@ -127,6 +131,19 @@ body {
   border: none;
   text-decoration: none;
   cursor: pointer;
+}
+
+hr {
+  margin: 1em 0;
+  color: #ECCF94;
+  background-color: #ECCF94;
+  border-color: #ECCF94;
+}
+
+a {
+  color: #ECCF94;
+  text-decoration: none;
+  border-bottom: 0.1em solid;
 }
 
 @media (max-width: 500px) {
