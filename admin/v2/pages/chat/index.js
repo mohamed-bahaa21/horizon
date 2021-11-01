@@ -10,7 +10,7 @@ import axios from 'axios';
 
 import styles from 'styles/Home.module.css';
 
-import SERVER_URI from ".server.env";
+import CHAT_URI from ".chat.env";
 
 class Chat extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class Chat extends Component {
 
 
     getUsers = () => {
-        axios.get(`http://localhost:5001/api/users`)
+        axios.get(`${CHAT_URI}/api/users`)
             .then(response => {
 
                 const users = response.data

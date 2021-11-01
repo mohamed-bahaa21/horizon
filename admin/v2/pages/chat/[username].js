@@ -19,6 +19,8 @@ import EmptyPlaceholder from 'components/common/EmptyPlaceholder';
 import loginStyles from 'styles/CForm.module.css';
 import styles from 'styles/Home.module.css';
 
+import CHAT_URI from '.chat.env';
+
 export default function DynamicPage() {
     const router = useRouter()
     const {
@@ -37,7 +39,7 @@ export default function DynamicPage() {
 
 
     const { data } = useFetch(
-        `http://localhost:5001/api/users/${username}`, {
+        `${CHAT_URI}/api/users/${username}`, {
         onDataLoad: data => {
             setUserChat(data.chat);
             handleSave()
@@ -60,7 +62,7 @@ export default function DynamicPage() {
         console.log('Submit: ', values);
         // let { username, sender, message } = values;
         // const ok = true;
-        const { ok, data } = await post(`http://localhost:5001/api/users/${username}`, values);
+        const { ok, data } = await post(`${CHAT_URI}/api/users/${username}`, values);
 
         resetForm();
         if (ok) {
