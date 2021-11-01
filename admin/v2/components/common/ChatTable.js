@@ -83,7 +83,9 @@ export const TableRow = ({ columns, row }) => (
         className={classNames(styles.cell, className, cell?.className)}
         style={{ ...style, ...cell?.style }}
       >
-        {render ? render(row) : row[key]}
+        <Link href={`/chat/${row.username}`}>
+          {render ? render(row) : row[key]}
+        </Link>
       </div>
     ))}
   </div>

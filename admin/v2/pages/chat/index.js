@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl';
 import Layout from 'components/layout/Layout';
-import Table from 'components/common/Table';
+import ChatTable from 'components/common/ChatTable';
 import EmptyPlaceholder from 'components/common/EmptyPlaceholder';
 import Button from 'components/common/Button';
 import Plus from 'assets/plus.svg';
@@ -27,7 +27,7 @@ class Chat extends Component {
 
 
     getUsers = () => {
-        axios.get(`http://localhost:5000/api/users`)
+        axios.get(`http://localhost:5001/api/users`)
             .then(response => {
 
                 const users = response.data
@@ -76,7 +76,7 @@ class Chat extends Component {
             <Layout headerType={`content`}>
                 <div>
                     <div className={`${styles.card} ${styles.card100}`}>
-                        <Table
+                        <ChatTable
                             columns={[{
                                 key: 'username',
                                 label: <FormattedMessage id="label.username" defaultMessage="User Name" />,

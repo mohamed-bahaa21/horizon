@@ -37,7 +37,7 @@ export default function DynamicPage() {
 
 
     const { data } = useFetch(
-        `http://localhost:5000/api/users/${username}`, {
+        `http://localhost:5001/api/users/${username}`, {
         onDataLoad: data => {
             setUserChat(data.chat);
             handleSave()
@@ -60,7 +60,7 @@ export default function DynamicPage() {
         console.log('Submit: ', values);
         // let { username, sender, message } = values;
         // const ok = true;
-        const { ok, data } = await post(`http://localhost:5000/api/users/${username}`, values);
+        const { ok, data } = await post(`http://localhost:5001/api/users/${username}`, values);
 
         resetForm();
         if (ok) {
