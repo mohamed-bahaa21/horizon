@@ -1,4 +1,4 @@
-var CHAT_URI = 'http://localhost:5000';
+var CHAT_URI = 'http://localhost:5001';
 
 if (process.env.NODE_ENV === 'development') {
   CHAT_URI = process.env.NEXT_PUBLIC_DEV_CHAT;
