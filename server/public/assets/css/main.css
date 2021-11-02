@@ -48,6 +48,7 @@ body {
     font-size: 16px;
     position: relative;
     overflow-x: hidden;
+    /* background-color: #241F1F; */
 }
 
 p {
@@ -155,6 +156,9 @@ section {
 
 .white {
     color: white !important;
+}
+.bg-white {
+    background-color: #fff;
 }
 
 .lnr {
@@ -512,9 +516,31 @@ footer .subscribe .subscribe-form-2 .form-group {
     padding: 0;
 }
 
+.chat-header {
+    text-align: center;
+    width: 100vw;
+    background-color: #f1b54d;
+    padding: 1em 0;
+    margin: 0;
+    color: #241F1F;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.chat-header:hover {
+    text-align: center;
+    width: 100vw;
+    background-color: #c48e33;
+    padding: 1em 0;
+    margin: 0;
+    color: #413d37;
+    font-size: 1em;
+    font-weight: 700;
+}
+
 .horizon-header {
     position: absolute;
-    top: 0px;
+    /* top: 0px; */
     left: 0;
     right: 0;
     z-index: 999;

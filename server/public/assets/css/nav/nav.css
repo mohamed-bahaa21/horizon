@@ -5,8 +5,10 @@ nav {
 
 #mainnav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    position: relative;
+    top: 1em;
+    /* margin: 0; */
 }
 
 #mainnav>ul>li {
