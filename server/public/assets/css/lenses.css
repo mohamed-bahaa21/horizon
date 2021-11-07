@@ -90,7 +90,7 @@ p:first-of-type
 
     pointer-events: none;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 10rem 1rem;
 }
 
 /* big eye background */
@@ -100,7 +100,7 @@ p:first-of-type
 } */
 
 .stack.loaded .lens_card {
-    border-radius: 50%;
+    border-radius: 10rem 1rem;
     --bg-opacity: 5%;
 
     transition-duration: 2s;
@@ -226,7 +226,7 @@ p:first-of-type
 
 .lens_card {
     content: "";
-    border-radius: 50%;
+    border-radius: 10rem 1rem;
     grid-area: stack;
 
     --z-offset: 0;
@@ -288,8 +288,10 @@ p:first-of-type
 
 @media (max-width: 540px) {
     .lens_card::after {
-        left: -20%;
-        top: 70%;
+        /* left: -20%;
+        top: 70%; */
+        left: 50%;
+        top: 75%;
     }
 }
 
@@ -317,8 +319,16 @@ p:first-of-type
 }
 
 @media (max-width: 540px) {
-    .lens_card.lens_content::after {
-        left: -23%;
+    .lens_card.lens_content::after,
+    .lens_card.lens_padding::after,
+    .lens_card.lens_border::after,
+    .lens_card.lens_background::after,
+    .lens_card.lens_box-shadow::after {
+        left: 50%;
+        top: 75%;
+    }
+    .lens_card::after {
+        background: rgb(11 10 10);
     }
 }
 
@@ -445,6 +455,21 @@ p:first-of-type {
 }
 
 @media (max-width: 750px) {
+    .lens_card.lens_content::after,
+    .lens_card.lens_padding::after,
+    .lens_card.lens_border::after,
+    .lens_card.lens_background::after,
+    .lens_card.lens_box-shadow::after {
+        left: 50%;
+        top: 75%;
+    }
+    .lens_card::after {
+        background: rgb(11 10 10);
+    }
+    .lens_card {
+        width: 60vw;
+        height: 60vw;
+    }
     /* .stack {
         display: none;
     } */

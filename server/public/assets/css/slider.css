@@ -72,6 +72,7 @@ a {
 
 .rslides {
     margin: 0 auto 40px;
+    opacity: 0.2;
 }
 .rslides_tabs {
     list-style: none;

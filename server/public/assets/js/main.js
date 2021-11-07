@@ -22,6 +22,11 @@
         // AOS.refresh();
         $(".stack").addClass("loaded");
     });
+
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        $('#hero-right').insertBefore('#hero-left')
+    }
+    
     /*END PRELOADER JS & REFRESH AOS*/
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();

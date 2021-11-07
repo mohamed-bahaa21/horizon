@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
         }, 3000);
     });
 
-    var slideCount = $('#slider ul li').length+1;
+    var slideCount = $('#slider ul li').length + 1;
     var slideWidth = $('#slider ul li').width();
     var slideHeight = $('#slider ul li').height();
     var sliderUlWidth = slideCount * slideWidth;

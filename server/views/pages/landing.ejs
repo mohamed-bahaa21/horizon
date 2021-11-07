@@ -10,7 +10,7 @@
             <div class="content-bottom">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-md-6" data-aos="fade-right">
+                        <div id="hero-left" class="col-md-6" data-aos="fade-right">
                             <h1 style="font-weight: 900; color: #E2B55D;">
                                 <%= horizon.section_content.name %>
                             </h1>
@@ -29,26 +29,24 @@
                                         <%= horizon.section_content.hero_link_1_name %>
                                     </b></span></a>
                         </div>
-                        <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                        <div id="hero-right" class="col-md-6" data-aos="fade-left" data-aos-delay="200">
                             <!-- <img src="assets/img/mobile-1.png" class="img-fluid d-block mx-auto" alt=""> -->
                             <% if(horizon.section_content.design_state) { %>
                                 <div class="stack">
                                     <div class="lens_content lens_card">
-                                        <p class="white">
+                                        <!-- <p class="white" style="transform: rotate(-45deg);">
                                             <b>
                                                 <span id="desktop-prompt" class="white">Hover</span>
                                                 <span id="mobile-prompt" class="white">Tap</span>
                                                 To See
                                             </b>
-                                        </p>
-                                        <p class="white" style="
-                          font-size: 1rem;
-                          font-weight: 600;
-                          line-height: 1.5rem;
-                        ">
+                                        </p> -->
+                                        <p class="white" style="    font-size: 2em;
+                                            font-weight: 300;
+                                            line-height: 1.25em;
+                                            transform: rotate(0deg) scale(1);">
                                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex est similique
-                                            atque
-                                            vero accusamus, dolorem quae voluptates laudantium magnam quod.
+                                            atque.
                                         </p>
                                     </div>
 
