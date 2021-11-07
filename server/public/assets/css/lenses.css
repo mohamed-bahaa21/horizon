@@ -76,6 +76,7 @@ p:first-of-type
 }
 
 .stack::before {
+    display: none;
     content: "";
     position: fixed;
     top: 0;

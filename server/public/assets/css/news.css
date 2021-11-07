@@ -215,19 +215,20 @@
     .news-slider__img {
         transform: translateY(-50%);
         -webkit-transform: translateY(-50%);
-        width: 90%;
+        /* width: 90%; */
+        width: 300px;
     }
 }
 
 @media screen and (max-width: 576px) {
     .news-slider__img {
-        width: 95%;
+        width: 300px;
     }
 }
 
 @media screen and (max-height: 500px) and (min-width: 992px) {
     .news-slider__img {
-        height: 270px;
+        width: 300px;
     }
 }
 

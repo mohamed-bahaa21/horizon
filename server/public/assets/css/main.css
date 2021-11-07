@@ -138,6 +138,10 @@ section {
     border-radius: 15px 50px;
 }
 
+#about {
+    padding: 0 1rem;
+}
+
 .dark {
     color: #241f1f !important;
 }
@@ -959,6 +963,10 @@ footer .subscribe .subscribe-form-2 .form-group {
     z-index: -1;
     max-width: 100%;
     margin: 0 auto;
+}
+
+svg:not(:root) {
+    width: 75vw;
 }
 
 .features-circle svg g {
