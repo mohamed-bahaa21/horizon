@@ -113,10 +113,12 @@
 </head>
 
 <body data-spy="scroll" data-target="#main_menu" data-offset="70">
-    <!-- Start Preloader -->
-    <div class="preloader">
-        <div class="loader-wrapper">
-            <div class="loader"></div>
+    <% if(preloader) { %>
+        <!-- Start Preloader -->
+        <div class="preloader">
+            <div class="loader-wrapper">
+                <div class="loader"></div>
+            </div>
         </div>
-    </div>
-    <!-- End Preloader -->
+        <!-- End Preloader -->
+        <% } %>

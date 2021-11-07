@@ -87,12 +87,10 @@
                                 <h3>Follow Us</h3>
                                 <ul>
                                     <li class="facebook">
-                                        <a href="#" style="border-radius: 1rem;"><i
-                                                class="fab fa-facebook"></i></a>
+                                        <a href="#" style="border-radius: 1rem;"><i class="fab fa-facebook"></i></a>
                                     </li>
                                     <li class="instagram">
-                                        <a href="#" style="border-radius: 1rem;"><i
-                                                class="fab fa-instagram"></i></a>
+                                        <a href="#" style="border-radius: 1rem;"><i class="fab fa-instagram"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -100,23 +98,25 @@
                             <div class="gray-panel recent-post">
                                 <h3>Recent Post</h3>
                                 <% blogs.forEach(function(blog) { %>
-                                    <div class="post d-flex align-items-top">
-                                        <figure>
-                                            <a href="#"><img src="<%= blog.thumb_img %>" class="img-fluid" alt=""></a>
-                                        </figure>
-                                        <div>
-                                            <h4><a href="<%= blog.id %>">
+                                    <a href="<%= blog.id %>">
+                                        <div class="post d-flex align-items-top">
+                                            <figure>
+                                                <img src="<%= blog.thumb_img %>" class="img-fluid" alt="">
+                                            </figure>
+                                            <div>
+                                                <h4>
                                                     <%= blog.title %>
-                                                </a></h4>
-                                            <ul class="news-meta">
-                                                <li>
-                                                    <!-- <span class="lnr lnr-clock"></span> -->
-                                                    <i class="far fa-clock"></i>
-                                                    <%= blog.date %>
-                                                </li>
-                                            </ul>
+                                                </h4>
+                                                <ul class="news-meta">
+                                                    <li>
+                                                        <!-- <span class="lnr lnr-clock"></span> -->
+                                                        <i class="far fa-clock"></i>
+                                                        <%= blog.date %>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                     <% }) %>
                             </div>
                         </aside>

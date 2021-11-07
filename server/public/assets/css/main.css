@@ -1753,7 +1753,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     display: inline-block;
     font-size: 14px;
     color: #c2c2c2;
-    margin: 0 1em;
+    /* margin: 0 1em; */
 }
 
 .news-meta li svg {

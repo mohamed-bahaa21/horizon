@@ -3,6 +3,7 @@ const Blog = require('../models/Blog.model');
 const About = require('../models/About.model');
 const Gallery = require('../models/Gallery.model');
 const Mail = require('../models/Mail.model');
+const OnlineOrder = require('../models/OnlineOrder.model');
 
 const {
     GET_HORIZON_SECTION_CONTENT,
@@ -412,6 +413,7 @@ exports.subscribe = (req, res) => {
     // console.log(req.body);
 
     const {
+        url,
         mail_email
     } = req.body;
 
@@ -422,6 +424,30 @@ exports.subscribe = (req, res) => {
     email.save()
         .then(() => {
             req.flash('success', 'Subscribed Successfully...');
+            res.redirect(`${url}`)
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
+};
+exports.onlineOrdering = (req, res) => {
+    // console.log(req.body);
+    const {
+        name,
+        email,
+        phone,
+        message
+    } = req.body;
+
+    const onlineOrder = new OnlineOrder({
+        name: name,
+        email: email,
+        phone: phone,
+        message: message
+    });
+
+    onlineOrder.save()
+        .then(() => {
+            req.flash('success', 'Online order was send successfully...');
+            res.redirect('/online_ordering')
         })
         .catch((err) => res.status(400).json('Error: ' + err));
 };

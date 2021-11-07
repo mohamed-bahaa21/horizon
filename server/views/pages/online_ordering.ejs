@@ -70,7 +70,7 @@
                         <div role="tabpanel" class="tab-pane" id="profile">
                             <div class="container-contact100">
                                 <div class="wrap-contact100">
-                                    <form class="contact100-form validate-form">
+                                    <form action="/api/online-ordering" method="POST" class="contact100-form validate-form">
 
                                         <div class="wrap-input100 validate-input"
                                             data-validate="Please enter your name">
@@ -88,7 +88,7 @@
 
                                         <div class="wrap-input100 validate-input"
                                             data-validate="Please enter your phone">
-                                            <input class="input100 brown-input" type="text" name="phone"
+                                            <input class="input100 brown-input" type="number" name="phone"
                                                 placeholder="Phone">
                                             <span class="focus-input100"></span>
                                         </div>

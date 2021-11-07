@@ -30,5 +30,6 @@ route.get('/gallery', apiCtrl.gallery);
 route.post('/postImgToGallery', apiCtrl.postImgToGallery);
 route.get('/mailing-list', apiCtrl.mailList);
 route.post('/subscribe', apiCtrl.subscribe);
+route.post('/online-ordering', apiCtrl.onlineOrdering);
 
 module.exports = route;

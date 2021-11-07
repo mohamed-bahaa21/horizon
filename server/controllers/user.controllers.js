@@ -18,7 +18,9 @@ pages = [
 
 exports.getComingSoon = (req, res, next) => {
     res.render('pages/coming-soon/index', {
-        msgs: req.flash('success')
+        msgs: req.flash('success'),
+        preloader: true,
+        url: '/coming-soon',
     })
 }
 
@@ -42,6 +44,8 @@ exports.getLanding = (req, res) => {
 
                 res.render('pages/landing', {
                     msgs: req.flash('success'),
+                    preloader: false,
+                    url: '/',
                     seo: seo,
                     blogs: blogs,
                     horizon: result[0],
@@ -72,6 +76,8 @@ exports.getBrand = (req, res) => {
 
     res.render('pages/brand', {
         msgs: req.flash('success'),
+        preloader: true,
+        url: '/brands/:brand',
         page_title: "Horizon | " + brand,
         seo: null,
         brand: brand
@@ -98,6 +104,8 @@ exports.getProduct = (req, res) => {
 
     res.render('pages/product', {
         msgs: req.flash('success'),
+        preloader: true,
+        url: '/products/:product',
         page_title: "Horizon | " + product,
         seo: null,
         title: product,
@@ -113,6 +121,8 @@ exports.getAbout = (req, res) => {
 
         res.render('pages/about', {
             msgs: req.flash('success'),
+            preloader: true,
+            url: '/about-us',
             page_title: "Horizon | About",
             seo: null,
             about: result
@@ -126,6 +136,8 @@ exports.getNews = (req, res) => {
         // console.log(result);
         res.render('pages/news', {
             msgs: req.flash('success'),
+            preloader: true,
+            url: '/news',
             page_title: "Horizon | News",
             seo: null,
             blogs: result
@@ -142,7 +154,9 @@ exports.getNew = (req, res) => {
             // console.log(result);
             res.render('pages/new', {
                 msgs: req.flash('success'),
-                page_title: "News | ",
+                preloader: true,
+                url: '/blog/:id',
+                page_title: "News | " + result.title,
                 seo: null,
                 blog: result,
                 blogs: blogs
@@ -155,6 +169,8 @@ exports.getNew = (req, res) => {
 exports.getOnlineOrdering = (req, res) => {
     res.render('pages/online_ordering', {
         msgs: req.flash('success'),
+        preloader: true,
+        url: '/online_ordering',
         page_title: "Horizon | Online Ordering",
         seo: null,
     });
