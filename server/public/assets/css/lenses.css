@@ -323,7 +323,7 @@ p:first-of-type
 }
 
 .lens_card.lens_padding {
-    background: rgba(25, 96, 136, 0.5);
+    background: rgb(36 31 31 / 54%);
     z-index: 4;
     transition-delay: 0.1s;
     -webkit-transition-delay: 0.1s;
@@ -351,8 +351,8 @@ p:first-of-type
     clip-path: circle(40%);
     background: repeating-linear-gradient(
         -45deg,
-        cyan,
-        cyan 1px,
+        #ffffff,
+        #d39529 1px,
         rgba(255, 255, 254, 0.05) 1px,
         rgba(255, 255, 254, 0.05) 10px
     );

@@ -6,8 +6,8 @@ nav {
 #mainnav ul {
     list-style: none;
     padding: 0;
-    position: relative;
-    top: 1em;
+    /* position: relative; */
+    /* top: 1em; */
     /* margin: 0; */
 }
 

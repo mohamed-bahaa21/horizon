@@ -48,7 +48,7 @@ body {
     font-size: 16px;
     position: relative;
     overflow-x: hidden;
-    /* background-color: #241F1F; */
+    /* background-color: #ffd375; */
 }
 
 p {
@@ -629,9 +629,9 @@ footer .subscribe .subscribe-form-2 .form-group {
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
 
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .horizon-header .navbar .navbar-nav .nav-item > .nav-link:hover:before {
@@ -1730,7 +1730,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     display: inline-block;
     font-size: 14px;
     color: #c2c2c2;
-    margin-right: 15px;
+    margin: 0 1em;
 }
 
 .news-meta li svg {
@@ -2143,7 +2143,8 @@ aside.sidebar .gray-panel {
     background: rgba(158, 158, 158, 0.1);
     padding: 2rem;
     margin-bottom: 1rem;
-    border-radius: 1rem 7rem;
+    /* border-radius: 1rem 7rem; */
+    border-radius: 1rem 1rem;
     box-shadow: 0px 14px 80px rgb(34 35 58 / 20%);
 }
 
@@ -2214,8 +2215,7 @@ aside.sidebar .follow-me ul {
 }
 
 aside.sidebar .follow-me ul li {
-    margin-right: 10px;
-    margin-bottom: 10px;
+    
 }
 
 aside.sidebar .follow-me ul li svg {
@@ -2234,10 +2234,16 @@ aside.sidebar .follow-me ul li a {
 }
 
 aside.sidebar .follow-me ul li.facebook a {
+    border-radius: 1rem;
+}
+aside.sidebar .follow-me ul li.facebook a:hover {
     background: #4b69b1;
 }
 
 aside.sidebar .follow-me ul li.instagram a {
+    border-radius: 1rem;
+}
+aside.sidebar .follow-me ul li.instagram a:hover {
     background: radial-gradient(
         circle at 30% 107%,
         #fdf497 0%,
@@ -2316,7 +2322,8 @@ aside.sidebar .tags ul li {
     display: inline-block;
     padding: 1rem;
     background-color: black;
-    border-radius: 1rem 3rem;
+    /* border-radius: 1rem 3rem; */
+    border-radius: 1rem 1rem;
     font-weight: 700;
 }
 

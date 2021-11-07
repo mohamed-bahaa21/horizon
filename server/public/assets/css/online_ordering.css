@@ -3,15 +3,20 @@
     justify-self: center;
 }
 
-.nav-tabs {
-    border-bottom: 0 !important;
+.tab-pane div {
+    margin: 1rem auto;
 }
 
-ul {
+.nav-tabs {
+    border-bottom: 0 !important;
+    justify-content: center;
+}
+
+/* ul {
     margin: 0 auto;
     justify-content: center;
     margin-bottom: 3rem !important;
-}
+} */
 
 .btn-primary:active {
     background-color: var(--main-color) !important;

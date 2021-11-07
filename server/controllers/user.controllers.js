@@ -142,7 +142,7 @@ exports.getNew = (req, res) => {
             // console.log(result);
             res.render('pages/new', {
                 msgs: req.flash('success'),
-                page_title: "News | " + blog.title,
+                page_title: "News | ",
                 seo: null,
                 blog: result,
                 blogs: blogs
