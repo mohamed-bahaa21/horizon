@@ -29,8 +29,10 @@
         if (scroll >= 500) {
             //clearHeader, not clearheader - caps H
             $(".stack").removeClass("loaded");
+            $(".rslides").css('opacity', "1");
         } else {
             $(".stack").addClass("loaded");
+            $(".rslides").css('opacity', "0.1");
         }
     }); //missing );
 

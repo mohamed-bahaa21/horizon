@@ -68,7 +68,7 @@ p:first-of-type
 
 /* OLD LENSES */
 .stack {
-    padding: 3rem 0;
+    padding: 0rem 0;
     display: grid;
     grid: [stack] / [stack];
     perspective: 5000;
@@ -445,7 +445,7 @@ p:first-of-type {
 }
 
 @media (max-width: 750px) {
-    .stack {
+    /* .stack {
         display: none;
-    }
+    } */
 }

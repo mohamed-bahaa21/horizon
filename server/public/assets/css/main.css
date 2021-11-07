@@ -381,6 +381,9 @@ footer .subscribe .subscribe-form-2 .form-group {
     .img-1000 {
         max-width: 50vw;
     }
+    .navbar-brand .img-fluid {
+        width: 25em !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -490,10 +493,16 @@ footer .subscribe .subscribe-form-2 .form-group {
 ------------------------------*/
 #hero-section {
     /* background: linear-gradient(355deg, #241f1f 90%, #0d0b0b 0%); */
+    text-align: center;
+    height: max-content;
 }
 
 .navbar-brand {
     width: 15vw;
+}
+
+.navbar-brand .img-fluid {
+    width: 15em !important;
 }
 
 .nav-link {
@@ -522,7 +531,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     background-color: #f1b54d;
     padding: 1em 0;
     margin: 0;
-    color: #241F1F;
+    color: #241f1f;
     font-size: 1em;
     font-weight: 700;
 }
@@ -601,12 +610,13 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .horizon-header .navbar-light .navbar-toggler {
-    border-color: #fff;
+    border-color: #241f1f;
     outline: none;
+    margin: 0 1rem;
 }
 
 .horizon-header .navbar-light .navbar-toggler-icon {
-    background-image: url("../imgs/horizon/logoIcon.png");
+    background-image: url("../imgs/horizon/menu-icon.png");
 }
 
 .horizon-header .navbar .navbar-nav .nav-item > .nav-link {
@@ -744,11 +754,16 @@ footer .subscribe .subscribe-form-2 .form-group {
     }
 
     .horizon-header .navbar .navbar-nav .nav-item > .nav-link {
-        padding: 10px;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-size: 2em !important;
     }
 
     .horizon-header .dropdown-menu .dropdown-item {
-        padding: 10px;
+        padding: 1rem 2rem;
+    }
+    #mainnav ul.submenu>li>a {
+        font-size: 1.5em;
     }
 }
 
@@ -791,16 +806,21 @@ footer .subscribe .subscribe-form-2 .form-group {
     color: #fff;
     text-transform: uppercase;
     line-height: 90px;
+    margin: 2rem 0;
 }
 
 .slide .content-bottom p {
     color: #fff;
-    max-width: 400px;
+    max-width: 100%;
 }
 
 @media (max-width: 1366px) {
     .slide .content-bottom {
-        padding-top: 170px;
+        padding-top: 5rem;
+    }
+    .stack {
+        margin: 10rem 0;
+        /* padding-bottom: 65rem; */
     }
 }
 
@@ -814,6 +834,9 @@ footer .subscribe .subscribe-form-2 .form-group {
     .slide .content-bottom h2 {
         font-size: 60px;
         line-height: 60px;
+    }
+    .stack {
+        margin: 10rem 0;
     }
 }
 
@@ -1764,7 +1787,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 @media (max-width: 768px) {
     .slide .content-bottom {
-        padding-bottom: 30vh;
+        /* padding-bottom: 30vh; */
     }
 
     .recent-news .recent-news-slider .item h3 {
@@ -2215,7 +2238,6 @@ aside.sidebar .follow-me ul {
 }
 
 aside.sidebar .follow-me ul li {
-    
 }
 
 aside.sidebar .follow-me ul li svg {
