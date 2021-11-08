@@ -35,41 +35,42 @@ export default function Home() {
         <div className={styles.grid}>
           <a href="/content" className={styles.card}>
             <h2>Content Management &rarr;</h2>
-            <p>Control what user can see...</p>
+            <p>Where changing content doesn't need a Developer</p>
           </a>
 
           <a href="/seo" className={styles.card}>
             <h2>SEO &rarr;</h2>
-            <p>Control how engines will search...</p>
+            <p>Search Engines can't exist without Optimization.</p>
           </a>
-        </div>
 
-        <a href="/analysis" className={styles.card}>
-          <h2>Analysis &rarr;</h2>
-          <p>See what user did...</p>
-        </a>
+          <a href="/analysis" className={styles.card}>
+            <h2>Analysis &rarr;</h2>
+            <p>where secrets become stories.</p>
+          </a>
 
-        <div className={styles.grid}>
           <a href="/mailing" className={styles.card}>
             <h2>Mailing List &rarr;</h2>
-            <p>Send important messages...</p>
+            <p>Send important messages.</p>
           </a>
 
           <a href="/onlineOrdering" className={styles.card}>
             <h2>Online Ordering &rarr;</h2>
-            <p>Who ordered your product...</p>
+            <p>Who ordered your product.</p>
+          </a>
+
+          <a href="/chat" className={styles.card}>
+            <h2>Chat &rarr;</h2>
+            <p>Keep no distance from your customers.</p>
+          </a>
+
+          <a href="/gallery" className={styles.card}>
+            <h2>Gallery &rarr;</h2>
+            <p>your photo collection.</p>
           </a>
         </div>
 
-        <a href="/chat" className={styles.card}>
-          <h2>Chat &rarr;</h2>
-          <p>Keep no distance from your customers...</p>
-        </a>
-
-        <a href="/gallery" className={styles.card}>
-          <h2>Gallery &rarr;</h2>
-          <p>your photo collection...</p>
-        </a>
+        <div className={styles.grid}>
+        </div>
       </main>
       {/* </div> */}
     </Layout>
