@@ -57,8 +57,9 @@ p {
     /* color: #241F1F !important; */
 }
 
-section {
+section:nth-child(5) {
     padding: 0 1rem;
+    margin: 3rem auto;
 }
 
 .sec-desc {
@@ -966,7 +967,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 svg:not(:root) {
-    width: 75vw;
+    width: 100%;
 }
 
 .features-circle svg g {
