@@ -12,7 +12,7 @@
 */
 
 body {
-  background-color: #0b0700;
+  background-color: #e9e2c4;
   font-family: "Calibri", "Roboto", sans-serif;
 }
 
@@ -25,16 +25,16 @@ body {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  box-shadow: 0.2em 0.2em 5em -1em #462e0b;
-  background-color: #231705;
+  box-shadow: 0.2em 0.2em 5em -1em #c5933b;
+  background-color: #c5933b;
   overflow: hidden;
 }
 
 .top_menu {
-  background-color: #0f0a01;
+  background-color: #c5933b;
   width: 100%;
   padding: 1rem 0.5rem;
-  box-shadow: 0 1px 30px #000000;
+  box-shadow: 0 1px 30px #c5933b;
 }
 .top_menu .buttons {
   margin: 0.5rem;
@@ -50,7 +50,7 @@ body {
   /* position: relative; */
 }
 .top_menu .buttons .button.close {
-  background-color: #fa0202;
+  background-color: #241904;
   opacity: 0.5;
 }
 .top_menu .buttons .button.close:hover {
@@ -74,7 +74,7 @@ body {
   display: inline-block;
 }
 .top_menu .title:hover {
-  color: #c2a976;
+  color: #261a04;
 }
 
 .messages {
@@ -85,13 +85,13 @@ body {
   height: 72vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #0f0a01;
+  background-color: #f8f6f1;
 }
 
 .bottom_wrapper {
   position: relative;
   width: 100%;
-  background-color: #0f0a01;
+  background-color: #c5933b;
   padding: 10px 10px;
   position: absolute;
   bottom: 0;
@@ -101,7 +101,7 @@ body {
   height: 50px;
   border-radius: 0.25em;
   border: 1px solid #bcbdc0;
-  background-color: #271b04;
+  background-color: #f8f6f1;
   width: calc(100% - 160px);
   position: relative;
   padding: 0 20px;
@@ -113,8 +113,9 @@ body {
   width: calc(100% - 40px);
   position: absolute;
   outline-width: 0;
-  color: gray;
-  background-color: #271b04;
+  color: #0b0700;
+  background-color: #f8f6f1;
+  font-weight: 700;
 }
 .bottom_wrapper .send_message {
   /* width: 140px; */
@@ -123,9 +124,9 @@ body {
   margin: 0.25em;
   display: inline-block;
   border-radius: 0.5rem;
-  background-color: #0b0700;
-  border: 2px solid #3b3b3b;
-  color: #eccf94;
+  background-color: #f8f6f1;
+  border: 2px solid #c5933b;
+  color: #c5933b;
   cursor: pointer;
   text-align: center;
   float: right;
@@ -161,8 +162,8 @@ body {
   display: inline-block;
   font-size: 1.25em;
   font-weight: 700;
-  color: #ddd0b5;
-  background-color: #6d4907;
+  color: #f8f6f1;
+  background-color: #c5933b;
   border-radius: 0.25em;
   padding: 0.2em 0.5em;
   margin: 0;
@@ -171,7 +172,7 @@ body {
 
 .messages > li > span {
   display: block;
-  color: #ddd0b5;
+  color: #231804;
   opacity: 0.5;
   font-size: 1em;
   font-weight: 500;
