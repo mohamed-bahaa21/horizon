@@ -430,22 +430,23 @@ exports.subscribe = (req, res) => {
         })
         .catch((err) => res.status(400).json('Error: ' + err));
 };
+exports.getOnlineOrdering = (req, res) => {
+    OnlineOrder.find()
+        .then(orders => {
+            res.json(orders);
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
+
 exports.onlineOrdering = (req, res) => {
     // console.log(req.body);
-    const {
-        name,
-        email,
-        phone,
-        message
-    } = req.body;
-
+    const { name, email, phone, message } = req.body;
     const onlineOrder = new OnlineOrder({
         name: name,
         email: email,
         phone: phone,
         message: message
     });
-
     onlineOrder.save()
         .then(() => {
             req.flash('success', 'Online order was send successfully...');

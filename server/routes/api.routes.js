@@ -30,6 +30,7 @@ route.get('/gallery', apiCtrl.gallery);
 route.post('/postImgToGallery', apiCtrl.postImgToGallery);
 route.get('/mailing-list', apiCtrl.mailList);
 route.post('/subscribe', apiCtrl.subscribe);
+route.get('/online-ordering', apiCtrl.getOnlineOrdering);
 route.post('/online-ordering', apiCtrl.onlineOrdering);
 
 // Editorjs
