@@ -5,6 +5,8 @@ const Gallery = require('../models/Gallery.model');
 const Mail = require('../models/Mail.model');
 const OnlineOrder = require('../models/OnlineOrder.model');
 
+const Editor = require('../models/Editor.model');
+
 const {
     GET_HORIZON_SECTION_CONTENT,
     POST_HORIZON_SECTION_CONTENT,
@@ -452,3 +454,28 @@ exports.onlineOrdering = (req, res) => {
         .catch((err) => res.status(400).json('Error: ' + err));
 };
 
+exports.getEditorjs = (req, res) => {
+    Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
+        res.render('pages/editor', {
+            blocks: data.blocks
+        })
+    })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
+
+exports.editorjs = (req, res) => {
+
+    const blocks = req.body;
+
+    // console.log("Blocks from server: ", blocks);
+
+    const editor = new Editor({
+        blocks: blocks
+    });
+
+    editor.save()
+        .then(() => {
+            res.status(200).json('Editor saved successfully.');
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
