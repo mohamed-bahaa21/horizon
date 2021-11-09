@@ -8,7 +8,7 @@ if (typeof window !== "undefined") {
 }
 
 export default function Editor() {
-    const [blocks, setBlocks] = useState();
+    const [blocks, setBlocks] = useState(null);
 
     const { data } = useFetch(
         'http://localhost:5000/api/getNews',
@@ -22,7 +22,7 @@ export default function Editor() {
 
     return (
         <div>
-            {NewsEditor &&
+            {NewsEditor && (blocks != null) &&
                 <NewsEditor blocks={blocks} />
             }
         </div>

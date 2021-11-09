@@ -457,13 +457,13 @@ exports.onlineOrdering = (req, res) => {
 // ==============================================================
 // News System
 exports.getNews = (req, res) => {
-    Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
         res.send(data)
     })
         .catch((err) => res.status(400).json('Error: ' + err));
 }
 exports.getEditorjs = (req, res) => {
-    Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
         res.render('pages/editor', {
             blocks: data.blocks
         })
@@ -474,7 +474,7 @@ exports.getEditorjs = (req, res) => {
 exports.editorjs = (req, res) => {
     const blocks = req.body;
     // console.log("Blocks from server: ", blocks);
-    Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
 
         data.blocks = blocks;
         data.save()

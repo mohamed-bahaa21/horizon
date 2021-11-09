@@ -2,6 +2,7 @@ const Horizon = require('../models/Horizon.model');
 const Seo = require('../models/Seo.model');
 const Blog = require('../models/Blog.model');
 const About = require('../models/About.model');
+const Editor = require('../models/Editor.model');
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
@@ -149,20 +150,25 @@ exports.getNews = (req, res) => {
 exports.getNew = (req, res) => {
     const blogID = req.params.id;
 
-    Blog.findById(blogID).then(result => {
-        Blog.find().limit(3).then(blogs => {
-            // console.log(result);
-            res.render('pages/new', {
-                msgs: req.flash('success'),
-                preloader: true,
-                url: '/blog/:id',
-                page_title: "News | " + result.title,
-                seo: null,
-                blog: result,
-                blogs: blogs
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' })
+        .then(editor => {
+            Blog.findById(blogID).then(result => {
+                Blog.find().limit(3).then(blogs => {
+                    // console.log(result);
+                    res.render('pages/new', {
+                        msgs: req.flash('success'),
+                        preloader: true,
+                        url: '/blog/:id',
+                        page_title: "News | " + result.title,
+                        seo: null,
+                        blog: result,
+                        blogs: blogs,
+                        blocks: editor.blocks
+                    });
+                });
             });
-        });
-    });
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
 };
 
 // User Get Online Ordering
