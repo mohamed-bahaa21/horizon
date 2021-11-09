@@ -23,7 +23,10 @@ import SimpleImage from '@editorjs/simple-image'
 // import { data } from "data/data";
 import SERVER_URI from ".server.env";
 
+import styles from 'styles/Home.module.css';
+
 function NewsEditor(blocks) {
+    const [disabled, setDisabled] = useState(true)
     const EditorJSComp = createReactEditorJS()
     const EDITOR_JS_TOOLS = {
         header: Header,
@@ -56,6 +59,9 @@ function NewsEditor(blocks) {
         tools: EDITOR_JS_TOOLS,
         data: blocks,
         readOnly: false,
+        onChange: () => {
+            setDisabled(false)
+        }
     });
 
     const postBlocks = () => {
@@ -106,9 +112,13 @@ function NewsEditor(blocks) {
                 defaultValue={data}
                 readOnly={false}
             /> */}
-            <button type="button" onClick={postBlocks}>
-                Submit
-            </button>
+
+            {disabled ? (<button type="button" disabled>Submit</button>) :
+                (
+                    <button type="button" onClick={postBlocks} className={`${styles.btn}`} disabled={disabled}>
+                        Submit
+                    </button>
+                )}
 
             <div id="editor"></div>
 
