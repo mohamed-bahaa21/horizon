@@ -33,6 +33,7 @@ route.post('/subscribe', apiCtrl.subscribe);
 route.post('/online-ordering', apiCtrl.onlineOrdering);
 
 // Editorjs
+route.get('/getNews', apiCtrl.getNews);
 route.get('/editorjs', apiCtrl.getEditorjs);
 route.post('/editorjs', apiCtrl.editorjs);
 

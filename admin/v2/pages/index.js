@@ -43,6 +43,11 @@ export default function Home() {
             <p>Search Engines can't exist without Optimization.</p>
           </a>
 
+          <a href="/news" className={styles.card}>
+            <h2>News &rarr;</h2>
+            <p>Last news is important.</p>
+          </a>
+
           <a href="/analysis" className={styles.card}>
             <h2>Analysis &rarr;</h2>
             <p>where secrets become stories.</p>

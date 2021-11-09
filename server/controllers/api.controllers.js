@@ -454,6 +454,14 @@ exports.onlineOrdering = (req, res) => {
         .catch((err) => res.status(400).json('Error: ' + err));
 };
 
+// ==============================================================
+// News System
+exports.getNews = (req, res) => {
+    Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
+        res.send(data)
+    })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
 exports.getEditorjs = (req, res) => {
     Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
         res.render('pages/editor', {
@@ -464,15 +472,25 @@ exports.getEditorjs = (req, res) => {
 }
 
 exports.editorjs = (req, res) => {
-
     const blocks = req.body;
-
     // console.log("Blocks from server: ", blocks);
+    Editor.findOne({ _id: '6189b4607a911b35009dfd48' }).then(data => {
 
+        data.blocks = blocks;
+        data.save()
+            .then(() => {
+                res.status(200).json('Editor saved successfully.');
+            })
+            .catch((err) => res.status(400).json('Error: ' + err));
+
+    });
+}
+
+exports.newEditor = (req, res) => {
+    const blocks = req.body;
     const editor = new Editor({
         blocks: blocks
     });
-
     editor.save()
         .then(() => {
             res.status(200).json('Editor saved successfully.');

@@ -24,7 +24,7 @@ const horizonRoute = require('./routes/horizon.routes');
 const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.LOCAL_MONGODB_URI;
 // connect session w/ mongodb
 const store = new MongoDBStore({
     uri: MONGODB_URI,
