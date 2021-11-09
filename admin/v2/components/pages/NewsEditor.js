@@ -21,6 +21,7 @@ import InlineCode from '@editorjs/inline-code'
 import SimpleImage from '@editorjs/simple-image'
 
 // import { data } from "data/data";
+import SERVER_URI from ".server.env";
 
 function NewsEditor(blocks) {
     const EditorJSComp = createReactEditorJS()
@@ -60,7 +61,7 @@ function NewsEditor(blocks) {
     const postBlocks = () => {
         editor.save().then(async (outputData) => {
             // console.log('POST: ', outputData.blocks)
-            const { ok, data } = await post('http://localhost:5000/api/editorjs', outputData.blocks);
+            const { ok, data } = await post(`${SERVER_URI}/api/editorjs`, outputData.blocks);
 
             if (ok) {
                 console.log("Submited correctly");
