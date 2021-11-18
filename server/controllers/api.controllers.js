@@ -324,16 +324,18 @@ exports.getBlogsCount = (req, res) => {
 };
 
 exports.createNewBlogData = (req, res) => {
-    const { title, url, summary, thumb_img, main_img } = req.body;
+    const { title, summary, thumb_img, main_img } = req.body;
 
     const newEditor = new Editor();
     newEditor.name = "Article";
     newEditor.blocks = [];
 
     newEditor.save().then(() => {
+        const newUrl = title.replace(" ", "-");
+
         const newBlog = new Blog();
         newBlog.title = title;
-        newBlog.url = url + newBlog._id;
+        newBlog.url = newUrl + "-" + newBlog._id;
         newBlog.summary = summary;
         newBlog.thumb_img = thumb_img;
         newBlog.main_img = main_img;
@@ -365,11 +367,10 @@ exports.getBlogContentData = (req, res) => {
 
 exports.editBlogMetaData = (req, res) => {
     const { blogId } = req.params;
-    const { title, url, summary, thumb_img, main_img } = req.body;
+    const { title, summary, thumb_img, main_img } = req.body;
 
     Blog.findOne({ url: blogId }).then((blog) => {
         blog.title = title;
-        blog.url = url;
         blog.summary = summary;
         blog.thumb_img = thumb_img;
         blog.main_img = main_img;

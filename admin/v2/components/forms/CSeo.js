@@ -25,6 +25,7 @@ const Intl = ({ children }) => {
 
 export default function CSeo({
   page_id,
+  formFieldsName,
   formFields,
   formFieldsType,
   init_formFieldsValues,
@@ -45,6 +46,7 @@ export default function CSeo({
           page_id: page_id,
           ...data
         });
+        setEditSection(true)
         setMessage('Data loaded successfully !')
       },
     },
@@ -81,13 +83,13 @@ export default function CSeo({
         <div>
           <FormattedMessage id={`label.${page_id}`} defaultMessage={`${page_id}`} />
         </div>
-        <Button
+        {/* <Button
           icon={<Pen />}
           size="small"
           onClick={() => (editSection ? setEditSection(false) : setEditSection(true))}
         >
           <FormattedMessage id="label.edit" defaultMessage="Edit" />
-        </Button>
+        </Button> */}
       </PageHeader>
 
       {/* <Table columns={columns} rows={data} empty={empty} /> */}
@@ -97,6 +99,7 @@ export default function CSeo({
           {/* <Modal title={<FormattedMessage id="label.edit-website" defaultMessage="Edit section" />}> */}
           {/* {console.log("seoValues: ", seoValues)} */}
           <CSeoForm
+            formFieldsName={formFieldsName}
             formFields={formFields}
             formFieldsType={formFieldsType}
             initValues={init_formFieldsValues}

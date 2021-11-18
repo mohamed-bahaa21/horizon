@@ -102,7 +102,10 @@ export default function NewsPage() {
     <>
       <PageHeader>
         <div>
-          <FormattedMessage id="label.blogs" defaultMessage="News" />
+          <b><FormattedMessage id="label.blogs" defaultMessage={`News`} /></b>
+          <span style={{ backgroundColor: '#D39529', margin: '0.5rem', padding: '0.25rem 0.5rem', color: 'white', borderRadius: '0.25rem' }}>{data.length}</span>
+          {/* <span style={{ fontSize: '2em' }}> / </span> */}
+          <span style={{ backgroundColor: '#d32929', padding: '0.25rem 0.5rem', color: 'white', borderRadius: '0.25rem' }}>Maximum Reached</span>
         </div>
         <Button icon={<Plus />} size="small" onClick={() => setAddBlog(true)} disabled>
           <FormattedMessage id="label.add-blog" defaultMessage="Add Blog" />

@@ -41,6 +41,8 @@ const seo = ({ Component, pageProps }) => {
           <link rel="icon" href="/favicon.png" />
         </Head>
 
+
+
         <Intl>
           <main className={styles.main}>
             <h1 className={styles.title}>
@@ -51,10 +53,11 @@ const seo = ({ Component, pageProps }) => {
               <code className={styles.code}>Search Engines can't exist without Optimization</code>
             </p>
 
-            <div className={styles.flex}>
-              <a href="/" className={styles.card}>
-                <h2>&larr; Home</h2>
-              </a>
+            <a href="/" className={styles.card}>
+              <h2>&larr; Home</h2>
+            </a>
+
+            <div className={styles.grid}>
               <a href="/seo/landing/" className={styles.card}>
                 <h2>Landing &rarr;</h2>
               </a>

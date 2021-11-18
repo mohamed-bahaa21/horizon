@@ -15,6 +15,27 @@ export default {
   },
   // ======================================================
   sectionID: ld3,
+  formFieldsName: [
+    'Image 1 Title',
+    'Image 1 Sub',
+    'Image 1 Link',
+
+    'Image 2 Title',
+    'Image 2 Sub',
+    'Image 2 Link',
+
+    'Image 3 Title',
+    'Image 3 Sub',
+    'Image 3 Link',
+
+    'Image 4 Title',
+    'Image 4 Sub',
+    'Image 4 Link',
+
+    'Image 5 Title',
+    'Image 5 Sub',
+    'Image 5 Link',
+  ],
   formFields: [
     'img_1_title',
     'img_1_sub',

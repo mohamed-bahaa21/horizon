@@ -33,15 +33,22 @@ export default function landing() {
 
     return (
         <Layout headerType={`content`}>
-            <div className={styles.flex}>
-                <a href="/" className={styles.card}>
-                    <h2>&larr; Home</h2>
-                </a>
 
-                <a href="/content" className={styles.card}>
-                    <h2>&larr; SEO</h2>
-                </a>
-            </div>
+            <main className={styles.main}>
+                <h1 className={styles.title}>
+                    <span className={styles.orange}>SEO</span>
+                </h1>
+
+                <div className={styles.grid}>
+                    <a href="/" className={styles.card}>
+                        <h2>&larr; Home</h2>
+                    </a>
+
+                    <a href="/seo" className={styles.card}>
+                        <h2>&larr; SEO</h2>
+                    </a>
+                </div>
+            </main>
             <SeoPage />
         </Layout>
     );

@@ -15,6 +15,9 @@ export default {
   },
   // ======================================================
   sectionID: ss,
+  formFieldsName: [
+    'Description',
+  ],
   formFields: [
     'ss_desc',
   ],

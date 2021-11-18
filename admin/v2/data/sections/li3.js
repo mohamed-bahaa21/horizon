@@ -15,6 +15,15 @@ export default {
   },
   // ======================================================
   sectionID: li3,
+  formFieldsName: [
+    'Paragraph 1',
+    'Paragraph 2',
+    'Paragraph 3',
+    'Paragraph 4',
+    'Paragraph 5',
+    'Paragraph 6',
+    'Image',
+  ],
   formFields: [
     'li3_parag_1',
     'li3_parag_2',

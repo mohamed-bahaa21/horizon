@@ -22,6 +22,7 @@ const validate = ({ name }) => {
 };
 
 export default function CSectionForm({
+  formFieldsName,
   formFields,
   formFieldsType,
   initValues,
@@ -57,6 +58,15 @@ export default function CSectionForm({
         {/* after:  */}
         {() => (
           <Form>
+            <FormButtons>
+              <Button type="submit" variant="action">
+                <FormattedMessage id="label.submit" defaultMessage="Submit" />
+              </Button>
+              <Button onClick={onClose}>
+                <FormattedMessage id="label.cancel" defaultMessage="Cancel" />
+              </Button>
+            </FormButtons>
+            <br />
             <Field
               name={`sectionID`}
               type={`text`}
@@ -67,7 +77,7 @@ export default function CSectionForm({
               formFields.map((field, index) => (
                 <FormRow>
                   <label htmlFor={`${field}`}>
-                    <FormattedMessage id={`label.${field}`} defaultMessage={`${field}`} />
+                    <FormattedMessage id={`label.${field}`} defaultMessage={`${formFieldsName[index]}`} />
                   </label>
                   <div>
                     <Field
@@ -80,15 +90,6 @@ export default function CSectionForm({
                 </FormRow>
               ))
             }
-
-            <FormButtons>
-              <Button type="submit" variant="action">
-                <FormattedMessage id="label.submit" defaultMessage="Submit" />
-              </Button>
-              <Button onClick={onClose}>
-                <FormattedMessage id="label.cancel" defaultMessage="Cancel" />
-              </Button>
-            </FormButtons>
             <FormMessage>{message}</FormMessage>
           </Form>
         )}

@@ -19,6 +19,7 @@ export default function SeoPage() {
       <CSeo
         sectionHeader="Landing Page"
         page_id={seo.landing.page_id}
+        formFieldsName={seo.landing.formFieldsName}
         formFields={seo.landing.formFields}
         formFieldsType={seo.landing.formFieldsType}
         init_formFieldsValues={seo.landing.init_formFieldsValues}

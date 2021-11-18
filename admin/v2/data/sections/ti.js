@@ -15,6 +15,19 @@ export default {
   },
   // ======================================================
   sectionID: ti,
+  formFieldsName: [
+    'Description',
+    'Item 1 Title',
+    'Item 1 Content',
+    'Item 2 Title',
+    'Item 2 Content',
+    'Item 3 Title',
+    'Item 3 Content',
+    'Item 4 Title',
+    'Item 4 Content',
+    'Item 5 Title',
+    'Item 5 Content',
+  ],
   formFields: [
     'ti_desc',
     'ti_item_1_title',

@@ -15,6 +15,31 @@ export default {
   },
   // ======================================================
   sectionID: ld2,
+  formFieldsName: [
+    "Design 1 Header",
+    "Design 1 Sub Header",
+    "Design 1 Image",
+    "Design 1 Content Before",
+    "Design 1 Content After",
+
+    "Design 2 Header",
+    "Design 2 Sub Header",
+    "Design 2 Image",
+    "Design 2 Content Before",
+    "Design 2 Content After",
+
+    "Design 3 Header",
+    "Design 3 Sub Header",
+    "Design 3 Image",
+    "Design 3 Content Before",
+    "Design 3 Content After",
+
+    "Design 4 Header",
+    "Design 4 Sub Header",
+    "Design 4 Image",
+    "Design 4 Content Before",
+    "Design 4 Content After",
+  ],
   formFields: [
     "ld2_design_1_header",
     "ld2_design_1_sub_header",

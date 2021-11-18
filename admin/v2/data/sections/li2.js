@@ -15,6 +15,21 @@ export default {
   },
   // ======================================================
   sectionID: li2,
+  formFieldsName: [
+    'Image',
+    'Left Paragraph 1 Header',
+    'Left Paragraph 1 Content',
+    'Left Paragraph 2 Header',
+    'Left Paragraph 2 Content',
+    'Left Paragraph 3 Header',
+    'Left Paragraph 3 Content',
+    'Right Paragraph 1 Header',
+    'Right Paragraph 1 Content',
+    'Right Paragraph 2 Header',
+    'Right Paragraph 2 Content',
+    'Right Paragraph 3 Header',
+    'Right Paragraph 3 Content',
+  ],
   formFields: [
     'li2_image',
     'li2_lft_parag_1_header',

@@ -54,7 +54,14 @@ function Table({
           {!children &&
             rows.map((row, index) => {
               const id = rowKey ? rowKey(row) : index;
-              return <button onClick={() => { setView(row) }}><TableRow key={id} columns={columns} row={row} /></button>;
+              return (
+                <>
+                  <button onClick={() => { setView(row) }} >
+                    <TableRow key={id} columns={columns} row={row} />
+                  </button>
+                  <br />
+                </>
+              );
             })}
           {children}
         </div>
@@ -103,7 +110,7 @@ export const TableRow = ({ columns, row }) => (
         {render ? render(row) : row[key]}
       </div>
     ))}
-  </div>
+  </div >
 );
 
 // export const ViewScreen = (data) => (

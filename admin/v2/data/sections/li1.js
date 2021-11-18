@@ -15,6 +15,13 @@ export default {
     },
     // ======================================================
     sectionID: li1,
+    formFieldsName: [
+        'Image',
+        'Paragraph 1',
+        'Paragraph 2',
+        'Paragraph 3',
+        'Paragraph 4',
+    ],
     formFields: [
         'li1_img',
         'li1_parag_1',

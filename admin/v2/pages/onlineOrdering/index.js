@@ -55,9 +55,9 @@ class Mailing extends Component {
         let tableItems = []
         this.state.mailingList.map(item => {
             console.log(item.email);
-            let row = { 
-                "email": item.email, 
-                name: item.name, 
+            let row = {
+                "email": item.email,
+                name: item.name,
                 phone: item.phone,
                 message: item.message
             }
@@ -79,6 +79,15 @@ class Mailing extends Component {
 
         return (
             <Layout headerType={`content`}>
+                <main className={styles.main}>
+                    <h1 className={styles.title}>
+                        <span className={styles.orange}>Online Ordering</span>
+                    </h1>
+
+                    <a href="/" className={styles.card}>
+                        <h2>&larr; Home</h2>
+                    </a>
+                </main>
                 <div>
                     <div className={`${styles.card} ${styles.card100}`}>
                         <OnlineOrderingTable

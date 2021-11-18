@@ -56,7 +56,7 @@ const content = ({ Component, pageProps }) => {
               </a>
 
             <div className={styles.grid}>
-              <a href="/content/landing/" className={styles.card}>
+              <a href="/content/landing/hero_section" className={styles.card}>
                 <h2>Landing &rarr;</h2>
               </a>
 

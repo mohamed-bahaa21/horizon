@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import styles from './NavMenu.module.css';
 
-function NavMenu({ options = [], className, onSelect = () => {} }) {
+function NavMenu({ options = [], className, onSelect = () => { } }) {
   const router = useRouter();
 
   return (

@@ -7,9 +7,9 @@ import SERVER_URI from ".server.env";
 export default function Accessories() {
     const [blocks, setBlocks] = useState(null);
 
-    let NewsEditor;
+    let ContentEditor;
     if (typeof window !== "undefined") {
-        NewsEditor = dynamic(() => import('components/pages/NewsEditor'));
+        ContentEditor = dynamic(() => import('components/pages/ContentEditor'));
     }
 
     const { data } = useFetch(`${SERVER_URI}/api/getAccessoriesData`, {
@@ -21,8 +21,8 @@ export default function Accessories() {
 
     return (
         <div>
-            {NewsEditor && (blocks != null) &&
-                <NewsEditor blocks={blocks} postUrl={`${SERVER_URI}/api/postAccessoriesData`} />
+            {ContentEditor && (blocks != null) &&
+                <ContentEditor blocks={blocks} postUrl={`${SERVER_URI}/api/postAccessoriesData`} />
             }
         </div>
     )

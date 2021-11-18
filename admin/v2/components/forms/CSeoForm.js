@@ -22,6 +22,7 @@ const validate = ({ name }) => {
 };
 
 export default function CSeoForm({
+  formFieldsName,
   formFields,
   formFieldsType,
   initValues,
@@ -57,6 +58,16 @@ export default function CSeoForm({
         {/* after:  */}
         {() => (
           <Form>
+            <FormButtons>
+              <Button type="submit" variant="action">
+                <FormattedMessage id="label.submit" defaultMessage="Submit" />
+              </Button>
+              {/* <Button onClick={onClose}>
+                <FormattedMessage id="label.cancel" defaultMessage="Cancel" />
+              </Button> */}
+            </FormButtons>
+            <FormMessage>{message}</FormMessage>
+            <br />
             <Field
               name={`page_id`}
               type={`text`}
@@ -67,7 +78,7 @@ export default function CSeoForm({
               formFields.map((field, index) => (
                 <FormRow>
                   <label htmlFor={`${field}`}>
-                    <FormattedMessage id={`label.${field}`} defaultMessage={`${field}`} />
+                    <FormattedMessage id={`label.${field}`} defaultMessage={`${formFieldsName[index]}`} />
                   </label>
                   <div>
                     <Field
@@ -80,19 +91,9 @@ export default function CSeoForm({
                 </FormRow>
               ))
             }
-
-            <FormButtons>
-              <Button type="submit" variant="action">
-                <FormattedMessage id="label.submit" defaultMessage="Submit" />
-              </Button>
-              <Button onClick={onClose}>
-                <FormattedMessage id="label.cancel" defaultMessage="Cancel" />
-              </Button>
-            </FormButtons>
-            <FormMessage>{message}</FormMessage>
           </Form>
         )}
       </Formik>
-    </FormLayout>
+    </FormLayout >
   );
 }

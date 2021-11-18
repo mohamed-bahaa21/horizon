@@ -74,6 +74,15 @@ class Mailing extends Component {
 
         return (
             <Layout headerType={`content`}>
+                <main className={styles.main}>
+                    <h1 className={styles.title}>
+                        <span className={styles.orange}>Mailing List</span>
+                    </h1>
+
+                    <a href="/" className={styles.card}>
+                        <h2>&larr; Home</h2>
+                    </a>
+                </main>
 
                 <CSVLink className={`${styles.btn}`} data={this.state.mailingList} filename='Horizon_Mailing_List.csv'>
                     Download Mailing List

@@ -28,6 +28,7 @@ export default function CSection({
   sectionID,
   sectionHeader,
   sectionHeaderID,
+  formFieldsName,
   formFields,
   formFieldsType,
   init_formFieldsValues,
@@ -47,6 +48,7 @@ export default function CSection({
           sectionID: sectionID,
           ...data.section_content
         });
+        setEditSection(true);
         setMessage('Data loaded successfully !')
       },
     },
@@ -79,7 +81,7 @@ export default function CSection({
   );
   return (
     <>
-      <PageHeader>
+      {/* <PageHeader>
         <div>
           <FormattedMessage id={`label.${sectionHeaderID}`} defaultMessage={`${sectionHeader}`} />
         </div>
@@ -90,7 +92,7 @@ export default function CSection({
         >
           <FormattedMessage id="label.edit" defaultMessage="Edit" />
         </Button>
-      </PageHeader>
+      </PageHeader> */}
 
       {/* <Table columns={columns} rows={data} empty={empty} /> */}
 
@@ -99,6 +101,7 @@ export default function CSection({
           {/* <Modal title={<FormattedMessage id="label.edit-website" defaultMessage="Edit section" />}> */}
           {/* {console.log("sectionValues: ", sectionValues)} */}
           <CSectionForm
+            formFieldsName={formFieldsName}
             formFields={formFields}
             formFieldsType={formFieldsType}
             initValues={init_formFieldsValues}

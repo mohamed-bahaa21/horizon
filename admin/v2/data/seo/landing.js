@@ -15,6 +15,19 @@ export default {
     },
     // ======================================================
     page_id: landing,
+    formFieldsName: [
+        'Title',
+        'Description',
+        'Robots',
+        'Keywords',
+        'Card Site Name',
+        'Card Title',
+        'Card Description',
+        'Card Img',
+        'Card Url',
+        'Twitter Card',
+        'Card Img Alt'
+    ],
     formFields: [
         'page_title',
         'page_desc',

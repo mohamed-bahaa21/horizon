@@ -44,7 +44,7 @@ const EDITOR_JS_TOOLS = {
     delimiter: Delimiter,
 };
 
-export default function NewsEditor(blocks) {
+export default function ContentEditor(blocks) {
     const [disabled, setDisabled] = useState(true)
     const [saved, setSaved] = useState(0);
     const [message, setMessage] = useState();
@@ -79,7 +79,7 @@ export default function NewsEditor(blocks) {
         <>
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    <span className={styles.orange}>Latest News</span>
+                    <span className={styles.orange}>Content Management</span>
                 </h1>
 
                 <div className={styles.grid}>
@@ -87,8 +87,8 @@ export default function NewsEditor(blocks) {
                         <h2>&larr; Home</h2>
                     </a>
 
-                    <a href="/news" className={styles.card}>
-                        <h2>&larr; News</h2>
+                    <a href="/content" className={styles.card}>
+                        <h2>&larr; Content Management</h2>
                     </a>
                 </div>
             </main>

@@ -4,9 +4,9 @@ import dynamic from 'next/dynamic';
 
 import SERVER_URI from ".server.env";
 
-let NewsEditor;
+let ContentEditor;
 if (typeof window !== "undefined") {
-    NewsEditor = dynamic(() => import('components/pages/NewsEditor'));
+    ContentEditor = dynamic(() => import('components/pages/ContentEditor'));
 }
 
 export default function About() {
@@ -21,8 +21,8 @@ export default function About() {
 
     return (
         <div>
-            {NewsEditor && (blocks != null) &&
-                <NewsEditor blocks={blocks} postUrl={`${SERVER_URI}/api/postAboutData`} />
+            {ContentEditor && (blocks != null) &&
+                <ContentEditor blocks={blocks} postUrl={`${SERVER_URI}/api/postAboutData`} />
             }
         </div>
     )

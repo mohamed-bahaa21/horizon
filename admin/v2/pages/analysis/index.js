@@ -51,10 +51,11 @@ const analysis = ({ Component, pageProps }) => {
               <code className={styles.code}>where secrets become stories</code>
             </p>
 
-            <div className={styles.flex}>
-              <a href="/" className={styles.card}>
-                <h2>&larr; Home</h2>
-              </a>
+            <a href="/" className={styles.card}>
+              <h2>&larr; Home</h2>
+            </a>
+
+            <div className={styles.grid}>
               <a href="/analysis/dashboard" className={styles.card}>
                 <h2>Dashboard &rarr;</h2>
               </a>

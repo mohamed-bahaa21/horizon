@@ -26,21 +26,21 @@ export default function News() {
         NewsEditor = dynamic(() => import('components/pages/NewsEditor'));
     }
 
-    const { data } = useFetch(`${SERVER_URI}/api/getBlogsData`, {
-        onDataLoad: data => {
-            setBlogs(data)
-        },
-    });
+    // const { data } = useFetch(`${SERVER_URI}/api/getBlogsData`, {
+    //     onDataLoad: data => {
+    //         setBlogs(data)
+    //     },
+    // });
 
-    const { loading } = useRequireLogin();
+    // const { loading } = useRequireLogin();
 
-    if (loading) {
-        return null;
-    }
+    // if (loading) {
+    //     return null;
+    // }
 
-    if (data) {
-        console.log("GET: ", data);
-    }
+    // if (data) {
+    //     console.log("GET: ", data);
+    // }
 
     return (
         <Layout headerType={`content`}>

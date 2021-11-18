@@ -15,6 +15,21 @@ export default {
   },
   // ======================================================
   sectionID: pi,
+  formFieldsName: [
+    'Description',
+    'Item 1 Image',
+    'Item 1 Num',
+    'Item 1 Title',
+    'Item 2 Image',
+    'Item 2 Num',
+    'Item 2 Title',
+    'Item 3 Image',
+    'Item 3 Num',
+    'Item 3 Title',
+    'Item 4 Image',
+    'Item 4 Num',
+    'Item 4 Title',
+  ],
   formFields: [
     'pi_desc',
     'pi_item_1_img',

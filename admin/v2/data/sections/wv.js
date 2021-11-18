@@ -15,6 +15,10 @@ export default {
   },
   // ======================================================
   sectionID: wv,
+  formFieldsName: [
+    'Description',
+    'Link',
+  ],
   formFields: [
     'wv_desc',
     'wv_link',
