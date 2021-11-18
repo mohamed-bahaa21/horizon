@@ -8,9 +8,9 @@ import ProfileSettings from '../settings/ProfileSettings';
 import { useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 
-const WEBSITES = '/analysis/settings';
-const ACCOUNTS = '/analysis/settings/accounts';
-const PROFILE = '/analysis/settings/profile';
+const WEBSITES = '/settings';
+const ACCOUNTS = '/settings/accounts';
+const PROFILE = '/settings/profile';
 
 export default function Settings() {
   const user = useSelector(state => state.user);

@@ -9,10 +9,13 @@ route.get('/coming-soon', userCtrl.getComingSoon)
 
 // USER_PAGES
 route.get('/', userCtrl.getLanding);
-
+route.get('/accessories', userCtrl.getAccessories);
 route.get('/about-us', userCtrl.getAbout);
-route.get('/news', userCtrl.getNews);
-route.get('/blog/:id', userCtrl.getNew);
+
+// User -> Blog(s) Data
+route.get('/news', userCtrl.getBlogs);
+// User -> Blog Data
+route.get('/news/:id', userCtrl.getBlog);
 
 // Brands pages
 route.get('/brands/:brand', userCtrl.getBrand);

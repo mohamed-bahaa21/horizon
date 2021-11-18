@@ -51,12 +51,21 @@ const content = ({ Component, pageProps }) => {
               <code className={styles.code}>Where changing content doesn't need a Developer</code>
             </p>
 
-            <div className={styles.flex}>
-              <a href="/" className={styles.card}>
+            <a href="/" className={styles.card}>
                 <h2>&larr; Home</h2>
               </a>
+
+            <div className={styles.grid}>
               <a href="/content/landing/" className={styles.card}>
                 <h2>Landing &rarr;</h2>
+              </a>
+
+              <a href="/content/about/" className={styles.card}>
+                <h2>About &rarr;</h2>
+              </a>
+
+              <a href="/content/accessories/" className={styles.card}>
+                <h2>Accessories &rarr;</h2>
               </a>
             </div>
           </main>

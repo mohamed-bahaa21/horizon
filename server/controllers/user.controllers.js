@@ -116,25 +116,38 @@ exports.getProduct = (req, res) => {
 // ------------------------ END
 
 // User -> About Page
-exports.getAbout = (req, res) => {
-    About.findById('6088f039ce64255fe8d24880').then((result) => {
-        // console.log(result);
+exports.getAccessories = (req, res) => {
+    Editor.findById('618ecc2289c6336b5c5e6608').then((accessories) => {
+        // console.log(accessories);
+        res.render('pages/accessories', {
+            msgs: req.flash('success'),
+            preloader: true,
+            url: '/accessories',
+            page_title: "Horizon | Accessories",
+            seo: null,
+            blocks: accessories.blocks
+        });
+    });
+};
 
+// User -> About Page
+exports.getAbout = (req, res) => {
+    Editor.findById('618ec7c089c6336b5c5e6607').then((about) => {
+        // console.log(about);
         res.render('pages/about', {
             msgs: req.flash('success'),
             preloader: true,
             url: '/about-us',
             page_title: "Horizon | About",
             seo: null,
-            about: result
+            blocks: about.blocks
         });
     });
 };
 
 // User Get Blogs list
-exports.getNews = (req, res) => {
+exports.getBlogs = (req, res) => {
     Blog.find().then(result => {
-        // console.log(result);
         res.render('pages/news', {
             msgs: req.flash('success'),
             preloader: true,
@@ -147,24 +160,23 @@ exports.getNews = (req, res) => {
 };
 
 // User Get Blog By ID route
-exports.getNew = (req, res) => {
-    const blogID = req.params.id;
+exports.getBlog = (req, res) => {
+    const blogUrl = req.params.id;
 
-    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' })
-        .then(editor => {
-            Blog.findById(blogID).then(result => {
-                Blog.find().limit(3).then(blogs => {
-                    // console.log(result);
-                    res.render('pages/new', {
-                        msgs: req.flash('success'),
-                        preloader: true,
-                        url: '/blog/:id',
-                        page_title: "News | " + result.title,
-                        seo: null,
-                        blog: result,
-                        blogs: blogs,
-                        blocks: editor.blocks
-                    });
+    Blog.findOne({ url: blogUrl }).populate('content')
+        .then(blog => {
+            // other news side bar
+            Blog.find().limit(3).then(blogs => {
+                // console.log(result);
+                res.render('pages/new', {
+                    msgs: req.flash('success'),
+                    preloader: true,
+                    url: '/blog/:id',
+                    page_title: "News | " + blog.title,
+                    seo: null,
+                    blog: blog,
+                    blogs: blogs,
+                    blocks: blog.content.blocks
                 });
             });
         })

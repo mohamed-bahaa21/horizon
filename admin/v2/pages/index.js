@@ -27,56 +27,55 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome <span className={styles.orange}>Horizon</span>
         </h1>
-
-        <p className={styles.description}>
-          <code className={styles.code}>Here, where magic happens</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="/content" className={styles.card}>
-            <h2>Content Management &rarr;</h2>
-            <p>Where changing content doesn't need a Developer</p>
-          </a>
-
-          <a href="/seo" className={styles.card}>
-            <h2>SEO &rarr;</h2>
-            <p>Search Engines can't exist without Optimization.</p>
-          </a>
-
-          <a href="/news" className={styles.card}>
-            <h2>News &rarr;</h2>
-            <p>Last news is important.</p>
-          </a>
-
-          <a href="/analysis" className={styles.card}>
-            <h2>Analysis &rarr;</h2>
-            <p>where secrets become stories.</p>
-          </a>
-
-          <a href="/mailing" className={styles.card}>
-            <h2>Mailing List &rarr;</h2>
-            <p>Send important messages.</p>
-          </a>
-
-          <a href="/onlineOrdering" className={styles.card}>
-            <h2>Online Ordering &rarr;</h2>
-            <p>Who ordered your product.</p>
-          </a>
-
-          <a href="/chat" className={styles.card}>
-            <h2>Chat &rarr;</h2>
-            <p>Keep no distance from your customers.</p>
-          </a>
-
-          <a href="/gallery" className={styles.card}>
-            <h2>Gallery &rarr;</h2>
-            <p>your photo collection.</p>
-          </a>
-        </div>
-
-        <div className={styles.grid}>
-        </div>
       </main>
+      {/* <p className={styles.description}>
+          <code className={styles.code}>Here, where magic happens</code>
+        </p> */}
+
+      <div className={styles.grid}>
+        <a href="/content" className={styles.card}>
+          <h2>Content Management &rarr; </h2>
+          {/* <p>Where changing content doesn't need a Developer</p> */}
+        </a>
+
+        <a href="/seo" className={styles.card}>
+          <h2>SEO &rarr; </h2>
+          {/* <p>Search Engines can't exist without Optimization.</p> */}
+        </a>
+
+        <a href="/news" className={styles.card}>
+          <h2>Latest News &rarr; </h2>
+          {/* <p>Last news is important.</p> */}
+        </a>
+
+        <a href="/analysis" className={styles.card}>
+          <h2>Analysis &rarr; </h2>
+          {/* <p>where secrets become stories.</p> */}
+        </a>
+
+        <a href="/mailing" className={styles.card}>
+          <h2>Mailing List &rarr; </h2>
+          {/* <p>Send important messages.</p> */}
+        </a>
+
+        <a href="/onlineOrdering" className={styles.card}>
+          <h2>Online Ordering &rarr; </h2>
+          {/* <p>Who ordered your product.</p> */}
+        </a>
+
+        <a href="/chat" className={styles.card}>
+          <h2>Chat &rarr; </h2>
+          {/* <p>Keep no distance from your customers.</p> */}
+        </a>
+
+        <a href="/gallery" className={styles.card}>
+          <h2>Gallery &rarr; </h2>
+          {/* <p>your photo collection.</p> */}
+        </a>
+      </div>
+
+      <div className={styles.grid}>
+      </div>
       {/* </div> */}
     </Layout>
   );

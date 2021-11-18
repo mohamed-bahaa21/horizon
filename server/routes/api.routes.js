@@ -9,9 +9,28 @@ const apiCtrl = require(path.resolve(__basename, 'controllers', 'api.controllers
 // route.post('/postAdminRegister', apiCtrl.postAdminRegister);
 // route.get('/getAdminUser', apiCtrl.getAdminUser);
 
-// ADMIN -> Blogs Data
+// 'getBlogsData'
+// 'getBlogsCount'
+// 'createNewBlogData'
+// 'getBlogData/:blogId'
+// 'editBlogMetaData'
+// 'editBlogContentData'
+// 'deleteBlogData'
+
+// ADMIN -> Blog(s) Data
 route.get('/getBlogsData', apiCtrl.getBlogsData);
-route.post('/postBlogsData', apiCtrl.postBlogsData);
+route.get('/getBlogsCount', apiCtrl.getBlogsCount);
+// ADMIN -> Blog Data
+route.post('/createNewBlogData', apiCtrl.createNewBlogData);
+route.get('/getBlogMetaData/:blogId', apiCtrl.getBlogMetaData);
+route.get('/getBlogContentData/:contentId', apiCtrl.getBlogContentData);
+route.post('/editBlogMetaData/:blogId', apiCtrl.editBlogMetaData);
+route.post('/editBlogContentData/:contentId', apiCtrl.editBlogContentData);
+route.post('/deleteBlogData/:blogId', apiCtrl.deleteBlogData);
+
+// ADMIN -> Accessories Data
+route.get('/getAccessoriesData', apiCtrl.getAccessoriesData);
+route.post('/postAccessoriesData', apiCtrl.postAccessoriesData);
 
 // ADMIN -> About Data
 route.get('/getAboutData', apiCtrl.getAboutData);

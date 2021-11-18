@@ -236,7 +236,27 @@ exports.postSeoData = (req, res) => {
 
 
 
+// =========================================================
+// Admin -> Accessories Data
+exports.getAccessoriesData = (req, res) => {
+    Editor.findById('618ecc2289c6336b5c5e6608').then((about) => {
+        res.json(about);
+    });
+};
 
+exports.postAccessoriesData = (req, res) => {
+    const blocks = req.body;
+    // console.log("Blocks from server: ", blocks);
+    Editor.findOne({ _id: '618ecc2289c6336b5c5e6608' }).then(data => {
+        data.blocks = blocks;
+        data.save()
+            .then(() => {
+                res.status(200).json('Editor saved successfully.');
+            })
+            .catch((err) => res.status(400).json('Error: ' + err));
+
+    });
+};
 
 
 
@@ -249,37 +269,36 @@ exports.postSeoData = (req, res) => {
 // =========================================================
 // Admin -> About Data
 exports.getAboutData = (req, res) => {
-    About.findById('6088f039ce64255fe8d24880').then((about) => {
-        console.log(about);
+    Editor.findById('618ec7c089c6336b5c5e6607').then((about) => {
         res.json(about);
     });
 };
 
 exports.postAboutData = (req, res) => {
-    const {
-        content
-    } = req.body;
+    const blocks = req.body;
+    // console.log("Blocks from server: ", blocks);
+    Editor.findOne({ _id: '618ec7c089c6336b5c5e6607' }).then(data => {
+        data.blocks = blocks;
+        data.save()
+            .then(() => {
+                res.status(200).json('Editor saved successfully.');
+            })
+            .catch((err) => res.status(400).json('Error: ' + err));
 
-    About.findById('6088f039ce64255fe8d24880')
-        .then((about) => {
-            console.log(req.body);
-            // horizon.name = name;
-            about.content = content;
-
-            about
-                .save()
-                .then(() => res.json('Blogs Updated!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
+    });
 };
 
 
 
 
 
-
-
+// date
+// title
+// url
+// summary
+// thumb_img
+// main_img
+// content
 
 
 
@@ -289,38 +308,151 @@ exports.postAboutData = (req, res) => {
 // =========================================================
 // Admin Gets, Edits -> Blogs Data 
 exports.getBlogsData = (req, res) => {
-    Blog.find().then((result) => {
-        console.log(result);
-        res.json(result);
+    Blog.find().then((blogs) => {
+        console.log("get blogs data");
+        res.status(200).json(blogs);
     });
 };
 
-exports.postBlogsData = (req, res) => {
-    const {
-        date,
-        title,
-        summary,
-        content,
-        link,
-        bg,
-    } = req.body;
+exports.getBlogsCount = (req, res) => {
+    Blog.countDocuments({}, (err, number) => {
+        if (err) {
+            res.status(500).render('errors/500')
+        }
+        res.status(200).json(number)
+    });
+};
 
-    Blog.findById()
-        .then((blogs) => {
-            blogs.date = date;
-            blogs.title = title;
-            blogs.summary = summary;
-            blogs.content = content;
-            blogs.link = link;
-            blogs.bg = bg;
+exports.createNewBlogData = (req, res) => {
+    const { title, url, summary, thumb_img, main_img } = req.body;
 
-            blogs
-                .save()
-                .then(() => res.json('Blogs Updated!'))
-                .catch((err) => res.status(400).json('Error: ' + err));
+    const newEditor = new Editor();
+    newEditor.name = "Article";
+    newEditor.blocks = [];
+
+    newEditor.save().then(() => {
+        const newBlog = new Blog();
+        newBlog.title = title;
+        newBlog.url = url + newBlog._id;
+        newBlog.summary = summary;
+        newBlog.thumb_img = thumb_img;
+        newBlog.main_img = main_img;
+
+        newBlog.save().then(() => {
+            console.log("New Blog: ", newBlog);
+            res.status(200).json(newBlog);
         })
+    })
+};
+
+exports.getBlogMetaData = (req, res) => {
+    const { blogId } = req.params;
+
+    Blog.findOne({ url: blogId }).populate('content').then((blog) => {
+        // console.log("Blog: ", blog);
+        res.status(200).json(blog);
+    });
+};
+
+exports.getBlogContentData = (req, res) => {
+    const { contentId } = req.params;
+
+    Editor.findOne({ _id: contentId }).then(content => {
+        res.status(200).json(content)
+    })
         .catch((err) => res.status(400).json('Error: ' + err));
 };
+
+exports.editBlogMetaData = (req, res) => {
+    const { blogId } = req.params;
+    const { title, url, summary, thumb_img, main_img } = req.body;
+
+    Blog.findOne({ url: blogId }).then((blog) => {
+        blog.title = title;
+        blog.url = url;
+        blog.summary = summary;
+        blog.thumb_img = thumb_img;
+        blog.main_img = main_img;
+
+        blog.save().then(() => {
+            console.log("Blog meta updated");
+            res.status(200).json("Blog meta updated");
+        })
+    });
+};
+
+exports.editBlogContentData = (req, res) => {
+    const { contentId } = req.params;
+    const content = req.body;
+    // console.log("content: ", contentId);
+    // console.log("content: ", content);
+
+    Editor.findOne({ _id: contentId }).then((editor) => {
+        editor.blocks = content;
+
+        editor.save().then(() => {
+            console.log("Blog content updated...");
+            res.status(200).json("Blog content updated...");
+        })
+    });
+};
+
+exports.deleteBlogData = (req, res) => {
+    const { blogId, editorId } = req.body;
+
+    Blog.findOneAndDelete({ _id: blogId }).then(() => {
+        console.log("Blog meta deleted...");
+        Editor.findOneAndDelete({ _id: editorId }).then(() => {
+            console.log("Blog editor deleted...");
+            res.status(200).json("Blog and Editor deleted...");
+        })
+    })
+};
+
+
+// ==============================================================
+// News System
+exports.getNews = (req, res) => {
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
+        res.send(data)
+    })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
+exports.getEditorjs = (req, res) => {
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
+        res.render('pages/editor', {
+            blocks: data.blocks
+        })
+    })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
+
+exports.editorjs = (req, res) => {
+    const blocks = req.body;
+    // console.log("Blocks from server: ", blocks);
+    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
+
+        data.blocks = blocks;
+        data.save()
+            .then(() => {
+                res.status(200).json('Editor saved successfully.');
+            })
+            .catch((err) => res.status(400).json('Error: ' + err));
+
+    });
+}
+
+exports.newEditor = (req, res) => {
+    const blocks = req.body;
+    const editor = new Editor({
+        blocks: blocks
+    });
+    editor.save()
+        .then(() => {
+            res.status(200).json('Editor saved successfully.');
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
+}
 // END SECTION
 
 
@@ -454,47 +586,3 @@ exports.onlineOrdering = (req, res) => {
         })
         .catch((err) => res.status(400).json('Error: ' + err));
 };
-
-// ==============================================================
-// News System
-exports.getNews = (req, res) => {
-    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
-        res.send(data)
-    })
-        .catch((err) => res.status(400).json('Error: ' + err));
-}
-exports.getEditorjs = (req, res) => {
-    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
-        res.render('pages/editor', {
-            blocks: data.blocks
-        })
-    })
-        .catch((err) => res.status(400).json('Error: ' + err));
-}
-
-exports.editorjs = (req, res) => {
-    const blocks = req.body;
-    // console.log("Blocks from server: ", blocks);
-    Editor.findOne({ _id: '6189e93597a0cf34d400a6aa' }).then(data => {
-
-        data.blocks = blocks;
-        data.save()
-            .then(() => {
-                res.status(200).json('Editor saved successfully.');
-            })
-            .catch((err) => res.status(400).json('Error: ' + err));
-
-    });
-}
-
-exports.newEditor = (req, res) => {
-    const blocks = req.body;
-    const editor = new Editor({
-        blocks: blocks
-    });
-    editor.save()
-        .then(() => {
-            res.status(200).json('Editor saved successfully.');
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-}
