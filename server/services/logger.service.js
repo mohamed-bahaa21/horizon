@@ -38,6 +38,10 @@ class LoggerService {
                 new winston.transports.File({
                     filename: `${process.env.LOG_FILE_PATH}/${route}.combined.log`
                 }),
+                new winston.transports.File({
+                    filename: `${process.env.LOG_FILE_PATH}/${route}.load-test.log`,
+                    level: 'load-test'
+                }),
             ]
         });
         this.logger = logger;
@@ -66,6 +70,10 @@ class LoggerService {
     // error log
     async error(message) { this.logger.log('error', message) };
     async error(message, obj) { this.logger.log('error', message, { obj }) };
+
+    // load-test log
+    async loadTest(message) { this.logger.log('load-test', message) };
+    async loadTest(message, obj) { this.logger.log('load-test', message, { obj }) };
 
     // debug log
     // async debug(message) { this.logger.log('debug', message) };
