@@ -1,6 +1,7 @@
 #online_ordering {
     margin: 0 auto;
     justify-self: center;
+    padding-top: 3rem;
 }
 
 .tab-pane div {
@@ -27,12 +28,13 @@ a {
 }
 
 a.active {
-    border-bottom: 0.5rem solid var(--main-color) !important;
+    border-bottom: 0.5rem solid rgb(36 31 31) !important;
     font-weight: 700;
+    box-shadow: 0 10px 25px -5px rgb(36 31 31) !important;
 }
 .active {
     background-color: white !important;
-    color: var(--main-color) !important;
+    color: rgb(36 31 31) !important;
 }
 
 .brown-input {

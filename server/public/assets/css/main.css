@@ -59,13 +59,13 @@ p {
 
 section:nth-child(5) {
     padding: 0 1rem;
-    margin: 3rem auto;
+    /* margin: 3rem auto; */
 }
 
 .sec-desc {
-    font-size: 1rem !important;
-    font-weight: 700 !important;
-    margin: 3rem auto 0 auto;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+    margin: 1rem auto 0 auto;
     text-align: center;
 }
 
@@ -140,7 +140,7 @@ section:nth-child(5) {
 }
 
 #about {
-    padding: 0 1rem;
+    padding: 3rem 1rem;
 }
 
 .dark {
@@ -627,7 +627,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 .horizon-header .navbar .navbar-nav .nav-item > .nav-link {
     color: #fff;
     /* margin: 20px 10px; */
-    font-weight: 700;
+    font-weight: 400;
     position: relative;
     padding: 1rem;
 }
@@ -2047,7 +2047,7 @@ footer .copyright p {
     padding: 1rem;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 15px;
+    /* letter-spacing: 15px; */
 }
 
 /* START chevron  */
@@ -2344,7 +2344,7 @@ aside.sidebar .tags ul li {
     24. START SINGLE BLOG PAGE
 ------------------------------*/
 .single-blog-with-sidebar {
-    /* padding-bottom: 100px; */
+    padding-top: 3rem !important;
 }
 
 .single-blog-with-sidebar h2 {

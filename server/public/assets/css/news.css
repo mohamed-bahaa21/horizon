@@ -1,7 +1,8 @@
 /* you can find the v1.0 theme of this section in main.css */
 #blog {
     background-image: linear-gradient(165deg, rgb(36, 31, 31) 50%, rgb(211, 149, 41) 200%);
-    margin: -0.5rem 0
+    margin: -0.5rem 0;
+    padding: 5rem 0;
 }
 
 #news {
