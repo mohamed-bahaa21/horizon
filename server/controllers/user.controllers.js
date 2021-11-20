@@ -2,6 +2,7 @@ const Horizon = require('../models/Horizon.model');
 const Seo = require('../models/Seo.model');
 const Blog = require('../models/Blog.model');
 const About = require('../models/About.model');
+const Brand = require('../models/Brand.model');
 const Editor = require('../models/Editor.model');
 
 const Logger = require('../services/logger.service');
@@ -68,22 +69,40 @@ exports.getLanding = (req, res) => {
 
 // START User -> Brand Page
 exports.getBrand = (req, res) => {
-    const {
-        brand
-    } = req.params;
+    const { brand_id } = req.params;
 
-    // console.log(brand);
-    logger.info("return brand PAGE & DATA");
+    Brand.findOne({ name_id: brand_id }).populate('description').then(brand => {
+        // logger.info("return brand PAGE & DATA");
 
-    res.render('pages/brand', {
-        msgs: req.flash('success'),
-        preloader: true,
-        url: '/brands/:brand',
-        page_title: "Horizon | " + brand,
-        seo: null,
-        brand: brand
+        res.render('pages/brand', {
+            msgs: req.flash('success'),
+            preloader: true,
+            url: '/brands/:brand',
+            page_title: "Horizon | " + brand.name,
+            seo: null,
+            brand: brand,
+            blocks: brand.description.blocks
+        })
     })
 };
+// DEPRECATED
+// exports.getBrand = (req, res) => {
+//     const {
+//         brand
+//     } = req.params;
+
+//     // console.log(brand);
+//     logger.info("return brand PAGE & DATA");
+
+//     res.render('pages/brand', {
+//         msgs: req.flash('success'),
+//         preloader: true,
+//         url: '/brands/:brand',
+//         page_title: "Horizon | " + brand,
+//         seo: null,
+//         brand: brand
+//     })
+// };
 
 exports.getProduct = (req, res) => {
     const {

@@ -28,12 +28,12 @@
 }
 
 #before_after .container .background-img {
-    background-image: url("../imgs/horizon/before.jpg");
+    /* background-image: url("../imgs/horizon/before.jpg"); */
     border-radius: 1rem;
 }
 
 #before_after .container .foreground-img {
-    background-image: url("../imgs/horizon/after.jpg");
+    /* background-image: url("../imgs/horizon/after.jpg"); */
     width: 50%;
     border-radius: 1rem;
 }

@@ -9,10 +9,11 @@
             <div id='stars2'></div>
             <div class="container">
                 <div class="row text-center">
-                    <div class="col-md-12" style="margin: 5rem auto 3rem auto !important">
-                        <span style="color: white; letter-spacing: 0.5rem;">Horizon / News </span>
-                        <h1 style="font-size: x-large; display: inline-block;">
-                            / <%= blog.title %>
+                    <div class="col-md-12" style="margin: 3rem auto 0rem auto !important">
+                        <!-- <span style="color: white; letter-spacing: 0.5rem;">Horizon </span> -->
+                        <h1 style="font-size: 4em; display: inline-block;">
+                            <!-- <span style="color: #FFD952">Products / </span> -->
+                            <%= blog.title %>
                         </h1>
                     </div>
                 </div>
@@ -59,49 +60,98 @@
                                             <% blocks.forEach(block=> { %>
                                                 <% if(block.type=="header" ) { %>
                                                     <% if(block.data.level==1){ %>
-                                                    <h1><%- block.data.text%></h1>
-                                                    <% } %>
-                                                    <% if(block.data.level==2){ %>
-                                                    <h2><%- block.data.text%></h2>
-                                                    <% } %>
-                                                    <% if(block.data.level==3){ %>
-                                                    <h3><%- block.data.text%></h3>
-                                                    <% } %>
-                                                    <% if(block.data.level==4){ %>
-                                                    <h4><%- block.data.text%></h4>
-                                                    <% } %>
-                                                    <% if(block.data.level==5){ %>
-                                                    <h5><%- block.data.text%></h5>
-                                                    <% } %>
-                                                    <% if(block.data.level==6){ %>
-                                                    <h6><%- block.data.text%></h6>
-                                                    <% } %>
-                                                <% } else if(block.type=="paragraph" ) { %>
-                                                    <p><%- block.data.text %></p>
-                                                <% } else if(block.type=="delimiter" ) { %>
-                                                    <hr>
-                                                <% } else if(block.type=="image" ) { %>
-                                                    <img src="<%= block.data.url %>" width="100%" alt="<%= block.data.caption%>">
-                                                <% } else if(block.type=="list" ) { %>
-                                                    <% if(block.data.style=='unordered'){ %>
-                                                        <ul>
-                                                            <% block.data.items.forEach(item=> { %>
-                                                                <li><%= item %></li>
-                                                            <% }); %>
-                                                        </ul>
-                                                    <% } %>
-                                                <% } else if(block.type=="quote" ) { %>
-                                                    <blockquote>
-                                                        <p>“
-                                                            <%- block.data.text %>
-                                                            ”</p>
-                                                    </blockquote>
-                                                <% } else { %>
-                                                    <div>
-                                                        <%= JSON.stringify(block) %>
-                                                    </div>
-                                                <% } %>
-                                            <% }); %>
+                                                        <h1>
+                                                            <%- block.data.text%>
+                                                        </h1>
+                                                        <% } %>
+                                                            <% if(block.data.level==2){ %>
+                                                                <h2>
+                                                                    <%- block.data.text%>
+                                                                </h2>
+                                                                <% } %>
+                                                                    <% if(block.data.level==3){ %>
+                                                                        <h3>
+                                                                            <%- block.data.text%>
+                                                                        </h3>
+                                                                        <% } %>
+                                                                            <% if(block.data.level==4){ %>
+                                                                                <h4>
+                                                                                    <%- block.data.text%>
+                                                                                </h4>
+                                                                                <% } %>
+                                                                                    <% if(block.data.level==5){ %>
+                                                                                        <h5>
+                                                                                            <%- block.data.text%>
+                                                                                        </h5>
+                                                                                        <% } %>
+                                                                                            <% if(block.data.level==6){
+                                                                                                %>
+                                                                                                <h6>
+                                                                                                    <%-
+                                                                                                        block.data.text%>
+                                                                                                </h6>
+                                                                                                <% } %>
+                                                                                                    <% } else
+                                                                                                        if(block.type=="paragraph"
+                                                                                                        ) { %>
+                                                                                                        <p>
+                                                                                                            <%- block.data.text
+                                                                                                                %>
+                                                                                                        </p>
+                                                                                                        <% } else
+                                                                                                            if(block.type=="delimiter"
+                                                                                                            ) { %>
+                                                                                                            <hr>
+                                                                                                            <% } else
+                                                                                                                if(block.type=="image"
+                                                                                                                ) { %>
+                                                                                                                <img src="<%= block.data.url %>"
+                                                                                                                    width="100%"
+                                                                                                                    alt="<%= block.data.caption%>">
+                                                                                                                <% } else
+                                                                                                                    if(block.type=="list"
+                                                                                                                    ) {
+                                                                                                                    %>
+                                                                                                                    <% if(block.data.style=='unordered'
+                                                                                                                        ){
+                                                                                                                        %>
+                                                                                                                        <ul>
+                                                                                                                            <%
+                                                                                                                                block.data.items.forEach(item=>
+                                                                                                                                {
+                                                                                                                                %>
+                                                                                                                                <li>
+                                                                                                                                    <%= item
+                                                                                                                                        %>
+                                                                                                                                </li>
+                                                                                                                                <% });
+                                                                                                                                    %>
+                                                                                                                        </ul>
+                                                                                                                        <% }
+                                                                                                                            %>
+                                                                                                                            <% } else
+                                                                                                                                if(block.type=="quote"
+                                                                                                                                )
+                                                                                                                                {
+                                                                                                                                %>
+                                                                                                                                <blockquote>
+                                                                                                                                    <p>“
+                                                                                                                                        <%- block.data.text
+                                                                                                                                            %>
+                                                                                                                                            ”
+                                                                                                                                    </p>
+                                                                                                                                </blockquote>
+                                                                                                                                <% } else
+                                                                                                                                    {
+                                                                                                                                    %>
+                                                                                                                                    <div>
+                                                                                                                                        <%= JSON.stringify(block)
+                                                                                                                                            %>
+                                                                                                                                    </div>
+                                                                                                                                    <% }
+                                                                                                                                        %>
+                                                                                                                                        <% });
+                                                                                                                                            %>
                                         </div>
 
                                     </div>

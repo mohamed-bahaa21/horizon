@@ -18,7 +18,7 @@ route.get('/news', userCtrl.getBlogs);
 route.get('/news/:id', userCtrl.getBlog);
 
 // Brands pages
-route.get('/brands/:brand', userCtrl.getBrand);
+route.get('/brands/:brand_id', userCtrl.getBrand);
 
 // Products pages
 route.get('/products/:product', userCtrl.getProduct);

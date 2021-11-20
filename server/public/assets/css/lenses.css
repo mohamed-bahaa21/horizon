@@ -101,7 +101,7 @@ p:first-of-type
 } */
 
 .stack.loaded .lens_card {
-    border-radius: 10rem 1rem;
+    border-radius: 50%;
     --bg-opacity: 5%;
 
     transition-duration: 2s;
