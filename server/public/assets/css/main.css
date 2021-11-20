@@ -519,6 +519,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .submenu li {
     border: 1px solid #363232;
+    border-radius: 0.5rem;
     background-color: #1f1a1a;
 }
 
@@ -2351,11 +2352,11 @@ aside.sidebar .tags ul li {
     /* padding-bottom: 100px; */
     color: #ffffff;
     display: inline-block;
-    padding: 1rem;
-    background-color: black;
-    /* border-radius: 1rem 3rem; */
-    border-radius: 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #453d3d;
+    border-radius: 0.5rem;
     font-weight: 700;
+    font-size: 1.5em;
 }
 
 .single-blog-page .blog-box .blog-details {

@@ -22,7 +22,7 @@ const Intl = ({ children }) => {
 
 import seo from 'data/seo';
 
-export default function landing() {
+export default function about() {
     useForceSSL(process.env.FORCE_SSL);
     const { loading } = useRequireLogin();
     const router = useRouter();
@@ -52,14 +52,14 @@ export default function landing() {
                 </div>
             </main>
             <SeoPage
-                sectionHeader="Landing Page"
-                page_id={seo.landing.page_id}
-                formFieldsName={seo.landing.formFieldsName}
-                formFields={seo.landing.formFields}
-                formFieldsType={seo.landing.formFieldsType}
-                init_formFieldsValues={seo.landing.init_formFieldsValues}
-                getLink={seo.landing.getLink}
-                postLink={seo.landing.postLink}
+                sectionHeader="About Page"
+                page_id={seo.about.page_id}
+                formFieldsName={seo.about.formFieldsName}
+                formFields={seo.about.formFields}
+                formFieldsType={seo.about.formFieldsType}
+                init_formFieldsValues={seo.about.init_formFieldsValues}
+                getLink={seo.about.getLink}
+                postLink={seo.about.postLink}
             />
         </Layout>
     );

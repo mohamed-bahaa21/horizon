@@ -52,14 +52,14 @@ export default function landing() {
                 </div>
             </main>
             <SeoPage
-                sectionHeader="Landing Page"
-                page_id={seo.landing.page_id}
-                formFieldsName={seo.landing.formFieldsName}
-                formFields={seo.landing.formFields}
-                formFieldsType={seo.landing.formFieldsType}
-                init_formFieldsValues={seo.landing.init_formFieldsValues}
-                getLink={seo.landing.getLink}
-                postLink={seo.landing.postLink}
+                sectionHeader="Online Ordering Page"
+                page_id={seo.online_ordering.page_id}
+                formFieldsName={seo.online_ordering.formFieldsName}
+                formFields={seo.online_ordering.formFields}
+                formFieldsType={seo.online_ordering.formFieldsType}
+                init_formFieldsValues={seo.online_ordering.init_formFieldsValues}
+                getLink={seo.online_ordering.getLink}
+                postLink={seo.online_ordering.postLink}
             />
         </Layout>
     );

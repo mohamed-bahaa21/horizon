@@ -7,9 +7,17 @@ import { useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import CSeo from 'components/forms/CSeo';
 
-import seo from 'data/seo';
 
-export default function SeoPage() {
+
+export default function SeoPage({
+  page_id,
+  formFieldsName,
+  formFields,
+  formFieldsType,
+  init_formFieldsValues,
+  getLink,
+  postLink
+}) {
   const user = useSelector(state => state.user);
   const router = useRouter();
   const { pathname } = router;
@@ -17,14 +25,13 @@ export default function SeoPage() {
   return (
     <Page>
       <CSeo
-        sectionHeader="Landing Page"
-        page_id={seo.landing.page_id}
-        formFieldsName={seo.landing.formFieldsName}
-        formFields={seo.landing.formFields}
-        formFieldsType={seo.landing.formFieldsType}
-        init_formFieldsValues={seo.landing.init_formFieldsValues}
-        getLink={seo.landing.getLink}
-        postLink={seo.landing.postLink}
+        page_id={page_id}
+        formFieldsName={formFieldsName}
+        formFields={formFields}
+        formFieldsType={formFieldsType}
+        init_formFieldsValues={init_formFieldsValues}
+        getLink={getLink}
+        postLink={postLink}
       />
     </Page>
   );

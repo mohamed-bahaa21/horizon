@@ -137,14 +137,16 @@ exports.getProduct = (req, res) => {
 // User -> About Page
 exports.getAccessories = (req, res) => {
     Editor.findById('618ecc2289c6336b5c5e6608').then((accessories) => {
-        // console.log(accessories);
-        res.render('pages/accessories', {
-            msgs: req.flash('success'),
-            preloader: true,
-            url: '/accessories',
-            page_title: "Horizon | Accessories",
-            seo: null,
-            blocks: accessories.blocks
+        Seo.findOne({ page_id: 'accessories' }).then(seo => {
+            // console.log(accessories);
+            res.render('pages/accessories', {
+                msgs: req.flash('success'),
+                preloader: true,
+                url: '/accessories',
+                page_title: "Horizon | Accessories",
+                seo: seo,
+                blocks: accessories.blocks
+            });
         });
     });
 };
@@ -152,14 +154,16 @@ exports.getAccessories = (req, res) => {
 // User -> About Page
 exports.getAbout = (req, res) => {
     Editor.findById('618ec7c089c6336b5c5e6607').then((about) => {
-        // console.log(about);
-        res.render('pages/about', {
-            msgs: req.flash('success'),
-            preloader: true,
-            url: '/about-us',
-            page_title: "Horizon | About",
-            seo: null,
-            blocks: about.blocks
+        Seo.findOne({ page_id: 'about' }).then(seo => {
+            // console.log(about);
+            res.render('pages/about', {
+                msgs: req.flash('success'),
+                preloader: true,
+                url: '/about-us',
+                page_title: "Horizon | About",
+                seo: seo,
+                blocks: about.blocks
+            });
         });
     });
 };
@@ -204,12 +208,14 @@ exports.getBlog = (req, res) => {
 
 // User Get Online Ordering
 exports.getOnlineOrdering = (req, res) => {
-    res.render('pages/online_ordering', {
-        msgs: req.flash('success'),
-        preloader: true,
-        url: '/online_ordering',
-        page_title: "Horizon | Online Ordering",
-        seo: null,
+    Seo.findOne({ page_id: 'online_ordering' }).then(seo => {
+        res.render('pages/online_ordering', {
+            msgs: req.flash('success'),
+            preloader: true,
+            url: '/online_ordering',
+            page_title: "Horizon | Online Ordering",
+            seo: seo,
+        });
     });
 };
 

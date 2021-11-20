@@ -42,7 +42,7 @@ route.post('/postSectionData', apiCtrl.postSectionData);
 
 // ADMIN -> Seo Data
 route.get('/getSeoData/:page_id', apiCtrl.getSeoData);
-route.post('/postSeoData', apiCtrl.postSeoData);
+route.post('/postSeoData/:page_id', apiCtrl.postSeoData);
 
 // FUNCTIONALITIES
 route.get('/gallery', apiCtrl.gallery);

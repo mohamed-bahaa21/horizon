@@ -61,6 +61,18 @@ const seo = ({ Component, pageProps }) => {
               <a href="/seo/landing/" className={styles.card}>
                 <h2>Landing &rarr;</h2>
               </a>
+
+              <a href="/seo/about/" className={styles.card}>
+                <h2>About &rarr;</h2>
+              </a>
+
+              <a href="/seo/accessories/" className={styles.card}>
+                <h2>Accessories &rarr;</h2>
+              </a>
+
+              <a href="/seo/online_ordering/" className={styles.card}>
+                <h2>Online Ordering &rarr;</h2>
+              </a>
             </div>
           </main>
         </Intl>

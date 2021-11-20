@@ -14,7 +14,7 @@ export default {
         section_display: true,
     },
     // ======================================================
-    page_id: landing,
+    page_id: 'online_ordering',
     formFieldsName: [
         'Title',
         'Description',
@@ -67,6 +67,6 @@ export default {
         twitter_card: '...',
         card_img_alt: '...'
     },
-    getLink: `${SERVER_URI}/api/getSeoData/${landing}`,
-    postLink: `${SERVER_URI}/api/postSeoData/${landing}`,
+    getLink: `${SERVER_URI}/api/getSeoData/online_ordering`,
+    postLink: `${SERVER_URI}/api/postSeoData/online_ordering`,
 };

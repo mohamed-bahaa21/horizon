@@ -6,7 +6,7 @@ import Footer from 'components/layout/Footer';
 import useLocale from 'hooks/useLocale';
 import { rtlLocales } from 'lib/lang';
 
-export default function Layout({ title, children, header = true, footer = true, headerType }) {
+export default function Layout({ title, children, header = true, footer = true, headerType, nocontainer }) {
   const { locale } = useLocale();
   const dir = rtlLocales.includes(locale) ? 'rtl' : 'ltr';
 
@@ -18,7 +18,7 @@ export default function Layout({ title, children, header = true, footer = true, 
 
       {header && headerType === 'analysis' ? <Header /> : <CHeader />}
 
-      <main className="container" dir={dir}>
+      <main className={nocontainer ? `` : `container`} dir={dir}>
         {children}
       </main>
       {footer && <Footer />}

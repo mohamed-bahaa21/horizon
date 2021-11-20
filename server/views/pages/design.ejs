@@ -1,0 +1,73 @@
+<%- include('../partials/page_head.ejs') %>
+    <%- include('../partials/nav.ejs') %>
+
+        <section class="single-blog-with-sidebar single-blog-page">
+            <div class="container">
+                <div class="row">
+                    <!-- Start All Blogs -->
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="blog-box">
+                                    <div class="map-container">
+                                        <h2 style="color: white !important;">Designs</h2>
+
+                                        <div class="inner-basic division-map div-toggle" data-target=".division-details"
+                                            id="divisiondetail">
+
+                                            <% brand.before_after.forEach(function(design) { %>
+                                                <button class="mlod_link map-point-sm" data-show=".<%= design.name %>">
+                                                    <div class="content">
+                                                        <div class="centered-y">
+
+                                                            <span>
+                                                                <%= design.name %>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <% }) %>
+
+                                        </div><!-- end inner basic -->
+                                    </div>
+
+
+                                    <div class="map-container">
+                                        <div class="inner-basic division-details">
+                                            <div class="initialmsg">
+                                                <p style="margin: 1rem 0;">Pick One Design</p>
+                                            </div>
+                                            <% brand.before_after.forEach(function(design) { %>
+                                                <div id="<%=design.name%>" class="<%=design.name%> hide">
+                                                    <!-- Start Lenses Design -->
+                                                    <section id="before_after" class="">
+                                                        <div class='container'>
+                                                            <div class='img background-img'
+                                                                style="background-image: url('<%= design.before %>');">
+                                                            </div>
+                                                            <div class='img foreground-img'
+                                                                style="background-image: url('<%= design.after %>');">
+                                                            </div>
+                                                            <input type="range" min="1" max="100" value="50"
+                                                                class="slider" name='slider' id="slider">
+                                                            <div class='slider-button'></div>
+                                                        </div>
+                                                    </section>
+                                                    <!-- End Slide -->
+                                                </div>
+                                                <% }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Brand Designs Section -->
+                </div>
+            </div>
+        </section>
+        <!-- END BLOG SECTION -->
+
+        <%- include('../partials/footer.ejs') %>
+            <%- include('../partials/page_end.ejs') %>

@@ -32,7 +32,7 @@ export default function content() {
   }
 
   return (
-    <Layout headerType={`content`}>
+    <Layout headerType={`content`} nocontainer>
       <div className={styles.flex}>
         <a href="/" className={styles.card}>
           <h2>&larr; Home</h2>
