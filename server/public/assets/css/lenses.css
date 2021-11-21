@@ -91,7 +91,7 @@ p:first-of-type
 
     pointer-events: none;
     text-align: center;
-    border-radius: 10rem 1rem;
+    border-radius: 50%;
 }
 
 /* big eye background */
@@ -227,7 +227,7 @@ p:first-of-type
 
 .lens_card {
     content: "";
-    border-radius: 10rem 1rem;
+    border-radius: 50%;
     grid-area: stack;
 
     --z-offset: 0;
