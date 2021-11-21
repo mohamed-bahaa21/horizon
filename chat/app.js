@@ -57,7 +57,9 @@ app.use("/", appRouter); //routes
 
 // convert a connect middleware to a Socket.IO middleware
 const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
+
 socket.use(wrap(sessionMiddleware));
+
 require('./controllers/socketio.controller')(socket); // pass the socket.io object to the socketio.controller 
 
 const port = 5001;

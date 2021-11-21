@@ -57,7 +57,14 @@ router.get('/signup/verify', (req, res, next) => {
 })
 
 router.post('/signup/verify', (req, res, next) => {
-  res.redirect('/')
+  req.flash('info', "Setup you account")
+  res.redirect('/signup/setup')
+})
+
+router.get('/signup/setup', (req, res, next) => {
+  res.render('setup', {
+    msgs: req.flash('info')
+  })
 })
 
 
