@@ -8,6 +8,7 @@ var cors = require('cors')
 const flash = require('connect-flash');
 const MongoDBStore = require('connect-mongodb-session')(session);
 var unless = require('express-unless');
+require('dotenv').config();
 
 const http = require("http").Server(app); //require the http module
 const io = require("socket.io"); // require the socket.io module
@@ -15,7 +16,7 @@ socket = io(http); //integrating socketio
 
 // connect session w/ mongodb
 const store = new MongoDBStore({
-  uri: "mongodb+srv://mohammad123:mohammad123@blogdb-fslqm.mongodb.net/horizon",
+  uri: process.env.MONGODB_URI,
   collection: 'sessions'
 });
 

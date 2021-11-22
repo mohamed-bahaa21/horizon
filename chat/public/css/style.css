@@ -13,7 +13,7 @@
 
 body {
   background-color: #e9e2c4;
-  font-family: "Calibri", "Roboto", sans-serif;
+  font-family: "Lato", sans-serif !important;
 }
 
 .chat_window {
@@ -186,4 +186,20 @@ body {
   font-size: 1em;
   padding: 1em;
   font-weight: 700;
+}
+
+.logout {
+  float: right;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #e2d3ab;
+  opacity: 0.5;
+  position: relative;
+  right: 1rem;
+  top: 0.5rem;
+  text-decoration: underline;
+}
+.logout:hover {
+  color: #e2d3ab;
+  opacity: 1;
 }

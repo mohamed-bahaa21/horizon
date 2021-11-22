@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 const OtpSchema = new Schema({
     otp: {
-        type: Number
+        type: String,
+        expires: '1d'
+    },
+    messageId: {
+        type: String
     },
     valid: {
         type: Boolean,
-        expires: '3h'
     },
 });
 module.exports = mongoose.model("Otp", OtpSchema);;
