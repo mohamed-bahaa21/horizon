@@ -4,24 +4,28 @@
 <!-- Start  Footer -->
 <footer class="padding-100 pb-0" id="footer">
     <div class="subscribe">
-        <div class="container">
+        <div class="container" style="transform: rotate(3deg);">
+            <span style="background-color: white; 
+            margin: 2rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;">Subscribe to our news</span>
 
-                    <form class="subscribe-form row m-0 align-items-center" action="/api/subscribe" method="POST">
-                        <div class="col-lg-9 col-md-8">
-                            <div class="form-group mb-0">
-                                <input type="hidden" name="_csrf" value="csrfToken">
-                                <input type="hidden" name="url" value="<%= url %>">
-                                <input name="mail_email" id="mail_email" type="email" class="form-control"
-                                    placeholder="Enter Your Email" />
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4">
-                            <!-- <a href="#" class="btn btn-primary shadow d-block btn-colord btn-theme">
+            <form class="subscribe-form row m-0 align-items-center" action="/api/subscribe" method="POST">
+                <div class="col-lg-9 col-md-8">
+                    <div class="form-group mb-0">
+                        <input type="hidden" name="_csrf" value="csrfToken">
+                        <input type="hidden" name="url" value="<%= url %>">
+                        <input name="mail_email" id="mail_email" type="email" class="form-control"
+                            placeholder="Enter Your Email" required />
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <!-- <a href="#" class="btn btn-primary shadow d-block btn-colord btn-theme">
                                 <span>Subscribe</span>
                             </a> -->
-                            <input type="submit" class="btn btn-primary" placeholder="Subscribe" />
-                        </div>
-                    </form>
+                    <input type="submit" class="btn btn-primary" placeholder="Subscribe" style="margin-top: 0rem !important;"/>
+                </div>
+            </form>
         </div>
     </div>
     <div class="space-50"></div>

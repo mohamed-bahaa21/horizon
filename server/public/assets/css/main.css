@@ -1962,19 +1962,18 @@ footer .subscribe .subscribe-form {
     padding: 25px;
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0.25rem;
 }
 
 footer .subscribe .subscribe-form .form-group .form-control {
     border: none;
     border-bottom: 2px solid;
-    border-radius: 0;
     font-weight: 300;
     padding: 14px 20px;
     background: transparent;
     margin-bottom: 0;
     background: rgba(158, 158, 158, 0.1);
-    border-radius: 50px;
+    border-radius: 0.25rem;
     border: none;
 }
 
