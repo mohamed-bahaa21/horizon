@@ -70,8 +70,7 @@
 
                 <% if(process.env.NODE_ENV == 'development') { %>
                     <%- include('./dev.css.ejs') %>
-                <% } %>
-                <% if(process.env.NODE_ENV == 'production') { %>
+                <% } else { %>
                     <%- include('./prod.css.ejs') %>
                 <% } %>
                 
