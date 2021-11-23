@@ -507,7 +507,8 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .navbar-brand .img-fluid {
-    width: 15em !important;
+    min-width: 10rem;
+    padding: 0.5rem;
 }
 
 .nav-link {
@@ -611,6 +612,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 }
 
 .horizon-header .navbar {
+    background-color: #241f20;
     margin: 0;
     padding: 0;
 }
@@ -2345,7 +2347,7 @@ aside.sidebar .tags ul li {
     24. START SINGLE BLOG PAGE
 ------------------------------*/
 .single-blog-with-sidebar {
-    padding-top: 3rem !important;
+    padding-top: 5rem !important;
 }
 
 .single-blog-with-sidebar h2 {

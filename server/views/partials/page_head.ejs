@@ -67,7 +67,14 @@
                 <!-- gstatic -->
                 <link rel="preconnect" href="https://fonts.gstatic.com">
                 <!-- ================================================================================ -->
-                <link href="/assets/css/horizon.min.css" rel="stylesheet" />
+
+                <% if(process.env.NODE_ENV == 'development') { %>
+                    <%- include('./dev.css.ejs') %>
+                <% } %>
+                <% if(process.env.NODE_ENV == 'production') { %>
+                    <%- include('./prod.css.ejs') %>
+                <% } %>
+                
 </head>
 
 <body data-spy="scroll" data-target="#main_menu" data-offset="70">
