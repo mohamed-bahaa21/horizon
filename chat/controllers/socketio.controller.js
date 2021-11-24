@@ -52,6 +52,7 @@ module.exports = function (socket) {
                     let chatMessage = new Chat({ username: username, sender: username, message: message });
                     chatMessage.save().then(msg => {
                         user.chat.push(msg._id);
+                        user.unread = true;
                         user.save()
                     })
                 })

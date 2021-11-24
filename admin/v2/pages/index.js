@@ -1,18 +1,32 @@
+import React, { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import useRequireLogin from 'hooks/useRequireLogin';
 import Layout from 'components/layout/Layout';
 import styles from 'styles/Home.module.css';
 import Footer from 'components/layout/Footer';
+import axios from 'axios';
+
+import CHAT_URI from ".chat.env";
 
 export default function Home() {
   const { loading } = useRequireLogin();
   const router = useRouter();
   const { id } = router.query;
+  const [unread, setUnread] = useState(false);
 
   if (loading) {
     return null;
   }
+
+  axios.get(`${CHAT_URI}/api/getUnread`)
+    .then(response => {
+      setUnread(response.data.unread)
+      console.log("unread: ", unread);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 
   return (
     <Layout headerType={`content`}>
@@ -63,7 +77,7 @@ export default function Home() {
           {/* <p>Who ordered your product.</p> */}
         </a>
 
-        <a href="/chat" className={styles.card}>
+        <a href="/chat" className={styles.card} style={unread ? { backgroundColor: 'rgb(211 149 41)', color: 'white' } : {}}>
           <h2>Chat &rarr; </h2>
           {/* <p>Keep no distance from your customers.</p> */}
         </a>

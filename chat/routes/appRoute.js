@@ -72,7 +72,8 @@ router.post("/signup", (req, res, next) => {
       const newUser = new User({
         phone: phone,
         otp: randomOTP,
-        otp_valid: true
+        otp_valid: true,
+        unread: true
       });
 
       newUser.save()
@@ -346,14 +347,30 @@ router.post("/api/login", (req, res, next) => {
   res.redirect('/')
 });
 
+router.get("/api/getUnread", (req, res, next) => {
+  res.setHeader("Content-Type", "application/json");
+  res.statusCode = 200;
+
+  connectdb.then(db => {
+    // let data = Chats.find({ message: "Anonymous" });
+    User.findOne({ unread: true }).then(user => {
+      if (user) {
+        res.json({ unread: true });
+      } else {
+        res.json({ unread: false });
+      }
+    });
+  });
+});
+
 router.get("/api/users", (req, res, next) => {
   res.setHeader("Content-Type", "application/json");
   res.statusCode = 200;
 
   connectdb.then(db => {
     // let data = Chats.find({ message: "Anonymous" });
-    User.find().then(chats => {
-      res.json(chats);
+    User.find().then(users => {
+      res.json(users);
     });
   });
 });
@@ -366,7 +383,16 @@ router.get("/api/users/:username", (req, res, next) => {
   connectdb.then(db => {
     // let data = Chats.find({ message: "Anonymous" });
     User.findOne({ username: username }).populate('chat').then(user => {
-      res.json(user);
+      if (user.unread == true) {
+        user.unread = false;
+        user.save()
+          .then(newUser => {
+            res.json(newUser);
+          })
+          .catch(err => { console.error(err); })
+      } else {
+        res.json(user);
+      }
     });
   });
 });
@@ -382,6 +408,8 @@ router.post("/api/users/:username", (req, res, next) => {
     let chatMessage = new Chats({ username: req.body.username, sender: req.body.sender, message: req.body.message });
     chatMessage.save().then(msg => {
       user.chat.push(msg._id);
+      user.unread = true;
+
       user.save()
     })
   })

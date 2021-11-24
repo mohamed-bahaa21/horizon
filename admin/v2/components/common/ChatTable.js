@@ -83,8 +83,9 @@ export const TableRow = ({ columns, row }) => (
         className={classNames(styles.cell, className, cell?.className)}
         style={{ ...style, ...cell?.style }}
       >
+        {console.log(row.unread)}
         <Link href={`/chat/${row.username}`}>
-          {render ? render(row) : row[key]}
+          <div style={row.unread ? { backgroundColor: 'rgb(211 149 41)', color: 'white' } : {}}>{render ? render(row) : row[key]}</div>
         </Link>
       </div>
     ))}

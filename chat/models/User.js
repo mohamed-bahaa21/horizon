@@ -34,6 +34,11 @@ const UserSchema = new Schema({
         expires: '1d',
         required: true,
     },
+    unread: {
+        type: Boolean,
+        required: false,
+        default: true
+    },
     chat: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Chat'

@@ -34,7 +34,7 @@ class Chat extends Component {
                 let lista = []
 
                 users.map(user => {
-                    lista.push(([user.username]))
+                    lista.push({ username: user.username, unread: user.unread })
                     return lista
                 })
 
@@ -55,7 +55,8 @@ class Chat extends Component {
     render() {
         let tableItems = []
         this.state.users.map(user => {
-            let row = { "username": user }
+            console.log("=== ", user.username)
+            let row = { username: user.username, unread: user.unread }
             tableItems.push(row)
             return tableItems
         })
