@@ -383,15 +383,17 @@ router.get("/api/users/:username", (req, res, next) => {
   connectdb.then(db => {
     // let data = Chats.find({ message: "Anonymous" });
     User.findOne({ username: username }).populate('chat').then(user => {
-      if (user.unread == true) {
-        user.unread = false;
-        user.save()
-          .then(newUser => {
-            res.json(newUser);
-          })
-          .catch(err => { console.error(err); })
-      } else {
-        res.json(user);
+      if (user) {
+        if (user.unread == true && user.unread !== null) {
+          user.unread = false;
+          user.save()
+            .then(newUser => {
+              res.json(newUser);
+            })
+            .catch(err => { console.error(err); })
+        } else {
+          res.json(user);
+        }
       }
     });
   });
