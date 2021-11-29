@@ -1,4 +1,8 @@
-<script src="/assets/js/horizon.min.js"></script>
+<% if(process.env.NODE_ENV == 'development') { %>
+    <%- include('./dev.js.ejs') %>
+<% } else { %>
+    <%- include('./prod.js.ejs') %>
+<% } %>
 </div>
 </body>
 

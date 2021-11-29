@@ -1,0 +1,65 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Bootstrap JS -->
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<!-- Slick Slider JS -->
+<script src="/assets/js/slick.min.js"></script>
+
+<!-- Counterup JS -->
+<script src="/assets/js/waypoints.min.js"></script>
+<script src="/assets/js/jquery.counterup.js"></script>
+
+<!-- AOS JS -->
+<script src="/assets/js/aos.js"></script>
+
+<!-- lity JS -->
+<script src="/assets/js/lity.min.js"></script>
+
+<!-- Responsive Slider -->
+<script src="/assets/js/responsiveslides.min.js"></script>
+
+<!-- scripts files -->
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/showInput.js"></script>
+<script src="/assets/js/news.js"></script>
+<script src="/assets/js/slider.js"></script>
+<script src="/assets/js/before_after.js"></script>
+<script src="/assets/js/timeline.js"></script>
+<script src="/assets/js/single-vision.js"></script>
+<script src="/assets/js/bifocal.js"></script>
+<script src="/assets/js/testimonials.js"></script>
+<script src="/assets/js/contact.js"></script>
+<script src="/assets/js/about/about.js"></script>
+<script src="/assets/js/product_stock_lenses.js"></script>
+<script src="/assets/js/mlod.js"></script>
+<script src="/assets/js/side_nav.js"></script>
+
+<!--  -->
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 3
+        $("#slider3").responsiveSlides({
+            auto: true,                         // Boolean: Animate automatically, true or false
+            speed: 500,                         // Integer: Speed of the transition, in milliseconds
+            timeout: 3000,                      // Integer: Time between slide transitions, in milliseconds
+            pager: false,                       // Boolean: Show pager, true or false
+            nav: false,                         // Boolean: Show navigation, true or false
+            random: false,                      // Boolean: Randomize the order of the slides, true or false
+            pause: false,                       // Boolean: Pause on hover, true or false
+            pauseControls: true,                // Boolean: Pause when hovering controls, true or false
+            prevText: "Previous",               // String: Text for the "previous" button
+            nextText: "Next",                   // String: Text for the "next" button
+            maxwidth: "",                       // Integer: Max-width of the slideshow, in pixels
+            navContainer: "",                   // Selector: Where controls should be appended to, default is after the 'ul'
+            manualControls: '#slider3-pager',   // Selector: Declare custom pager navigation
+            namespace: "rslides",               // String: Change the default namespace used
+            before: function () { },            // Function: Before callback
+            after: function () { }              // Function: After callback
+        });
+
+    });
+</script>

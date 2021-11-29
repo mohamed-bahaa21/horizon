@@ -1,9 +1,12 @@
 /*jslint browser: true*/
 /*global $, jQuery ,AOS*/
 
+
+
 (function ($) {
 
     "use strict";
+
 
     var $window = $(window),
         $body = $('body'),
@@ -26,7 +29,7 @@
     if (window.matchMedia('(max-width: 768px)').matches) {
         $('#hero-right').insertBefore('#hero-left')
     }
-    
+
     /*END PRELOADER JS & REFRESH AOS*/
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();

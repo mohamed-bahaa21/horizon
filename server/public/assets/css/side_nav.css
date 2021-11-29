@@ -136,6 +136,18 @@
     transition-timing-function: cubic-bezier(0, 0.01, 0, 1.15);
 }
 
+#wheel_message {
+    opacity: 0;
+}
+#wheel_message.msg {
+    opacity: 1 !important;
+    background-color: #5ba157;
+    padding: 0.25rem;
+    display: block;
+    color: white;
+    border-radius: 0.25rem;
+}
+
 @keyframes morph {
     0% {
         top: 5em;

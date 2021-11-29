@@ -104,7 +104,6 @@ exports.getBrand = (req, res) => {
 //         brand: brand
 //     })
 // };
-
 exports.getProduct = (req, res) => {
     const {
         product
@@ -124,6 +123,35 @@ exports.getProduct = (req, res) => {
     ]
 
     res.render('pages/product', {
+        msgs: req.flash('success'),
+        preloader: true,
+        url: '/products/:product',
+        page_title: "Horizon | " + product,
+        seo: null,
+        title: product,
+        test: product
+    });
+};
+
+exports.getProductDesign = (req, res) => {
+    const {
+        product
+    } = req.params;
+
+    // console.log(product);
+    logger.info("return Product DATA");
+
+    let products_arr = [
+        "stock_lenses",
+        "rx_lenses",
+        "lens_coating_materials",
+        "thickness_reduction",
+        "finishing_services",
+        "contact_lenses",
+        "delivery",
+    ]
+
+    res.render('pages/design', {
         msgs: req.flash('success'),
         preloader: true,
         url: '/products/:product',

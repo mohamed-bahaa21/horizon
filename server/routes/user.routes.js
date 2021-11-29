@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const { read } = require('fs');
 const route = express.Router();
 
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
@@ -7,6 +8,11 @@ const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controlle
 // coming-soon
 route.get('/coming-soon', userCtrl.getComingSoon)
 
+route.post('/ejs_axios_get_data', (req, res) => {
+    var { deg } = req.body;
+    console.log(deg);
+    res.send(`ejs axios post: deg: ${deg}`)
+});
 // USER_PAGES
 route.get('/', userCtrl.getLanding);
 route.get('/accessories', userCtrl.getAccessories);
@@ -22,6 +28,9 @@ route.get('/brands/:brand_id', userCtrl.getBrand);
 
 // Products pages
 route.get('/products/:product', userCtrl.getProduct);
+// Products pages
+route.get('/products/:product/designs/:design', userCtrl.getProductDesign);
+
 
 // online ordering page
 route.get('/online_ordering', userCtrl.getOnlineOrdering);
