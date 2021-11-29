@@ -7,6 +7,12 @@ $(document).ready(function () {
         $(".arrow").toggleClass('arrow_move');
     });
 
+    $("#follow").click(function () {
+        $('#follow_section').toggleClass('follow_center');
+        $("#blur").toggleClass('blured');
+        $(".arrow").toggleClass('arrow_move');
+    });
+
     //  Setup variables
     var wheel = $(".wheel"),
         active = $(".active"),

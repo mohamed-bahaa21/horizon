@@ -1,8 +1,35 @@
 #mySidenav a {
+    top: 13rem;
+    background-color: #e9c140;
+    z-index: 91;
+}
+#mySidenav2 a {
+    top: 16.75rem;
+    background-color: #e9c140;
+    z-index: 81;
+}
+
+#mySidenav3 a {
+    top: 20.5rem;
+    background-color: #e9c140;
+    z-index: 71;
+    font-size: 1.8em !important;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+#mySidenav4 a {
+    top: 24.5rem;
+    background-color: #e9c140;
+    z-index: 71;
+    font-size: 2em !important;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.sidenav a {
     position: fixed;
     right: -5rem;
     line-height: 0.5em;
-    padding: 1rem 5rem;
+    padding: 0.75rem 5rem;
     width: fit-content;
     text-decoration: none;
     font-size: 3rem !important;
@@ -11,11 +38,10 @@
     border-radius: 0.25rem 0 0 0.25rem;
     transition: 0.3s ease-in-out;
     text-align: left;
-    padding-left: 0.25rem;
-    z-index: 99;
+    padding-left: 0.75rem;
 }
 
-#mySidenav a:hover {
+.sidenav a:hover {
     right: -1rem;
 }
 
@@ -26,11 +52,6 @@
 
     -webkit-backdrop-filter: blur(0.5rem) grayscale(100%);
     -webkit-filter: blur(0.5rem) grayscale(100%);
-}
-
-#wheel {
-    top: 3em;
-    background-color: #e9c140;
 }
 
 /* ========================================================== */
@@ -47,8 +68,42 @@
     left: 0rem;
     top: -2rem;
 }
+#follow_section {
+    z-index: 80;
+    position: fixed;
+    text-align: center;
+    right: -100%;
+    top: 10em;
+    opacity: 0;
+    background-color: #241f20;
+    border-radius: 1rem 0rem 0rem 1rem;
+
+    transition: all 1500ms cubic-bezier(1, 0.01, 0, 1.15);
+    transition-timing-function: cubic-bezier(1, 0.01, 0, 1.15);
+
+    /* transition: 1s ease-in-out; */
+    /* -webkit-transition: 1s ease-in-out; */
+}
+
+#follow_section.follow_center {
+    right: 0%;
+    top: 16.75rem;
+    padding: 3em 3em 3em 3em;
+    opacity: 1;
+    animation-name: morph;
+    animation-iteration-count: 1;
+    /* animation-duration: 1500ms;
+    animation-timing-function: ease-in-out; */
+
+    animation: all 1500ms cubic-bezier(0, 0.01, 0, 1.15);
+    animation-timing-function: cubic-bezier(0, 0.01, 0, 1.15);
+
+    transition: all 1500ms cubic-bezier(0, 0.01, 0, 1.15);
+    transition-timing-function: cubic-bezier(0, 0.01, 0, 1.15);
+}
+
 #wheel_section {
-    z-index: 5;
+    z-index: 90;
     position: fixed;
     text-align: center;
     right: -100%;
