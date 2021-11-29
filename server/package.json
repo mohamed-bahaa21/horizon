@@ -6,9 +6,9 @@
     "scripts": {
         "test": "snyk test",
         "lint": "eslint ./",
-        "start-dev": "nodemon app.js",
+        "dev": "nodemon app.js",
         "start": "cross-env NODE_ENV=production nodemon app.js",
-        "start-server-only": "nodemon server-only.js",
+        "server-only": "nodemon server-only.js",
         "build": "npm run grunt-all",
         "grunt-all": "grunt cssmin && grunt uglify",
         "grunt-css": "grunt cssmin",

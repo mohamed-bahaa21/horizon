@@ -38,14 +38,20 @@
               and our launch details.
             </p>
 
-            <form class="subscribe-form" action="https://beta.horizon-lenses.com/api/subscribe" method="POST">
+            <form class="subscribe-form" action="/api/subscribe" method="POST">
 
-              <% if(msgs[0]) { %>
+              <% if(msgs) { %>
               <div class="alert alert-success fade show" role="alert">
                 <strong style="color: #F7EBD0; margin: 1rem;"><%= msgs[0] %></strong>
               </div>
               <% } %> %>
 
+              <div class="alert alert-success fade show" role="alert">
+                <strong style="color: #F7EBD0; margin: 1rem;"><%= msgs[0] %></strong>
+              </div>
+
+              <input type="hidden" name="_csrf" value="csrfToken">
+              <input name="url" id="url" type="hidden" value="<%= url %>" required />
               <input name="mail_email" id="mail_email" type="email" placeholder="Enter Your Email" required />
               <input name="submit" type="submit" placeholder="Subscribe"></input>
 

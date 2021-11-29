@@ -19,6 +19,7 @@ pages = [
 ]
 
 exports.getComingSoon = (req, res, next) => {
+    console.log(req.flash('success'));
     res.render('pages/coming-soon/index', {
         msgs: req.flash('success'),
         preloader: true,

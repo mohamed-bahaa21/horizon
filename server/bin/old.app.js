@@ -13,6 +13,10 @@ const csrf = require('csurf')
 const cors = require('cors');
 const flash = require('connect-flash');
 
+// const passport = require("passport");
+// const passportLocal = require("passport-local").Strategy;
+// const bcrypt = require("bcryptjs");
+
 const app = express();
 
 const horizonRoute = require('./routes/horizon.routes');
@@ -43,8 +47,23 @@ var corsOptions = {
     credentials: true, // allow session cookie from browser to pass through
 }
 
+// set ejs to be template view engine  
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "https://admin.horizon-lenses.com"); // update to match the domain you will make the request from
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// });
+
+// app.enable('trust proxy');
+// app.use(function (request, response, next) {
+//     if (process.env.NODE_ENV != 'development' && !request.secure) {
+//         return response.redirect("https://" + request.headers.host + request.url);
+//     }
+//     next();
+// })
 
 // Middleware
+// require("./services/admin.passport.service")(passport);
 app.set('view engine', 'ejs');
 app.use(
     // Parsers for POST data
@@ -75,6 +94,22 @@ app.use(
     cookieParser("@010#44$vm=2001ayk2020horizon"),
     cors(),
     flash(),
+    // passport.initialize(),
+    // passport.session(),
+    // function loggedIn(req, res, next) {
+    //     if (req.user) {
+    //         res.send('logged in');
+    //     } else {
+    //         res.send('not logged in');
+    //     }
+    // }
+    // csrf(),
+    // (req, res, next) => {
+    //     var token = req.csrfToken();
+    //     res.cookie('XSRF-TOKEN', token);
+    //     res.locals.csrfToken = token;
+    //     next()
+    // },
 )
 
 // routes

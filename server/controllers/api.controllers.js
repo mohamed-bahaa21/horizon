@@ -545,7 +545,7 @@ exports.mailList = (req, res) => {
 // =========================================================
 // User Subscribes
 exports.subscribe = (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
 
     const {
         url,
@@ -559,6 +559,7 @@ exports.subscribe = (req, res) => {
     email.save()
         .then(() => {
             req.flash('success', 'Subscribed Successfully...');
+            console.log(req.flash('success'));
             res.redirect(`${url}`)
         })
         .catch((err) => res.status(400).json('Error: ' + err));

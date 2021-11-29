@@ -35,6 +35,7 @@ module.exports = function (grunt) {
                         "public/assets/css/online_ordering.css",
                         "public/assets/css/_reusable/editor.css",
                         "public/assets/css/color-1.css",
+                        "public/assets/css/side_nav.css",
                     ]
                 }
             }
@@ -58,6 +59,7 @@ module.exports = function (grunt) {
                     "public/assets/js/about/about.js",
                     "public/assets/js/product_stock_lenses.js",
                     "public/assets/js/mlod.js",
+                    "public/assets/js/side_nav.js",
                 ],
                 dest: 'public/assets/js/horizon.min.js'
             }
