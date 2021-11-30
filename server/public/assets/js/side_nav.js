@@ -36,7 +36,7 @@ $(document).ready(function () {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     // var deg = getRandomInt(-30, 330);
-    // var deg = 1099;
+    // var deg = 690;
     var deg = getRandomInt(690, 1410);
     console.log("degree: ", deg);
 
@@ -44,7 +44,7 @@ $(document).ready(function () {
     // var { digit_1, digit_2, digit_3, digit_4, digit_5, digit_6 } = req.body;
     // let phone_form = document.getElementById('phone_form');
     let phone = '+201002140722';
-    let code = '000000';
+    // let code = '000000';
 
     // Creating the Timeline
     var indicator = new TimelineMax();
@@ -105,6 +105,15 @@ $(document).ready(function () {
     );
     $btnVerify.click(
         function () {
+            let $digit_1 = $("#digit_1").val();
+            let $digit_2 = $("#digit_2").val();
+            let $digit_3 = $("#digit_3").val();
+            let $digit_4 = $("#digit_4").val();
+            let $digit_5 = $("#digit_5").val();
+            let $digit_6 = $("#digit_6").val();
+            let code = $digit_1 + $digit_2 + $digit_3 + $digit_4 + $digit_5 + $digit_6;
+            console.log("code: ", code);
+
             postVerify(code)
         }
     );
@@ -122,8 +131,14 @@ $(document).ready(function () {
         function (response) {
             //your code for handling API data
             console.log(response.data)
-            $('#wheel_message').text(`${response.data}`);
-            $('#wheel_message').addClass('msg');
+            if(response.data == "Try Again") {
+                $btnPlay.css({ 'display': 'block' });
+                $('#wheel_message').text(`${response.data}`);
+                $('#wheel_message').addClass('msg');
+            } else {
+                $('#wheel_message').text(`${response.data}`);
+                $('#wheel_message').addClass('msg');
+            }
             // deg = getRandomInt(330, 1110);
         }
     ).catch(
@@ -137,13 +152,13 @@ $(document).ready(function () {
         function (response) {
             //your code for handling API data
             console.log(response.data)
-            if (response.data) {
+            if (response.data == "We sent the new verification code" || response.data == "We already have sent a code, check it out !") {
                 $("#phone_view").css({ 'display': 'none' });
                 $("#verify_view").css({ 'display': 'block' });
                 $('#wheel_message').text(`${response.data}`);
                 $('#wheel_message').addClass('msg');
             } else {
-                $('#wheel_message').text(`no response`);
+                $('#wheel_message').text(`${response.data}`);
                 $('#wheel_message').addClass('msg');
             }
         }
@@ -155,11 +170,11 @@ $(document).ready(function () {
     );
 
 
-    const postVerify = (code) => axios.post(`/wheel`, { code: code }).then(
+    const postVerify = (code) => axios.post(`/wheel/verify`, { code: code }).then(
         function (response) {
             //your code for handling API data
-            console.log(response.data)
-            if (response.data) {
+            if (response.data == 'Accepted, Let us spin the wheeeeeeel!') {
+                console.log(response.data)
                 $btnPlay.css({ 'display': 'none' });
                 $("#verify_view").css({ 'display': 'none' });
                 $("#wheel_view").css({ 'display': 'block' });
@@ -168,7 +183,8 @@ $(document).ready(function () {
                 $('#wheel_message').addClass('msg');
                 startWheel();
             } else {
-                $('#wheel_message').text(`no response`);
+                console.log(response.data)
+                $('#wheel_message').text(`${response.data}`);
                 $('#wheel_message').addClass('msg');
             }
         }

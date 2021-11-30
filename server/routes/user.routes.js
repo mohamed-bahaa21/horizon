@@ -45,12 +45,12 @@ route.post('/ejs_axios_get_data', (req, res) => {
 
     console.log("deg: ", deg);
     console.log("degree: ", degree);
-    if ((degree > 0 && degree < 1) || (degree > 6 && degree < 7)) { res.send(`Death`) }
-    else if ((degree > 1 && degree < 2) || (degree > 7 && degree < 8)) { res.send(`Points`) }
-    else if ((degree > 2 && degree < 3) || (degree > 8 && degree < 9)) { res.send(`Coins`) }
-    else if ((degree > 3 && degree < 4) || (degree > 9 && degree < 10)) { res.send(`Sale`) }
-    else if ((degree > 4 && degree < 5) || (degree > 10 && degree < 11)) { res.send(`Product`) }
-    else if ((degree > 5 && degree < 6) || (degree > 11 && degree < 12)) { res.send(`Nothing`) }
+    if ((degree >= 0 && degree < 1) || (degree > 6 && degree < 7)) { res.send(`Death`) }
+    else if ((degree >= 1 && degree < 2) || (degree > 7 && degree < 8)) { res.send(`Points`) }
+    else if ((degree >= 2 && degree < 3) || (degree > 8 && degree < 9)) { res.send(`Coins`) }
+    else if ((degree >= 3 && degree < 4) || (degree > 9 && degree < 10)) { res.send(`Sale`) }
+    else if ((degree >= 4 && degree < 5) || (degree > 10 && degree < 11)) { res.send(`Product`) }
+    else if ((degree >= 5 && degree < 6) || (degree > 11 && degree < 12)) { res.send(`Nothing`) }
     else { res.send(`Try Again`) }
 });
 
@@ -109,6 +109,7 @@ route.post("/wheel", (req, res, next) => {
 
                     // req.flash('info', "We sent the new verification code")
                     // res.redirect(`/wheel/verify`)
+                    res.app.locals.phone = phone;
                     res.send("We sent the new verification code")
 
                     // var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' }).publish(params).promise();
@@ -155,15 +156,9 @@ route.post("/wheel", (req, res, next) => {
                 // res.redirect('/wheel/verify')
                 res.send("We already have sent a code, check it out !")
             } else {
-                if (user.username) {
-                    // req.flash('info', "You already have an account")
-                    // res.redirect('/login')
-                    res.send("You already have an account")
-                } else {
-                    // req.flash('info', "We sent and you missed, signup tomorrow")
-                    // res.redirect('/wheel')
-                    res.send("We sent and you missed, signup tomorrow")
-                }
+                // req.flash('info', "We sent and you missed, signup tomorrow")
+                // res.redirect('/wheel')
+                res.send("You already spinned the wheel")
             }
         }
     });
@@ -171,49 +166,56 @@ route.post("/wheel", (req, res, next) => {
 });
 route.post('/wheel/verify', (req, res, next) => {
 
-    var { digit_1, digit_2, digit_3, digit_4, digit_5, digit_6 } = req.body;
+    // var { digit_1, digit_2, digit_3, digit_4, digit_5, digit_6 } = req.body;
     // var SUBMITTED_OTP = digit_1 + digit_2 + digit_3 + digit_4 + digit_5 + digit_6;
-    var SUBMITTED_OTP = '000000';
+    var { code } = req.body;
+    var SUBMITTED_OTP = code;
 
     console.log("SUBMITTED_OTP: ", SUBMITTED_OTP);
+    console.log("res.app.locals.phone: ", res.app.locals.phone);
 
-    User.findOne({ phone: res.app.locals.phone }).then(user => {
-        if (user) {
-            if (user.otp_valid) {
-                if (user.otp == SUBMITTED_OTP) {
+    if (res.app.locals.phone) {
+        User.findOne({ phone: res.app.locals.phone }).then(user => {
+            if (user) {
+                if (user.otp_valid) {
+                    if (user.otp == SUBMITTED_OTP) {
 
-                    user.otp = null;
-                    user.otp_valid = false;
+                        user.otp = null;
+                        user.otp_valid = false;
 
-                    user.save()
-                        .then(data => {
-                            console.log(data);
-                            // req.flash('info', "Accepted, Setup you account")
-                            // res.redirect('/wheel/setup')
-                            res.send("Accepted, Setup you account")
-                        })
-                        .catch(err => {
-                            console.log("Error: ", err);
-                            // req.flash('info', "[verify] Something went wrong")
-                            // res.redirect('/wheel/verify')
-                            res.send("[verify] Something went wrong")
-                        })
+                        user.save()
+                            .then(data => {
+                                console.log(data);
+                                // req.flash('info', "Accepted, Setup you account")
+                                // res.redirect('/wheel/setup')
+                                res.send("Accepted, Let us spin the wheeeeeeel!")
+                            })
+                            .catch(err => {
+                                console.log("Error: ", err);
+                                // req.flash('info', "[verify] Something went wrong")
+                                // res.redirect('/wheel/verify')
+                                res.send("[verify] Something went wrong")
+                            })
+                    } else {
+                        // req.flash('info', "Wrong verification code")
+                        // res.redirect('/wheel/verify')
+                        res.send("Wrong verification code")
+                    }
                 } else {
-                    // req.flash('info', "Wrong verification code")
+                    // req.flash('info', "Verification code isn't valid")
                     // res.redirect('/wheel/verify')
-                    res.send("Wrong verification code")
+                    res.send("Verification code isn't valid")
                 }
             } else {
-                // req.flash('info', "Verification code isn't valid")
-                // res.redirect('/wheel/verify')
-                res.send("Verification code isn't valid")
+                // req.flash('info', "[*] Something went wrong")
+                // res.redirect('/wheel')
+                res.send("[*] Something went wrong")
             }
-        } else {
-            // req.flash('info', "[*] Something went wrong")
-            // res.redirect('/wheel')
-            res.send("[*] Something went wrong")
-        }
-    })
+        })
+    } else {
+        res.send("No phone number to send to")
+    }
+
 })
 
 // USER_PAGES
