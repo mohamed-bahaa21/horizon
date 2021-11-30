@@ -40,6 +40,12 @@ $(document).ready(function () {
     var deg = getRandomInt(690, 1410);
     console.log("degree: ", deg);
 
+    // var { phone } = req.body;
+    // var { digit_1, digit_2, digit_3, digit_4, digit_5, digit_6 } = req.body;
+    // let phone_form = document.getElementById('phone_form');
+    let phone = '+201002140722';
+    let code = '000000';
+
     // Creating the Timeline
     var indicator = new TimelineMax();
     var spinWheel = new TimelineMax();
@@ -50,7 +56,6 @@ $(document).ready(function () {
         .add("end");
 
     // Luckywheel animation
-
     //   Buttons
     function startWheel() {
         spinWheel
@@ -83,24 +88,24 @@ $(document).ready(function () {
         spinWheel.timeScale(1).seek(0);
     }
 
+    // ===========================================================
+
     $btnPlay.click(
         function () {
             $("#wheel_view").css({ 'display': 'none' });
             $("#phone_view").css({ 'display': 'block' });
+            $('#wheel_message').text(`First, verify with your phone`);
+            $('#wheel_message').addClass('msg');
         }
     );
     $btnPhone.click(
         function () {
-            $("#phone_view").css({ 'display': 'none' });
-            $("#verify_view").css({ 'display': 'block' });
+            postPhone(phone);
         }
     );
     $btnVerify.click(
         function () {
-            $btnPlay.css({ 'display': 'none' });
-            $("#verify_view").css({ 'display': 'none' });
-            $("#wheel_view").css({ 'display': 'block' });
-            startWheel();
+            postVerify(code)
         }
     );
 
@@ -111,6 +116,8 @@ $(document).ready(function () {
         }
     );
 
+    // ================================================
+
     const getData = (get_deg) => axios.post(`/ejs_axios_get_data`, { deg: get_deg }).then(
         function (response) {
             //your code for handling API data
@@ -118,11 +125,60 @@ $(document).ready(function () {
             $('#wheel_message').text(`${response.data}`);
             $('#wheel_message').addClass('msg');
             // deg = getRandomInt(330, 1110);
-        }).catch(
-            function (err) {
-                //your code for handling API error
-                console.log(err);
-            });
+        }
+    ).catch(
+        function (err) {
+            //your code for handling API error
+            console.log(err);
+        }
+    );
+
+    const postPhone = (phone) => axios.post(`/wheel`, { phone: phone }).then(
+        function (response) {
+            //your code for handling API data
+            console.log(response.data)
+            if (response.data) {
+                $("#phone_view").css({ 'display': 'none' });
+                $("#verify_view").css({ 'display': 'block' });
+                $('#wheel_message').text(`${response.data}`);
+                $('#wheel_message').addClass('msg');
+            } else {
+                $('#wheel_message').text(`no response`);
+                $('#wheel_message').addClass('msg');
+            }
+        }
+    ).catch(
+        function (err) {
+            //your code for handling API error
+            console.log(err);
+        }
+    );
+
+
+    const postVerify = (code) => axios.post(`/wheel`, { code: code }).then(
+        function (response) {
+            //your code for handling API data
+            console.log(response.data)
+            if (response.data) {
+                $btnPlay.css({ 'display': 'none' });
+                $("#verify_view").css({ 'display': 'none' });
+                $("#wheel_view").css({ 'display': 'block' });
+
+                $('#wheel_message').text(`${response.data}`);
+                $('#wheel_message').addClass('msg');
+                startWheel();
+            } else {
+                $('#wheel_message').text(`no response`);
+                $('#wheel_message').addClass('msg');
+            }
+        }
+    ).catch(
+        function (err) {
+            //your code for handling API error
+            console.log(err);
+        }
+    );
+
 
     // document.getElementById('btnPlay').addEventListener('click', getData());
 

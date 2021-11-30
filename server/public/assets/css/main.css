@@ -824,7 +824,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 @media (max-width: 1366px) {
     .slide .content-bottom {
-        padding-top: 5rem;
+        padding-top: 0rem;
     }
     .stack {
         margin: 10rem 0;
