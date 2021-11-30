@@ -69,44 +69,43 @@
                 <!-- ================================================================================ -->
 
                 <link rel="stylesheet" href="assets/coming-soon/css/style.css">
+                <!-- intlTelInput -->
+                <link rel="stylesheet" href="intl-tel-input-17.0.0/build/css/intlTelInput.css">
+                <link rel="stylesheet" href="intl-tel-input-17.0.0/build/css/demo.css">
+
+                <style>
+                    .digit-group .input {
+                        width: 2em;
+                        height: 50px;
+                        background-color: #504533;
+                        border: none;
+                        line-height: 50px;
+                        text-align: center;
+                        font-size: 24px;
+                        font-family: "Raleway", sans-serif;
+                        font-weight: 200;
+                        color: white;
+                        margin: 0 2px;
+                    }
+
+                    .digit-group .splitter {
+                        padding: 0 5px;
+                        color: white;
+                        font-size: 24px;
+                    }
+
+                    .prompt {
+                        margin-bottom: 20px;
+                        font-size: 20px;
+                        color: white;
+                    }
+                </style>
 
                 <% if(process.env.NODE_ENV=='development' ) { %>
                     <%- include('./dev.css.ejs') %>
                         <% } else { %>
                             <%- include('./prod.css.ejs') %>
                                 <% } %>
-
-                                    <!-- intlTelInput -->
-                                    <link rel="stylesheet" href="intl-tel-input-17.0.0/build/css/intlTelInput.css">
-                                    <link rel="stylesheet" href="intl-tel-input-17.0.0/build/css/demo.css">
-
-                                    <style>
-                                        .digit-group .input {
-                                            width: 2em;
-                                            height: 50px;
-                                            background-color: #504533;
-                                            border: none;
-                                            line-height: 50px;
-                                            text-align: center;
-                                            font-size: 24px;
-                                            font-family: "Raleway", sans-serif;
-                                            font-weight: 200;
-                                            color: white;
-                                            margin: 0 2px;
-                                        }
-
-                                        .digit-group .splitter {
-                                            padding: 0 5px;
-                                            color: white;
-                                            font-size: 24px;
-                                        }
-
-                                        .prompt {
-                                            margin-bottom: 20px;
-                                            font-size: 20px;
-                                            color: white;
-                                        }
-                                    </style>
 
 </head>
 

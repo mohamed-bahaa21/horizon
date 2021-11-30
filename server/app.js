@@ -105,7 +105,7 @@ if (process.env.NODE_ENV == "development") {
             useNewUrlParser: true,
             ssl: true,
             sslValidate: false,
-            sslCA: fs.readFileSync(path.resolve(__basename, 'config', 'rds-combined-ca-bundle.pem')),
+            // sslCA: fs.readFileSync(path.resolve(__basename, 'config', 'rds-combined-ca-bundle.pem')),
             useUnifiedTopology: true,
             useFindAndModify: false,
             useCreateIndex: true

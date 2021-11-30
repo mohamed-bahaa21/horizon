@@ -399,6 +399,11 @@ footer .subscribe .subscribe-form-2 .form-group {
     .img-1000 {
         display: none;
     }
+
+    footer .subscribe .subscribe-form div{
+        margin-top: 1em;
+        text-align: center;
+    }
 }
 
 /*------------------------------
@@ -1963,6 +1968,7 @@ footer .subscribe .subscribe-form {
     position: relative;
     overflow: hidden;
     border-radius: 0.25rem;
+    width: initial !important;
 }
 
 footer .subscribe .subscribe-form .form-group .form-control {
