@@ -1,16 +1,16 @@
 #mySidenav a {
-    top: 13rem;
+    top: 9rem;
     background-color: #e9c140;
     z-index: 91;
 }
 #mySidenav2 a {
-    top: 16.75rem;
+    top: 12.75rem;
     background-color: #e9c140;
     z-index: 81;
 }
 
 #mySidenav3 a {
-    top: 20.5rem;
+    top: 16.5rem;
     background-color: #e9c140;
     z-index: 71;
     font-size: 1.8em !important;
@@ -18,7 +18,7 @@
 }
 
 #mySidenav4 a {
-    top: 24.5rem;
+    top: 20.5rem;
     background-color: #e9c140;
     z-index: 71;
     font-size: 2em !important;
@@ -95,7 +95,7 @@
 
 #follow_section.follow_center {
     right: 0%;
-    top: 16.75rem;
+    top: 12.75rem;
     padding: 3em 3em 3em 3em;
     opacity: 1;
     animation-name: morph;
@@ -199,6 +199,14 @@
         width: fit-content;
         transform: rotate(0deg);
     }
+}
+
+#phone_view {
+    display: none;
+}
+
+#verify_view {
+    display: none;
 }
 
 #_1 {

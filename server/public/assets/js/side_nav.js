@@ -2,6 +2,11 @@
 
 $(document).ready(function () {
     $("#wheel").click(function () {
+        if ($('#follow_section').hasClass('follow_center')) {
+            $('#follow_section').toggleClass('follow_center');
+            $("#blur").toggleClass('blured');
+            $(".arrow").toggleClass('arrow_move');
+        }
         $('#wheel_section').toggleClass('wheel_center');
         $("#blur").toggleClass('blured');
         $(".arrow").toggleClass('arrow_move');
@@ -22,6 +27,8 @@ $(document).ready(function () {
         deg,
 
         $btnPlay = $("#btnPlay"),
+        $btnPhone = $("#btnPhone"),
+        $btnVerify = $("#btnVerify"),
         $btnSlowMo = $("#btnSlowMo");
 
     // Random degree
@@ -45,36 +52,55 @@ $(document).ready(function () {
     // Luckywheel animation
 
     //   Buttons
+    function startWheel() {
+        spinWheel
+            .to(wheel, 5, {
+                rotation: deg, transformOrigin: "50% 50%", ease: Power4.easeInOut,
+                onUpdate: (function () {
+                    currentRotation = Math.round(this.target[0]._gsTransform.rotation);    //_gsTransform: current position of the wheel
+                    tolerance = currentRotation - lastRotation;
+                    if (Math.round(currentRotation) % (360 / 12) <= tolerance) {
+                        if (indicator.progress() > .2 || indicator.progress() === 0) {
+                            indicator.play(0);
+                        }
+                    }
+                    lastRotation = currentRotation;
+
+                    // console.log("lastRot: " + lastRotation);
+                    // console.log("currentRot: " + currentRotation);
+                    // console.log("tol: " + tolerance);
+                    // console.log(indicator.progress());
+                    // console.log("spinwheelprogress: " + spinWheel.progress());
+                    if (spinWheel.progress() == 1) {
+                        console.log("spinwheelprogress: " + spinWheel.progress());
+                        return getData(deg);
+                    }
+                })
+            });
+        spinWheel.add("end");
+
+        indicator.timeScale(1).seek(0);
+        spinWheel.timeScale(1).seek(0);
+    }
+
     $btnPlay.click(
         function () {
-            spinWheel
-                .to(wheel, 5, {
-                    rotation: deg, transformOrigin: "50% 50%", ease: Power4.easeInOut,
-                    onUpdate: (function () {
-                        currentRotation = Math.round(this.target[0]._gsTransform.rotation);    //_gsTransform: current position of the wheel
-                        tolerance = currentRotation - lastRotation;
-                        if (Math.round(currentRotation) % (360 / 12) <= tolerance) {
-                            if (indicator.progress() > .2 || indicator.progress() === 0) {
-                                indicator.play(0);
-                            }
-                        }
-                        lastRotation = currentRotation;
-
-                        // console.log("lastRot: " + lastRotation);
-                        // console.log("currentRot: " + currentRotation);
-                        // console.log("tol: " + tolerance);
-                        // console.log(indicator.progress());
-                        // console.log("spinwheelprogress: " + spinWheel.progress());
-                        if (spinWheel.progress() == 1) {
-                            console.log("spinwheelprogress: " + spinWheel.progress());
-                            return getData(deg);
-                        }
-                    })
-                });
-            spinWheel.add("end");
-
-            indicator.timeScale(1).seek(0);
-            spinWheel.timeScale(1).seek(0);
+            $("#wheel_view").css({ 'display': 'none' });
+            $("#phone_view").css({ 'display': 'block' });
+        }
+    );
+    $btnPhone.click(
+        function () {
+            $("#phone_view").css({ 'display': 'none' });
+            $("#verify_view").css({ 'display': 'block' });
+        }
+    );
+    $btnVerify.click(
+        function () {
+            $btnPlay.css({ 'display': 'none' });
+            $("#verify_view").css({ 'display': 'none' });
+            $("#wheel_view").css({ 'display': 'block' });
+            startWheel();
         }
     );
 
