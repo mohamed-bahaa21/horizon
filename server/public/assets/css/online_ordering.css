@@ -2,10 +2,12 @@
     margin: 0 auto;
     justify-self: center;
     padding-top: 3rem;
+    padding-bottom: 0;
 }
 
-.tab-pane div {
-    margin: 1rem auto;
+.tab-pane {
+    display: block;
+    margin: 2rem auto;
 }
 
 .nav-tabs {
