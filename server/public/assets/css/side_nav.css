@@ -59,6 +59,13 @@
 
 /* ========================================================== */
 /* wheel */
+.sectors text {
+    font-size: 4em;
+    margin-bottom: 1rem;
+    font-weight: 100;
+    /* transform-origin: 23rem 5rem;
+    transform: rotate(180deg); */
+}
 .white_span_powered_by_ayk {
     color: #fff;
     font-weight: 700;
@@ -67,6 +74,7 @@
     text-align: left;
     left: 0rem;
     top: -2rem;
+    display: block;
 }
 #follow_section {
     z-index: 80;
@@ -259,13 +267,19 @@
 }
 
 .luckywheel {
-    margin: 3rem auto;
+    margin: 1rem auto;
     width: 150%;
     height: 50%;
 }
 
 .luckywheel svg .active {
-    transform: rotate(0deg);
+    transform-origin: center !important;
+    transform: rotate(120deg);
+}
+
+.wheel {
+    /* transform-origin: center !important; */
+    /* transform: rotate(0deg); */
 }
 
 /* .btn,

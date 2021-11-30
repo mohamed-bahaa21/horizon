@@ -28,7 +28,9 @@ $(document).ready(function () {
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    var deg = getRandomInt(360, 1080);
+    // var deg = getRandomInt(-30, 330);
+    // var deg = 1099;
+    var deg = getRandomInt(690, 1410);
     console.log("degree: ", deg);
 
     // Creating the Timeline
@@ -83,12 +85,13 @@ $(document).ready(function () {
         }
     );
 
-    const getData = (deg) => axios.post(`/ejs_axios_get_data`, { deg: deg }).then(
+    const getData = (get_deg) => axios.post(`/ejs_axios_get_data`, { deg: get_deg }).then(
         function (response) {
             //your code for handling API data
             console.log(response.data)
-            $('#wheel_message').text(`Present is ${deg}`);
+            $('#wheel_message').text(`${response.data}`);
             $('#wheel_message').addClass('msg');
+            // deg = getRandomInt(330, 1110);
         }).catch(
             function (err) {
                 //your code for handling API error
