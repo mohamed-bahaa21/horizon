@@ -14,8 +14,10 @@ const cors = require('cors');
 const flash = require('connect-flash');
 
 const app = express();
-
 const horizonRoute = require('./routes/horizon.routes');
+
+let LOCAL_STATIC_FILES_DIR = path.join(__dirname, 'public');
+let S3_STATIC_FILES_DIR = '';
 
 const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
@@ -57,7 +59,7 @@ app.use(
         extended: true,
         limit: '10mb'
     }),
-    express.static(path.join(__dirname, 'public')),
+    // express.static(LOCAL_STATIC_FILES_DIR),
     compression(),
     helmet(),
     session({

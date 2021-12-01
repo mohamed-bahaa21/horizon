@@ -1,19 +1,29 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const { read } = require('fs');
 const route = express.Router();
-
 const bodyParser = require("body-parser");
 const User = require("../models/User.model");
-
 const app = express();
 const router = express.Router();
-
-require('dotenv').config();
-
 var AWS = require('aws-sdk');
-
+var s3_service = require('../services/s3.service')
+// contorllers
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
+// ==========
+// ========== urls
+route.get('/intl-tel-input-17.0.0/*', function (req, res) {
+    // console.log("URL: ", req.url.substring(1));
+    s3_service.getFile('public', req.url.substring(1), res)
+});
+route.get('/assets/*', function (req, res) {
+    // console.log("URL: ", req.url.substring(1));
+    s3_service.getFile('public', req.url.substring(1), res)
+});
+// route.get('/generatePresignedURL', function (req, res) {
+//     s3_service.generatePresignedURL(req, res)
+// });
 
 // coming-soon
 route.get('/coming-soon', userCtrl.getComingSoon)
