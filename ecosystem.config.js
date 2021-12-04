@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "server",
-      cwd: "/server",
+      cwd: "./server",
       script: "./app.js",
       instances: 1,
       out_file: "/logs/pm2.out.log",
@@ -18,7 +18,7 @@ module.exports = {
     },
     {
       name: "admin",
-      cwd: '/admin/v2',
+      cwd: './admin/v2',
       script: 'npm',
       args: "start",
       instances: 1,
@@ -35,7 +35,7 @@ module.exports = {
     },
     {
       name: "chat",
-      cwd: "/chat",
+      cwd: "./chat",
       script: "./app.js",
       instances: 1,
       out_file: "/logs/pm2.out.log",
