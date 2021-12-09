@@ -13,6 +13,10 @@ const csrf = require('csurf')
 const cors = require('cors');
 const flash = require('connect-flash');
 
+const rTracer = require('cls-rtracer');
+const Logger = require('./services/logger.service');
+const logger = new Logger('App');
+
 const app = express();
 const horizonRoute = require('./routes/horizon.routes');
 
@@ -77,6 +81,7 @@ app.use(
     cookieParser("@010#44$vm=2001ayk2020horizon"),
     cors(),
     flash(),
+    rTracer.expressMiddleware(),
 )
 
 // routes
@@ -94,11 +99,13 @@ if (process.env.NODE_ENV == "development") {
         })
         .then(result => {
             app.listen(PORT);
-            console.log(`MongoDB & Server is listening: ${PORT}`);
-            console.log(process.env.NODE_ENV);
+            logger.info(`MongoDB & Server is listening: ${PORT}`, { 'process.env.NODE_ENV': process.env.NODE_ENV })
+            // console.log(`MongoDB & Server is listening: ${PORT}`);
+            // console.log(process.env.NODE_ENV);
         })
         .catch(err => {
-            console.log(err);
+            logger.error(err);
+            // console.log(err);
         });
 
 } else {
@@ -114,10 +121,11 @@ if (process.env.NODE_ENV == "development") {
         })
         .then(result => {
             app.listen(PORT);
-            console.log(`MongoDB & Server is listening: ${PORT}`);
-            console.log(process.env.NODE_ENV);
+            // console.log(`MongoDB & Server is listening: ${PORT}`);
+            // console.log(process.env.NODE_ENV);
         })
         .catch(err => {
-            console.log(err);
+            logger.error(err);
+            // console.log(err);
         });
 }

@@ -1,4 +1,8 @@
-const winston = require('winston');
+// const winston = require('winston');
+const { createLogger, format, transports } = require('winston')
+const { combine, timestamp, printf, colorize, simple } = format
+const rTracer = require('cls-rtracer')
+
 const dotenv = require('dotenv');
 dotenv.config();
 var fs = require('fs');
@@ -16,29 +20,59 @@ const dateFormat = () => {
     return new Date(Date.now()).toLocaleString();
 }
 
+const rTracerFormat = printf((info) => {
+    const rid = rTracer.id()
+    return rid
+        ? `${info.timestamp} [request-id:${rid}]: ${info.message}`
+        : `${info.timestamp}: ${info.message}`
+});
+
+const simpleFormat = printf((info) => {
+    // let message = `${dateFormat()} | ${info.level.toUpperCase()} | ${info.message}`;
+    // let message = `${info.level.toUpperCase()} | ${info.message}`;
+    // message = info.obj ? message + `data ${JSON.stringify(info.obj)} | ` : message;
+
+    const rid = rTracer.id()
+    let message;
+    if (rid && info.obj) {
+        message = `[${info.level.toUpperCase()}]::[${info.timestamp}]::[request-id:${rid}]::[msg: ${info.message}]::[data: ${JSON.stringify(info.obj)}]`
+
+    } else {
+        if (rid)
+            message = `[${info.level.toUpperCase()}]::[${info.timestamp}]::[request-id:${rid}]::[msg: ${info.message}]`
+
+        else if (info.obj)
+            message = `[${info.level.toUpperCase()}]::[${info.timestamp}]::[msg: ${info.message}]::[data: ${JSON.stringify(info.obj)}]`
+
+        else
+            message = `[${info.level.toUpperCase()}]::[${info.timestamp}]::[msg: ${info.message}]`
+    }
+    return message;
+});
+
 // Logger Service
 class LoggerService {
     constructor(route) {
-
         this.route = route;
 
-        const logger = winston.createLogger({
+        const logger = createLogger({
             level: 'info',
-            format: winston.format.printf(info => {
-                let message = `${dateFormat()} | ${info.level.toUpperCase()} | ${info.message}`;
-                message = info.obj ? message + `data ${JSON.stringify(info.obj)} | ` : message;
-                return message;
-            }),
+            format: combine(
+                timestamp({
+                    format: 'MMM-DD-YYYY HH:mm:ss'
+                }),
+                simpleFormat
+            ),
             transports: [
                 //   new transports.File({ filename: path.join(logDir, `error.log`), level: 'error' }),
-                new winston.transports.File({
+                new transports.File({
                     filename: `${process.env.LOG_FILE_PATH}/${route}.error.log`,
                     level: 'error'
                 }),
-                new winston.transports.File({
+                new transports.File({
                     filename: `${process.env.LOG_FILE_PATH}/${route}.combined.log`
                 }),
-                new winston.transports.File({
+                new transports.File({
                     filename: `${process.env.LOG_FILE_PATH}/${route}.load-test.log`,
                     level: 'load-test'
                 }),
@@ -48,14 +82,14 @@ class LoggerService {
 
         //
         // If we're not in production then **ALSO** log to the `console`
-        // with the colorized simple format.
+        // with the colorized simple format .
         //
         if (process.env.NODE_ENV !== 'production') {
             this.logger.add(
-                new winston.transports.Console({
-                    format: winston.format.combine(
-                        winston.format.colorize(),
-                        winston.format.simple()
+                new transports.Console({
+                    format: combine(
+                        colorize(),
+                        // simple()
                     )
                 })
             );
