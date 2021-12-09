@@ -57,4 +57,23 @@ route.get('/getNews', apiCtrl.getNews);
 route.get('/editorjs', apiCtrl.getEditorjs);
 route.post('/editorjs', apiCtrl.editorjs);
 
+// heapdump
+route.get('/heapdump', (req, res, next) => {
+    var path = require('path');
+    var heapdump = require('heapdump');
+    const Logger = require('../services/logger.service');
+    const logger = new Logger('heapdump');
+
+    var filename = path.resolve(__basename, 'heapdump', `${Date.now()}.heapsnapshot`);
+    heapdump.writeSnapshot(filename, function (err, filename) {
+        if (err) {
+            logger.error(err);
+            res.send(err);
+        } else {
+            logger.info(`Heapdump written to ${filename}`);
+            res.send(`Heapdump written to ${filename}`);
+        }
+    });
+})
+
 module.exports = route;
