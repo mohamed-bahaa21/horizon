@@ -6,6 +6,7 @@ import Table from 'components/common/Table';
 import Button from 'components/common/Button';
 import PageHeader from 'components/layout/PageHeader';
 import Modal from 'components/common/Modal';
+import BlogAddForm from 'components/forms/BlogAddForm';
 import BlogEditForm from 'components/forms/BlogEditForm';
 import ResetForm from 'components/forms/ResetForm';
 import DeleteForm from 'components/forms/DeleteForm';
@@ -35,13 +36,14 @@ export default function NewsPage() {
   const [message, setMessage] = useState();
 
   const { data } = useFetch(`${SERVER_URI}/api/getBlogsData`, {}, [saved]);
+  // console.log(data[0].published);
 
   const Buttons = row => (
     <ButtonLayout align="right">
       <Button icon={<Pen />} size="small" onClick={() => setEditBlog(row)}>
         <FormattedMessage id="label.edit" defaultMessage="Edit" />
       </Button>
-      <Button icon={<Trash />} size="small" onClick={() => setDeleteBlog(row)} disabled>
+      <Button icon={<Trash />} size="small" onClick={() => setDeleteBlog(row)} >
         <FormattedMessage id="label.delete" defaultMessage="Delete" />
       </Button>
     </ButtonLayout>
@@ -53,12 +55,27 @@ export default function NewsPage() {
     </Link>
   );
 
+  const DetailsPublished = ({ published }) => (
+    <div>
+      {published ?
+        <span style={{ color: 'green', fontWeight: 'bold' }}>published</span> :
+        <span style={{ color: 'red', fontWeight: 'bold' }}>archived</span>
+      }
+    </div>
+  );
+
   const columns = [
     {
       key: 'title',
       label: <FormattedMessage id="label.title" defaultMessage="title" />,
       className: 'col-6 col-xl-4',
       render: DetailsLink,
+    },
+    {
+      key: 'published',
+      label: <FormattedMessage id="label.published" defaultMessage="published" />,
+      className: 'col-6 col-xl-4',
+      render: DetailsPublished,
     },
     {
       key: 'action',
@@ -107,7 +124,7 @@ export default function NewsPage() {
           {/* <span style={{ fontSize: '2em' }}> / </span> */}
           <span style={{ backgroundColor: '#d32929', padding: '0.25rem 0.5rem', color: 'white', borderRadius: '0.25rem' }}>Maximum Reached</span>
         </div>
-        <Button icon={<Plus />} size="small" onClick={() => setAddBlog(true)} disabled>
+        <Button icon={<Plus />} size="small" onClick={() => setAddBlog(true)} >
           <FormattedMessage id="label.add-blog" defaultMessage="Add Blog" />
         </Button>
       </PageHeader>
@@ -122,7 +139,7 @@ export default function NewsPage() {
       )}
       {addBlog && (
         <Modal title={<FormattedMessage id="label.add-blog" defaultMessage="Add Blog Meta" />}>
-          <BlogEditForm onSave={handleSave} onClose={handleClose} />
+          <BlogAddForm onSave={handleSave} onClose={handleClose} />
         </Modal>
       )}
       {deleteBlog && (
@@ -130,7 +147,7 @@ export default function NewsPage() {
           title={<FormattedMessage id="label.delete-blog" defaultMessage="Delete Blog" />}
         >
           <DeleteForm
-            values={{ type: 'blog', blog_url: deleteBlog.blog_url, title: deleteBlog.title }}
+            values={{ blogId: deleteBlog._id, editorId: deleteBlog.content }}
             onSave={handleSave}
             onClose={handleClose}
           />

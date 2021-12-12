@@ -39,7 +39,7 @@ export default function BlogEditForm({ values, onSave, onClose }) {
   const handleSubmit = async values => {
     // const ok = true;
     // console.log('blog EditForm values: ', values);
-    const { ok, data } = await post(`${SERVER_URI}/api/editBlogMetaData/${values.url}`, values);
+    const { ok, data } = await post(`${SERVER_URI}/api/createNewBlogData`, values);
 
     if (ok) {
       onSave();
@@ -60,17 +60,17 @@ export default function BlogEditForm({ values, onSave, onClose }) {
         {() => (
           <Form>
             {/* published */}
-            <FormRow>
+            {/* <FormRow>
               <label htmlFor="published">
                 <FormattedMessage id="label.published" defaultMessage="published" />
               </label>
 
               <div>
-                <Field name="published" type="checkbox" />
+                <Field name="published" type="checkbox" defaultValue={false} />
                 <FormError name="published" />
               </div>
 
-            </FormRow>
+            </FormRow> */}
 
             {/* title */}
             <FormRow>

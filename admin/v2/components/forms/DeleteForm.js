@@ -9,6 +9,8 @@ import FormLayout, {
   FormRow,
 } from 'components/layout/FormLayout';
 import useDelete from 'hooks/useDelete';
+import SERVER_URI from ".server.env";
+import usePost from 'hooks/usePost';
 
 const CONFIRMATION_WORD = 'DELETE';
 
@@ -28,10 +30,13 @@ const validate = ({ confirmation }) => {
 
 export default function DeleteForm({ values, onSave, onClose }) {
   const del = useDelete();
+  const post = usePost();
   const [message, setMessage] = useState();
 
+  console.log(values);
+
   const handleSubmit = async ({ type, id }) => {
-    const { ok, data } = await del(`/api/${type}/${id}`);
+    const { ok, data } = await post(`${SERVER_URI}/api/deleteBlogData`, values);
 
     if (ok) {
       onSave();

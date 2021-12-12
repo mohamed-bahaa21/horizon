@@ -26,7 +26,7 @@ route.get('/getBlogMetaData/:blogId', apiCtrl.getBlogMetaData);
 route.get('/getBlogContentData/:contentId', apiCtrl.getBlogContentData);
 route.post('/editBlogMetaData/:blogId', apiCtrl.editBlogMetaData);
 route.post('/editBlogContentData/:contentId', apiCtrl.editBlogContentData);
-route.post('/deleteBlogData/:blogId', apiCtrl.deleteBlogData);
+route.post('/deleteBlogData', apiCtrl.deleteBlogData);
 
 // ADMIN -> Accessories Data
 route.get('/getAccessoriesData', apiCtrl.getAccessoriesData);

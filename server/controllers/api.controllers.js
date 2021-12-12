@@ -334,11 +334,13 @@ exports.createNewBlogData = (req, res) => {
         const newUrl = title.replace(" ", "-");
 
         const newBlog = new Blog();
+        newBlog.published = false;
         newBlog.title = title;
         newBlog.url = newUrl + "-" + newBlog._id;
         newBlog.summary = summary;
         newBlog.thumb_img = thumb_img;
         newBlog.main_img = main_img;
+        newBlog.content = newEditor._id;
 
         newBlog.save().then(() => {
             console.log("New Blog: ", newBlog);
@@ -367,9 +369,10 @@ exports.getBlogContentData = (req, res) => {
 
 exports.editBlogMetaData = (req, res) => {
     const { blogId } = req.params;
-    const { title, summary, thumb_img, main_img } = req.body;
+    const { published, title, summary, thumb_img, main_img } = req.body;
 
     Blog.findOne({ url: blogId }).then((blog) => {
+        blog.published = published;
         blog.title = title;
         blog.summary = summary;
         blog.thumb_img = thumb_img;
@@ -401,9 +404,9 @@ exports.editBlogContentData = (req, res) => {
 exports.deleteBlogData = (req, res) => {
     const { blogId, editorId } = req.body;
 
-    Blog.findOneAndDelete({ _id: blogId }).then(() => {
+    Blog.deleteOne({ _id: blogId }).then(() => {
         console.log("Blog meta deleted...");
-        Editor.findOneAndDelete({ _id: editorId }).then(() => {
+        Editor.deleteOne({ _id: editorId }).then(() => {
             console.log("Blog editor deleted...");
             res.status(200).json("Blog and Editor deleted...");
         })

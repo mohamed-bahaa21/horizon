@@ -30,7 +30,7 @@ exports.getComingSoon = (req, res, next) => {
 // Landing Page
 exports.getLanding = (req, res) => {
     Horizon.find().sort({ section_index: 1 }).then((result) => {
-        Blog.find().limit(3).then(blogs => {
+        Blog.find({ published: true }).limit(3).then(blogs => {
             Seo.findOne({ page_id: 'landing' }).then(seo => {
                 // console.log(blogs;
                 // console.log(result[4]);
@@ -199,7 +199,7 @@ exports.getAbout = (req, res) => {
 
 // User Get Blogs list
 exports.getBlogs = (req, res) => {
-    Blog.find().then(result => {
+    Blog.find({ published: true }).then(result => {
         res.render('pages/news', {
             msgs: req.flash('success'),
             preloader: true,
@@ -215,10 +215,10 @@ exports.getBlogs = (req, res) => {
 exports.getBlog = (req, res) => {
     const blogUrl = req.params.id;
 
-    Blog.findOne({ url: blogUrl }).populate('content')
+    Blog.findOne({ url: blogUrl, published: true }).populate('content')
         .then(blog => {
             // other news side bar
-            Blog.find().limit(3).then(blogs => {
+            Blog.find({ published: true }).limit(3).then(blogs => {
                 // console.log(result);
                 res.render('pages/new', {
                     msgs: req.flash('success'),
