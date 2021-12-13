@@ -85,6 +85,15 @@ app.use(
 )
 
 // routes
+app.use((req, res, next) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    if (res.statusCode == 200 || res.statusCode == 203) {
+        logger.info(`GET URL: ${fullUrl}`);
+    } else {
+        logger.error(`GET URL: ${fullUrl}`);
+    }
+    next();
+})
 app.use('/', horizonRoute);
 
 // connect database & server
