@@ -4,7 +4,7 @@ module.exports = {
       name: "server",
       cwd: "./server",
       script: "./app.js",
-      instances: 1,
+      instances: 3,
       out_file: "/logs/pm2.out.log",
       error_file: "/logs/pm2.err.log",
       node_args: ["--max_old_space_size=256"],
