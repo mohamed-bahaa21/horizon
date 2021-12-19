@@ -328,10 +328,17 @@ exports.createNewBlogData = (req, res) => {
 
     const newEditor = new Editor();
     newEditor.name = "Article";
-    newEditor.blocks = [];
+    newEditor.blocks = [{
+        id: 'AAA',
+        type: 'header',
+        data: {
+            text: "New Article",
+            level: 1
+        }
+    }];
 
     newEditor.save().then(() => {
-        const newUrl = title.replace(" ", "-");
+        const newUrl = title.replace(/ /g, '-');
 
         const newBlog = new Blog();
         newBlog.published = false;

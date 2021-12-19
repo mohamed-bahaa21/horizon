@@ -218,17 +218,17 @@ exports.getBlog = (req, res) => {
     Blog.findOne({ url: blogUrl, published: true }).populate('content')
         .then(blog => {
             // other news side bar
-            Blog.find({ published: true }).limit(3).then(blogs => {
+            // res.send(blog.title)
+            Blog.find({ published: true, url: { $ne: blogUrl } }).limit(3).then(blogs => {
                 // console.log(result);
                 res.render('pages/new', {
                     msgs: req.flash('success'),
                     preloader: true,
                     url: '/blog/:id',
-                    page_title: "News | " + blog.title,
+                    page_title: `News | ${blog ? blog.title : ''}`,
                     seo: null,
                     blog: blog,
-                    blogs: blogs,
-                    blocks: blog.content.blocks
+                    blogs: blogs
                 });
             });
         })
