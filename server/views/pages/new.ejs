@@ -1,9 +1,30 @@
 <%- include('../partials/page_head.ejs') %>
     <%- include('../partials/nav.ejs') %>
+        <div id="page_progress" class="horizon-header" style="
+        position: fixed;
+        width: 10px;
+        height: 20px;
+        top: auto;
+        background: #f1b54d;
+        z-index: 99;">
+        </div>
+        <script>
+            window.onscroll = function () {
+                /* console.log(window.pageYOffset); */
+                // var page_progress = document.getElementById('page_progress');
+                // var WIDTH = document.getElementById('page_progress').style.width;
+                // var OFFSET_WIDTH = document.getElementById('page_progress').style.offsetWidth;
+                // console.log(WIDTH);
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("page_progress").style.width = scrolled + "%";
+            }
+        </script>
 
 
         <!-- Start Page Head -->
-        
+
         <!-- End Page Head -->
 
         <!-- Start Blog Page Section -->

@@ -10,6 +10,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'public/assets/css/horizon.min.css': [
+                        "/assets/coming-soon/css/new.style.css",
                         "public/assets/css/bootstrap.min.css",
                         "public/assets/css/slick.css",
                         "public/assets/css/slick-theme.css",

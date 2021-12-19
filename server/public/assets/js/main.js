@@ -1,13 +1,7 @@
 /*jslint browser: true*/
 /*global $, jQuery ,AOS*/
-
-
-
 (function ($) {
-
     "use strict";
-
-
     var $window = $(window),
         $body = $('body'),
         $horizonMenu = $('.horizon-header'),
@@ -34,11 +28,14 @@
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         //>=, not <=
+        var currentLink = $(this);
         if (scroll >= 500) {
             //clearHeader, not clearheader - caps H
+            $horizonMenu.addClass("sticky");
             $(".stack").removeClass("loaded");
             $(".rslides").css('opacity', "1");
         } else {
+            $horizonMenu.removeClass("sticky");
             $(".stack").addClass("loaded");
             $(".rslides").css('opacity', "0.1");
         }
@@ -80,15 +77,6 @@
                 scrollTop: ancAtt.offset().top
             }, 1000);
             e.preventDefault();
-        });
-
-        $window.scroll(function () {
-            var currentLink = $(this);
-            if ($(currentLink).scrollTop() > 500) {
-                $horizonMenu.addClass("sticky");
-            } else {
-                $horizonMenu.removeClass("sticky");
-            }
         });
         /*END MENU JS*/
 
