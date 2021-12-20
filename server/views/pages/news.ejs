@@ -36,12 +36,13 @@
                             <img src="<%= blog.thumb_img %>" alt="" />
                         </div>
                         <div class="">
-                            <span class="news-slider__code">
-                                <%= blog.date %>
-                            </span>
                             <div class="news-slider__title">
                                 <%= blog.title %>
                             </div>
+                            <span class="news-slider__code">
+                                <%= moment(blog.createdAt).format('Do MMMM YYYY') %>
+                            </span>
+
                             <div class="news-slider__text">
                                 <%= blog.summary %>
                             </div>

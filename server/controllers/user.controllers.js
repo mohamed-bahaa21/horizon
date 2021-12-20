@@ -8,6 +8,8 @@ const Editor = require('../models/Editor.model');
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
 
+const moment = require('moment');
+
 pages = [
     'landing',
     'brands',
@@ -196,17 +198,29 @@ exports.getAbout = (req, res) => {
         });
     });
 };
+// User Get Blogs list
+exports.getBlogsTest = (req, res) => {
+    Blog.find({ published: true }).sort({ createdAt: -1 }).then(result => {
+        let arr = []
+        result.map(blog => {
+            let newDate = moment(blog.createdAt).format('Do MMMM YYYY');
+            arr.push(newDate)
+        })
+        res.send(arr)
+    });
+};
 
 // User Get Blogs list
 exports.getBlogs = (req, res) => {
-    Blog.find({ published: true }).then(result => {
+    Blog.find({ published: true }).sort({ createdAt: -1 }).then(result => {
         res.render('pages/news', {
             msgs: req.flash('success'),
             preloader: true,
             url: '/news',
             page_title: "Horizon | News",
             seo: null,
-            blogs: result
+            blogs: result,
+            moment: moment
         });
     });
 };
@@ -228,7 +242,8 @@ exports.getBlog = (req, res) => {
                     page_title: `News | ${blog ? blog.title : ''}`,
                     seo: null,
                     blog: blog,
-                    blogs: blogs
+                    blogs: blogs,
+                    moment: moment
                 });
             });
         })

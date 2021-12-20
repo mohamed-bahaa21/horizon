@@ -11,20 +11,57 @@ var AWS = require('aws-sdk');
 var s3_service = require('../services/s3.service')
 // contorllers
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
+
+const apicache = require('apicache');
+// ==========
+// ========== apicache
+// route.get('/apicache', function (req, res) {
+//     res.json(apicache.getPerformance())
+// });
+// route.get('/apicache/getIndex', function (req, res) {
+//     res.json(apicache.getIndex(0))
+// });
+// route.get('/apicache/test', function (req, res) {
+//     const data = Math.random();
+//     console.log(data);
+//     res.json(data);
+// });
+// route.get('/apicache/clear', function (req, res) {
+//     res.json(apicache.clear())
+// });
+
+
+
+
+
 // ==========
 // ========== urls
-route.get('/intl-tel-input-17.0.0/*', function (req, res) {
-    // console.log("URL: ", req.url.substring(1));
-    s3_service.getFile('public', req.url.substring(1), res)
-});
-route.get('/assets/*', function (req, res) {
-    // console.log("URL: ", req.url.substring(1));
-    s3_service.getFile('public', req.url.substring(1), res)
-});
+// route.get('/intl-tel-input-17.0.0/*', function (req, res) {
+//     // console.log("URL: ", req.url.substring(1));
+//     s3_service.getFile('public', req.url.substring(1), res)
+// });
+// route.get('/assets/*', function (req, res) {
+//     // console.log("URL: ", req.url.substring(1));
+//     s3_service.getFile('public', req.url.substring(1), res)
+// });
 // route.get('/generatePresignedURL', function (req, res) {
 //     s3_service.generatePresignedURL(req, res)
 // });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ========================
 // coming-soon
 route.get('/coming-soon', userCtrl.getComingSoon)
 
@@ -53,8 +90,8 @@ route.post('/ejs_axios_get_data', (req, res) => {
     var { deg } = req.body;
     var degree = (deg - 690) / 60;
 
-    console.log("deg: ", deg);
-    console.log("degree: ", degree);
+    // console.log("deg: ", deg);
+    // console.log("degree: ", degree);
     if ((degree >= 0 && degree < 1) || (degree > 6 && degree < 7)) { res.send(`Death`) }
     else if ((degree >= 1 && degree < 2) || (degree > 7 && degree < 8)) { res.send(`Points`) }
     else if ((degree >= 2 && degree < 3) || (degree > 8 && degree < 9)) { res.send(`Coins`) }
@@ -66,14 +103,14 @@ route.post('/ejs_axios_get_data', (req, res) => {
 
 route.post("/wheel", (req, res, next) => {
     var { phone } = req.body;
-    console.log("post_phone: ", phone);
+    // console.log("post_phone: ", phone);
     // var randomOTP = `${Math.floor(100000 + Math.random() * 900000)}`
     var randomOTP = '000000'
 
     User.findOne({ phone: phone }).then(user => {
 
         if (!user) {
-            console.log("no user");
+            // console.log("no user");
 
             const newUser = new User({
                 phone: phone,
@@ -228,6 +265,15 @@ route.post('/wheel/verify', (req, res, next) => {
 
 })
 
+
+
+
+
+
+
+
+
+
 // USER_PAGES
 route.get('/', userCtrl.getLanding);
 route.get('/accessories', userCtrl.getAccessories);
@@ -235,6 +281,8 @@ route.get('/about-us', userCtrl.getAbout);
 
 // User -> Blog(s) Data
 route.get('/news', userCtrl.getBlogs);
+// User -> Blog(s) Data
+route.get('/getblogs', userCtrl.getBlogsTest);
 // User -> Blog Data
 route.get('/news/:id', userCtrl.getBlog);
 

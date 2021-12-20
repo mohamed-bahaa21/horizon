@@ -38,7 +38,7 @@ $(document).ready(function () {
     // var deg = getRandomInt(-30, 330);
     // var deg = 690;
     var deg = getRandomInt(690, 1410);
-    console.log("degree: ", deg);
+    // console.log("degree: ", deg);
 
     // var { phone } = req.body;
     // var { digit_1, digit_2, digit_3, digit_4, digit_5, digit_6 } = req.body;
@@ -77,7 +77,7 @@ $(document).ready(function () {
                     // console.log(indicator.progress());
                     // console.log("spinwheelprogress: " + spinWheel.progress());
                     if (spinWheel.progress() == 1) {
-                        console.log("spinwheelprogress: " + spinWheel.progress());
+                        // console.log("spinwheelprogress: " + spinWheel.progress());
                         return getData(deg);
                     }
                 })
@@ -112,7 +112,7 @@ $(document).ready(function () {
             let $digit_5 = $("#digit_5").val();
             let $digit_6 = $("#digit_6").val();
             let code = $digit_1 + $digit_2 + $digit_3 + $digit_4 + $digit_5 + $digit_6;
-            console.log("code: ", code);
+            // console.log("code: ", code);
 
             postVerify(code)
         }
@@ -130,7 +130,7 @@ $(document).ready(function () {
     const getData = (get_deg) => axios.post(`/ejs_axios_get_data`, { deg: get_deg }).then(
         function (response) {
             //your code for handling API data
-            console.log(response.data)
+            // console.log(response.data)
             if(response.data == "Try Again") {
                 $btnPlay.css({ 'display': 'block' });
                 $('#wheel_message').text(`${response.data}`);
@@ -144,14 +144,14 @@ $(document).ready(function () {
     ).catch(
         function (err) {
             //your code for handling API error
-            console.log(err);
+            // console.log(err);
         }
     );
 
     const postPhone = (phone) => axios.post(`/wheel`, { phone: phone }).then(
         function (response) {
             //your code for handling API data
-            console.log(response.data)
+            // console.log(response.data)
             if (response.data == "We sent the new verification code" || response.data == "We already have sent a code, check it out !") {
                 $("#phone_view").css({ 'display': 'none' });
                 $("#verify_view").css({ 'display': 'block' });
@@ -165,7 +165,7 @@ $(document).ready(function () {
     ).catch(
         function (err) {
             //your code for handling API error
-            console.log(err);
+            // console.log(err);
         }
     );
 
@@ -174,7 +174,7 @@ $(document).ready(function () {
         function (response) {
             //your code for handling API data
             if (response.data == 'Accepted, Let us spin the wheeeeeeel!') {
-                console.log(response.data)
+                // console.log(response.data)
                 $btnPlay.css({ 'display': 'none' });
                 $("#verify_view").css({ 'display': 'none' });
                 $("#wheel_view").css({ 'display': 'block' });
@@ -183,7 +183,7 @@ $(document).ready(function () {
                 $('#wheel_message').addClass('msg');
                 startWheel();
             } else {
-                console.log(response.data)
+                // console.log(response.data)
                 $('#wheel_message').text(`${response.data}`);
                 $('#wheel_message').addClass('msg');
             }
@@ -191,7 +191,7 @@ $(document).ready(function () {
     ).catch(
         function (err) {
             //your code for handling API error
-            console.log(err);
+            // console.log(err);
         }
     );
 
@@ -199,7 +199,7 @@ $(document).ready(function () {
     // document.getElementById('btnPlay').addEventListener('click', getData());
 
     // function reqListener() {
-    //     console.log(this.responseText);
+        // console.log(this.responseText);
     // }
     // var oReq = new XMLHtttpRequest();
     // oReq.addEventListener('load', reqListener);

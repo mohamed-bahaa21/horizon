@@ -17,6 +17,11 @@ const rTracer = require('cls-rtracer');
 const Logger = require('./services/logger.service');
 const logger = new Logger('App');
 
+const apicache = require('apicache');
+let cache = apicache.options({
+    trackPerformance: true
+}).middleware;
+
 const app = express();
 const horizonRoute = require('./routes/horizon.routes');
 
@@ -63,7 +68,7 @@ app.use(
         extended: true,
         limit: '10mb'
     }),
-    // express.static(LOCAL_STATIC_FILES_DIR),
+    express.static(LOCAL_STATIC_FILES_DIR),
     compression(),
     helmet(),
     session({
@@ -82,6 +87,7 @@ app.use(
     cors(),
     flash(),
     rTracer.expressMiddleware(),
+    cache('1 day')
 )
 
 // routes
