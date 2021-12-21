@@ -37,8 +37,10 @@
             $("#mySidenav2").css('opacity', "0");
         } else if (scroll >= 50) {
             $horizonMenu.addClass("sticky");
+            $("#page_progress").addClass("prog_sticky");
         } else {
             $horizonMenu.removeClass("sticky");
+            $("#page_progress").removeClass("prog_sticky");
             $(".stack").addClass("loaded");
             $(".rslides").css('opacity', "0.1");
             $("#mySidenav").css('opacity', "1");
@@ -48,6 +50,9 @@
 
 
     $(document).ready(function () {
+        $('.dropdown-toggle').on('click', function () {
+            $(this).siblings('.submenu').toggleClass('submenu_display');
+        });
 
         $('.themes-colors span').on('click', function () {
             $('.themes-colors').toggleClass('open');

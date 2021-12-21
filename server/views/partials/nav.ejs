@@ -41,7 +41,7 @@
                             </li>
                             <!-- Brands -->
                             <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" href="#">Brands</a>
+                                <a class="nav-link dropdown-toggle">Brands</a>
                                 <ul class="submenu">
                                     <li><a href="/brands/zeiss" class="">Zeiss</a></li>
                                     <li><a href="/brands/ltl" class="">LTL</a></li>
@@ -51,11 +51,11 @@
                             </li>
                             <!-- Products & Services -->
                             <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" href="#">Products & Services</a>
+                                <a class="nav-link dropdown-toggle">Products & Services</a>
                                 <ul class="submenu">
                                     <li><a href="/products/stock_lenses">Stock Lenses</a></li>
                                     <li>
-                                        <a href="#" class="dropdown-toggle">RX Lenses</a>
+                                        <a class="dropdown-toggle">RX Lenses</a>
                                         <ul class="submenu" style="top: 0; left: 100%">
                                             <li><a href="/products/rx_lenses/designs/single_vision">Single Vision</a>
                                             </li>
@@ -73,6 +73,11 @@
                                     <li><a href="/products/delivery">Delivery</a></li>
                                 </ul>
                             </li>
+                            <script>
+                                $('.dropdown-toggle').click(function () {
+                                    $('.submenu').css('opacity', '0')
+                                })
+                            </script>
                             <!-- Accessories -->
                             <li class="nav-item home">
                                 <a class="nav-link" href="/accessories">Accessories</a>
@@ -95,7 +100,7 @@
             </nav>
 
             <% if(url=='/blog/:id' ) { %>
-                <div id="page_progress" class="horizon-header" style="
+                <div id="page_progress" class="" style="
         width: 10px;
         height: 0.5rem;
         top: auto;
