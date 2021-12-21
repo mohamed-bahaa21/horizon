@@ -78,6 +78,8 @@
     cursor: pointer;
     transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
     -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    transform-origin: center;
+    transform: matrix(0) rotate(0) !important;
 }
 
 #bifocal .options .option:nth-child(1) {
@@ -107,11 +109,14 @@
 #bifocal .options .option.active {
     flex-grow: 10000;
     transform: scale(1);
-    -webkit-transform: scale(1);
+    /* -webkit-transform: scale(1); */
     max-width: 600px;
     border-radius: 1rem;
     background-size: 100% auto;
     background-repeat: no-repeat;
+
+    transform-origin: center;
+    transform: matrix(0) rotate(0) !important;
     /* box-shadow: 0rem 0rem 5rem -1rem #d39529; */
 }
 

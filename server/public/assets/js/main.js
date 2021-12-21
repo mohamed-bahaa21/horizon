@@ -34,10 +34,14 @@
             $horizonMenu.addClass("sticky");
             $(".stack").removeClass("loaded");
             $(".rslides").css('opacity', "1");
+            $("#mySidenav").css('opacity', "0");
+            $("#mySidenav2").css('opacity', "0");
         } else {
             $horizonMenu.removeClass("sticky");
             $(".stack").addClass("loaded");
             $(".rslides").css('opacity', "0.1");
+            $("#mySidenav").css('opacity', "1");
+            $("#mySidenav2").css('opacity', "1");
         }
     }); //missing );
 

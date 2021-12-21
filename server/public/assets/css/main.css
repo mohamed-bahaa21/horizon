@@ -44,6 +44,14 @@
     font-family: "Lato", sans-serif !important;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 body {
     font-size: 16px;
     position: relative;
@@ -400,7 +408,7 @@ footer .subscribe .subscribe-form-2 .form-group {
         display: none;
     }
 
-    footer .subscribe .subscribe-form div{
+    footer .subscribe .subscribe-form div {
         margin-top: 1em;
         text-align: center;
     }
@@ -775,7 +783,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     .horizon-header .dropdown-menu .dropdown-item {
         padding: 1rem 2rem;
     }
-    #mainnav ul.submenu>li>a {
+    #mainnav ul.submenu > li > a {
         font-size: 1.5em;
     }
 }
@@ -1145,6 +1153,10 @@ svg:not(:root) {
 
     .main_features .left-side .one-feature span {
         float: left;
+    }
+
+    .slide .content-bottom p {
+        font-size: 1.5em !important;
     }
 }
 
@@ -1653,13 +1665,14 @@ svg:not(:root) {
     display: block;
     width: 100%;
     text-align: left;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     white-space: unset;
     text-decoration: none;
-    padding: 15px 60px 15px 30px;
+    padding: 0 1rem;
     color: #fff;
     position: relative;
+    height: 3rem;
 }
 
 .faq .accordion .faq-card .faq-card-header h5 .btn:before,

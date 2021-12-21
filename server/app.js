@@ -87,7 +87,7 @@ app.use(
     cors(),
     flash(),
     rTracer.expressMiddleware(),
-    cache('1 day')
+    // cache('1 day')
 )
 
 // routes

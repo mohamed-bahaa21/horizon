@@ -41,7 +41,7 @@
     padding-left: 0.75rem;
 }
 
-.sidenav a:hover {
+.sidenav a:hover, .sidenav a:active {
     right: -1rem;
 }
 
