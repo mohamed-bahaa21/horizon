@@ -55,15 +55,6 @@
             }, 1000);
             e.preventDefault();
         });
-
-        $window.scroll(function () {
-            var currentLink = $(this);
-            if ($(currentLink).scrollTop() > 0) {
-                $horizonMenu.addClass("sticky");
-            } else {
-                $horizonMenu.removeClass("sticky");
-            }
-        });
         /*END MENU JS*/
 
     });

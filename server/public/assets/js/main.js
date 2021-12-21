@@ -31,11 +31,12 @@
         var currentLink = $(this);
         if (scroll >= 500) {
             //clearHeader, not clearheader - caps H
-            $horizonMenu.addClass("sticky");
             $(".stack").removeClass("loaded");
             $(".rslides").css('opacity', "1");
             $("#mySidenav").css('opacity', "0");
             $("#mySidenav2").css('opacity', "0");
+        } else if (scroll >= 50) {
+            $horizonMenu.addClass("sticky");
         } else {
             $horizonMenu.removeClass("sticky");
             $(".stack").addClass("loaded");
