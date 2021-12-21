@@ -5,6 +5,8 @@
     "main": "app.js",
     "scripts": {
         "test": "snyk test",
+        "k6": "k6 run test/load-test.js",
+        "process_k6": "jq '. | select(.type=='Point' and .metric == 'http_req_duration' and .data.tags.status >= '200')' test/load-test.json",
         "debug": "node-inspect app.js",
         "inspect": "node --inspect app.js",
         "lint": "eslint ./",
