@@ -2398,7 +2398,7 @@ aside.sidebar .tags ul li {
     24. START SINGLE BLOG PAGE
 ------------------------------*/
 .single-blog-with-sidebar {
-    padding-top: 7rem !important;
+    /* padding-top: 7rem !important; */
 }
 
 .single-blog-with-sidebar h2 {
