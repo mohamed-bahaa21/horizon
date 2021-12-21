@@ -87,7 +87,7 @@ app.use(
     cors(),
     flash(),
     rTracer.expressMiddleware(),
-    // cache('1 day')
+    cache('1 day')
 )
 
 // routes
@@ -113,6 +113,7 @@ if (process.env.NODE_ENV == "development") {
             useCreateIndex: true
         })
         .then(result => {
+            apicache.clear();
             app.listen(PORT);
             logger.info(`MongoDB & Server is listening: ${PORT}`, { 'process.env.NODE_ENV': process.env.NODE_ENV })
             // console.log(`MongoDB & Server is listening: ${PORT}`);
@@ -135,6 +136,7 @@ if (process.env.NODE_ENV == "development") {
             useCreateIndex: true
         })
         .then(result => {
+            apicache.clear();
             app.listen(PORT);
             // console.log(`MongoDB & Server is listening: ${PORT}`);
             // console.log(process.env.NODE_ENV);
