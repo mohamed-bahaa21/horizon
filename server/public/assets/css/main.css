@@ -2227,7 +2227,7 @@ nav .pagination li a:hover {
 ------------------------------*/
 aside.sidebar .gray-panel {
     background: rgba(158, 158, 158, 0.1);
-    padding: 2rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     /* border-radius: 1rem 7rem; */
     border-radius: 1rem 1rem;
