@@ -6,47 +6,51 @@ const productWidth = 310;
 const overlay = document.querySelector(".product__overlay");
 
 function getProductOffset() {
-  return (container.offsetWidth - (container.offsetWidth * 70) / 100) / 2;
+    return (container.offsetWidth - (container.offsetWidth * 70) / 100) / 2;
 }
 
 function removeActiveClass() {
-  const activeProduct = document.querySelector(".product--active");
-  if (activeProduct) {
-    activeProduct.scrollTop = 0;
-    activeProduct.classList.remove("product--active");
-    container.classList.remove("container--detail");
-  }
+    const activeProduct = document.querySelector(".product--active");
+    if (activeProduct) {
+        activeProduct.scrollTop = 0;
+        activeProduct.classList.remove("product--active");
+        container.classList.remove("container--detail");
+    }
 }
 
 products.forEach((product) => {
-  product.addEventListener("click", (e) => {
-    if (e.target.classList.contains("product__close")) {
-      overlay.style.display = "none";
-      removeActiveClass();
-      return;
-    }
-    if (!e.currentTarget.classList.contains("product--active")) {
-      overlay.style.display = "block";
-      removeActiveClass();
-      e.currentTarget.classList.add("product--active");
-      container.classList.add("container--detail");
+    product.addEventListener("click", (e) => {
+        if (e.target.classList.contains("product__close")) {
+            overlay.style.display = "none";
+            removeActiveClass();
+            return;
+        }
 
-      const left =
-        productWidth * parseInt(e.currentTarget.getAttribute("data-index")) +
-        cover.offsetWidth +
-        parseInt(e.currentTarget.getAttribute("data-index")) * 6 +
-        nav.offsetWidth -
-        getProductOffset();
 
-      container.scrollLeft = left;
-      overlay.style.display = "none";
-      if (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
-        e.currentTarget.scrollIntoView({ inline: "start" });
-      }
-    }
-  });
+        $('.single-vision_container').scrollLeft(productWidth *
+            parseInt(e.currentTarget.getAttribute("data-index")) +
+            parseInt(e.currentTarget.getAttribute("data-index")) * 6 -
+            getProductOffset()
+        );
+
+        if (!e.currentTarget.classList.contains("product--active")) {
+            overlay.style.display = "block";
+            removeActiveClass();
+            e.currentTarget.classList.add("product--active");
+            container.classList.add("container--detail");
+
+            // const left = productWidth * parseInt(e.currentTarget.getAttribute("data-index")) + cover.offsetWidth + parseInt(e.currentTarget.getAttribute("data-index")) * 6 + nav.offsetWidth - getProductOffset();
+            const left = productWidth;
+
+            container.scrollLeft = left;
+            overlay.style.display = "none";
+            if (
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                    navigator.userAgent
+                )
+            ) {
+                e.currentTarget.scrollIntoView({ inline: "start" });
+            }
+        }
+    });
 });
