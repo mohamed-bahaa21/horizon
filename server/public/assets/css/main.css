@@ -44,12 +44,6 @@
     font-family: "Lato", sans-serif !important;
 }
 
-@media (max-width: 480px) {
-    * {
-        border-radius: 0rem !important;
-    }
-}
-
 html {
     width: 100%;
     height: 100%;
@@ -437,7 +431,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
     footer .subscribe .subscribe-form div {
         margin-top: 1em;
-        text-align: center;
+        text-align: left;
     }
 }
 
@@ -580,7 +574,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     margin: 0;
     color: #241f1f;
     font-size: 1em;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .chat-header:hover {
@@ -2671,6 +2665,19 @@ aside.sidebar .tags ul li {
     }
 }
 
+@media (max-width: 480px) {
+    * {
+        border-radius: 0rem !important;
+        box-shadow: 0 !important;
+    }
+    .horizon-header .navbar {
+        /* background-color: #c8881a !important; */
+        margin: 0;
+        padding: 0;
+    }
+}
+
 /*------------------------------
     24. END SINGLE BLOG PAGE
 ------------------------------*/
+
