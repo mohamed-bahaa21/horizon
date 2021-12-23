@@ -568,13 +568,20 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .chat-header {
     text-align: center;
-    width: 100vw;
+    width: 85vw;
     background-color: #f1b54d;
     padding: 1em 0;
-    margin: 0;
+    margin: 0 auto;
     color: #241f1f;
     font-size: 1em;
     font-weight: 500;
+    border-radius: 0rem 0 11rem 11rem;
+    transition: all 0.2s ease-in-out;
+}
+@media (max-width: 992px) {
+    .chat-header {
+        width: 100vw;
+    }
 }
 
 .chat-header:hover {
@@ -582,8 +589,8 @@ footer .subscribe .subscribe-form-2 .form-group {
     width: 100vw;
     background-color: #c48e33;
     padding: 1em 0;
-    margin: 0;
-    color: #413d37;
+    margin: 0 auto;
+    color: #0c0c0b;
     font-size: 1em;
     font-weight: 700;
 }
@@ -2680,4 +2687,3 @@ aside.sidebar .tags ul li {
 /*------------------------------
     24. END SINGLE BLOG PAGE
 ------------------------------*/
-
