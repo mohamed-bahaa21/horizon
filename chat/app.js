@@ -14,7 +14,7 @@ const http = require("http").Server(app); //require the http module
 // require the socket.io module
 const io = require("socket.io")(http, {
   cors: {
-    origin: "http://localhost:5001",
+    origin: "/",
     methods: ["GET", "POST"],
     allowedHeaders: ["secret-header"],
     credentials: true,
