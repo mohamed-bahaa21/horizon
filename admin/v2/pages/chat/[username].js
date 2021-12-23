@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import socketIOClient from "socket.io-client";
+import io from "socket.io-client";
 import { useRouter } from "next/router"
 import useFetch from 'hooks/useFetch';
 import usePost from 'hooks/usePost';
@@ -32,10 +32,23 @@ export default function DynamicPage() {
     const [saved, setSaved] = useState(0);
 
 
-    // let socketRef = useRef();
-    // useEffect(() => {
-    //     socketRef.current = socketIOClient("http://localhost:5000");
-    // }, []);
+    let socketRef = useRef(null);
+    useEffect(() => {
+        if (socketRef.current == null) {
+            socketRef.current = io("http://localhost:5001", {
+                transports: ['websocket'],
+                upgrade: false,
+                withCredentials: true,
+                extraHeaders: {
+                    "secret-header": "horizon"
+                }
+            });
+        }
+
+        socketRef.current.on('message', function (username) {
+            console.log(socketRef.current)
+        });
+    }, []);
 
 
     const { data } = useFetch(
@@ -44,9 +57,7 @@ export default function DynamicPage() {
             setUserChat(data.chat);
             handleSave()
         },
-    },
-        [saved],
-    );
+    });
 
     function handleClose() {
         setMessage('')
@@ -60,18 +71,20 @@ export default function DynamicPage() {
 
     const handleSubmit = async (values, { resetForm }) => {
         console.log('Submit: ', values);
-        // let { username, sender, message } = values;
-        // const ok = true;
-        const { ok, data } = await post(`${CHAT_URI}/api/users/${username}`, values);
+        let { username, sender, message } = values;
+        socketRef.current.emit("chat message", { username: username, sender: 'Horizon', message: message });
 
-        resetForm();
-        if (ok) {
-            handleSave();
-        } else {
-            setMessage(
-                data || <FormattedMessage id="message.failure" defaultMessage="Something went wrong." />,
-            );
-        }
+        // // const ok = true;
+        // const { ok, data } = await post(`${CHAT_URI}/api/users/${username}`, values);
+
+        // resetForm();
+        // if (ok) {
+        //     handleSave();
+        // } else {
+        //     setMessage(
+        //         data || <FormattedMessage id="message.failure" defaultMessage="Something went wrong." />,
+        //     );
+        // }
     };
 
     if (!data) {
