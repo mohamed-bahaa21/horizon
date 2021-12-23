@@ -17,7 +17,8 @@
         "grunt-all": "grunt cssmin && grunt uglify",
         "grunt-css": "grunt cssmin",
         "grunt-js": "grunt uglify",
-        "obfuscate": "webpack ./webpack.config.js"
+        "obfuscate": "webpack ./webpack.config.js",
+        "prepare": "husky install"
     },
     "keywords": [
         "horizon",
@@ -75,6 +76,7 @@
         "grunt-contrib-qunit": "^5.1.1",
         "grunt-contrib-uglify": "^5.0.1",
         "html-webpack-plugin": "^5.5.0",
+        "husky": "^7.0.4",
         "import-glob-loader": "^1.1.0",
         "matchdep": "^2.0.0",
         "mini-css-extract-plugin": "^2.4.5",
