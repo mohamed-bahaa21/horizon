@@ -1,8 +1,8 @@
 // http://localhost:5001
 // https://chat.horizon-lenses.com
 var socket = io("/", {
-  transports: ['websocket'],
-  upgrade: false,
+  // transports: ['websocket'],
+  // upgrade: true,
   withCredentials: true,
   extraHeaders: {
     "secret-header": "horizon"
