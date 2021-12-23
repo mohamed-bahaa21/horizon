@@ -7,8 +7,10 @@ const User = require("../models/User");
 module.exports = function (socket) {
     socket.on("connection", socket => {
         var username = socket.request.session.username;
+        socket.join(`${username}`);
+        
         if (username) {
-            console.log("user connected");
+            // console.log("user connected");
             socket.send(username);
         } else {
             console.log("admin connected");
@@ -16,7 +18,7 @@ module.exports = function (socket) {
 
         socket.on("disconnect", function () {
             if (username) {
-                console.log("user disconnected");
+                // console.log("user disconnected");
                 socket.send(username);
             } else {
                 console.log("admin disconnected");
@@ -25,7 +27,7 @@ module.exports = function (socket) {
 
         //Someone is typing
         socket.on("typing", data => {
-            socket.broadcast.emit("notifyTyping", {
+            socket.to(`${username}`).emit("notifyTyping", {
                 user: data.user,
                 message: data.message
             });
@@ -33,20 +35,22 @@ module.exports = function (socket) {
 
         //when soemone stops typing
         socket.on("stopTyping", () => {
-            socket.broadcast.emit("notifyStopTyping");
+            socket.to(`${username}`).emit("notifyStopTyping");
         });
 
         socket.on("chat message", function ({ username, sender, message }) {
-            console.log("username: " + username);
-            console.log("sender: " + sender);
-            console.log("message: " + message);
+            console.log({
+                "username": username,
+                "sender": sender,
+                "message": message
+            });
 
             // broadcast message to everyone in port:5000 except yourself.
-            socket.broadcast.emit("received", { username: username, sender: sender, message: message });
+            socket.to(`${username}`).emit("received", { username: username, sender: sender, message: message });
 
             //save chat to the database
             connect.then((db) => {
-                console.log("connected correctly to the server");
+                console.log("DB connected correctly...");
                 User.findOne({ username: username }).then(user => {
                     // console.log(chatMessage);
                     let chatMessage = new Chat({ username: username, sender: username, message: message });

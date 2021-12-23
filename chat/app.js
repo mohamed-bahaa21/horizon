@@ -11,8 +11,21 @@ var unless = require('express-unless');
 require('dotenv').config();
 
 const http = require("http").Server(app); //require the http module
-const io = require("socket.io"); // require the socket.io module
-socket = io(http); //integrating socketio
+// require the socket.io module
+const io = require("socket.io")(http, {
+  cors: {
+    origin: "http://localhost:5001",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["secret-header"],
+    credentials: true,
+    // allowRequest: (req, callback) => {
+    //   const noOriginHeader = req.headers.origin === undefined;
+    //   callback(null, noOriginHeader);
+    // }
+  }
+});
+// const io = require("socket.io")(http) // require the socket.io module
+// socket = io(http); //integrating socketio
 
 // connect session w/ mongodb
 const store = new MongoDBStore({
@@ -57,11 +70,11 @@ const appRouter = require("./routes/appRoute");
 app.use("/", appRouter); //routes
 
 // convert a connect middleware to a Socket.IO middleware
-const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
+const wrap = middleware => (io, next) => middleware(io.request, {}, next);
 
-socket.use(wrap(sessionMiddleware));
+io.use(wrap(sessionMiddleware));
 
-require('./controllers/socketio.controller')(socket); // pass the socket.io object to the socketio.controller 
+require('./controllers/socketio.controller')(io); // pass the socket.io object to the socketio.controller 
 
 const port = 5001;
 http.listen(port, () => {

@@ -1,4 +1,11 @@
-var socket = io();
+var socket = io("http://localhost:5001", {
+  transports: ['websocket'],
+  upgrade: false,
+  withCredentials: true,
+  extraHeaders: {
+    "secret-header": "horizon"
+  }
+});
 var messages = document.getElementById("messages");
 
 
