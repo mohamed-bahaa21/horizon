@@ -1189,7 +1189,69 @@ svg:not(:root) {
     }
 
     .slide .content-bottom p {
+        font-size: 1.75em !important;
+    }
+}
+
+@media (max-width: 750px) {
+    .slide .content-bottom p {
+        font-size: 3.5em !important;
+        line-height: 1em !important;
+    }
+}
+
+@media (max-width: 680px) {
+    .slide .content-bottom p {
+        font-size: 3em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 600px) {
+    .slide .content-bottom p {
+        font-size: 2.5em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 530px) {
+    .slide .content-bottom p {
+        font-size: 2.25em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 490px) {
+    .slide .content-bottom p {
+        font-size: 2em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 450px) {
+    .slide .content-bottom p {
         font-size: 1.5em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 365px) {
+    .slide .content-bottom p {
+        font-size: 1.25em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 344px) {
+    .lens_card.lens_content {
+        padding: 2rem !important;
+    }
+    .slide .content-bottom p {
+        font-size: 1.15em !important;
+        line-height: 1em !important;
+    }
+}
+@media (max-width: 275px) {
+    .lens_card.lens_content {
+        padding: 1.5rem !important;
+    }
+    .slide .content-bottom p {
+        font-size: 1em !important;
+        line-height: 1em !important;
     }
 }
 

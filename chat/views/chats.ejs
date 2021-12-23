@@ -18,10 +18,14 @@
     <div class="chat_window">
         <% if(msgs) { %>
             <% msgs.forEach(msg=> { %>
-                <div class="flash-msg">
-                    <span>
+                <div class="flash-msg alert success">
+                    <input type="checkbox" id="alert1" />
+                    <label class="close" title="close" for="alert1">
+                        <i class="icon-remove"></i>
+                    </label>
+                    <p class="inner">
                         <%= msg %>
-                    </span>
+                    </p>
                 </div>
                 <% }); %>
                     <% } %>
@@ -29,7 +33,7 @@
                         <div class="top_menu">
                             <div class="title_cont">
                                 <a href="/" class="title">
-                                    Horizon
+                                    <img src="./assets/coming-soon/images/horizon/logoIcon.png" alt="Logo" />
                                 </a>
                             </div>
                             <div class="buttons">
@@ -47,7 +51,7 @@
                             <i id="typing"></i>
                             <form id="form">
                                 <div class="message_input_wrapper">
-                                    <input id="message" class="message_input" placeholder="Type your message here..." />
+                                    <input id="message" class="message_input" placeholder="Type..." />
                                 </div>
                                 <button class="send_message">
                                     Send

@@ -1,4 +1,5 @@
-var socket = io("http://localhost:5001", {
+// http://localhost:5001
+var socket = io("https://chat.horizon-lenses.com", {
   transports: ['websocket'],
   upgrade: false,
   withCredentials: true,
