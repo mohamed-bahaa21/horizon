@@ -121,7 +121,7 @@ body {
     max-width: 97vw;
   }
   .bottom_wrapper {
-    max-width: 97vw;
+    width: 97vw;
   }
 }
 
