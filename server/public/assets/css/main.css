@@ -44,6 +44,12 @@
     font-family: "Lato", sans-serif !important;
 }
 
+@media (max-width: 480px) {
+    * {
+        border-radius: 0rem !important;
+    }
+}
+
 html {
     width: 100%;
     height: 100%;
@@ -407,7 +413,7 @@ footer .subscribe .subscribe-form-2 .form-group {
         width: 100vw;
         margin-bottom: 1rem;
     }
-    .submenu li{
+    .submenu li {
         position: initial !important;
         display: block !important;
         border-radius: 0;
@@ -2071,7 +2077,7 @@ footer {
 }
 
 footer .subscribe .subscribe-form {
-    background: #fff;
+    background: radial-gradient(#453d3d, #282828);
     padding: 25px;
     position: relative;
     overflow: hidden;
@@ -2287,6 +2293,17 @@ nav .pagination li a:hover {
 /*------------------------------
     23. START SIDEBAR 
 ------------------------------*/
+@media (max-width: 992px) {
+    .sidebar-cont {
+        overflow-x: scroll;
+    }
+    .sidebar-cont aside.sidebar {
+        min-width: max-content;
+        display: flex;
+    }
+    aside.sidebar .gray-panel {
+    }
+}
 aside.sidebar .gray-panel {
     background: rgba(158, 158, 158, 0.1);
     padding: 1rem;
@@ -2370,25 +2387,27 @@ aside.sidebar .follow-me ul li svg {
 }
 
 aside.sidebar .follow-me ul li a {
-    font-size: 30px;
-    height: 80px;
-    width: 60px;
+    font-size: 2rem;
+    height: 3em;
+    width: 2em;
     background: #ccc;
     display: block;
     text-align: center;
-    line-height: 80px;
+    line-height: 3em;
     color: #fff;
+    border-radius: 0.5rem;
+    margin: 0 0.5em 0 0;
 }
 
 aside.sidebar .follow-me ul li.facebook a {
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
 }
 aside.sidebar .follow-me ul li.facebook a:hover {
     background: #4b69b1;
 }
 
 aside.sidebar .follow-me ul li.instagram a {
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
 }
 aside.sidebar .follow-me ul li.instagram a:hover {
     background: radial-gradient(
