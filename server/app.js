@@ -105,6 +105,7 @@ app.use('/', horizonRoute);
 // connect database & server
 let PORT = 5000;
 if (process.env.NODE_ENV == "development") {
+    apicache.clear();
     mongoose
         .connect(MONGODB_URI, {
             useNewUrlParser: true,
@@ -124,6 +125,7 @@ if (process.env.NODE_ENV == "development") {
         });
 
 } else {
+    apicache.clear()
     mongoose
         .connect(MONGODB_URI, {
             useNewUrlParser: true,
