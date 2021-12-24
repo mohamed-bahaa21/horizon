@@ -5,11 +5,13 @@
   "proxy": "https://beta.horizon-lenses.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run admin\"",
     "server": "cd server && npm start",
-    "admin": "cd admin && npm start",
     "server-prod": "npm run server",
+    "server-build": "cd server && npm run build",
+    "admin": "cd admin && npm start",
     "admin-dev": "npm run admin",
-    "start": "concurrently \"npm run server\" \"npm run admin\""
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,8 @@
   },
   "homepage": "https://github.com/Mohamed-Elzohary/horizon#readme",
   "devDependencies": {
-    "concurrently": "^6.0.2"
+    "concurrently": "^6.0.2",
+    "husky": "^7.0.4"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
