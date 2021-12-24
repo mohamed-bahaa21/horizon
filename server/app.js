@@ -68,7 +68,7 @@ app.use(
         extended: true,
         limit: '10mb'
     }),
-    express.static(LOCAL_STATIC_FILES_DIR),
+    // express.static(LOCAL_STATIC_FILES_DIR),
     compression(),
     helmet(),
     session({

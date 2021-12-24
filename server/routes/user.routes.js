@@ -36,14 +36,14 @@ const apicache = require('apicache');
 
 // ==========
 // ========== urls
-// route.get('/intl-tel-input-17.0.0/*', function (req, res) {
-//     // console.log("URL: ", req.url.substring(1));
-//     s3_service.getFile('public', req.url.substring(1), res)
-// });
-// route.get('/assets/*', function (req, res) {
-//     // console.log("URL: ", req.url.substring(1));
-//     s3_service.getFile('public', req.url.substring(1), res)
-// });
+route.get('/intl-tel-input-17.0.0/*', function (req, res) {
+    // console.log("URL: ", req.url.substring(1));
+    s3_service.getFile('public', req.url.substring(1), res)
+});
+route.get('/assets/*', function (req, res) {
+    // console.log("URL: ", req.url.substring(1));
+    s3_service.getFile('public', req.url.substring(1), res)
+});
 // route.get('/generatePresignedURL', function (req, res) {
 //     s3_service.generatePresignedURL(req, res)
 // });
