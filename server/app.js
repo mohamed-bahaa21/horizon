@@ -18,9 +18,6 @@ const Logger = require('./services/logger.service');
 const logger = new Logger('App');
 
 const apicache = require('apicache');
-let cache = apicache.options({
-    trackPerformance: true
-}).middleware;
 
 const app = express();
 const horizonRoute = require('./routes/horizon.routes');
@@ -86,8 +83,7 @@ app.use(
     cookieParser("@010#44$vm=2001ayk2020horizon"),
     cors(),
     flash(),
-    rTracer.expressMiddleware(),
-    cache('1 day')
+    rTracer.expressMiddleware()
 )
 
 // routes

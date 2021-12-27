@@ -8,6 +8,9 @@ const JsonHtmlParserRoute = require('./json_html_parser.routes');
 
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
 
+let cache = apicache.options({
+    trackPerformance: true
+}).middleware;
 
 // GLOBAL HEADER CONTROLLER
 
@@ -37,7 +40,7 @@ route.get('/*', function (req, res, next) {
 });
 
 route.get('/robots.txt', (req, res) => res.sendFile(path.resolve(__basename, 'robots.txt')))
-route.use('/', userRoute);
+route.use('/', cache('1 day'), userRoute);
 route.use('/api', apiRoute);
 // route.use('/parser', JsonHtmlParserRoute);
 
