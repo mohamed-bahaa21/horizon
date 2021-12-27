@@ -8,6 +8,7 @@ const JsonHtmlParserRoute = require('./json_html_parser.routes');
 
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
 
+const apicache = require('apicache');
 let cache = apicache.options({
     trackPerformance: true
 }).middleware;

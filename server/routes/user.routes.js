@@ -12,7 +12,7 @@ var s3_service = require('../services/s3.service')
 // contorllers
 const userCtrl = require(path.resolve(__basename, 'controllers', 'user.controllers'));
 
-const apicache = require('apicache');
+// const apicache = require('apicache');
 // ==========
 // ========== apicache
 // route.get('/apicache', function (req, res) {
