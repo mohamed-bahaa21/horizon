@@ -40,7 +40,7 @@ a.active {
 }
 
 .brown-input {
-    background-color: #241f1f !important;
+    background: radial-gradient(#453d3d, #282828) !important;
 }
 
 button.btn-primary {

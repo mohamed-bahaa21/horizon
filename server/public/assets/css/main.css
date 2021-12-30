@@ -2151,6 +2151,15 @@ footer .copyright p {
     color: #fff;
 }
 
+.footer-item {
+    color: #e2b55d;
+    font-weight: 700;
+    /* text-decoration: underline; */
+    background-color: #343131 !important;
+    padding: 0.2rem 1rem !important;
+    border-bottom: 0.15rem solid !important;
+}
+
 /*------------------------------
     21. END FOOTER SECTION
 ------------------------------*/

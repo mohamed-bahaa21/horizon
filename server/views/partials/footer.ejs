@@ -18,7 +18,8 @@
             font-size: 1.25em;
             ">Subscribe to our news</span>
 
-            <form id="footer_subscribe_form" class="subscribe-form row m-0 align-items-center" action="/api/subscribe" method="POST">
+            <form id="footer_subscribe_form" class="subscribe-form row m-0 align-items-center" action="/api/subscribe"
+                method="POST">
                 <div class="col-lg-9 col-md-8">
                     <div class="form-group mb-0">
                         <input type="hidden" name="_csrf" value="csrfToken">
@@ -32,7 +33,7 @@
                                 <span>Subscribe</span>
                             </a> -->
                     <input type="submit" class="btn btn-primary" placeholder="Subscribe"
-                        style="margin-top: 0rem !important;" value="Subscribe"/>
+                        style="margin-top: 0rem !important;" value="Subscribe" />
                 </div>
             </form>
         </div>
@@ -45,7 +46,7 @@
                     <div>
                         <img src="/assets/imgs/horizon/HLogoW.png" style="padding: 1rem 0;" class="img-fluid"
                             width="250px" alt="" />
-                        <p class="light" style="padding: 0 1rem; text-align: left;">
+                        <p class="light" style="padding: 0 1rem; text-align: center;">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
                             nostrum odit facilis delectus quia rerum?Lorem ipsum dolor sit
                             amet consectetur adipisicing elit. Aspernatur eius,
@@ -58,13 +59,12 @@
                         <h6>Quick Links</h6>
                         <ul>
                             <li>
-                                <a href="/about-us">About Us</a>
+                                <a class="footer-item" href="/about-us">About
+                                    Us</a>
                             </li>
                             <li>
-                                <a href="/news">Latest News</a>
-                            </li>
-                            <li>
-                                <a href="/products">Products</a>
+                                <a class="footer-item" href="/news">Latest
+                                    News</a>
                             </li>
                         </ul>
                     </div>
@@ -74,10 +74,10 @@
                         <h6>Social Media</h6>
                         <ul>
                             <li>
-                                <a href="#">Facebook</a>
+                                <a class="footer-item" href="#">Facebook</a>
                             </li>
                             <li>
-                                <a href="#">Instagram</a>
+                                <a class="footer-item" href="#">Instagram</a>
                             </li>
                         </ul>
                     </div>
@@ -87,23 +87,21 @@
                         <h6>Quick Contact</h6>
                         <ul>
                             <li>
-                                <span>Phone : </span>
-                                <br>
-                                <a style="color: #E2B55D; font-weight: 700; text-decoration: underline;"
-                                    href="tel:123456789">911</a>
+                                <a style="color: #E2B55D; font-weight: 700; text-decoration: none;" class="footer-item"
+                                    href="tel:123456789">
+                                    <i class="fas fa-phone-square-alt"></i>911</a>
                             </li>
                             <li>
-                                <span>Email : </span>
-                                <br>
-                                <a style="color: #E2B55D; font-weight: 700; text-decoration: underline;"
-                                    href="mailto:test@test.com">horizon@horizon.com</a>
+                                <a style="color: #E2B55D; font-weight: 700; text-decoration: none;" class="footer-item"
+                                    href="mailto:test@test.com">
+                                    <i class="fas fa-envelope-square"></i>
+                                    horizon@horizon.com</a>
                             </li>
                             <li>
-                                <span>Address : </span>
-                                <br>
-                                <a style="color: #E2B55D; font-weight: 700; text-decoration: underline;"
-                                    href="https://www.google.com/maps/place/The+White+House/@38.898346,-77.037709,15.67z/data=!4m5!3m4!1s0x0:0x715969d86d0b76bf!8m2!3d38.8976763!4d-77.0365298">Google
-                                    Map Address</a>
+                                <a style="color: #E2B55D; font-weight: 700; text-decoration: none;" class="footer-item"
+                                    href="https://www.google.com/maps/place/The+White+House/@38.898346,-77.037709,15.67z/data=!4m5!3m4!1s0x0:0x715969d86d0b76bf!8m2!3d38.8976763!4d-77.0365298">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Google Map Address</a>
                             </li>
                         </ul>
                     </div>
@@ -116,12 +114,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4 white">
-                    <a style="color: #eccf94;" href="/" target="_blank" rel="noopener noreferrer">Horizon</a>
+                    <a style="color: #eccf94;" class="footer-item" href="/" target="_blank"
+                        rel="noopener noreferrer">Horizon</a>
                     <span className="">&copy; 2021</span>
                 </div>
                 <div style="text-align: right;" class="offset-md-4 col-md-4 white">
                     <span className="">Powered by</span>
-                    <a style="color: #eccf94;" href="https://ayk-mall.com" target="_blank"
+                    <a style="color: #eccf94;" class="footer-item" href="https://ayk-mall.com" target="_blank"
                         rel="noopener noreferrer">Ayk</a>
                 </div>
             </div>
