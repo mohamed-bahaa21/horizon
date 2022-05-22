@@ -63,7 +63,10 @@ route.get('/assets/*', function (req, res) {
 
 // ========================
 // coming-soon
-route.get('/coming-soon', userCtrl.getComingSoon)
+const csrf = require('csurf');
+var csrfProtection = csrf({ cookie: true })
+
+route.get('/coming-soon', csrfProtection, userCtrl.getComingSoon)
 
 route.post('/ejs_axios_get_data', (req, res) => {
     // -30/30   death

@@ -9,9 +9,9 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const session = require('express-session');
-const csrf = require('csurf')
 const cors = require('cors');
 const flash = require('connect-flash');
+// const flash = require('express-flash')
 
 const rTracer = require('cls-rtracer');
 const Logger = require('./services/logger.service');
@@ -35,10 +35,12 @@ const store = new MongoDBStore({
     uri: MONGODB_URI,
     collection: 'sessions'
 });
+const mem_store = new session.MemoryStore;
 
-const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+const expiryDate = new Date(Date.now() + 60 * 60 * 60 * 1000) // 1 hour
 
-var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon-lenses.com', 'https://admin2.horizon-lenses.com'] // allow to server to accept request from different origin
+// allow to server to accept request from different origin
+var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon-lenses.com', 'https://admin2.horizon-lenses.com']
 var corsOptions = {
     origin: function (origin, callback) {
         if (corsWhiteList.indexOf(origin) !== -1) {
@@ -54,6 +56,9 @@ var corsOptions = {
 
 // Middleware
 app.set('view engine', 'ejs');
+if (process.env.NODE_ENV == 'development') {
+    app.use(express.static(LOCAL_STATIC_FILES_DIR));
+}
 app.use(
     // Parsers for POST data
     bodyParser.json(),
@@ -65,26 +70,34 @@ app.use(
         extended: true,
         limit: '10mb'
     }),
-    // express.static(LOCAL_STATIC_FILES_DIR),
     compression(),
     helmet(),
-    session({
-        secret: '@010#44$vm=2001ayk2020horizon',
-        name: 'sessionId',
-        resave: true,
-        saveUninitialized: true,
-        store: store,
-        path: '/',
-        httpOnly: false,
-        secure: true,
-        domain: 'beta.horizon-lenses.com',
-        expires: expiryDate
-    }),
     cookieParser("@010#44$vm=2001ayk2020horizon"),
-    cors(),
+    session({
+        store: store,
+        name: 'sessionId',
+        secret: '@010#44$vm=2001ayk2020horizon',
+        resave: true,
+        saveUninitialized: false,
+        path: '/coming-soon',
+        secure: true,
+        httpOnly: true,
+        expires: expiryDate,
+        cookie: { maxAge: expiryDate },
+        domain: 'http://localhost:5000/coming-soon',
+    }),
     flash(),
+    cors(),
     rTracer.expressMiddleware()
 )
+
+// Custom flash middleware -- from Ethan Brown's book, 'Web Development with Node & Express'
+app.use(function (req, res, next) {
+    // if there's a flash message in the session request, make it available in the response, then delete it
+    res.locals.sessionFlash = req.session.sessionFlash;
+    delete req.session.sessionFlash;
+    next();
+});
 
 // routes
 app.use((req, res, next) => {

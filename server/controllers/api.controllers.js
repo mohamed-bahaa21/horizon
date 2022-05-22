@@ -569,10 +569,20 @@ exports.subscribe = (req, res) => {
     email.save()
         .then(() => {
             req.flash('success', 'Subscribed Successfully...');
-            console.log(req.flash('success'));
+            req.session.sessionFlash = {
+                type: 'success',
+                message: 'This is a flash message using custom middleware and express-session.'
+            }
+            req.session.sessionFlash = {
+                type: 'success',
+                message: 'This is a flash message using custom middleware and express-session.'
+            }
+            // res.send(req.flash('success')[0]);
+            // console.log("1=> ", req.flash('success'));
             res.redirect(`${url}`)
         })
         .catch((err) => res.status(400).json('Error: ' + err));
+
 };
 exports.getOnlineOrdering = (req, res) => {
     OnlineOrder.find()

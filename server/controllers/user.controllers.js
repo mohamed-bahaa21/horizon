@@ -21,9 +21,10 @@ pages = [
 ]
 
 exports.getComingSoon = (req, res, next) => {
-    console.log(req.flash('success'));
     res.render('pages/coming-soon/index', {
-        msgs: req.flash('success'),
+        csrfToken: req.csrfToken(),
+        expressFlash: req.flash('success'), 
+        sessionFlash: res.locals.sessionFlash,
         preloader: true,
         url: '/coming-soon',
     })
@@ -81,7 +82,7 @@ exports.getBrand = (req, res) => {
             msgs: req.flash('success'),
             preloader: true,
             url: '/brands/:brand',
-            page_title: "Horizon | " + brand.name,
+            page_title: " " + brand.name,
             seo: null,
             brand: brand,
             blocks: brand.description.blocks
@@ -101,7 +102,7 @@ exports.getBrand = (req, res) => {
 //         msgs: req.flash('success'),
 //         preloader: true,
 //         url: '/brands/:brand',
-//         page_title: "Horizon | " + brand,
+//         page_title: " " + brand,
 //         seo: null,
 //         brand: brand
 //     })
@@ -128,7 +129,7 @@ exports.getProduct = (req, res) => {
         msgs: req.flash('success'),
         preloader: true,
         url: '/products/:product',
-        page_title: "Horizon | " + product,
+        page_title: " " + product,
         seo: null,
         title: product,
         test: product
@@ -157,7 +158,7 @@ exports.getProductDesign = (req, res) => {
         msgs: req.flash('success'),
         preloader: true,
         url: '/products/:product',
-        page_title: "Horizon | " + product,
+        page_title: " " + product,
         seo: null,
         title: product,
         test: product
@@ -174,7 +175,7 @@ exports.getAccessories = (req, res) => {
                 msgs: req.flash('success'),
                 preloader: true,
                 url: '/accessories',
-                page_title: "Horizon | Accessories",
+                page_title: " Accessories",
                 seo: seo,
                 blocks: accessories.blocks
             });
@@ -191,7 +192,7 @@ exports.getAbout = (req, res) => {
                 msgs: req.flash('success'),
                 preloader: true,
                 url: '/about-us',
-                page_title: "Horizon | About",
+                page_title: " About",
                 seo: seo,
                 blocks: about.blocks
             });
@@ -215,9 +216,9 @@ exports.getBlogs = (req, res) => {
     Blog.find({ published: true }).sort({ createdAt: -1 }).then(result => {
         res.render('pages/news', {
             msgs: req.flash('success'),
-            preloader: true,
+            preloader: false,
             url: '/news',
-            page_title: "Horizon | News",
+            page_title: " News",
             seo: null,
             blogs: result,
             moment: moment
@@ -237,7 +238,7 @@ exports.getBlog = (req, res) => {
                 // console.log(result);
                 res.render('pages/new', {
                     msgs: req.flash('success'),
-                    preloader: true,
+                    preloader: false,
                     url: '/blog/:id',
                     page_title: `News | ${blog ? blog.title : ''}`,
                     seo: null,
@@ -257,7 +258,7 @@ exports.getOnlineOrdering = (req, res) => {
             msgs: req.flash('success'),
             preloader: true,
             url: '/online_ordering',
-            page_title: "Horizon | Online Ordering",
+            page_title: "Online Ordering",
             seo: seo,
         });
     });

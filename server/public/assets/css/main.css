@@ -1563,7 +1563,7 @@ svg:not(:root) {
 .fun-facts .fact-box {
     padding: 2em;
     background: #fff;
-    border-radius: 50px;
+    border-radius: 1rem;
     margin-bottom: 1em;
 }
 
@@ -1778,6 +1778,10 @@ svg:not(:root) {
     height: 3rem;
 }
 
+.faq .accordion .faq-card .faq-card-header h5 .btn:focus {
+    color: var(--border-color);
+}
+
 .faq .accordion .faq-card .faq-card-header h5 .btn:before,
 .faq .accordion .faq-card .faq-card-header h5 .btn:after {
     content: "";
@@ -1808,8 +1812,11 @@ svg:not(:root) {
 }
 
 .faq .accordion .faq-card .faq-card-header h5 .btn.collapsed {
-    color: #241f1f;
+    color: #fff;
     margin-bottom: 1rem;
+}
+.faq .accordion .faq-card .faq-card-header h5 .btn.collapsed:focus {
+    color: var(--border-color);
 }
 
 .faq .accordion .faq-card .faq-card-body {
