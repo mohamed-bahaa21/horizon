@@ -67,6 +67,8 @@ const csrf = require('csurf');
 var csrfProtection = csrf({ cookie: true })
 
 route.get('/coming-soon', csrfProtection, userCtrl.getComingSoon)
+route.post('/api/subscribe', userCtrl.subscribe);
+route.post('/coming-soonapi/subscribe', userCtrl.subscribe);
 
 route.post('/ejs_axios_get_data', (req, res) => {
     // -30/30   death
@@ -221,8 +223,8 @@ route.post('/wheel/verify', (req, res, next) => {
     var { code } = req.body;
     var SUBMITTED_OTP = code;
 
-    console.log("SUBMITTED_OTP: ", SUBMITTED_OTP);
-    console.log("res.app.locals.phone: ", res.app.locals.phone);
+    // console.log("SUBMITTED_OTP: ", SUBMITTED_OTP);
+    // console.log("res.app.locals.phone: ", res.app.locals.phone);
 
     if (res.app.locals.phone) {
         User.findOne({ phone: res.app.locals.phone }).then(user => {
@@ -235,13 +237,13 @@ route.post('/wheel/verify', (req, res, next) => {
 
                         user.save()
                             .then(data => {
-                                console.log(data);
+                                // console.log(data);
                                 // req.flash('info', "Accepted, Setup you account")
                                 // res.redirect('/wheel/setup')
                                 res.send("Accepted, Let us spin the wheeeeeeel!")
                             })
                             .catch(err => {
-                                console.log("Error: ", err);
+                                // console.log("Error: ", err);
                                 // req.flash('info', "[verify] Something went wrong")
                                 // res.redirect('/wheel/verify')
                                 res.send("[verify] Something went wrong")

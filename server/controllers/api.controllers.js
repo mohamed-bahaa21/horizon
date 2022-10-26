@@ -69,7 +69,7 @@ exports.postSectionData = (req, res) => {
                 prog_card_4_type: req.body.prog_card_4_type,
                 prog_card_4_header: req.body.prog_card_4_header,
             }
-            console.log(req.body);
+            // console.log(req.body);
             POST_HORIZON_SECTION_CONTENT(req, res, req.body.sectionID, data)
             break;
         case scetionsId.li1:
@@ -309,7 +309,7 @@ exports.postAboutData = (req, res) => {
 // Admin Gets, Edits -> Blogs Data 
 exports.getBlogsData = (req, res) => {
     Blog.find().then((blogs) => {
-        console.log("get blogs data");
+        // console.log("get blogs data");
         res.status(200).json(blogs);
     });
 };
@@ -350,7 +350,7 @@ exports.createNewBlogData = (req, res) => {
         newBlog.content = newEditor._id;
 
         newBlog.save().then(() => {
-            console.log("New Blog: ", newBlog);
+            // console.log("New Blog: ", newBlog);
             res.status(200).json(newBlog);
         })
     })
@@ -386,7 +386,7 @@ exports.editBlogMetaData = (req, res) => {
         blog.main_img = main_img;
 
         blog.save().then(() => {
-            console.log("Blog meta updated");
+            // console.log("Blog meta updated");
             res.status(200).json("Blog meta updated");
         })
     });
@@ -402,7 +402,7 @@ exports.editBlogContentData = (req, res) => {
         editor.blocks = content;
 
         editor.save().then(() => {
-            console.log("Blog content updated...");
+            // console.log("Blog content updated...");
             res.status(200).json("Blog content updated...");
         })
     });
@@ -412,9 +412,9 @@ exports.deleteBlogData = (req, res) => {
     const { blogId, editorId } = req.body;
 
     Blog.deleteOne({ _id: blogId }).then(() => {
-        console.log("Blog meta deleted...");
+        // console.log("Blog meta deleted...");
         Editor.deleteOne({ _id: editorId }).then(() => {
-            console.log("Blog editor deleted...");
+            // console.log("Blog editor deleted...");
             res.status(200).json("Blog and Editor deleted...");
         })
     })
@@ -554,36 +554,6 @@ exports.mailList = (req, res) => {
 
 // =========================================================
 // User Subscribes
-exports.subscribe = (req, res) => {
-    console.log(req.body);
-
-    const {
-        url,
-        mail_email
-    } = req.body;
-
-    const email = new Mail({
-        mail_email: mail_email
-    });
-
-    email.save()
-        .then(() => {
-            req.flash('success', 'Subscribed Successfully...');
-            req.session.sessionFlash = {
-                type: 'success',
-                message: 'This is a flash message using custom middleware and express-session.'
-            }
-            req.session.sessionFlash = {
-                type: 'success',
-                message: 'This is a flash message using custom middleware and express-session.'
-            }
-            // res.send(req.flash('success')[0]);
-            // console.log("1=> ", req.flash('success'));
-            res.redirect(`${url}`)
-        })
-        .catch((err) => res.status(400).json('Error: ' + err));
-
-};
 exports.getOnlineOrdering = (req, res) => {
     OnlineOrder.find()
         .then(orders => {

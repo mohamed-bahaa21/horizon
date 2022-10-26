@@ -167,8 +167,10 @@ p:first-of-type
 }
 
 .stack.loaded .lens_card.lens_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-
     background: rgb(0, 0, 0, 0.7);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.18);

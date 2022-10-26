@@ -1,11 +1,11 @@
 @font-face {
-	font-family: "Lato", sans-serif !important;
+	font-family: var(--font-family);
 	font-weight: normal;
 	font-style: normal;
 }
 
 .lnr {
-	font-family: "Lato", sans-serif !important;
+	font-family: var(--font-family);
 	speak: none;
 	font-style: normal;
 	font-weight: normal;

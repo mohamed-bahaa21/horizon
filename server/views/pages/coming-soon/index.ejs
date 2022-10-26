@@ -38,12 +38,23 @@
             and our launch details.
           </p>
 
-          <form class="subscribe-form" action="/api/subscribe" method="POST">
+          <form class="subscribe-form" action="<%=process.env.SERVER_URI%>/api/subscribe" method="POST">
 
-            <% if ( expressFlash.length > 0 ) { %>
+            <% if(msgs[0]) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-bottom: 0rem !important; text-align: center;">
+              <strong>
+                <%= msgs[0] %>
+              </strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <% } %> %>
+
+            <% if ( expressFlash[0] ) { %>
             <div class="alert alert-success fade show" role="alert">
               <strong style="color: #F7EBD0; margin: 1rem;">
-                <%= expressFlash %>
+                <%= expressFlash[0] %>
               </strong>
             </div>
             <% } %>

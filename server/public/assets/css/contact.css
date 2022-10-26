@@ -140,7 +140,7 @@ iframe {
   width: 100%;
   background: #fff;
   border-radius: 10px;
-  font-family: Ubuntu-Bold;
+  font-family: var(--font-family);
   font-size: 18px;
   color: #a19b8f;
   line-height: 1.2;
@@ -216,7 +216,7 @@ textarea.input100 {
   background-color: transparent;
   border-radius: 25px;
 
-  font-family: Ubuntu-Bold;
+  font-family: var(--font-family);
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
@@ -288,7 +288,7 @@ textarea.input100 {
   right: 10px;
   pointer-events: none;
 
-  font-family: Ubuntu-Bold;
+  font-family: var(--font-family);
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -305,7 +305,7 @@ textarea.input100 {
 
 .alert-validate::after {
   content: "\f06a";
-  font-family: FontAwesome;
+  font-family: var(--font-family);
   display: block;
   position: absolute;
   z-index: 1100;

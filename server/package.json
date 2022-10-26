@@ -34,9 +34,7 @@
     },
     "license": "ISC",
     "dependencies": {
-        "@sendgrid/mail": "^6.4.0",
         "apicache": "^1.6.3",
-        "aws-sdk": "^2.1039.0",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.19.0",
         "cls-rtracer": "^2.6.0",
@@ -54,17 +52,13 @@
         "express-graphql": "^0.12.0",
         "express-session": "^1.16.2",
         "express-validator": "^6.5.0",
-        "firebase": "^9.8.1",
         "graphql": "^15.5.0",
         "heapdump": "^0.3.15",
         "helmet": "^4.6.0",
         "htmlparser2": "^6.1.0",
-        "jsdom": "^16.5.3",
         "lodash": "^4.17.21",
         "moment": "^2.29.3",
         "mongoose": "^5.2.0",
-        "passport": "^0.4.1",
-        "passport-local": "^1.0.0",
         "uuid": "^8.3.2",
         "winston": "^3.3.3"
     },
@@ -75,18 +69,12 @@
         "grunt": "^1.5.3",
         "grunt-contrib-cssmin": "^4.0.0",
         "grunt-contrib-jshint": "^3.1.1",
-        "grunt-contrib-qunit": "^5.1.1",
         "grunt-contrib-uglify": "^5.0.1",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^7.0.4",
         "import-glob-loader": "^1.1.0",
         "matchdep": "^2.0.0",
         "mini-css-extract-plugin": "^2.4.5",
-        "nodemon": "^2.0.15",
-        "raw-loader": "^4.0.2",
-        "snyk": "^1.674.0",
-        "webpack": "^5.64.2",
-        "webpack-cli": "^4.9.1",
-        "webpack-node-externals": "^3.0.0"
+        "nodemon": "^2.0.15"
     }
 }

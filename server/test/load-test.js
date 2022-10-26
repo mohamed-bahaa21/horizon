@@ -41,7 +41,7 @@ export let options = {
 };
 
 export function handleSummary(data) {
-    console.log('Preparing the end-of-test summary...');
+    // console.log('Preparing the end-of-test summary...');
 
     // Send the results to the LOGS
     // logger.info(`load-test-summary::${Date.now()}`, data)

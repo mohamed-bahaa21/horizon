@@ -1,14 +1,16 @@
-var AWS = require('aws-sdk');
+var { S3 } = require('@aws-sdk/client-s3');
+
 var credentials = {
     accessKeyId: process.env.S3_ACCESS_KEY,
     secretAccessKey: process.env.S3_SECRET_KEY
 };
+
 AWS.config.update({
     credentials: credentials,
     region: process.env.S3_REGION
 });
 
-var s3 = new AWS.S3();
+var s3 = new S3();
 
 const tmp_params = {
     Bucket: process.env.S3_BUCKET,
@@ -49,7 +51,7 @@ exports.generatePresignedURL = function (req, res) {
     // tmp_params.Fields.key = req.query.filename || 'public/assets/imgs/horizon/after.jpg';
     s3.createPresignedPost(tmp_params, function (err, data) {
         if (err) {
-            console.log("Error", err);
+            // console.log("Error", err);
             res.status(500).json({
                 msg: "Error",
                 Error: "Error creating presigned URL"

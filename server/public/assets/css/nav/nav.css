@@ -31,7 +31,7 @@ nav {
 #mainnav>ul>li>a {
     position: relative;
     display: block;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family);
     text-transform: uppercase;
     color: #222;
     text-decoration: none;

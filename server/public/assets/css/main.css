@@ -32,16 +32,19 @@
     01. START GENERAL STYLE
 ------------------------------*/
 
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext");
+/* @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext"); */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap');
 
 :root {
     --main-color: rgb(211, 149, 41);
     --border-color: rgb(36, 31, 31);
+    --font-family: "Josefin Sans", sans-serif;
 }
 
 * {
     box-sizing: border-box;
-    font-family: "Lato", sans-serif !important;
+    /* font-family: "Lato", sans-serif !important; */
+    font-family: var(--font-family) !important;
 }
 
 html {
@@ -57,6 +60,11 @@ body {
     position: relative;
     overflow-x: hidden;
     /* background-color: #ffd375; */
+}
+
+*::selection {
+    background-color: var(--main-color);
+    color: #fff;
 }
 
 p {
@@ -554,7 +562,7 @@ footer .subscribe .subscribe-form-2 .form-group {
 
 .submenu li {
     border: 1px solid #363232;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
     background-color: #1f1a1a;
 }
 
@@ -584,15 +592,20 @@ footer .subscribe .subscribe-form-2 .form-group {
     }
 }
 
+@media (max-width: 1250px) {
+    .container {
+        padding: 1rem;
+    }
+}
 .chat-header:hover {
     text-align: center;
-    width: 100vw;
+    /* width: 100vw; */
     background-color: #c48e33;
     padding: 1em 0;
     margin: 0 auto;
     color: #0c0c0b;
     font-size: 1em;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .horizon-header {
@@ -656,7 +669,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     background-color: #241f20;
     margin: 0 auto;
     padding: 0;
-    width: 85vw;
+    /* width: 85vw; */
 }
 
 .horizon-header .navbar-light .navbar-toggler {
@@ -796,7 +809,7 @@ footer .subscribe .subscribe-form-2 .form-group {
     }
 
     .horizon-header.sticky {
-        position: initial !important;
+        /* position: initial !important; */
         top: 0;
         left: 0;
         box-shadow: 0px 13px 35px -12px rgba(0, 0, 0, 0.15);

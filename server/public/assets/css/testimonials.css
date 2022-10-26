@@ -151,7 +151,7 @@
 
 .testimonial .description:before,
 .testimonial .description:after {
-  font-family: "Font Awesome 5 Free";
+  font-family: var(--font-family);
   font-weight: 900;
   width: 35px;
   height: 35px;

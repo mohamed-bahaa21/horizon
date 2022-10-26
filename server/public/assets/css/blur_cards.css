@@ -214,7 +214,7 @@
     right: 0;
     color: #FFF;
     text-align: center;
-    font-family: "lato", sans-serif;
+    font-family: var(--font-family);
     font-weight: 300;
     font-size: 50px;
     letter-spacing: 10px;

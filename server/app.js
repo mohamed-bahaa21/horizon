@@ -40,7 +40,7 @@ const mem_store = new session.MemoryStore;
 const expiryDate = new Date(Date.now() + 60 * 60 * 60 * 1000) // 1 hour
 
 // allow to server to accept request from different origin
-var corsWhiteList = ['http://localhost:3000', 'https://admin.horizon-lenses.com', 'https://admin2.horizon-lenses.com']
+var corsWhiteList = ['https://horizon-admin.herokuapp.com/', 'https://beta.horizon-lenses.com', 'https://horizon-lenses.com', 'http://localhost:5001', 'http://localhost:3000', 'https://admin.horizon-lenses.com', 'https://admin2.horizon-lenses.com']
 var corsOptions = {
     origin: function (origin, callback) {
         if (corsWhiteList.indexOf(origin) !== -1) {
@@ -84,7 +84,6 @@ app.use(
         httpOnly: true,
         expires: expiryDate,
         cookie: { maxAge: expiryDate },
-        domain: 'http://localhost:5000/coming-soon',
     }),
     flash(),
     cors(),
@@ -112,8 +111,10 @@ app.use((req, res, next) => {
 app.use('/', horizonRoute);
 
 // connect database & server
-let PORT = 5000;
+let PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV == "development") {
+    process.env.SERVER_URI = 'http://localhost:5000';
+    process.env.SOON_URI = 'http://localhost:5000';
     apicache.clear();
     mongoose
         .connect(MONGODB_URI, {
@@ -134,6 +135,8 @@ if (process.env.NODE_ENV == "development") {
         });
 
 } else {
+    process.env.SERVER_URI = 'https://beta.horizon-lenses.com';
+    process.env.SOON_URI = 'https://horizon-lenses.com';
     apicache.clear()
     mongoose
         .connect(MONGODB_URI, {

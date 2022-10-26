@@ -4,6 +4,7 @@ const Blog = require('../models/Blog.model');
 const About = require('../models/About.model');
 const Brand = require('../models/Brand.model');
 const Editor = require('../models/Editor.model');
+const Mail = require('../models/Mail.model');
 
 const Logger = require('../services/logger.service');
 const logger = new Logger('horizon.controller');
@@ -23,12 +24,40 @@ pages = [
 exports.getComingSoon = (req, res, next) => {
     res.render('pages/coming-soon/index', {
         csrfToken: req.csrfToken(),
+        msgs: req.flash('success'),
         expressFlash: req.flash('success'), 
         sessionFlash: res.locals.sessionFlash,
         preloader: true,
         url: '/coming-soon',
     })
 }
+
+exports.subscribe = (req, res) => {
+    // console.log(req.body);
+    const {
+        url,
+        mail_email
+    } = req.body;
+
+    const email = new Mail({
+        mail_email: mail_email
+    });
+
+    email.save()
+        .then(() => {
+            req.flash('success', 'Subscribed successfully...');
+            req.session.sessionFlash = {
+                type: 'success',
+                message: 'Subscribed successfully...'
+            }
+
+            res.redirect(`${process.env.SERVER_URI}/${url}`);
+        })
+        .catch((err) => res.status(400).json('Error: ' + err));
+
+    // res.send(req.flash('success')[0]);
+    // console.log("1=> ", req.flash('success'));
+};
 
 // Landing Page
 exports.getLanding = (req, res) => {
@@ -112,18 +141,7 @@ exports.getProduct = (req, res) => {
         product
     } = req.params;
 
-    // console.log(product);
     logger.info("return Product DATA");
-
-    let products_arr = [
-        "stock_lenses",
-        "rx_lenses",
-        "lens_coating_materials",
-        "thickness_reduction",
-        "finishing_services",
-        "contact_lenses",
-        "delivery",
-    ]
 
     res.render('pages/product', {
         msgs: req.flash('success'),
@@ -138,30 +156,20 @@ exports.getProduct = (req, res) => {
 
 exports.getProductDesign = (req, res) => {
     const {
-        product
+        product, design
     } = req.params;
 
-    // console.log(product);
     logger.info("return Product DATA");
-
-    let products_arr = [
-        "stock_lenses",
-        "rx_lenses",
-        "lens_coating_materials",
-        "thickness_reduction",
-        "finishing_services",
-        "contact_lenses",
-        "delivery",
-    ]
 
     res.render('pages/design', {
         msgs: req.flash('success'),
         preloader: true,
-        url: '/products/:product',
-        page_title: " " + product,
+        url: '/products/:product/designs/:design',
+        page_title: product + '| ' + design,
         seo: null,
         title: product,
-        test: product
+        product: product,
+        design: design
     });
 };
 // ------------------------ END

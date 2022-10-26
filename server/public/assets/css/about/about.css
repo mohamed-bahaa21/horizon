@@ -37,7 +37,7 @@ body {
     /* Typography Declaration */
     color: var(--dark);
     font-size: 1em;
-    font-family: "Lato", sans-serif !important;
+    font-family: var(--font-family);
 }
 
 h1,
@@ -271,7 +271,7 @@ h2 {
 
 .questions-section>h2 {
     /*Typography Declarations */
-    font-family: "Gentium Book Basic", Georgia, serif;
+    font-family: var(--font-family);
     font-size: 1.1 em;
     font-weight: bold;
     color: #222222;

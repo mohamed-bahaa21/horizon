@@ -13,7 +13,7 @@ exports.GET_HORIZON_SECTION_CONTENT = (req, res, sectionID) => {
 exports.POST_HORIZON_SECTION_CONTENT = (req, res, sectionID, data) => {
     Horizon.findById(sectionID)
         .then((horizon) => {
-            console.log(horizon);
+            // console.log(horizon);
             horizon.section_content = data;
 
             horizon

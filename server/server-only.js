@@ -97,6 +97,6 @@ if (process.env.NODE_ENV == "development") {
     console.log(process.env.NODE_ENV);
 } else {
     app.listen(PORT);
-    console.log(`Server is listening: ${PORT}`);
-    console.log(process.env.NODE_ENV);
+    // console.log(`Server is listening: ${PORT}`);
+    // console.log(process.env.NODE_ENV);
 }

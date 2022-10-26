@@ -49,7 +49,7 @@
 }
 
 .news-slider {
-    width: max-content;
+    width: 100%;
     position: relative;
     max-width: 800px;
     margin: auto;
@@ -90,6 +90,7 @@
 @media screen and (max-width: 768px) {
     .news-slider {
         min-height: 500px;
+        top: 7rem;
         /* height: auto; */
         /* margin: 180px auto; */
     }
