@@ -29,7 +29,7 @@ const io = require("socket.io")(http, {
 
 // connect session w/ mongodb
 const store = new MongoDBStore({
-  uri: process.env.MONGODB_URI,
+  uri: process.env.MONGODB_PROD,
   collection: 'sessions'
 });
 
@@ -44,7 +44,7 @@ var sessionMiddleware = session({
   expires: new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 });
 
-var allowlist = ['http://localhost:1234', 'http://localhost:3001', 'https://admin.horizon-lenses.com']
+var allowlist = ['http://localhost:1234', 'http://localhost:3001', 'http://admin-horizon.mohamed-bahaa.com/', 'https://admin.horizon-lenses.com']
 
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
@@ -76,7 +76,7 @@ io.use(wrap(sessionMiddleware));
 
 require('./controllers/socketio.controller')(io); // pass the socket.io object to the socketio.controller 
 
-const port = 5001;
+const port = process.env.PORT || 5001;
 http.listen(port, () => {
   console.log("Running on Port: " + port);
 });

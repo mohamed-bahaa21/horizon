@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
 
-const dev_url = "mongodb://localhost:27017/chat";
-const prod_url = "mongodb+srv://mohammad123:mohammad123@blogdb-fslqm.mongodb.net/horizon";
+const dev_url = process.env.MONGODB_LOCAL;
+const prod_url = process.env.MONGODB_PROD;
 
 const connect = mongoose.connect(prod_url, { useNewUrlParser: true });
 
